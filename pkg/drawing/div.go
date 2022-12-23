@@ -6,25 +6,30 @@ import (
 )
 
 type Div struct {
-	width, height   float64 //0 fit content, 0 < x <= 1, proportion of parent, 1 < x length in px
+	*Base
 	backgroundColor color.Color
 	borderColor     color.Color
 	borderWeight    float64
 }
 
-func newDiv(width, height float64) *Div {
-	return &Div{width: width, height: height, backgroundColor: nil, borderColor: nil, borderWeight: 0.0}
+func newDiv(width, height float64, context *gg.Context) *Div {
+	return &Div{
+		Base:            newBase(width, height, context),
+		backgroundColor: nil,
+		borderColor:     nil,
+		borderWeight:    0.0}
 }
 
-func (div *Div) GetWidth() float64 {
-	return div.width
+func (div *Div) GetWidth(location Rectangle) float64 {
+	return div.GetWidth(location)
 }
 
-func (div *Div) GetHeight() float64 {
-	return div.height
+func (div *Div) GetHeight(location Rectangle) float64 {
+	return div.GetHeight(location)
 }
 
-func (div *Div) Render(location Rectangle, context *gg.Context) Rectangle {
+func (div *Div) Render(location Rectangle) Rectangle {
+	context := div.context
 	l := location.left
 	t := location.top
 	w := location.width

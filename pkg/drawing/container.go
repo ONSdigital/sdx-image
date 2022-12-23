@@ -1,8 +1,6 @@
 package drawing
 
-import (
-	"github.com/fogleman/gg"
-)
+import "github.com/fogleman/gg"
 
 type Layout int
 
@@ -36,25 +34,25 @@ type Container struct {
 	padding        float64
 }
 
-func newContainer(width, height float64) *Container {
-	return &Container{Div: newDiv(width, height), layout: Row, justifyContent: Start, padding: 0.0}
+func newContainer(width, height float64, context *gg.Context) *Container {
+	return &Container{Div: newDiv(width, height, context), layout: Row, justifyContent: Start, padding: 0.0}
 }
 
-func (container *Container) GetWidth() float64 {
-	return container.width
+func (container *Container) GetWidth(location Rectangle) float64 {
+	return container.GetWidth(location)
 }
 
-func (container *Container) GetHeight() float64 {
-	return container.height
+func (container *Container) GetHeight(location Rectangle) float64 {
+	return container.GetHeight(location)
 }
 
-func (container *Container) Render(location Rectangle, context *gg.Context) Rectangle {
-	rect := container.Div.Render(location, context)
-	container.renderChildren(rect, context)
+func (container *Container) Render(location Rectangle) Rectangle {
+	rect := container.Div.Render(location)
+	container.renderChildren(rect)
 	return rect
 }
 
-func (container *Container) renderChildren(location Rectangle, context *gg.Context) {
+func (container *Container) renderChildren(location Rectangle) {
 	left := location.left
 	top := location.top
 
@@ -84,8 +82,8 @@ func (container *Container) renderChildren(location Rectangle, context *gg.Conte
 	}
 
 	for _, child := range container.children {
-		width := getChildWidth(location, child)
-		height := getChildHeight(location, child)
+		width := child.GetWidth(location)
+		height := child.GetHeight(location)
 
 		if container.alignItems == AlignEnd {
 			if container.layout == Row {
@@ -102,7 +100,7 @@ func (container *Container) renderChildren(location Rectangle, context *gg.Conte
 		}
 
 		childLocation := Rectangle{left + container.padding + w, top + container.padding + h, width, height}
-		child.Render(childLocation, context)
+		child.Render(childLocation)
 		if container.layout == Row {
 			w += width + wGap
 		} else if container.layout == Column {
@@ -111,26 +109,10 @@ func (container *Container) renderChildren(location Rectangle, context *gg.Conte
 	}
 }
 
-func getChildWidth(location Rectangle, child Displayable) float64 {
-	if child.GetWidth() <= 1 {
-		return location.width * child.GetWidth()
-	} else {
-		return child.GetWidth()
-	}
-}
-
-func getChildHeight(location Rectangle, child Displayable) float64 {
-	if child.GetHeight() <= 1 {
-		return location.height * child.GetHeight()
-	} else {
-		return child.GetHeight()
-	}
-}
-
 func (container *Container) getTotalChildWidth(location Rectangle) float64 {
 	width := 0.0
 	for _, child := range container.children {
-		width += getChildWidth(location, child)
+		width += child.GetWidth(location)
 	}
 	return width
 }
@@ -138,7 +120,7 @@ func (container *Container) getTotalChildWidth(location Rectangle) float64 {
 func (container *Container) getTotalChildHeight(location Rectangle) float64 {
 	height := 0.0
 	for _, child := range container.children {
-		height += getChildHeight(location, child)
+		height += child.GetHeight(location)
 	}
 	return height
 }
