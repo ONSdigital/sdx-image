@@ -7,24 +7,24 @@ import (
 type Layout int
 
 const (
-	ROW Layout = iota
-	COLUMN
+	Row Layout = iota
+	Column
 )
 
 type Justification int
 
 const (
-	START Justification = iota
-	END
-	SPACED
+	Start Justification = iota
+	End
+	Spaced
 )
 
 type Alignment int
 
 const (
-	ALIGN_START Alignment = iota
-	ALIGN_END
-	ALIGN_CENTER
+	AlignStart Alignment = iota
+	AlignEnd
+	AlignCenter
 )
 
 type Container struct {
@@ -37,7 +37,7 @@ type Container struct {
 }
 
 func newContainer(width, height float64) *Container {
-	return &Container{Div: newDiv(width, height), layout: ROW, justifyContent: START, padding: 0.0}
+	return &Container{Div: newDiv(width, height), layout: Row, justifyContent: Start, padding: 0.0}
 }
 
 func (container *Container) GetWidth() float64 {
@@ -63,20 +63,20 @@ func (container *Container) renderChildren(location Rectangle, context *gg.Conte
 	wGap := 0.0
 	hGap := 0.0
 
-	if container.justifyContent == END {
-		if container.layout == ROW {
+	if container.justifyContent == End {
+		if container.layout == Row {
 			totalWidth := container.getTotalChildWidth(location)
 			w = location.width - totalWidth
-		} else if container.layout == COLUMN {
+		} else if container.layout == Column {
 			totalHeight := container.getTotalChildHeight(location)
 			h = location.height - totalHeight
 		}
-	} else if container.justifyContent == SPACED {
-		if container.layout == ROW {
+	} else if container.justifyContent == Spaced {
+		if container.layout == Row {
 			totalWidth := container.getTotalChildWidth(location)
 			wGap = (location.width - totalWidth) / float64(len(container.children)+1)
 			w = wGap
-		} else if container.layout == COLUMN {
+		} else if container.layout == Column {
 			totalHeight := container.getTotalChildHeight(location)
 			hGap = (location.height - totalHeight) / float64(len(container.children)+1)
 			h = hGap
@@ -87,25 +87,25 @@ func (container *Container) renderChildren(location Rectangle, context *gg.Conte
 		width := getChildWidth(location, child)
 		height := getChildHeight(location, child)
 
-		if container.alignItems == ALIGN_END {
-			if container.layout == ROW {
+		if container.alignItems == AlignEnd {
+			if container.layout == Row {
 				h = location.height - height
-			} else if container.layout == COLUMN {
+			} else if container.layout == Column {
 				w = location.width - width
 			}
-		} else if container.alignItems == ALIGN_CENTER {
-			if container.layout == ROW {
+		} else if container.alignItems == AlignCenter {
+			if container.layout == Row {
 				h = location.height/2 - height/2
-			} else if container.layout == COLUMN {
+			} else if container.layout == Column {
 				w = location.width/2 - width/2
 			}
 		}
 
 		childLocation := Rectangle{left + container.padding + w, top + container.padding + h, width, height}
 		child.Render(childLocation, context)
-		if container.layout == ROW {
+		if container.layout == Row {
 			w += width + wGap
-		} else if container.layout == COLUMN {
+		} else if container.layout == Column {
 			h += height + hGap
 		}
 	}

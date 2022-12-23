@@ -13,7 +13,7 @@ type Div struct {
 }
 
 func newDiv(width, height float64) *Div {
-	return &Div{width: width, height: height, backgroundColor: color.White, borderColor: color.White}
+	return &Div{width: width, height: height, backgroundColor: nil, borderColor: nil, borderWeight: 0.0}
 }
 
 func (div *Div) GetWidth() float64 {
@@ -31,11 +31,13 @@ func (div *Div) Render(location Rectangle, context *gg.Context) Rectangle {
 	h := location.height
 	b := div.borderWeight
 
-	context.DrawRectangle(l, t, w, h)
-	context.SetColor(color.White)
-	context.FillPreserve()
-	context.SetColor(div.backgroundColor)
-	context.Fill()
+	if div.backgroundColor != nil {
+		context.DrawRectangle(l, t, w, h)
+		context.SetColor(color.White)
+		context.FillPreserve()
+		context.SetColor(div.backgroundColor)
+		context.Fill()
+	}
 
 	//draw border
 	if div.borderWeight > 0 {

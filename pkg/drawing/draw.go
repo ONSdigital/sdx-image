@@ -17,23 +17,26 @@ func Draw() {
 	context.SetColor(WHITE)
 	context.Clear()
 
-	outer := newContainer(700, 700)
+	outer := newContainer(700, 1000)
 	outer.padding = 20
+	outer.layout = Column
 	outer.backgroundColor = RED
 	outer.borderColor = BLACK
-	outer.justifyContent = START
+	outer.justifyContent = Start
 
 	middle := newContainer(500, 500)
-	middle.layout = ROW
+	middle.layout = Row
 	middle.backgroundColor = CYAN
 	middle.borderColor = BLACK
 	middle.borderWeight = 20
-	middle.justifyContent = SPACED
-	middle.alignItems = ALIGN_CENTER
+	middle.justifyContent = Spaced
+	middle.alignItems = AlignCenter
 
 	createChildren(3, middle)
 
-	outer.children = []Displayable{middle}
+	bottom := newText("hello, a long line of text that needs wrapping", 48, 0.5, 100)
+
+	outer.children = []Displayable{middle, bottom}
 
 	Display(outer, 10, 10, context)
 
