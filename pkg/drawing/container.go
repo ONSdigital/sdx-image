@@ -38,14 +38,6 @@ func newContainer(width, height float64, context *gg.Context) *Container {
 	return &Container{Div: newDiv(width, height, context), layout: Row, justifyContent: Start, padding: 0.0}
 }
 
-func (container *Container) GetWidth(location Rectangle) float64 {
-	return container.GetWidth(location)
-}
-
-func (container *Container) GetHeight(location Rectangle) float64 {
-	return container.GetHeight(location)
-}
-
 func (container *Container) Render(location Rectangle) Rectangle {
 	rect := container.Div.Render(location)
 	container.renderChildren(rect)

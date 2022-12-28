@@ -27,10 +27,6 @@ func newText(value string, size int, width float64, context *gg.Context) *Text {
 	return &Text{value: value, size: size, Color: color.Black, Div: newDiv(width, 0, context)}
 }
 
-func (text *Text) GetWidth(location Rectangle) float64 {
-	return text.GetWidth(location)
-}
-
 func (text *Text) GetHeight(location Rectangle) float64 {
 	text.context.SetFontFace(FontMap[text.size])
 	lines := text.context.WordWrap(text.value, text.GetWidth(location))

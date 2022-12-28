@@ -20,14 +20,6 @@ func newDiv(width, height float64, context *gg.Context) *Div {
 		borderWeight:    0.0}
 }
 
-func (div *Div) GetWidth(location Rectangle) float64 {
-	return div.GetWidth(location)
-}
-
-func (div *Div) GetHeight(location Rectangle) float64 {
-	return div.GetHeight(location)
-}
-
 func (div *Div) Render(location Rectangle) Rectangle {
 	context := div.context
 	l := location.left
