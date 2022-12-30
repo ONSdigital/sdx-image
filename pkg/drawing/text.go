@@ -6,6 +6,8 @@ import (
 	"image/color"
 )
 
+const LineSpacing = 1.5
+
 var FontMap = make(map[int]font.Face)
 
 type Text struct {
@@ -27,25 +29,23 @@ func newText(value string, size int, width float64, context *gg.Context) *Text {
 	return &Text{value: value, size: size, Color: color.Black, Base: newBase(width, 0, context)}
 }
 
-func (text *Text) GetHeight(location Rectangle) float64 {
+func (text *Text) GetHeight(parent Dimension) float64 {
 	text.context.SetFontFace(FontMap[text.size])
-	lines := text.context.WordWrap(text.value, text.GetWidth(location))
+	width := text.GetWidth(parent)
+	lines := text.context.WordWrap(text.value, width)
 	size := float64(text.size)
 	n := float64(len(lines))
-	height := n*size + (n-1)*size*0.5
+	height := n * size * LineSpacing
 	return height
 }
 
-func (text *Text) Render(location Rectangle) Rectangle {
-	rect := text.Base.Render(location)
+func (text *Text) Render(area Rectangle) {
 	text.context.SetColor(text.Color)
 	text.context.SetFontFace(FontMap[text.size])
-	lines := text.context.WordWrap(text.value, location.width)
-	//text.context.DrawStringWrapped(text.value, rect.left, rect.top, 0, 0, rect.width, 1.5, gg.AlignLeft)
+	lines := text.context.WordWrap(text.value, area.width)
 	h := float64(text.size)
 	for _, line := range lines {
-		text.context.DrawString(line, rect.left, rect.top+h)
-		h += float64(text.size) * 1.5
+		text.context.DrawString(line, area.left, area.top+h)
+		h += float64(text.size) * LineSpacing
 	}
-	return location
 }

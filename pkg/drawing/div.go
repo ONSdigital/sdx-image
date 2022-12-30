@@ -20,12 +20,28 @@ func newDiv(width, height float64, context *gg.Context) *Div {
 		borderWeight:    0.0}
 }
 
-func (div *Div) Render(location Rectangle) Rectangle {
+func (div *Div) getInternalDim(parent Dimension) Dimension {
+	w := div.GetWidth(parent)
+	h := div.GetHeight(parent)
+	b := div.borderWeight
+	return Dimension{w - 2*b, h - 2*b}
+}
+
+func (div *Div) getInternalArea(area Rectangle) Rectangle {
+	l := area.left
+	t := area.top
+	w := area.width
+	h := area.height
+	b := div.borderWeight
+	return newRectangle(l+b, t+b, w-2*b, h-2*b)
+}
+
+func (div *Div) Render(area Rectangle) {
 	context := div.context
-	l := location.left
-	t := location.top
-	w := location.width
-	h := location.height
+	l := area.left
+	t := area.top
+	w := area.width
+	h := area.height
 	b := div.borderWeight
 
 	if div.backgroundColor != nil {
@@ -48,6 +64,4 @@ func (div *Div) Render(location Rectangle) Rectangle {
 		context.DrawRectangle(l, t+h-b, w, b)
 		context.Fill()
 	}
-
-	return Rectangle{l + b, t + b, w - 2*b, h - 2*b}
 }

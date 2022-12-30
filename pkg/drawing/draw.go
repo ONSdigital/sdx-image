@@ -34,9 +34,12 @@ func Draw() {
 
 	createChildren(3, middle)
 
-	bottom := newContainer(500, 500, context)
+	bottom := newContainer(500, 0, context)
 	bottom.layout = Row
 	bottom.justifyContent = JustifySpaced
+	bottom.borderColor = BLACK
+	bottom.borderWeight = 2
+
 	text := newText("hello, a long line of text that needs wrapping", 48, 0.5, context)
 	bottom.children = []Displayable{text}
 

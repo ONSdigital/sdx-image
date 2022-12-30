@@ -35,18 +35,36 @@ type Container struct {
 }
 
 func newContainer(width, height float64, context *gg.Context) *Container {
-	return &Container{Div: newDiv(width, height, context), layout: Row, justifyContent: JustifyStart, padding: 0.0}
+	return &Container{
+		Div:            newDiv(width, height, context),
+		layout:         Row,
+		justifyContent: JustifyStart,
+		alignItems:     AlignStart,
+		padding:        0.0}
 }
 
-func (container *Container) Render(location Rectangle) Rectangle {
-	rect := container.Div.Render(location)
-	container.renderChildren(rect)
-	return rect
+func (container *Container) GetHeight(parent Dimension) float64 {
+	height := container.Div.GetHeight(parent)
+	if height == 0 {
+		internal := container.Div.getInternalDim(parent)
+		if container.layout == Column {
+			height = container.getTotalChildHeight(internal)
+		} else {
+			height = container.getLargestChildHeight(internal)
+		}
+	}
+	return height
 }
 
-func (container *Container) renderChildren(location Rectangle) {
-	left := location.left
-	top := location.top
+func (container *Container) Render(area Rectangle) {
+	internalArea := container.Div.getInternalArea(area)
+	container.Div.Render(area)
+	container.renderChildren(internalArea)
+}
+
+func (container *Container) renderChildren(area Rectangle) {
+	left := area.left
+	top := area.top
 
 	w := 0.0
 	h := 0.0
@@ -55,44 +73,44 @@ func (container *Container) renderChildren(location Rectangle) {
 
 	if container.justifyContent == JustifyEnd {
 		if container.layout == Row {
-			totalWidth := container.getTotalChildWidth(location)
-			w = location.width - totalWidth
+			totalWidth := container.getTotalChildWidth(area.Dimension)
+			w = area.width - totalWidth
 		} else if container.layout == Column {
-			totalHeight := container.getTotalChildHeight(location)
-			h = location.height - totalHeight
+			totalHeight := container.getTotalChildHeight(area.Dimension)
+			h = area.height - totalHeight
 		}
 	} else if container.justifyContent == JustifySpaced {
 		if container.layout == Row {
-			totalWidth := container.getTotalChildWidth(location)
-			wGap = (location.width - totalWidth) / float64(len(container.children)+1)
+			totalWidth := container.getTotalChildWidth(area.Dimension)
+			wGap = (area.width - totalWidth) / float64(len(container.children)+1)
 			w = wGap
 		} else if container.layout == Column {
-			totalHeight := container.getTotalChildHeight(location)
-			hGap = (location.height - totalHeight) / float64(len(container.children)+1)
+			totalHeight := container.getTotalChildHeight(area.Dimension)
+			hGap = (area.height - totalHeight) / float64(len(container.children)+1)
 			h = hGap
 		}
 	}
 
 	for _, child := range container.children {
-		width := child.GetWidth(location)
-		height := child.GetHeight(location)
+		width := child.GetWidth(area.Dimension)
+		height := child.GetHeight(area.Dimension)
 
 		if container.alignItems == AlignEnd {
 			if container.layout == Row {
-				h = location.height - height
+				h = area.height - height
 			} else if container.layout == Column {
-				w = location.width - width
+				w = area.width - width
 			}
 		} else if container.alignItems == AlignCenter {
 			if container.layout == Row {
-				h = location.height/2 - height/2
+				h = area.height/2 - height/2
 			} else if container.layout == Column {
-				w = location.width/2 - width/2
+				w = area.width/2 - width/2
 			}
 		}
 
-		childLocation := Rectangle{left + container.padding + w, top + container.padding + h, width, height}
-		child.Render(childLocation)
+		childArea := newRectangle(left+container.padding+w, top+container.padding+h, width, height)
+		child.Render(childArea)
 		if container.layout == Row {
 			w += width + wGap
 		} else if container.layout == Column {
@@ -101,18 +119,29 @@ func (container *Container) renderChildren(location Rectangle) {
 	}
 }
 
-func (container *Container) getTotalChildWidth(location Rectangle) float64 {
+func (container *Container) getTotalChildWidth(dimension Dimension) float64 {
 	width := 0.0
 	for _, child := range container.children {
-		width += child.GetWidth(location)
+		width += child.GetWidth(dimension)
 	}
 	return width
 }
 
-func (container *Container) getTotalChildHeight(location Rectangle) float64 {
+func (container *Container) getTotalChildHeight(dimension Dimension) float64 {
 	height := 0.0
 	for _, child := range container.children {
-		height += child.GetHeight(location)
+		height += child.GetHeight(dimension)
 	}
 	return height
+}
+
+func (container *Container) getLargestChildHeight(dimension Dimension) float64 {
+	largest := 0.0
+	for _, child := range container.children {
+		height := child.GetHeight(dimension)
+		if height > largest {
+			largest = height
+		}
+	}
+	return largest
 }
