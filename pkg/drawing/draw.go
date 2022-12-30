@@ -22,21 +22,21 @@ func Draw() {
 	outer.layout = Column
 	outer.backgroundColor = RED
 	outer.borderColor = BLACK
-	outer.justifyContent = Start
+	outer.justifyContent = JustifyStart
 
 	middle := newContainer(500, 500, context)
 	middle.layout = Row
 	middle.backgroundColor = CYAN
 	middle.borderColor = BLACK
 	middle.borderWeight = 20
-	middle.justifyContent = Spaced
+	middle.justifyContent = JustifySpaced
 	middle.alignItems = AlignCenter
 
 	createChildren(3, middle)
 
 	bottom := newContainer(500, 500, context)
 	bottom.layout = Row
-	bottom.justifyContent = Spaced
+	bottom.justifyContent = JustifySpaced
 	text := newText("hello, a long line of text that needs wrapping", 48, 0.5, context)
 	bottom.children = []Displayable{text}
 

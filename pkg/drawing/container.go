@@ -12,9 +12,9 @@ const (
 type Justification int
 
 const (
-	Start Justification = iota
-	End
-	Spaced
+	JustifyStart Justification = iota
+	JustifyEnd
+	JustifySpaced
 )
 
 type Alignment int
@@ -35,7 +35,7 @@ type Container struct {
 }
 
 func newContainer(width, height float64, context *gg.Context) *Container {
-	return &Container{Div: newDiv(width, height, context), layout: Row, justifyContent: Start, padding: 0.0}
+	return &Container{Div: newDiv(width, height, context), layout: Row, justifyContent: JustifyStart, padding: 0.0}
 }
 
 func (container *Container) Render(location Rectangle) Rectangle {
@@ -53,7 +53,7 @@ func (container *Container) renderChildren(location Rectangle) {
 	wGap := 0.0
 	hGap := 0.0
 
-	if container.justifyContent == End {
+	if container.justifyContent == JustifyEnd {
 		if container.layout == Row {
 			totalWidth := container.getTotalChildWidth(location)
 			w = location.width - totalWidth
@@ -61,7 +61,7 @@ func (container *Container) renderChildren(location Rectangle) {
 			totalHeight := container.getTotalChildHeight(location)
 			h = location.height - totalHeight
 		}
-	} else if container.justifyContent == Spaced {
+	} else if container.justifyContent == JustifySpaced {
 		if container.layout == Row {
 			totalWidth := container.getTotalChildWidth(location)
 			wGap = (location.width - totalWidth) / float64(len(container.children)+1)

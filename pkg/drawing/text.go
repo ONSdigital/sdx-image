@@ -9,7 +9,7 @@ import (
 var FontMap = make(map[int]font.Face)
 
 type Text struct {
-	*Div
+	*Base
 	value string
 	size  int
 	Color color.Color
@@ -24,7 +24,7 @@ func newText(value string, size int, width float64, context *gg.Context) *Text {
 		}
 		FontMap[size] = fontFace
 	}
-	return &Text{value: value, size: size, Color: color.Black, Div: newDiv(width, 0, context)}
+	return &Text{value: value, size: size, Color: color.Black, Base: newBase(width, 0, context)}
 }
 
 func (text *Text) GetHeight(location Rectangle) float64 {
@@ -37,7 +37,7 @@ func (text *Text) GetHeight(location Rectangle) float64 {
 }
 
 func (text *Text) Render(location Rectangle) Rectangle {
-	rect := text.Div.Render(location)
+	rect := text.Base.Render(location)
 	text.context.SetColor(text.Color)
 	text.context.SetFontFace(FontMap[text.size])
 	lines := text.context.WordWrap(text.value, location.width)
