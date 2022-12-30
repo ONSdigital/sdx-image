@@ -43,7 +43,7 @@ func (canvas *Canvas) AddDiv(width, height float64, container *Container) *Div {
 }
 
 func (canvas *Canvas) AddText(value string, size int, container *Container) *Text {
-	text := newText(value, size, 1.0, canvas.context)
+	text := newText(value, size, canvas.context)
 	container.children = append(container.children, text)
 	return text
 }

@@ -26,7 +26,7 @@ type Text struct {
 	TextAlign
 }
 
-func newText(value string, size int, width float64, context *gg.Context) *Text {
+func newText(value string, size int, context *gg.Context) *Text {
 	_, exists := FontMap[size]
 	if !exists {
 		fontFace, err := gg.LoadFontFace("fonts/luxisr.ttf", float64(size))
@@ -36,7 +36,7 @@ func newText(value string, size int, width float64, context *gg.Context) *Text {
 		FontMap[size] = fontFace
 	}
 	return &Text{
-		Base:      newBase(width, 0, context),
+		Base:      newBase(1, 0, context),
 		value:     value,
 		size:      size,
 		Color:     color.Black,

@@ -35,6 +35,8 @@ func main() {
 	bottom.Layout = drawing.Row
 	bottom.BorderColor = drawing.BLACK
 	bottom.BorderWeight = 2
+	bottom.BorderColor = drawing.WHITE
+	bottom.Padding = 20
 
 	canvas.AddText("A very long line of text that needs wrapping", 48, bottom)
 

@@ -48,20 +48,25 @@ func (container *Container) GetHeight(parent Dimension) float64 {
 	height := container.Div.GetHeight(parent)
 	if height == 0 {
 		internal := container.Div.getInternalDim(parent)
-		internal.width -= container.Padding
-		internal.height -= container.Padding
+		internal.width -= 2 * container.Padding
+		internal.height -= 2 * container.Padding
 		if container.Layout == Column {
 			height = container.getTotalChildHeight(internal)
 		} else {
 			height = container.getLargestChildHeight(internal)
 		}
 		height += 2 * container.BorderWeight
+		height += 2 * container.Padding
 	}
 	return height
 }
 
 func (container *Container) Render(area Rectangle) {
 	internalArea := container.Div.getInternalArea(area)
+	internalArea.left += container.Padding
+	internalArea.top += container.Padding
+	internalArea.width -= 2 * container.Padding
+	internalArea.height -= 2 * container.Padding
 	container.Div.Render(area)
 	container.renderChildren(internalArea)
 }
@@ -113,7 +118,7 @@ func (container *Container) renderChildren(area Rectangle) {
 			}
 		}
 
-		childArea := newRectangle(left+container.Padding+w, top+container.Padding+h, width, height)
+		childArea := newRectangle(left+w, top+h, width, height)
 		child.Render(childArea)
 		if container.Layout == Row {
 			w += width + wGap
