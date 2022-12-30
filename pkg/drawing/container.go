@@ -52,6 +52,7 @@ func (container *Container) GetHeight(parent Dimension) float64 {
 		} else {
 			height = container.getLargestChildHeight(internal)
 		}
+		height += 2 * container.borderWeight
 	}
 	return height
 }

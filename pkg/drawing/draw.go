@@ -24,7 +24,7 @@ func Draw() {
 	outer.borderColor = BLACK
 	outer.justifyContent = JustifyStart
 
-	middle := newContainer(500, 500, context)
+	middle := newContainer(500, 0, context)
 	middle.layout = Row
 	middle.backgroundColor = CYAN
 	middle.borderColor = BLACK
@@ -56,7 +56,7 @@ func Draw() {
 func createChildren(n int, container *Container) {
 	var children = make([]Displayable, n)
 	for i := 0; i < n; i++ {
-		c := newContainer(0.3, 0.3, container.context)
+		c := newContainer(0.3, 50, container.context)
 		c.backgroundColor = WHITE
 		c.borderColor = BLACK
 		c.borderWeight = 1
