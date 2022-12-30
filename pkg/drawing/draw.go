@@ -17,25 +17,35 @@ func Draw() {
 	context.SetColor(WHITE)
 	context.Clear()
 
-	outer := newContainer(700, 700)
+	outer := newContainer(700, 1000, context)
 	outer.padding = 20
+	outer.layout = Column
 	outer.backgroundColor = RED
 	outer.borderColor = BLACK
-	outer.justifyContent = START
+	outer.justifyContent = JustifyStart
 
-	middle := newContainer(500, 500)
-	middle.layout = ROW
+	middle := newContainer(500, 500, context)
+	middle.layout = Row
 	middle.backgroundColor = CYAN
 	middle.borderColor = BLACK
 	middle.borderWeight = 20
-	middle.justifyContent = SPACED
-	middle.alignItems = ALIGN_CENTER
+	middle.justifyContent = JustifySpaced
+	middle.alignItems = AlignCenter
 
 	createChildren(3, middle)
 
-	outer.children = []Displayable{middle}
+	bottom := newContainer(500, 0, context)
+	bottom.layout = Row
+	bottom.justifyContent = JustifySpaced
+	bottom.borderColor = BLACK
+	bottom.borderWeight = 2
 
-	Display(outer, 10, 10, context)
+	text := newText("hello, a long line of text that needs wrapping", 48, 0.5, context)
+	bottom.children = []Displayable{text}
+
+	outer.children = []Displayable{middle, bottom}
+
+	Display(outer, 10, 10)
 
 	err := gg.SaveJPG("images/test.jpg", context.Image(), 100)
 	if err != nil {
@@ -46,7 +56,7 @@ func Draw() {
 func createChildren(n int, container *Container) {
 	var children = make([]Displayable, n)
 	for i := 0; i < n; i++ {
-		c := newContainer(0.3, 0.3)
+		c := newContainer(0.3, 0.3, container.context)
 		c.backgroundColor = WHITE
 		c.borderColor = BLACK
 		c.borderWeight = 1
