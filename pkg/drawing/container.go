@@ -28,31 +28,34 @@ const (
 type Container struct {
 	*Div
 	children       []Displayable
-	layout         Layout
-	justifyContent Justification
-	alignItems     Alignment
-	padding        float64
+	Layout         Layout
+	JustifyContent Justification
+	AlignItems     Alignment
+	Padding        float64
 }
 
 func newContainer(width, height float64, context *gg.Context) *Container {
 	return &Container{
 		Div:            newDiv(width, height, context),
-		layout:         Row,
-		justifyContent: JustifyStart,
-		alignItems:     AlignStart,
-		padding:        0.0}
+		Layout:         Row,
+		JustifyContent: JustifyStart,
+		AlignItems:     AlignStart,
+		Padding:        0.0,
+	}
 }
 
 func (container *Container) GetHeight(parent Dimension) float64 {
 	height := container.Div.GetHeight(parent)
 	if height == 0 {
 		internal := container.Div.getInternalDim(parent)
-		if container.layout == Column {
+		internal.width -= container.Padding
+		internal.height -= container.Padding
+		if container.Layout == Column {
 			height = container.getTotalChildHeight(internal)
 		} else {
 			height = container.getLargestChildHeight(internal)
 		}
-		height += 2 * container.borderWeight
+		height += 2 * container.BorderWeight
 	}
 	return height
 }
@@ -72,20 +75,20 @@ func (container *Container) renderChildren(area Rectangle) {
 	wGap := 0.0
 	hGap := 0.0
 
-	if container.justifyContent == JustifyEnd {
-		if container.layout == Row {
+	if container.JustifyContent == JustifyEnd {
+		if container.Layout == Row {
 			totalWidth := container.getTotalChildWidth(area.Dimension)
 			w = area.width - totalWidth
-		} else if container.layout == Column {
+		} else if container.Layout == Column {
 			totalHeight := container.getTotalChildHeight(area.Dimension)
 			h = area.height - totalHeight
 		}
-	} else if container.justifyContent == JustifySpaced {
-		if container.layout == Row {
+	} else if container.JustifyContent == JustifySpaced {
+		if container.Layout == Row {
 			totalWidth := container.getTotalChildWidth(area.Dimension)
 			wGap = (area.width - totalWidth) / float64(len(container.children)+1)
 			w = wGap
-		} else if container.layout == Column {
+		} else if container.Layout == Column {
 			totalHeight := container.getTotalChildHeight(area.Dimension)
 			hGap = (area.height - totalHeight) / float64(len(container.children)+1)
 			h = hGap
@@ -96,25 +99,25 @@ func (container *Container) renderChildren(area Rectangle) {
 		width := child.GetWidth(area.Dimension)
 		height := child.GetHeight(area.Dimension)
 
-		if container.alignItems == AlignEnd {
-			if container.layout == Row {
+		if container.AlignItems == AlignEnd {
+			if container.Layout == Row {
 				h = area.height - height
-			} else if container.layout == Column {
+			} else if container.Layout == Column {
 				w = area.width - width
 			}
-		} else if container.alignItems == AlignCenter {
-			if container.layout == Row {
+		} else if container.AlignItems == AlignCenter {
+			if container.Layout == Row {
 				h = area.height/2 - height/2
-			} else if container.layout == Column {
+			} else if container.Layout == Column {
 				w = area.width/2 - width/2
 			}
 		}
 
-		childArea := newRectangle(left+container.padding+w, top+container.padding+h, width, height)
+		childArea := newRectangle(left+container.Padding+w, top+container.Padding+h, width, height)
 		child.Render(childArea)
-		if container.layout == Row {
+		if container.Layout == Row {
 			w += width + wGap
-		} else if container.layout == Column {
+		} else if container.Layout == Column {
 			h += height + hGap
 		}
 	}

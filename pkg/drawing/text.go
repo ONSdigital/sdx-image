@@ -8,6 +8,14 @@ import (
 
 const LineSpacing = 1.5
 
+type TextAlign int
+
+const (
+	TextLeft TextAlign = iota
+	TextRight
+	TextCenter
+)
+
 var FontMap = make(map[int]font.Face)
 
 type Text struct {
@@ -15,6 +23,7 @@ type Text struct {
 	value string
 	size  int
 	Color color.Color
+	TextAlign
 }
 
 func newText(value string, size int, width float64, context *gg.Context) *Text {
@@ -26,7 +35,13 @@ func newText(value string, size int, width float64, context *gg.Context) *Text {
 		}
 		FontMap[size] = fontFace
 	}
-	return &Text{value: value, size: size, Color: color.Black, Base: newBase(width, 0, context)}
+	return &Text{
+		Base:      newBase(width, 0, context),
+		value:     value,
+		size:      size,
+		Color:     color.Black,
+		TextAlign: TextLeft,
+	}
 }
 
 func (text *Text) GetHeight(parent Dimension) float64 {
@@ -43,9 +58,21 @@ func (text *Text) Render(area Rectangle) {
 	text.context.SetColor(text.Color)
 	text.context.SetFontFace(FontMap[text.size])
 	lines := text.context.WordWrap(text.value, area.width)
+
 	h := float64(text.size)
-	for _, line := range lines {
-		text.context.DrawString(line, area.left, area.top+h)
-		h += float64(text.size) * LineSpacing
+	if len(lines) == 1 {
+		vw, _ := text.context.MeasureString(text.value)
+		if text.TextAlign == TextCenter {
+			text.context.DrawString(text.value, area.left+(area.width-vw)/2, area.top+h)
+		} else if text.TextAlign == TextRight {
+			text.context.DrawString(text.value, area.left+(area.width-vw), area.top+h)
+		} else {
+			text.context.DrawString(text.value, area.left, area.top+h)
+		}
+	} else {
+		for _, line := range lines {
+			text.context.DrawString(line, area.left, area.top+h)
+			h += float64(text.size) * LineSpacing
+		}
 	}
 }
