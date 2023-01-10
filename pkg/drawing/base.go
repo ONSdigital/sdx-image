@@ -1,5 +1,7 @@
 package drawing
 
+import "github.com/fogleman/gg"
+
 type Location struct {
 	left, top float64
 }
@@ -15,6 +17,12 @@ type Rectangle struct {
 
 func newRectangle(left, top, width, height float64) Rectangle {
 	return Rectangle{Location{left, top}, Dimension{width, height}}
+}
+
+type Displayable interface {
+	GetWidth(parent Dimension) float64
+	GetHeight(parent Dimension) float64
+	Render(area Rectangle, context *gg.Context)
 }
 
 type Base struct {
