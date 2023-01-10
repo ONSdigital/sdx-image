@@ -12,9 +12,9 @@ type Div struct {
 	BorderWeight    float64
 }
 
-func newDiv(width, height float64, context *gg.Context) *Div {
+func newDiv(width, height float64) *Div {
 	return &Div{
-		Base:            newBase(width, height, context),
+		Base:            newBase(width, height),
 		BackgroundColor: nil,
 		BorderColor:     nil,
 		BorderWeight:    0.0}
@@ -36,8 +36,7 @@ func (div *Div) getInternalArea(area Rectangle) Rectangle {
 	return newRectangle(l+b, t+b, w-2*b, h-2*b)
 }
 
-func (div *Div) Render(area Rectangle) {
-	context := div.context
+func (div *Div) Render(area Rectangle, context *gg.Context) {
 	l := area.left
 	t := area.top
 	w := area.width

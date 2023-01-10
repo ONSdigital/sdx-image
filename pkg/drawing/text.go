@@ -24,6 +24,7 @@ type Text struct {
 	size  int
 	Color color.Color
 	TextAlign
+	context *gg.Context
 }
 
 func newText(value string, size int, context *gg.Context) *Text {
@@ -36,11 +37,12 @@ func newText(value string, size int, context *gg.Context) *Text {
 		FontMap[size] = fontFace
 	}
 	return &Text{
-		Base:      newBase(1, 0, context),
+		Base:      newBase(1, 0),
 		value:     value,
 		size:      size,
 		Color:     color.Black,
 		TextAlign: TextLeft,
+		context:   context,
 	}
 }
 
@@ -54,24 +56,24 @@ func (text *Text) GetHeight(parent Dimension) float64 {
 	return height
 }
 
-func (text *Text) Render(area Rectangle) {
-	text.context.SetColor(text.Color)
-	text.context.SetFontFace(FontMap[text.size])
+func (text *Text) Render(area Rectangle, context *gg.Context) {
+	context.SetColor(text.Color)
+	context.SetFontFace(FontMap[text.size])
 	lines := text.context.WordWrap(text.value, area.width)
 
 	h := float64(text.size)
 	if len(lines) == 1 {
 		vw, _ := text.context.MeasureString(text.value)
 		if text.TextAlign == TextCenter {
-			text.context.DrawString(text.value, area.left+(area.width-vw)/2, area.top+h)
+			context.DrawString(text.value, area.left+(area.width-vw)/2, area.top+h)
 		} else if text.TextAlign == TextRight {
-			text.context.DrawString(text.value, area.left+(area.width-vw), area.top+h)
+			context.DrawString(text.value, area.left+(area.width-vw), area.top+h)
 		} else {
-			text.context.DrawString(text.value, area.left, area.top+h)
+			context.DrawString(text.value, area.left, area.top+h)
 		}
 	} else {
 		for _, line := range lines {
-			text.context.DrawString(line, area.left, area.top+h)
+			context.DrawString(line, area.left, area.top+h)
 			h += float64(text.size) * LineSpacing
 		}
 	}

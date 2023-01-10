@@ -1,14 +1,15 @@
 package main
 
 import (
-	"github.com/fogleman/gg"
+	"image"
+	"image/jpeg"
+	"os"
 	"sdxImage/pkg/drawing"
 )
 
 func main() {
 	width := 1241
-	height := 1754
-	canvas := drawing.NewCanvas(width, height)
+	canvas := drawing.NewCanvas(width)
 
 	outer := canvas.AddContainer(700, 1000, canvas.GetBody())
 	outer.Padding = 20
@@ -40,7 +41,7 @@ func main() {
 
 	canvas.AddText("A very long line of text that needs wrapping", 48, bottom)
 
-	err := gg.SaveJPG("images/test.jpg", canvas.Draw(), 100)
+	err := saveJPG("images/test.jpg", canvas.Draw(), 100)
 	if err != nil {
 		return
 	}
@@ -53,4 +54,17 @@ func createChildren(n int, container *drawing.Container, canvas *drawing.Canvas)
 		c.BorderColor = drawing.BLACK
 		c.BorderWeight = 1
 	}
+}
+
+func saveJPG(path string, im image.Image, quality int) error {
+	file, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	var opt jpeg.Options
+	opt.Quality = quality
+
+	return jpeg.Encode(file, im, &opt)
 }

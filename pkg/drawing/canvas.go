@@ -12,18 +12,16 @@ var RED = color.RGBA{R: 255, G: 1, B: 1}
 var CYAN = color.RGBA{R: 161, G: 211, B: 225}
 
 type Canvas struct {
-	Dimension
+	width   float64
 	body    *Container
 	context *gg.Context
 }
 
-func NewCanvas(width, height int) *Canvas {
-	context := gg.NewContext(width, height)
+func NewCanvas(width int) *Canvas {
 	w := float64(width)
-	h := float64(height)
-	body := newContainer(w, h, context)
+	body := newContainer(w, 0)
 	body.Layout = Row
-	return &Canvas{Dimension: Dimension{w, h}, body: body, context: context}
+	return &Canvas{width: w, body: body}
 }
 
 func (canvas *Canvas) GetBody() *Container {
@@ -31,27 +29,34 @@ func (canvas *Canvas) GetBody() *Container {
 }
 
 func (canvas *Canvas) AddContainer(width, height float64, container *Container) *Container {
-	c := newContainer(width, height, canvas.context)
+	c := newContainer(width, height)
 	container.children = append(container.children, c)
 	return c
 }
 
 func (canvas *Canvas) AddDiv(width, height float64, container *Container) *Div {
-	div := newDiv(width, height, canvas.context)
+	div := newDiv(width, height)
 	container.children = append(container.children, div)
 	return div
 }
 
 func (canvas *Canvas) AddText(value string, size int, container *Container) *Text {
-	text := newText(value, size, canvas.context)
+	tempContext := gg.NewContext(int(canvas.width), 1000)
+	text := newText(value, size, tempContext)
 	container.children = append(container.children, text)
 	return text
 }
 
 func (canvas *Canvas) Draw() image.Image {
-	area := newRectangle(0, 0, canvas.width, canvas.height)
-	canvas.context.SetColor(WHITE)
-	canvas.context.Clear()
-	canvas.body.Render(area)
-	return canvas.context.Image()
+	width := canvas.width
+	height := canvas.body.GetHeight(Dimension{width: canvas.width, height: 0})
+
+	context := gg.NewContext(int(width), int(height))
+	area := newRectangle(0, 0, width, height)
+
+	context.SetColor(WHITE)
+	context.Clear()
+	canvas.body.Render(area, context)
+
+	return context.Image()
 }

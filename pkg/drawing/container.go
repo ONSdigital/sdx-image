@@ -34,9 +34,9 @@ type Container struct {
 	Padding        float64
 }
 
-func newContainer(width, height float64, context *gg.Context) *Container {
+func newContainer(width, height float64) *Container {
 	return &Container{
-		Div:            newDiv(width, height, context),
+		Div:            newDiv(width, height),
 		Layout:         Row,
 		JustifyContent: JustifyStart,
 		AlignItems:     AlignStart,
@@ -61,17 +61,17 @@ func (container *Container) GetHeight(parent Dimension) float64 {
 	return height
 }
 
-func (container *Container) Render(area Rectangle) {
+func (container *Container) Render(area Rectangle, context *gg.Context) {
 	internalArea := container.Div.getInternalArea(area)
 	internalArea.left += container.Padding
 	internalArea.top += container.Padding
 	internalArea.width -= 2 * container.Padding
 	internalArea.height -= 2 * container.Padding
-	container.Div.Render(area)
-	container.renderChildren(internalArea)
+	container.Div.Render(area, context)
+	container.renderChildren(internalArea, context)
 }
 
-func (container *Container) renderChildren(area Rectangle) {
+func (container *Container) renderChildren(area Rectangle, context *gg.Context) {
 	left := area.left
 	top := area.top
 
@@ -119,7 +119,7 @@ func (container *Container) renderChildren(area Rectangle) {
 		}
 
 		childArea := newRectangle(left+w, top+h, width, height)
-		child.Render(childArea)
+		child.Render(childArea, context)
 		if container.Layout == Row {
 			w += width + wGap
 		} else if container.Layout == Column {

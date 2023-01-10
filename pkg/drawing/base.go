@@ -1,7 +1,5 @@
 package drawing
 
-import "github.com/fogleman/gg"
-
 type Location struct {
 	left, top float64
 }
@@ -21,11 +19,10 @@ func newRectangle(left, top, width, height float64) Rectangle {
 
 type Base struct {
 	Dimension // 0 fit content, 0 < x <= 1 proportion of parent, 1 < x length in px
-	context   *gg.Context
 }
 
-func newBase(width, height float64, context *gg.Context) *Base {
-	return &Base{Dimension: Dimension{width, height}, context: context}
+func newBase(width, height float64) *Base {
+	return &Base{Dimension: Dimension{width, height}}
 }
 
 func (base *Base) GetWidth(parent Dimension) float64 {
