@@ -8,6 +8,14 @@ import (
 
 const LineSpacing = 1.5
 
+type TextAlign int
+
+const (
+	TextLeft TextAlign = iota
+	TextRight
+	TextCenter
+)
+
 var FontMap = make(map[int]font.Face)
 
 type Text struct {
@@ -15,9 +23,11 @@ type Text struct {
 	value string
 	size  int
 	Color color.Color
+	TextAlign
+	context *gg.Context
 }
 
-func newText(value string, size int, width float64, context *gg.Context) *Text {
+func newText(value string, size int, context *gg.Context) *Text {
 	_, exists := FontMap[size]
 	if !exists {
 		fontFace, err := gg.LoadFontFace("fonts/luxisr.ttf", float64(size))
@@ -26,7 +36,14 @@ func newText(value string, size int, width float64, context *gg.Context) *Text {
 		}
 		FontMap[size] = fontFace
 	}
-	return &Text{value: value, size: size, Color: color.Black, Base: newBase(width, 0, context)}
+	return &Text{
+		Base:      newBase(1, 0),
+		value:     value,
+		size:      size,
+		Color:     color.Black,
+		TextAlign: TextLeft,
+		context:   context,
+	}
 }
 
 func (text *Text) GetHeight(parent Dimension) float64 {
@@ -39,13 +56,25 @@ func (text *Text) GetHeight(parent Dimension) float64 {
 	return height
 }
 
-func (text *Text) Render(area Rectangle) {
-	text.context.SetColor(text.Color)
-	text.context.SetFontFace(FontMap[text.size])
+func (text *Text) Render(area Rectangle, context *gg.Context) {
+	context.SetColor(text.Color)
+	context.SetFontFace(FontMap[text.size])
 	lines := text.context.WordWrap(text.value, area.width)
+
 	h := float64(text.size)
-	for _, line := range lines {
-		text.context.DrawString(line, area.left, area.top+h)
-		h += float64(text.size) * LineSpacing
+	if len(lines) == 1 {
+		vw, _ := text.context.MeasureString(text.value)
+		if text.TextAlign == TextCenter {
+			context.DrawString(text.value, area.left+(area.width-vw)/2, area.top+h)
+		} else if text.TextAlign == TextRight {
+			context.DrawString(text.value, area.left+(area.width-vw), area.top+h)
+		} else {
+			context.DrawString(text.value, area.left, area.top+h)
+		}
+	} else {
+		for _, line := range lines {
+			context.DrawString(line, area.left, area.top+h)
+			h += float64(text.size) * LineSpacing
+		}
 	}
 }

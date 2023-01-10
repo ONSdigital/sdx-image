@@ -19,13 +19,18 @@ func newRectangle(left, top, width, height float64) Rectangle {
 	return Rectangle{Location{left, top}, Dimension{width, height}}
 }
 
-type Base struct {
-	Dimension // 0 fit content, 0 < x <= 1 proportion of parent, 1 < x length in px
-	context   *gg.Context
+type Displayable interface {
+	GetWidth(parent Dimension) float64
+	GetHeight(parent Dimension) float64
+	Render(area Rectangle, context *gg.Context)
 }
 
-func newBase(width, height float64, context *gg.Context) *Base {
-	return &Base{Dimension: Dimension{width, height}, context: context}
+type Base struct {
+	Dimension // 0 fit content, 0 < x <= 1 proportion of parent, 1 < x length in px
+}
+
+func newBase(width, height float64) *Base {
+	return &Base{Dimension: Dimension{width, height}}
 }
 
 func (base *Base) GetWidth(parent Dimension) float64 {
