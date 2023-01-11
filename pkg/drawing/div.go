@@ -7,23 +7,32 @@ import (
 
 type Div struct {
 	*Base
-	BackgroundColor color.Color
-	BorderColor     color.Color
-	BorderWeight    float64
+	backgroundColor color.Color
+	borderColor     color.Color
+	borderWeight    float64
 }
 
 func newDiv(width, height float64) *Div {
 	return &Div{
 		Base:            newBase(width, height),
-		BackgroundColor: nil,
-		BorderColor:     nil,
-		BorderWeight:    0.0}
+		backgroundColor: nil,
+		borderColor:     nil,
+		borderWeight:    0.0}
+}
+
+func (div *Div) SetBackgroundColor(color color.Color) {
+	div.backgroundColor = color
+}
+
+func (div *Div) SetBorder(color color.Color, weight float64) {
+	div.borderColor = color
+	div.borderWeight = weight
 }
 
 func (div *Div) getInternalDim(parent Dimension) Dimension {
 	w := div.GetWidth(parent)
 	h := div.GetHeight(parent)
-	b := div.BorderWeight
+	b := div.borderWeight
 	return Dimension{w - 2*b, h - 2*b}
 }
 
@@ -32,7 +41,7 @@ func (div *Div) getInternalArea(area Rectangle) Rectangle {
 	t := area.top
 	w := area.width
 	h := area.height
-	b := div.BorderWeight
+	b := div.borderWeight
 	return newRectangle(l+b, t+b, w-2*b, h-2*b)
 }
 
@@ -41,19 +50,19 @@ func (div *Div) Render(area Rectangle, context *gg.Context) {
 	t := area.top
 	w := area.width
 	h := area.height
-	b := div.BorderWeight
+	b := div.borderWeight
 
-	if div.BackgroundColor != nil {
+	if div.backgroundColor != nil {
 		context.DrawRectangle(l, t, w, h)
 		context.SetColor(color.White)
 		context.FillPreserve()
-		context.SetColor(div.BackgroundColor)
+		context.SetColor(div.backgroundColor)
 		context.Fill()
 	}
 
 	//draw border
-	if div.BorderWeight > 0 {
-		context.SetColor(div.BorderColor)
+	if div.borderWeight > 0 {
+		context.SetColor(div.borderColor)
 		context.DrawRectangle(l, t, b, h)
 		context.Fill()
 		context.DrawRectangle(l+w-b, t, b, h)

@@ -20,12 +20,12 @@ type Canvas struct {
 func NewCanvas(width int) *Canvas {
 	w := float64(width)
 	body := newContainer(w, 0)
-	body.Layout = Row
+	body.layout = LayoutRow
 	return &Canvas{width: w, body: body}
 }
 
-func (canvas *Canvas) GetBody() *Container {
-	return canvas.body
+func (canvas *Canvas) AddTopLevelContainer(width, height float64) *Container {
+	return canvas.AddContainer(width, height, canvas.body)
 }
 
 func (canvas *Canvas) AddContainer(width, height float64, container *Container) *Container {
