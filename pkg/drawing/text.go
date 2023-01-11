@@ -3,7 +3,6 @@ package drawing
 import (
 	"github.com/fogleman/gg"
 	"golang.org/x/image/font"
-	"image/color"
 )
 
 const LineSpacing = 1.5
@@ -24,7 +23,7 @@ type Text struct {
 	value     string
 	size      int
 	bold      bool
-	color     color.Color
+	color     Colour
 	textAlign TextAlign
 	context   *gg.Context
 }
@@ -54,13 +53,13 @@ func newText(value string, size int, bold bool, context *gg.Context) *Text {
 		value:     value,
 		size:      size,
 		bold:      bold,
-		color:     color.Black,
+		color:     Color{0, 0, 0},
 		textAlign: TextLeft,
 		context:   context,
 	}
 }
 
-func (text *Text) SetColor(color color.Color) {
+func (text *Text) SetColor(color Colour) {
 	text.color = color
 }
 
@@ -83,17 +82,19 @@ func (text *Text) GetHeight(parent Dimension) float64 {
 }
 
 func (text *Text) Render(area Rectangle, context *gg.Context) {
+
 	if text.bold {
 		context.SetFontFace(BoldFontMap[text.size])
 	} else {
 		context.SetFontFace(FontMap[text.size])
 	}
-	context.SetColor(text.color)
-	lines := text.context.WordWrap(text.value, area.width)
+
+	setColour(text.color, context)
+	lines := context.WordWrap(text.value, area.width)
 
 	h := float64(text.size)
 	if len(lines) == 1 {
-		vw, _ := text.context.MeasureString(text.value)
+		vw, _ := context.MeasureString(text.value)
 		if text.textAlign == TextCenter {
 			context.DrawString(text.value, area.left+(area.width-vw)/2, area.top+h)
 		} else if text.textAlign == TextRight {

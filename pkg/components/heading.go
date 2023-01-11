@@ -1,7 +1,6 @@
 package components
 
 import (
-	"image/color"
 	"sdxImage/pkg/drawing"
 )
 
@@ -17,7 +16,7 @@ func CreateHeading(
 
 	titleBox := canvas.AddContainer(1, 0, headerBox)
 	titleBox.SetBackgroundColor(drawing.CYAN)
-	titleBox.SetBorder(color.Black, 1)
+	titleBox.SetBorder(drawing.BLACK, 1)
 	titleBox.SetPadding(padding)
 
 	titleText := canvas.AddBoldText(surveyName, 36, titleBox)
@@ -30,7 +29,7 @@ func CreateHeading(
 
 	for _, key := range []string{"Form Type", "Respondent", "Submitted At"} {
 		c := canvas.AddContainer(1, 0, detailsLeft)
-		c.SetBorder(color.Black, 1)
+		c.SetBorder(drawing.BLACK, 1)
 		c.SetPadding(padding)
 		t := canvas.AddText(key, 24, c)
 		t.SetTextAlign(drawing.TextLeft)
@@ -38,7 +37,7 @@ func CreateHeading(
 
 	for _, value := range []string{formType, ruRef, submittedAt} {
 		c := canvas.AddContainer(1, 0, detailsRight)
-		c.SetBorder(color.Black, 1)
+		c.SetBorder(drawing.BLACK, 1)
 		c.SetPadding(padding)
 		t := canvas.AddText(value, 24, c)
 		t.SetTextAlign(drawing.TextLeft)

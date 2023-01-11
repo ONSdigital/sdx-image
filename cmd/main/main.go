@@ -24,6 +24,10 @@ func main() {
 		canvas,
 		outer)
 
+	canvas.AddDiv(1, 140, outer)
+
+	components.CreateAnswer("11", "What was your total turnover?", "56000", canvas, outer)
+
 	err := saveJPG("images/test.jpg", canvas.Draw(), 100)
 	if err != nil {
 		return

@@ -2,13 +2,12 @@ package drawing
 
 import (
 	"github.com/fogleman/gg"
-	"image/color"
 )
 
 type Div struct {
 	*Base
-	backgroundColor color.Color
-	borderColor     color.Color
+	backgroundColor Colour
+	borderColor     Colour
 	borderWeight    float64
 }
 
@@ -20,12 +19,12 @@ func newDiv(width, height float64) *Div {
 		borderWeight:    0.0}
 }
 
-func (div *Div) SetBackgroundColor(color color.Color) {
-	div.backgroundColor = color
+func (div *Div) SetBackgroundColor(colour Colour) {
+	div.backgroundColor = colour
 }
 
-func (div *Div) SetBorder(color color.Color, weight float64) {
-	div.borderColor = color
+func (div *Div) SetBorder(colour Colour, weight float64) {
+	div.borderColor = colour
 	div.borderWeight = weight
 }
 
@@ -54,15 +53,15 @@ func (div *Div) Render(area Rectangle, context *gg.Context) {
 
 	if div.backgroundColor != nil {
 		context.DrawRectangle(l, t, w, h)
-		context.SetColor(color.White)
+		context.SetRGB255(255, 255, 255)
 		context.FillPreserve()
-		context.SetColor(div.backgroundColor)
+		setColour(div.backgroundColor, context)
 		context.Fill()
 	}
 
 	//draw border
 	if div.borderWeight > 0 {
-		context.SetColor(div.borderColor)
+		setColour(div.borderColor, context)
 		context.DrawRectangle(l, t, b, h)
 		context.Fill()
 		context.DrawRectangle(l+w-b, t, b, h)

@@ -3,13 +3,7 @@ package drawing
 import (
 	"github.com/fogleman/gg"
 	"image"
-	"image/color"
 )
-
-var WHITE = color.White
-var BLACK = color.Black
-var RED = color.RGBA{R: 255, G: 1, B: 1}
-var CYAN = color.RGBA{R: 161, G: 211, B: 225}
 
 type Canvas struct {
 	width   float64
@@ -61,7 +55,7 @@ func (canvas *Canvas) Draw() image.Image {
 	context := gg.NewContext(int(width), int(height))
 	area := newRectangle(0, 0, width, height)
 
-	context.SetColor(WHITE)
+	setColour(WHITE, context)
 	context.Clear()
 	canvas.body.Render(area, context)
 
