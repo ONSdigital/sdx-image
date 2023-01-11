@@ -13,14 +13,14 @@ func CreateHeading(
 	padding := 8.0
 
 	headerBox := canvas.AddContainer(1, 0, container)
-	headerBox.SetBorder(drawing.BLACK, 4)
+	headerBox.SetBorder(drawing.BLACK, 2)
 
 	titleBox := canvas.AddContainer(1, 0, headerBox)
 	titleBox.SetBackgroundColor(drawing.CYAN)
 	titleBox.SetBorder(color.Black, 1)
 	titleBox.SetPadding(padding)
 
-	titleText := canvas.AddText(surveyName, 34, titleBox)
+	titleText := canvas.AddBoldText(surveyName, 36, titleBox)
 	titleText.SetTextAlign(drawing.TextCenter)
 
 	detailsBox := canvas.AddContainer(1, 0, headerBox)

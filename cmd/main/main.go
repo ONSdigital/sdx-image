@@ -17,8 +17,8 @@ func main() {
 	outer.SetPadding(140)
 
 	components.CreateHeading(
-		"Monthly Vacancy Survey",
-		"0005",
+		"Annual Business Survey",
+		"1802",
 		"49800108249D",
 		"11 January 2023 14:49:33",
 		canvas,

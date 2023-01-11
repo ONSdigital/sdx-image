@@ -42,7 +42,14 @@ func (canvas *Canvas) AddDiv(width, height float64, container *Container) *Div {
 
 func (canvas *Canvas) AddText(value string, size int, container *Container) *Text {
 	tempContext := gg.NewContext(int(canvas.width), 1000)
-	text := newText(value, size, tempContext)
+	text := newText(value, size, false, tempContext)
+	container.children = append(container.children, text)
+	return text
+}
+
+func (canvas *Canvas) AddBoldText(value string, size int, container *Container) *Text {
+	tempContext := gg.NewContext(int(canvas.width), 1000)
+	text := newText(value, size, true, tempContext)
 	container.children = append(container.children, text)
 	return text
 }

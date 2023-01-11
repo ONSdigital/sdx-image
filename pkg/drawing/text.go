@@ -17,29 +17,43 @@ const (
 )
 
 var FontMap = make(map[int]font.Face)
+var BoldFontMap = make(map[int]font.Face)
 
 type Text struct {
 	*Base
 	value     string
 	size      int
+	bold      bool
 	color     color.Color
 	textAlign TextAlign
 	context   *gg.Context
 }
 
-func newText(value string, size int, context *gg.Context) *Text {
-	_, exists := FontMap[size]
-	if !exists {
-		fontFace, err := gg.LoadFontFace("fonts/luxisr.ttf", float64(size))
-		if err != nil {
-			panic(err)
+func newText(value string, size int, bold bool, context *gg.Context) *Text {
+	if bold {
+		_, exists := BoldFontMap[size]
+		if !exists {
+			fontFace, err := gg.LoadFontFace("fonts/luxisb.ttf", float64(size))
+			if err != nil {
+				panic(err)
+			}
+			BoldFontMap[size] = fontFace
 		}
-		FontMap[size] = fontFace
+	} else {
+		_, exists := FontMap[size]
+		if !exists {
+			fontFace, err := gg.LoadFontFace("fonts/luxisr.ttf", float64(size))
+			if err != nil {
+				panic(err)
+			}
+			FontMap[size] = fontFace
+		}
 	}
 	return &Text{
 		Base:      newBase(1, 0),
 		value:     value,
 		size:      size,
+		bold:      bold,
 		color:     color.Black,
 		textAlign: TextLeft,
 		context:   context,
@@ -55,7 +69,11 @@ func (text *Text) SetTextAlign(textAlign TextAlign) {
 }
 
 func (text *Text) GetHeight(parent Dimension) float64 {
-	text.context.SetFontFace(FontMap[text.size])
+	if text.bold {
+		text.context.SetFontFace(BoldFontMap[text.size])
+	} else {
+		text.context.SetFontFace(FontMap[text.size])
+	}
 	width := text.GetWidth(parent)
 	lines := text.context.WordWrap(text.value, width)
 	size := float64(text.size)
@@ -65,8 +83,12 @@ func (text *Text) GetHeight(parent Dimension) float64 {
 }
 
 func (text *Text) Render(area Rectangle, context *gg.Context) {
+	if text.bold {
+		context.SetFontFace(BoldFontMap[text.size])
+	} else {
+		context.SetFontFace(FontMap[text.size])
+	}
 	context.SetColor(text.color)
-	context.SetFontFace(FontMap[text.size])
 	lines := text.context.WordWrap(text.value, area.width)
 
 	h := float64(text.size)
