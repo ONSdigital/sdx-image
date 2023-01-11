@@ -5,12 +5,12 @@ import (
 	"sdxImage/pkg/drawing"
 )
 
+const padding = 8.0
+
 func CreateHeading(
 	surveyName, formType, ruRef, submittedAt string,
 	canvas *drawing.Canvas,
 	container *drawing.Container) {
-
-	padding := 8.0
 
 	headerBox := canvas.AddContainer(1, 0, container)
 	headerBox.SetBorder(drawing.BLACK, 2)
