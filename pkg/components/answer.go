@@ -22,10 +22,10 @@ func createAnswer(
 	questionContainer := canvas.AddContainer(1, 0, outerContainer)
 	questionContainer.SetLayout(drawing.LayoutRow, drawing.JustifyStart, drawing.AlignStart)
 
-	qCodeBox := canvas.AddContainer(0.1, 0, questionContainer)
+	qCodeBox := canvas.AddContainer(0.07, 0, questionContainer)
 	canvas.AddBoldText(qCode+".", qCodeSize, qCodeBox)
 
-	questionBox := canvas.AddContainer(0.9, 0, questionContainer)
+	questionBox := canvas.AddContainer(0.93, 0, questionContainer)
 	canvas.AddText(question, questionSize, questionBox)
 
 	answerContainer := canvas.AddContainer(1, 0, outerContainer)
