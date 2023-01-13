@@ -5,37 +5,26 @@ import (
 	"image/jpeg"
 	"os"
 	"sdxImage/pkg/components"
-	"sdxImage/pkg/drawing"
 )
 
 func main() {
-	width := 1241
-	minHeight := 1754.0
-	canvas := drawing.NewCanvas(width)
+	header := components.Header{
+		SurveyName:  "Annual Business Survey",
+		FormType:    "1802",
+		RuRef:       "49800108249D",
+		SubmittedAt: "11 January 2023 14:49:33"}
 
-	outer := canvas.AddTopLevelContainer(float64(width), 0)
-	outer.SetLayout(
-		drawing.LayoutColumn,
-		drawing.JustifyStart,
-		drawing.AlignStart).SetPaddingAll(140)
+	page := components.CreatePage(header)
 
-	components.CreateHeading(
-		"Annual Business Survey",
-		"1802",
-		"49800108249D",
-		"11 January 2023 14:49:33",
-		canvas,
-		outer)
-
-	reportingSection := components.NewSection("Reporting", canvas, outer)
+	reportingSection := page.AddSection("Reporting")
 	reportingSection.AddAnswer("11", "To", "01/01/2021")
 	reportingSection.AddAnswer("12", "From", "01/01/2022")
 
-	incomeSection := components.NewSection("Income", canvas, outer)
+	incomeSection := page.AddSection("Income")
 	incomeSection.AddAnswer("123", "What was your total turnover?", "56000")
 	incomeSection.AddAnswer("124", "What did you spend on goods?", "34000")
 
-	err := saveJPG("images/test.jpg", canvas.Draw(minHeight), 100)
+	err := saveJPG("images/test.jpg", page.Draw(), 100)
 	if err != nil {
 		return
 	}
