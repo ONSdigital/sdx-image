@@ -59,12 +59,14 @@ func newText(value string, size int, bold bool, context *gg.Context) *Text {
 	}
 }
 
-func (text *Text) SetColor(color Colour) {
+func (text *Text) SetColor(color Colour) *Text {
 	text.color = color
+	return text
 }
 
-func (text *Text) SetTextAlign(textAlign TextAlign) {
+func (text *Text) SetTextAlign(textAlign TextAlign) *Text {
 	text.textAlign = textAlign
+	return text
 }
 
 func (text *Text) GetHeight(parent Dimension) float64 {

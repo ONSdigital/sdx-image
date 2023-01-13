@@ -48,9 +48,12 @@ func (canvas *Canvas) AddBoldText(value string, size int, container *Container) 
 	return text
 }
 
-func (canvas *Canvas) Draw() image.Image {
+func (canvas *Canvas) Draw(minHeight float64) image.Image {
 	width := canvas.width
 	height := canvas.body.GetHeight(Dimension{width: canvas.width, height: 0})
+	if height < minHeight {
+		height = minHeight
+	}
 
 	context := gg.NewContext(int(width), int(height))
 	area := newRectangle(0, 0, width, height)

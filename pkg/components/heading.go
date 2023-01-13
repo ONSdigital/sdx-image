@@ -4,20 +4,23 @@ import (
 	"sdxImage/pkg/drawing"
 )
 
-const padding = 8.0
+const padding = 6.0
+
+var cyan = drawing.CreateColor(161, 211, 225)
 
 func CreateHeading(
 	surveyName, formType, ruRef, submittedAt string,
 	canvas *drawing.Canvas,
-	container *drawing.Container) {
+	parent *drawing.Container) {
 
-	headerBox := canvas.AddContainer(1, 0, container)
+	headerArea := canvas.AddContainer(1, 0, parent)
+	headerArea.SetPadding(0, 0, 0, 60)
+
+	headerBox := canvas.AddContainer(1, 0, headerArea)
 	headerBox.SetBorder(drawing.BLACK, 2)
 
 	titleBox := canvas.AddContainer(1, 0, headerBox)
-	titleBox.SetBackgroundColor(drawing.CYAN)
-	titleBox.SetBorder(drawing.BLACK, 1)
-	titleBox.SetPadding(padding)
+	titleBox.SetPaddingAll(padding).SetBackgroundColor(cyan).SetBorder(drawing.BLACK, 1)
 
 	titleText := canvas.AddBoldText(surveyName, 36, titleBox)
 	titleText.SetTextAlign(drawing.TextCenter)
@@ -30,7 +33,7 @@ func CreateHeading(
 	for _, key := range []string{"Form Type", "Respondent", "Submitted At"} {
 		c := canvas.AddContainer(1, 0, detailsLeft)
 		c.SetBorder(drawing.BLACK, 1)
-		c.SetPadding(padding)
+		c.SetPaddingAll(padding)
 		t := canvas.AddText(key, 24, c)
 		t.SetTextAlign(drawing.TextLeft)
 	}
@@ -38,7 +41,7 @@ func CreateHeading(
 	for _, value := range []string{formType, ruRef, submittedAt} {
 		c := canvas.AddContainer(1, 0, detailsRight)
 		c.SetBorder(drawing.BLACK, 1)
-		c.SetPadding(padding)
+		c.SetPaddingAll(padding)
 		t := canvas.AddText(value, 24, c)
 		t.SetTextAlign(drawing.TextLeft)
 	}

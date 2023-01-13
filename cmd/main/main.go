@@ -10,11 +10,14 @@ import (
 
 func main() {
 	width := 1241
+	minHeight := 1754.0
 	canvas := drawing.NewCanvas(width)
 
-	outer := canvas.AddTopLevelContainer(float64(width), 1500)
-	outer.SetLayout(drawing.LayoutColumn, drawing.JustifyStart, drawing.AlignStart)
-	outer.SetPadding(140)
+	outer := canvas.AddTopLevelContainer(float64(width), 0)
+	outer.SetLayout(
+		drawing.LayoutColumn,
+		drawing.JustifyStart,
+		drawing.AlignStart).SetPaddingAll(140)
 
 	components.CreateHeading(
 		"Annual Business Survey",
@@ -24,11 +27,15 @@ func main() {
 		canvas,
 		outer)
 
-	canvas.AddDiv(1, 140, outer)
+	reportingSection := components.NewSection("Reporting", canvas, outer)
+	reportingSection.AddAnswer("11", "To", "01/01/2021")
+	reportingSection.AddAnswer("12", "From", "01/01/2022")
 
-	components.CreateAnswer("11", "What was your total turnover?", "56000", canvas, outer)
+	incomeSection := components.NewSection("Income", canvas, outer)
+	incomeSection.AddAnswer("123", "What was your total turnover?", "56000")
+	incomeSection.AddAnswer("124", "What did you spend on goods?", "34000")
 
-	err := saveJPG("images/test.jpg", canvas.Draw(), 100)
+	err := saveJPG("images/test.jpg", canvas.Draw(minHeight), 100)
 	if err != nil {
 		return
 	}

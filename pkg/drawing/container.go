@@ -25,13 +25,17 @@ const (
 	AlignCenter
 )
 
+type Padding struct {
+	left, right, top, bottom float64
+}
+
 type Container struct {
 	*Div
 	children       []Displayable
 	layout         Layout
 	justifyContent Justification
 	alignItems     Alignment
-	padding        float64
+	padding        Padding
 }
 
 func newContainer(width, height float64) *Container {
@@ -40,43 +44,56 @@ func newContainer(width, height float64) *Container {
 		layout:         LayoutColumn,
 		justifyContent: JustifyStart,
 		alignItems:     AlignStart,
-		padding:        0.0,
+		padding:        Padding{0, 0, 0, 0},
 	}
 }
 
-func (container *Container) SetLayout(layout Layout, justifyContent Justification, alignItems Alignment) {
+func (container *Container) SetLayout(
+	layout Layout,
+	justifyContent Justification,
+	alignItems Alignment) *Container {
+
 	container.layout = layout
 	container.justifyContent = justifyContent
 	container.alignItems = alignItems
+	return container
 }
 
-func (container *Container) SetPadding(padding float64) {
-	container.padding = padding
+func (container *Container) SetPadding(left, top, right, bottom float64) *Container {
+	container.padding.left = left
+	container.padding.top = top
+	container.padding.right = right
+	container.padding.bottom = bottom
+	return container
+}
+
+func (container *Container) SetPaddingAll(padding float64) *Container {
+	return container.SetPadding(padding, padding, padding, padding)
 }
 
 func (container *Container) GetHeight(parent Dimension) float64 {
 	height := container.Div.GetHeight(parent)
 	if height == 0 {
 		internal := container.Div.getInternalDim(parent)
-		internal.width -= 2 * container.padding
-		internal.height -= 2 * container.padding
+		internal.width -= container.padding.left + container.padding.right
+		internal.height -= container.padding.top + container.padding.bottom
 		if container.layout == LayoutColumn {
 			height = container.getTotalChildHeight(internal)
 		} else {
 			height = container.getLargestChildHeight(internal)
 		}
 		height += 2 * container.borderWeight
-		height += 2 * container.padding
+		height += container.padding.top + container.padding.bottom
 	}
 	return height
 }
 
 func (container *Container) Render(area Rectangle, context *gg.Context) {
 	internalArea := container.Div.getInternalArea(area)
-	internalArea.left += container.padding
-	internalArea.top += container.padding
-	internalArea.width -= 2 * container.padding
-	internalArea.height -= 2 * container.padding
+	internalArea.left += container.padding.left
+	internalArea.top += container.padding.top
+	internalArea.width -= container.padding.left + container.padding.right
+	internalArea.height -= container.padding.top + container.padding.bottom
 	container.Div.Render(area, context)
 	container.renderChildren(internalArea, context)
 }

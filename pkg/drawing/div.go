@@ -19,13 +19,15 @@ func newDiv(width, height float64) *Div {
 		borderWeight:    0.0}
 }
 
-func (div *Div) SetBackgroundColor(colour Colour) {
+func (div *Div) SetBackgroundColor(colour Colour) *Div {
 	div.backgroundColor = colour
+	return div
 }
 
-func (div *Div) SetBorder(colour Colour, weight float64) {
+func (div *Div) SetBorder(colour Colour, weight float64) *Div {
 	div.borderColor = colour
 	div.borderWeight = weight
+	return div
 }
 
 func (div *Div) getInternalDim(parent Dimension) Dimension {
