@@ -5,9 +5,19 @@ import (
 	"image/jpeg"
 	"os"
 	"sdxImage/pkg/components"
+	"sdxImage/pkg/schema"
 )
 
 func main() {
+	//createImage()
+	readSchema()
+}
+
+func readSchema() {
+	schema.Read()
+}
+
+func createImage() {
 	header := components.Header{
 		SurveyName:  "Annual Business Survey",
 		FormType:    "1802",
