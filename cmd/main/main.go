@@ -4,55 +4,29 @@ import (
 	"image"
 	"image/jpeg"
 	"os"
-	"sdxImage/pkg/drawing"
+	"sdxImage/pkg/components"
 )
 
 func main() {
-	width := 1241
-	canvas := drawing.NewCanvas(width)
+	header := components.Header{
+		SurveyName:  "Annual Business Survey",
+		FormType:    "1802",
+		RuRef:       "49800108249D",
+		SubmittedAt: "11 January 2023 14:49:33"}
 
-	outer := canvas.AddContainer(700, 1000, canvas.GetBody())
-	outer.Padding = 20
-	outer.Layout = drawing.Column
-	outer.BackgroundColor = drawing.RED
-	outer.BorderColor = drawing.BLACK
-	outer.JustifyContent = drawing.JustifyStart
+	page := components.CreatePage(header)
 
-	top := canvas.AddContainer(500, 0, outer)
-	header := canvas.AddText("Hello", 48, top)
-	header.TextAlign = drawing.TextCenter
+	reportingSection := page.AddSection("Reporting")
+	reportingSection.AddAnswer("11", "To", "01/01/2021")
+	reportingSection.AddAnswer("12", "From", "01/01/2022")
 
-	middle := canvas.AddContainer(500, 500, outer)
-	middle.Layout = drawing.Row
-	middle.BackgroundColor = drawing.CYAN
-	middle.BorderColor = drawing.BLACK
-	middle.BorderWeight = 20
-	middle.JustifyContent = drawing.JustifySpaced
-	middle.AlignItems = drawing.AlignCenter
+	incomeSection := page.AddSection("Income")
+	incomeSection.AddAnswer("123", "What was your total turnover?", "56000")
+	incomeSection.AddAnswer("124", "What did you spend on goods?", "34000")
 
-	createChildren(3, middle, canvas)
-
-	bottom := canvas.AddContainer(500, 0, outer)
-	bottom.Layout = drawing.Row
-	bottom.BorderColor = drawing.BLACK
-	bottom.BorderWeight = 2
-	bottom.BorderColor = drawing.WHITE
-	bottom.Padding = 20
-
-	canvas.AddText("A very long line of text that needs wrapping", 48, bottom)
-
-	err := saveJPG("images/test.jpg", canvas.Draw(), 100)
+	err := saveJPG("images/test.jpg", page.Draw(), 100)
 	if err != nil {
 		return
-	}
-}
-
-func createChildren(n int, container *drawing.Container, canvas *drawing.Canvas) {
-	for i := 0; i < n; i++ {
-		c := canvas.AddContainer(0.3, 0.3, container)
-		c.BackgroundColor = drawing.WHITE
-		c.BorderColor = drawing.BLACK
-		c.BorderWeight = 1
 	}
 }
 

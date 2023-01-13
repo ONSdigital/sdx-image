@@ -2,28 +2,38 @@ package drawing
 
 import (
 	"github.com/fogleman/gg"
-	"image/color"
 )
 
 type Div struct {
 	*Base
-	BackgroundColor color.Color
-	BorderColor     color.Color
-	BorderWeight    float64
+	backgroundColor Colour
+	borderColor     Colour
+	borderWeight    float64
 }
 
 func newDiv(width, height float64) *Div {
 	return &Div{
 		Base:            newBase(width, height),
-		BackgroundColor: nil,
-		BorderColor:     nil,
-		BorderWeight:    0.0}
+		backgroundColor: nil,
+		borderColor:     nil,
+		borderWeight:    0.0}
+}
+
+func (div *Div) SetBackgroundColor(colour Colour) *Div {
+	div.backgroundColor = colour
+	return div
+}
+
+func (div *Div) SetBorder(colour Colour, weight float64) *Div {
+	div.borderColor = colour
+	div.borderWeight = weight
+	return div
 }
 
 func (div *Div) getInternalDim(parent Dimension) Dimension {
 	w := div.GetWidth(parent)
 	h := div.GetHeight(parent)
-	b := div.BorderWeight
+	b := div.borderWeight
 	return Dimension{w - 2*b, h - 2*b}
 }
 
@@ -32,7 +42,7 @@ func (div *Div) getInternalArea(area Rectangle) Rectangle {
 	t := area.top
 	w := area.width
 	h := area.height
-	b := div.BorderWeight
+	b := div.borderWeight
 	return newRectangle(l+b, t+b, w-2*b, h-2*b)
 }
 
@@ -41,19 +51,19 @@ func (div *Div) Render(area Rectangle, context *gg.Context) {
 	t := area.top
 	w := area.width
 	h := area.height
-	b := div.BorderWeight
+	b := div.borderWeight
 
-	if div.BackgroundColor != nil {
+	if div.backgroundColor != nil {
 		context.DrawRectangle(l, t, w, h)
-		context.SetColor(color.White)
+		context.SetRGB255(255, 255, 255)
 		context.FillPreserve()
-		context.SetColor(div.BackgroundColor)
+		setColour(div.backgroundColor, context)
 		context.Fill()
 	}
 
 	//draw border
-	if div.BorderWeight > 0 {
-		context.SetColor(div.BorderColor)
+	if div.borderWeight > 0 {
+		setColour(div.borderColor, context)
 		context.DrawRectangle(l, t, b, h)
 		context.Fill()
 		context.DrawRectangle(l+w-b, t, b, h)

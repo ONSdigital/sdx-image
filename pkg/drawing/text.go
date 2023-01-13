@@ -3,7 +3,6 @@ package drawing
 import (
 	"github.com/fogleman/gg"
 	"golang.org/x/image/font"
-	"image/color"
 )
 
 const LineSpacing = 1.5
@@ -17,37 +16,65 @@ const (
 )
 
 var FontMap = make(map[int]font.Face)
+var BoldFontMap = make(map[int]font.Face)
 
 type Text struct {
 	*Base
-	value string
-	size  int
-	Color color.Color
-	TextAlign
-	context *gg.Context
+	value     string
+	size      int
+	bold      bool
+	color     Colour
+	textAlign TextAlign
+	context   *gg.Context
 }
 
-func newText(value string, size int, context *gg.Context) *Text {
-	_, exists := FontMap[size]
-	if !exists {
-		fontFace, err := gg.LoadFontFace("fonts/luxisr.ttf", float64(size))
-		if err != nil {
-			panic(err)
+func newText(value string, size int, bold bool, context *gg.Context) *Text {
+	if bold {
+		_, exists := BoldFontMap[size]
+		if !exists {
+			fontFace, err := gg.LoadFontFace("fonts/luxisb.ttf", float64(size))
+			if err != nil {
+				panic(err)
+			}
+			BoldFontMap[size] = fontFace
 		}
-		FontMap[size] = fontFace
+	} else {
+		_, exists := FontMap[size]
+		if !exists {
+			fontFace, err := gg.LoadFontFace("fonts/luxisr.ttf", float64(size))
+			if err != nil {
+				panic(err)
+			}
+			FontMap[size] = fontFace
+		}
 	}
 	return &Text{
 		Base:      newBase(1, 0),
 		value:     value,
 		size:      size,
-		Color:     color.Black,
-		TextAlign: TextLeft,
+		bold:      bold,
+		color:     Color{0, 0, 0},
+		textAlign: TextLeft,
 		context:   context,
 	}
 }
 
+func (text *Text) SetColor(color Colour) *Text {
+	text.color = color
+	return text
+}
+
+func (text *Text) SetTextAlign(textAlign TextAlign) *Text {
+	text.textAlign = textAlign
+	return text
+}
+
 func (text *Text) GetHeight(parent Dimension) float64 {
-	text.context.SetFontFace(FontMap[text.size])
+	if text.bold {
+		text.context.SetFontFace(BoldFontMap[text.size])
+	} else {
+		text.context.SetFontFace(FontMap[text.size])
+	}
 	width := text.GetWidth(parent)
 	lines := text.context.WordWrap(text.value, width)
 	size := float64(text.size)
@@ -57,16 +84,22 @@ func (text *Text) GetHeight(parent Dimension) float64 {
 }
 
 func (text *Text) Render(area Rectangle, context *gg.Context) {
-	context.SetColor(text.Color)
-	context.SetFontFace(FontMap[text.size])
-	lines := text.context.WordWrap(text.value, area.width)
+
+	if text.bold {
+		context.SetFontFace(BoldFontMap[text.size])
+	} else {
+		context.SetFontFace(FontMap[text.size])
+	}
+
+	setColour(text.color, context)
+	lines := context.WordWrap(text.value, area.width)
 
 	h := float64(text.size)
 	if len(lines) == 1 {
-		vw, _ := text.context.MeasureString(text.value)
-		if text.TextAlign == TextCenter {
+		vw, _ := context.MeasureString(text.value)
+		if text.textAlign == TextCenter {
 			context.DrawString(text.value, area.left+(area.width-vw)/2, area.top+h)
-		} else if text.TextAlign == TextRight {
+		} else if text.textAlign == TextRight {
 			context.DrawString(text.value, area.left+(area.width-vw), area.top+h)
 		} else {
 			context.DrawString(text.value, area.left, area.top+h)
