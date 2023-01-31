@@ -14,8 +14,7 @@ func Read() {
 
 	m := toCompleteMap(bytes)
 	s := toSurvey(m)
-	fmt.Print(s)
-
+	InterpolateParams(s)
 }
 
 func readFile() []byte {

@@ -25,7 +25,7 @@ var getStringFrom = getFieldFrom[string]
 var getListFrom = getFieldFrom[[]any]
 var getMapFrom = getFieldFrom[map[string]any]
 
-func toSurvey(m map[string]any) model.Survey {
+func toSurvey(m map[string]any) *model.Survey {
 	title := getStringFrom(m, "title")
 	surveyId := getStringFrom(m, "survey_id")
 	formType := getStringFrom(m, "form_type")
@@ -75,5 +75,5 @@ func toSurvey(m map[string]any) model.Survey {
 			}
 		}
 	}
-	return survey
+	return &survey
 }
