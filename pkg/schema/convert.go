@@ -31,15 +31,19 @@ func toSurvey(m map[string]any) *model.Survey {
 	formType := getStringFrom(m, "form_type")
 	sections := getListFrom(m, "sections")
 	survey := model.Survey{
-		Title:     title,
-		SurveyId:  surveyId,
-		FormType:  formType,
-		Questions: []model.Question{},
+		Title:    title,
+		SurveyId: surveyId,
+		FormType: formType,
+		Sections: []*model.Section{},
 	}
 
 	for _, s := range sections {
-		section := toMap(s)
-		groups := getListFrom(section, "groups")
+		sect := toMap(s)
+		section := &model.Section{
+			Title:     "",
+			Questions: []*model.Question{},
+		}
+		groups := getListFrom(sect, "groups")
 		for _, g := range groups {
 			group := toMap(g)
 			if getStringFrom(group, "title") != "Introduction" {
@@ -49,9 +53,9 @@ func toSurvey(m map[string]any) *model.Survey {
 					if getStringFrom(block, "type") == "Question" {
 						q := getMapFrom(block, "question")
 
-						question := model.Question{
+						question := &model.Question{
 							Title:   locateStringFrom(q, "title", "text"),
-							Answers: []model.Answer{},
+							Answers: []*model.Answer{},
 						}
 
 						answers := getListFrom(q, "answers")
@@ -61,7 +65,7 @@ func toSurvey(m map[string]any) *model.Survey {
 							if !exists {
 								label = "label"
 							}
-							answer := model.Answer{
+							answer := &model.Answer{
 								Type:  getStringFrom(ans, "type"),
 								QCode: getStringFrom(ans, "q_code"),
 								Label: label.(string),
@@ -69,11 +73,12 @@ func toSurvey(m map[string]any) *model.Survey {
 							question.Answers = append(question.Answers, answer)
 						}
 
-						survey.Questions = append(survey.Questions, question)
+						section.Questions = append(section.Questions, question)
 					}
 				}
 			}
 		}
+		survey.Sections = append(survey.Sections, section)
 	}
 	return &survey
 }

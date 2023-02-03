@@ -34,6 +34,22 @@ func TestReplaceTwoParams(t *testing.T) {
 	}
 }
 
+func TestRemoveUnknownParam(t *testing.T) {
+	text := "Can you report for the period {random123}?"
+	result := replaceParam(text)
+	if result != "Can you report for the period ?" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
+
+func TestRemoveUnknownParamsAndConnectingWords(t *testing.T) {
+	text := "For the period {random123} to {random456}?"
+	result := replaceParam(text)
+	if result != "For the period ?" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
+
 func TestReplaceHtml(t *testing.T) {
 	text := "the business&#39;s turnover"
 	result := replaceHtml(text)

@@ -1,16 +1,22 @@
 package schema
 
 import (
+	"fmt"
 	"sdxImage/pkg/model"
 	"strings"
 )
 
+const unknownIdentifier = "~"
+
 type lookup func(param string) string
 
 func InterpolateParams(m *model.Survey) *model.Survey {
-	for _, question := range m.Questions {
-		q := replaceParam(question.Title)
-		question.Title = replaceHtml(q)
+	for _, section := range m.Sections {
+		for _, question := range section.Questions {
+			fmt.Println(question.Title)
+			q := replaceParam(question.Title)
+			question.Title = replaceHtml(q)
+		}
 	}
 	return m
 }
@@ -18,12 +24,13 @@ func InterpolateParams(m *model.Survey) *model.Survey {
 var paramLookupMap = map[string]string{
 	"ref_p_start_date": "start date",
 	"ref_p_end_date":   "end date",
+	"ru_name":          "the business",
 }
 
 func paramLookup(p string) string {
 	x, found := paramLookupMap[p[1:len(p)-1]]
 	if !found {
-		x = ""
+		x = unknownIdentifier
 	}
 	return x
 }
@@ -41,7 +48,16 @@ func htmlLookup(p string) string {
 }
 
 func replaceParam(text string) string {
-	return replace(text, "{", "}", paramLookup)
+	result := replace(text, "{", "}", paramLookup)
+	return replaceUnknown(result)
+}
+
+func replaceUnknown(text string) string {
+	result := replace(text,
+		unknownIdentifier,
+		unknownIdentifier,
+		func(p string) string { return "" })
+	return strings.Replace(result, unknownIdentifier, "", 1)
 }
 
 func replaceHtml(text string) string {
@@ -53,7 +69,6 @@ func replace(text, startChar, endChar string, f lookup) string {
 	if !exists {
 		return text
 	}
-
 	x := f(p)
 	result := strings.Replace(text, p, x, 1)
 	return replace(result, startChar, endChar, f)
@@ -63,7 +78,7 @@ func getParameter(text, startChar, endChar string) (string, bool) {
 	start := -1
 	end := -1
 	for pos, char := range text {
-		if string(char) == startChar {
+		if string(char) == startChar && start == -1 {
 			start = pos
 		} else if string(char) == endChar {
 			end = pos

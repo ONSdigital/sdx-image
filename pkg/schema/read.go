@@ -4,22 +4,19 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"log"
 	"os"
+	"sdxImage/pkg/model"
 )
 
-func Read() {
-
-	bytes := readFile()
-
+func Read(schemaName string) *model.Survey {
+	bytes := readFile(schemaName)
 	m := toCompleteMap(bytes)
 	s := toSurvey(m)
-	result := InterpolateParams(s)
-	fmt.Println(result)
+	return InterpolateParams(s)
 }
 
-func readFile() []byte {
-	jsonFile, err := os.Open("schemas/mbs_0106.json")
+func readFile(schemaName string) []byte {
+	jsonFile, err := os.Open("schemas/" + schemaName + ".json")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -35,14 +32,4 @@ func toCompleteMap(bytes []byte) map[string]any {
 		fmt.Println(err)
 	}
 	return m
-}
-
-func Print(schema map[string]any) {
-	data, err := json.MarshalIndent(schema, "", "    ")
-	if err != nil {
-		log.Fatalf("JSON marshaling failed: %s", err)
-	}
-	fmt.Println("")
-	fmt.Println("--------------")
-	fmt.Printf("%s\n", data)
 }

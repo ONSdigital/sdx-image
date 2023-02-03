@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	"image/jpeg"
 	"os"
@@ -14,7 +15,9 @@ func main() {
 }
 
 func readSchema() {
-	schema.Read()
+	//survey := schema.Read("mbs_0106")
+	survey := schema.Read("abs_1802")
+	fmt.Println(survey)
 }
 
 func createImage() {
