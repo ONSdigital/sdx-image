@@ -25,6 +25,14 @@ var getStringFrom = getFieldFrom[string]
 var getListFrom = getFieldFrom[[]any]
 var getMapFrom = getFieldFrom[map[string]any]
 
+func getOptionalStringField(json map[string]any, fieldName string) string {
+	result, found := json[fieldName].(string)
+	if !found {
+		return ""
+	}
+	return result
+}
+
 func toSurvey(m map[string]any) *model.Survey {
 	title := getStringFrom(m, "title")
 	surveyId := getStringFrom(m, "survey_id")
@@ -40,7 +48,7 @@ func toSurvey(m map[string]any) *model.Survey {
 	for _, s := range sections {
 		sect := toMap(s)
 		section := &model.Section{
-			Title:     "",
+			Title:     getOptionalStringField(sect, "title"),
 			Questions: []*model.Question{},
 		}
 		groups := getListFrom(sect, "groups")
