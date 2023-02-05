@@ -1,4 +1,4 @@
-package components
+package page
 
 import (
 	"image"
@@ -13,7 +13,7 @@ type Page struct {
 	outer  *drawing.Container
 }
 
-func CreatePage(header Header) *Page {
+func createPage(header Header) *Page {
 	canvas := drawing.NewCanvas(width)
 
 	outer := canvas.AddTopLevelContainer(float64(width), 0)
@@ -27,10 +27,10 @@ func CreatePage(header Header) *Page {
 	return &Page{canvas, outer}
 }
 
-func (page *Page) AddSection(title string) *Section {
+func (page *Page) addSection(title string) *Section {
 	return newSection(title, page.canvas, page.outer)
 }
 
-func (page *Page) Draw() image.Image {
+func (page *Page) draw() image.Image {
 	return page.canvas.Draw(float64(minHeight))
 }
