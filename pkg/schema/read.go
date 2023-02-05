@@ -12,7 +12,7 @@ func Read(schemaName string) *model.Survey {
 	bytes := readFile(schemaName)
 	m := toCompleteMap(bytes)
 	s := toSurvey(m)
-	return InterpolateParams(s)
+	return s
 }
 
 func readFile(schemaName string) []byte {

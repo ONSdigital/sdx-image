@@ -1,12 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"image"
 	"image/jpeg"
 	"os"
 	"sdxImage/pkg/components"
-	"sdxImage/pkg/schema"
+	"sdxImage/pkg/controller"
 )
 
 func main() {
@@ -15,9 +14,8 @@ func main() {
 }
 
 func readSchema() {
-	//survey := schema.Read("mbs_0106")
-	survey := schema.Read("abs_1802")
-	fmt.Println(survey)
+	//controller.Run("mbs_0106")
+	controller.Run("abs_1802")
 }
 
 func createImage() {
