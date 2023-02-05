@@ -5,6 +5,6 @@ import (
 )
 
 func main() {
-	controller.Run("mbs_0106")
-	//controller.Run("abs_1802")
+	//controller.Run("mbs_0106")
+	controller.Run("abs_1802")
 }

@@ -13,7 +13,7 @@ import (
 )
 
 func Run(schemaName string) {
-	subBytes := readFile()
+	subBytes := readFile(schemaName)
 	sub := submission.From(subBytes)
 	survey := schema.Read(schemaName)
 	survey = substitutions.Replace(survey, sub)
@@ -28,13 +28,18 @@ func Run(schemaName string) {
 	}
 }
 
-func readFile() []byte {
-	jsonFile, err := os.Open("examples/mbs_0106.json")
+func readFile(schemaName string) []byte {
+	jsonFile, err := os.Open("examples/" + schemaName + ".json")
 	if err != nil {
 		fmt.Println("Error opening file")
 		fmt.Println(err)
 	}
-	defer jsonFile.Close()
+	defer func(jsonFile *os.File) {
+		err := jsonFile.Close()
+		if err != nil {
+			fmt.Println(err)
+		}
+	}(jsonFile)
 	bytes, _ := io.ReadAll(jsonFile)
 	return bytes
 }
@@ -45,7 +50,12 @@ func saveJPG(path string, im image.Image, quality int) error {
 		fmt.Println(err)
 		return err
 	}
-	defer file.Close()
+	defer func(file *os.File) {
+		err := file.Close()
+		if err != nil {
+			fmt.Println(err)
+		}
+	}(file)
 
 	var opt jpeg.Options
 	opt.Quality = quality
