@@ -1,4 +1,4 @@
-package components
+package page
 
 import "sdxImage/pkg/drawing"
 
@@ -31,6 +31,6 @@ func newSection(title string, canvas *drawing.Canvas, parent *drawing.Container)
 	}
 }
 
-func (section *Section) AddAnswer(qCode, question, answer string) {
+func (section *Section) addAnswer(qCode, question, answer string) {
 	createAnswer(qCode, question, answer, section.canvas, section.container)
 }

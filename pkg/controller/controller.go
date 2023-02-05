@@ -2,19 +2,30 @@ package controller
 
 import (
 	"fmt"
+	"image"
+	"image/jpeg"
 	"io"
 	"os"
-	"sdxImage/pkg/model"
+	"sdxImage/pkg/page"
 	"sdxImage/pkg/schema"
+	"sdxImage/pkg/submission"
 	"sdxImage/pkg/substitutions"
 )
 
 func Run(schemaName string) {
-	submissionBytes := readFile()
-	submission := model.Convert(submissionBytes)
+	subBytes := readFile()
+	sub := submission.From(subBytes)
 	survey := schema.Read(schemaName)
-	survey = substitutions.Replace(survey, submission)
+	survey = substitutions.Replace(survey, sub)
+	survey = submission.Add(survey, sub)
 	fmt.Println(survey)
+
+	err := saveJPG("images/"+schemaName+".jpg", page.Create(survey), 100)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println("success")
+	}
 }
 
 func readFile() []byte {
@@ -26,4 +37,18 @@ func readFile() []byte {
 	defer jsonFile.Close()
 	bytes, _ := io.ReadAll(jsonFile)
 	return bytes
+}
+
+func saveJPG(path string, im image.Image, quality int) error {
+	file, err := os.Create(path)
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+	defer file.Close()
+
+	var opt jpeg.Options
+	opt.Quality = quality
+
+	return jpeg.Encode(file, im, &opt)
 }

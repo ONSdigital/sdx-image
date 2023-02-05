@@ -1,4 +1,4 @@
-package components
+package page
 
 import "sdxImage/pkg/drawing"
 

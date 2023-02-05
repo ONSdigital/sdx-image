@@ -1,8 +1,9 @@
-package model
+package submission
 
 import (
 	"encoding/json"
 	"fmt"
+	"sdxImage/pkg/model"
 )
 
 type SurveyMetaData struct {
@@ -23,7 +24,7 @@ type Submission struct {
 	Data           map[string]string `json:"data"`
 }
 
-func Convert(bytes []byte) *Submission {
+func From(bytes []byte) *Submission {
 	var submission Submission
 	err := json.Unmarshal(bytes, &submission)
 	if err != nil {
@@ -31,4 +32,20 @@ func Convert(bytes []byte) *Submission {
 		fmt.Println(err)
 	}
 	return &submission
+}
+
+func Add(survey *model.Survey, submission *Submission) *model.Survey {
+	survey.Respondent = submission.RuRef
+	survey.SubmittedAt = submission.SubmittedAt
+	for _, section := range survey.Sections {
+		for _, question := range section.Questions {
+			for _, a := range question.Answers {
+				value, found := submission.Data[a.QCode]
+				if found {
+					a.Value = value
+				}
+			}
+		}
+	}
+	return survey
 }
