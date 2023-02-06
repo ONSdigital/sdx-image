@@ -1,10 +1,4 @@
-package submission
-
-import (
-	"encoding/json"
-	"fmt"
-	"sdxImage/pkg/model"
-)
+package model
 
 type SurveyMetaData struct {
 	SurveyId  string `json:"survey_id"`
@@ -24,17 +18,7 @@ type Submission struct {
 	Data           map[string]string `json:"data"`
 }
 
-func From(bytes []byte) *Submission {
-	var submission Submission
-	err := json.Unmarshal(bytes, &submission)
-	if err != nil {
-		fmt.Println("Error unmarshalling submission json")
-		fmt.Println(err)
-	}
-	return &submission
-}
-
-func Add(survey *model.Survey, submission *Submission) *model.Survey {
+func Add(survey *Survey, submission *Submission) *Survey {
 	survey.Respondent = submission.RuRef
 	survey.SubmittedAt = submission.SubmittedAt
 	for _, section := range survey.Sections {
