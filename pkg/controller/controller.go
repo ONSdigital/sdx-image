@@ -6,26 +6,18 @@ import (
 	"image/jpeg"
 	"io"
 	"os"
+	"sdxImage/pkg/model"
 	"sdxImage/pkg/page"
 	"sdxImage/pkg/schema"
-	"sdxImage/pkg/submission"
 	"sdxImage/pkg/substitutions"
 )
 
-func Run(schemaName string) {
-	subBytes := readFile(schemaName)
-	sub := submission.From(subBytes)
-	survey := schema.Read(schemaName)
-	survey = substitutions.Replace(survey, sub)
-	survey = submission.Add(survey, sub)
-	fmt.Println(survey)
-
-	err := saveJPG("images/"+schemaName+".jpg", page.Create(survey), 100)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("success")
-	}
+func Run(submission *model.Submission) image.Image {
+	survey := schema.Read(submission.SchemaName)
+	survey = substitutions.Replace(survey, submission)
+	survey = model.Add(survey, submission)
+	//fmt.Println(survey)
+	return page.Create(survey)
 }
 
 func readFile(schemaName string) []byte {

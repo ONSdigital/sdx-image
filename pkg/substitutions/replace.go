@@ -2,10 +2,9 @@ package substitutions
 
 import (
 	"sdxImage/pkg/model"
-	"sdxImage/pkg/submission"
 )
 
-func Replace(survey *model.Survey, submission *submission.Submission) *model.Survey {
+func Replace(survey *model.Survey, submission *model.Submission) *model.Survey {
 
 	lookup := parameterLookup{
 		"ref_p_start_date": submission.SurveyMetaData.StartDate,
