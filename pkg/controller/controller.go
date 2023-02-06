@@ -12,20 +12,14 @@ import (
 	"sdxImage/pkg/substitutions"
 )
 
-func Run(schemaName string) {
+func Run(schemaName string) image.Image {
 	subBytes := readFile(schemaName)
 	sub := submission.From(subBytes)
 	survey := schema.Read(schemaName)
 	survey = substitutions.Replace(survey, sub)
 	survey = submission.Add(survey, sub)
 	fmt.Println(survey)
-
-	err := saveJPG("images/"+schemaName+".jpg", page.Create(survey), 100)
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println("success")
-	}
+	return page.Create(survey)
 }
 
 func readFile(schemaName string) []byte {
