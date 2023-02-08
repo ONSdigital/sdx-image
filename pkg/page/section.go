@@ -21,7 +21,7 @@ func newSection(title string, canvas *drawing.Canvas, parent *drawing.Container)
 
 	canvas.AddDiv(1, divHeight, container).SetBackgroundColor(grey)
 
-	titleArea := canvas.AddContainer(0.1, 0, container).SetPadding(0, titlePadding, 0, titlePadding)
+	titleArea := canvas.AddContainer(1, 0, container).SetPadding(0, titlePadding, 0, titlePadding)
 	canvas.AddBoldText(title, titleSize, titleArea).SetTextAlign(drawing.TextLeft)
 
 	return &Section{
