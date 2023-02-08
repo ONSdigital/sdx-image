@@ -38,7 +38,7 @@ type Container struct {
 	padding        Padding
 }
 
-func newContainer(width, height float64) *Container {
+func newContainer(width, height Length) *Container {
 	return &Container{
 		Div:            newDiv(width, height),
 		layout:         LayoutColumn,

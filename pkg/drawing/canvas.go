@@ -13,22 +13,22 @@ type Canvas struct {
 
 func NewCanvas(width int) *Canvas {
 	w := float64(width)
-	body := newContainer(w, 0)
+	body := newContainer(PX(w), FitContent())
 	body.layout = LayoutRow
 	return &Canvas{width: w, body: body}
 }
 
-func (canvas *Canvas) AddTopLevelContainer(width, height float64) *Container {
+func (canvas *Canvas) AddTopLevelContainer(width, height Length) *Container {
 	return canvas.AddContainer(width, height, canvas.body)
 }
 
-func (canvas *Canvas) AddContainer(width, height float64, container *Container) *Container {
+func (canvas *Canvas) AddContainer(width, height Length, container *Container) *Container {
 	c := newContainer(width, height)
 	container.children = append(container.children, c)
 	return c
 }
 
-func (canvas *Canvas) AddDiv(width, height float64, container *Container) *Div {
+func (canvas *Canvas) AddDiv(width, height Length, container *Container) *Div {
 	div := newDiv(width, height)
 	container.children = append(container.children, div)
 	return div

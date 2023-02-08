@@ -16,19 +16,19 @@ func createAnswer(
 	canvas *drawing.Canvas,
 	parent *drawing.Container) {
 
-	outerContainer := canvas.AddContainer(1, 0, parent)
+	outerContainer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), parent)
 	outerContainer.SetLayout(drawing.LayoutColumn, drawing.JustifyStart, drawing.AlignStart)
 
-	questionContainer := canvas.AddContainer(1, 0, outerContainer)
+	questionContainer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
 	questionContainer.SetLayout(drawing.LayoutRow, drawing.JustifyStart, drawing.AlignStart)
 
-	qCodeBox := canvas.AddContainer(0.07, 0, questionContainer)
+	qCodeBox := canvas.AddContainer(drawing.ProportionOfParent(0.07), drawing.FitContent(), questionContainer)
 	canvas.AddBoldText(qCode+".", qCodeSize, qCodeBox)
 
-	questionBox := canvas.AddContainer(0.93, 0, questionContainer)
+	questionBox := canvas.AddContainer(drawing.ProportionOfParent(0.93), drawing.FitContent(), questionContainer)
 	canvas.AddText(question, questionSize, questionBox)
 
-	answerContainer := canvas.AddContainer(1, 0, outerContainer)
+	answerContainer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
 	answerContainer.SetLayout(drawing.LayoutRow, drawing.JustifyStart, drawing.AlignStart)
 	answerContainer.SetPadding(0, answerPadding, 0, answerPadding)
 	answerText := canvas.AddText(answer, answerSize, answerContainer)

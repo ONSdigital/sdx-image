@@ -49,7 +49,7 @@ func newText(value string, size int, bold bool, context *gg.Context) *Text {
 		}
 	}
 	return &Text{
-		Base:      newBase(1, 0),
+		Base:      newBase(MatchParent(), FitContent()),
 		value:     value,
 		size:      size,
 		bold:      bold,

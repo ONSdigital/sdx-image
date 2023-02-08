@@ -11,7 +11,7 @@ type Div struct {
 	borderWeight    float64
 }
 
-func newDiv(width, height float64) *Div {
+func newDiv(width, height Length) *Div {
 	return &Div{
 		Base:            newBase(width, height),
 		backgroundColor: nil,
