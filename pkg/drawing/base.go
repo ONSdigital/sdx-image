@@ -1,6 +1,8 @@
 package drawing
 
-import "github.com/fogleman/gg"
+import (
+	"golang.org/x/image/font"
+)
 
 type Location struct {
 	left, top float64
@@ -48,10 +50,21 @@ func newRectangle(left, top, width, height float64) Rectangle {
 	return Rectangle{Location{left, top}, Dimension{width, height}}
 }
 
+type Context interface {
+	DrawRectangle(x, y, w, h float64)
+	SetRGB255(r, g, b int)
+	FillPreserve()
+	Fill()
+	SetFontFace(fontFace font.Face)
+	WordWrap(s string, w float64) []string
+	MeasureString(s string) (w, h float64)
+	DrawString(s string, x, y float64)
+}
+
 type Displayable interface {
 	GetWidth(parent Dimension) float64
 	GetHeight(parent Dimension) float64
-	Render(area Rectangle, context *gg.Context)
+	Render(area Rectangle, context Context)
 }
 
 type Base struct {

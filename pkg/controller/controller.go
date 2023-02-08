@@ -11,15 +11,15 @@ import (
 	"sdxImage/pkg/substitutions"
 )
 
-func Run(submission *model.Submission) image.Image {
+func Run(submission *model.Submission) (image.Image, error) {
 	survey, err := schema.Read(submission.SchemaName)
 	if err != nil {
 		fmt.Println(err.Error())
+		return nil, err
 	}
 	survey = substitutions.Replace(survey, submission)
 	survey = model.Add(survey, submission)
-	//fmt.Println(survey)
-	return page.Create(survey)
+	return page.Create(survey), nil
 }
 
 func readFile(schemaName string) []byte {

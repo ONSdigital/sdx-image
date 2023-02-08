@@ -83,7 +83,7 @@ func (text *Text) GetHeight(parent Dimension) float64 {
 	return height
 }
 
-func (text *Text) Render(area Rectangle, context *gg.Context) {
+func (text *Text) Render(area Rectangle, context Context) {
 
 	if text.bold {
 		context.SetFontFace(BoldFontMap[text.size])
