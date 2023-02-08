@@ -28,7 +28,11 @@ func handleImage(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	image := controller.Run(&submission)
+	image, e := controller.Run(&submission)
+	if e != nil {
+		http.Error(w, e.Error(), http.StatusInternalServerError)
+		return
+	}
 
 	err = jpeg.Encode(w, image, &jpeg.Options{Quality: 100})
 	if err != nil {

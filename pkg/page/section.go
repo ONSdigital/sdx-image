@@ -16,12 +16,12 @@ var grey = drawing.CreateColor(200, 200, 200)
 
 func newSection(title string, canvas *drawing.Canvas, parent *drawing.Container) *Section {
 
-	container := canvas.AddContainer(1, 0, parent).SetLayout(
+	container := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), parent).SetLayout(
 		drawing.LayoutColumn, drawing.JustifyStart, drawing.AlignStart)
 
-	canvas.AddDiv(1, divHeight, container).SetBackgroundColor(grey)
+	canvas.AddDiv(drawing.MatchParent(), drawing.PX(divHeight), container).SetBackgroundColor(grey)
 
-	titleArea := canvas.AddContainer(0.1, 0, container).SetPadding(0, titlePadding, 0, titlePadding)
+	titleArea := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), container).SetPadding(0, titlePadding, 0, titlePadding)
 	canvas.AddBoldText(title, titleSize, titleArea).SetTextAlign(drawing.TextLeft)
 
 	return &Section{

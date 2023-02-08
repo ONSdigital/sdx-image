@@ -1,9 +1,5 @@
 package drawing
 
-import (
-	"github.com/fogleman/gg"
-)
-
 type Colour interface {
 	R() int
 	G() int
@@ -30,7 +26,7 @@ func CreateColor(r, g, b int) Colour {
 	return Color{r, g, b}
 }
 
-func setColour(c Colour, context *gg.Context) {
+func setColour(c Colour, context Context) {
 	context.SetRGB255(c.R(), c.G(), c.B())
 }
 

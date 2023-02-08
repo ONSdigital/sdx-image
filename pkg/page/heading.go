@@ -14,25 +14,25 @@ type Header struct {
 
 func createHeading(header Header, canvas *drawing.Canvas, parent *drawing.Container) {
 
-	headerArea := canvas.AddContainer(1, 0, parent)
+	headerArea := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), parent)
 	headerArea.SetPadding(0, 0, 0, 60)
 
-	headerBox := canvas.AddContainer(1, 0, headerArea)
+	headerBox := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), headerArea)
 	headerBox.SetBorder(drawing.BLACK, 2)
 
-	titleBox := canvas.AddContainer(1, 0, headerBox)
+	titleBox := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), headerBox)
 	titleBox.SetPaddingAll(padding).SetBackgroundColor(cyan).SetBorder(drawing.BLACK, 1)
 
 	titleText := canvas.AddBoldText(header.SurveyName, 36, titleBox)
 	titleText.SetTextAlign(drawing.TextCenter)
 
-	detailsBox := canvas.AddContainer(1, 0, headerBox)
+	detailsBox := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), headerBox)
 	detailsBox.SetLayout(drawing.LayoutRow, drawing.JustifyStart, drawing.AlignStart)
-	detailsLeft := canvas.AddContainer(0.5, 0, detailsBox)
-	detailsRight := canvas.AddContainer(0.5, 0, detailsBox)
+	detailsLeft := canvas.AddContainer(drawing.ProportionOfParent(0.5), drawing.FitContent(), detailsBox)
+	detailsRight := canvas.AddContainer(drawing.ProportionOfParent(0.5), drawing.FitContent(), detailsBox)
 
 	for _, key := range []string{"Form Type", "Respondent", "Submitted At"} {
-		c := canvas.AddContainer(1, 0, detailsLeft)
+		c := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), detailsLeft)
 		c.SetBorder(drawing.BLACK, 1)
 		c.SetPaddingAll(padding)
 		t := canvas.AddText(key, 24, c)
@@ -40,7 +40,7 @@ func createHeading(header Header, canvas *drawing.Canvas, parent *drawing.Contai
 	}
 
 	for _, value := range []string{header.FormType, header.RuRef, header.SubmittedAt} {
-		c := canvas.AddContainer(1, 0, detailsRight)
+		c := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), detailsRight)
 		c.SetBorder(drawing.BLACK, 1)
 		c.SetPaddingAll(padding)
 		t := canvas.AddText(value, 24, c)

@@ -1,7 +1,5 @@
 package drawing
 
-import "github.com/fogleman/gg"
-
 type Layout int
 
 const (
@@ -38,7 +36,7 @@ type Container struct {
 	padding        Padding
 }
 
-func newContainer(width, height float64) *Container {
+func newContainer(width, height Length) *Container {
 	return &Container{
 		Div:            newDiv(width, height),
 		layout:         LayoutColumn,
@@ -88,7 +86,7 @@ func (container *Container) GetHeight(parent Dimension) float64 {
 	return height
 }
 
-func (container *Container) Render(area Rectangle, context *gg.Context) {
+func (container *Container) Render(area Rectangle, context Context) {
 	internalArea := container.Div.getInternalArea(area)
 	internalArea.left += container.padding.left
 	internalArea.top += container.padding.top
@@ -98,7 +96,7 @@ func (container *Container) Render(area Rectangle, context *gg.Context) {
 	container.renderChildren(internalArea, context)
 }
 
-func (container *Container) renderChildren(area Rectangle, context *gg.Context) {
+func (container *Container) renderChildren(area Rectangle, context Context) {
 	left := area.left
 	top := area.top
 

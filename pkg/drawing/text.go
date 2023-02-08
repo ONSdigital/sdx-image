@@ -49,7 +49,7 @@ func newText(value string, size int, bold bool, context *gg.Context) *Text {
 		}
 	}
 	return &Text{
-		Base:      newBase(1, 0),
+		Base:      newBase(MatchParent(), FitContent()),
 		value:     value,
 		size:      size,
 		bold:      bold,
@@ -83,7 +83,7 @@ func (text *Text) GetHeight(parent Dimension) float64 {
 	return height
 }
 
-func (text *Text) Render(area Rectangle, context *gg.Context) {
+func (text *Text) Render(area Rectangle, context Context) {
 
 	if text.bold {
 		context.SetFontFace(BoldFontMap[text.size])

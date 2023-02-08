@@ -16,7 +16,7 @@ type Page struct {
 func createPage(header Header) *Page {
 	canvas := drawing.NewCanvas(width)
 
-	outer := canvas.AddTopLevelContainer(float64(width), 0)
+	outer := canvas.AddTopLevelContainer(drawing.PX(float64(width)), drawing.FitContent())
 	outer.SetLayout(
 		drawing.LayoutColumn,
 		drawing.JustifyStart,

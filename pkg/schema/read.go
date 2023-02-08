@@ -8,28 +8,36 @@ import (
 	"sdxImage/pkg/model"
 )
 
-func Read(schemaName string) *model.Survey {
-	bytes := readFile(schemaName)
-	m := toCompleteMap(bytes)
+func Read(schemaName string) (*model.Survey, error) {
+	bytes, err := readFile(schemaName)
+	if err != nil {
+		return nil, err
+	}
+	m, e := toCompleteMap(bytes)
+	if e != nil {
+		return nil, e
+	}
 	s := toSurvey(m)
-	return s
+	return s, nil
 }
 
-func readFile(schemaName string) []byte {
+func readFile(schemaName string) ([]byte, error) {
 	jsonFile, err := os.Open("schemas/" + schemaName + ".json")
+	defer jsonFile.Close()
 	if err != nil {
 		fmt.Println(err)
+		return nil, err
 	}
-	defer jsonFile.Close()
 	bytes, _ := io.ReadAll(jsonFile)
-	return bytes
+	return bytes, nil
 }
 
-func toCompleteMap(bytes []byte) map[string]any {
+func toCompleteMap(bytes []byte) (map[string]any, error) {
 	m := map[string]any{}
 	err := json.Unmarshal(bytes, &m)
 	if err != nil {
 		fmt.Println(err)
+		return nil, err
 	}
-	return m
+	return m, nil
 }
