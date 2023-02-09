@@ -1,3 +1,4 @@
+// Package log wraps "zerolog" with convenience calls for logging in SDX.
 package log
 
 import (

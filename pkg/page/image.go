@@ -30,6 +30,9 @@ func Create(survey *model.Survey) image.Image {
 				for _, a := range q.Answers {
 					if a.Value != "" {
 						text := q.Title
+						if a.Type == "Date" {
+							text += " " + a.Label
+						}
 						section.addAnswer(a.QCode, text, a.Value)
 					}
 				}

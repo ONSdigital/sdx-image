@@ -6,9 +6,8 @@ import (
 )
 
 type Canvas struct {
-	width   float64
-	body    *Container
-	context *gg.Context
+	width float64
+	body  *Container
 }
 
 func NewCanvas(width int) *Canvas {

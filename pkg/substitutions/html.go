@@ -8,6 +8,7 @@ var htmlLookupMap = map[string]string{
 	"</em>": "",
 }
 
+// html replaces common "html" codes within a string
 func html(text string) string {
 	result := text
 	for k, v := range htmlLookupMap {

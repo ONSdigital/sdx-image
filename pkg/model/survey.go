@@ -1,3 +1,4 @@
+// Package model defines the data types used to capture survey information
 package model
 
 import (

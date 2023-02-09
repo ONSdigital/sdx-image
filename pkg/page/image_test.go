@@ -1,33 +1,10 @@
 package page
 
 import (
-	"fmt"
-	"image"
-	"image/jpeg"
-	"os"
 	"sdxImage/pkg/model"
 	"sdxImage/pkg/test"
 	"testing"
 )
-
-func saveJPG(path string, im image.Image, quality int) error {
-	file, err := os.Create(path)
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
-	defer func(file *os.File) {
-		err := file.Close()
-		if err != nil {
-			fmt.Println(err)
-		}
-	}(file)
-
-	var opt jpeg.Options
-	opt.Quality = quality
-
-	return jpeg.Encode(file, im, &opt)
-}
 
 func TestCreateMbs(t *testing.T) {
 	test.SetCwdToRoot()
@@ -73,7 +50,7 @@ func TestCreateMbs(t *testing.T) {
 	}
 
 	result := Create(survey)
-	err := saveJPG("temp/mbs-test.jpg", result, 100)
+	err := test.SaveJPG("temp/mbs-test.jpg", result, 100)
 	if err != nil {
 		t.Errorf("failed to create image for mbs_0106 with error: %q", err.Error())
 	}
@@ -178,7 +155,7 @@ func TestCreateAbs(t *testing.T) {
 	}
 
 	result := Create(survey)
-	err := saveJPG("temp/abs-test.jpg", result, 100)
+	err := test.SaveJPG("temp/abs-test.jpg", result, 100)
 	if err != nil {
 		t.Errorf("failed to create image for abs_1802 with error: %q", err.Error())
 	}
