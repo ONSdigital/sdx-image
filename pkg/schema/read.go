@@ -1,3 +1,4 @@
+// Package schema manages interactions with the schema files.
 package schema
 
 import (
@@ -8,6 +9,7 @@ import (
 	"sdxImage/pkg/model"
 )
 
+// Read loads the requested schema and returns a (semi) populated *model.Survey.
 func Read(schemaName string) (*model.Survey, error) {
 	bytes, err := readFile(schemaName)
 	if err != nil {

@@ -25,18 +25,23 @@ type Length struct {
 	LengthType
 }
 
+// PX returns a length where the value represents the size in pixels.
 func PX(value float64) Length {
 	return Length{value, Pixels}
 }
 
+// ProportionOfParent returns a length where the value represents the proportion of the parent.
+// e.g. a value of 0.5 would represent half of the parent's length.
 func ProportionOfParent(value float64) Length {
 	return Length{value, Proportion}
 }
 
+// FitContent returns a length that is dependent on the size of its children.
 func FitContent() Length {
 	return Length{0, Content}
 }
 
+// MatchParent returns a length that is the same as its parent.
 func MatchParent() Length {
 	return Length{1, Proportion}
 }

@@ -11,6 +11,7 @@ type Lookup interface {
 const pStart = "{"
 const pEnd = "}"
 
+// replaceParameters replaces parameters of the form {parameter_name} using the given lookup
 func replaceParameters(text string, lookup Lookup) string {
 	p, exists := findParameter(text, pStart, pEnd)
 	if !exists {

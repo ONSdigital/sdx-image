@@ -1,3 +1,4 @@
+// Package test provides helper functions for use within tests.
 package test
 
 import (
@@ -6,6 +7,7 @@ import (
 	"runtime"
 )
 
+// SetCwdToRoot sets the current working directory to the project root.
 func SetCwdToRoot() {
 	_, filename, _, _ := runtime.Caller(0)
 	dir := path.Join(path.Dir(filename), "../..")
