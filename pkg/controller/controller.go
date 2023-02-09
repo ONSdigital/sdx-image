@@ -5,6 +5,7 @@ import (
 	"image"
 	"io"
 	"os"
+	"sdxImage/pkg/log"
 	"sdxImage/pkg/model"
 	"sdxImage/pkg/page"
 	"sdxImage/pkg/schema"
@@ -12,9 +13,10 @@ import (
 )
 
 func Run(submission *model.Submission) (image.Image, error) {
+	log.Info("Processing submission", submission.TxId)
 	survey, err := schema.Read(submission.SchemaName)
 	if err != nil {
-		fmt.Println(err.Error())
+		log.Error("Unable to read schema", err, submission.TxId)
 		return nil, err
 	}
 	survey = substitutions.Replace(survey, submission)
