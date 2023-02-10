@@ -14,7 +14,13 @@ func Listen() {
 	mux.HandleFunc("/", healthCheck)
 	mux.HandleFunc("/image", handleImage)
 	err := http.ListenAndServe(":5000", mux)
-	log.Error("Failed to start server", err)
+	if err != nil {
+		msg := "Failed to start server"
+		log.Error(msg, err)
+		panic(msg)
+	} else {
+		log.Info("listening...")
+	}
 }
 
 func handleImage(w http.ResponseWriter, r *http.Request) {
