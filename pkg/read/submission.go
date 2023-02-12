@@ -12,28 +12,23 @@ func Submission(bytes []byte) (*model.Submission, error) {
 		log.Error("Failed to convert submission bytes to map", err)
 		return nil, &model.SubmissionError{Msg: err.Error()}
 	}
-	s, e := toSubmission(m)
-	if e != nil {
+	s := toSubmission(m)
+	missing := model.MissingFields(s)
+	if len(missing) > 0 {
+		e := &model.SubmissionError{Msg: fmt.Sprintf("missing required fields: %v", missing)}
+		log.Error("Invalid submission", e)
 		return nil, e
 	}
 	return s, nil
 }
 
-func toSubmission(m map[string]any) (*model.Submission, error) {
+func toSubmission(m map[string]any) *model.Submission {
 	version := getStringFrom(m, "version")
-	var submission *model.Submission
 	if version == "v2" {
-		submission = fromV2(m)
+		return fromV2(m)
 	} else {
-		submission = fromV1(m)
+		return fromV1(m)
 	}
-	missing := model.MissingFields(submission)
-	if len(missing) > 0 {
-		err := &model.SubmissionError{Msg: fmt.Sprintf("missing required fields: %v", missing)}
-		log.Error("Invalid submission", err)
-		return nil, err
-	}
-	return submission, nil
 }
 
 func fromV1(m map[string]any) *model.Submission {
