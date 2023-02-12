@@ -1,21 +1,52 @@
 package model
 
-type SurveyMetaData struct {
-	SurveyId  string `json:"survey_id"`
-	Period    string `json:"period_id"`
-	RuRef     string `json:"ru_ref"`
-	RuName    string `json:"ru_name"`
-	FormType  string `json:"form_type"`
-	StartDate string `json:"ref_p_start_date"`
-	EndDate   string `json:"ref_p_end_date"`
+type Submission struct {
+	TxId        string
+	SchemaName  string
+	RuRef       string
+	RuName      string
+	SubmittedAt string
+	StartDate   string
+	EndDate     string
+	DataVersion string
+	Data        map[string]string
 }
 
-type Submission struct {
-	TxId           string `json:"tx_id"`
-	SubmittedAt    string `json:"submitted_at"`
-	SchemaName     string `json:"schema_name"`
-	SurveyMetaData `json:"survey_metadata"`
-	Data           map[string]string `json:"data"`
+type SubmissionError struct {
+	Msg string
+}
+
+func (e *SubmissionError) Error() string {
+	return e.Msg
+}
+
+func MissingFields(s *Submission) []string {
+	missing := make([]string, 0)
+	if s.TxId == "" {
+		missing = append(missing, "TxId")
+	}
+	if s.SchemaName == "" {
+		missing = append(missing, "SchemaName")
+	}
+	if s.RuRef == "" {
+		missing = append(missing, "RuRef")
+	}
+	if s.RuName == "" {
+		missing = append(missing, "RuName")
+	}
+	if s.SubmittedAt == "" {
+		missing = append(missing, "SubmittedAt")
+	}
+	if s.StartDate == "" {
+		missing = append(missing, "StartDate")
+	}
+	if s.EndDate == "" {
+		missing = append(missing, "EndDate")
+	}
+	if s.DataVersion == "" {
+		missing = append(missing, "DataVersion")
+	}
+	return missing
 }
 
 func Add(survey *Survey, submission *Submission) *Survey {

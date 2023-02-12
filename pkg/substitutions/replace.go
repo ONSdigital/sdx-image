@@ -11,9 +11,9 @@ import (
 func Replace(survey *model.Survey, submission *model.Submission) *model.Survey {
 
 	lookup := parameterLookup{
-		"ref_p_start_date": submission.SurveyMetaData.StartDate,
-		"ref_p_end_date":   submission.SurveyMetaData.EndDate,
-		"ru_name":          submission.SurveyMetaData.RuName,
+		"ref_p_start_date": submission.StartDate,
+		"ref_p_end_date":   submission.EndDate,
+		"ru_name":          submission.RuName,
 		"total_turnover":   "the total turnover",
 		"from":             "start date",
 		"to":               "end date",

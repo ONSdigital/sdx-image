@@ -2,7 +2,9 @@ package api
 
 import (
 	"encoding/json"
+	"errors"
 	"image/jpeg"
+	"io"
 	"net/http"
 	"sdxImage/pkg/controller"
 	"sdxImage/pkg/log"
@@ -18,8 +20,6 @@ func Listen() {
 		msg := "Failed to start server"
 		log.Error(msg, err)
 		panic(msg)
-	} else {
-		log.Info("listening...")
 	}
 }
 
@@ -29,24 +29,30 @@ func handleImage(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid request method", http.StatusMethodNotAllowed)
 	}
 
-	var submission model.Submission
-	err := json.NewDecoder(r.Body).Decode(&submission)
+	submissionBytes, err := io.ReadAll(r.Body)
 	if err != nil {
-		log.Error("Failed to decode submission", err)
+		log.Error("Unable to decode submission", err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
-	image, e := controller.Run(&submission)
-	if e != nil {
-		log.Error("Unable to create image", err)
-		http.Error(w, e.Error(), http.StatusInternalServerError)
+	image, runError := controller.Run(submissionBytes)
+	if runError != nil {
+		var submissionErr *model.SubmissionError
+		switch {
+		case errors.As(runError, &submissionErr):
+			log.Error("Returning client error", runError)
+			http.Error(w, runError.Error(), http.StatusBadRequest)
+		default:
+			log.Error("Unable to create image", runError)
+			http.Error(w, runError.Error(), http.StatusInternalServerError)
+		}
 		return
 	}
 
-	err = jpeg.Encode(w, image, &jpeg.Options{Quality: 100})
-	if err != nil {
-		log.Error("Unable to encode image", err)
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+	encodeError := jpeg.Encode(w, image, &jpeg.Options{Quality: 100})
+	if encodeError != nil {
+		log.Error("Unable to encode image", encodeError)
+		http.Error(w, encodeError.Error(), http.StatusInternalServerError)
 		return
 	}
 	w.WriteHeader(http.StatusOK)

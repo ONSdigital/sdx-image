@@ -1,39 +1,46 @@
-package schema
+// Package read manages the reading of schemas and submissions into surveys
+package read
 
-import "sdxImage/pkg/model"
+import (
+	"io"
+	"os"
+	"sdxImage/pkg/log"
+	"sdxImage/pkg/model"
+)
 
-func toMap(x any) map[string]any {
-	result, _ := x.(map[string]any)
-	return result
-}
-
-func getFieldFrom[T any](json map[string]any, fieldName ...string) T {
-	result, _ := json[fieldName[0]].(T)
-	return result
-}
-
-func locateStringFrom(json map[string]any, fieldName ...string) string {
-	result, ok := json[fieldName[0]].(string)
-	if !ok {
-		nextLevel := json[fieldName[0]].(map[string]any)
-		return locateStringFrom(nextLevel, fieldName[1:]...)
+// Schema loads the requested schema and returns a (semi) populated *model.Survey.
+func Schema(schemaName string) (*model.Survey, error) {
+	bytes, err := loadFile(schemaName)
+	if err != nil {
+		log.Error("Failed to read schema", err)
+		return nil, err
 	}
-	return result
-}
-
-var getStringFrom = getFieldFrom[string]
-var getListFrom = getFieldFrom[[]any]
-var getMapFrom = getFieldFrom[map[string]any]
-
-func getOptionalStringField(json map[string]any, fieldName string) string {
-	result, found := json[fieldName].(string)
-	if !found {
-		return ""
+	m, e := toCompleteMap(bytes)
+	if e != nil {
+		log.Error("Failed to convert schema bytes to map", e)
+		return nil, e
 	}
-	return result
+	s := convert(m)
+	return s, nil
 }
 
-func toSurvey(m map[string]any) *model.Survey {
+func loadFile(schemaName string) ([]byte, error) {
+	jsonFile, err := os.Open("schemas/" + schemaName + ".json")
+	defer func(jsonFile *os.File) {
+		e := jsonFile.Close()
+		if e != nil {
+			log.Error("Failed to close schema file", e)
+		}
+	}(jsonFile)
+	if err != nil {
+		log.Error("Failed to open schema file", err)
+		return nil, err
+	}
+	bytes, _ := io.ReadAll(jsonFile)
+	return bytes, nil
+}
+
+func convert(m map[string]any) *model.Survey {
 	title := getStringFrom(m, "title")
 	surveyId := getStringFrom(m, "survey_id")
 	formType := getStringFrom(m, "form_type")
