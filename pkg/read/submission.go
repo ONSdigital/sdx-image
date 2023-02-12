@@ -10,20 +10,30 @@ func Submission(bytes []byte) (*model.Submission, error) {
 	m, err := toCompleteMap(bytes)
 	if err != nil {
 		log.Error("Failed to convert submission bytes to map", err)
-		return nil, err
+		return nil, &model.SubmissionError{Msg: err.Error()}
 	}
-	s := toSubmission(m)
-	fmt.Println(s.Data)
+	s, e := toSubmission(m)
+	if e != nil {
+		return nil, e
+	}
 	return s, nil
 }
 
-func toSubmission(m map[string]any) *model.Submission {
+func toSubmission(m map[string]any) (*model.Submission, error) {
 	version := getStringFrom(m, "version")
+	var submission *model.Submission
 	if version == "v2" {
-		return fromV2(m)
+		submission = fromV2(m)
 	} else {
-		return fromV1(m)
+		submission = fromV1(m)
 	}
+	missing := model.MissingFields(submission)
+	if len(missing) > 0 {
+		err := &model.SubmissionError{Msg: fmt.Sprintf("missing required fields: %v", missing)}
+		log.Error("Invalid submission", err)
+		return nil, err
+	}
+	return submission, nil
 }
 
 func fromV1(m map[string]any) *model.Submission {
@@ -37,13 +47,15 @@ func fromV1(m map[string]any) *model.Submission {
 	submission.StartDate = getStringFrom(metadata, "ref_period_start_date")
 	submission.EndDate = getStringFrom(metadata, "ref_period_end_date")
 
+	//ru name is not present on v1 submissions
+	submission.RuName = "the business"
+
 	submission.DataVersion = getStringFrom(m, "version")
 	submission.Data = getData(m)
 	return submission
 }
 
 func fromV2(m map[string]any) *model.Submission {
-	fmt.Println(m)
 	submission := &model.Submission{}
 	submission.TxId = getStringFrom(m, "tx_id")
 	submission.SchemaName = getStringFrom(m, "schema_name")
@@ -51,6 +63,7 @@ func fromV2(m map[string]any) *model.Submission {
 
 	metadata := getMapFrom(m, "survey_metadata")
 	submission.RuRef = getStringFrom(metadata, "ru_ref")
+	submission.RuName = getStringFrom(metadata, "ru_name")
 	submission.StartDate = getStringFrom(metadata, "ref_p_start_date")
 	submission.EndDate = getStringFrom(metadata, "ref_p_end_date")
 

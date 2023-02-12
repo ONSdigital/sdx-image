@@ -2,11 +2,13 @@ package api
 
 import (
 	"encoding/json"
+	"errors"
 	"image/jpeg"
 	"io"
 	"net/http"
 	"sdxImage/pkg/controller"
 	"sdxImage/pkg/log"
+	"sdxImage/pkg/model"
 )
 
 func Listen() {
@@ -31,14 +33,21 @@ func handleImage(w http.ResponseWriter, r *http.Request) {
 
 	submissionBytes, err := io.ReadAll(r.Body)
 	if err != nil {
-		log.Error("Failed to decode submission", err)
+		log.Error("Unable to decode submission", err)
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}
 	image, e := controller.Run(submissionBytes)
 	if e != nil {
-		log.Error("Unable to create image", err)
-		http.Error(w, e.Error(), http.StatusInternalServerError)
+		var submissionErr *model.SubmissionError
+		switch {
+		case errors.As(err, &submissionErr):
+			log.Error("Returning client error", err)
+			http.Error(w, err.Error(), http.StatusBadRequest)
+		default:
+			log.Error("Unable to create image", err)
+			http.Error(w, e.Error(), http.StatusInternalServerError)
+		}
 		return
 	}
 

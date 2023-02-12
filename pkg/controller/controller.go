@@ -24,7 +24,7 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	log.Info("Processing submission", submission.TxId)
 	survey, err := read.Schema(submission.SchemaName)
 	if err != nil {
-		log.Error("Unable to read read", err, submission.TxId)
+		log.Error("Unable to read schema", err, submission.TxId)
 		return nil, err
 	}
 	survey = substitutions.Replace(survey, submission)
