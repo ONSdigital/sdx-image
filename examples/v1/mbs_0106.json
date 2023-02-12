@@ -1,0 +1,31 @@
+{
+  "case_id": "429af3e4-dffb-4b7a-8b65-538d5f6106f3",
+  "tx_id": "c2ca5e03-ff68-4d5d-b5a3-d96d3be45cfb",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "0.0.1",
+  "origin": "uk.gov.ons.edc.eq",
+  "survey_id": "009",
+  "flushed": false,
+  "submitted_at": "2023-02-11T16:57:11+00:00",
+  "collection": {
+    "exercise_sid": "bc4dc104-a207-4bb8-b01d-04817d36bb81",
+    "schema_name": "mbs_0106",
+    "period": "201605",
+    "instrument_id": "0106"
+  },
+  "metadata": {
+    "user_id": "UNKNOWN",
+    "ru_ref": "12346789012A",
+    "ref_period_start_date": "2016-05-01",
+    "ref_period_end_date": "2016-05-31"
+  },
+  "launch_language_code": "en",
+  "data": {
+    "9999": "Yes, I can report for this period",
+    "40": "56000",
+    "146": "No changes!"
+  },
+  "form_type": "0106",
+  "started_at": "2023-02-11T16:56:31.535396+00:00",
+  "submission_language_code": "en"
+}

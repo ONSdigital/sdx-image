@@ -1,4 +1,4 @@
-package schema
+package read
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ func TestReadAbs(t *testing.T) {
 		log.Println(err)
 	}
 	fmt.Println(path)
-	result, err := Read("abs_1802")
+	result, err := Schema("abs_1802")
 	if err != nil {
 		t.Errorf("failed to read abs_1802 with error: %q", err.Error())
 	}
@@ -29,7 +29,7 @@ func TestReadMbs(t *testing.T) {
 		log.Println(err)
 	}
 	fmt.Println(path)
-	result, err := Read("mbs_0106")
+	result, err := Schema("mbs_0106")
 	if err != nil {
 		t.Errorf("failed to read mbs_0106 with error: %q", err.Error())
 	}

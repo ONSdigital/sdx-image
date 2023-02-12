@@ -1,16 +1,14 @@
 package controller
 
 import (
-	"encoding/json"
 	"fmt"
 	"io"
 	"os"
-	"sdxImage/pkg/model"
 	"sdxImage/pkg/test"
 	"testing"
 )
 
-func getSubmission(filename string) (*model.Submission, error) {
+func getSubmission(filename string) ([]byte, error) {
 	jsonFile, err := os.Open("examples/" + filename + ".json")
 	if err != nil {
 		return nil, err
@@ -22,17 +20,11 @@ func getSubmission(filename string) (*model.Submission, error) {
 		}
 	}(jsonFile)
 	bytes, _ := io.ReadAll(jsonFile)
-	var submission model.Submission
-	err = json.Unmarshal(bytes, &submission)
-	if err != nil {
-		return nil, err
-	}
-	return &submission, nil
+	return bytes, nil
 }
 
-func TestRun(t *testing.T) {
+func runFromFile(filename string, t *testing.T) {
 	test.SetCwdToRoot()
-	var filename = "abs_1802"
 	submission, err := getSubmission(filename)
 	if err != nil {
 		t.Errorf("failed to read submission: %q", err)
@@ -45,4 +37,16 @@ func TestRun(t *testing.T) {
 	if err != nil {
 		t.Errorf("failed to create image for %s with error: %q", filename, err.Error())
 	}
+}
+
+func TestAbs(t *testing.T) {
+	runFromFile("abs_1802", t)
+}
+
+func TestMbs(t *testing.T) {
+	runFromFile("mbs_0106", t)
+}
+
+func TestMbsV1(t *testing.T) {
+	runFromFile("v1/mbs_0106", t)
 }
