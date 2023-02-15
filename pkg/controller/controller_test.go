@@ -50,3 +50,7 @@ func TestMbs(t *testing.T) {
 func TestMbsV1(t *testing.T) {
 	runFromFile("v1/mbs_0106", t)
 }
+
+func TestAbsV1(t *testing.T) {
+	runFromFile("v1/abs_1810", t)
+}

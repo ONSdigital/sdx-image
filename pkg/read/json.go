@@ -17,7 +17,7 @@ func getFieldFrom[T any](json map[string]any, fieldName ...string) T {
 
 func locateStringFrom(json map[string]any, fieldName ...string) string {
 	result, ok := json[fieldName[0]].(string)
-	if !ok {
+	if !ok && len(fieldName) > 1 {
 		nextLevel := json[fieldName[0]].(map[string]any)
 		return locateStringFrom(nextLevel, fieldName[1:]...)
 	}
