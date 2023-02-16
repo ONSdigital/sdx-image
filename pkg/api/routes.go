@@ -55,7 +55,6 @@ func handleImage(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, encodeError.Error(), http.StatusInternalServerError)
 		return
 	}
-	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/octet-stream")
 	return
 }
