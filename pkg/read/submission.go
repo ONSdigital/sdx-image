@@ -6,6 +6,8 @@ import (
 	"sdxImage/pkg/model"
 )
 
+var surveyMap = map[string]string{"202": "abs"}
+
 func Submission(bytes []byte) (*model.Submission, error) {
 	m, err := toCompleteMap(bytes)
 	if err != nil {
@@ -34,7 +36,15 @@ func toSubmission(m map[string]any) *model.Submission {
 func fromV1(m map[string]any) *model.Submission {
 	submission := &model.Submission{}
 	submission.TxId = getStringFrom(m, "tx_id")
-	submission.SchemaName = locateStringFrom(m, "collection", "schema_name")
+	schemaName := locateStringFrom(m, "collection", "schema_name")
+
+	if schemaName == "" {
+		surveyId := surveyMap[getStringFrom(m, "survey_id")]
+		instrument := locateStringFrom(m, "collection", "instrument_id")
+		schemaName = surveyId + "_" + instrument
+	}
+	submission.SchemaName = schemaName
+
 	submission.SubmittedAt = getStringFrom(m, "submitted_at")
 
 	metadata := getMapFrom(m, "metadata")
