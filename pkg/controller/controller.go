@@ -10,7 +10,7 @@ import (
 	"sdxImage/pkg/substitutions"
 )
 
-// Run orchestrates the steps required to create an image of the given submission
+// Run orchestrates the steps required to create an image of the given submission.
 // This is done by generating a "model.Survey" populated with data from the submission,
 // and information from the corresponding author read.
 // The "page" package is then utilised to generate the actual image.
