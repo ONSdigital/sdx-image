@@ -29,5 +29,7 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	}
 	survey = substitutions.Replace(survey, submission)
 	survey = model.Add(survey, submission)
-	return page.Create(survey), nil
+	result := page.Create(survey)
+	log.Info("Successfully created image", submission.TxId)
+	return result, nil
 }
