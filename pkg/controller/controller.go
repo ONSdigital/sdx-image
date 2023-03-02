@@ -8,13 +8,20 @@ import (
 	"sdxImage/pkg/page"
 	"sdxImage/pkg/read"
 	"sdxImage/pkg/substitutions"
+	"sync"
 )
+
+var mu sync.Mutex
 
 // Run orchestrates the steps required to create an image of the given submission.
 // This is done by generating a "model.Survey" populated with data from the submission,
 // and information from the corresponding author read.
 // The "page" package is then utilised to generate the actual image.
+// Various parts of the drawing package are not thread safe and so the whole run function
+// is synchronised.
 func Run(submissionBytes []byte) (image.Image, error) {
+	mu.Lock()
+	defer mu.Unlock()
 	submission, err := read.Submission(submissionBytes)
 	if err != nil {
 		log.Error("Unable to read submission", err)
