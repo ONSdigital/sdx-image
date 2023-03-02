@@ -33,6 +33,9 @@ func Create(survey *model.Survey) image.Image {
 						if a.Type == "Date" {
 							text += " " + a.Label
 						}
+						if a.Type == "Number" {
+							text += " " + a.Label + ":"
+						}
 						section.addAnswer(a.QCode, text, a.Value)
 					}
 				}
