@@ -6,7 +6,7 @@ import (
 	"sdxImage/pkg/model"
 )
 
-var surveyMap = map[string]string{"202": "abs"}
+var surveyMap = map[string]string{"073": "073", "074": "074", "202": "abs"}
 
 func Submission(bytes []byte) (*model.Submission, error) {
 	m, err := toCompleteMap(bytes)

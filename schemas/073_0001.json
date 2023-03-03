@@ -1,0 +1,783 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "073",
+  "form_type": "0001",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "title": "Monthly Survey of Building Materials - Concrete Building Blocks",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "sectionfc4b6680-5267-4052-9367-21703edebaf5",
+        "sectionquestionnaire-introduction"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "sectionquestionnaire-introduction",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "groupquestionnaire-introduction",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {trad_as} ({ru_name})",
+                    "placeholders": [
+                      {
+                        "placeholder": "trad_as",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "trad_as"
+                        }
+                      },
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "additional-guidance",
+                  "contents": [
+                    {
+                      "guidance": {
+                        "contents": [
+                          {
+                            "title": "Important Notice"
+                          },
+                          {
+                            "description": "This questionnaire has been designed for online mode. You may notice changes compared with the paper version, such as to the ordering of questions and sections."
+                          },
+                          {
+                            "description": "There is additional guidance throughout the questionnaire. However, if you require support then please contact us on <a href=\"tel:03001234931\"target=\"_blank\"rel=\"noopener noreferrer\">0300 1234 931</a> or via email at <a href=\"mailto:surveys@ons.gov.uk?subject=Change%20of%20details%2012346789012A\"target=\"_blank\"rel=\"noopener noreferrer\">surveys@ons.gov.uk</a>."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "This survey is conducted by the Office for National Statistics on behalf of the Department for Business, Energy and Industrial Strategy (BEIS).",
+                        "BEIS uses the information for monitoring trends in the construction industries.",
+                        "Your business was selected to give us a comprehensive view of the UK economy.",
+                        {
+                          "text": "Data should relate to {trad_as}.",
+                          "placeholders": [
+                            {
+                              "placeholder": "trad_as",
+                              "value": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            }
+                          ]
+                        },
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially.",
+                        "You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.",
+                        "You can save a copy of your answers at the end of this questionnaire using the &#x2018;Download as PDF&#x2019; button."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "This survey collects information on different block types your business has produced and delivered within the reporting period."
+                  },
+                  {
+                    "description": "The block types included in this survey are:"
+                  },
+                  {
+                    "list": [
+                      "dense aggregate",
+                      "lightweight aggregate",
+                      "aerated"
+                    ]
+                  },
+                  {
+                    "description": "The survey has the following sections:"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Block types",
+                    "contents": [
+                      {
+                        "description": {
+                          "text": "You will be asked to confirm the type of blocks produced and delivered for the period {ref_p_start_date} to {ref_p_end_date}.",
+                          "placeholders": [
+                            {
+                              "placeholder": "ref_p_start_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_start_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "placeholder": "ref_p_end_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_end_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Details of production and delivery",
+                    "contents": [
+                      {
+                        "description": "You will be asked to provide the following information for each type of block you have selected:"
+                      },
+                      {
+                        "list": [
+                          "opening stock",
+                          "total production during month",
+                          "total deliveries during month",
+                          "closing stock"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "For the benefit of industry, and the public generally, building materials information is published by BEIS in their <a href=\"https://www.gov.uk/government/organisations/department-for-business-energy-and-industrial-strategy/about/statistics\"target=\"_blank\"rel=\"noopener noreferrer\">Monthly Statistics of Building Materials &amp; Components (this link opens in a new tab)</a>."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sectionfc4b6680-5267-4052-9367-21703edebaf5",
+      "title": "Block types",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupfc4b6680-5267-4052-9367-21703edebaf5",
+          "blocks": [
+            {
+              "id": "block35e7fda7-cd2e-4b6d-baf2-cc19c5ed4545",
+              "type": "Question",
+              "question": {
+                "id": "question35e7fda7-cd2e-4b6d-baf2-cc19c5ed4545",
+                "title": {
+                  "text": "For the period {ref_p_start_date} to {ref_p_end_date}, which of the following blocks has {ru_name} produced and delivered?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;lightweight aggregate blocks&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to blocks that have a dry material density, excluding voids, not greater than 1,500 kg/m as defined in the designated standard BS EN 13055-1:2002 &#x2018;Lightweight aggregates - Part 1: Lightweight aggregates for concrete, mortar and grout&#39;."
+                      }
+                    ]
+                  }
+                ],
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer21b8ad7f-b81f-4d6c-a250-eddd7c239740",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Dense aggregate blocks",
+                        "value": "Dense aggregate blocks",
+                        "q_code": "9999"
+                      },
+                      {
+                        "label": "Lightweight aggregate blocks",
+                        "value": "Lightweight aggregate blocks",
+                        "q_code": "9998"
+                      },
+                      {
+                        "label": "Aerated blocks",
+                        "value": "Aerated blocks",
+                        "q_code": "9997"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer9a0c1e04-d879-427f-89a9-663b3e38a78f",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "None of the above",
+                        "value": "None of the above",
+                        "q_code": "9996"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section155",
+      "title": "Details of production and delivery",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group155",
+          "blocks": [
+            {
+              "id": "block640",
+              "type": "Question",
+              "question": {
+                "id": "question640",
+                "title": "For the reporting period, what are the details of production and delivery for <em>dense aggregate</em> blocks?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Enter a value to the nearest thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for 56,000.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Record in square metres, for 100mm equivalent size"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What do we mean by &#39;opening stock&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to the closing stock at the end of the previous month unless a physical stock check has been made, in which case the actual physical stock figure should be entered and discrepancies explained in the comments section of this survey."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer339b8efa-f6b6-4cf7-a30e-33fe95246200",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Opening stock of dense aggregate blocks",
+                    "q_code": "101",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer2d30cd90-b082-4754-a6c7-19844a689b9b",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Total production of dense aggregate blocks during month",
+                    "description": "This refers to blocks completed and ready for dispatch",
+                    "q_code": "102",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer6fcb5a0b-9f2c-4623-9cd7-83e1d3b61cd9",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Total deliveries of dense aggregate blocks during month",
+                    "description": "This refers to blocks which have actually left the premises",
+                    "q_code": "103",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer3273ecaa-8579-4bd1-96e5-6b8833cad428",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Closing stock of dense aggregate blocks",
+                    "q_code": "104",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Dense aggregate blocks"],
+                        {
+                          "identifier": "answer21b8ad7f-b81f-4d6c-a250-eddd7c239740",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "block641",
+              "type": "Question",
+              "question": {
+                "id": "question641",
+                "title": "For the reporting period, what are the details of production and delivery for <em>lightweight aggregate</em> blocks?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Enter a value to the nearest thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for 56,000.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Record in square metres, for 100mm equivalent size"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What do we mean by &#39;opening stock&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to the closing stock at the end of the previous month unless a physical stock check has been made, in which case the actual physical stock figure should be entered and discrepancies explained in the comments section of this survey."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6510d1a1-a239-4afd-badf-f2ae92d20e68",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Opening stock of lightweight aggregate blocks",
+                    "q_code": "111",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer3e4962a5-b3fb-4c5a-8db9-ab7e10f0d0bc",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Total production of lightweight aggregate blocks during month",
+                    "description": "This refers to blocks completed and ready for dispatch",
+                    "q_code": "112",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer8025a53b-e983-41f6-8a47-14713072dca3",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Total deliveries of lightweight aggregate blocks during month",
+                    "description": "This refers to blocks which have actually left the premises",
+                    "q_code": "113",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer79eda410-66e0-437c-9e2b-d1cd9beae0f8",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Closing stock of lightweight aggregate blocks",
+                    "q_code": "114",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Lightweight aggregate blocks"],
+                        {
+                          "identifier": "answer21b8ad7f-b81f-4d6c-a250-eddd7c239740",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "block643",
+              "type": "Question",
+              "question": {
+                "id": "question643",
+                "title": "For the reporting period, what are the details of production and delivery for <em>aerated</em> blocks?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Enter a value to the nearest thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for 56,000.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Record in cubic metres"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What do we mean by &#39;opening stock&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to the closing stock at the end of the previous month unless a physical stock check has been made, in which case the actual physical stock figure should be entered and discrepancies explained in the comments section of this survey."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer478a7f3f-f937-4207-80e7-3374b764ad31",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Opening stock of aerated blocks",
+                    "q_code": "121",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer6af9439c-5cb7-46f3-8997-485cffa7ad67",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Total production of aerated blocks during month",
+                    "description": "This refers to blocks completed and ready for dispatch",
+                    "q_code": "122",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer0ee4f994-b77b-4982-b8b6-9a8e1571a056",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Total deliveries of aerated blocks during month",
+                    "description": "This refers to blocks which have actually left the premises",
+                    "q_code": "123",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answercea4159a-b667-4005-811c-333aca5abc68",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Closing stock of aerated blocks",
+                    "q_code": "124",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Aerated blocks"],
+                        {
+                          "identifier": "answer21b8ad7f-b81f-4d6c-a250-eddd7c239740",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "any-in": [
+            [
+              "Dense aggregate blocks",
+              "Aerated blocks",
+              "Lightweight aggregate blocks"
+            ],
+            {
+              "identifier": "answer21b8ad7f-b81f-4d6c-a250-eddd7c239740",
+              "source": "answers"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "section156",
+      "title": "Comments",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group156",
+          "blocks": [
+            {
+              "id": "block820",
+              "type": "Question",
+              "question": {
+                "id": "question820",
+                "title": "Please provide details of any new works your business has brought into use since your last return",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer1053",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "145",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        [
+                          "Dense aggregate blocks",
+                          "Lightweight aggregate blocks",
+                          "Aerated blocks"
+                        ],
+                        {
+                          "identifier": "answer21b8ad7f-b81f-4d6c-a250-eddd7c239740",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "block90d62f7c-709e-4614-b3ef-1306f6755064",
+              "type": "Question",
+              "question": {
+                "id": "question90d62f7c-709e-4614-b3ef-1306f6755064",
+                "title": "Please provide any further details that will help us understand your figures and tell an industry story",
+                "description": [
+                  "<p>You have nearly finished. Make sure you continue to the next page and select submit answers at the bottom.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "substantial fluctuations compared with your previous return"
+                      ]
+                    },
+                    {
+                      "description": "<strong>For example:</strong>"
+                    },
+                    {
+                      "list": [
+                        "site shutdowns",
+                        "site maintenance",
+                        "site breakdowns",
+                        "raw material shortages",
+                        "stock movements",
+                        "any change in contacts",
+                        "extreme weather"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer69fe3d17-df68-45f8-a9e9-36e2d89d3bd5",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "beis",
+  "navigation": {
+    "visible": true
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}
