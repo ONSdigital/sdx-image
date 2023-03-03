@@ -10,9 +10,15 @@ import (
 // Some substitutions are hard coded to avoid overly complex knowledge of the specific survey.
 func Replace(survey *model.Survey, submission *model.Submission) *model.Survey {
 
+	submittedAt := convertSubmittedAt(submission.SubmittedAt)
+	survey.SubmittedAt = submittedAt
+
+	startDate := convertDate(submission.StartDate)
+	endDate := convertDate(submission.EndDate)
+
 	lookup := parameterLookup{
-		"ref_p_start_date": submission.StartDate,
-		"ref_p_end_date":   submission.EndDate,
+		"ref_p_start_date": startDate,
+		"ref_p_end_date":   endDate,
 		"ru_name":          submission.RuName,
 		"total_turnover":   "the total turnover",
 		"from":             "start date",
