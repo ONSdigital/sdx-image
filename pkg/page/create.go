@@ -32,9 +32,10 @@ func Create(survey *model.Survey) image.Image {
 						text := q.Title
 						if a.Type == "Date" {
 							text += " " + a.Label
-						}
-						if a.Type == "Number" {
+						} else if a.Type == "Number" {
 							text += " " + a.Label + ":"
+						} else if a.Type == "Currency" {
+							text = a.Label + "?"
 						}
 						section.addAnswer(a.QCode, text, a.Value)
 					}

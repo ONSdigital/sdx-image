@@ -34,8 +34,8 @@ func Run(submissionBytes []byte) (image.Image, error) {
 		log.Error("Unable to read schema", err, submission.TxId)
 		return nil, err
 	}
-	survey = substitutions.Replace(survey, submission)
 	survey = model.Add(survey, submission)
+	survey = substitutions.Replace(survey, submission)
 	result := page.Create(survey)
 	log.Info("Successfully created image", submission.TxId)
 	return result, nil
