@@ -21,5 +21,5 @@ func convertSubmittedAt(dateTime string) string {
 		log.Error("Unable to convert date: "+dateTime, err)
 		return dateTime
 	}
-	return dt.Format("01 January 2006 15:04:05")
+	return dt.Format("02 January 2006 15:04:05")
 }
