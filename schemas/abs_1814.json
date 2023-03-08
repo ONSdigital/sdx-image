@@ -453,7 +453,7 @@
                     "type": "Date",
                     "mandatory": true,
                     "label": "To",
-                    "q_code": "122",
+                    "q_code": "12",
                     "maximum": {
                       "value": "2023-06-30",
                       "offset_by": {
