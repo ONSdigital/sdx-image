@@ -55,6 +55,14 @@ func TestAbsV1(t *testing.T) {
 	runFromFile("v1/abs_1802", t)
 }
 
+func TestAbsV2(t *testing.T) {
+	runFromFile("v1/abs_1824", t)
+}
+
+func TestAbsV3(t *testing.T) {
+	runFromFile("v1/abs_1814", t)
+}
+
 func TestBricksV1(t *testing.T) {
 	runFromFile("v1/bricks", t)
 }
