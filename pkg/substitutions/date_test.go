@@ -28,3 +28,12 @@ func TestConvertSubmittedAt(t *testing.T) {
 		t.Errorf("failed to convert to: (%q) instead got (%q)", expected, actual)
 	}
 }
+
+func TestConvertSubmittedAtWithAnotherValue(t *testing.T) {
+	dateTime := "2023-02-05T11:36:23+00:00"
+	expected := "05 February 2023 11:36:23"
+	actual := convertSubmittedAt(dateTime)
+	if actual != expected {
+		t.Errorf("failed to convert to: (%q) instead got (%q)", expected, actual)
+	}
+}
