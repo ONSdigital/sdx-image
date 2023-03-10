@@ -45,6 +45,13 @@ func convert(m map[string]any) *model.Survey {
 	surveyId := getStringFrom(m, "survey_id")
 	formType := getStringFrom(m, "form_type")
 	sections := getListFrom(m, "sections")
+
+	dataVersion := getStringFrom(m, "data_version")
+	var qCodeMap map[string]string
+	if dataVersion == "0.0.3" {
+		qCodeMap = get_qcode_map(m)
+	}
+
 	survey := model.Survey{
 		Title:    title,
 		SurveyId: surveyId,
@@ -80,9 +87,16 @@ func convert(m map[string]any) *model.Survey {
 							if !exists {
 								label = "label"
 							}
+
+							qCode, exists := ans["q_code"]
+							if !exists {
+								id := getStringFrom(ans, "id")
+								qCode = qCodeMap[id]
+							}
+
 							answer := &model.Answer{
 								Type:  getStringFrom(ans, "type"),
-								QCode: getStringFrom(ans, "q_code"),
+								QCode: qCode.(string),
 								Label: label.(string),
 							}
 							question.Answers = append(question.Answers, answer)
@@ -95,5 +109,25 @@ func convert(m map[string]any) *model.Survey {
 		}
 		survey.Sections = append(survey.Sections, section)
 	}
+	if dataVersion == "0.0.3" {
+
+	}
 	return &survey
+}
+
+func get_qcode_map(m map[string]any) map[string]string {
+	answerCodes := getListFrom(m, "answer_codes")
+	qCodeMap := make(map[string]string, len(answerCodes))
+	for _, a := range answerCodes {
+		answer := toMap(a)
+		qCode := getStringFrom(answer, "code")
+
+		qCodeMap[getStringFrom(answer, "answer_id")] = qCode
+	}
+	return qCodeMap
+}
+
+func get_qcode(code string) string {
+	//need to extract qcode from code
+	return ""
 }

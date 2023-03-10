@@ -35,3 +35,17 @@ func TestReadMbs(t *testing.T) {
 	}
 	fmt.Println(result)
 }
+
+func TestReadBerd(t *testing.T) {
+	test.SetCwdToRoot()
+	path, err := os.Getwd()
+	if err != nil {
+		log.Println(err)
+	}
+	fmt.Println(path)
+	result, err := Schema("berd_0001")
+	if err != nil {
+		t.Errorf("failed to read berd_0001 with error: %q", err.Error())
+	}
+	fmt.Println(result)
+}
