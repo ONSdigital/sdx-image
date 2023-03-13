@@ -51,16 +51,16 @@ func TestMbsV1(t *testing.T) {
 	runFromFile("v1/mbs_0106", t)
 }
 
-func TestAbsV1(t *testing.T) {
-	runFromFile("v1/abs_1802", t)
+func TestV1Abs1808(t *testing.T) {
+	runFromFile("v1/abs_1808", t)
 }
 
-func TestAbsV2(t *testing.T) {
-	runFromFile("v1/abs_1824", t)
+func TestV1Abs1862(t *testing.T) {
+	runFromFile("v1/abs_1862", t)
 }
 
-func TestAbsV3(t *testing.T) {
-	runFromFile("v1/abs_1814", t)
+func TestV1Abs1874(t *testing.T) {
+	runFromFile("v1/abs_1874", t)
 }
 
 func TestBricksV1(t *testing.T) {

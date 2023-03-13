@@ -25,7 +25,7 @@ func readFile(filename string) ([]byte, error) {
 
 func TestAbsSubmission(t *testing.T) {
 	test.SetCwdToRoot()
-	filename := "v1/abs_1802"
+	filename := "v1/abs_1808"
 	fileBytes, e := readFile(filename)
 	if e != nil {
 		t.Errorf("failed to read file %v with error: %q", filename, e.Error())
