@@ -2,8 +2,8 @@
 package model
 
 import (
+	"encoding/json"
 	"fmt"
-	"strings"
 )
 
 type Answer struct {
@@ -37,33 +37,54 @@ type Survey struct {
 	Sections    []*Section
 }
 
-func (s *Survey) String() string {
-	var sb strings.Builder
-	sb.WriteString(fmt.Sprintf("{Title: %s\n", s.Title))
-	sb.WriteString(fmt.Sprintf("SurveyId: %s\n", s.SurveyId))
-	sb.WriteString(fmt.Sprintf("FormType: %s\n", s.FormType))
-	sb.WriteString(fmt.Sprintf("Respondent: %s\n", s.Respondent))
-	sb.WriteString(fmt.Sprintf("SubmittedAt: %s\n", s.SubmittedAt))
-	sb.WriteString("Sections: [\n")
-	for _, sec := range s.Sections {
-		sb.WriteString(fmt.Sprintf("  {Title: %s\n", sec.Title))
-		for _, inst := range sec.Instances {
-			sb.WriteString(fmt.Sprintf("  {Id: %d\n", inst.Id))
-			sb.WriteString("  Questions: [\n")
-			for _, q := range inst.Questions {
-				sb.WriteString(fmt.Sprintf("    {Title: %s\n", q.Title))
-				sb.WriteString("    Answers: [\n")
-				for _, a := range q.Answers {
-					sb.WriteString(fmt.Sprintf("      {Type: %s\n", a.Type))
-					sb.WriteString(fmt.Sprintf("      QCode: %s\n", a.QCode))
-					sb.WriteString(fmt.Sprintf("      Label: %s}\n", a.Label))
-				}
-				sb.WriteString("    ]}\n")
-			}
-			sb.WriteString("  ]}\n")
-		}
-		sb.WriteString("  ]}\n")
+func (survey *Survey) String() string {
+	b, err := json.MarshalIndent(survey, "", "  ")
+	if err != nil {
+		fmt.Println("error:", err)
 	}
-	sb.WriteString("]}\n")
-	return sb.String()
+	return string(b)
+}
+
+func From(schema *Schema, submission *Submission) *Survey {
+	survey := &Survey{
+		Title:       schema.Title,
+		SurveyId:    schema.SurveyId,
+		FormType:    schema.FormType,
+		Respondent:  submission.RuRef,
+		SubmittedAt: submission.SubmittedAt,
+		Sections:    []*Section{},
+	}
+	for _, sect := range schema.Sections {
+		instance := &Instance{
+			Id:        0,
+			Questions: []*Question{},
+		}
+		section := &Section{
+			Title:     sect.Title,
+			Instances: []*Instance{instance},
+		}
+
+		for _, quest := range sect.Questions {
+			question := &Question{
+				Title:   quest.Title,
+				Answers: []*Answer{},
+			}
+			for _, ans := range quest.Answers {
+				answer := &Answer{
+					Type:  ans.Type,
+					QCode: ans.QCode,
+					Label: ans.Label,
+					Value: "",
+				}
+				value, found := submission.Data[ans.QCode]
+				if found {
+					answer.Value = value
+				}
+				question.Answers = append(question.Answers, answer)
+			}
+			instance.Questions = append(instance.Questions, question)
+		}
+		survey.Sections = append(survey.Sections, section)
+	}
+	return survey
 }
