@@ -26,9 +26,11 @@ func Replace(survey *model.Survey, submission *model.Submission) *model.Survey {
 	}
 
 	for _, section := range survey.Sections {
-		for _, question := range section.Questions {
-			title := replaceParameters(question.Title, lookup)
-			question.Title = html(title)
+		for _, instance := range section.Instances {
+			for _, question := range instance.Questions {
+				title := replaceParameters(question.Title, lookup)
+				question.Title = html(title)
+			}
 		}
 	}
 	return survey

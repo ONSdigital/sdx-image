@@ -18,9 +18,14 @@ type Question struct {
 	Answers []*Answer
 }
 
+type Instance struct {
+	Id        int
+	Questions []*Question
+}
+
 type Section struct {
 	Title     string
-	Questions []*Question
+	Instances []*Instance
 }
 
 type Survey struct {
@@ -42,16 +47,20 @@ func (s *Survey) String() string {
 	sb.WriteString("Sections: [\n")
 	for _, sec := range s.Sections {
 		sb.WriteString(fmt.Sprintf("  {Title: %s\n", sec.Title))
-		sb.WriteString("  Questions: [\n")
-		for _, q := range sec.Questions {
-			sb.WriteString(fmt.Sprintf("    {Title: %s\n", q.Title))
-			sb.WriteString("    Answers: [\n")
-			for _, a := range q.Answers {
-				sb.WriteString(fmt.Sprintf("      {Type: %s\n", a.Type))
-				sb.WriteString(fmt.Sprintf("      QCode: %s\n", a.QCode))
-				sb.WriteString(fmt.Sprintf("      Label: %s}\n", a.Label))
+		for _, inst := range sec.Instances {
+			sb.WriteString(fmt.Sprintf("  {Id: %d\n", inst.Id))
+			sb.WriteString("  Questions: [\n")
+			for _, q := range inst.Questions {
+				sb.WriteString(fmt.Sprintf("    {Title: %s\n", q.Title))
+				sb.WriteString("    Answers: [\n")
+				for _, a := range q.Answers {
+					sb.WriteString(fmt.Sprintf("      {Type: %s\n", a.Type))
+					sb.WriteString(fmt.Sprintf("      QCode: %s\n", a.QCode))
+					sb.WriteString(fmt.Sprintf("      Label: %s}\n", a.Label))
+				}
+				sb.WriteString("    ]}\n")
 			}
-			sb.WriteString("    ]}\n")
+			sb.WriteString("  ]}\n")
 		}
 		sb.WriteString("  ]}\n")
 	}

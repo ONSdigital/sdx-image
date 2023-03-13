@@ -29,12 +29,12 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	}
 
 	log.Info("Processing submission", submission.TxId)
-	survey, err := read.Schema(submission.SchemaName)
+	schema, err := read.Schema(submission.SchemaName)
 	if err != nil {
 		log.Error("Unable to read schema", err, submission.TxId)
 		return nil, err
 	}
-	survey = model.Add(survey, submission)
+	survey := model.Add(schema, submission)
 	survey = substitutions.Replace(survey, submission)
 	result := page.Create(survey)
 	log.Info("Successfully created image", submission.TxId)

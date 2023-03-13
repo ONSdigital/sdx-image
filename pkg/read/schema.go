@@ -9,7 +9,7 @@ import (
 )
 
 // Schema loads the requested schema and returns a (semi) populated *model.Survey.
-func Schema(schemaName string) (*model.Survey, error) {
+func Schema(schemaName string) (*model.Schema, error) {
 	bytes, err := loadFile(schemaName)
 	if err != nil {
 		log.Error("Failed to read schema", err)
@@ -40,7 +40,7 @@ func loadFile(schemaName string) ([]byte, error) {
 	return bytes, nil
 }
 
-func convert(m map[string]any) *model.Survey {
+func convert(m map[string]any) *model.Schema {
 	title := getStringFrom(m, "title")
 	surveyId := getStringFrom(m, "survey_id")
 	formType := getStringFrom(m, "form_type")
@@ -52,18 +52,18 @@ func convert(m map[string]any) *model.Survey {
 		qCodeMap = getQcodeMap(m)
 	}
 
-	survey := model.Survey{
+	schema := model.Schema{
 		Title:    title,
 		SurveyId: surveyId,
 		FormType: formType,
-		Sections: []*model.Section{},
+		Sections: []*model.Sect{},
 	}
 
 	for _, s := range sections {
 		sect := toMap(s)
-		section := &model.Section{
+		section := &model.Sect{
 			Title:     getOptionalStringField(sect, "title"),
-			Questions: []*model.Question{},
+			Questions: []*model.Quest{},
 		}
 		groups := getListFrom(sect, "groups")
 		for _, g := range groups {
@@ -75,9 +75,9 @@ func convert(m map[string]any) *model.Survey {
 					if getStringFrom(block, "type") == "Question" {
 						q := getMapFrom(block, "question")
 
-						question := &model.Question{
+						question := &model.Quest{
 							Title:   locateStringFrom(q, "title", "text"),
-							Answers: []*model.Answer{},
+							Answers: []*model.Ans{},
 						}
 
 						answers := getListFrom(q, "answers")
@@ -94,7 +94,7 @@ func convert(m map[string]any) *model.Survey {
 								qCode = qCodeMap[id]
 							}
 
-							answer := &model.Answer{
+							answer := &model.Ans{
 								Type:  getStringFrom(ans, "type"),
 								QCode: qCode.(string),
 								Label: label.(string),
@@ -107,7 +107,7 @@ func convert(m map[string]any) *model.Survey {
 				}
 			}
 		}
-		survey.Sections = append(survey.Sections, section)
+		schema.Sections = append(schema.Sections, section)
 	}
-	return &survey
+	return &schema
 }

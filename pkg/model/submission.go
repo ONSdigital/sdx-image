@@ -49,18 +49,46 @@ func MissingFields(s *Submission) []string {
 	return missing
 }
 
-func Add(survey *Survey, submission *Submission) *Survey {
-	survey.Respondent = submission.RuRef
-	survey.SubmittedAt = submission.SubmittedAt
-	for _, section := range survey.Sections {
-		for _, question := range section.Questions {
-			for _, a := range question.Answers {
-				value, found := submission.Data[a.QCode]
-				if found {
-					a.Value = value
-				}
-			}
+func Add(schema *Schema, submission *Submission) *Survey {
+	survey := &Survey{
+		Title:       schema.Title,
+		SurveyId:    schema.SurveyId,
+		FormType:    schema.FormType,
+		Respondent:  submission.RuRef,
+		SubmittedAt: submission.SubmittedAt,
+		Sections:    []*Section{},
+	}
+	for _, sect := range schema.Sections {
+		instance := &Instance{
+			Id:        0,
+			Questions: []*Question{},
 		}
+		section := &Section{
+			Title:     sect.Title,
+			Instances: []*Instance{instance},
+		}
+
+		for _, quest := range sect.Questions {
+			question := &Question{
+				Title:   quest.Title,
+				Answers: []*Answer{},
+			}
+			for _, ans := range quest.Answers {
+				answer := &Answer{
+					Type:  ans.Type,
+					QCode: ans.QCode,
+					Label: ans.Label,
+					Value: "",
+				}
+				value, found := submission.Data[ans.QCode]
+				if found {
+					answer.Value = value
+				}
+				question.Answers = append(question.Answers, answer)
+			}
+			instance.Questions = append(instance.Questions, question)
+		}
+		survey.Sections = append(survey.Sections, section)
 	}
 	return survey
 }
