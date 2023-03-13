@@ -9,7 +9,7 @@ import (
 )
 
 func readFile(filename string) ([]byte, error) {
-	jsonFile, err := os.Open("examples/" + filename + ".json")
+	jsonFile, err := os.Open("examples/submissions/" + filename + ".json")
 	if err != nil {
 		return nil, err
 	}

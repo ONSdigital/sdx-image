@@ -9,7 +9,7 @@ import (
 )
 
 func getSubmission(filename string) ([]byte, error) {
-	jsonFile, err := os.Open("examples/" + filename + ".json")
+	jsonFile, err := os.Open("examples/submissions/" + filename + ".json")
 	if err != nil {
 		return nil, err
 	}
@@ -33,7 +33,7 @@ func runFromFile(filename string, t *testing.T) {
 	if e != nil {
 		t.Errorf("failed with error: %q", err)
 	}
-	err = test.SaveJPG("temp/"+filename+".jpg", result, 100)
+	err = test.SaveJPG("examples/images/"+filename+".jpg", result, 100)
 	if err != nil {
 		t.Errorf("failed to create image for %s with error: %q", filename, err.Error())
 	}
