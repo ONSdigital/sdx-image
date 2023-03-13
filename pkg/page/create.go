@@ -16,32 +16,20 @@ func Create(survey *model.Survey) image.Image {
 	page := createPage(header)
 
 	for _, s := range survey.Sections {
-		hasAnswerValue := false
+		section := page.addSection(s.Title)
 		for _, i := range s.Instances {
 			for _, q := range i.Questions {
 				for _, a := range q.Answers {
 					if a.Value != "" {
-						hasAnswerValue = true
-					}
-				}
-			}
-		}
-		if hasAnswerValue {
-			section := page.addSection(s.Title)
-			for _, i := range s.Instances {
-				for _, q := range i.Questions {
-					for _, a := range q.Answers {
-						if a.Value != "" {
-							text := q.Title
-							if a.Type == "Date" {
-								text += " " + a.Label
-							} else if a.Type == "Number" {
-								text += " " + a.Label + ":"
-							} else if a.Type == "Currency" {
-								text = a.Label + "?"
-							}
-							section.addAnswer(a.QCode, text, a.Value)
+						text := q.Title
+						if a.Type == "Date" {
+							text += " " + a.Label
+						} else if a.Type == "Number" {
+							text += " " + a.Label + ":"
+						} else if a.Type == "Currency" {
+							text = a.Label + "?"
 						}
+						section.addAnswer(a.QCode, text, a.Value)
 					}
 				}
 			}

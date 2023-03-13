@@ -72,15 +72,6 @@ func TestCreateAbs(t *testing.T) {
 		SubmittedAt: "13 January 2023 16:38:46",
 		Sections: []*model.Section{
 			{
-				Title: "Introduction",
-				Instances: []*model.Instance{
-					{
-						Id:        0,
-						Questions: []*model.Question{},
-					},
-				},
-			},
-			{
 				Title: "How to complete and reporting period",
 				Instances: []*model.Instance{
 					{

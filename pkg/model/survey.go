@@ -55,6 +55,7 @@ func From(schema *Schema, submission *Submission) *Survey {
 		Sections:    []*Section{},
 	}
 	for _, sect := range schema.Sections {
+		hasAnswerValue := false
 		instance := &Instance{
 			Id:        0,
 			Questions: []*Question{},
@@ -79,12 +80,15 @@ func From(schema *Schema, submission *Submission) *Survey {
 				value, found := submission.Data[ans.QCode]
 				if found {
 					answer.Value = value
+					hasAnswerValue = true
 				}
 				question.Answers = append(question.Answers, answer)
 			}
 			instance.Questions = append(instance.Questions, question)
 		}
-		survey.Sections = append(survey.Sections, section)
+		if hasAnswerValue {
+			survey.Sections = append(survey.Sections, section)
+		}
 	}
 	return survey
 }
