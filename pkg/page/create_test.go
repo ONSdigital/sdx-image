@@ -14,7 +14,7 @@ func TestCreateMbs(t *testing.T) {
 		SurveyId:    "009",
 		FormType:    "0106",
 		Respondent:  "12346789012A",
-		SubmittedAt: "2023-01-13T16:38:46+00:00",
+		SubmittedAt: "13 January 2023 16:38:46",
 		Sections: []*model.Section{
 			{
 				Title: "",
@@ -23,7 +23,7 @@ func TestCreateMbs(t *testing.T) {
 						Id: 0,
 						Questions: []*model.Question{
 							{
-								Title: "Are you able to report for the period from 2016-05-01 to 2016-06-01?",
+								Title: "Are you able to report for the period from 01/05/2016 to 01/06/2016?",
 								Answers: []*model.Answer{
 									{Type: "Radio", QCode: "9999", Label: "label", Value: "Yes, I can report for this period"},
 								},
@@ -69,7 +69,7 @@ func TestCreateAbs(t *testing.T) {
 		SurveyId:    "202",
 		FormType:    "1802",
 		Respondent:  "12346789012A",
-		SubmittedAt: "2023-01-13T16:38:46+00:00",
+		SubmittedAt: "13 January 2023 16:38:46",
 		Sections: []*model.Section{
 			{
 				Title: "Introduction",
@@ -87,7 +87,7 @@ func TestCreateAbs(t *testing.T) {
 						Id: 0,
 						Questions: []*model.Question{
 							{
-								Title: "Are you able to report for the period from 2022-01-01 to 2022-12-31?",
+								Title: "Are you able to report for the period from 01/01/2022 to 31/12/2022?",
 								Answers: []*model.Answer{
 									{Type: "Radio", QCode: "9999", Label: "label"},
 								},
