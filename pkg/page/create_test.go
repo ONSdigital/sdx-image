@@ -181,3 +181,95 @@ func TestCreateAbs(t *testing.T) {
 		t.Errorf("failed to create image for abs_1802 with error: %q", err.Error())
 	}
 }
+
+func TestCreateInstances(t *testing.T) {
+	test.SetCwdToRoot()
+
+	survey := &model.Survey{
+		Title:       "Instances Test",
+		SurveyId:    "123",
+		FormType:    "0106",
+		Respondent:  "12346789012A",
+		SubmittedAt: "13 January 2023 16:38:46",
+		Sections: []*model.Section{
+			{
+				Title: "No Instances",
+				Instances: []*model.Instance{
+					{
+						Id: 0,
+						Questions: []*model.Question{
+							{
+								Title: "What was the business's total expenditure?",
+								Answers: []*model.Answer{
+									{Type: "Currency", QCode: "200", Label: "Total expenditure", Value: "10000"},
+								},
+							},
+						},
+					},
+				},
+			},
+			{
+				Title: "Three Instances",
+				Instances: []*model.Instance{
+					{
+						Id: 1,
+						Questions: []*model.Question{
+							{
+								Title: "What was the business's expenditure on employment costs for the period?",
+								Answers: []*model.Answer{
+									{Type: "Currency", QCode: "450", Label: "Total employment costs", Value: "2000"},
+								},
+							},
+							{
+								Title: "During the reporting period, what was your business's expenditure on goods and energy products bought for resale?",
+								Answers: []*model.Answer{
+									{Type: "Currency", QCode: "451", Label: "Total expenditure on goods and energy products bought for resale", Value: "1000"},
+								},
+							},
+						},
+					},
+					{
+						Id: 2,
+						Questions: []*model.Question{
+							{
+								Title: "What was the business's expenditure on employment costs for the period?",
+								Answers: []*model.Answer{
+									{Type: "Currency", QCode: "450", Label: "Total employment costs", Value: "3000"},
+								},
+							},
+							{
+								Title: "During the reporting period, what was your business's expenditure on goods and energy products bought for resale?",
+								Answers: []*model.Answer{
+									{Type: "Currency", QCode: "451", Label: "Total expenditure on goods and energy products bought for resale", Value: "1000"},
+								},
+							},
+						},
+					},
+					{
+						Id: 3,
+						Questions: []*model.Question{
+							{
+								Title: "What was the business's expenditure on employment costs for the period?",
+								Answers: []*model.Answer{
+									{Type: "Currency", QCode: "450", Label: "Total employment costs", Value: "2000"},
+								},
+							},
+							{
+								Title: "During the reporting period, what was your business's expenditure on goods and energy products bought for resale?",
+								Answers: []*model.Answer{
+									{Type: "Currency", QCode: "451", Label: "Total expenditure on goods and energy products bought for resale", Value: "1000"},
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	}
+
+	result := Create(survey)
+	err := test.SaveJPG("temp/instance-test.jpg", result, 100)
+	if err != nil {
+		t.Errorf("failed to create image for instance test with error: %q", err.Error())
+	}
+}
