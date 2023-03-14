@@ -31,6 +31,6 @@ func newSection(title string, canvas *drawing.Canvas, parent *drawing.Container)
 	}
 }
 
-func (section *Section) addAnswer(qCode, question, answer string) {
-	createAnswer(qCode, question, answer, section.canvas, section.container)
+func (section *Section) addInstance(id int) *Instance {
+	return newInstance(id, section.canvas, section.container)
 }
