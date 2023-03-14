@@ -19,20 +19,8 @@ func Create(survey *model.Survey) image.Image {
 		section := page.addSection(s.Title)
 		for _, i := range s.Instances {
 			instance := section.addInstance(i.Id)
-			for _, q := range i.Questions {
-				for _, a := range q.Answers {
-					if a.Value != "" {
-						text := q.Title
-						if a.Type == "Date" {
-							text += " " + a.Label
-						} else if a.Type == "Number" {
-							text += " " + a.Label + ":"
-						} else if a.Type == "Currency" {
-							text = a.Label + "?"
-						}
-						instance.addAnswer(a.QCode, text, a.Value)
-					}
-				}
+			for _, a := range i.Answers {
+				instance.addAnswer(a.QCode, a.Text, a.Value)
 			}
 		}
 	}
