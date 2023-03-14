@@ -32,16 +32,7 @@ func FromSubmission(schema *Schema, submission *Submission) *Survey {
 				value, found := submission.Data[qCode]
 
 				if found && value != "" {
-					text := title
-					qType := ans.Type
-					label := ans.Label
-					if qType == "Date" {
-						text += " " + label
-					} else if qType == "Number" {
-						text += " " + label + ":"
-					} else if qType == "Currency" {
-						text = label + "?"
-					}
+					text := getAnswerText(title, ans.Label, ans.Type)
 
 					answer := &Answer{
 						QCode: qCode,
@@ -98,16 +89,7 @@ func FromSpp(schema *Schema, spp *Spp) *Survey {
 					value := resp.Response
 					if value != "" {
 						qCode := ans.QCode
-						text := title
-						qType := ans.Type
-						label := ans.Label
-						if qType == "Date" {
-							text += " " + label
-						} else if qType == "Number" {
-							text += " " + label + ":"
-						} else if qType == "Currency" {
-							text = label + "?"
-						}
+						text := getAnswerText(title, ans.Label, ans.Type)
 
 						answer := &Answer{
 							QCode: qCode,
@@ -121,5 +103,18 @@ func FromSpp(schema *Schema, spp *Spp) *Survey {
 			}
 		}
 	}
+	survey.Sections = sections
 	return survey
+}
+
+func getAnswerText(title, label, qType string) string {
+	text := title
+	if qType == "Date" {
+		text += " " + label
+	} else if qType == "Number" {
+		text += " " + label + ":"
+	} else if qType == "Currency" {
+		text = label + "?"
+	}
+	return text
 }
