@@ -6,7 +6,7 @@ import (
 	"sdxImage/pkg/model"
 )
 
-var surveyMap = map[string]string{"073": "073", "074": "074", "202": "abs"}
+var surveyMap = map[string]string{"002": "berd", "073": "073", "074": "074", "202": "abs"}
 
 func Submission(bytes []byte) (*model.Submission, error) {
 	m, err := toCompleteMap(bytes)
@@ -56,7 +56,12 @@ func fromV1(m map[string]any) *model.Submission {
 	submission.RuName = "the business"
 
 	submission.DataVersion = getStringFrom(m, "version")
-	submission.Data = getData(m)
+	if submission.DataVersion == "0.0.3" {
+		submission.Responses = getResponsesFromList(m)
+	} else {
+		submission.Responses = getResponses(m)
+	}
+
 	return submission
 }
 
@@ -73,16 +78,41 @@ func fromV2(m map[string]any) *model.Submission {
 	submission.EndDate = getStringFrom(metadata, "ref_p_end_date")
 
 	submission.DataVersion = getStringFrom(m, "data_version")
-	submission.Data = getData(m)
+	if submission.DataVersion == "0.0.3" {
+		submission.Responses = getResponsesFromList(m)
+	} else {
+		submission.Responses = getResponses(m)
+	}
+
 	return submission
 }
 
-func getData(m map[string]any) map[string]string {
+func getResponses(m map[string]any) []*model.Response {
 	data := getMapFrom(m, "data")
-	dataMap := make(map[string]string)
+	counter := 0
+	responses := make([]*model.Response, len(data))
 	for key, value := range data {
 		strValue := fmt.Sprintf("%v", value)
-		dataMap[key] = strValue
+		responses[counter] = &model.Response{
+			QuestionCode: key,
+			Value:        strValue,
+			Instance:     "0",
+		}
+		counter++
 	}
-	return dataMap
+	return responses
+}
+
+func getResponsesFromList(m map[string]any) []*model.Response {
+	data := getListFrom(m, "data")
+	responses := make([]*model.Response, len(data))
+	for index, resp := range data {
+		r := toMap(resp)
+		responses[index] = &model.Response{
+			QuestionCode: getStringFrom(r, "questioncode"),
+			Value:        getStringFrom(r, "response"),
+			Instance:     getStringFrom(r, "instance"),
+		}
+	}
+	return responses
 }

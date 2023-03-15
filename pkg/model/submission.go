@@ -5,6 +5,12 @@ import (
 	"fmt"
 )
 
+type Response struct {
+	QuestionCode string
+	Value        string
+	Instance     string
+}
+
 type Submission struct {
 	TxId        string
 	SchemaName  string
@@ -14,7 +20,7 @@ type Submission struct {
 	StartDate   string
 	EndDate     string
 	DataVersion string
-	Data        map[string]string
+	Responses   []*Response
 }
 
 type SubmissionError struct {
@@ -52,6 +58,16 @@ func MissingFields(s *Submission) []string {
 		missing = append(missing, "DataVersion")
 	}
 	return missing
+}
+
+func (submission *Submission) GetResponses(qCode string) []Response {
+	var respList []Response
+	for _, resp := range submission.Responses {
+		if resp.QuestionCode == qCode {
+			respList = append(respList, *resp)
+		}
+	}
+	return respList
 }
 
 func (submission *Submission) String() string {
