@@ -66,3 +66,7 @@ func TestV1Abs1874(t *testing.T) {
 func TestBricksV1(t *testing.T) {
 	runFromFile("v1/bricks", t)
 }
+
+func TestBerdV1(t *testing.T) {
+	runFromFile("v1/berd", t)
+}

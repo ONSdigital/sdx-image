@@ -8,7 +8,7 @@ import (
 type Response struct {
 	QuestionCode string
 	Value        string
-	Instance     string
+	Instance     int
 }
 
 type Submission struct {

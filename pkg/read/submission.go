@@ -59,7 +59,7 @@ func fromV1(m map[string]any) *model.Submission {
 	if submission.DataVersion == "0.0.3" {
 		submission.Responses = getResponsesFromList(m)
 	} else {
-		submission.Responses = getResponses(m)
+		submission.Responses = getResponsesFromData(m)
 	}
 
 	return submission
@@ -81,13 +81,13 @@ func fromV2(m map[string]any) *model.Submission {
 	if submission.DataVersion == "0.0.3" {
 		submission.Responses = getResponsesFromList(m)
 	} else {
-		submission.Responses = getResponses(m)
+		submission.Responses = getResponsesFromData(m)
 	}
 
 	return submission
 }
 
-func getResponses(m map[string]any) []*model.Response {
+func getResponsesFromData(m map[string]any) []*model.Response {
 	data := getMapFrom(m, "data")
 	counter := 0
 	responses := make([]*model.Response, len(data))
@@ -96,7 +96,7 @@ func getResponses(m map[string]any) []*model.Response {
 		responses[counter] = &model.Response{
 			QuestionCode: key,
 			Value:        strValue,
-			Instance:     "0",
+			Instance:     0,
 		}
 		counter++
 	}
@@ -111,7 +111,7 @@ func getResponsesFromList(m map[string]any) []*model.Response {
 		responses[index] = &model.Response{
 			QuestionCode: getStringFrom(r, "questioncode"),
 			Value:        getStringFrom(r, "response"),
-			Instance:     getStringFrom(r, "instance"),
+			Instance:     getIntFrom(r, "instance"),
 		}
 	}
 	return responses

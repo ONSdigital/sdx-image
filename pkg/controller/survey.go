@@ -34,9 +34,9 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 			for _, ans := range quest.Answers {
 				responseList := submission.GetResponses(ans.QCode)
 				for _, resp := range responseList {
-					instance, found := instanceMap[resp.Instance]
+					instance, found := instanceMap[strconv.Itoa(resp.Instance)]
 					if !found {
-						id, _ := strconv.Atoi(resp.Instance)
+						id := resp.Instance
 						instance = &model.Instance{
 							Id:      id,
 							Answers: []*model.Answer{},

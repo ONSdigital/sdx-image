@@ -14,7 +14,7 @@ func TestNonMissing(t *testing.T) {
 		StartDate:   "2016-05-01",
 		EndDate:     "2016-05-31",
 		DataVersion: "0.0.1",
-		Responses:   []*Response{{"40", "56000", "0"}},
+		Responses:   []*Response{{"40", "56000", 0}},
 	}
 
 	missing := MissingFields(submission)
@@ -32,7 +32,7 @@ func TestMissingRuName(t *testing.T) {
 		StartDate:   "2016-05-01",
 		EndDate:     "2016-05-31",
 		DataVersion: "0.0.1",
-		Responses:   []*Response{{"40", "56000", "0"}},
+		Responses:   []*Response{{"40", "56000", 0}},
 	}
 
 	missing := MissingFields(submission)
@@ -43,10 +43,10 @@ func TestMissingRuName(t *testing.T) {
 
 func TestGetSingleResponse(t *testing.T) {
 	respList := []*Response{
-		{"001", "Yes", "1"},
-		{"002", "Yes", "1"},
-		{"002", "Yes", "2"},
-		{"002", "Yes", "3"},
+		{"001", "Yes", 1},
+		{"002", "Yes", 1},
+		{"002", "Yes", 2},
+		{"002", "Yes", 3},
 	}
 
 	submission := &Submission{
@@ -61,7 +61,7 @@ func TestGetSingleResponse(t *testing.T) {
 	}
 
 	result := submission.GetResponses("001")
-	expected := []Response{{"001", "Yes", "1"}}
+	expected := []Response{{"001", "Yes", 1}}
 
 	if result[0] != expected[0] {
 		t.Errorf("failed to return resp %q, instead got: %q", expected, result)
@@ -70,10 +70,10 @@ func TestGetSingleResponse(t *testing.T) {
 
 func TestGetMultipleResponses(t *testing.T) {
 	respList := []*Response{
-		{"001", "Yes", "1"},
-		{"002", "Yes", "1"},
-		{"002", "Yes", "2"},
-		{"002", "Yes", "3"},
+		{"001", "Yes", 1},
+		{"002", "Yes", 1},
+		{"002", "Yes", 2},
+		{"002", "Yes", 3},
 	}
 
 	submission := &Submission{
@@ -88,7 +88,7 @@ func TestGetMultipleResponses(t *testing.T) {
 	}
 
 	result := submission.GetResponses("002")
-	expected := []Response{{"002", "Yes", "1"}, {"002", "Yes", "2"}, {"002", "Yes", "3"}}
+	expected := []Response{{"002", "Yes", 1}, {"002", "Yes", 2}, {"002", "Yes", 3}}
 
 	if result[0] != expected[0] {
 		t.Errorf("failed to return resp %q, instead got: %q", expected, result)
