@@ -28,7 +28,7 @@ func (spp *Spp) String() string {
 	return string(b)
 }
 
-func (spp *Spp) getResp(qCode string) []Resp {
+func (spp *Spp) GetResp(qCode string) []Resp {
 	var respList []Resp
 	for _, resp := range spp.Responses {
 		if resp.QuestionCode == qCode {

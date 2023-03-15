@@ -4,10 +4,8 @@ package controller
 import (
 	"image"
 	"sdxImage/pkg/log"
-	"sdxImage/pkg/model"
 	"sdxImage/pkg/page"
 	"sdxImage/pkg/read"
-	"sdxImage/pkg/substitutions"
 	"sync"
 )
 
@@ -34,8 +32,7 @@ func Run(submissionBytes []byte) (image.Image, error) {
 		log.Error("Unable to read schema", err, submission.TxId)
 		return nil, err
 	}
-	survey := model.FromSubmission(schema, submission)
-	survey = substitutions.Replace(survey, submission)
+	survey := fromSubmission(schema, submission)
 	result := page.Create(survey)
 	log.Info("Successfully created image", submission.TxId)
 	return result, nil

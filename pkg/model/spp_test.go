@@ -18,7 +18,7 @@ func TestGetSingleResp(t *testing.T) {
 		Responses: respList,
 	}
 
-	result := spp.getResp("001")
+	result := spp.GetResp("001")
 	expected := []Resp{{"001", "Yes", "1"}}
 
 	if result[0] != expected[0] {
@@ -42,7 +42,7 @@ func TestGetMultipleResp(t *testing.T) {
 		Responses: respList,
 	}
 
-	result := spp.getResp("002")
+	result := spp.GetResp("002")
 	expected := []Resp{{"002", "Yes", "1"}, {"002", "Yes", "2"}, {"002", "Yes", "3"}}
 
 	if result[0] != expected[0] {
