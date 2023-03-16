@@ -106,12 +106,15 @@ func getResponsesFromData(m map[string]any) []*model.Response {
 func getResponsesFromList(m map[string]any) []*model.Response {
 	data := getListFrom(m, "data")
 	responses := make([]*model.Response, len(data))
+
 	for index, resp := range data {
+
 		r := toMap(resp)
+
 		responses[index] = &model.Response{
 			QuestionCode: getStringFrom(r, "questioncode"),
 			Value:        getStringFrom(r, "response"),
-			Instance:     getIntFrom(r, "instance"),
+			Instance:     int(getFloat64From(r, "instance")),
 		}
 	}
 	return responses

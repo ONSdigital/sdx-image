@@ -25,7 +25,7 @@ func locateStringFrom(json map[string]any, fieldName ...string) string {
 }
 
 var getStringFrom = getFieldFrom[string]
-var getIntFrom = getFieldFrom[int]
+var getFloat64From = getFieldFrom[float64]
 var getListFrom = getFieldFrom[[]any]
 var getMapFrom = getFieldFrom[map[string]any]
 

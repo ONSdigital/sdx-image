@@ -33,6 +33,7 @@ func Run(submissionBytes []byte) (image.Image, error) {
 		return nil, err
 	}
 	survey := fromSubmission(schema, submission)
+	//fmt.Print(survey)
 	result := page.Create(survey)
 	log.Info("Successfully created image", submission.TxId)
 	return result, nil

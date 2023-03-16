@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"sdxImage/pkg/model"
 	"sdxImage/pkg/substitutions"
 	"strconv"
@@ -34,6 +35,14 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 			for _, ans := range quest.Answers {
 				responseList := submission.GetResponses(ans.QCode)
 				for _, resp := range responseList {
+
+					//**********
+					if resp.QuestionCode == "c202" {
+						fmt.Print(resp.Instance)
+					}
+
+					//***********
+
 					instanceKey := strconv.Itoa(resp.Instance)
 					instance, found := instanceMap[instanceKey]
 					if !found {

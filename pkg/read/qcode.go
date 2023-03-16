@@ -8,7 +8,7 @@ func getQcodeMap(m map[string]any) map[string]string {
 	for _, a := range answerCodes {
 		answer := toMap(a)
 		code := getStringFrom(answer, "code")
-		qCode := getQcode(code)
+		qCode := code
 		qCodeMap[getStringFrom(answer, "answer_id")] = qCode
 	}
 	return qCodeMap
