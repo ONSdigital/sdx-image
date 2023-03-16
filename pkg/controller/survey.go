@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"fmt"
 	"sdxImage/pkg/model"
 	"sdxImage/pkg/substitutions"
 	"strconv"
@@ -36,13 +35,6 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 				responseList := submission.GetResponses(ans.QCode)
 				for _, resp := range responseList {
 
-					//**********
-					if resp.QuestionCode == "c202" {
-						fmt.Print(resp.Instance)
-					}
-
-					//***********
-
 					instanceKey := strconv.Itoa(resp.Instance)
 					instance, found := instanceMap[instanceKey]
 					if !found {
@@ -56,7 +48,7 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 
 					value := resp.Value
 					if value != "" {
-						qCode := ans.QCode
+						qCode := getQCode(ans.QCode)
 						text := getAnswerText(title, ans.Label, ans.Type, lookup)
 
 						answer := &model.Answer{
@@ -89,4 +81,12 @@ func getAnswerText(title, label, qType string, lookup substitutions.ParameterLoo
 		text = label + "?"
 	}
 	return substitutions.Replace(text, lookup)
+}
+
+func getQCode(code string) string {
+	_, err := strconv.Atoi(code)
+	if err != nil {
+		return getQCode(code[1:])
+	}
+	return code
 }

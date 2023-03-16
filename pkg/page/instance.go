@@ -4,6 +4,7 @@ import "sdxImage/pkg/drawing"
 
 const indent = 10
 const topPadding = 20
+const spaceBelow = 10
 
 type Instance struct {
 	canvas    *drawing.Canvas
@@ -17,6 +18,7 @@ func newInstance(id int, canvas *drawing.Canvas, parent *drawing.Container) *Ins
 
 	if id > 0 {
 		container.SetPadding(indent, topPadding, 0, 0).SetBorder(red, 2.0)
+		canvas.AddDiv(drawing.MatchParent(), drawing.PX(spaceBelow), parent)
 	}
 
 	return &Instance{
