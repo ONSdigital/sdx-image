@@ -23,6 +23,7 @@ func Create(survey *model.Survey) image.Image {
 				instance.addAnswer(a.QCode, a.Text, a.Value)
 			}
 		}
+		section.complete()
 	}
 
 	return page.draw()
