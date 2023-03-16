@@ -34,13 +34,14 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 			for _, ans := range quest.Answers {
 				responseList := submission.GetResponses(ans.QCode)
 				for _, resp := range responseList {
-					instance, found := instanceMap[strconv.Itoa(resp.Instance)]
+					instanceKey := strconv.Itoa(resp.Instance)
+					instance, found := instanceMap[instanceKey]
 					if !found {
-						id := resp.Instance
 						instance = &model.Instance{
-							Id:      id,
+							Id:      resp.Instance,
 							Answers: []*model.Answer{},
 						}
+						instanceMap[instanceKey] = instance
 						section.Instances = append(section.Instances, instance)
 					}
 
