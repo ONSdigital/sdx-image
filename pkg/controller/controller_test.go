@@ -9,7 +9,7 @@ import (
 )
 
 func getSubmission(filename string) ([]byte, error) {
-	jsonFile, err := os.Open("examples/" + filename + ".json")
+	jsonFile, err := os.Open("examples/submissions/" + filename + ".json")
 	if err != nil {
 		return nil, err
 	}
@@ -33,7 +33,7 @@ func runFromFile(filename string, t *testing.T) {
 	if e != nil {
 		t.Errorf("failed with error: %q", err)
 	}
-	err = test.SaveJPG("temp/"+filename+".jpg", result, 100)
+	err = test.SaveJPG("examples/images/"+filename+".jpg", result, 100)
 	if err != nil {
 		t.Errorf("failed to create image for %s with error: %q", filename, err.Error())
 	}
@@ -51,18 +51,22 @@ func TestMbsV1(t *testing.T) {
 	runFromFile("v1/mbs_0106", t)
 }
 
-func TestAbsV1(t *testing.T) {
-	runFromFile("v1/abs_1802", t)
+func TestV1Abs1808(t *testing.T) {
+	runFromFile("v1/abs_1808", t)
 }
 
-func TestAbsV2(t *testing.T) {
-	runFromFile("v1/abs_1824", t)
+func TestV1Abs1862(t *testing.T) {
+	runFromFile("v1/abs_1862", t)
 }
 
-func TestAbsV3(t *testing.T) {
-	runFromFile("v1/abs_1814", t)
+func TestV1Abs1874(t *testing.T) {
+	runFromFile("v1/abs_1874", t)
 }
 
 func TestBricksV1(t *testing.T) {
 	runFromFile("v1/bricks", t)
+}
+
+func TestBerdV1(t *testing.T) {
+	runFromFile("v1/berd", t)
 }

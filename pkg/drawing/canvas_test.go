@@ -8,7 +8,7 @@ import (
 func TestCanvas(t *testing.T) {
 	test.SetCwdToRoot()
 
-	var filename = "drawing_test"
+	var filename = "drawing-test"
 	var width = 1241
 	var red = CreateColor(255, 0, 0)
 	var blue = CreateColor(0, 0, 255)

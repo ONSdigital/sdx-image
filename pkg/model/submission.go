@@ -1,5 +1,16 @@
 package model
 
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Response struct {
+	QuestionCode string
+	Value        string
+	Instance     int
+}
+
 type Submission struct {
 	TxId        string
 	SchemaName  string
@@ -9,7 +20,7 @@ type Submission struct {
 	StartDate   string
 	EndDate     string
 	DataVersion string
-	Data        map[string]string
+	Responses   []*Response
 }
 
 type SubmissionError struct {
@@ -49,18 +60,20 @@ func MissingFields(s *Submission) []string {
 	return missing
 }
 
-func Add(survey *Survey, submission *Submission) *Survey {
-	survey.Respondent = submission.RuRef
-	survey.SubmittedAt = submission.SubmittedAt
-	for _, section := range survey.Sections {
-		for _, question := range section.Questions {
-			for _, a := range question.Answers {
-				value, found := submission.Data[a.QCode]
-				if found {
-					a.Value = value
-				}
-			}
+func (submission *Submission) GetResponses(qCode string) []Response {
+	var respList []Response
+	for _, resp := range submission.Responses {
+		if resp.QuestionCode == qCode {
+			respList = append(respList, *resp)
 		}
 	}
-	return survey
+	return respList
+}
+
+func (submission *Submission) String() string {
+	b, err := json.MarshalIndent(submission, "", "  ")
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+	return string(b)
 }

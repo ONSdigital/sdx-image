@@ -2,12 +2,12 @@
 package controller
 
 import (
+	"fmt"
 	"image"
+	"runtime"
 	"sdxImage/pkg/log"
-	"sdxImage/pkg/model"
 	"sdxImage/pkg/page"
 	"sdxImage/pkg/read"
-	"sdxImage/pkg/substitutions"
 	"sync"
 )
 
@@ -22,6 +22,7 @@ var mu sync.Mutex
 func Run(submissionBytes []byte) (image.Image, error) {
 	mu.Lock()
 	defer mu.Unlock()
+	//PrintMemUsage()
 	submission, err := read.Submission(submissionBytes)
 	if err != nil {
 		log.Error("Unable to read submission", err)
@@ -29,14 +30,28 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	}
 
 	log.Info("Processing submission", submission.TxId)
-	survey, err := read.Schema(submission.SchemaName)
+	schema, err := read.Schema(submission.SchemaName)
 	if err != nil {
 		log.Error("Unable to read schema", err, submission.TxId)
 		return nil, err
 	}
-	survey = model.Add(survey, submission)
-	survey = substitutions.Replace(survey, submission)
+	survey := fromSubmission(schema, submission)
 	result := page.Create(survey)
 	log.Info("Successfully created image", submission.TxId)
+	runtime.GC()
 	return result, nil
+}
+
+func PrintMemUsage() {
+	var m runtime.MemStats
+	runtime.ReadMemStats(&m)
+	// For info on each, see: https://golang.org/pkg/runtime/#MemStats
+	fmt.Printf("Alloc = %v MiB", bToMb(m.Alloc))
+	fmt.Printf("\tTotalAlloc = %v MiB", bToMb(m.TotalAlloc))
+	fmt.Printf("\tSys = %v MiB", bToMb(m.Sys))
+	fmt.Printf("\tNumGC = %v\n", m.NumGC)
+}
+
+func bToMb(b uint64) uint64 {
+	return b / 1024 / 1024
 }

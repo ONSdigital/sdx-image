@@ -4,6 +4,7 @@ import "strings"
 
 var htmlLookupMap = map[string]string{
 	"&#39;": "'",
+	"&amp;": "&",
 	"<em>":  "",
 	"</em>": "",
 }

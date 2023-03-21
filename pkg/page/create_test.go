@@ -14,34 +14,29 @@ func TestCreateMbs(t *testing.T) {
 		SurveyId:    "009",
 		FormType:    "0106",
 		Respondent:  "12346789012A",
-		SubmittedAt: "2023-01-13T16:38:46+00:00",
+		SubmittedAt: "13 January 2023 16:38:46",
 		Sections: []*model.Section{
 			{
 				Title: "",
-				Questions: []*model.Question{
+				Instances: []*model.Instance{
 					{
-						Title: "Are you able to report for the period from 2016-05-01 to 2016-06-01?",
+						Id: 0,
 						Answers: []*model.Answer{
-							{Type: "Radio", QCode: "9999", Label: "label", Value: "Yes, I can report for this period"},
-						},
-					},
-					{
-						Title: "What are the dates of the period that you will be reporting for?",
-						Answers: []*model.Answer{
-							{Type: "Date", QCode: "11", Label: "From"},
-							{Type: "Date", QCode: "12", Label: "To"},
-						},
-					},
-					{
-						Title: "For the period, what was the business's total turnover, excluding VAT?",
-						Answers: []*model.Answer{
-							{Type: "Currency", QCode: "40", Label: "Total turnover excluding VAT", Value: "56000"},
-						},
-					},
-					{
-						Title: "Please explain any changes in your turnover figures from the previous return, if applicable.",
-						Answers: []*model.Answer{
-							{Type: "TextArea", QCode: "146", Label: "Comments", Value: "No changes!"},
+							{
+								Text:  "Are you able to report for the period from 01/05/2016 to 01/06/2016?",
+								QCode: "9999",
+								Value: "Yes, I can report for this period",
+							},
+							{
+								Text:  "Total turnover excluding VAT?",
+								QCode: "40",
+								Value: "56000",
+							},
+							{
+								Text:  "Please explain any changes in your turnover figures from the previous return, if applicable.",
+								QCode: "146",
+								Value: "No changes!",
+							},
 						},
 					},
 				},
@@ -56,97 +51,77 @@ func TestCreateMbs(t *testing.T) {
 	}
 }
 
-func TestCreateAbs(t *testing.T) {
+func TestCreateInstances(t *testing.T) {
 	test.SetCwdToRoot()
 
 	survey := &model.Survey{
-		Title:       "Annual Business Survey",
-		SurveyId:    "202",
-		FormType:    "1802",
+		Title:       "Instances Test",
+		SurveyId:    "123",
+		FormType:    "0106",
 		Respondent:  "12346789012A",
-		SubmittedAt: "2023-01-13T16:38:46+00:00",
+		SubmittedAt: "13 January 2023 16:38:46",
 		Sections: []*model.Section{
 			{
-				Title:     "Introduction",
-				Questions: []*model.Question{},
-			},
-			{
-				Title: "How to complete and reporting period",
-				Questions: []*model.Question{
+				Title: "No Instances",
+				Instances: []*model.Instance{
 					{
-						Title: "Are you able to report for the period from 2022-01-01 to 2022-12-31?",
+						Id: 0,
 						Answers: []*model.Answer{
-							{Type: "Radio", QCode: "9999", Label: "label"},
-						},
-					},
-					{
-						Title: "What are the dates of the period that you will be reporting for?",
-						Answers: []*model.Answer{
-							{Type: "Date", QCode: "11", Label: "From", Value: "1/2/2019"},
-							{Type: "Date", QCode: "12", Label: "To", Value: "28/3/2019"},
+							{
+								Text:  "What was the business's total expenditure?",
+								QCode: "200",
+								Value: "10000",
+							},
 						},
 					},
 				},
 			},
 			{
-				Title: "Income",
-				Questions: []*model.Question{
+				Title: "Three Instances",
+				Instances: []*model.Instance{
 					{
-						Title: "What is the business's total turnover for the period?",
+						Id: 1,
 						Answers: []*model.Answer{
-							{Type: "Currency", QCode: "399", Label: "Total turnover", Value: "56123"},
+							{
+								Text:  "What was the business's expenditure on employment costs for the period?",
+								QCode: "450",
+								Value: "2000",
+							},
+							{
+								Text:  "During the reporting period, what was your business's expenditure on goods and energy products bought for resale?",
+								QCode: "451",
+								Value: "1000",
+							},
 						},
 					},
 					{
-						Title: "Does your business produce goods or services that protect the environment?",
+						Id: 2,
 						Answers: []*model.Answer{
-							{Type: "Radio", QCode: "80", Label: "label", Value: "Yes"},
+							{
+								Text:  "What was the business's expenditure on employment costs for the period?",
+								QCode: "450",
+								Value: "3000",
+							},
+							{
+								Text:  "During the reporting period, what was your business's expenditure on goods and energy products bought for resale?",
+								QCode: "451",
+								Value: "1000",
+							},
 						},
 					},
 					{
-						Title: "Of {total_turnover}, approximately what percentage related to the production of environmental goods or services?",
+						Id: 3,
 						Answers: []*model.Answer{
-							{Type: "Radio", QCode: "81", Label: "label", Value: "0-9%"},
-						},
-					},
-				},
-			},
-			{
-				Title: "Expenditure",
-				Questions: []*model.Question{
-					{
-						Title: "What was the business's expenditure on employment costs for the period?",
-						Answers: []*model.Answer{
-							{Type: "Currency", QCode: "450", Label: "Total employment costs", Value: "22987"},
-						},
-					},
-					{
-						Title: "During the reporting period, what was your business's expenditure on goods and energy products bought for resale?",
-						Answers: []*model.Answer{
-							{Type: "Currency", QCode: "403", Label: "Total expenditure on goods and energy products bought for resale", Value: "16723"},
-						},
-					},
-					{
-						Title: "During the reporting period, what was your business's expenditure for all other materials, goods and services?",
-						Answers: []*model.Answer{
-							{Type: "Currency", QCode: "420", Label: "Total expenditure for all other costs of materials, goods and services", Value: "99883"},
-						},
-					},
-					{
-						Title: "During the reporting period, what was your business's expenditure on rates, duties, levies and taxes paid to the government?",
-						Answers: []*model.Answer{
-							{Type: "Currency", QCode: "400", Label: "Expenditure on rates, duties, levies and taxes paid to the government", Value: "12345"},
-						},
-					},
-				},
-			},
-			{
-				Title: "Comments",
-				Questions: []*model.Question{
-					{
-						Title: "Please provide any further details that will help us understand your figures and tell an industry story",
-						Answers: []*model.Answer{
-							{Type: "TextArea", QCode: "146", Label: "Comments", Value: "My comment!"},
+							{
+								Text:  "What was the business's expenditure on employment costs for the period?",
+								QCode: "450",
+								Value: "2000",
+							},
+							{
+								Text:  "During the reporting period, what was your business's expenditure on goods and energy products bought for resale?",
+								QCode: "451",
+								Value: "1000",
+							},
 						},
 					},
 				},
@@ -155,8 +130,8 @@ func TestCreateAbs(t *testing.T) {
 	}
 
 	result := Create(survey)
-	err := test.SaveJPG("temp/abs-test.jpg", result, 100)
+	err := test.SaveJPG("temp/instance-test.jpg", result, 100)
 	if err != nil {
-		t.Errorf("failed to create image for abs_1802 with error: %q", err.Error())
+		t.Errorf("failed to create image for instance test with error: %q", err.Error())
 	}
 }

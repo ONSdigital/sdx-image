@@ -2,41 +2,24 @@
 package substitutions
 
 import (
-	"sdxImage/pkg/model"
 	"strings"
 )
 
 // Replace performs the interpolation of parameterised strings of a survey with values from the submission.
 // Some substitutions are hard coded to avoid overly complex knowledge of the specific survey.
-func Replace(survey *model.Survey, submission *model.Submission) *model.Survey {
-
-	submittedAt := convertSubmittedAt(submission.SubmittedAt)
-	survey.SubmittedAt = submittedAt
-
-	startDate := convertDate(submission.StartDate)
-	endDate := convertDate(submission.EndDate)
-
-	lookup := parameterLookup{
-		"ref_p_start_date": startDate,
-		"ref_p_end_date":   endDate,
-		"ru_name":          submission.RuName,
-		"total_turnover":   "the total turnover",
-		"from":             "start date",
-		"to":               "end date",
-	}
-
-	for _, section := range survey.Sections {
-		for _, question := range section.Questions {
-			title := replaceParameters(question.Title, lookup)
-			question.Title = html(title)
-		}
-	}
-	return survey
+func Replace(text string, lookup ParameterLookup) string {
+	result := replaceParameters(text, lookup)
+	result = html(result)
+	return result
 }
 
-type parameterLookup map[string]string
+func DateFormat(dateString string) string {
+	return convertSubmittedAt(dateString)
+}
 
-func (pLookup parameterLookup) get(str string) string {
+type ParameterLookup map[string]string
+
+func (pLookup ParameterLookup) get(str string) string {
 	result, found := pLookup[str]
 	if !found {
 		if strings.HasSuffix(str, "from") {
@@ -48,4 +31,18 @@ func (pLookup parameterLookup) get(str string) string {
 		}
 	}
 	return result
+}
+
+func GetLookup(startDate, endDate, ruName string) ParameterLookup {
+	start := convertDate(startDate)
+	end := convertDate(endDate)
+
+	return ParameterLookup{
+		"ref_p_start_date": start,
+		"ref_p_end_date":   end,
+		"ru_name":          ruName,
+		"total_turnover":   "the total turnover",
+		"from":             "start date",
+		"to":               "end date",
+	}
 }

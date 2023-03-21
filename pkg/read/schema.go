@@ -8,8 +8,8 @@ import (
 	"sdxImage/pkg/model"
 )
 
-// Schema loads the requested schema and returns a (semi) populated *model.Survey.
-func Schema(schemaName string) (*model.Survey, error) {
+// Schema loads the requested schema and returns a *model.Schema.
+func Schema(schemaName string) (*model.Schema, error) {
 	bytes, err := loadFile(schemaName)
 	if err != nil {
 		log.Error("Failed to read schema", err)
@@ -40,24 +40,40 @@ func loadFile(schemaName string) ([]byte, error) {
 	return bytes, nil
 }
 
-func convert(m map[string]any) *model.Survey {
+func convert(m map[string]any) *model.Schema {
 	title := getStringFrom(m, "title")
 	surveyId := getStringFrom(m, "survey_id")
 	formType := getStringFrom(m, "form_type")
 	sections := getListFrom(m, "sections")
-	survey := model.Survey{
+
+	dataVersion := getStringFrom(m, "data_version")
+	var qCodeMap map[string]string
+	if dataVersion == "0.0.3" {
+		qCodeMap = getQcodeMap(m)
+	}
+
+	schema := model.Schema{
 		Title:    title,
 		SurveyId: surveyId,
 		FormType: formType,
-		Sections: []*model.Section{},
+		Sections: []*model.Sect{},
 	}
+
+	createdSections := map[string]*model.Sect{}
 
 	for _, s := range sections {
 		sect := toMap(s)
-		section := &model.Section{
-			Title:     getOptionalStringField(sect, "title"),
-			Questions: []*model.Question{},
+
+		sectTitle := getOptionalStringField(sect, "title")
+		section, exists := createdSections[sectTitle]
+		if !exists {
+			section = &model.Sect{
+				Title:     sectTitle,
+				Questions: []*model.Quest{},
+			}
+			createdSections[sectTitle] = section
 		}
+
 		groups := getListFrom(sect, "groups")
 		for _, g := range groups {
 			group := toMap(g)
@@ -65,35 +81,49 @@ func convert(m map[string]any) *model.Survey {
 				blocks := getListFrom(group, "blocks")
 				for _, b := range blocks {
 					block := toMap(b)
-					if getStringFrom(block, "type") == "Question" {
-						q := getMapFrom(block, "question")
+					blockType := getStringFrom(block, "type")
 
-						question := &model.Question{
-							Title:   locateStringFrom(q, "title", "text"),
-							Answers: []*model.Answer{},
-						}
-
-						answers := getListFrom(q, "answers")
-						for _, a := range answers {
-							ans := toMap(a)
-							label, exists := ans["label"]
-							if !exists {
-								label = "label"
-							}
-							answer := &model.Answer{
-								Type:  getStringFrom(ans, "type"),
-								QCode: getStringFrom(ans, "q_code"),
-								Label: label.(string),
-							}
-							question.Answers = append(question.Answers, answer)
-						}
-
-						section.Questions = append(section.Questions, question)
+					var q map[string]any
+					if blockType == "Question" {
+						q = getMapFrom(block, "question")
+					} else if blockType == "ListCollector" {
+						ab := getMapFrom(block, "add_block")
+						q = getMapFrom(ab, "question")
+					} else {
+						continue
 					}
+
+					question := &model.Quest{
+						Title:   locateStringFrom(q, "title", "text"),
+						Answers: []*model.Ans{},
+					}
+
+					answers := getListFrom(q, "answers")
+					for _, a := range answers {
+						ans := toMap(a)
+						label, hasLabel := ans["label"]
+						if !hasLabel {
+							label = "label"
+						}
+
+						qCode, found := ans["q_code"]
+						if !found {
+							id := getStringFrom(ans, "id")
+							qCode = qCodeMap[id]
+						}
+
+						answer := &model.Ans{
+							Type:  getStringFrom(ans, "type"),
+							QCode: qCode.(string),
+							Label: label.(string),
+						}
+						question.Answers = append(question.Answers, answer)
+					}
+					section.Questions = append(section.Questions, question)
 				}
 			}
 		}
-		survey.Sections = append(survey.Sections, section)
+		schema.Sections = append(schema.Sections, section)
 	}
-	return &survey
+	return &schema
 }
