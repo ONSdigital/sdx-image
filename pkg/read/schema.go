@@ -72,6 +72,7 @@ func convert(m map[string]any) *model.Schema {
 				Questions: []*model.Quest{},
 			}
 			createdSections[sectTitle] = section
+			schema.Sections = append(schema.Sections, section)
 		}
 
 		groups := getListFrom(sect, "groups")
@@ -123,7 +124,6 @@ func convert(m map[string]any) *model.Schema {
 				}
 			}
 		}
-		schema.Sections = append(schema.Sections, section)
 	}
 	return &schema
 }

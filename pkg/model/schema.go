@@ -35,3 +35,7 @@ func (schema *Schema) String() string {
 	}
 	return string(b)
 }
+
+func (sect *Sect) String() string {
+	return sect.Title
+}
