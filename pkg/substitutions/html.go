@@ -13,7 +13,7 @@ var htmlLookupMap = map[string]string{
 func html(text string) string {
 	result := text
 	for k, v := range htmlLookupMap {
-		result = strings.Replace(result, k, v, 1)
+		result = strings.Replace(result, k, v, -1)
 	}
 	return result
 }

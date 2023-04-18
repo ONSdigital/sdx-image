@@ -67,6 +67,10 @@ func TestBricksV1(t *testing.T) {
 	runFromFile("v1/bricks", t)
 }
 
-func TestBerdV1(t *testing.T) {
-	runFromFile("v1/berd", t)
+func TestBerd0001V1(t *testing.T) {
+	runFromFile("v1/berd_0001", t)
+}
+
+func TestBerd0006V1(t *testing.T) {
+	runFromFile("v1/berd_0006", t)
 }

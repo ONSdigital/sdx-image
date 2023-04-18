@@ -4,6 +4,7 @@ import (
 	"sdxImage/pkg/model"
 	"sdxImage/pkg/substitutions"
 	"strconv"
+	"strings"
 )
 
 func fromSubmission(schema *model.Schema, submission *model.Submission) *model.Survey {
@@ -49,7 +50,7 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 					value := resp.Value
 					if value != "" {
 						qCode := getQCode(ans.QCode)
-						text := getAnswerText(title, ans.Label, ans.Type, lookup)
+						text := getAnswerText(title, ans.Label, ans.Type, len(quest.Answers) > 1, lookup)
 
 						answer := &model.Answer{
 							QCode: qCode,
@@ -71,14 +72,21 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 	return survey
 }
 
-func getAnswerText(title, label, qType string, lookup substitutions.ParameterLookup) string {
+func getAnswerText(title, label, qType string, multiple bool, lookup substitutions.ParameterLookup) string {
 	text := title
 	if qType == "Date" {
 		text += " " + label
 	} else if qType == "Number" {
 		text += " " + label + ":"
 	} else if qType == "Currency" {
-		text = label + "?"
+		// only include text and label if the question has multiple answers
+		// and the label has 5 words or fewer
+		if multiple && len(strings.Split(label, " ")) <= 5 {
+			text += " " + label + ":"
+		} else {
+			text = label + "?"
+		}
+
 	}
 	return substitutions.Replace(text, lookup)
 }
