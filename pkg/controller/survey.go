@@ -4,6 +4,7 @@ import (
 	"sdxImage/pkg/model"
 	"sdxImage/pkg/substitutions"
 	"strconv"
+	"strings"
 )
 
 func fromSubmission(schema *model.Schema, submission *model.Submission) *model.Survey {
@@ -78,8 +79,10 @@ func getAnswerText(title, label, qType string, multiple bool, lookup substitutio
 	} else if qType == "Number" {
 		text += " " + label + ":"
 	} else if qType == "Currency" {
-		if multiple {
-			text += " " + label + "?"
+		// only include text and label if the question has multiple answers
+		// and the label has 5 words or fewer
+		if multiple && len(strings.Split(label, " ")) <= 5 {
+			text += " " + label + ":"
 		} else {
 			text = label + "?"
 		}
