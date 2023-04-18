@@ -49,7 +49,7 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 					value := resp.Value
 					if value != "" {
 						qCode := getQCode(ans.QCode)
-						text := getAnswerText(title, ans.Label, ans.Type, lookup)
+						text := getAnswerText(title, ans.Label, ans.Type, len(quest.Answers) > 1, lookup)
 
 						answer := &model.Answer{
 							QCode: qCode,
@@ -71,14 +71,19 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 	return survey
 }
 
-func getAnswerText(title, label, qType string, lookup substitutions.ParameterLookup) string {
+func getAnswerText(title, label, qType string, multiple bool, lookup substitutions.ParameterLookup) string {
 	text := title
 	if qType == "Date" {
 		text += " " + label
 	} else if qType == "Number" {
 		text += " " + label + ":"
 	} else if qType == "Currency" {
-		text = label + "?"
+		if multiple {
+			text += " " + label + "?"
+		} else {
+			text = label + "?"
+		}
+
 	}
 	return substitutions.Replace(text, lookup)
 }

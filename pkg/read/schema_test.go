@@ -32,3 +32,12 @@ func TestReadBerd(t *testing.T) {
 	}
 	fmt.Println(result)
 }
+
+func TestReadBerdShort(t *testing.T) {
+	test.SetCwdToRoot()
+	result, err := Schema("berd_0006")
+	if err != nil {
+		t.Errorf("failed to read berd_0001 with error: %q", err.Error())
+	}
+	fmt.Println(result)
+}

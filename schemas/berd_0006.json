@@ -1,0 +1,1588 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "002",
+  "form_type": "0006",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "title": "Business Enterprise Research and Development",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "sectionb5d4065d-0a90-4541-af0a-099f693c0773",
+        "section969b7e4a-db38-4b5e-be3a-dcfdd13a4674"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "section969b7e4a-db38-4b5e-be3a-dcfdd13a4674",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "group969b7e4a-db38-4b5e-be3a-dcfdd13a4674",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      },
+                      {
+                        "placeholder": "trad_as",
+                        "transforms": [
+                          {
+                            "transform": "conditional_trad_as",
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "You have been selected to complete the Business Enterprise Research and Development (BERD) survey.",
+                        "The purpose of this survey is to collect expenditure and employment figures relating to Research and Development (R&amp;D) activities.",
+                        "The survey contributes to the measurement of resources devoted to R&amp;D in the United Kingdom (UK). These figures are used in analysis and decision making by government, businesses and international organisations and are collected to allow the UK to be internationally comparable with other R&amp;D performing countries.",
+                        "You should report R&amp;D expenditure figures regardless of whether tax credits have been claimed.",
+                        "Data should relate to all sites in the UK. The UK includes England, Scotland, Wales and Northern Ireland but excludes the Channel Islands and the Isle of Man.",
+                        "We will treat your data securely and confidentially."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "If your business did not perform or purchase any R&amp;D, you are still required to complete the relevant sections in this questionnaire."
+                  },
+                  {
+                    "description": "This questionnaire is divided into sections, which ask for information about:"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Reporting period",
+                    "contents": [
+                      {
+                        "description": "This section asks about the period for which your business will be reporting."
+                      },
+                      {
+                        "description": "Your return period should cover the calendar year 2022. If no figures are available for that 12 month period, your return should relate to a business year that ends between 6 April 2022 and 5 April 2023."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "In-house R&amp;D",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about the total cost of capital and non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Purchase of R&amp;D conducted outside the business",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about the purchase of R&amp;D from outside the business. This can include work both within and outside the UK as well as work originally commissioned by Government."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Number of employees working on R&amp;D",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about how many employees and full-time equivalents work on R&amp;D."
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "What is Research and Development (R&amp;D)?"
+                    },
+                    {
+                      "description": "R&amp;D covers <strong>three</strong> types of activity:"
+                    },
+                    {
+                      "list": [
+                        "basic research",
+                        "applied research",
+                        "experimental development"
+                      ]
+                    },
+                    {
+                      "description": "R&amp;D comprises creative and systematic work undertaken in order to increase the stock of knowledge, and in order to devise new applications of available knowledge. R&amp;D activity <strong>must </strong>have elements of<strong> all of these five</strong> criteria:"
+                    },
+                    {
+                      "description": "<strong>Novel</strong> - to be aimed at new findings"
+                    },
+                    {
+                      "description": "<strong>Creative</strong> - to be based on original, not obvious, concepts and hypotheses"
+                    },
+                    {
+                      "description": "<strong>Uncertain</strong> - to be uncertain about the final outcome"
+                    },
+                    {
+                      "description": "<strong>Systematic</strong> - to be planned and budgeted"
+                    },
+                    {
+                      "description": "<strong>Transferable or reproducible</strong> - to lead to results that could possibly be reproduced"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sectionb5d4065d-0a90-4541-af0a-099f693c0773",
+      "title": "Reporting period",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Reporting period",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupb5d4065d-0a90-4541-af0a-099f693c0773",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "groupb5d4065d-0a90-4541-af0a-099f693c0773-introduction",
+              "content": {
+                "title": "R&amp;D Explained",
+                "contents": [
+                  {
+                    "description": "This page contains some basic guidelines to help define and measure R&amp;D for the completion of this survey. In some cases, you may need to apply judgement when compiling figures. Informed estimates are acceptable. Further information can be found in the <a href=\"https://www.oecd.org/innovation/frascati-manual-2015-9789264239012-en.htm\"target=\"_blank\"rel=\"noopener noreferrer\">Frascati Manual (this link opens in a new tab)</a>, which is the international source of methodology for collecting and using R&amp;D statistics."
+                  },
+                  {
+                    "title": "<strong>What is R&amp;D?</strong>"
+                  },
+                  {
+                    "description": "R&amp;D covers <strong>three</strong> types of activity:"
+                  },
+                  {
+                    "list": [
+                      "basic research",
+                      "applied research",
+                      "experimental development"
+                    ]
+                  },
+                  {
+                    "description": "R&amp;D comprises creative and systematic work undertaken in order to increase the stock of knowledge, and in order to devise new applications of available knowledge. R&amp;D activity <strong>must </strong>have elements of<strong> all of these five</strong> criteria:"
+                  },
+                  {
+                    "description": "<strong>Novel</strong> - to be aimed at new findings"
+                  },
+                  {
+                    "description": "<strong>Creative</strong> - to be based on original, not obvious, concepts and hypotheses"
+                  },
+                  {
+                    "description": "<strong>Uncertain</strong> - to be uncertain about the final outcome"
+                  },
+                  {
+                    "description": "<strong>Systematic</strong> - to be planned and budgeted"
+                  },
+                  {
+                    "description": "<strong>Transferable or reproducible</strong> - to lead to results that could possibly be reproduced"
+                  },
+                  {
+                    "title": "<strong>Examples of R&amp;D to be included:</strong>"
+                  },
+                  {
+                    "list": [
+                      "clinical trials phases I, II and III",
+                      "social sciences, arts and humanities research work, such as, behavioural insights, linguistics and development of ethical processes",
+                      "research into and original development, or substantial modification, of computer software and related hardware, such as, new programming languages and new operating systems, including Artificial Intelligence, Augmented Reality, Enterprise Resource Planning (ERP) and Apps",
+                      "design, construction and operation of prototypes where the main objective is technical testing or to make further improvements",
+                      "construction and operation of pilot plants while still in the experimental phase and the primary purpose of operation is non-commercial",
+                      "&#39;feedback R&amp;D&#39; directed at solving problems occurring beyond the original R&amp;D phase, such as, the resolution of technical problems arising in initial production runs"
+                    ]
+                  },
+                  {
+                    "title": "<strong>Examples of R&amp;D to be excluded:</strong>"
+                  },
+                  {
+                    "description": "Unless used primarily as part of, or for the support of R&amp;D projects, the following are excluded:"
+                  },
+                  {
+                    "list": [
+                      "clinical trial phase IV",
+                      "scientific and technical information services",
+                      "prospecting, exploring or drilling for minerals, petroleum or natural gas",
+                      "policy related studies, management studies, efficiency studies",
+                      "consumer surveys, advertising, market research",
+                      "routine quality control and testing",
+                      "general purpose or routine data collection",
+                      "feasibility studies",
+                      "routine computer programming, systems maintenance or software application",
+                      "commercial, legal and administrative aspects of patenting, copyrighting or licensing activities",
+                      "activities associated with standards compliance",
+                      "specialised routine medical care, for example, routine pathology services"
+                    ]
+                  },
+                  {
+                    "title": "<strong>At what stage does R&amp;D end?</strong>"
+                  },
+                  {
+                    "description": "R&amp;D ends when the work is no longer experimental, for example, when the material or product is substantially developed and the primary objective is to:"
+                  },
+                  {
+                    "list": [
+                      "develop markets",
+                      "plan for pre-production and undertake pre-production activities, such as, demonstration of commercial viability, tooling up and trial production runs",
+                      "get production or control systems working smoothly"
+                    ]
+                  },
+                  {
+                    "description": "If the primary objective is to make further technical improvements, then the work is still defined as R&amp;D."
+                  },
+                  {
+                    "title": "Reporting Period"
+                  },
+                  {
+                    "description": {
+                      "text": "You will be asked to report for {ref_p_start_date} to {ref_p_end_date}. If you are unable to provide figures for this period, you will have the option to choose your own dates.",
+                      "placeholders": [
+                        {
+                          "placeholder": "ref_p_start_date",
+                          "transforms": [
+                            {
+                              "transform": "format_date",
+                              "arguments": {
+                                "date_to_format": {
+                                  "source": "metadata",
+                                  "identifier": "ref_p_start_date"
+                                },
+                                "date_format": "d MMMM yyyy"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "placeholder": "ref_p_end_date",
+                          "transforms": [
+                            {
+                              "transform": "format_date",
+                              "arguments": {
+                                "date_to_format": {
+                                  "source": "metadata",
+                                  "identifier": "ref_p_end_date"
+                                },
+                                "date_format": "d MMMM yyyy"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "title": "Not relevant for your business?"
+                  },
+                  {
+                    "description": "You still need to complete this survey even if it does not seem relevant, you will only need to complete a limited selection of questions."
+                  },
+                  {
+                    "description": "It is just as important for us to know if you did not perform or purchase any R&amp;D during the reporting period, to ensure we accurately measure R&amp;D in the UK. All returns are important as it helps us produce better statistics."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blockf7928906-41aa-4f67-84ce-bcb857642eb3",
+              "type": "Question",
+              "question": {
+                "id": "questionf7928906-41aa-4f67-84ce-bcb857642eb3",
+                "title": {
+                  "text": "Are you able to report for the calendar year, {ref_p_start_date} to {ref_p_end_date}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>Your return should relate to the calendar year 2022.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Traded for part of the year?</strong>"
+                    },
+                    {
+                      "description": "Please select &#39;no, I need to report for a different period&#39;"
+                    },
+                    {
+                      "description": "<strong>Cannot report for this calendar year?</strong>"
+                    },
+                    {
+                      "description": "Please select &#39;no, I need to report for a different period&#39;"
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer2b88363f-9779-4d2c-885e-523ad8cef31e",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "101",
+                    "options": [
+                      {
+                        "label": "Yes, I can report for this period",
+                        "value": "Yes, I can report for this period"
+                      },
+                      {
+                        "label": "No, I need to report for a different period",
+                        "value": "No, I need to report for a different period"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Calendar year reporting period",
+              "routing_rules": [
+                {
+                  "block": "block72eb36f7-0730-4ec9-ac53-f9bcdc2027fa",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer2b88363f-9779-4d2c-885e-523ad8cef31e",
+                        "source": "answers"
+                      },
+                      ["Yes, I can report for this period"]
+                    ]
+                  }
+                },
+                {
+                  "block": "blockf232ce73-10c0-4a00-9619-a36dba5177e4"
+                }
+              ]
+            },
+            {
+              "id": "blockf232ce73-10c0-4a00-9619-a36dba5177e4",
+              "type": "Question",
+              "question": {
+                "id": "questionf232ce73-10c0-4a00-9619-a36dba5177e4",
+                "title": "What dates will you be reporting for?",
+                "description": [
+                  "<p>If figures are not available for the calendar year 2022, your return should relate to a business year that ends between 6 April 2022 and 5 April 2023.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Only traded for a part of the year?</strong>"
+                    },
+                    {
+                      "description": "Please provide figures for the period in which you were trading."
+                    },
+                    {
+                      "description": "<strong>Only commenced trading during 2022?</strong>"
+                    },
+                    {
+                      "description": "Your return should cover the period from the commencement of your business until 31 December 2022 or, alternatively, any date up to 5 April 2023."
+                    },
+                    {
+                      "description": "<strong>Ceased trading during 2022?</strong>"
+                    },
+                    {
+                      "description": "Your return should cover the period 1 January 2022 to the date you ceased to trade or, alternatively, from the beginning of your last business year up to the cessation date."
+                    }
+                  ]
+                },
+                "type": "DateRange",
+                "answers": [
+                  {
+                    "id": "answer777ff7c8-5c95-41f9-a914-b94b1582e841from",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "From",
+                    "q_code": "103",
+                    "minimum": {
+                      "value": "2021-01-01",
+                      "offset_by": {
+                        "days": 0
+                      }
+                    }
+                  },
+                  {
+                    "id": "answer777ff7c8-5c95-41f9-a914-b94b1582e841to",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "To",
+                    "q_code": "104",
+                    "maximum": {
+                      "value": "2023-06-30",
+                      "offset_by": {
+                        "days": 0
+                      }
+                    }
+                  }
+                ],
+                "period_limits": {
+                  "minimum": {
+                    "months": 3
+                  },
+                  "maximum": {
+                    "months": 18
+                  }
+                }
+              },
+              "page_title": "Alternative reporting period"
+            },
+            {
+              "id": "block72eb36f7-0730-4ec9-ac53-f9bcdc2027fa",
+              "type": "Question",
+              "question": {
+                "id": "question72eb36f7-0730-4ec9-ac53-f9bcdc2027fa",
+                "title": "For the reporting period, did your business undertake any in-house R&amp;D?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "all gross expenditure, for example, salaries, overtime payments, bonuses, redundancies, commissions, holiday pay, National Insurance and pension scheme contributions",
+                        "all gross capital expenditure on fixed assets used in R&amp;D"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;in-house R&amp;D&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to the total cost of capital and non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer45c6a857-bd73-4b41-b445-0a9d5c716428",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "604",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "In-house R&D for reporting period",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer45c6a857-bd73-4b41-b445-0a9d5c716428",
+                        "source": "answers"
+                      },
+                      ["Yes"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block4a16ec49-887a-43d0-b2ed-003c8f93b1b1"
+                }
+              ]
+            },
+            {
+              "id": "block4a16ec49-887a-43d0-b2ed-003c8f93b1b1",
+              "type": "Question",
+              "question": {
+                "id": "question4a16ec49-887a-43d0-b2ed-003c8f93b1b1",
+                "title": "Will your business be carrying out any in-house R&amp;D in the future?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerbabc549a-0504-4ebc-94e4-9285443fff8f",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "605",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Future in-house R&D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section18c798d3-6307-4c2c-bb37-2e8fed26ab48",
+      "title": "In-house R&D",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "In-house R&D",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group18c798d3-6307-4c2c-bb37-2e8fed26ab48",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "group18c798d3-6307-4c2c-bb37-2e8fed26ab48-introduction",
+              "content": {
+                "title": "In-house R&amp;D",
+                "contents": [
+                  {
+                    "description": "This section asks for information about the total cost of capital and non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts."
+                  },
+                  {
+                    "description": "<strong>Include:</strong>"
+                  },
+                  {
+                    "list": [
+                      "all gross expenditure, for example, salaries, overtime payments, bonuses, redundancies, commissions, holiday pay, National Insurance and pension scheme contributions",
+                      "all gross capital expenditure on fixed assets used in R&amp;D"
+                    ]
+                  },
+                  {
+                    "description": "All expenditure should be reported as gross unless otherwise stated."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blocke0059df3-5be9-45a1-b703-b114b7dee508",
+              "type": "Question",
+              "question": {
+                "id": "questione0059df3-5be9-45a1-b703-b114b7dee508",
+                "title": {
+                  "text": "For the period {from} to {to}, what was {ru_name}&#39;s total in-house expenditure on R&amp;D?",
+                  "placeholders": [
+                    {
+                      "placeholder": "from",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answer777ff7c8-5c95-41f9-a914-b94b1582e841from",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "to",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answer777ff7c8-5c95-41f9-a914-b94b1582e841to",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "the total cost of R&amp;D carried out within your business in the UK, regardless of the source of funding",
+                        "R&amp;D expenditure figures regardless of whether tax credits have been claimed"
+                      ]
+                    }
+                  ]
+                },
+                "type": "Calculated",
+                "answers": [
+                  {
+                    "id": "answer5e236549-7667-479e-ae36-41c8d0f6d309",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Civil Research and Development",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "701",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answercae2fbeb-38c5-4d0d-8109-38c7d62ba04b",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Defence Research and Development",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "702",
+                    "decimal_places": 0,
+                    "currency": "GBP",
+                    "guidance": {
+                      "show_guidance": "What we mean by &#39;defence R&amp;D&#39;",
+                      "hide_guidance": "What we mean by &#39;defence R&amp;D&#39;",
+                      "contents": [
+                        {
+                          "description": "This refers to all R&amp;D carried out primarily for defence or military reasons, even if civil use is made of it at a later date."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "calculations": [
+                  {
+                    "calculation_type": "sum",
+                    "answers_to_calculate": [
+                      "answer5e236549-7667-479e-ae36-41c8d0f6d309",
+                      "answercae2fbeb-38c5-4d0d-8109-38c7d62ba04b"
+                    ],
+                    "conditions": ["greater than"],
+                    "value": 0
+                  }
+                ]
+              },
+              "page_title": "In-house expenditure on R&D"
+            },
+            {
+              "id": "block6588e77c-e3b9-47ec-a8ae-8a4e58aefc8d",
+              "type": "CalculatedSummary",
+              "page_title": "Total in-house expenditure on R&D",
+              "title": "We have calculated your business&#39;s total in-house expenditure on R&amp;D to be %(total)s. Is this correct?",
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answer5e236549-7667-479e-ae36-41c8d0f6d309",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answercae2fbeb-38c5-4d0d-8109-38c7d62ba04b",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total in-house expenditure on R&amp;D"
+              }
+            },
+            {
+              "id": "block78f80cee-8481-4eef-a2f7-f09081ebea66",
+              "type": "Question",
+              "question": {
+                "id": "question78f80cee-8481-4eef-a2f7-f09081ebea66",
+                "title": {
+                  "text": "In relation to the {total_inhouse_expenditure_on_rampd} total expenditure on in-house R&amp;D, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
+                  "placeholders": [
+                    {
+                      "placeholder": "total_inhouse_expenditure_on_rampd",
+                      "transforms": [
+                        {
+                          "transform": "format_currency",
+                          "arguments": {
+                            "number": {
+                              "identifier": "block6588e77c-e3b9-47ec-a8ae-8a4e58aefc8d",
+                              "source": "calculated_summary"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer4f0ed391-29c0-400e-809d-5d82c26e947f",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "713",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Tax credits for expenditure on in-house R&D"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answer45c6a857-bd73-4b41-b445-0a9d5c716428",
+              "source": "answers"
+            },
+            ["Yes"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "section8aef0f64-3184-498b-bc42-ad4e7814baa9",
+      "title": "Purchase of R&D conducted outside the business",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Purchase of R&D conducted outside the business",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group8aef0f64-3184-498b-bc42-ad4e7814baa9",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "group8aef0f64-3184-498b-bc42-ad4e7814baa9-introduction",
+              "content": {
+                "title": "Purchase of R&amp;D conducted outside the business",
+                "contents": [
+                  {
+                    "description": "This section asks for information about the purchase of R&amp;D from outside the business."
+                  },
+                  {
+                    "description": "<strong>Include:</strong>"
+                  },
+                  {
+                    "list": [
+                      "work both within and outside the UK",
+                      "work originally commissioned by Government"
+                    ]
+                  },
+                  {
+                    "description": "<strong>Exclude </strong>VAT"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block7fbe7af4-569c-4590-b9ee-e1f8d3b3722f",
+              "type": "Question",
+              "question": {
+                "id": "question7fbe7af4-569c-4590-b9ee-e1f8d3b3722f",
+                "title": {
+                  "text": "For the period {from} to {to}, did {ru_name} purchase any R&amp;D conducted <em>outside</em> the business?",
+                  "placeholders": [
+                    {
+                      "placeholder": "from",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answer777ff7c8-5c95-41f9-a914-b94b1582e841from",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "to",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answer777ff7c8-5c95-41f9-a914-b94b1582e841to",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer45e10ade-2824-4eb3-a8f5-1d8072989737",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "999",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Purchased R&D",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer45e10ade-2824-4eb3-a8f5-1d8072989737",
+                        "source": "answers"
+                      },
+                      ["No"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block7c4dcb95-a451-4fdb-b075-6ea96bfd03e2"
+                }
+              ]
+            },
+            {
+              "id": "block7c4dcb95-a451-4fdb-b075-6ea96bfd03e2",
+              "type": "Question",
+              "question": {
+                "id": "question7c4dcb95-a451-4fdb-b075-6ea96bfd03e2",
+                "title": "For the reporting period, how much R&amp;D conducted outside the business did you purchase?",
+                "type": "Calculated",
+                "answers": [
+                  {
+                    "id": "answerb35b8ed6-e10a-45e1-82d0-003efa9a3a41",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Civil Research and Development",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "703",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answerd63311d1-c3bd-441f-905c-dec12b94d126",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Defence Research and Development",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "704",
+                    "decimal_places": 0,
+                    "currency": "GBP",
+                    "guidance": {
+                      "show_guidance": "What we mean by &#39;defence R&amp;D&#39;",
+                      "hide_guidance": "What we mean by &#39;defence R&amp;D&#39;",
+                      "contents": [
+                        {
+                          "description": "This refers to all R&amp;D carried out primarily for defence or military reasons, even if civil use is made of it at a later date."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "calculations": [
+                  {
+                    "calculation_type": "sum",
+                    "answers_to_calculate": [
+                      "answerb35b8ed6-e10a-45e1-82d0-003efa9a3a41",
+                      "answerd63311d1-c3bd-441f-905c-dec12b94d126"
+                    ],
+                    "conditions": ["greater than"],
+                    "value": 0
+                  }
+                ]
+              },
+              "page_title": "Expenditure on purchased R&D"
+            },
+            {
+              "id": "block3cdd83f6-27bd-4250-93ba-37f4792c6f66",
+              "type": "CalculatedSummary",
+              "page_title": "Total expenditure on purchased R&D",
+              "title": "We calculated your business&#39;s total expenditure on purchased R&amp;D to be %(total)s. Is this correct?",
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answerb35b8ed6-e10a-45e1-82d0-003efa9a3a41",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answerd63311d1-c3bd-441f-905c-dec12b94d126",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total expenditure on purchased R&amp;D"
+              }
+            },
+            {
+              "id": "block53220ce9-6fec-4723-aa68-fc98f2624be8",
+              "type": "Question",
+              "question": {
+                "id": "question53220ce9-6fec-4723-aa68-fc98f2624be8",
+                "title": {
+                  "text": "In relation to the {total_expenditure_on_purchased_rampd} total expenditure on purchased R&amp;D, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
+                  "placeholders": [
+                    {
+                      "placeholder": "total_expenditure_on_purchased_rampd",
+                      "transforms": [
+                        {
+                          "transform": "format_currency",
+                          "arguments": {
+                            "number": {
+                              "identifier": "block3cdd83f6-27bd-4250-93ba-37f4792c6f66",
+                              "source": "calculated_summary"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerbb48f890-569b-4715-9e84-a36dc54a66a1",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "714",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Tax credits for expenditure on purchased R&D"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answer45c6a857-bd73-4b41-b445-0a9d5c716428",
+              "source": "answers"
+            },
+            ["Yes"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "sectionc77947de-286a-4ec1-a525-48b13f328c42",
+      "title": "Number of employees working on R&D",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Number of employees working on R&D",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupc77947de-286a-4ec1-a525-48b13f328c42",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "groupc77947de-286a-4ec1-a525-48b13f328c42-introduction",
+              "content": {
+                "title": "Number of employees working on R&amp;D",
+                "contents": [
+                  {
+                    "description": "This section asks for information about how many employees and full-time equivalents work on R&amp;D."
+                  },
+                  {
+                    "title": "What we mean by &#39;employees&#39;"
+                  },
+                  {
+                    "description": "An employee is anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full-time or part-time job or being on a training scheme. Each employee should have a contract of employment."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block5d37b937-0118-4b77-b416-1e956b17048f",
+              "type": "Question",
+              "question": {
+                "id": "question5d37b937-0118-4b77-b416-1e956b17048f",
+                "title": "On 1 December 2022, how many employees worked on R&amp;D?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "all workers paid directly from this business&#39;s payroll(s)",
+                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "voluntary workers",
+                        "self-employed workers",
+                        "former employees only receiving a pension",
+                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;employees&#39;",
+                    "contents": [
+                      {
+                        "description": "An employee is anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full time or part-time job or being on a training scheme. Each employee should have a contract of employment."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer685d8662-7b92-4542-ac6a-16813b02aab3",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Number of employees",
+                    "q_code": "705",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Number of employees working on R&D"
+            },
+            {
+              "id": "blockcc1de8b6-6311-479c-8306-91323f8600f0",
+              "type": "Question",
+              "question": {
+                "id": "questioncc1de8b6-6311-479c-8306-91323f8600f0",
+                "title": {
+                  "text": "For the period {from} to {to}, how many <em>full-time equivalent</em> employees worked on R&amp;D?",
+                  "placeholders": [
+                    {
+                      "placeholder": "from",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answer777ff7c8-5c95-41f9-a914-b94b1582e841from",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "to",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answer777ff7c8-5c95-41f9-a914-b94b1582e841to",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "all workers paid directly from this business&#39;s payroll(s)",
+                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "voluntary workers",
+                        "self-employed workers",
+                        "former employees only receiving a pension",
+                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;full-time equivalent&#39;",
+                    "contents": [
+                      {
+                        "description": "One <strong>full-time equivalent</strong> (FTE) may be thought as one person-year."
+                      },
+                      {
+                        "description": "For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE."
+                      },
+                      {
+                        "description": "Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerf7bf5c79-1515-4dc5-8aa8-31e8e38cda61",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Civil Research and Development",
+                    "q_code": "706",
+                    "decimal_places": 1
+                  },
+                  {
+                    "id": "answer94921b6a-4680-45b4-9873-a3d0bbcdfa1c",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Defence Research and Development",
+                    "q_code": "707",
+                    "decimal_places": 1
+                  }
+                ]
+              },
+              "page_title": "Number of full-time equivalent employees working on R&D"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answer45c6a857-bd73-4b41-b445-0a9d5c716428",
+              "source": "answers"
+            },
+            ["Yes"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "sectionc67b6976-5063-4417-a69f-c849bb642a1a",
+      "title": "Comments",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Comments",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupc67b6976-5063-4417-a69f-c849bb642a1a",
+          "blocks": [
+            {
+              "id": "block738e2eaa-a2c1-4ce8-8227-f59cf81f95b1",
+              "type": "Question",
+              "question": {
+                "id": "question738e2eaa-a2c1-4ce8-8227-f59cf81f95b1",
+                "title": {
+                  "text": "Did any significant changes occur to R&amp;D for {ru_name} since the last reporting period?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>This information will help us to validate your data and should reduce the need to query any figures with you.</p>"
+                ],
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;significant changes&#39;",
+                    "contents": [
+                      {
+                        "description": "This is dependent on your own interpretation in relation to your business&#39;s figures from the previous reporting period."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerb3e31814-254c-48da-b642-0cbcf0319183",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "708",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Significant changes",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerb3e31814-254c-48da-b642-0cbcf0319183",
+                        "source": "answers"
+                      },
+                      ["No"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block1e952c85-2f74-48c3-8223-aa6336e6f28a"
+                }
+              ]
+            },
+            {
+              "id": "block1e952c85-2f74-48c3-8223-aa6336e6f28a",
+              "type": "Question",
+              "question": {
+                "id": "question1e952c85-2f74-48c3-8223-aa6336e6f28a",
+                "title": "Please provide any further details that will help us understand your business&#39;s total R&amp;D investment and tell an industry story",
+                "description": [
+                  "<p>If you provide comments, we are less likely to contact you with data queries.</p><p>You have nearly finished! Make sure you continue to the next page and select &#39;submit answers&#39; at the bottom.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer483d0965-e0d1-4177-8e91-c0e421782a48",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "712",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Further details and commentary"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "or": [
+            {
+              "in": [
+                {
+                  "identifier": "answer45c6a857-bd73-4b41-b445-0a9d5c716428",
+                  "source": "answers"
+                },
+                ["Yes"]
+              ]
+            },
+            {
+              "in": [
+                {
+                  "identifier": "answerbabc549a-0504-4ebc-94e4-9285443fff8f",
+                  "source": "answers"
+                },
+                ["Yes"]
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "theme": "business",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}
