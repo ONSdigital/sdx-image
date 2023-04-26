@@ -74,3 +74,7 @@ func TestBerd0001V1(t *testing.T) {
 func TestBerd0006V1(t *testing.T) {
 	runFromFile("v1/berd_0006", t)
 }
+
+func TestUkis0001V1(t *testing.T) {
+	runFromFile("v1/ukis_0001", t)
+}
