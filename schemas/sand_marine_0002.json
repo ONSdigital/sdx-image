@@ -1,0 +1,824 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "076",
+  "form_type": "0002",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "title": "Quarterly Survey of Building Materials Sand and Gravel (marine dredged)",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "section94239ebc-f85a-4a9d-8178-cc640a9d726a"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "section94239ebc-f85a-4a9d-8178-cc640a9d726a",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "group94239ebc-f85a-4a9d-8178-cc640a9d726a",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      },
+                      {
+                        "placeholder": "trad_as",
+                        "transforms": [
+                          {
+                            "transform": "conditional_trad_as",
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "additional-guidance",
+                  "contents": [
+                    {
+                      "guidance": {
+                        "contents": [
+                          {
+                            "title": "Important Notice"
+                          },
+                          {
+                            "description": "This questionnaire has been designed for online mode. You may notice changes compared with the paper version, such as to the ordering of questions and sections."
+                          },
+                          {
+                            "description": "There is additional guidance throughout the questionnaire. However, if you require support then please contact us on <a href=\"tel:03001234931\"target=\"_blank\"rel=\"noopener noreferrer\">0300 1234 931</a>or via email at <a href=\"mailto:surveys@ons.gov.uk?subject=Change%20of%20details%2012346789012A\"target=\"_blank\"rel=\"noopener noreferrer\">surveys@ons.gov.uk</a>"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "This survey is conducted by the Office for National Statistics on behalf of the Department for Business and Trade (DBT).",
+                        "DBT uses the information for monitoring trends in the construction industries.",
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        {
+                          "text": "Data should relate to {trad_as}.",
+                          "placeholders": [
+                            {
+                              "placeholder": "trad_as",
+                              "transforms": [
+                                {
+                                  "transform": "first_non_empty_item",
+                                  "arguments": {
+                                    "items": [
+                                      {
+                                        "source": "metadata",
+                                        "identifier": "trad_as"
+                                      },
+                                      {
+                                        "source": "metadata",
+                                        "identifier": "ru_name"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially.",
+                        "You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.",
+                        "You can save a copy of your answers at the end of this questionnaire using the &#x2018;Download as PDF&#x2019; button."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "This survey collects information on marine dredged sand and gravel your business has sold in the reporting period."
+                  },
+                  {
+                    "description": "The materials included in this survey are:"
+                  },
+                  {
+                    "list": [
+                      "sand",
+                      "gravel, pebbles, shingle and flint",
+                      "sand and gravel used for constructional fill"
+                    ]
+                  },
+                  {
+                    "description": "The survey has the following sections:"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Material",
+                    "contents": [
+                      {
+                        "description": {
+                          "text": "This section asks for confirmation of the materials sold for the period {ref_p_start_date} to {ref_p_end_date}.",
+                          "placeholders": [
+                            {
+                              "placeholder": "ref_p_start_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_start_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "placeholder": "ref_p_end_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_end_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Details of sales",
+                    "contents": [
+                      {
+                        "description": "This section asks for the details of sales for the materials you have selected."
+                      },
+                      {
+                        "description": "Report your figures in tonnes."
+                      },
+                      {
+                        "description": "Sand:"
+                      },
+                      {
+                        "list": [
+                          "sand produced for asphalt",
+                          "sand produced for use in mortar",
+                          "sand produced for concreting"
+                        ]
+                      },
+                      {
+                        "description": "Gravel, pebbles, shingle and flint:"
+                      },
+                      {
+                        "list": [
+                          "gravel coated with bituminous binder",
+                          "gravel produced for concrete aggregate",
+                          "other screened and graded gravels"
+                        ]
+                      },
+                      {
+                        "description": "Sand and gravel used for constructional fill"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "description": "For the benefit of industry, and the public generally, building materials information is published by DBT in <a href=\"https://www.gov.uk/government/collections/building-materials-and-components-monthly-statistics-2012\"target=\"_blank\"rel=\"noopener noreferrer\">Monthly Statistics of Building Materials &amp; Components (this link opens in a new tab)</a>."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sectionbee967d8-9074-4dae-9820-7358ed4afadc",
+      "title": "Material",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Material section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupbee967d8-9074-4dae-9820-7358ed4afadc",
+          "blocks": [
+            {
+              "id": "blockc495eb37-4be6-4c0d-ab9d-98b489d9369c",
+              "type": "Question",
+              "question": {
+                "id": "questionc495eb37-4be6-4c0d-ab9d-98b489d9369c",
+                "title": {
+                  "text": "For the period {ref_p_start_date} to {ref_p_end_date}, which of the following marine dredged materials has {ru_name} sold?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "material dredged for your business&#39;s own use",
+                        "only material actually produced or processed for recycling by your firm",
+                        "only material dredged from the sea and from estuaries"
+                      ]
+                    }
+                  ]
+                },
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer5a877663-44a0-4b44-afbe-0344bd430ae3",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Sand",
+                        "value": "Sand",
+                        "q_code": "999",
+                        "description": "Exclude material for constructional fill"
+                      },
+                      {
+                        "label": "Gravel, Pebbles, Shingle, Flint",
+                        "value": "Gravel, Pebbles, Shingle, Flint",
+                        "q_code": "998",
+                        "description": "Exclude material for constructional fill"
+                      },
+                      {
+                        "label": "Sand and gravel used for constructional fill",
+                        "value": "Sand and gravel used for constructional fill",
+                        "q_code": "997"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer53115f43-efd2-49ad-bd01-6d43cee2f93a",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "None of the above",
+                        "value": "None of the above",
+                        "q_code": "996"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Material type sold"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section78a31907-de00-427b-8d8f-7db2449dc13e",
+      "title": "Details of sales",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Details of sales section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group78a31907-de00-427b-8d8f-7db2449dc13e",
+          "blocks": [
+            {
+              "id": "blockac1f9ad6-8870-46a3-bac7-f729f57f9487",
+              "type": "Question",
+              "question": {
+                "id": "questionac1f9ad6-8870-46a3-bac7-f729f57f9487",
+                "title": "For the reporting period, what are the details of sales for marine dredged <em>sand</em>?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Report your figures in tonnes.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Exclude<strong> </strong>material for constructional fill"
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer98bc5bc5-b9af-4fae-aa4e-64e810357300",
+                    "mandatory": true,
+                    "type": "Unit",
+                    "label": "Sand produced for asphalt",
+                    "description": "This is also referred to as asphalting sand",
+                    "q_code": "601",
+                    "unit": "mass-metric-ton",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer2a6ee61e-c40e-4d26-a507-5cebb8bf7e0d",
+                    "mandatory": true,
+                    "type": "Unit",
+                    "label": "Sand produced for use in mortar",
+                    "description": "This is also referred to as building or soft sand",
+                    "q_code": "602",
+                    "unit": "mass-metric-ton",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer1171dbc1-0882-451b-8437-6adebe9e349e",
+                    "mandatory": true,
+                    "type": "Unit",
+                    "label": "Sand produced for concreting",
+                    "description": "This is also referred to as sharp sand",
+                    "q_code": "603",
+                    "unit": "mass-metric-ton",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Sales for sand",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Sand"],
+                        {
+                          "identifier": "answer5a877663-44a0-4b44-afbe-0344bd430ae3",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "blockfcb39fbf-ec6e-4be9-b5dd-6322936c5dce",
+              "type": "Question",
+              "question": {
+                "id": "questionfcb39fbf-ec6e-4be9-b5dd-6322936c5dce",
+                "title": "For the reporting period, what are the details of sales for marine dredged <em>gravel, pebbles, shingle and flint</em>?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Report your figures in tonnes.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Exclude material for constructional fill"
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer62d1d1aa-af02-4c19-ba7d-25e8a5dd43f7",
+                    "mandatory": true,
+                    "type": "Unit",
+                    "label": "Gravel coated with bituminous binder",
+                    "description": "Include on or off site",
+                    "q_code": "604",
+                    "unit": "mass-metric-ton",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerc241e62b-71c3-47e1-9acd-44d3e2bc8987",
+                    "mandatory": true,
+                    "type": "Unit",
+                    "label": "Gravel produced for concrete aggregate",
+                    "description": "Include sand and gravel mixes",
+                    "q_code": "605",
+                    "unit": "mass-metric-ton",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer3b391445-02ec-4af2-8c71-410e74a7dac1",
+                    "mandatory": true,
+                    "type": "Unit",
+                    "label": "Other screened and graded gravels",
+                    "q_code": "606",
+                    "unit": "mass-metric-ton",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Sales for gravel, pebbles, shingle and flint",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Gravel, Pebbles, Shingle, Flint"],
+                        {
+                          "identifier": "answer5a877663-44a0-4b44-afbe-0344bd430ae3",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "blockce1cff2a-8f5a-4b47-9abc-67a399dd173f",
+              "type": "Question",
+              "question": {
+                "id": "questionce1cff2a-8f5a-4b47-9abc-67a399dd173f",
+                "title": "For the reporting period, what are the details of sales for <em>sand and gravel used for constructional fill</em>?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Report your figures in tonnes.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer74536de9-5a0d-47dc-85b1-a0c31186313d",
+                    "mandatory": true,
+                    "type": "Unit",
+                    "label": "Sand and gravel used for constructional fill",
+                    "q_code": "607",
+                    "unit": "mass-metric-ton",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Sales for sand and gravel used for constructional fill",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Sand and gravel used for constructional fill"],
+                        {
+                          "identifier": "answer5a877663-44a0-4b44-afbe-0344bd430ae3",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "block5f674dc8-a1ba-428b-8a42-62925e6b9906",
+              "type": "CalculatedSummary",
+              "page_title": "Calculated summary section",
+              "title": "We have calculated your business&#39;s total quantity of marine dredged materials sold during the reporting period, to be %(total)s. Is this correct?",
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answer98bc5bc5-b9af-4fae-aa4e-64e810357300",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer2a6ee61e-c40e-4d26-a507-5cebb8bf7e0d",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer1171dbc1-0882-451b-8437-6adebe9e349e",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer62d1d1aa-af02-4c19-ba7d-25e8a5dd43f7",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answerc241e62b-71c3-47e1-9acd-44d3e2bc8987",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer3b391445-02ec-4af2-8c71-410e74a7dac1",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer74536de9-5a0d-47dc-85b1-a0c31186313d",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total quantity of marine dredged materials sold"
+              }
+            },
+            {
+              "id": "block85be2be7-84bb-4af7-9cb7-065219331841",
+              "type": "Question",
+              "question": {
+                "id": "question85be2be7-84bb-4af7-9cb7-065219331841",
+                "title": "Which British Port of landing does this return relate to?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer06c5b1a2-2234-4b16-a748-04ca46e7c0bc",
+                    "mandatory": true,
+                    "type": "TextField",
+                    "label": "British Port of landing",
+                    "q_code": "995"
+                  }
+                ]
+              },
+              "page_title": "British Port of landing"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "any-in": [
+            [
+              "Sand",
+              "Gravel, Pebbles, Shingle, Flint",
+              "Sand and gravel used for constructional fill"
+            ],
+            {
+              "identifier": "answer5a877663-44a0-4b44-afbe-0344bd430ae3",
+              "source": "answers"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "section1dabd959-4cfe-4be4-b356-eaab8f1a9620",
+      "title": "Comments",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Comments section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group1dabd959-4cfe-4be4-b356-eaab8f1a9620",
+          "blocks": [
+            {
+              "id": "blockc9794665-ffb8-4d17-a331-ae91537fef51",
+              "type": "Question",
+              "question": {
+                "id": "questionc9794665-ffb8-4d17-a331-ae91537fef51",
+                "title": "Please provide details of any new ports of landing your business has brought into use since your last return",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer09667e4f-0d8d-4142-b6c9-25c06653b619",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "148",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "New ports of landing",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        [
+                          "Sand",
+                          "Gravel, Pebbles, Shingle, Flint",
+                          "Sand and gravel used for constructional fill"
+                        ],
+                        {
+                          "identifier": "answer5a877663-44a0-4b44-afbe-0344bd430ae3",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "block9c499882-d822-49ce-99bb-4daa2ecd7e84",
+              "type": "Question",
+              "question": {
+                "id": "question9c499882-d822-49ce-99bb-4daa2ecd7e84",
+                "title": "Please provide any further details that will help us understand your figures and tell an industry story",
+                "description": [
+                  "<p>You have nearly finished. Make sure you continue to the next page and select submit answers at the bottom.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Include reasons for any substantial fluctuations compared to your previous return"
+                    },
+                    {
+                      "description": "<strong>For example:</strong>"
+                    },
+                    {
+                      "list": [
+                        "site closures",
+                        "reason for site closures, such as planning permission or demand pending",
+                        "site maintenance",
+                        "site breakdowns",
+                        "new contract demands, such as infrastructure",
+                        "any change in contacts",
+                        "extreme weather or wildlife restrictions",
+                        "any sites you are not currently reporting for"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answere19952c7-7974-4b6e-9d2f-9eced3e444ca",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Comments"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "dbt",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}
