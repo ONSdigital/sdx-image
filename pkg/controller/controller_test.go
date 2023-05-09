@@ -78,3 +78,15 @@ func TestBerd0006V1(t *testing.T) {
 func TestUkis0001V1(t *testing.T) {
 	runFromFile("v1/ukis_0001", t)
 }
+
+func TestUkisFail(t *testing.T) {
+	runFromFile("v1/ukis_fail", t)
+}
+
+func TestSandLand(t *testing.T) {
+	runFromFile("v1/sand_land", t)
+}
+
+func TestSandMarine(t *testing.T) {
+	runFromFile("v1/sand_marine", t)
+}

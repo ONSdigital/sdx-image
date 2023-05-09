@@ -37,7 +37,16 @@ func TestReadBerdShort(t *testing.T) {
 	test.SetCwdToRoot()
 	result, err := Schema("berd_0006")
 	if err != nil {
-		t.Errorf("failed to read berd_0001 with error: %q", err.Error())
+		t.Errorf("failed to read berd_0006 with error: %q", err.Error())
+	}
+	fmt.Println(result)
+}
+
+func TestReadUkis(t *testing.T) {
+	test.SetCwdToRoot()
+	result, err := Schema("ukis_0002")
+	if err != nil {
+		t.Errorf("failed to read ukis_0002 with error: %q", err.Error())
 	}
 	fmt.Println(result)
 }

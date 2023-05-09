@@ -87,6 +87,8 @@ func getAnswerText(title, label, qType string, multiple bool, lookup substitutio
 			text = label + "?"
 		}
 
+	} else if qType == "Unit" {
+		text += " " + label + ":"
 	}
 	return substitutions.Replace(text, lookup)
 }
