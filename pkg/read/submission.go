@@ -8,10 +8,10 @@ import (
 
 var surveyMap = map[string]string{
 	"002": "berd",
-	"066": "sand_land",
+	"066": "qsl",
 	"073": "blocks",
 	"074": "bricks",
-	"076": "sand_marine",
+	"076": "qsm",
 	"202": "abs",
 }
 
