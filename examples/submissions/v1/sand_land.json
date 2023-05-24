@@ -9,9 +9,9 @@
   "submitted_at": "2023-05-09T10:25:26+00:00",
   "collection": {
     "exercise_sid": "bf5886cd-9793-472f-ad77-57bf58e71ab9",
-    "schema_name": "sand_land_0002",
+    "schema_name": "qsl_0002",
     "period": "201605",
-    "instrument_id": "land_0002"
+    "instrument_id": "0002"
   },
   "metadata": {
     "user_id": "UNKNOWN",
@@ -34,7 +34,7 @@
     "147": "Here is a good comment",
     "146": "Another good comment"
   },
-  "form_type": "land_0002",
+  "form_type": "0002",
   "started_at": "2023-05-09T10:24:24.353830+00:00",
   "submission_language_code": "en"
 }

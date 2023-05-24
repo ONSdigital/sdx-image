@@ -9,9 +9,9 @@
   "submitted_at": "2023-05-09T10:27:45+00:00",
   "collection": {
     "exercise_sid": "754d8a8b-a039-458f-9570-20af429200fd",
-    "schema_name": "sand_marine_0002",
+    "schema_name": "qsm_0002",
     "period": "201605",
-    "instrument_id": "marine_0002"
+    "instrument_id": "0002"
   },
   "metadata": {
     "user_id": "UNKNOWN",
@@ -35,7 +35,7 @@
     "148": "Here is a good comment",
     "146": "Another good comment"
   },
-  "form_type": "marine_0002",
+  "form_type": "0002",
   "started_at": "2023-05-09T10:26:44.148156+00:00",
   "submission_language_code": "en"
 }
