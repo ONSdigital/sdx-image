@@ -10,17 +10,17 @@ func Init() {
 }
 
 func Info(msg string, txId ...string) {
+	event := log.Log().Str("message", msg).Str("severity", "INFO")
 	if txId != nil && len(txId) != 0 {
-		log.Info().Str("event", msg).Str("tx_id", txId[0]).Send()
-	} else {
-		log.Info().Str("event", msg).Send()
+		event.Str("tx_id", txId[0])
 	}
+	event.Send()
 }
 
 func Error(msg string, err error, txId ...string) {
+	event := log.Log().Str("message", msg).Str("severity", "ERROR").Str("error", err.Error())
 	if txId != nil && len(txId) != 0 {
-		log.Error().Str("event", msg).Str("error", err.Error()).Str("tx_id", txId[0]).Send()
-	} else {
-		log.Error().Str("event", msg).Str("error", err.Error()).Send()
+		event.Str("tx_id", txId[0])
 	}
+	event.Send()
 }
