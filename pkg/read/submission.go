@@ -12,6 +12,7 @@ var surveyMap = map[string]string{
 	"073": "blocks",
 	"074": "bricks",
 	"076": "qsm",
+	"127": "mcg",
 	"202": "abs",
 }
 
