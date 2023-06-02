@@ -90,3 +90,7 @@ func TestSandLand(t *testing.T) {
 func TestSandMarine(t *testing.T) {
 	runFromFile("v1/sand_marine", t)
 }
+
+func TestCreditGrantors(t *testing.T) {
+	runFromFile("v1/mgc_0001", t)
+}
