@@ -5,12 +5,15 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+const MESSAGE = "message"
+const SEVERITY = "severity"
+
 func Init() {
 	log.Logger = log.With().Str("app", "sdx-image").Logger()
 }
 
 func Info(msg string, txId ...string) {
-	event := log.Log().Str("message", msg).Str("severity", "INFO")
+	event := log.Log().Str(MESSAGE, msg).Str(SEVERITY, "INFO")
 	if txId != nil && len(txId) != 0 {
 		event.Str("tx_id", txId[0])
 	}
@@ -18,7 +21,7 @@ func Info(msg string, txId ...string) {
 }
 
 func Error(msg string, err error, txId ...string) {
-	event := log.Log().Str("message", msg).Str("severity", "ERROR").Str("error", err.Error())
+	event := log.Log().Str(MESSAGE, msg).Str(SEVERITY, "ERROR").Str("error", err.Error())
 	if txId != nil && len(txId) != 0 {
 		event.Str("tx_id", txId[0])
 	}
