@@ -1,0 +1,8 @@
+steps:
+- id: 'Unit Tests'
+  name: 'golang:1.19-alpine'
+  script: |
+    apk add build-base
+    go mod download
+    go build -o /sdx-image
+    go test ./...

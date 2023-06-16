@@ -1,0 +1,48 @@
+name: Version
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    name: Checking Version Number
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Read version contents
+        id: new_version
+        run: |
+          echo "NEW_VERSION=$(cat .version)" >> $GITHUB_ENV
+
+      - name: Print Version
+        run: |
+          echo ${{ env.NEW_VERSION }}
+
+      - name: Checkout to main
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Read main version contents
+        id: main_version
+        run: |
+          echo "MAIN_VERSION=$(cat .version)" >> $GITHUB_ENV
+
+
+      - name: Print main version
+        run: |
+          echo ${{ env.MAIN_VERSION }}
+
+
+      - name: Compare versions
+        run: |
+          if [ ${{ env.NEW_VERSION }} != ${{ env.MAIN_VERSION }} ]
+          then
+            echo Version updated!
+          else
+            echo Version not updated!
+            exit 1
+          fi
