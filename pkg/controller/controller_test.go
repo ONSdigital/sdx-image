@@ -47,6 +47,10 @@ func TestMbs(t *testing.T) {
 	runFromFile("mbs_0106", t)
 }
 
+func TestMcg(t *testing.T) {
+	runFromFile("mcg_0002", t)
+}
+
 func TestMbsV1(t *testing.T) {
 	runFromFile("v1/mbs_0106", t)
 }
