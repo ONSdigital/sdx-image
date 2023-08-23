@@ -7,6 +7,7 @@ import (
 	"sdxImage/pkg/log"
 	"sdxImage/pkg/page"
 	"sdxImage/pkg/read"
+	"sdxImage/pkg/schema"
 	"sync"
 )
 
@@ -28,12 +29,12 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	}
 
 	log.Info("Processing submission", submission.TxId)
-	schema, err := read.Schema(submission.SchemaName)
+	instrument, err := schema.Read(submission.SchemaName)
 	if err != nil {
 		log.Error("Unable to read schema", err, submission.TxId)
 		return nil, err
 	}
-	survey := fromSubmission(schema, submission)
+	survey := fromSubmission(instrument, submission)
 	result := page.Create(survey)
 	log.Info("Successfully created image", submission.TxId)
 	runtime.GC()

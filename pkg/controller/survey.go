@@ -1,39 +1,46 @@
 package controller
 
 import (
+	"sdxImage/pkg/interfaces"
 	"sdxImage/pkg/model"
 	"sdxImage/pkg/substitutions"
 	"strconv"
 	"strings"
 )
 
-func fromSubmission(schema *model.Schema, submission *model.Submission) *model.Survey {
+func fromSubmission(instrument interfaces.Instrument, submission *model.Submission) *model.Survey {
 
 	lookup := substitutions.GetLookup(submission.StartDate, submission.EndDate, submission.RuName)
 
 	survey := &model.Survey{
-		Title:       schema.Title,
-		SurveyId:    schema.SurveyId,
-		FormType:    schema.FormType,
+		Title:       instrument.GetTitle(),
+		SurveyId:    instrument.GetSurveyId(),
+		FormType:    instrument.GetFormType(),
 		Respondent:  submission.RuRef,
 		SubmittedAt: substitutions.DateFormat(submission.SubmittedAt),
 		Sections:    []*model.Section{},
 	}
 
 	var sections []*model.Section
-	for _, sect := range schema.Sections {
+	for _, sectionId := range instrument.GetSections().GetSectionIds() {
 		hasAnswerValue := false
 		section := &model.Section{
-			Title:     sect.Title,
+			Title:     instrument.GetSections().GetSectionTitle(sectionId),
 			Instances: []*model.Instance{},
 		}
 		instanceMap := map[string]*model.Instance{}
-		for _, quest := range sect.Questions {
+		questions := instrument.GetSections().GetSectionQuestions(sectionId)
 
-			title := quest.Title
+		for _, questionId := range questions {
+			title := instrument.GetQuestions().GetQuestionTitle(questionId)
+			answers := instrument.GetQuestions().GetQuestionAnswers(questionId)
 
-			for _, ans := range quest.Answers {
-				responseList := submission.GetResponses(ans.QCode)
+			for _, answerId := range answers {
+				answerQcode := instrument.GetAnswers().GetAnswerCode(answerId)
+				answerLabel := instrument.GetAnswers().GetAnswerLabel(answerId)
+				answerType := instrument.GetAnswers().GetAnswerType(answerId)
+
+				responseList := submission.GetResponses(answerQcode)
 				for _, resp := range responseList {
 
 					instanceKey := strconv.Itoa(resp.Instance)
@@ -49,8 +56,8 @@ func fromSubmission(schema *model.Schema, submission *model.Submission) *model.S
 
 					value := resp.Value
 					if value != "" {
-						qCode := getQCode(ans.QCode)
-						text := getAnswerText(title, ans.Label, ans.Type, len(quest.Answers) > 1, lookup)
+						qCode := getQCode(answerQcode)
+						text := getAnswerText(title, answerLabel, answerType, len(answers) > 1, lookup)
 
 						answer := &model.Answer{
 							QCode: qCode,
