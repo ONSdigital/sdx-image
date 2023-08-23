@@ -94,7 +94,7 @@ func (schema *Schema) Print() {
 	fmt.Println(schema.DataVersion)
 
 	fmt.Print("Sections: ")
-	fmt.Println(fmt.Sprint(schema.Sections.GetSectionIds()))
+	fmt.Println(fmt.Sprint(schema.Sections.GetSectionTitles()))
 
 	fmt.Print("Questions: ")
 	fmt.Println(fmt.Sprint(schema.Questions.GetQuestionIds()))

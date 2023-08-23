@@ -14,9 +14,8 @@ type Questions interface {
 }
 
 type Sections interface {
-	GetSectionIds() []string
-	GetSectionTitle(sectionId string) string
-	GetSectionQuestions(sectionId string) []string
+	GetSectionTitles() []string
+	GetSectionQuestions(sectionTitle string) []string
 }
 
 type Instrument interface {

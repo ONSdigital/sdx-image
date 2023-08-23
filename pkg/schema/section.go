@@ -16,13 +16,13 @@ func convertToSection(json map[string]any) (*Section, bool) {
 }
 
 type Sections struct {
-	idList     []string
+	titleList  []string
 	sectionMap map[string]*Section
 }
 
 func newSections() *Sections {
 	return &Sections{
-		idList:     []string{},
+		titleList:  []string{},
 		sectionMap: make(map[string]*Section),
 	}
 }
@@ -34,17 +34,13 @@ func (sections *Sections) addSection(section *Section) {
 			previousSection.Groups = append(previousSection.Groups, group)
 		}
 	} else {
-		sections.idList = append(sections.idList, section.Title)
+		sections.titleList = append(sections.titleList, section.Title)
 		sections.sectionMap[section.Title] = section
 	}
 }
 
-func (sections *Sections) GetSectionIds() []string {
-	return sections.idList
-}
-
-func (sections *Sections) GetSectionTitle(sectionId string) string {
-	return sections.sectionMap[sectionId].Title
+func (sections *Sections) GetSectionTitles() []string {
+	return sections.titleList
 }
 
 func (sections *Sections) GetSectionQuestions(sectionId string) []string {

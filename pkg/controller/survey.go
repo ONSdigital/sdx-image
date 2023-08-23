@@ -22,14 +22,14 @@ func fromSubmission(instrument interfaces.Instrument, submission *model.Submissi
 	}
 
 	var sections []*model.Section
-	for _, sectionId := range instrument.GetSections().GetSectionIds() {
+	for _, sectionTitle := range instrument.GetSections().GetSectionTitles() {
 		hasAnswerValue := false
 		section := &model.Section{
-			Title:     instrument.GetSections().GetSectionTitle(sectionId),
+			Title:     sectionTitle,
 			Instances: []*model.Instance{},
 		}
 		instanceMap := map[string]*model.Instance{}
-		questions := instrument.GetSections().GetSectionQuestions(sectionId)
+		questions := instrument.GetSections().GetSectionQuestions(sectionTitle)
 
 		for _, questionId := range questions {
 			title := instrument.GetQuestions().GetQuestionTitle(questionId)
