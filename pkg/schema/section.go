@@ -28,8 +28,15 @@ func newSections() *Sections {
 }
 
 func (sections *Sections) addSection(section *Section) {
-	sections.idList = append(sections.idList, section.Id)
-	sections.sectionMap[section.Id] = section
+	previousSection, exists := sections.sectionMap[section.Title]
+	if exists {
+		for _, group := range section.Groups {
+			previousSection.Groups = append(previousSection.Groups, group)
+		}
+	} else {
+		sections.idList = append(sections.idList, section.Title)
+		sections.sectionMap[section.Title] = section
+	}
 }
 
 func (sections *Sections) GetSectionIds() []string {
