@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func fromSubmission(instrument interfaces.Instrument, submission *model.Submission) *model.Survey {
+func fromSubmission(instrument interfaces.Schema, submission *model.Submission) *model.Survey {
 
 	lookup := substitutions.GetLookup(submission.StartDate, submission.EndDate, submission.RuName)
 

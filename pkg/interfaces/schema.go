@@ -18,7 +18,7 @@ type Sections interface {
 	ListQuestions(sectionTitle string) []string
 }
 
-type Instrument interface {
+type Schema interface {
 	GetTitle() string
 	GetSurveyId() string
 	GetFormType() string
