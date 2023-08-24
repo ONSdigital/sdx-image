@@ -44,6 +44,9 @@ func (sections *Sections) addSection(section *Section) {
 		for _, group := range section.groups {
 			previousSection.groups = append(previousSection.groups, group)
 		}
+		for _, questionId := range section.QuestionIds {
+			previousSection.QuestionIds = append(previousSection.QuestionIds, questionId)
+		}
 	} else {
 		sections.titleList = append(sections.titleList, section.title)
 		sections.SectionMap[section.title] = section
