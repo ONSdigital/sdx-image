@@ -1,51 +1,55 @@
 package schema
 
 type Question struct {
-	Id           string
+	id           string
 	Title        string
 	QuestionType string
-	Answers      []*Answer
+	AnswerIds    []string
+	answers      []*Answer
 }
 
 func convertToQuestion(json map[string]any) (*Question, bool) {
+	answers := convertList(json, "answers", convertToAnswer)
+	answerIds := make([]string, len(answers))
+	for i, a := range answers {
+		answerIds[i] = a.Id
+	}
+
 	question := &Question{
-		Id:           getString(json, "id"),
+		id:           getString(json, "id"),
 		Title:        extractTitle(json),
 		QuestionType: getString(json, "type"),
-		Answers:      convertList(json, "answers", convertToAnswer),
+		AnswerIds:    answerIds,
+		answers:      answers,
 	}
 	return question, true
 }
 
 type Questions struct {
 	idList      []string
-	questionMap map[string]*Question
+	QuestionMap map[string]*Question
 }
 
 func newQuestions() *Questions {
 	return &Questions{
 		idList:      []string{},
-		questionMap: make(map[string]*Question),
+		QuestionMap: make(map[string]*Question),
 	}
 }
 
 func (questions *Questions) addQuestion(question *Question) {
-	questions.idList = append(questions.idList, question.Id)
-	questions.questionMap[question.Id] = question
+	questions.idList = append(questions.idList, question.id)
+	questions.QuestionMap[question.id] = question
 }
 
-func (questions *Questions) GetQuestionIds() []string {
+func (questions *Questions) ListIds() []string {
 	return questions.idList
 }
 
-func (questions *Questions) GetQuestionTitle(questionId string) string {
-	return questions.questionMap[questionId].Title
+func (questions *Questions) GetTitle(questionId string) string {
+	return questions.QuestionMap[questionId].Title
 }
 
-func (questions *Questions) GetQuestionAnswers(questionId string) []string {
-	answers := make([]string, len(questions.questionMap[questionId].Answers))
-	for i, a := range questions.questionMap[questionId].Answers {
-		answers[i] = a.Id
-	}
-	return answers
+func (questions *Questions) ListAnswers(questionId string) []string {
+	return questions.QuestionMap[questionId].AnswerIds
 }

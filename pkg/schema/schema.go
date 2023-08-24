@@ -1,6 +1,7 @@
 package schema
 
 import (
+	"encoding/json"
 	"fmt"
 	"sdxImage/pkg/interfaces"
 )
@@ -10,9 +11,9 @@ type Schema struct {
 	SurveyId    string
 	FormType    string
 	DataVersion string
-	Sections    interfaces.Sections
-	Questions   interfaces.Questions
-	Answers     interfaces.Answers
+	Sections    *Sections
+	Questions   *Questions
+	Answers     *Answers
 }
 
 func convert(json map[string]any) *Schema {
@@ -24,10 +25,10 @@ func convert(json map[string]any) *Schema {
 
 	for _, section := range tree {
 		sections.addSection(section)
-		for _, group := range section.Groups {
+		for _, group := range section.groups {
 			for _, block := range group.Blocks {
 				questions.addQuestion(block.Question)
-				for _, answer := range block.Question.Answers {
+				for _, answer := range block.Question.answers {
 					answers.addAnswer(answer)
 				}
 			}
@@ -41,7 +42,7 @@ func convert(json map[string]any) *Schema {
 			qCodeMap[answerCode.AnswerId] = answerCode.Code
 		}
 
-		for id, answer := range answers.answerMap {
+		for id, answer := range answers.AnswerMap {
 			if answer.Qcode == "" {
 				answer.Qcode = qCodeMap[id]
 			}
@@ -85,20 +86,10 @@ func (schema *Schema) GetAnswers() interfaces.Answers {
 	return schema.Answers
 }
 
-func (schema *Schema) Print() {
-	fmt.Print("SurveyId: ")
-	fmt.Println(schema.SurveyId)
-	fmt.Print("FormType: ")
-	fmt.Println(schema.FormType)
-	fmt.Print("DataVersion: ")
-	fmt.Println(schema.DataVersion)
-
-	fmt.Print("Sections: ")
-	fmt.Println(fmt.Sprint(schema.Sections.GetSectionTitles()))
-
-	fmt.Print("Questions: ")
-	fmt.Println(fmt.Sprint(schema.Questions.GetQuestionIds()))
-
-	fmt.Print("Answers: ")
-	fmt.Println(fmt.Sprint(schema.Answers.GetAnswerIds()))
+func (schema *Schema) String() string {
+	b, err := json.MarshalIndent(schema, "", "  ")
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+	return string(b)
 }

@@ -1,21 +1,21 @@
 package interfaces
 
 type Answers interface {
-	GetAnswerIds() []string
-	GetAnswerType(answerId string) string
-	GetAnswerCode(answerId string) string
-	GetAnswerLabel(answerId string) string
+	ListIds() []string
+	GetType(answerId string) string
+	GetCode(answerId string) string
+	GetLabel(answerId string) string
 }
 
 type Questions interface {
-	GetQuestionIds() []string
-	GetQuestionTitle(questionId string) string
-	GetQuestionAnswers(questionId string) []string
+	ListIds() []string
+	GetTitle(questionId string) string
+	ListAnswers(questionId string) []string
 }
 
 type Sections interface {
-	GetSectionTitles() []string
-	GetSectionQuestions(sectionTitle string) []string
+	ListTitles() []string
+	ListQuestions(sectionTitle string) []string
 }
 
 type Instrument interface {
@@ -25,5 +25,4 @@ type Instrument interface {
 	GetSections() Sections
 	GetQuestions() Questions
 	GetAnswers() Answers
-	Print()
 }

@@ -1,55 +1,59 @@
 package schema
 
 type Section struct {
-	Id     string
-	Title  string
-	Groups []*Group
+	id          string
+	title       string
+	QuestionIds []string
+	groups      []*Group
 }
 
 func convertToSection(json map[string]any) (*Section, bool) {
+	groups := convertList(json, "groups", convertToGroup)
+
+	var questionIds []string
+	for _, group := range groups {
+		for _, block := range group.Blocks {
+			questionIds = append(questionIds, block.Question.id)
+		}
+	}
+
 	section := &Section{
-		Id:     getString(json, "id"),
-		Title:  extractTitle(json),
-		Groups: convertList(json, "groups", convertToGroup),
+		id:          getString(json, "id"),
+		title:       extractTitle(json),
+		QuestionIds: questionIds,
+		groups:      groups,
 	}
 	return section, true
 }
 
 type Sections struct {
 	titleList  []string
-	sectionMap map[string]*Section
+	SectionMap map[string]*Section
 }
 
 func newSections() *Sections {
 	return &Sections{
 		titleList:  []string{},
-		sectionMap: make(map[string]*Section),
+		SectionMap: make(map[string]*Section),
 	}
 }
 
 func (sections *Sections) addSection(section *Section) {
-	previousSection, exists := sections.sectionMap[section.Title]
+	previousSection, exists := sections.SectionMap[section.title]
 	if exists {
-		for _, group := range section.Groups {
-			previousSection.Groups = append(previousSection.Groups, group)
+		for _, group := range section.groups {
+			previousSection.groups = append(previousSection.groups, group)
 		}
 	} else {
-		sections.titleList = append(sections.titleList, section.Title)
-		sections.sectionMap[section.Title] = section
+		sections.titleList = append(sections.titleList, section.title)
+		sections.SectionMap[section.title] = section
 	}
 }
 
-func (sections *Sections) GetSectionTitles() []string {
+func (sections *Sections) ListTitles() []string {
 	return sections.titleList
 }
 
-func (sections *Sections) GetSectionQuestions(sectionId string) []string {
-	section := sections.sectionMap[sectionId]
-	var questions []string
-	for _, group := range section.Groups {
-		for _, block := range group.Blocks {
-			questions = append(questions, block.Question.Id)
-		}
-	}
-	return questions
+func (sections *Sections) ListQuestions(sectionId string) []string {
+	return sections.SectionMap[sectionId].QuestionIds
 }

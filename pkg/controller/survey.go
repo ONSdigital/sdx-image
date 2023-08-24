@@ -22,23 +22,23 @@ func fromSubmission(instrument interfaces.Instrument, submission *model.Submissi
 	}
 
 	var sections []*model.Section
-	for _, sectionTitle := range instrument.GetSections().GetSectionTitles() {
+	for _, sectionTitle := range instrument.GetSections().ListTitles() {
 		hasAnswerValue := false
 		section := &model.Section{
 			Title:     sectionTitle,
 			Instances: []*model.Instance{},
 		}
 		instanceMap := map[string]*model.Instance{}
-		questions := instrument.GetSections().GetSectionQuestions(sectionTitle)
+		questions := instrument.GetSections().ListQuestions(sectionTitle)
 
 		for _, questionId := range questions {
-			title := instrument.GetQuestions().GetQuestionTitle(questionId)
-			answers := instrument.GetQuestions().GetQuestionAnswers(questionId)
+			title := instrument.GetQuestions().GetTitle(questionId)
+			answers := instrument.GetQuestions().ListAnswers(questionId)
 
 			for _, answerId := range answers {
-				answerQcode := instrument.GetAnswers().GetAnswerCode(answerId)
-				answerLabel := instrument.GetAnswers().GetAnswerLabel(answerId)
-				answerType := instrument.GetAnswers().GetAnswerType(answerId)
+				answerQcode := instrument.GetAnswers().GetCode(answerId)
+				answerLabel := instrument.GetAnswers().GetLabel(answerId)
+				answerType := instrument.GetAnswers().GetType(answerId)
 
 				responseList := submission.GetResponses(answerQcode)
 				for _, resp := range responseList {
