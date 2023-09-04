@@ -18,6 +18,7 @@ type V2Submission struct {
 	SchemaName     string          `json:"schema_name"`
 	SurveyMetadata *SurveyMetaData `json:"survey_metadata"`
 	SubmittedAt    string          `json:"submitted_at"`
+	Version        string          `json:"version"`
 	DataVersion    string          `json:"data_version"`
 	Data           Data            `json:"data"`
 }
