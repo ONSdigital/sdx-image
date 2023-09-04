@@ -1,4 +1,4 @@
-package read
+package submission
 
 import (
 	"encoding/json"
@@ -14,17 +14,17 @@ func Read(bytes []byte) (interfaces.Submission, error) {
 		err2 := json.Unmarshal(bytes, v1)
 		if err2 != nil {
 			log.Error("Failed to convert submission bytes to map", err)
-			return nil, &SubmissionError{Msg: err.Error()}
+			return nil, &Exception{Msg: err.Error()}
 		}
 		return v1, nil
 	}
 	return submission, nil
 }
 
-type SubmissionError struct {
+type Exception struct {
 	Msg string
 }
 
-func (e *SubmissionError) Error() string {
+func (e *Exception) Error() string {
 	return e.Msg
 }

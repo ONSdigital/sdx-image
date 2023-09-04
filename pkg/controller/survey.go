@@ -8,16 +8,16 @@ import (
 	"strings"
 )
 
-func fromSubmission(instrument interfaces.Schema, submission *model.Submission) *model.Survey {
+func fromSubmission(instrument interfaces.Schema, submission interfaces.Submission) *model.Survey {
 
-	lookup := substitutions.GetLookup(submission.StartDate, submission.EndDate, submission.RuName)
+	lookup := substitutions.GetLookup(submission.GetStartDate(), submission.GetEndDate(), submission.GetRuName())
 
 	survey := &model.Survey{
 		Title:       instrument.GetTitle(),
 		SurveyId:    instrument.GetSurveyId(),
 		FormType:    instrument.GetFormType(),
-		Respondent:  submission.RuRef,
-		SubmittedAt: substitutions.DateFormat(submission.SubmittedAt),
+		Respondent:  submission.GetRuRef(),
+		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
 		Sections:    []*model.Section{},
 	}
 
@@ -43,18 +43,18 @@ func fromSubmission(instrument interfaces.Schema, submission *model.Submission) 
 				responseList := submission.GetResponses(answerQcode)
 				for _, resp := range responseList {
 
-					instanceKey := strconv.Itoa(resp.Instance)
+					instanceKey := strconv.Itoa(resp.GetInstance())
 					instance, found := instanceMap[instanceKey]
 					if !found {
 						instance = &model.Instance{
-							Id:      resp.Instance,
+							Id:      resp.GetInstance(),
 							Answers: []*model.Answer{},
 						}
 						instanceMap[instanceKey] = instance
 						section.Instances = append(section.Instances, instance)
 					}
 
-					value := resp.Value
+					value := resp.GetValue()
 					if value != "" {
 						qCode := getQCode(answerQcode)
 						text := getAnswerText(title, answerLabel, answerType, len(answers) > 1, lookup)

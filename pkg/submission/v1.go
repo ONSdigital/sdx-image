@@ -1,4 +1,4 @@
-package read
+package submission
 
 import (
 	"encoding/json"
@@ -22,7 +22,7 @@ type V1Submission struct {
 	Metadata    *V1MetaData `json:"metadata"`
 	SubmittedAt string      `json:"submitted_at"`
 	DataVersion string      `json:"version"`
-	Data        *Data       `json:"data"`
+	Data        Data        `json:"data"`
 }
 
 func (submission *V1Submission) GetTxId() string {
@@ -56,12 +56,8 @@ func (submission *V1Submission) GetDataVersion() string {
 	return submission.DataVersion
 }
 
-func (submission *V1Submission) GetData() []interfaces.Data {
-	result := make([]interfaces.Data, len(submission.Data.Responses))
-	for i, r := range submission.Data.Responses {
-		result[i] = r
-	}
-	return result
+func (submission *V1Submission) GetResponses(code string) []interfaces.Response {
+	return submission.Data[code]
 }
 
 func (submission *V1Submission) String() string {

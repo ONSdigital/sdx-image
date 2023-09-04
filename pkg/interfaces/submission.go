@@ -1,6 +1,6 @@
 package interfaces
 
-type Data interface {
+type Response interface {
 	GetCode() string
 	GetValue() string
 	GetInstance() int
@@ -15,5 +15,5 @@ type Submission interface {
 	GetStartDate() string
 	GetEndDate() string
 	GetDataVersion() string
-	GetData() []Data
+	GetResponses(code string) []Response
 }

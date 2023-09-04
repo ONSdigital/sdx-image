@@ -1,4 +1,4 @@
-package read
+package submission
 
 import (
 	"fmt"

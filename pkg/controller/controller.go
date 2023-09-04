@@ -6,8 +6,8 @@ import (
 	"runtime"
 	"sdxImage/pkg/log"
 	"sdxImage/pkg/page"
-	"sdxImage/pkg/read"
 	"sdxImage/pkg/schema"
+	"sdxImage/pkg/submission"
 	"sync"
 )
 
@@ -22,21 +22,21 @@ var mu sync.Mutex
 func Run(submissionBytes []byte) (image.Image, error) {
 	mu.Lock()
 	defer mu.Unlock()
-	submission, err := read.Submission(submissionBytes)
+	sub, err := submission.Read(submissionBytes)
 	if err != nil {
 		log.Error("Unable to read submission", err)
 		return nil, err
 	}
 
-	log.Info("Processing submission", submission.TxId)
-	instrument, err := schema.Read(submission.SchemaName)
+	log.Info("Processing submission", sub.GetTxId())
+	instrument, err := schema.Read(sub.GetSchemaName())
 	if err != nil {
-		log.Error("Unable to read schema", err, submission.TxId)
+		log.Error("Unable to read schema", err, sub.GetTxId())
 		return nil, err
 	}
-	survey := fromSubmission(instrument, submission)
+	survey := fromSubmission(instrument, sub)
 	result := page.Create(survey)
-	log.Info("Successfully created image", submission.TxId)
+	log.Info("Successfully created image", sub.GetTxId())
 	runtime.GC()
 	return result, nil
 }
