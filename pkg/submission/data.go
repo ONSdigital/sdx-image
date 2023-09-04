@@ -33,6 +33,7 @@ func (data *Data) UnmarshalJSON(bytes []byte) error {
 			for _, v := range respList {
 				if instList, found := (*data)[v.QCode]; found {
 					instList = append(instList, v)
+					(*data)[v.QCode] = instList
 				} else {
 					(*data)[v.QCode] = []interfaces.Response{v}
 				}
