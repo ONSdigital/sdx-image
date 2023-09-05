@@ -1,7 +1,7 @@
 package page
 
 import (
-	"sdxImage/pkg/model"
+	"sdxImage/pkg/survey"
 	"sdxImage/pkg/test"
 	"testing"
 )
@@ -9,19 +9,19 @@ import (
 func TestCreateMbs(t *testing.T) {
 	test.SetCwdToRoot()
 
-	survey := &model.Survey{
+	survey := &survey.Survey{
 		Title:       "Monthly Business Survey",
 		SurveyId:    "009",
 		FormType:    "0106",
 		Respondent:  "12346789012A",
 		SubmittedAt: "13 January 2023 16:38:46",
-		Sections: []*model.Section{
+		Sections: []*survey.Section{
 			{
 				Title: "",
-				Instances: []*model.Instance{
+				Instances: []*survey.Instance{
 					{
 						Id: 0,
-						Answers: []*model.Answer{
+						Answers: []*survey.Answer{
 							{
 								Text:  "Are you able to report for the period from 01/05/2016 to 01/06/2016?",
 								QCode: "9999",
@@ -54,19 +54,19 @@ func TestCreateMbs(t *testing.T) {
 func TestCreateInstances(t *testing.T) {
 	test.SetCwdToRoot()
 
-	survey := &model.Survey{
+	survey := &survey.Survey{
 		Title:       "Instances Test",
 		SurveyId:    "123",
 		FormType:    "0106",
 		Respondent:  "12346789012A",
 		SubmittedAt: "13 January 2023 16:38:46",
-		Sections: []*model.Section{
+		Sections: []*survey.Section{
 			{
 				Title: "No Instances",
-				Instances: []*model.Instance{
+				Instances: []*survey.Instance{
 					{
 						Id: 0,
-						Answers: []*model.Answer{
+						Answers: []*survey.Answer{
 							{
 								Text:  "What was the business's total expenditure?",
 								QCode: "200",
@@ -78,10 +78,10 @@ func TestCreateInstances(t *testing.T) {
 			},
 			{
 				Title: "Three Instances",
-				Instances: []*model.Instance{
+				Instances: []*survey.Instance{
 					{
 						Id: 1,
-						Answers: []*model.Answer{
+						Answers: []*survey.Answer{
 							{
 								Text:  "What was the business's expenditure on employment costs for the period?",
 								QCode: "450",
@@ -96,7 +96,7 @@ func TestCreateInstances(t *testing.T) {
 					},
 					{
 						Id: 2,
-						Answers: []*model.Answer{
+						Answers: []*survey.Answer{
 							{
 								Text:  "What was the business's expenditure on employment costs for the period?",
 								QCode: "450",
@@ -111,7 +111,7 @@ func TestCreateInstances(t *testing.T) {
 					},
 					{
 						Id: 3,
-						Answers: []*model.Answer{
+						Answers: []*survey.Answer{
 							{
 								Text:  "What was the business's expenditure on employment costs for the period?",
 								QCode: "450",

@@ -1,34 +1,30 @@
-package controller
+package survey
 
 import (
 	"sdxImage/pkg/interfaces"
-	"sdxImage/pkg/model"
 	"sdxImage/pkg/substitutions"
 	"strconv"
-	"strings"
 )
 
-func fromSubmission(instrument interfaces.Schema, submission interfaces.Submission) *model.Survey {
+func Create(instrument interfaces.Schema, submission interfaces.Submission) interfaces.Survey {
 
-	lookup := substitutions.GetLookup(submission.GetStartDate(), submission.GetEndDate(), submission.GetRuName())
-
-	survey := &model.Survey{
+	survey := &Survey{
 		Title:       instrument.GetTitle(),
 		SurveyId:    instrument.GetSurveyId(),
 		FormType:    instrument.GetFormType(),
 		Respondent:  submission.GetRuRef(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
-		Sections:    []*model.Section{},
+		Sections:    []interfaces.Section{},
 	}
 
-	var sections []*model.Section
+	var sections []interfaces.Section
 	for _, sectionTitle := range instrument.GetSections().ListTitles() {
 		hasAnswerValue := false
-		section := &model.Section{
+		section := &Section{
 			Title:     sectionTitle,
-			Instances: []*model.Instance{},
+			Instances: []interfaces.Instance{},
 		}
-		instanceMap := map[string]*model.Instance{}
+		instanceMap := map[string]*Instance{}
 		questions := instrument.GetSections().ListQuestions(sectionTitle)
 
 		for _, questionId := range questions {
@@ -46,9 +42,9 @@ func fromSubmission(instrument interfaces.Schema, submission interfaces.Submissi
 					instanceKey := strconv.Itoa(resp.GetInstance())
 					instance, found := instanceMap[instanceKey]
 					if !found {
-						instance = &model.Instance{
+						instance = &Instance{
 							Id:      resp.GetInstance(),
-							Answers: []*model.Answer{},
+							Answers: []interfaces.Answer{},
 						}
 						instanceMap[instanceKey] = instance
 						section.Instances = append(section.Instances, instance)
@@ -56,13 +52,14 @@ func fromSubmission(instrument interfaces.Schema, submission interfaces.Submissi
 
 					value := resp.GetValue()
 					if value != "" {
-						qCode := getQCode(answerQcode)
-						text := getAnswerText(title, answerLabel, answerType, len(answers) > 1, lookup)
 
-						answer := &model.Answer{
-							QCode: qCode,
-							Text:  text,
-							Value: value,
+						answer := &Answer{
+							Title:    title,
+							QType:    answerType,
+							QCode:    getQCode(answerQcode),
+							Label:    answerLabel,
+							Value:    value,
+							Multiple: len(answers) > 1,
 						}
 
 						instance.Answers = append(instance.Answers, answer)
@@ -77,27 +74,6 @@ func fromSubmission(instrument interfaces.Schema, submission interfaces.Submissi
 	}
 	survey.Sections = sections
 	return survey
-}
-
-func getAnswerText(title, label, qType string, multiple bool, lookup substitutions.ParameterLookup) string {
-	text := title
-	if qType == "Date" {
-		text += " " + label
-	} else if qType == "Number" {
-		text += " " + label + ":"
-	} else if qType == "Currency" {
-		// only include text and label if the question has multiple answers
-		// and the label has 5 words or fewer
-		if multiple && len(strings.Split(label, " ")) <= 5 {
-			text += " " + label + ":"
-		} else {
-			text = label + "?"
-		}
-
-	} else if qType == "Unit" {
-		text += " " + label + ":"
-	}
-	return substitutions.Replace(text, lookup)
 }
 
 func getQCode(code string) string {

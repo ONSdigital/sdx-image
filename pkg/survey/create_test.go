@@ -1,4 +1,4 @@
-package controller
+package survey
 
 import "testing"
 
