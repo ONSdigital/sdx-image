@@ -3,6 +3,7 @@
   "mime_type": "application/json/ons/eq",
   "schema_version": "0.0.1",
   "data_version": "0.0.1",
+  "preview_questions": false,
   "survey_id": "127",
   "form_type": "0001",
   "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
@@ -10,10 +11,7 @@
   "questionnaire_flow": {
     "type": "Hub",
     "options": {
-      "required_completed_sections": [
-        "section26",
-        "sectionquestionnaire-introduction"
-      ]
+      "required_completed_sections": ["26", "sectionquestionnaire-introduction"]
     }
   },
   "sections": [
@@ -27,7 +25,7 @@
           "title": "Introduction",
           "blocks": [
             {
-              "id": "introduction-block",
+              "id": "introduction",
               "type": "Introduction",
               "primary_content": [
                 {
@@ -37,10 +35,23 @@
                     "placeholders": [
                       {
                         "placeholder": "trad_as",
-                        "value": {
-                          "source": "metadata",
-                          "identifier": "trad_as"
-                        }
+                        "transforms": [
+                          {
+                            "transform": "first_non_empty_item",
+                            "arguments": {
+                              "items": [
+                                {
+                                  "source": "metadata",
+                                  "identifier": "trad_as"
+                                },
+                                {
+                                  "source": "metadata",
+                                  "identifier": "ru_name"
+                                }
+                              ]
+                            }
+                          }
+                        ]
                       },
                       {
                         "placeholder": "ru_name",
@@ -202,7 +213,7 @@
                           "new credit advanced on credit cards",
                           "credit charges earned on credit cards",
                           "repayments received relating to credit issued on credit cards",
-                          "credit card loans sold to or brought from another organisation",
+                          "credit card loans sold to or bought from another organisation",
                           "credit card credit written off",
                           "any other movements relating to credit cards",
                           "total credit outstanding on credit cards"
@@ -248,11 +259,10 @@
       ]
     },
     {
-      "id": "section26",
+      "id": "26",
       "title": "General information",
       "summary": {
         "show_on_completion": false,
-        "page_title": "General information",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -262,7 +272,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group26-introduction",
+              "id": "general-information",
+              "page_title": "General information",
               "content": {
                 "title": "General information",
                 "contents": [
@@ -314,10 +325,10 @@
               }
             },
             {
-              "id": "block123",
+              "id": "reporting-period",
               "type": "Question",
               "question": {
-                "id": "question123",
+                "id": "questionreporting-period",
                 "title": {
                   "text": "Are you able to report for the period {ref_p_start_date} to {ref_p_end_date}?",
                   "placeholders": [
@@ -376,7 +387,7 @@
               "page_title": "Reporting period",
               "routing_rules": [
                 {
-                  "block": "block120",
+                  "block": "banking-licence",
                   "when": {
                     "in": [
                       {
@@ -388,15 +399,15 @@
                   }
                 },
                 {
-                  "block": "block124"
+                  "block": "alternative-reporting-period"
                 }
               ]
             },
             {
-              "id": "block124",
+              "id": "alternative-reporting-period",
               "type": "Question",
               "question": {
-                "id": "question124",
+                "id": "questionalternative-reporting-period",
                 "title": "What dates will your business be reporting for?",
                 "description": [
                   {
@@ -442,7 +453,7 @@
                     "type": "Date",
                     "mandatory": true,
                     "label": "From",
-                    "q_code": "9998",
+                    "q_code": "0001",
                     "minimum": {
                       "value": {
                         "source": "metadata",
@@ -458,7 +469,7 @@
                     "type": "Date",
                     "mandatory": true,
                     "label": "To",
-                    "q_code": "9997",
+                    "q_code": "0002",
                     "maximum": {
                       "value": {
                         "source": "metadata",
@@ -482,10 +493,10 @@
               "page_title": "Alternative reporting period"
             },
             {
-              "id": "block120",
+              "id": "banking-licence",
               "type": "Question",
               "question": {
-                "id": "question120",
+                "id": "questionbanking-licence",
                 "title": {
                   "text": "Does {ru_name} hold a banking licence?",
                   "placeholders": [
@@ -521,7 +532,7 @@
               "page_title": "Banking licence",
               "routing_rules": [
                 {
-                  "block": "block122",
+                  "block": "businesses-included",
                   "when": {
                     "in": [
                       {
@@ -533,15 +544,15 @@
                   }
                 },
                 {
-                  "block": "block121"
+                  "block": "bank-of-england-data"
                 }
               ]
             },
             {
-              "id": "block121",
+              "id": "bank-of-england-data",
               "type": "Question",
               "question": {
-                "id": "question121",
+                "id": "questionbank-of-england-data",
                 "title": "Does your business supply data relating to credit granting activities to the Bank of England, via their surveys?",
                 "type": "General",
                 "answers": [
@@ -566,10 +577,10 @@
               "page_title": "Bank of England data"
             },
             {
-              "id": "block122",
+              "id": "businesses-included",
               "type": "Question",
               "question": {
-                "id": "question122",
+                "id": "questionbusinesses-included",
                 "title": "Provide a list of businesses covered by this return",
                 "type": "General",
                 "answers": [
@@ -590,11 +601,10 @@
       ]
     },
     {
-      "id": "section27",
+      "id": "27",
       "title": "All self-financed credit granted to consumers",
       "summary": {
         "show_on_completion": false,
-        "page_title": "Self-financed credit granted to consumers",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -604,7 +614,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group27-introduction",
+              "id": "all-self-financed-credit-granted-to-consumers",
+              "page_title": "All self-financed credit granted to consumers",
               "content": {
                 "title": "All self-financed credit granted to consumers",
                 "contents": [
@@ -627,10 +638,10 @@
               }
             },
             {
-              "id": "block125",
+              "id": "previous-credit-outstanding",
               "type": "Question",
               "question": {
-                "id": "question125",
+                "id": "questionprevious-credit-outstanding",
                 "title": "At the end of the <em>previous</em> period, what was the amount of credit outstanding?",
                 "type": "General",
                 "answers": [
@@ -653,10 +664,10 @@
               "page_title": "Previous credit outstanding"
             },
             {
-              "id": "block128",
+              "id": "new-credit-advanced",
               "type": "Question",
               "question": {
-                "id": "question128",
+                "id": "questionnew-credit-advanced",
                 "title": {
                   "text": "For the period {from} to {to}, what was the amount of new credit advanced?",
                   "placeholders": [
@@ -760,10 +771,10 @@
               "page_title": "New credit advanced"
             },
             {
-              "id": "block129",
+              "id": "credit-charges-earned",
               "type": "Question",
               "question": {
-                "id": "question129",
+                "id": "questioncredit-charges-earned",
                 "title": "For the reporting period, what were the value of credit charges earned?",
                 "guidance": {
                   "contents": [
@@ -807,10 +818,10 @@
               "page_title": "Credit charges earned"
             },
             {
-              "id": "block130",
+              "id": "repayments-received",
               "type": "Question",
               "question": {
-                "id": "question130",
+                "id": "questionrepayments-received",
                 "title": "For the reporting period, what was the amount of repayments received?",
                 "guidance": {
                   "contents": [
@@ -843,10 +854,10 @@
               "page_title": "Repayments received"
             },
             {
-              "id": "block131",
+              "id": "net-loans",
               "type": "Question",
               "question": {
-                "id": "question131",
+                "id": "questionnet-loans",
                 "title": "For the reporting period, what was the net amount of loans packaged off and sold to or bought from another organisation?",
                 "description": ["<p>Indicate credits with a minus sign.</p>"],
                 "type": "General",
@@ -855,7 +866,7 @@
                     "id": "answer58157a4d-1586-4bce-9815-1024d7af1891",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Net amount of loans sold to or brought from another organisation",
+                    "label": "Net amount of loans sold to or bought from another organisation",
                     "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "9008",
                     "minimum": {
@@ -874,10 +885,10 @@
               "page_title": "Net loans"
             },
             {
-              "id": "block7a1851d2-dc62-4fbf-878e-85a1b1c89fc6",
+              "id": "credit-written-off",
               "type": "Question",
               "question": {
-                "id": "question7a1851d2-dc62-4fbf-878e-85a1b1c89fc6",
+                "id": "questioncredit-written-off",
                 "title": "For the reporting period, what was the amount of credit written off?",
                 "description": ["<p>Indicate credits with a minus sign.</p>"],
                 "type": "General",
@@ -905,10 +916,10 @@
               "page_title": "Credit written off"
             },
             {
-              "id": "block34be7bf6-9397-41b1-a557-24cff9864b30",
+              "id": "other-movements",
               "type": "Question",
               "question": {
-                "id": "question34be7bf6-9397-41b1-a557-24cff9864b30",
+                "id": "questionother-movements",
                 "title": "For the reporting period, what was the value of any other movements not already included in this section?",
                 "description": ["<p>Indicate credits with a minus sign.</p>"],
                 "type": "General",
@@ -936,14 +947,14 @@
               "page_title": "Other movements"
             },
             {
-              "id": "block132",
+              "id": "total-credit-outstanding",
               "type": "Question",
               "question": {
-                "id": "question132",
+                "id": "questiontotal-credit-outstanding",
                 "title": "At the <em>end</em> of the reporting period, what was the total amount of credit outstanding?",
                 "description": [
                   {
-                    "text": "<p>This should be equal to the total of the following answers:</p><p></p><p>Amount of credit outstanding at the end of the previous period: {amount_of_credit_outstanding_at_the_end_of_the_previous_period}</p><p>Amount of new credit advanced: {amount_of_new_credit_advanced}</p><p>Value of credit charges earned: {value_of_credit_charges_earned}</p><p></p><p><em>Minus</em> the total of these answers:</p><p></p><p>Amount of repayments received: {amount_of_repayments_received}</p><p>Net amount of loans sold to or brought from another organisation: {net_amount_of_loans_sold_to_or_brought_from_another_organisation}</p><p>Amount of credit written off: {amount_of_credit_written_off}</p><p>Value of any other movements: {value_of_any_other_movements}</p>",
+                    "text": "<p>This should be equal to the total of the following answers:</p><p></p><p>Amount of credit outstanding at the end of the previous period: {amount_of_credit_outstanding_at_the_end_of_the_previous_period}</p><p>Amount of new credit advanced: {amount_of_new_credit_advanced}</p><p>Value of credit charges earned: {value_of_credit_charges_earned}</p><p></p><p><em>Minus</em> the total of these answers:</p><p></p><p>Amount of repayments received: {amount_of_repayments_received}</p><p>Net amount of loans sold to or bought from another organisation: {net_amount_of_loans_sold_to_or_bought_from_another_organisation}</p><p>Amount of credit written off: {amount_of_credit_written_off}</p><p>Value of any other movements: {value_of_any_other_movements}</p>",
                     "placeholders": [
                       {
                         "placeholder": "amount_of_credit_outstanding_at_the_end_of_the_previous_period",
@@ -1002,7 +1013,7 @@
                         ]
                       },
                       {
-                        "placeholder": "net_amount_of_loans_sold_to_or_brought_from_another_organisation",
+                        "placeholder": "net_amount_of_loans_sold_to_or_bought_from_another_organisation",
                         "transforms": [
                           {
                             "transform": "format_currency",
@@ -1075,11 +1086,10 @@
       ]
     },
     {
-      "id": "section29",
+      "id": "29",
       "title": "Credit granted on self-financed credit cards",
       "summary": {
         "show_on_completion": false,
-        "page_title": "Credit granted on self-financed credit cards",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -1089,7 +1099,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group29-introduction",
+              "id": "credit-granted-on-self-financed-credit-cards",
+              "page_title": "Credit granted on self-financed credit cards",
               "content": {
                 "title": "Credit granted on self-financed credit cards",
                 "contents": [
@@ -1103,7 +1114,7 @@
                       "new credit advanced on credit cards",
                       "credit charges earned on credit cards",
                       "repayments received relating to credit issued on credit cards",
-                      "credit card loans sold to or brought from another organisation",
+                      "credit card loans sold to or bought from another organisation",
                       "credit card credit written off",
                       "any other movements relating to credit cards",
                       "total credit outstanding on credit cards"
@@ -1119,10 +1130,10 @@
               }
             },
             {
-              "id": "block133",
+              "id": "credit-cards-owned",
               "type": "Question",
               "question": {
-                "id": "question133",
+                "id": "questioncredit-cards-owned",
                 "title": {
                   "text": "Does {ru_name} issue its own credit cards using its own funds?",
                   "placeholders": [
@@ -1178,15 +1189,15 @@
                   }
                 },
                 {
-                  "block": "block134"
+                  "block": "previous-credit-card-credit-outstanding"
                 }
               ]
             },
             {
-              "id": "block134",
+              "id": "previous-credit-card-credit-outstanding",
               "type": "Question",
               "question": {
-                "id": "question134",
+                "id": "questionprevious-credit-card-credit-outstanding",
                 "title": "At the end of the <em>previous</em> period, what was the amount of credit outstanding on these credit cards?",
                 "description": ["<p>Classify store cards as credit cards.</p>"],
                 "type": "General",
@@ -1210,10 +1221,10 @@
               "page_title": "Previous credit card credit outstanding"
             },
             {
-              "id": "block135",
+              "id": "new-credit-card-credit-advanced",
               "type": "Question",
               "question": {
-                "id": "question135",
+                "id": "questionnew-credit-card-credit-advanced",
                 "title": {
                   "text": "For the period {from} to {to}, what was the amount of new credit advanced on credit cards?",
                   "placeholders": [
@@ -1306,10 +1317,10 @@
               "page_title": "New credit card credit advanced"
             },
             {
-              "id": "block136",
+              "id": "credit-charges-earned-on-credit-cards",
               "type": "Question",
               "question": {
-                "id": "question136",
+                "id": "questioncredit-charges-earned-on-credit-cards",
                 "title": "For the reporting period, what were the credit charges earned on credit cards?",
                 "description": ["<p>Classify store cards as credit cards.</p>"],
                 "type": "General",
@@ -1333,10 +1344,10 @@
               "page_title": "Credit charges earned on credit cards"
             },
             {
-              "id": "block137",
+              "id": "credit-card-repayments-received",
               "type": "Question",
               "question": {
-                "id": "question137",
+                "id": "questioncredit-card-repayments-received",
                 "title": "For the reporting period, what was the amount of repayments received relating to credit issued on credit cards?",
                 "description": ["<p>Classify store cards as credit cards.</p>"],
                 "type": "General",
@@ -1360,10 +1371,10 @@
               "page_title": "Credit card repayments received"
             },
             {
-              "id": "block138",
+              "id": "net-credit-card-loans",
               "type": "Question",
               "question": {
-                "id": "question138",
+                "id": "questionnet-credit-card-loans",
                 "title": "For the reporting period, what was the net amount of credit card loans packaged off and sold to, or bought from, another organisation?",
                 "description": [
                   "<p>Indicate credits with a minus sign.</p><p>Classify store cards as credit cards.</p>"
@@ -1374,7 +1385,7 @@
                     "id": "answer143",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Net amount of credit card loans sold to or brought from another organisation",
+                    "label": "Net amount of credit card loans sold to or bought from another organisation",
                     "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "9016",
                     "minimum": {
@@ -1393,10 +1404,10 @@
               "page_title": "Net credit card loans"
             },
             {
-              "id": "block139",
+              "id": "credit-card-credit-written-off",
               "type": "Question",
               "question": {
-                "id": "question139",
+                "id": "questioncredit-card-credit-written-off",
                 "title": "For the reporting period, what was the amount of credit card credit written off?",
                 "description": [
                   "<p>Indicate credits with a minus sign.</p><p>Classify store cards as credit cards.</p>"
@@ -1433,10 +1444,10 @@
               "page_title": "Credit card credit written off"
             },
             {
-              "id": "block140",
+              "id": "other-credit-card-movements",
               "type": "Question",
               "question": {
-                "id": "question140",
+                "id": "questionother-credit-card-movements",
                 "title": "During the reporting period, what was the value of any other movements relating to credit cards not already included in this section?",
                 "description": [
                   "<p>Indicate credits with a minus sign.</p><p>Classify store cards as credit cards.</p>"
@@ -1466,14 +1477,14 @@
               "page_title": "Other credit card movements"
             },
             {
-              "id": "block141",
+              "id": "total-credit-card-credit-outstanding",
               "type": "Question",
               "question": {
-                "id": "question141",
+                "id": "questiontotal-credit-card-credit-outstanding",
                 "title": "At the <em>end</em> of the reporting period, what was the total amount of credit outstanding on credit cards?",
                 "description": [
                   {
-                    "text": "<p>This should be equal to the total of the following answers:</p><p></p><p>Amount of credit outstanding at end of the previous period on credit cards: {amount_of_credit_outstanding_at_end_of_the_previous_period_on_credit_cards}</p><p>Amount of new credit advanced on credit cards: {amount_of_new_credit_advanced_on_credit_cards}</p><p>Credit charges earned on credit cards: {credit_charges_earned_on_credit_cards}</p><p></p><p></p><p><em>Minus</em> the total of these answers:</p><p></p><p>Amount of repayments received relating to credit issued on credit cards: {amount_of_repayments_received_relating_to_credit_issued_on_credit_cards}</p><p>Net amount of credit card loans sold to or brought from another organisation: {net_amount_of_credit_card_loans_sold_to_or_brought_from_another_organisation}</p><p>Amount of credit card credit written off: {amount_of_credit_card_credit_written_off}</p><p>Value of any other movements relating to credit cards: {value_of_any_other_movements_relating_to_credit_cards}</p><p></p>",
+                    "text": "<p>This should be equal to the total of the following answers:</p><p></p><p>Amount of credit outstanding at end of the previous period on credit cards: {amount_of_credit_outstanding_at_end_of_the_previous_period_on_credit_cards}</p><p>Amount of new credit advanced on credit cards: {amount_of_new_credit_advanced_on_credit_cards}</p><p>Credit charges earned on credit cards: {credit_charges_earned_on_credit_cards}</p><p></p><p></p><p><em>Minus</em> the total of these answers:</p><p></p><p>Amount of repayments received relating to credit issued on credit cards: {amount_of_repayments_received_relating_to_credit_issued_on_credit_cards}</p><p>Net amount of credit card loans sold to or bought from another organisation: {net_amount_of_credit_card_loans_sold_to_or_bought_from_another_organisation}</p><p>Amount of credit card credit written off: {amount_of_credit_card_credit_written_off}</p><p>Value of any other movements relating to credit cards: {value_of_any_other_movements_relating_to_credit_cards}</p><p></p>",
                     "placeholders": [
                       {
                         "placeholder": "amount_of_credit_outstanding_at_end_of_the_previous_period_on_credit_cards",
@@ -1532,7 +1543,7 @@
                         ]
                       },
                       {
-                        "placeholder": "net_amount_of_credit_card_loans_sold_to_or_brought_from_another_organisation",
+                        "placeholder": "net_amount_of_credit_card_loans_sold_to_or_bought_from_another_organisation",
                         "transforms": [
                           {
                             "transform": "format_currency",
@@ -1608,7 +1619,7 @@
       ]
     },
     {
-      "id": "section30",
+      "id": "30",
       "title": "Comments",
       "summary": {
         "show_on_completion": false,
@@ -1621,10 +1632,10 @@
           "id": "group30",
           "blocks": [
             {
-              "id": "block142",
+              "id": "comments",
               "type": "Question",
               "question": {
-                "id": "question142",
+                "id": "questioncomments",
                 "title": "Please provide any further details that will help us understand your answers and tell an industry story",
                 "description": [
                   "<p>Comment on significant movements in data between the current and previous monthly returns. If you provide comments, we are less likely to contact you with data queries.</p><p>Make sure you continue to the next page and select <em>submit</em> at the bottom. </p>"
@@ -1643,7 +1654,7 @@
                     "mandatory": false,
                     "type": "TextArea",
                     "label": "Comments",
-                    "q_code": "9992",
+                    "q_code": "146",
                     "max_length": 2000
                   }
                 ]
