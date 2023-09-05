@@ -8,6 +8,8 @@ import (
 
 func Create(instrument interfaces.Schema, submission interfaces.Submission) interfaces.Survey {
 
+	lookup := substitutions.GetLookup(submission.GetStartDate(), submission.GetEndDate(), submission.GetRuName())
+
 	survey := &Survey{
 		Title:       instrument.GetTitle(),
 		SurveyId:    instrument.GetSurveyId(),
@@ -54,10 +56,10 @@ func Create(instrument interfaces.Schema, submission interfaces.Submission) inte
 					if value != "" {
 
 						answer := &Answer{
-							Title:    title,
+							Title:    substitutions.Replace(title, lookup),
 							QType:    answerType,
 							QCode:    getQCode(answerQcode),
-							Label:    answerLabel,
+							Label:    substitutions.Replace(answerLabel, lookup),
 							Value:    value,
 							Multiple: len(answers) > 1,
 						}
