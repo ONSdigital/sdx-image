@@ -1,0 +1,1040 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "017",
+  "form_type": "0058",
+  "legal_basis": "Notice is given under article 5 of the Statistics of Trade and Employment (Northern Ireland) Order 1988.",
+  "title": "Quarterly Stocks Survey",
+  "questionnaire_flow": {
+    "type": "Linear",
+    "options": {
+      "summary": {
+        "collapsible": false
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "section1199",
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupquestionnaire-introduction",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {conditional_trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "conditional_trad_as",
+                        "transforms": [
+                          {
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            },
+                            "transform": "conditional_trad_as"
+                          }
+                        ]
+                      },
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "This survey covers UK businesses. The business is the individual company, partnership or sole proprietorship to which the questionnaire has been sent, unless specified otherwise.",
+                        "Include all stock owned by your business, whether in the UK or abroad.",
+                        "Include all stocks either held by you or currently in transit within the UK.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "You can select the dates of the period you are reporting for, if the given dates are not appropriate."
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Value of all stocks other than motor vehicles and motor cycles",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "all stock owned by your business, whether in the UK or abroad",
+                          "duty for dutiable goods held out of bond",
+                          "the value of any goods let out on hire, only if they were charged to current account when acquired and do not rank as capital items for taxation purposes"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "VAT",
+                          "stocks you hold that do not belong to you",
+                          "duty on stocks held in bond"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Value of stocks held for used vehicles and motor cycles",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "all stock owned by your business, whether in the UK or abroad",
+                          "cars, caravans, taxis, vans, scooters, mopeds, three-wheelers, other commercial vehicles and public transport service vehicles",
+                          "duty for dutiable goods held out of bond",
+                          "the value of any goods let out on hire, only if they were charged to current account when acquired and do not rank as capital items for taxation purposes"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "VAT",
+                          "agricultural tractors",
+                          "stocks you hold that do not belong to you",
+                          "duty on stocks held in bond"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Value of stocks held for new motor vehicles and motor cycles",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "all stock owned by your business, whether in the UK or abroad",
+                          "cars, caravans, taxis, vans, scooters, mopeds, three-wheelers, other commercial vehicles, public transport service vehicles",
+                          "duty for dutiable goods held out of bond",
+                          "the value of any goods let out on hire, only if they were charged to current account when acquired and do not rank as capital items for taxation purposes"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "VAT",
+                          "agricultural tractors",
+                          "stocks you hold that do not belong to you",
+                          "duty on stocks held in bond"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "The information supplied is used to estimate changes in stock levels which are used in the compilation of <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\"target=\"_blank\"rel=\"noopener noreferrer\">Gross Domestic Product (this link opens in a new tab)</a>, the total UK economic activity.",
+                        "Gross Domestic Product (GDP) is used to measure the UK&#39;s financial health and prosperity over time and in comparison to other countries.",
+                        "The results are used by the Bank of England and HM Treasury to monitor interest rates, inflation and in formulating financial policies, for example, income, expenditure and taxation for the UK."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "group1199",
+          "blocks": [
+            {
+              "id": "block4810",
+              "type": "Question",
+              "question": {
+                "id": "question4810",
+                "title": {
+                  "text": "Are you able to report for the period {ref_p_start_date} to {ref_p_end_date}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6104",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "9999",
+                    "options": [
+                      {
+                        "label": "Yes, I can report for this period",
+                        "value": "Yes, I can report for this period"
+                      },
+                      {
+                        "label": "No, I need to report for a different period",
+                        "value": "No, I need to report for a different period"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block4812",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer6104",
+                        "source": "answers"
+                      },
+                      ["Yes, I can report for this period"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block4811"
+                }
+              ]
+            },
+            {
+              "id": "block4811",
+              "type": "Question",
+              "question": {
+                "id": "question4811",
+                "title": "What dates will you be reporting for?",
+                "type": "DateRange",
+                "answers": [
+                  {
+                    "id": "answer6105from",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "From",
+                    "q_code": "11",
+                    "minimum": {
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ref_p_start_date"
+                      },
+                      "offset_by": {
+                        "days": -31
+                      }
+                    }
+                  },
+                  {
+                    "id": "answer6105to",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "To",
+                    "q_code": "12",
+                    "maximum": {
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ref_p_end_date"
+                      },
+                      "offset_by": {
+                        "days": 31
+                      }
+                    }
+                  }
+                ],
+                "period_limits": {
+                  "minimum": {
+                    "days": 76
+                  },
+                  "maximum": {
+                    "days": 106
+                  }
+                }
+              }
+            },
+            {
+              "id": "block4812",
+              "type": "Question",
+              "question": {
+                "id": "question4812",
+                "title": {
+                  "text": "What was {ru_name}&#39;s value of all stocks other than motor vehicles and motor cycles, including work in progress, held at {answer6105from} and {answer6105to}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    },
+                    {
+                      "placeholder": "answer6105from",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "answers",
+                                "identifier": "answer6105from"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "answer6105to",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "answers",
+                                "identifier": "answer6105to"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "all stock owned by your business, whether in the UK or abroad",
+                        "duty for dutiable goods held out of bond",
+                        "the value of any goods let out on hire, only if they were charged to current account when acquired and do not rank as capital items for taxation purposes"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "VAT",
+                        "stocks you hold that do not belong to you",
+                        "duty on stocks held in bond"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;work in progress&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to goods and services that have been partially processed, fabricated or assembled by the producer but are not usually sold or turned over to others without further processing."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6115",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of all stocks, other than motor vehicles and motor cycles, at start of period",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "9",
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer6106",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of all stocks, other than motor vehicles and motor cycles, at end of period",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "10",
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block4813",
+              "type": "Question",
+              "question": {
+                "id": "question4813",
+                "title": {
+                  "text": "What was your business&#39;s value of <em>used</em> vehicles and motor cycles stocks, including work in progress, held at {answer6105from} and {answer6105to}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "answer6105from",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "answers",
+                                "identifier": "answer6105from"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "answer6105to",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "answers",
+                                "identifier": "answer6105to"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "all stock owned by your business, whether in the UK or abroad",
+                        "cars, caravans, taxis, vans, scooters, mopeds, three-wheelers, other commercial vehicles and public transport service vehicles",
+                        "duty for dutiable goods held out of bond",
+                        "the value of any goods let out on hire, only if they were charged to current account when acquired and do not rank as capital items for taxation purposes"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "VAT",
+                        "agricultural tractors",
+                        "stocks you hold that do not belong to you",
+                        "duty on stocks held in bond"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;work in progress&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to goods and services that have been partially processed, fabricated or assembled by the producer but are not usually sold or turned over to others without further processing."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6116",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of used vehicles and motor cycles at start of period",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "193",
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer6107",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of used vehicles and motor cycles at end of period",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "194",
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block4814",
+              "type": "Question",
+              "question": {
+                "id": "question4814",
+                "title": {
+                  "text": "What was your business&#39;s value of <em>new</em> motor vehicles and motor cycles stocks, including work in progress, held at {answer6105from} and {answer6105to}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "answer6105from",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "answers",
+                                "identifier": "answer6105from"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "answer6105to",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "answers",
+                                "identifier": "answer6105to"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "all stock owned by your business, whether in the UK or abroad",
+                        "cars, caravans, taxis, vans, scooters, mopeds, three-wheelers, other commercial vehicles, public transport service vehicles",
+                        "duty for dutiable goods held out of bond",
+                        "the value of any goods let out on hire, only if they were charged to current account when acquired and do not rank as capital items for taxation purposes"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "VAT",
+                        "agricultural tractors",
+                        "stocks you hold that do not belong to you",
+                        "duty on stocks held in bond"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;work in progress&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to goods and services that have been partially processed, fabricated or assembled by the producer but are not usually sold or turned over to others without further processing."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6117",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of new motor vehicles and motor cycles at start of period",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "195",
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer6108",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of new motor vehicles and motor cycles at end of period",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "196",
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block89e28a50-5b31-41a0-b14f-a0601af7745e",
+              "type": "CalculatedSummary",
+              "title": "For the start of the period, we calculate your business&#39;s total value of stocks to be %(total)s. Is this correct?",
+              "calculation": {
+                "calculation_type": "sum",
+                "answers_to_calculate": [
+                  "answer6115",
+                  "answer6116",
+                  "answer6117"
+                ],
+                "title": "Total value of stocks held at the start of the period"
+              }
+            },
+            {
+              "id": "block340a9834-488b-4b15-a17d-5156c13dc3d0",
+              "type": "CalculatedSummary",
+              "title": "For the <em>end of the period</em>, we calculate your business&#39;s total value of stocks to be %(total)s. Is this correct?",
+              "calculation": {
+                "calculation_type": "sum",
+                "answers_to_calculate": [
+                  "answer6106",
+                  "answer6107",
+                  "answer6108"
+                ],
+                "title": "Total value of stocks held at the end of the period"
+              }
+            },
+            {
+              "id": "block4821",
+              "type": "Question",
+              "question": {
+                "id": "question4821",
+                "title": "Are the end of period figures you have provided estimated?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6119",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "15",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block4822",
+              "type": "Question",
+              "question": {
+                "id": "question4822",
+                "title": {
+                  "text": "Did any significant changes occur to the total value of stocks for {trad_as}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "trad_as",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ru_name"
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>This information will help us to validate your data and should reduce the need to query any figures with you.</p>"
+                ],
+                "definitions": [
+                  {
+                    "title": "Examples of &#39;significant changes&#39;",
+                    "contents": [
+                      {
+                        "description": "This is dependent on your own interpretation in relation to your business&#x2019;s figures from the previous reporting period and the same reporting period last year."
+                      },
+                      {
+                        "description": "<strong>Examples include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "change of business structure, merger or takeover",
+                          "end of accounting period or financial year",
+                          "impact of global economic conditions",
+                          "introduction or removal of new legislation or incentive",
+                          "normal movement for the time of year",
+                          "one-off increase in stocks",
+                          "start or end of long term project"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6120",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "146a",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block4823",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer6120",
+                        "source": "answers"
+                      },
+                      ["Yes"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block4816"
+                }
+              ]
+            },
+            {
+              "id": "block4823",
+              "type": "Question",
+              "question": {
+                "id": "question4823",
+                "title": "Which of the following are reasons for changes to your business&#39;s total value of stocks?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6121",
+                    "mandatory": true,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Change of business structure, merger or takeover",
+                        "value": "Change of business structure, merger or takeover",
+                        "q_code": "146e"
+                      },
+                      {
+                        "label": "End of accounting period of financial year",
+                        "value": "End of accounting period of financial year",
+                        "q_code": "146c"
+                      },
+                      {
+                        "label": "Introduction or removal of new legislation or incentive",
+                        "value": "Introduction or removal of new legislation or incentive",
+                        "q_code": "146g"
+                      },
+                      {
+                        "label": "Normal movement for the time of year",
+                        "value": "Normal movement for the time of year",
+                        "q_code": "146d"
+                      },
+                      {
+                        "label": "One-off increase in stocks",
+                        "value": "One-off increase in stocks",
+                        "q_code": "146f"
+                      },
+                      {
+                        "label": "Start or end of long term project",
+                        "value": "Start or end of long term project",
+                        "q_code": "146b"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "146h",
+                        "description": "For example, end of the EU transition period, leaving the EU or other global economic conditions"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block4816",
+              "type": "Question",
+              "question": {
+                "id": "question4816",
+                "title": "Please provide any further details that will help us understand any unusual fluctuations in your stock",
+                "description": [
+                  "<p>Explain any differences between current opening and closing stock values, and any differences between this quarters opening and the previously returned closing stock value.</p><p>If you provide comments, we are less likely to contact you with data queries.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "You have nearly finished! Make sure you continue to the next page and select &#x201C;submit answers&#x201D; at the bottom."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6110",
+                    "mandatory": true,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      }
+    }
+  ],
+  "theme": "northernireland",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}
