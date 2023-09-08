@@ -7,6 +7,9 @@ import (
 	"sdxImage/pkg/log"
 )
 
+// Read returns an instance that implements the
+// interfaces.Schema interface, representing the desired
+// schema as dictated by the schemaName parameter
 func Read(schemaName string) (*Schema, error) {
 	bytes, _ := loadFile(schemaName)
 	m := map[string]any{}
