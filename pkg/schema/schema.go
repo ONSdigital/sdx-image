@@ -1,91 +1,75 @@
-// Package schema handles all interactions with a schema.
-// A schema defines the questions present within a survey.
 package schema
 
 import (
 	"encoding/json"
 	"fmt"
-	"sdxImage/pkg/interfaces"
 )
 
+type Title string
+
+type Options struct {
+	Qcode string `json:"q_code"`
+	Value string `json:"value"`
+	Label string `json:"label"`
+}
+
+type Answer struct {
+	Id         string    `json:"id"`
+	Qcode      string    `json:"q_code"`
+	AnswerType string    `json:"type"`
+	Label      string    `json:"label"`
+	Options    []Options `json:"options"`
+}
+
+type Question struct {
+	Id      string   `json:"id"`
+	Title   Title    `json:"title"`
+	Answers []Answer `json:"answers"`
+}
+
+type Block struct {
+	Id        string   `json:"id"`
+	BlockType string   `json:"type"`
+	Question  Question `json:"question"`
+}
+
+type Group struct {
+	Id     string  `json:"id"`
+	Title  Title   `json:"title"`
+	Blocks []Block `json:"blocks"`
+}
+
+type Section struct {
+	Id     string  `json:"id"`
+	Groups []Group `json:"groups"`
+}
+
 type Schema struct {
-	Title       string
-	SurveyId    string
-	FormType    string
-	DataVersion string
-	Sections    *Sections
-	Questions   *Questions
-	Answers     *Answers
+	Title       string    `json:"title"`
+	SurveyId    string    `json:"survey_id"`
+	FormType    string    `json:"form_type"`
+	DataVersion string    `json:"data_version"`
+	Sections    []Section `json:"sections"`
 }
 
-func convert(json map[string]any) *Schema {
-	tree := convertList(json, "sections", convertToSection)
-
-	sections := newSections()
-	questions := newQuestions()
-	answers := newAnswers()
-
-	for _, section := range tree {
-		sections.addSection(section)
-		for _, group := range section.groups {
-			for _, block := range group.Blocks {
-				questions.addQuestion(block.Question)
-				for _, answer := range block.Question.answers {
-					answers.addAnswer(answer)
-				}
-			}
-		}
+func (title *Title) UnmarshalJSON(bytes []byte) error {
+	var t string
+	err := json.Unmarshal(bytes, &t)
+	if err == nil {
+		*title = Title(t)
+		return nil
 	}
 
-	if _, exists := json["answer_codes"]; exists {
-		answerCodes := convertList(json, "answer_codes", convertToAnswerCode)
-		qCodeMap := map[string]string{}
-		for _, answerCode := range answerCodes {
-			qCodeMap[answerCode.AnswerId] = answerCode.Code
-		}
-
-		for id, answer := range answers.AnswerMap {
-			if answer.Qcode == "" {
-				answer.Qcode = qCodeMap[id]
-			}
-		}
+	var extendedTitle struct {
+		Text string `json:"text"`
+	}
+	err2 := json.Unmarshal(bytes, &extendedTitle)
+	if err2 != nil {
+		return err2
 	}
 
-	schema := &Schema{
-		Title:       extractTitle(json),
-		SurveyId:    getString(json, "survey_id"),
-		FormType:    getString(json, "form_type"),
-		DataVersion: getString(json, "data_version"),
-		Sections:    sections,
-		Questions:   questions,
-		Answers:     answers,
-	}
-
-	return schema
-}
-
-func (schema *Schema) GetTitle() string {
-	return schema.Title
-}
-
-func (schema *Schema) GetSurveyId() string {
-	return schema.SurveyId
-}
-
-func (schema *Schema) GetFormType() string {
-	return schema.FormType
-}
-
-func (schema *Schema) GetSections() interfaces.Sections {
-	return schema.Sections
-}
-
-func (schema *Schema) GetQuestions() interfaces.Questions {
-	return schema.Questions
-}
-
-func (schema *Schema) GetAnswers() interfaces.Answers {
-	return schema.Answers
+	*title = Title(extendedTitle.Text)
+	return nil
 }
 
 func (schema *Schema) String() string {

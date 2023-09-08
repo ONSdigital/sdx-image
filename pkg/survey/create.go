@@ -6,37 +6,37 @@ import (
 	"strconv"
 )
 
-func Create(instrument interfaces.Schema, submission interfaces.Submission) interfaces.Survey {
+func Create(schema interfaces.Schema, submission interfaces.Submission) interfaces.Survey {
 
 	lookup := substitutions.GetLookup(submission.GetStartDate(), submission.GetEndDate(), submission.GetRuName())
 
 	survey := &Survey{
-		Title:       instrument.GetTitle(),
-		SurveyId:    instrument.GetSurveyId(),
-		FormType:    instrument.GetFormType(),
+		Title:       schema.GetTitle(),
+		SurveyId:    schema.GetSurveyId(),
+		FormType:    schema.GetFormType(),
 		Respondent:  submission.GetRuRef(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
 		Sections:    []interfaces.Section{},
 	}
 
 	var sections []interfaces.Section
-	for _, sectionTitle := range instrument.GetSections().ListTitles() {
+	for _, sectionTitle := range schema.ListTitles() {
 		hasAnswerValue := false
 		section := &Section{
 			Title:     sectionTitle,
 			Instances: []interfaces.Instance{},
 		}
 		instanceMap := map[string]*Instance{}
-		questions := instrument.GetSections().ListQuestions(sectionTitle)
+		questions := schema.ListQuestionIds(sectionTitle)
 
 		for _, questionId := range questions {
-			title := instrument.GetQuestions().GetTitle(questionId)
-			answers := instrument.GetQuestions().ListAnswers(questionId)
+			title := schema.GetQuestionTitle(questionId)
+			answers := schema.ListAnswers(questionId)
 
 			for _, answerId := range answers {
-				answerQcode := instrument.GetAnswers().GetCode(answerId)
-				answerLabel := instrument.GetAnswers().GetLabel(answerId)
-				answerType := instrument.GetAnswers().GetType(answerId)
+				answerQcode := schema.GetAnswerCode(answerId)
+				answerLabel := schema.GetAnswerLabel(answerId)
+				answerType := schema.GetAnswerType(answerId)
 
 				responseList := submission.GetResponses(answerQcode)
 				for _, resp := range responseList {
@@ -58,7 +58,7 @@ func Create(instrument interfaces.Schema, submission interfaces.Submission) inte
 						answer := &Answer{
 							Title:    substitutions.Replace(title, lookup),
 							QType:    answerType,
-							QCode:    getQCode(answerQcode),
+							QCode:    getQCode(answerQcode, submission.GetDataVersion()),
 							Label:    substitutions.Replace(answerLabel, lookup),
 							Value:    value,
 							Multiple: len(answers) > 1,
@@ -78,10 +78,12 @@ func Create(instrument interfaces.Schema, submission interfaces.Submission) inte
 	return survey
 }
 
-func getQCode(code string) string {
-	_, err := strconv.Atoi(code)
-	if err != nil {
-		return getQCode(code[1:])
+func getQCode(code, dataVersion string) string {
+	if dataVersion == "0.0.3" {
+		_, err := strconv.Atoi(code)
+		if err != nil {
+			return getQCode(code[1:], "0.0.3")
+		}
 	}
 	return code
 }

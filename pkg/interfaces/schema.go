@@ -1,28 +1,17 @@
 package interfaces
 
-type Answers interface {
-	ListIds() []string
-	GetType(answerId string) string
-	GetCode(answerId string) string
-	GetLabel(answerId string) string
-}
-
-type Questions interface {
-	ListIds() []string
-	GetTitle(questionId string) string
-	ListAnswers(questionId string) []string
-}
-
-type Sections interface {
-	ListTitles() []string
-	ListQuestions(sectionTitle string) []string
-}
-
 type Schema interface {
 	GetTitle() string
 	GetSurveyId() string
 	GetFormType() string
-	GetSections() Sections
-	GetQuestions() Questions
-	GetAnswers() Answers
+
+	ListTitles() []string
+	ListQuestionIds(title string) []string
+
+	GetQuestionTitle(questionId string) string
+	ListAnswers(questionId string) []string
+
+	GetAnswerType(answerId string) string
+	GetAnswerCode(answerId string) string
+	GetAnswerLabel(answerId string) string
 }

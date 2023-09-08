@@ -98,3 +98,11 @@ func TestSandMarine(t *testing.T) {
 func TestCreditGrantors(t *testing.T) {
 	runFromFile("v1/mgc_0001", t)
 }
+
+func TestStocks(t *testing.T) {
+	runFromFile("v1/stocks_0001", t)
+}
+
+func TestQcas(t *testing.T) {
+	runFromFile("qcas_0018", t)
+}

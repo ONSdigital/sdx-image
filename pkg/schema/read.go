@@ -7,18 +7,17 @@ import (
 	"sdxImage/pkg/log"
 )
 
-// Read returns an instance that implements the
-// interfaces.Schema interface, representing the desired
-// schema as dictated by the schemaName parameter
 func Read(schemaName string) (*Schema, error) {
-	bytes, _ := loadFile(schemaName)
-	m := map[string]any{}
-	err := json.Unmarshal(bytes, &m)
+	byteValue, err := loadFile(schemaName)
 	if err != nil {
-		log.Error("Failed to unmarshall json", err)
 		return nil, err
 	}
-	return convert(m), nil
+	schema := &Schema{}
+	err2 := json.Unmarshal(byteValue, schema)
+	if err2 != nil {
+		return nil, err2
+	}
+	return schema, nil
 }
 
 func loadFile(schemaName string) ([]byte, error) {
