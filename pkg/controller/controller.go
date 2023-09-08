@@ -6,38 +6,44 @@ import (
 	"runtime"
 	"sdxImage/pkg/log"
 	"sdxImage/pkg/page"
-	"sdxImage/pkg/schema"
-	"sdxImage/pkg/submission"
-	"sdxImage/pkg/survey"
+	sch "sdxImage/pkg/schema"
+	sub "sdxImage/pkg/submission"
+	sur "sdxImage/pkg/survey"
 	"sync"
 )
 
 var mu sync.Mutex
 
 // Run orchestrates the steps required to create an image of the given submission.
-// This is done by generating a "model.Survey" populated with data from the submission,
-// and information from the corresponding author read.
-// The "page" package is then utilised to generate the actual image.
+//
+// This is done by creating an instance of 'survey.Survey' and passing
+// it to the "page" package which generates the actual image.
+//
+// Instances of 'interfaces.Survey' conform to the interfaces.Survey interface
+// and represent the combination of the survey schema (interfaces.Schema), which
+// defines the questions, and the respondents' submission (interfaces.Submission),
+// which contains their answers.
+//
 // Various parts of the drawing package are not thread safe and so the whole run function
 // is synchronised.
 func Run(submissionBytes []byte) (image.Image, error) {
 	mu.Lock()
 	defer mu.Unlock()
-	sub, err := submission.Read(submissionBytes)
+	submission, err := sub.Read(submissionBytes)
 	if err != nil {
 		log.Error("Unable to read submission", err)
 		return nil, err
 	}
 
-	log.Info("Processing submission", sub.GetTxId())
-	instrument, err := schema.Read(sub.GetSchemaName())
+	log.Info("Processing submission", submission.GetTxId())
+	schema, err := sch.Read(submission.GetSchemaName())
 	if err != nil {
-		log.Error("Unable to read schema", err, sub.GetTxId())
+		log.Error("Unable to read schema", err, submission.GetTxId())
 		return nil, err
 	}
-	sur := survey.Create(instrument, sub)
-	result := page.Create(sur)
-	log.Info("Successfully created image", sub.GetTxId())
+	survey := sur.Create(schema, submission)
+	result := page.Create(survey)
+	log.Info("Successfully created image", submission.GetTxId())
 	runtime.GC()
 	return result, nil
 }

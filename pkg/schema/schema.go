@@ -1,3 +1,5 @@
+// Package schema handles all interactions with a schema.
+// A schema defines the questions present within a survey.
 package schema
 
 import (

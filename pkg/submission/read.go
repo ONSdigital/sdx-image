@@ -1,3 +1,4 @@
+// Package submission represents the respondents' submission.
 package submission
 
 import (
@@ -6,6 +7,8 @@ import (
 	"sdxImage/pkg/log"
 )
 
+// Read transforms a submission's raw bytes into an
+// instance that implements interfaces.Submission
 func Read(bytes []byte) (interfaces.Submission, error) {
 	submission := &V2Submission{}
 	err := json.Unmarshal(bytes, submission)
