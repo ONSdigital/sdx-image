@@ -27,10 +27,8 @@ func (schema *Schema) ListQuestionIds(title string) []string {
 	for _, section := range schema.Sections {
 		if string(section.Title) == title {
 			for _, group := range section.Groups {
-				for _, block := range group.Blocks {
-					if block.BlockType == "Question" || block.BlockType == "ListCollector" {
-						ids = append(ids, block.Question.Id)
-					}
+				for _, block := range group.getBlocks() {
+					ids = append(ids, block.Question.Id)
 				}
 			}
 		}
@@ -41,11 +39,9 @@ func (schema *Schema) ListQuestionIds(title string) []string {
 func (schema *Schema) GetQuestionTitle(questionId string) string {
 	for _, section := range schema.Sections {
 		for _, group := range section.Groups {
-			for _, block := range group.Blocks {
-				if block.BlockType == "Question" || block.BlockType == "ListCollector" {
-					if block.Question.Id == questionId {
-						return string(block.Question.Title)
-					}
+			for _, block := range group.getBlocks() {
+				if block.Question.Id == questionId {
+					return string(block.Question.Title)
 				}
 			}
 		}
@@ -56,8 +52,8 @@ func (schema *Schema) ListAnswers(questionId string) []string {
 	var answerIds []string
 	for _, section := range schema.Sections {
 		for _, group := range section.Groups {
-			for _, block := range group.Blocks {
-				if block.Question.Id == questionId && (block.BlockType == "Question" || block.BlockType == "ListCollector") {
+			for _, block := range group.getBlocks() {
+				if block.Question.Id == questionId {
 					for _, answer := range block.Question.Answers {
 						answerIds = append(answerIds, answer.Id)
 					}
@@ -73,18 +69,16 @@ const LoopingDataVersion = "0.0.3"
 func (schema *Schema) GetAnswers(answerId string) []interfaces.AnswerSpec {
 	for _, section := range schema.Sections {
 		for _, group := range section.Groups {
-			for _, block := range group.Blocks {
-				if block.BlockType == "Question" || block.BlockType == "ListCollector" {
-					for _, answer := range block.Question.Answers {
-						if answer.Id == answerId {
-							qCode := answer.Qcode
-							if schema.DataVersion == LoopingDataVersion {
-								qCode = schema.lookupQCode(answerId)
-							}
-							answer.Qcode = qCode
-
-							return getAnswerSpecs(answer)
+			for _, block := range group.getBlocks() {
+				for _, answer := range block.Question.Answers {
+					if answer.Id == answerId {
+						qCode := answer.Qcode
+						if schema.DataVersion == LoopingDataVersion {
+							qCode = schema.lookupQCode(answerId)
 						}
+						answer.Qcode = qCode
+
+						return getAnswerSpecs(answer)
 					}
 				}
 			}

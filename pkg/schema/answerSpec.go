@@ -8,7 +8,7 @@ type AnswerSpec struct {
 	Label      string
 }
 
-func getAnswerSpecs(answer Answer) []interfaces.AnswerSpec {
+func getAnswerSpecs(answer *Answer) []interfaces.AnswerSpec {
 	if answer.AnswerType == "Checkbox" {
 		result := make([]interfaces.AnswerSpec, len(answer.Options))
 		for i, option := range answer.Options {
