@@ -7,18 +7,23 @@ import (
 
 type Title string
 
-type Options struct {
+type AnswerCode struct {
+	AnswerId string `json:"answer_id"`
+	Code     string `json:"code"`
+}
+
+type Option struct {
 	Qcode string `json:"q_code"`
 	Value string `json:"value"`
 	Label string `json:"label"`
 }
 
 type Answer struct {
-	Id         string    `json:"id"`
-	Qcode      string    `json:"q_code"`
-	AnswerType string    `json:"type"`
-	Label      string    `json:"label"`
-	Options    []Options `json:"options"`
+	Id         string   `json:"id"`
+	Qcode      string   `json:"q_code"`
+	AnswerType string   `json:"type"`
+	Label      string   `json:"label"`
+	Options    []Option `json:"options"`
 }
 
 type Question struct {
@@ -41,15 +46,17 @@ type Group struct {
 
 type Section struct {
 	Id     string  `json:"id"`
+	Title  Title   `json:"title"`
 	Groups []Group `json:"groups"`
 }
 
 type Schema struct {
-	Title       string    `json:"title"`
-	SurveyId    string    `json:"survey_id"`
-	FormType    string    `json:"form_type"`
-	DataVersion string    `json:"data_version"`
-	Sections    []Section `json:"sections"`
+	Title       string       `json:"title"`
+	SurveyId    string       `json:"survey_id"`
+	FormType    string       `json:"form_type"`
+	DataVersion string       `json:"data_version"`
+	Sections    []Section    `json:"sections"`
+	AnswerCodes []AnswerCode `json:"answer_codes"`
 }
 
 func (title *Title) UnmarshalJSON(bytes []byte) error {

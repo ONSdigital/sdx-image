@@ -1,5 +1,7 @@
 package schema
 
+import "sdxImage/pkg/interfaces"
+
 func (schema *Schema) GetTitle() string {
 	return schema.Title
 }
@@ -15,9 +17,7 @@ func (schema *Schema) GetFormType() string {
 func (schema *Schema) ListTitles() []string {
 	var titles []string
 	for _, section := range schema.Sections {
-		for _, group := range section.Groups {
-			titles = append(titles, string(group.Title))
-		}
+		titles = append(titles, string(section.Title))
 	}
 	return titles
 }
@@ -25,10 +25,12 @@ func (schema *Schema) ListTitles() []string {
 func (schema *Schema) ListQuestionIds(title string) []string {
 	var ids []string
 	for _, section := range schema.Sections {
-		for _, group := range section.Groups {
-			if string(group.Title) == title {
+		if string(section.Title) == title {
+			for _, group := range section.Groups {
 				for _, block := range group.Blocks {
-					ids = append(ids, block.Question.Id)
+					if block.BlockType == "Question" || block.BlockType == "ListCollector" {
+						ids = append(ids, block.Question.Id)
+					}
 				}
 			}
 		}
@@ -40,8 +42,10 @@ func (schema *Schema) GetQuestionTitle(questionId string) string {
 	for _, section := range schema.Sections {
 		for _, group := range section.Groups {
 			for _, block := range group.Blocks {
-				if block.Question.Id == questionId {
-					return string(block.Question.Title)
+				if block.BlockType == "Question" || block.BlockType == "ListCollector" {
+					if block.Question.Id == questionId {
+						return string(block.Question.Title)
+					}
 				}
 			}
 		}
@@ -53,7 +57,7 @@ func (schema *Schema) ListAnswers(questionId string) []string {
 	for _, section := range schema.Sections {
 		for _, group := range section.Groups {
 			for _, block := range group.Blocks {
-				if block.Question.Id == questionId {
+				if block.Question.Id == questionId && (block.BlockType == "Question" || block.BlockType == "ListCollector") {
 					for _, answer := range block.Question.Answers {
 						answerIds = append(answerIds, answer.Id)
 					}
@@ -64,45 +68,41 @@ func (schema *Schema) ListAnswers(questionId string) []string {
 	return answerIds
 }
 
-func (schema *Schema) GetAnswerType(answerId string) string {
+const LoopingDataVersion = "0.0.3"
+
+func (schema *Schema) GetAnswers(answerId string) []interfaces.AnswerSpec {
 	for _, section := range schema.Sections {
 		for _, group := range section.Groups {
 			for _, block := range group.Blocks {
-				for _, answer := range block.Question.Answers {
-					if answer.Id == answerId {
-						return answer.AnswerType
+				if block.BlockType == "Question" || block.BlockType == "ListCollector" {
+					for _, answer := range block.Question.Answers {
+						if answer.Id == answerId {
+							qCode := answer.Qcode
+							if schema.DataVersion == LoopingDataVersion {
+								qCode = schema.lookupQCode(answerId)
+							}
+
+							if len(answer.Options) > 0 {
+								result := make([]interfaces.AnswerSpec, len(answer.Options))
+								for i, option := range answer.Options {
+									result[i] = NewAnswerSpec(answer.AnswerType, option.Qcode, option.Label)
+								}
+							} else {
+								return []interfaces.AnswerSpec{NewAnswerSpec(answer.AnswerType, qCode, answer.Label)}
+							}
+						}
 					}
 				}
 			}
 		}
 	}
-	return ""
-}
-func (schema *Schema) GetAnswerCode(answerId string) string {
-	for _, section := range schema.Sections {
-		for _, group := range section.Groups {
-			for _, block := range group.Blocks {
-				for _, answer := range block.Question.Answers {
-					if answer.Id == answerId {
-						return answer.Qcode
-					}
-				}
-			}
-		}
-	}
-	return ""
+	return nil
 }
 
-func (schema *Schema) GetAnswerLabel(answerId string) string {
-	for _, section := range schema.Sections {
-		for _, group := range section.Groups {
-			for _, block := range group.Blocks {
-				for _, answer := range block.Question.Answers {
-					if answer.Id == answerId {
-						return answer.Label
-					}
-				}
-			}
+func (schema *Schema) lookupQCode(answerId string) string {
+	for _, answerCode := range schema.AnswerCodes {
+		if answerCode.AnswerId == answerId {
+			return answerCode.Code
 		}
 	}
 	return ""

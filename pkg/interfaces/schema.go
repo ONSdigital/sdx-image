@@ -1,5 +1,11 @@
 package interfaces
 
+type AnswerSpec interface {
+	GetType() string
+	GetCode() string
+	GetLabel() string
+}
+
 type Schema interface {
 	GetTitle() string
 	GetSurveyId() string
@@ -11,7 +17,5 @@ type Schema interface {
 	GetQuestionTitle(questionId string) string
 	ListAnswers(questionId string) []string
 
-	GetAnswerType(answerId string) string
-	GetAnswerCode(answerId string) string
-	GetAnswerLabel(answerId string) string
+	GetAnswers(answerId string) []AnswerSpec
 }

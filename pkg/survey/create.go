@@ -31,41 +31,45 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 
 		for _, questionId := range questions {
 			title := schema.GetQuestionTitle(questionId)
-			answers := schema.ListAnswers(questionId)
+			answerIds := schema.ListAnswers(questionId)
 
-			for _, answerId := range answers {
-				answerQcode := schema.GetAnswerCode(answerId)
-				answerLabel := schema.GetAnswerLabel(answerId)
-				answerType := schema.GetAnswerType(answerId)
+			for _, answerId := range answerIds {
+				answerSpecs := schema.GetAnswers(answerId)
 
-				responseList := submission.GetResponses(answerQcode)
-				for _, resp := range responseList {
+				for _, spec := range answerSpecs {
+					answerQcode := spec.GetCode()
+					answerLabel := spec.GetLabel()
+					answerType := spec.GetType()
 
-					instanceKey := strconv.Itoa(resp.GetInstance())
-					instance, found := instanceMap[instanceKey]
-					if !found {
-						instance = &Instance{
-							Id:      resp.GetInstance(),
-							Answers: []interfaces.Answer{},
-						}
-						instanceMap[instanceKey] = instance
-						section.Instances = append(section.Instances, instance)
-					}
+					responseList := submission.GetResponses(answerQcode)
+					for _, resp := range responseList {
 
-					value := resp.GetValue()
-					if value != "" {
-
-						answer := &Answer{
-							Title:    substitutions.Replace(title, lookup),
-							QType:    answerType,
-							QCode:    getQCode(answerQcode, submission.GetDataVersion()),
-							Label:    substitutions.Replace(answerLabel, lookup),
-							Value:    value,
-							Multiple: len(answers) > 1,
+						instanceKey := strconv.Itoa(resp.GetInstance())
+						instance, found := instanceMap[instanceKey]
+						if !found {
+							instance = &Instance{
+								Id:      resp.GetInstance(),
+								Answers: []interfaces.Answer{},
+							}
+							instanceMap[instanceKey] = instance
+							section.Instances = append(section.Instances, instance)
 						}
 
-						instance.Answers = append(instance.Answers, answer)
-						hasAnswerValue = true
+						value := resp.GetValue()
+						if value != "" {
+
+							answer := &Answer{
+								Title:    substitutions.Replace(title, lookup),
+								QType:    answerType,
+								QCode:    getQCode(answerQcode, submission.GetDataVersion()),
+								Label:    substitutions.Replace(answerLabel, lookup),
+								Value:    value,
+								Multiple: len(answerIds) > 1 || len(answerSpecs) > 1,
+							}
+
+							instance.Answers = append(instance.Answers, answer)
+							hasAnswerValue = true
+						}
 					}
 				}
 			}
@@ -78,11 +82,13 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 	return survey
 }
 
+const LoopingDataVersion = "0.0.3"
+
 func getQCode(code, dataVersion string) string {
-	if dataVersion == "0.0.3" {
+	if dataVersion == LoopingDataVersion {
 		_, err := strconv.Atoi(code)
 		if err != nil {
-			return getQCode(code[1:], "0.0.3")
+			return getQCode(code[1:], LoopingDataVersion)
 		}
 	}
 	return code
