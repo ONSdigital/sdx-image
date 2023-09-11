@@ -81,15 +81,9 @@ func (schema *Schema) GetAnswers(answerId string) []interfaces.AnswerSpec {
 							if schema.DataVersion == LoopingDataVersion {
 								qCode = schema.lookupQCode(answerId)
 							}
+							answer.Qcode = qCode
 
-							if len(answer.Options) > 0 {
-								result := make([]interfaces.AnswerSpec, len(answer.Options))
-								for i, option := range answer.Options {
-									result[i] = NewAnswerSpec(answer.AnswerType, option.Qcode, option.Label)
-								}
-							} else {
-								return []interfaces.AnswerSpec{NewAnswerSpec(answer.AnswerType, qCode, answer.Label)}
-							}
+							return getAnswerSpecs(answer)
 						}
 					}
 				}
