@@ -93,8 +93,7 @@ func (group *Group) getBlocks() []*Block {
 	for _, block := range group.Blocks {
 		if block.BlockType == "Question" {
 			blocks = append(blocks, block)
-		}
-		if block.AddBlock != nil {
+		} else if block.AddBlock != nil {
 			blocks = append(blocks, block.AddBlock)
 		}
 	}

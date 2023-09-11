@@ -14,10 +14,22 @@ func (schema *Schema) GetFormType() string {
 	return schema.FormType
 }
 
+func contains(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+	return false
+}
+
 func (schema *Schema) ListTitles() []string {
 	var titles []string
 	for _, section := range schema.Sections {
-		titles = append(titles, string(section.Title))
+		title := string(section.Title)
+		if !contains(titles, title) {
+			titles = append(titles, string(section.Title))
+		}
 	}
 	return titles
 }
