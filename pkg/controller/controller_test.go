@@ -99,8 +99,16 @@ func TestCreditGrantors(t *testing.T) {
 	runFromFile("v1/mgc_0001", t)
 }
 
-func TestStocks(t *testing.T) {
-	runFromFile("v1/stocks_0001", t)
+func TestStocks0001(t *testing.T) {
+	runFromFile("stocks_0001", t)
+}
+
+func TestStocks0033(t *testing.T) {
+	runFromFile("stocks_0033", t)
+}
+
+func TestStocks0052(t *testing.T) {
+	runFromFile("stocks_0052", t)
 }
 
 func TestQcas(t *testing.T) {
