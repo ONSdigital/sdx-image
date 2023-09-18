@@ -1,0 +1,1228 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "019",
+  "form_type": "0018",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "title": "Quarterly Acquisitions and Disposals of Capital Assets Survey",
+  "questionnaire_flow": {
+    "type": "Linear",
+    "options": {
+      "summary": {
+        "collapsible": false
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "sectione950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group2f2c19a2-baba-4a5a-b0b0-45b5d06ffc91",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {conditional_trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "conditional_trad_as",
+                        "transforms": [
+                          {
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            },
+                            "transform": "conditional_trad_as"
+                          }
+                        ]
+                      },
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "Provide data for business activity in England, Scotland, Wales, Northern Ireland and the UK Continental Shelf. Exclude the Channel Islands and Isle of Man.",
+                        "Include UK and foreign-owned businesses.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "You can select the dates of the period you are reporting for, if the given dates are not appropriate."
+                  },
+                  {
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/aboutonsbusinesssurveys/detailedguidancetohelpcompletethequarterlyacquisitionsanddisposalsofcapitalassetssurvey\"target=\"_blank\"rel=\"noopener noreferrer\">Read the detailed guidance for completing this survey (this link opens in a new tab)</a>"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Total capital expenditure on major improvements and construction work",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "newly built, major refurbishments or improvements to existing buildings, for own use, or where you are responsible for maintenance",
+                          "work contracted to constructors or arranged through agents or developers",
+                          "non-residential buildings, for example, public monuments, commercial, industrial, educational and health buildings",
+                          "fittings and installations such as lifts, electrics, plumbing, heating and ventilation systems and water supply",
+                          "construction of structures such as oil wells, platforms, mines, pipes, power lines, transport infrastructure, wind farms, turbines and steel frameworks",
+                          "site improvements and other land preparation for own use, for example, levelling, clearance and draining of marshes",
+                          "transfer costs, stamp duties and taxes payable to acquire the asset",
+                          "all professional charges such as legal costs, agents&#x2019; commission, and architects&#x2019;, engineers&#x2019;, and surveyors&#x2019; fees",
+                          "delivery, installation and decommissioning costs"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "current repair and maintenance costs",
+                          "expenditure on land purchased in connection with construction work",
+                          "structures that are used primarily as residences or dwellings including houses, houseboats, caravans, and associated structures such as garages",
+                          "machinery and equipment - report this in the next section",
+                          "purchase of existing structures such as oil wells, platforms, mines, pipes, power lines, transport infrastructure, wind farms, turbines and steel frameworks",
+                          "land and existing buildings"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Total capital expenditure on transport assets and equipment",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "new and used motor vehicles, special purpose vehicles, and trailers",
+                          "ships and boats",
+                          "aircraft and railway rolling stock",
+                          "motorcycles and bicycles",
+                          "mobility scooters and powered wheelchairs",
+                          "parts and accessories",
+                          "major repairs"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "lifting and handling machinery",
+                          "special purpose machinery"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Total capital expenditure on computers and peripheral devices (hardware)",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "computer monitors and terminals",
+                          "printers, keyboards, and computer projectors",
+                          "servers"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Total capital expenditure on computer software programs purchased or developed externally (bespoke)",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "program descriptions",
+                          "extensions",
+                          "supporting materials for systems and applications"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "computer software programs developed by own staff for business use"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Total capital expenditure on databases purchased or developed externally (bespoke)",
+                    "contents": [
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "cost of ongoing management",
+                          "databases developed by own staff for business use"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Total capital expenditure on telecommunication equipment",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "phones, switchboards, and fax machines",
+                          "transmitters and receivers",
+                          "CCTV equipment and burglar or fire alarms",
+                          "TV cameras and other cameras"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Total capital expenditure on other machinery or equipment not mentioned",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "electrical or electronic equipment",
+                          "general or special purpose equipment",
+                          "small tools",
+                          "furniture",
+                          "office equipment",
+                          "fabricated products"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Significant changes to total investment",
+                    "contents": [
+                      {
+                        "description": "Please provide any additional comments about your data."
+                      },
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "the start or end of a long-term project",
+                          "site changes, for example, openings, closures, refurbishments, or upgrades",
+                          "end of accounting period or financial year",
+                          "normal movement for time of year",
+                          "changes of business structure, merger, or takeover",
+                          "one off or unusual investment",
+                          "introduction or removal of new legislation or incentives",
+                          "availability of credit",
+                          "overspend during the period quarters"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "The information you provide contributes to <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\"target=\"_blank\"rel=\"noopener noreferrer\">Gross Domestic Product (this link opens in a new tab)</a>"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "groupe950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+          "blocks": [
+            {
+              "id": "block1b26d118-7a0b-4ab4-8a5f-f0f770c44329",
+              "type": "Question",
+              "question": {
+                "id": "question1b26d118-7a0b-4ab4-8a5f-f0f770c44329",
+                "title": {
+                  "text": "Are you able to report for the period {ref_p_start_date} to {ref_p_end_date}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "d12",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                        "source": "answers"
+                      },
+                      ["No"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block6658f716-7f5f-4488-ab20-2af1dc694294"
+                }
+              ]
+            },
+            {
+              "id": "block97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+              "type": "Question",
+              "question": {
+                "id": "question97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+                "title": "What dates will you be reporting for?",
+                "type": "DateRange",
+                "answers": [
+                  {
+                    "id": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5efrom",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "From",
+                    "q_code": "11",
+                    "minimum": {
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ref_p_start_date"
+                      },
+                      "offset_by": {
+                        "months": -1
+                      }
+                    }
+                  },
+                  {
+                    "id": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5eto",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "To",
+                    "q_code": "12",
+                    "maximum": {
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ref_p_end_date"
+                      },
+                      "offset_by": {
+                        "months": 1
+                      }
+                    }
+                  }
+                ],
+                "period_limits": {
+                  "minimum": {
+                    "days": 76
+                  },
+                  "maximum": {
+                    "days": 106
+                  }
+                }
+              }
+            },
+            {
+              "id": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+              "type": "Question",
+              "question": {
+                "id": "question6658f716-7f5f-4488-ab20-2af1dc694294",
+                "title": "What was the total capital expenditure on major <em>improvements and construction work</em>, for own use, or for which you are responsible for its maintenance?",
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;major improvements and construction work&#39;",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "newly built, major refurbishments or improvements to existing buildings, for own use, or where you are responsible for maintenance",
+                          "work contracted to constructors or arranged through agents or developers",
+                          "non-residential buildings, for example, public monuments, commercial, industrial, educational and health buildings",
+                          "fittings and installations such as lifts, electrics, plumbing, heating and ventilation systems and water supply",
+                          "construction of structures such as oil wells, platforms, mines, pipes, power lines, transport infrastructure, wind farms, turbines and steel frameworks",
+                          "site improvements and other land preparation for own use, for example, levelling, clearance and draining of marshes",
+                          "transfer costs, stamp duties and taxes payable to acquire the asset",
+                          "all professional charges such as legal costs, agents&#x2019; commission, and architects&#x2019;, engineers&#x2019;, and surveyors&#x2019; fees",
+                          "delivery, installation and decommissioning costs"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "current repair and maintenance costs",
+                          "expenditure on land purchased in connection with construction work",
+                          "structures that are used primarily as residences or dwellings including houses, houseboats, caravans, and associated structures such as garages",
+                          "machinery and equipment - report this in the next section",
+                          "purchase of existing structures such as oil wells, platforms, mines, pipes, power lines, transport infrastructure, wind farms, turbines and steel frameworks",
+                          "land and existing buildings"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of acquisitions for improvements and construction work",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "681",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": false
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blockconfirmation-page-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+              "type": "ConfirmationQuestion",
+              "question": {
+                "id": "questionconfirmation-page-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+                "title": {
+                  "text": "For the period {answerfdaf44e6_373d_4b4e_b5fa_13caf04d9b5efrom} to {answerfdaf44e6_373d_4b4e_b5fa_13caf04d9b5eto}, the total capital expenditure on major improvements and construction work was <em>{answer6b01328d_73f6_4b9b_877b_b7d4a2b68b4f}</em>, is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "answerfdaf44e6_373d_4b4e_b5fa_13caf04d9b5efrom",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "answers",
+                                "identifier": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5efrom"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "answerfdaf44e6_373d_4b4e_b5fa_13caf04d9b5eto",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "source": "answers",
+                                "identifier": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5eto"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "answer6b01328d_73f6_4b9b_877b_b7d4a2b68b4f",
+                      "transforms": [
+                        {
+                          "transform": "format_currency",
+                          "arguments": {
+                            "number": {
+                              "source": "answers",
+                              "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerconfirmation-answer-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, this is correct",
+                        "value": "Yes, this is correct"
+                      },
+                      {
+                        "label": "No, I need to change this",
+                        "value": "No, I need to change this"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+                  "when": {
+                    "==": [
+                      {
+                        "source": "answers",
+                        "identifier": "answerconfirmation-answer-for-6658f716-7f5f-4488-ab20-2af1dc694294"
+                      },
+                      "No, I need to change this"
+                    ]
+                  }
+                },
+                {
+                  "block": "block15d6ee68-39fa-48d3-8699-b29982090ba4"
+                }
+              ]
+            },
+            {
+              "id": "block15d6ee68-39fa-48d3-8699-b29982090ba4",
+              "type": "Question",
+              "question": {
+                "id": "question15d6ee68-39fa-48d3-8699-b29982090ba4",
+                "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>transport assets and equipment</em>?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "new and used motor vehicles, special purpose vehicles, and trailers",
+                        "ships and boats",
+                        "aircraft and railway rolling stock",
+                        "motorcycles and bicycles",
+                        "mobility scooters and powered wheelchairs",
+                        "parts and accessories",
+                        "major repairs"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "lifting and handling machinery",
+                        "special purpose machinery"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer54389531-89ea-42e0-a118-984b62ead3f3",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of acquisitions for transport assets and equipment",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "688",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answerde0a77ed-3625-4d16-a1ce-9b27bda08da6",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of proceeds from disposals for transport assets and equipment",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "689",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blockc6e7e0a9-32ef-498d-8065-112855704e60",
+              "type": "Question",
+              "question": {
+                "id": "questionc6e7e0a9-32ef-498d-8065-112855704e60",
+                "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>computers and peripheral devices</em> (hardware)?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "computer monitors and terminals",
+                        "printers, keyboards, and computer projectors",
+                        "servers"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerfcecb7e1-83b3-4458-aa3f-60a99862b2a1",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of acquisitions for computers and peripheral devices (hardware)",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "695",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answerd08c57da-cd31-4f6c-983f-7a4006ba009d",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of proceeds from disposals for computers and peripheral devices (hardware)",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "696",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block22fd3e40-90cf-48b1-aaa3-b79aed2cae95",
+              "type": "Question",
+              "question": {
+                "id": "question22fd3e40-90cf-48b1-aaa3-b79aed2cae95",
+                "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>computer software programs purchased or developed externally</em> (bespoke)?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "program descriptions",
+                        "extensions",
+                        "supporting materials for systems and applications"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "computer software programs developed by own staff for business use"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer2dcfc73e-69a1-4945-ab7f-7be92b9db4d2",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of acquisitions for computer software programs purchased or developed externally",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "703",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer88947e6e-512e-4c03-bcf0-eb8f9b686513",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of proceeds from disposals for computer software programs purchased or developed externally",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "704",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block6b76f3cf-fa97-412c-aeb5-11ac4f7a107b",
+              "type": "Question",
+              "question": {
+                "id": "question6b76f3cf-fa97-412c-aeb5-11ac4f7a107b",
+                "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>databases purchased or developed externally</em> (bespoke)?",
+                "description": [
+                  "<p>These are files of data that are organised to enable effective use of, and access to, the data.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "cost of ongoing management",
+                        "databases developed by own staff for business use"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer2cea5fe3-c870-47a4-a2ad-8a836164445f",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of acquisitions for databases purchased or developed externally",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "707",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answerac9755a2-93b0-4eaa-a056-81c07c189d4e",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of proceeds from disposals for databases purchased or developed externally",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "708",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block988459c9-3c35-41d5-85ba-7ae53c60f946",
+              "type": "Question",
+              "question": {
+                "id": "question988459c9-3c35-41d5-85ba-7ae53c60f946",
+                "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>telecommunication equipment</em>?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "phones, switchboards, and fax machines",
+                        "transmitters and receivers",
+                        "CCTV equipment and burglar or fire alarms",
+                        "TV cameras and other cameras"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera94be6d5-eb85-4016-aba9-6455bacb3570",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of acquisitions for telecommunication equipment",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "709",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer21be6ec4-5b20-4c14-9207-978b69839a8f",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of proceeds from disposals for telecommunication equipment",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "710",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blockd88331f1-6745-4ac3-a2cc-1a8952448034",
+              "type": "Question",
+              "question": {
+                "id": "questiond88331f1-6745-4ac3-a2cc-1a8952448034",
+                "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>other machinery or equipment</em> not mentioned?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "electrical or electronic equipment",
+                        "general or special purpose equipment",
+                        "small tools",
+                        "furniture",
+                        "office equipment",
+                        "fabricated products"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer00acb77e-a313-4335-b88f-1b2d66a15d00",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of acquisitions for other machinery or equipment",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "711",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer2d0ac21b-9df2-4fab-8b60-c0a0dfc0ce01",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of proceeds from disposals for other machinery or equipment",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "712",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block2c8a85d9-0543-480b-9cb6-074b1b8dbf5d",
+              "type": "CalculatedSummary",
+              "title": "We calculate the total value of acquisitions entered (excluding construction) to be %(total)s. Is this correct?",
+              "calculation": {
+                "calculation_type": "sum",
+                "answers_to_calculate": [
+                  "answer54389531-89ea-42e0-a118-984b62ead3f3",
+                  "answerfcecb7e1-83b3-4458-aa3f-60a99862b2a1",
+                  "answer2dcfc73e-69a1-4945-ab7f-7be92b9db4d2",
+                  "answer2cea5fe3-c870-47a4-a2ad-8a836164445f",
+                  "answera94be6d5-eb85-4016-aba9-6455bacb3570",
+                  "answer00acb77e-a313-4335-b88f-1b2d66a15d00"
+                ],
+                "title": "Total value of acquisitions"
+              }
+            },
+            {
+              "id": "blockc148dd28-9031-464d-99f5-3814be21d74b",
+              "type": "CalculatedSummary",
+              "title": "We calculate the total value of proceeds from disposals entered to be %(total)s. Is this correct?",
+              "calculation": {
+                "calculation_type": "sum",
+                "answers_to_calculate": [
+                  "answerde0a77ed-3625-4d16-a1ce-9b27bda08da6",
+                  "answerd08c57da-cd31-4f6c-983f-7a4006ba009d",
+                  "answer88947e6e-512e-4c03-bcf0-eb8f9b686513",
+                  "answerac9755a2-93b0-4eaa-a056-81c07c189d4e",
+                  "answer21be6ec4-5b20-4c14-9207-978b69839a8f",
+                  "answer2d0ac21b-9df2-4fab-8b60-c0a0dfc0ce01"
+                ],
+                "title": "Total value of proceeds from disposals"
+              }
+            },
+            {
+              "id": "blocke5c228a8-4cca-4b3b-9c74-879deaa00605",
+              "type": "Question",
+              "question": {
+                "id": "questione5c228a8-4cca-4b3b-9c74-879deaa00605",
+                "title": {
+                  "text": "Did any significant changes occur to the total investment for {ru_name}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;significant change&#39;",
+                    "contents": [
+                      {
+                        "description": "This is based on your own interpretation in relation to your business&#39;s figures from the previous reporting period and the same reporting period last year."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerd815c952-2ea3-46ab-b531-754691675237",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "146a",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block6cb199ae-13b3-4e02-a31d-0b33e4b8e607",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerd815c952-2ea3-46ab-b531-754691675237",
+                        "source": "answers"
+                      },
+                      ["Yes"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block57dc60cf-9854-4dd6-ac84-f1e1b50370db"
+                }
+              ]
+            },
+            {
+              "id": "block6cb199ae-13b3-4e02-a31d-0b33e4b8e607",
+              "type": "Question",
+              "question": {
+                "id": "question6cb199ae-13b3-4e02-a31d-0b33e4b8e607",
+                "title": "Which of the following are reasons for changes to your business&#39;s total investment?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer4bd3f6cb-f359-4fbc-90b8-e1b08c56b021",
+                    "mandatory": true,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Availability of credit",
+                        "value": "Availability of credit",
+                        "q_code": "146i"
+                      },
+                      {
+                        "label": "Change of business structure, merger or takeover",
+                        "value": "Change of business structure, merger or takeover",
+                        "q_code": "146f"
+                      },
+                      {
+                        "label": "End of accounting period or financial year",
+                        "value": "End of accounting period or financial year",
+                        "q_code": "146d"
+                      },
+                      {
+                        "label": "Introduction or removal of legislation or incentive",
+                        "value": "Introduction or removal of legislation or incentive",
+                        "q_code": "146h"
+                      },
+                      {
+                        "label": "Normal movement for time of year",
+                        "value": "Normal movement for time of year",
+                        "q_code": "146e"
+                      },
+                      {
+                        "label": "One off or unusual investment",
+                        "value": "One off or unusual investment",
+                        "q_code": "146g"
+                      },
+                      {
+                        "label": "Overspend during the previous quarter",
+                        "value": "Overspend during the previous quarter",
+                        "q_code": "146j"
+                      },
+                      {
+                        "label": "Site changes",
+                        "value": "Site changes",
+                        "q_code": "146c",
+                        "description": "For example, opening, closures, refurbishments or upgrades"
+                      },
+                      {
+                        "label": "Start or end of a long term project",
+                        "value": "Start or end of a long term project",
+                        "q_code": "146b"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "146k",
+                        "description": "For example, global economic conditions or leaving the EU"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block57dc60cf-9854-4dd6-ac84-f1e1b50370db",
+              "type": "Question",
+              "question": {
+                "id": "question57dc60cf-9854-4dd6-ac84-f1e1b50370db",
+                "title": "Please provide any further details that will help us understand your business&#39;s total investment and tell an industry story",
+                "description": [
+                  "<p>Explain any changes in your figures from your <em>previous return</em> or any <em>negative figures</em> that have been reported. If you provide comments, we are less likely to contact you with data queries.</p><p>You have nearly finished! Make sure you continue to the next page and select &#39;submit answers&#39; at the bottom.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer925322c0-b547-4a52-903a-6813589045b7",
+                    "mandatory": true,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      }
+    }
+  ],
+  "theme": "default",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "Your response will help inform decision-makers how best to support the UK population and economy at this challenging time."
+        },
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}

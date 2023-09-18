@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"sdxImage/pkg/controller"
 	"sdxImage/pkg/log"
-	"sdxImage/pkg/model"
+	"sdxImage/pkg/submission"
 )
 
 func Listen() {
@@ -37,7 +37,7 @@ func handleImage(w http.ResponseWriter, r *http.Request) {
 	}
 	image, runError := controller.Run(submissionBytes)
 	if runError != nil {
-		var submissionErr *model.SubmissionError
+		var submissionErr *submission.Exception
 		switch {
 		case errors.As(runError, &submissionErr):
 			log.Error("Returning client error", runError)

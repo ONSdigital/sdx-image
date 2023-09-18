@@ -1,0 +1,38 @@
+{
+  "case_id": "12d1f90d-d185-4636-b4d6-f978128f5a2d",
+  "tx_id": "83957755-7598-4731-a4e8-7786eb2615a8",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.1",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "827f4d7a-8827-4591-abf9-140bccec45d6",
+  "schema_name": "stocks_0001",
+  "flushed": false,
+  "submitted_at": "2023-01-13T16:38:46+00:00",
+  "launch_language_code": "en",
+  "survey_metadata": {
+    "survey_id": "017",
+    "ru_ref": "15162882666F",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "ref_p_start_date": "2019-01-01",
+    "ref_p_end_date": "2019-04-30",
+    "period_id": "1904",
+    "user_id": "UNKNOWN",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "form_type": "0001"
+  },
+  "data": {
+    "11": "1/2/2019",
+    "12": "28/3/2019",
+    "15": "Yes",
+    "139": "10010",
+    "140": "12000",
+    "144": "900",
+    "145": "950",
+    "146": "This is a comment",
+    "149": "2800",
+    "150": "3700"
+  },
+  "started_at": "2023-01-13T16:38:05.212962+00:00",
+  "submission_language_code": "en"
+}
