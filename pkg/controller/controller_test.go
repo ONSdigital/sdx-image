@@ -114,3 +114,15 @@ func TestStocks0052(t *testing.T) {
 func TestQcas(t *testing.T) {
 	runFromFile("qcas_0018", t)
 }
+
+func TestAbs1809(t *testing.T) {
+	runFromFile("abs_1809", t)
+}
+
+func TestAbs1819(t *testing.T) {
+	runFromFile("abs_1819", t)
+}
+
+func TestAbs1869(t *testing.T) {
+	runFromFile("abs_1869", t)
+}

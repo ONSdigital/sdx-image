@@ -23,7 +23,7 @@ func getAnswerSpecs(answer *Answer) []interfaces.AnswerSpec {
 	return []interfaces.AnswerSpec{&AnswerSpec{
 		AnswerType: answer.AnswerType,
 		QCode:      answer.Qcode,
-		Label:      answer.Label,
+		Label:      string(answer.Label),
 	}}
 }
 
