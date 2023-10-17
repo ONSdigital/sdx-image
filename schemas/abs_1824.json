@@ -101,7 +101,7 @@
                       "list": [
                         "You have been selected to complete the Annual Business Survey (ABS).",
                         "This survey is a key resource for understanding the structure, conduct and performance of businesses across the UK.",
-                        "The information you supply helps to measure the UK economy and is used by the government to determine economic policy. The ABS also  influences decisions on company and personal taxation and on interest rates.",
+                        "The information you supply helps to measure the UK economy and is used by the government to determine economic policy. The ABS also influences decisions on company and personal taxation and on interest rates.",
                         "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
                         "You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.",
                         "We will treat your data securely and confidentially.",
@@ -612,7 +612,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total turnover",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "399",
                     "decimal_places": 0,
                     "currency": "GBP",
@@ -631,7 +631,7 @@
                             "transport, insurance, and packaging charges, less amounts for returnable containers, invoiced by your business even if invoiced separately",
                             "income derived from the renting of property",
                             "income from sub-contracted activities other than those on behalf of Post Office Ltd",
-                            "for commission work, where you do not hold title to goods sold,  other than that on behalf of Post Office Ltd, the commission or fee is to be <strong>included</strong> but not the full transaction price. Also to be <strong>included</strong> here are costs incurred and passed on to the customer",
+                            "for commission work, where you do not hold title to goods sold, other than that on behalf of Post Office Ltd, the commission or fee is to be <strong>included</strong> but not the full transaction price. Also to be <strong>included</strong> here are costs incurred and passed on to the customer",
                             "service charges for credit provided but <strong>not</strong> interest charges",
                             "royalty payments received"
                           ]
@@ -759,8 +759,8 @@
                         "value": "Yes, this is correct"
                       },
                       {
-                        "label": "No,  I need to change this",
-                        "value": "No,  I need to change this"
+                        "label": "No, I need to change this",
+                        "value": "No, I need to change this"
                       }
                     ]
                   }
@@ -775,7 +775,7 @@
                         "source": "answers",
                         "identifier": "answerconfirmation-answer-for-5e9943ec-5896-48dd-8427-12c14d80baca"
                       },
-                      "No,  I need to change this"
+                      "No, I need to change this"
                     ]
                   }
                 },
@@ -828,7 +828,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Income from the retail sale of goods to the general public",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "300",
                     "maximum": {
                       "value": {
@@ -1201,7 +1201,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total expenditure on employment costs",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "450",
                     "decimal_places": 0,
                     "currency": "GBP"
@@ -1250,7 +1250,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total expenditure on energy, goods, materials and services",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "499",
                     "decimal_places": 0,
                     "currency": "GBP",
@@ -1293,7 +1293,7 @@
                             "travelling and subsistence expenses for individual claims",
                             "congestion charges <strong>including</strong> related fines and penalties",
                             "amounts payable for printing services provided",
-                            "amounts payable for repairs, installation and maintenance  of plant, machinery and vehicles",
+                            "amounts payable for repairs, installation and maintenance of plant, machinery and vehicles",
                             "royalty payments",
                             "net payments to trade associations and similar bodies",
                             "transfer of goods to your business from other parts of your company or organisation which are <strong>not</strong> covered by this return. These should be valued as if purchased from an independent customer. If you are unable to supply figures on this basis, value them at transfer cost",
@@ -1378,7 +1378,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total expenditure on rates, duties, levies and taxes paid to the government",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "400",
                     "decimal_places": 0,
                     "currency": "GBP",
@@ -1640,7 +1640,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total value of capital assets from acquisitions",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "600",
                     "decimal_places": 0,
                     "currency": "GBP"
@@ -1650,7 +1650,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total value of capital assets from disposals",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "699",
                     "decimal_places": 0,
                     "currency": "GBP"
@@ -1816,7 +1816,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total income from services provided to individuals, enterprises or other organisations based outside the UK",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "163",
                     "decimal_places": 0,
                     "currency": "GBP"
@@ -1882,7 +1882,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total expenditure on services provided by individuals, enterprises or other organisations based outside the UK",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "164",
                     "decimal_places": 0,
                     "currency": "GBP"

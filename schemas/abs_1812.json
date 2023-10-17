@@ -1609,7 +1609,7 @@
               "question": {
                 "id": "questionf13edb64-7550-42a4-b3b5-83310b439ea4",
                 "title": {
-                  "text": "For the period {from} to {to},  what was {ru_name}&#39;s income from services provided to individuals, enterprises or other organisations based outside the UK?",
+                  "text": "For the period {from} to {to}, what was {ru_name}&#39;s income from services provided to individuals, enterprises or other organisations based outside the UK?",
                   "placeholders": [
                     {
                       "placeholder": "from",

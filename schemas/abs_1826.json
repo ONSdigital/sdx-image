@@ -4,7 +4,7 @@
   "schema_version": "0.0.1",
   "data_version": "0.0.1",
   "survey_id": "202",
-  "form_type": "1862",
+  "form_type": "1826",
   "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
   "title": "Annual Business Survey",
   "questionnaire_flow": {
@@ -101,7 +101,7 @@
                       "list": [
                         "You have been selected to complete the Annual Business Survey (ABS).",
                         "This survey is a key resource for understanding the structure, conduct and performance of businesses across the UK.",
-                        "The information you supply helps to measure the UK economy and is used by the government to determine economic policy. The ABS also  influences decisions on company and personal taxation and on interest rates.",
+                        "The information you supply helps to measure the UK economy and is used by the government to determine economic policy. The ABS also influences decisions on company and personal taxation and on interest rates.",
                         "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
                         "You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.",
                         "We will treat your data securely and confidentially.",
@@ -631,7 +631,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total turnover",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "399",
                     "decimal_places": 0,
                     "currency": "GBP",
@@ -859,7 +859,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total of other income",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "318",
                     "decimal_places": 0,
                     "currency": "GBP"
@@ -1284,7 +1284,7 @@
                             "travelling and subsistence expenses for individual claims",
                             "congestion charges <strong>including</strong> related fines and penalties",
                             "amounts payable for printing services provided",
-                            "amounts payable for repairs, installation, and maintenance  of plant, machinery and vehicles",
+                            "amounts payable for repairs, installation, and maintenance of plant, machinery and vehicles",
                             "royalty payments",
                             "net payments to trade associations and similar bodies",
                             "transfer of goods to your business from other parts of your company or organisation which are <strong>not</strong> covered by this return. These should be valued as if purchased from an independent customer. If you are unable to supply figures on this basis, value them at transfer cost",
@@ -1364,7 +1364,7 @@
                 ],
                 "definitions": [
                   {
-                    "title": "What we mean by &#39;depreciation of  capital assets&#39;",
+                    "title": "What we mean by &#39;depreciation of capital assets&#39;",
                     "contents": [
                       {
                         "description": "This refers to the measure of the wearing out, consumption or other reduction in the useful economic life of a fixed asset, whether arising from use, effluxion of time or obsolescence through technology or market changes."
@@ -2456,15 +2456,7 @@
   },
   "metadata": [
     {
-      "name": "user_id",
-      "type": "string"
-    },
-    {
       "name": "ru_name",
-      "type": "string"
-    },
-    {
-      "name": "ru_ref",
       "type": "string"
     },
     {
@@ -2483,6 +2475,14 @@
     {
       "name": "ref_p_end_date",
       "type": "date"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
     }
   ],
   "post_submission": {

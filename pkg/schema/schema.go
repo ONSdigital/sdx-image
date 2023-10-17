@@ -1,3 +1,4 @@
+// Package schema manages the reading of schemas into usable objects.
 package schema
 
 import (
@@ -5,7 +6,9 @@ import (
 	"fmt"
 )
 
-type Title string
+// VariableString represents a value that should be considered a string
+// but may appear in the schema file as either a string or an object with a "text" field.
+type VariableString string
 
 type AnswerCode struct {
 	AnswerId string `json:"answer_id"`
@@ -19,17 +22,17 @@ type Option struct {
 }
 
 type Answer struct {
-	Id         string    `json:"id"`
-	Qcode      string    `json:"q_code"`
-	AnswerType string    `json:"type"`
-	Label      string    `json:"label"`
-	Options    []*Option `json:"options"`
+	Id         string         `json:"id"`
+	Qcode      string         `json:"q_code"`
+	AnswerType string         `json:"type"`
+	Label      VariableString `json:"label"`
+	Options    []*Option      `json:"options"`
 }
 
 type Question struct {
-	Id      string    `json:"id"`
-	Title   Title     `json:"title"`
-	Answers []*Answer `json:"answers"`
+	Id      string         `json:"id"`
+	Title   VariableString `json:"title"`
+	Answers []*Answer      `json:"answers"`
 }
 
 type Block struct {
@@ -40,15 +43,15 @@ type Block struct {
 }
 
 type Group struct {
-	Id     string   `json:"id"`
-	Title  Title    `json:"title"`
-	Blocks []*Block `json:"blocks"`
+	Id     string         `json:"id"`
+	Title  VariableString `json:"title"`
+	Blocks []*Block       `json:"blocks"`
 }
 
 type Section struct {
-	Id     string   `json:"id"`
-	Title  Title    `json:"title"`
-	Groups []*Group `json:"groups"`
+	Id     string         `json:"id"`
+	Title  VariableString `json:"title"`
+	Groups []*Group       `json:"groups"`
 }
 
 type Schema struct {
@@ -60,32 +63,24 @@ type Schema struct {
 	AnswerCodes []*AnswerCode `json:"answer_codes"`
 }
 
-func (title *Title) UnmarshalJSON(bytes []byte) error {
+func (vString *VariableString) UnmarshalJSON(bytes []byte) error {
 	var t string
 	err := json.Unmarshal(bytes, &t)
 	if err == nil {
-		*title = Title(t)
+		*vString = VariableString(t)
 		return nil
 	}
 
-	var extendedTitle struct {
+	var objectString struct {
 		Text string `json:"text"`
 	}
-	err2 := json.Unmarshal(bytes, &extendedTitle)
+	err2 := json.Unmarshal(bytes, &objectString)
 	if err2 != nil {
 		return err2
 	}
 
-	*title = Title(extendedTitle.Text)
+	*vString = VariableString(objectString.Text)
 	return nil
-}
-
-func (schema *Schema) String() string {
-	b, err := json.MarshalIndent(schema, "", "  ")
-	if err != nil {
-		fmt.Println("error:", err)
-	}
-	return string(b)
 }
 
 func (group *Group) getBlocks() []*Block {
@@ -98,4 +93,12 @@ func (group *Group) getBlocks() []*Block {
 		}
 	}
 	return blocks
+}
+
+func (schema *Schema) String() string {
+	b, err := json.MarshalIndent(schema, "", "  ")
+	if err != nil {
+		fmt.Println("error:", err)
+	}
+	return string(b)
 }

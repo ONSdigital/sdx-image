@@ -643,7 +643,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total turnover",
-                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000).  Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "399",
                     "decimal_places": 0,
                     "currency": "GBP",
