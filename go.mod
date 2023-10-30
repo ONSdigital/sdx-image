@@ -1,6 +1,6 @@
 module sdxImage
 
-go 1.19
+go 1.21
 
 require (
 	github.com/fogleman/gg v1.3.0
