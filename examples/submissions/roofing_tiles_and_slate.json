@@ -1,0 +1,893 @@
+{
+  "case_id": "12d1f90d-d185-4636-b4d6-f978128f5a2d",
+  "tx_id": "12345678-7598-4731-a4e8-7786eb2615a8",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.1",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "827f4d7a-8827-4591-abf9-140bccec45d6",
+  "schema_name": "roofing_tiles_and_slate",
+  "flushed": false,
+  "submitted_at": "2023-02-03T16:38:46+00:00",
+  "launch_language_code": "en",
+  "started_at": "2023-02-03T16:38:05.212962+00:00",
+  "submission_language_code": "en",
+  "survey_metadata": {
+    "survey_id": "068",
+    "ru_ref": "12346789012A",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "ref_p_start_date": "2022-01-01",
+    "ref_p_end_date": "2022-12-31",
+    "period_id": "202212",
+    "user_id": "TestId",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "form_type": "0001"
+  },
+  "data": [
+    {
+      "questioncode": "101",
+      "response": "Yes, I can report for this period",
+      "instance": 0
+    },
+    {
+      "questioncode": "604",
+      "response": "Yes",
+      "instance": 0
+    },
+    {
+      "questioncode": "99991",
+      "response": "Yes",
+      "instance": 0
+    },
+    {
+      "questioncode": "201",
+      "response": "1 - Agriculture, hunting and forestry; fishing",
+      "instance": 1
+    },
+    {
+      "questioncode": "201",
+      "response": "2 - Mining and quarrying (including solids, liquids and gases)",
+      "instance": 2
+    },
+    {
+      "questioncode": "201",
+      "response": "3 - Food products and beverages",
+      "instance": 3
+    },
+    {
+      "questioncode": "201",
+      "response": "3 - Food products and beverages",
+      "instance": 4
+    },
+    {
+      "questioncode": "99992",
+      "response": "No",
+      "instance": 0
+    },
+    {
+      "questioncode": "200",
+      "response": "Civil Research and Development",
+      "instance": 1
+    },
+    {
+      "questioncode": "c202",
+      "response": "10000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c203",
+      "response": "5000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c222",
+      "response": "1000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c223",
+      "response": "4000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c205",
+      "response": "3000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c206",
+      "response": "4000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c207",
+      "response": "8000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c219",
+      "response": "2000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c220",
+      "response": "5000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c209",
+      "response": "3000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c221",
+      "response": "1000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c251",
+      "response": "Yes",
+      "instance": 1
+    },
+    {
+      "questioncode": "c212",
+      "response": "10000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c214",
+      "response": "2000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c216",
+      "response": "2000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c242",
+      "response": "6000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c250",
+      "response": "5000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c243",
+      "response": "5000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c244",
+      "response": "3000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c245",
+      "response": "2000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c246",
+      "response": "10000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c247",
+      "response": "2500",
+      "instance": 1
+    },
+    {
+      "questioncode": "c248",
+      "response": "1000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c249",
+      "response": "1500",
+      "instance": 1
+    },
+    {
+      "questioncode": "c225",
+      "response": "2000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c2601",
+      "response": "3000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c2602",
+      "response": "5000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c228",
+      "response": "10000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c229",
+      "response": "2500",
+      "instance": 1
+    },
+    {
+      "questioncode": "c237",
+      "response": "2500",
+      "instance": 1
+    },
+    {
+      "questioncode": "200",
+      "response": "Defence Research and Development",
+      "instance": 2
+    },
+    {
+      "questioncode": "d202",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d203",
+      "response": "500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d222",
+      "response": "200",
+      "instance": 2
+    },
+    {
+      "questioncode": "d223",
+      "response": "300",
+      "instance": 2
+    },
+    {
+      "questioncode": "d205",
+      "response": "500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d206",
+      "response": "500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d207",
+      "response": "500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d219",
+      "response": "5000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d220",
+      "response": "2000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d209",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d221",
+      "response": "200",
+      "instance": 2
+    },
+    {
+      "questioncode": "d251",
+      "response": "Yes",
+      "instance": 2
+    },
+    {
+      "questioncode": "d212",
+      "response": "500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d214",
+      "response": "2000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d216",
+      "response": "2000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d242",
+      "response": "2000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d250",
+      "response": "3000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d243",
+      "response": "500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d244",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d245",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d246",
+      "response": "2000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d247",
+      "response": "2000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d248",
+      "response": "1500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d249",
+      "response": "1500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d225",
+      "response": "500",
+      "instance": 2
+    },
+    {
+      "questioncode": "d2601",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d2602",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d228",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d229",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d237",
+      "response": "5000",
+      "instance": 2
+    },
+    {
+      "questioncode": "200",
+      "response": "Both, civil and defence Research and Development",
+      "instance": 3
+    },
+    {
+      "questioncode": "200",
+      "response": "Both, civil and defence Research and Development",
+      "instance": 4
+    },
+    {
+      "questioncode": "c202",
+      "response": "5000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c203",
+      "response": "3000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c222",
+      "response": "1500",
+      "instance": 3
+    },
+    {
+      "questioncode": "c223",
+      "response": "1500",
+      "instance": 3
+    },
+    {
+      "questioncode": "c205",
+      "response": "2000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c206",
+      "response": "2000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c207",
+      "response": "4000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c219",
+      "response": "2000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c220",
+      "response": "2000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c209",
+      "response": "3000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c221",
+      "response": "1000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c251",
+      "response": "Yes",
+      "instance": 3
+    },
+    {
+      "questioncode": "c212",
+      "response": "5000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c214",
+      "response": "5000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c216",
+      "response": "1500",
+      "instance": 3
+    },
+    {
+      "questioncode": "c242",
+      "response": "1500",
+      "instance": 3
+    },
+    {
+      "questioncode": "c250",
+      "response": "2000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c243",
+      "response": "5000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c244",
+      "response": "5000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c245",
+      "response": "1000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c246",
+      "response": "1000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c247",
+      "response": "1000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c248",
+      "response": "1000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c249",
+      "response": "1000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c225",
+      "response": "1000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c2601",
+      "response": "1000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c2602",
+      "response": "10000",
+      "instance": 3
+    },
+    {
+      "questioncode": "c228",
+      "response": "500",
+      "instance": 3
+    },
+    {
+      "questioncode": "c229",
+      "response": "500",
+      "instance": 3
+    },
+    {
+      "questioncode": "c237",
+      "response": "2000",
+      "instance": 3
+    },
+    {
+      "questioncode": "d202",
+      "response": "3000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d203",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d222",
+      "response": "200",
+      "instance": 4
+    },
+    {
+      "questioncode": "d223",
+      "response": "800",
+      "instance": 4
+    },
+    {
+      "questioncode": "d205",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d206",
+      "response": "2000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d207",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d219",
+      "response": "500",
+      "instance": 4
+    },
+    {
+      "questioncode": "d220",
+      "response": "500",
+      "instance": 4
+    },
+    {
+      "questioncode": "d209",
+      "response": "200",
+      "instance": 4
+    },
+    {
+      "questioncode": "d221",
+      "response": "100",
+      "instance": 4
+    },
+    {
+      "questioncode": "d251",
+      "response": "Yes",
+      "instance": 4
+    },
+    {
+      "questioncode": "d212",
+      "response": "200",
+      "instance": 4
+    },
+    {
+      "questioncode": "d214",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d216",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d242",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d250",
+      "response": "2000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d243",
+      "response": "200",
+      "instance": 4
+    },
+    {
+      "questioncode": "d244",
+      "response": "500",
+      "instance": 4
+    },
+    {
+      "questioncode": "d245",
+      "response": "500",
+      "instance": 4
+    },
+    {
+      "questioncode": "d246",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d247",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d248",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d249",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d225",
+      "response": "200",
+      "instance": 4
+    },
+    {
+      "questioncode": "d2601",
+      "response": "800",
+      "instance": 4
+    },
+    {
+      "questioncode": "d2602",
+      "response": "200",
+      "instance": 4
+    },
+    {
+      "questioncode": "d228",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d229",
+      "response": "1000",
+      "instance": 4
+    },
+    {
+      "questioncode": "d237",
+      "response": "2000",
+      "instance": 4
+    },
+    {
+      "questioncode": "99993",
+      "response": "Yes",
+      "instance": 0
+    },
+    {
+      "questioncode": "301",
+      "response": "1 - Agriculture, hunting and forestry; fishing",
+      "instance": 1
+    },
+    {
+      "questioncode": "301",
+      "response": "4 - Tobacco",
+      "instance": 2
+    },
+    {
+      "questioncode": "99994",
+      "response": "No",
+      "instance": 0
+    },
+    {
+      "questioncode": "300",
+      "response": "Civil Research and Development",
+      "instance": 1
+    },
+    {
+      "questioncode": "c302",
+      "response": "1000",
+      "instance": 1
+    },
+    {
+      "questioncode": "c307",
+      "response": "Yes",
+      "instance": 1
+    },
+    {
+      "questioncode": "c303",
+      "response": "500",
+      "instance": 1
+    },
+    {
+      "questioncode": "c308",
+      "response": "Yes",
+      "instance": 1
+    },
+    {
+      "questioncode": "c304",
+      "response": "100",
+      "instance": 1
+    },
+    {
+      "questioncode": "c309",
+      "response": "Yes",
+      "instance": 1
+    },
+    {
+      "questioncode": "300",
+      "response": "Defence Research and Development",
+      "instance": 2
+    },
+    {
+      "questioncode": "d302",
+      "response": "200",
+      "instance": 2
+    },
+    {
+      "questioncode": "d307",
+      "response": "Yes",
+      "instance": 2
+    },
+    {
+      "questioncode": "d303",
+      "response": "1000",
+      "instance": 2
+    },
+    {
+      "questioncode": "d308",
+      "response": "Yes",
+      "instance": 2
+    },
+    {
+      "questioncode": "d304",
+      "response": "200",
+      "instance": 2
+    },
+    {
+      "questioncode": "d309",
+      "response": "Yes",
+      "instance": 2
+    },
+    {
+      "questioncode": "501",
+      "response": "10",
+      "instance": 0
+    },
+    {
+      "questioncode": "502",
+      "response": "20",
+      "instance": 0
+    },
+    {
+      "questioncode": "503",
+      "response": "20",
+      "instance": 0
+    },
+    {
+      "questioncode": "504",
+      "response": "10",
+      "instance": 0
+    },
+    {
+      "questioncode": "505",
+      "response": "30",
+      "instance": 0
+    },
+    {
+      "questioncode": "506",
+      "response": "10",
+      "instance": 0
+    },
+    {
+      "questioncode": "405",
+      "response": "10",
+      "instance": 0
+    },
+    {
+      "questioncode": "406",
+      "response": "20",
+      "instance": 0
+    },
+    {
+      "questioncode": "407",
+      "response": "20",
+      "instance": 0
+    },
+    {
+      "questioncode": "408",
+      "response": "10",
+      "instance": 0
+    },
+    {
+      "questioncode": "409",
+      "response": "30",
+      "instance": 0
+    },
+    {
+      "questioncode": "410",
+      "response": "30",
+      "instance": 0
+    },
+    {
+      "questioncode": "e601",
+      "response": "PL31 1PN",
+      "instance": 1
+    },
+    {
+      "questioncode": "997",
+      "response": "Yes",
+      "instance": 0
+    },
+    {
+      "questioncode": "f601",
+      "response": "PO2 1ZZ",
+      "instance": 2
+    },
+    {
+      "questioncode": "996",
+      "response": "Yes",
+      "instance": 0
+    },
+    {
+      "questioncode": "g601",
+      "response": "ZX1 1PP",
+      "instance": 3
+    },
+    {
+      "questioncode": "995",
+      "response": "No",
+      "instance": 0
+    },
+    {
+      "questioncode": "2e602",
+      "response": "20",
+      "instance": 1
+    },
+    {
+      "questioncode": "2f602",
+      "response": "20",
+      "instance": 2
+    },
+    {
+      "questioncode": "2g602",
+      "response": "60",
+      "instance": 3
+    },
+    {
+      "questioncode": "708",
+      "response": "Yes",
+      "instance": 0
+    },
+    {
+      "questioncode": "712",
+      "response": "Here is a comment, what an amazing survey",
+      "instance": 0
+    }
+  ]
+}

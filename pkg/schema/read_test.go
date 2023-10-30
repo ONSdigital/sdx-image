@@ -26,3 +26,7 @@ func TestReadAbs(t *testing.T) {
 func TestReadBerd(t *testing.T) {
 	testRead("berd_0001", t)
 }
+
+func TestReadRoofingTiles(t *testing.T) {
+	testRead("roofing_tiles_and_slate", t)
+}
