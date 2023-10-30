@@ -1,6 +1,9 @@
 package schema
 
-import "sdxImage/pkg/interfaces"
+import (
+	"sdxImage/pkg/interfaces"
+	"slices"
+)
 
 func (schema *Schema) GetTitle() string {
 	return schema.Title
@@ -14,20 +17,11 @@ func (schema *Schema) GetFormType() string {
 	return schema.FormType
 }
 
-func contains(s []string, str string) bool {
-	for _, v := range s {
-		if v == str {
-			return true
-		}
-	}
-	return false
-}
-
 func (schema *Schema) ListTitles() []string {
 	var titles []string
 	for _, section := range schema.Sections {
 		title := string(section.Title)
-		if !contains(titles, title) {
+		if !slices.Contains(titles, title) {
 			titles = append(titles, string(section.Title))
 		}
 	}
@@ -60,6 +54,7 @@ func (schema *Schema) GetQuestionTitle(questionId string) string {
 	}
 	return ""
 }
+
 func (schema *Schema) ListAnswers(questionId string) []string {
 	var answerIds []string
 	for _, section := range schema.Sections {
