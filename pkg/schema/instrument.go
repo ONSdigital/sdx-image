@@ -1,37 +1,48 @@
-package instrument
+package schema
 
 import (
 	"sdxImage/pkg/interfaces"
 )
 
+type CollectionInstrument struct {
+	title         string
+	surveyId      string
+	formType      string
+	sectionTitles []string
+	titleToQidMap map[string][]string
+	qidToQtMap    map[string]string
+	qidToAidMap   map[string][]string
+	answerMap     map[string][]interfaces.AnswerSpec
+}
+
 func (ci *CollectionInstrument) GetTitle() string {
-	return ci.Title
+	return ci.title
 }
 
 func (ci *CollectionInstrument) GetSurveyId() string {
-	return ci.SurveyId
+	return ci.surveyId
 }
 
 func (ci *CollectionInstrument) GetFormType() string {
-	return ci.FormType
+	return ci.formType
 }
 
 func (ci *CollectionInstrument) ListTitles() []string {
-	return ci.SectionTitles
+	return ci.sectionTitles
 }
 
 func (ci *CollectionInstrument) ListQuestionIds(title string) []string {
-	return ci.TitleToQidMap[title]
+	return ci.titleToQidMap[title]
 }
 
 func (ci *CollectionInstrument) GetQuestionTitle(questionId string) string {
-	return ci.QidToQtMap[questionId]
+	return ci.qidToQtMap[questionId]
 }
 
 func (ci *CollectionInstrument) ListAnswers(questionId string) []string {
-	return ci.QidToAidMap[questionId]
+	return ci.qidToAidMap[questionId]
 }
 
 func (ci *CollectionInstrument) GetAnswers(answerId string) []interfaces.AnswerSpec {
-	return ci.AnswerMap[answerId]
+	return ci.answerMap[answerId]
 }

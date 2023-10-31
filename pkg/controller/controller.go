@@ -36,7 +36,7 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	}
 
 	log.Info("Processing submission", submission.GetTxId())
-	schema, err := sch.Read(submission.GetSchemaName())
+	schema, err := sch.Cache.GetSchema(submission.GetSchemaName())
 	if err != nil {
 		log.Error("Unable to read schema", err, submission.GetTxId())
 		return nil, err
