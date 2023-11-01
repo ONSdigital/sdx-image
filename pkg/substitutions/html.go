@@ -3,10 +3,11 @@ package substitutions
 import "strings"
 
 var htmlLookupMap = map[string]string{
-	"&#39;": "'",
-	"&amp;": "&",
-	"<em>":  "",
-	"</em>": "",
+	"&#39;":    "'",
+	"&#x2019;": "'",
+	"&amp;":    "&",
+	"<em>":     "",
+	"</em>":    "",
 }
 
 // html replaces common "html" codes within a string

@@ -115,6 +115,10 @@ func TestQcas(t *testing.T) {
 	runFromFile("qcas_0018", t)
 }
 
+func TestAbs1801(t *testing.T) {
+	runFromFile("abs_1801", t)
+}
+
 func TestAbs1809(t *testing.T) {
 	runFromFile("abs_1809", t)
 }
