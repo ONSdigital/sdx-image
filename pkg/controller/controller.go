@@ -14,6 +14,8 @@ import (
 
 var mu sync.Mutex
 
+var schemaCache = sch.NewCache()
+
 // Run orchestrates the steps required to create an image of the given submission.
 //
 // This is done by creating an instance of 'survey.Survey' and passing
@@ -36,7 +38,7 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	}
 
 	log.Info("Processing submission", submission.GetTxId())
-	schema, err := sch.Cache.GetSchema(submission.GetSchemaName())
+	schema, err := schemaCache.GetSchema(submission.GetSchemaName())
 	if err != nil {
 		log.Error("Unable to read schema", err, submission.GetTxId())
 		return nil, err

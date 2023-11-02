@@ -1,20 +1,27 @@
 package schema
 
-import "sdxImage/pkg/interfaces"
+import (
+	"sdxImage/pkg/interfaces"
+	"sdxImage/pkg/log"
+)
 
-type SchemaCache struct {
+type Cache struct {
 	instruments map[string]interfaces.Schema
 }
 
-var Cache = SchemaCache{instruments: make(map[string]interfaces.Schema)}
+func NewCache() *Cache {
+	return &Cache{instruments: make(map[string]interfaces.Schema)}
+}
 
-func (schemaCache *SchemaCache) GetSchema(schemaName string) (interfaces.Schema, error) {
+func (schemaCache *Cache) GetSchema(schemaName string) (interfaces.Schema, error) {
 	guid := schemaName
 	instrument, exists := schemaCache.instruments[guid]
 	if exists {
+		log.Info("Found schema: " + schemaName + " in cache")
 		return instrument, nil
 	}
 
+	log.Info("Schema: " + schemaName + " not in cache")
 	schema, err := Read(schemaName)
 	if err != nil {
 		return nil, err

@@ -28,11 +28,16 @@ func (ci *CollectionInstrument) GetFormType() string {
 }
 
 func (ci *CollectionInstrument) ListTitles() []string {
-	return ci.sectionTitles
+	titles := make([]string, len(ci.sectionTitles))
+	copy(titles, ci.sectionTitles)
+	return titles
 }
 
 func (ci *CollectionInstrument) ListQuestionIds(title string) []string {
-	return ci.titleToQidMap[title]
+	ids := ci.titleToQidMap[title]
+	result := make([]string, len(ids))
+	copy(result, ids)
+	return result
 }
 
 func (ci *CollectionInstrument) GetQuestionTitle(questionId string) string {
@@ -40,7 +45,10 @@ func (ci *CollectionInstrument) GetQuestionTitle(questionId string) string {
 }
 
 func (ci *CollectionInstrument) ListAnswers(questionId string) []string {
-	return ci.qidToAidMap[questionId]
+	answers := ci.qidToAidMap[questionId]
+	result := make([]string, len(answers))
+	copy(result, answers)
+	return result
 }
 
 func (ci *CollectionInstrument) GetAnswers(answerId string) []interfaces.AnswerSpec {
