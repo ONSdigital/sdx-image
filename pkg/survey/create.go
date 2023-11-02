@@ -8,7 +8,7 @@ import (
 
 func Create(schema interfaces.Schema, submission interfaces.Submission) interfaces.Survey {
 
-	lookup := substitutions.GetLookup(submission.GetStartDate(), submission.GetEndDate(), submission.GetRuName())
+	lookup := substitutions.GetLookup(submission.GetStartDate(), submission.GetEndDate(), submission.GetRuName(), submission.GetEmploymentDate())
 
 	survey := &Survey{
 		Title:       schema.GetTitle(),
