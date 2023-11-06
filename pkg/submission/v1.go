@@ -56,6 +56,10 @@ func (submission *V1Submission) GetDataVersion() string {
 	return submission.DataVersion
 }
 
+func (submission *V1Submission) GetEmploymentDate() string {
+	return "the date of employment"
+}
+
 func (submission *V1Submission) GetResponses(code string) []interfaces.Response {
 	return submission.Data[code]
 }

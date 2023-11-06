@@ -4,8 +4,8 @@
   "schema_version": "0.0.1",
   "data_version": "0.0.1",
   "survey_id": "009",
-  "form_type": "0106",
-  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "form_type": "0202",
+  "legal_basis": "Notice is given under article 5 of the Statistics of Trade and Employment (Northern Ireland) Order 1988.",
   "title": "Monthly Business Survey",
   "questionnaire_flow": {
     "type": "Linear",
@@ -17,11 +17,11 @@
   },
   "sections": [
     {
-      "id": "sectiona7b27b7f-a821-40a1-aab3-8aedaf43d442",
+      "id": "section79dd3a2b-e582-4dd2-bb7f-3918900b2918",
       "show_on_hub": true,
       "groups": [
         {
-          "id": "group4ebdb74c-7bdf-46f3-8391-5ae7e71711e7",
+          "id": "group3f545d87-5c5b-4300-9ac3-dfe5d882c5c4",
           "title": "Introduction",
           "blocks": [
             {
@@ -98,7 +98,7 @@
                   "contents": [
                     {
                       "list": [
-                        "Data should relate to all sites in England, Scotland and Wales unless otherwise stated.",
+                        "Data should relate to all sites in England, Scotland, Wales and Northern Ireland unless otherwise stated.",
                         "You can provide informed estimates if actual figures are not available.",
                         "We will treat your data securely and confidentially."
                       ]
@@ -133,12 +133,11 @@
                       {
                         "list": [
                           "exports",
-                          "payments for work in progress",
-                          "costs incurred and passed on to customers",
                           "income from sub-contracted activities",
                           "commission",
                           "sales of goods purchased for resale",
-                          "revenue earned from other parts of the business not named, please supply at fair value"
+                          "transport, insurance and packaging charges",
+                          "revenue earned from other parts of the business not named at the top of this page, please supply at fair value"
                         ]
                       },
                       {
@@ -147,12 +146,19 @@
                       {
                         "list": [
                           "VAT",
-                          "excise duties",
-                          "income form the sale of fixed capital assets",
-                          "grants and subsides",
+                          "income from the sale of fixed capital assets",
+                          "grants and subsidies",
                           "insurance claims",
                           "interest received"
                         ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Value of exports",
+                    "contents": [
+                      {
+                        "description": "Include all countries outside of England, Scotland, Wales and Northern Ireland."
                       }
                     ]
                   }
@@ -178,13 +184,13 @@
           ]
         },
         {
-          "id": "groupa7b27b7f-a821-40a1-aab3-8aedaf43d442",
+          "id": "group79dd3a2b-e582-4dd2-bb7f-3918900b2918",
           "blocks": [
             {
-              "id": "blockfe8da18c-3e15-4ff6-ac0f-33510e5cfb47",
+              "id": "block1861394b-7beb-465d-b1df-3c05001aff1d",
               "type": "Question",
               "question": {
-                "id": "questionfe8da18c-3e15-4ff6-ac0f-33510e5cfb47",
+                "id": "question1861394b-7beb-465d-b1df-3c05001aff1d",
                 "title": {
                   "text": "Are you able to report for the period from {ref_p_start_date} to {ref_p_end_date}?",
                   "placeholders": [
@@ -223,7 +229,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer29181293-57f8-498e-946a-ebfc0ad1af53",
+                    "id": "answer33b48a9c-6ff4-4034-96d7-265d2a900836",
                     "mandatory": true,
                     "type": "Radio",
                     "q_code": "9999",
@@ -242,11 +248,11 @@
               },
               "routing_rules": [
                 {
-                  "block": "block84f2ba79-2dfb-4456-805e-2253590d5197",
+                  "block": "block62ef3454-2f90-4563-9a3f-df6d16cb0bcd",
                   "when": {
                     "in": [
                       {
-                        "identifier": "answer29181293-57f8-498e-946a-ebfc0ad1af53",
+                        "identifier": "answer33b48a9c-6ff4-4034-96d7-265d2a900836",
                         "source": "answers"
                       },
                       ["Yes, I can report for this period"]
@@ -254,20 +260,20 @@
                   }
                 },
                 {
-                  "block": "block5e9799e2-2ef0-4e96-869c-3b377ce0fae1"
+                  "block": "block9201a8e4-8a26-4d6c-8a82-09715d58a134"
                 }
               ]
             },
             {
-              "id": "block5e9799e2-2ef0-4e96-869c-3b377ce0fae1",
+              "id": "block9201a8e4-8a26-4d6c-8a82-09715d58a134",
               "type": "Question",
               "question": {
-                "id": "question5e9799e2-2ef0-4e96-869c-3b377ce0fae1",
+                "id": "question9201a8e4-8a26-4d6c-8a82-09715d58a134",
                 "title": "What are the dates of the period that you will be reporting for?",
                 "type": "DateRange",
                 "answers": [
                   {
-                    "id": "answer90fe9593-5570-46f4-938e-87e1b75f8660from",
+                    "id": "answeree20c4a8-0da5-4606-b79a-4bdc79e77e85from",
                     "type": "Date",
                     "mandatory": true,
                     "label": "From",
@@ -283,7 +289,7 @@
                     }
                   },
                   {
-                    "id": "answer90fe9593-5570-46f4-938e-87e1b75f8660to",
+                    "id": "answeree20c4a8-0da5-4606-b79a-4bdc79e77e85to",
                     "type": "Date",
                     "mandatory": true,
                     "label": "To",
@@ -310,15 +316,15 @@
               }
             },
             {
-              "id": "block84f2ba79-2dfb-4456-805e-2253590d5197",
+              "id": "block62ef3454-2f90-4563-9a3f-df6d16cb0bcd",
               "type": "Question",
               "question": {
-                "id": "question84f2ba79-2dfb-4456-805e-2253590d5197",
+                "id": "question62ef3454-2f90-4563-9a3f-df6d16cb0bcd",
                 "title": {
-                  "text": "For the period {answer90fe9593_5570_46f4_938e_87e1b75f8660from} to {answer90fe9593_5570_46f4_938e_87e1b75f8660to}, what was {ru_name}&#39;s total turnover, excluding VAT?",
+                  "text": "For the period {answeree20c4a8_0da5_4606_b79a_4bdc79e77e85from} to {answeree20c4a8_0da5_4606_b79a_4bdc79e77e85to}, what was {ru_name}&#39;s total turnover, excluding VAT?",
                   "placeholders": [
                     {
-                      "placeholder": "answer90fe9593_5570_46f4_938e_87e1b75f8660from",
+                      "placeholder": "answeree20c4a8_0da5_4606_b79a_4bdc79e77e85from",
                       "transforms": [
                         {
                           "transform": "first_non_empty_item",
@@ -326,7 +332,7 @@
                             "items": [
                               {
                                 "source": "answers",
-                                "identifier": "answer90fe9593-5570-46f4-938e-87e1b75f8660from"
+                                "identifier": "answeree20c4a8-0da5-4606-b79a-4bdc79e77e85from"
                               },
                               {
                                 "source": "metadata",
@@ -347,7 +353,7 @@
                       ]
                     },
                     {
-                      "placeholder": "answer90fe9593_5570_46f4_938e_87e1b75f8660to",
+                      "placeholder": "answeree20c4a8_0da5_4606_b79a_4bdc79e77e85to",
                       "transforms": [
                         {
                           "transform": "first_non_empty_item",
@@ -355,7 +361,7 @@
                             "items": [
                               {
                                 "source": "answers",
-                                "identifier": "answer90fe9593-5570-46f4-938e-87e1b75f8660to"
+                                "identifier": "answeree20c4a8-0da5-4606-b79a-4bdc79e77e85to"
                               },
                               {
                                 "source": "metadata",
@@ -392,12 +398,11 @@
                     {
                       "list": [
                         "exports",
-                        "payments for work in progress",
-                        "costs incurred and passed on to customers",
                         "income from sub-contracted activities",
                         "commission",
                         "sales of goods purchased for resale",
-                        "revenue earned from other parts of the business not named, please supply at fair value"
+                        "transport, insurance and packaging charges",
+                        "revenue earned from other parts of the business not named at the top of this page, please supply at fair value"
                       ]
                     },
                     {
@@ -406,7 +411,6 @@
                     {
                       "list": [
                         "VAT",
-                        "excise duties",
                         "income from the sale of fixed capital assets",
                         "grants and subsidies",
                         "insurance claims",
@@ -418,7 +422,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer0893fc66-fa85-4dcc-b61e-455add66a8b7",
+                    "id": "answer39da2680-957d-43fa-bb29-7447a712d139",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Total turnover excluding VAT",
@@ -431,15 +435,15 @@
               }
             },
             {
-              "id": "blockconfirmation-page-for-84f2ba79-2dfb-4456-805e-2253590d5197",
+              "id": "blockconfirmation-page-for-62ef3454-2f90-4563-9a3f-df6d16cb0bcd",
               "type": "ConfirmationQuestion",
               "question": {
-                "id": "questionconfirmation-page-for-84f2ba79-2dfb-4456-805e-2253590d5197",
+                "id": "questionconfirmation-page-for-62ef3454-2f90-4563-9a3f-df6d16cb0bcd",
                 "title": {
-                  "text": "For the period {answer90fe9593_5570_46f4_938e_87e1b75f8660from} to {answer90fe9593_5570_46f4_938e_87e1b75f8660to}, the total turnover was <em>{answer0893fc66_fa85_4dcc_b61e_455add66a8b7}</em>, is this correct?",
+                  "text": "For the period {answeree20c4a8_0da5_4606_b79a_4bdc79e77e85from} to {answeree20c4a8_0da5_4606_b79a_4bdc79e77e85to}, the total turnover was <em>{answer39da2680_957d_43fa_bb29_7447a712d139}</em>, is this correct?",
                   "placeholders": [
                     {
-                      "placeholder": "answer90fe9593_5570_46f4_938e_87e1b75f8660from",
+                      "placeholder": "answeree20c4a8_0da5_4606_b79a_4bdc79e77e85from",
                       "transforms": [
                         {
                           "transform": "first_non_empty_item",
@@ -447,7 +451,7 @@
                             "items": [
                               {
                                 "source": "answers",
-                                "identifier": "answer90fe9593-5570-46f4-938e-87e1b75f8660from"
+                                "identifier": "answeree20c4a8-0da5-4606-b79a-4bdc79e77e85from"
                               },
                               {
                                 "source": "metadata",
@@ -468,7 +472,7 @@
                       ]
                     },
                     {
-                      "placeholder": "answer90fe9593_5570_46f4_938e_87e1b75f8660to",
+                      "placeholder": "answeree20c4a8_0da5_4606_b79a_4bdc79e77e85to",
                       "transforms": [
                         {
                           "transform": "first_non_empty_item",
@@ -476,7 +480,7 @@
                             "items": [
                               {
                                 "source": "answers",
-                                "identifier": "answer90fe9593-5570-46f4-938e-87e1b75f8660to"
+                                "identifier": "answeree20c4a8-0da5-4606-b79a-4bdc79e77e85to"
                               },
                               {
                                 "source": "metadata",
@@ -497,14 +501,14 @@
                       ]
                     },
                     {
-                      "placeholder": "answer0893fc66_fa85_4dcc_b61e_455add66a8b7",
+                      "placeholder": "answer39da2680_957d_43fa_bb29_7447a712d139",
                       "transforms": [
                         {
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
                               "source": "answers",
-                              "identifier": "answer0893fc66-fa85-4dcc-b61e-455add66a8b7"
+                              "identifier": "answer39da2680-957d-43fa-bb29-7447a712d139"
                             }
                           }
                         }
@@ -515,7 +519,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answerconfirmation-answer-for-84f2ba79-2dfb-4456-805e-2253590d5197",
+                    "id": "answerconfirmation-answer-for-62ef3454-2f90-4563-9a3f-df6d16cb0bcd",
                     "mandatory": true,
                     "type": "Radio",
                     "options": [
@@ -533,35 +537,92 @@
               },
               "routing_rules": [
                 {
-                  "block": "block84f2ba79-2dfb-4456-805e-2253590d5197",
+                  "block": "block62ef3454-2f90-4563-9a3f-df6d16cb0bcd",
                   "when": {
                     "==": [
                       {
                         "source": "answers",
-                        "identifier": "answerconfirmation-answer-for-84f2ba79-2dfb-4456-805e-2253590d5197"
+                        "identifier": "answerconfirmation-answer-for-62ef3454-2f90-4563-9a3f-df6d16cb0bcd"
                       },
                       "No, I need to change this"
                     ]
                   }
                 },
                 {
-                  "block": "blockcd4c5a71-2dc0-42f2-8c87-13a664137833"
+                  "block": "block46b904b4-8025-4a4e-8dc3-6268de4947b7"
                 }
               ]
             },
             {
-              "id": "blockcd4c5a71-2dc0-42f2-8c87-13a664137833",
+              "id": "block46b904b4-8025-4a4e-8dc3-6268de4947b7",
               "type": "Question",
               "question": {
-                "id": "questioncd4c5a71-2dc0-42f2-8c87-13a664137833",
-                "title": "Please explain any changes in your turnover figures from the previous return, if applicable.",
+                "id": "question46b904b4-8025-4a4e-8dc3-6268de4947b7",
+                "title": {
+                  "text": "Of the {answer39da2680_957d_43fa_bb29_7447a712d139} total turnover, what was the value of <em>exports?</em>",
+                  "placeholders": [
+                    {
+                      "placeholder": "answer39da2680_957d_43fa_bb29_7447a712d139",
+                      "transforms": [
+                        {
+                          "transform": "format_currency",
+                          "arguments": {
+                            "number": {
+                              "source": "answers",
+                              "identifier": "answer39da2680-957d-43fa-bb29-7447a712d139"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Include all countries outside of England, Scotland, Wales and Northern Ireland."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer47c976f2-d6c4-4ecd-a2d8-93261f52b68e",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of exports",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#39;56&#39; for &#xA3;56,000.",
+                    "q_code": "49",
+                    "minimum": {
+                      "value": 0,
+                      "exclusive": false
+                    },
+                    "maximum": {
+                      "value": {
+                        "source": "answers",
+                        "identifier": "answer39da2680-957d-43fa-bb29-7447a712d139"
+                      },
+                      "exclusive": false
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block5108fd97-eea9-4a61-8dd8-6ed77e70858b",
+              "type": "Question",
+              "question": {
+                "id": "question5108fd97-eea9-4a61-8dd8-6ed77e70858b",
+                "title": "Please explain any changes in your turnover or export figures from the previous return, if applicable.",
                 "description": [
                   "<p>If you provide comments we are less likely to contact you with data queries.</p>"
                 ],
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer4ff136e0-371b-4285-80e4-6ea9194afc1d",
+                    "id": "answer8961c0fb-35ea-4548-b380-c81efb24ea73",
                     "mandatory": false,
                     "type": "TextArea",
                     "label": "Comments",
@@ -580,7 +641,7 @@
       }
     }
   ],
-  "theme": "default",
+  "theme": "northernireland",
   "navigation": {
     "visible": false
   },
