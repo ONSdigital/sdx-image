@@ -44,7 +44,7 @@ func (ci *CollectionInstrument) GetQuestionTitle(questionId string) string {
 	return ci.qidToQtMap[questionId]
 }
 
-func (ci *CollectionInstrument) ListAnswers(questionId string) []string {
+func (ci *CollectionInstrument) ListAnswerIds(questionId string) []string {
 	answers := ci.qidToAidMap[questionId]
 	result := make([]string, len(answers))
 	copy(result, answers)
@@ -52,5 +52,8 @@ func (ci *CollectionInstrument) ListAnswers(questionId string) []string {
 }
 
 func (ci *CollectionInstrument) GetAnswers(answerId string) []interfaces.AnswerSpec {
-	return ci.answerMap[answerId]
+	answers := ci.answerMap[answerId]
+	result := make([]interfaces.AnswerSpec, len(answers))
+	copy(result, answers)
+	return result
 }

@@ -31,7 +31,7 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 
 		for _, questionId := range questions {
 			title := schema.GetQuestionTitle(questionId)
-			answerIds := schema.ListAnswers(questionId)
+			answerIds := schema.ListAnswerIds(questionId)
 
 			for _, answerId := range answerIds {
 				answerSpecs := schema.GetAnswers(answerId)

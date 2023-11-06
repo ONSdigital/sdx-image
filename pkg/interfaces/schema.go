@@ -15,7 +15,7 @@ type Schema interface {
 	ListQuestionIds(title string) []string
 
 	GetQuestionTitle(questionId string) string
-	ListAnswers(questionId string) []string
+	ListAnswerIds(questionId string) []string
 
 	GetAnswers(answerId string) []AnswerSpec
 }
