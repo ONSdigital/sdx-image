@@ -7,10 +7,11 @@ import (
 )
 
 type SurveyMetaData struct {
-	RuRef     string `json:"ru_ref"`
-	RuName    string `json:"ru_name"`
-	StartDate string `json:"ref_p_start_date"`
-	EndDate   string `json:"ref_p_end_date"`
+	RuRef          string `json:"ru_ref"`
+	RuName         string `json:"ru_name"`
+	StartDate      string `json:"ref_p_start_date"`
+	EndDate        string `json:"ref_p_end_date"`
+	EmploymentDate string `json:"employment_date"`
 }
 
 type V2Submission struct {
@@ -52,6 +53,13 @@ func (submission *V2Submission) GetEndDate() string {
 
 func (submission *V2Submission) GetDataVersion() string {
 	return submission.DataVersion
+}
+
+func (submission *V2Submission) GetEmploymentDate() string {
+	if submission.SurveyMetadata.EmploymentDate == "" {
+		return "the date of employment"
+	}
+	return submission.SurveyMetadata.EmploymentDate
 }
 
 func (submission *V2Submission) GetResponses(code string) []interfaces.Response {

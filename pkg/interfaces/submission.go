@@ -15,5 +15,6 @@ type Submission interface {
 	GetStartDate() string
 	GetEndDate() string
 	GetDataVersion() string
+	GetEmploymentDate() string
 	GetResponses(code string) []Response
 }

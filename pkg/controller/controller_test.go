@@ -130,3 +130,15 @@ func TestAbs1819(t *testing.T) {
 func TestAbs1869(t *testing.T) {
 	runFromFile("abs_1869", t)
 }
+
+func TestMbs0167(t *testing.T) {
+	runFromFile("mbs_0167", t)
+}
+
+func TestMbs0201(t *testing.T) {
+	runFromFile("mbs_0201", t)
+}
+
+func TestMbs0255(t *testing.T) {
+	runFromFile("mbs_0255", t)
+}
