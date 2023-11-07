@@ -13,9 +13,9 @@ func Read(schemaName string) (*Schema, error) {
 		return nil, err
 	}
 	schema := &Schema{}
-	err2 := json.Unmarshal(byteValue, schema)
-	if err2 != nil {
-		return nil, err2
+	err = json.Unmarshal(byteValue, schema)
+	if err != nil {
+		return nil, err
 	}
 	return schema, nil
 }

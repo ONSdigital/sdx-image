@@ -74,9 +74,9 @@ func (vString *VariableString) UnmarshalJSON(bytes []byte) error {
 	var objectString struct {
 		Text string `json:"text"`
 	}
-	err2 := json.Unmarshal(bytes, &objectString)
-	if err2 != nil {
-		return err2
+	err = json.Unmarshal(bytes, &objectString)
+	if err != nil {
+		return err
 	}
 
 	*vString = VariableString(objectString.Text)
