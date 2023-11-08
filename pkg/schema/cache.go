@@ -3,7 +3,10 @@ package schema
 import (
 	"sdxImage/pkg/interfaces"
 	"sdxImage/pkg/log"
+	"sync"
 )
+
+var mu sync.Mutex
 
 type Cache struct {
 	instruments map[string]interfaces.Schema
@@ -14,6 +17,9 @@ func NewCache() *Cache {
 }
 
 func (schemaCache *Cache) GetSchema(schemaName string) (interfaces.Schema, error) {
+	mu.Lock()
+	defer mu.Unlock()
+
 	guid := schemaName
 	instrument, exists := schemaCache.instruments[guid]
 	if exists {

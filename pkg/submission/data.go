@@ -27,8 +27,8 @@ func (data *Data) UnmarshalJSON(bytes []byte) error {
 		}
 	} else {
 		var respList []*Response
-		err2 := json.Unmarshal(bytes, &respList)
-		if err2 == nil {
+		err = json.Unmarshal(bytes, &respList)
+		if err == nil {
 			*data = make(map[string][]interfaces.Response)
 			for _, v := range respList {
 				if instList, found := (*data)[v.QCode]; found {
@@ -39,7 +39,7 @@ func (data *Data) UnmarshalJSON(bytes []byte) error {
 				}
 			}
 		} else {
-			return err2
+			return err
 		}
 	}
 	return nil
