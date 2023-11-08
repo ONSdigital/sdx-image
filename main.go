@@ -1,8 +1,8 @@
 package main
 
 import (
-	"sdxImage/pkg/api"
-	"sdxImage/pkg/log"
+	"sdxImage/internal/api"
+	"sdxImage/internal/log"
 )
 
 func main() {
