@@ -4,8 +4,8 @@
   "schema_version": "0.0.1",
   "data_version": "0.0.1",
   "survey_id": "019",
-  "form_type": "0019",
-  "legal_basis": "Notice is given under article 5 of the Statistics of Trade and Employment (Northern Ireland) Order 1988.",
+  "form_type": "0020",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
   "title": "Quarterly Acquisitions and Disposals of Capital Assets Survey",
   "questionnaire_flow": {
     "type": "Linear",
@@ -17,11 +17,11 @@
   },
   "sections": [
     {
-      "id": "sectione950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+      "id": "section4bbeb71a-2a11-4788-bb94-e2a1b86f0b46",
       "show_on_hub": true,
       "groups": [
         {
-          "id": "group2f2c19a2-baba-4a5a-b0b0-45b5d06ffc91",
+          "id": "groupaf562cf4-0ae4-4a9a-8a5d-2812b9375ef6",
           "title": "Introduction",
           "blocks": [
             {
@@ -268,6 +268,24 @@
                     ]
                   },
                   {
+                    "question": "Total capital expenditure on mineral exploration and evaluation",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "pre-licence costs",
+                          "licence and acquisition costs",
+                          "appraisal costs",
+                          "drilling costs eg test drilling and boring",
+                          "surveys and aerial costs",
+                          "transportation costs"
+                        ]
+                      }
+                    ]
+                  },
+                  {
                     "question": "Significant changes to total investment",
                     "contents": [
                       {
@@ -303,7 +321,7 @@
                     {
                       "list": [
                         "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
-                        "The information you provide contributes to <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\"target=\"_blank\"rel=\"noopener noreferrer\">Gross Domestic Product (this link opens in a new tab)</a>"
+                        "The information you provide contributes to <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\"target=\"_blank\"rel=\"noopener noreferrer\">Gross Domestic Product (this link opens in a new tab) </a>"
                       ]
                     }
                   ]
@@ -313,13 +331,13 @@
           ]
         },
         {
-          "id": "groupe950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+          "id": "group4bbeb71a-2a11-4788-bb94-e2a1b86f0b46",
           "blocks": [
             {
-              "id": "block1b26d118-7a0b-4ab4-8a5f-f0f770c44329",
+              "id": "blocka886860d-0c7b-49a5-b801-20ab74bdb9bb",
               "type": "Question",
               "question": {
-                "id": "question1b26d118-7a0b-4ab4-8a5f-f0f770c44329",
+                "id": "questiona886860d-0c7b-49a5-b801-20ab74bdb9bb",
                 "title": {
                   "text": "Are you able to report for the period {ref_p_start_date} to {ref_p_end_date}?",
                   "placeholders": [
@@ -358,7 +376,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                    "id": "answer3b54df64-f18e-488c-a91b-33d9c300e3d9",
                     "mandatory": true,
                     "type": "Radio",
                     "q_code": "d12",
@@ -377,32 +395,32 @@
               },
               "routing_rules": [
                 {
-                  "block": "block97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+                  "block": "block8a17c7b0-d6ce-454a-bffa-5916c357a337",
                   "when": {
                     "in": [
                       {
-                        "identifier": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                        "identifier": "answer3b54df64-f18e-488c-a91b-33d9c300e3d9",
                         "source": "answers"
                       },
-                      ["No"]
+                      ["Yes"]
                     ]
                   }
                 },
                 {
-                  "block": "block6658f716-7f5f-4488-ab20-2af1dc694294"
+                  "block": "blockd096aa86-a882-441b-be17-a346feec7f87"
                 }
               ]
             },
             {
-              "id": "block97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+              "id": "blockd096aa86-a882-441b-be17-a346feec7f87",
               "type": "Question",
               "question": {
-                "id": "question97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+                "id": "questiond096aa86-a882-441b-be17-a346feec7f87",
                 "title": "What dates will you be reporting for?",
                 "type": "DateRange",
                 "answers": [
                   {
-                    "id": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5efrom",
+                    "id": "answer6d388439-70c0-4cdc-9566-17f7fc053e6cfrom",
                     "type": "Date",
                     "mandatory": true,
                     "label": "From",
@@ -418,7 +436,7 @@
                     }
                   },
                   {
-                    "id": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5eto",
+                    "id": "answer6d388439-70c0-4cdc-9566-17f7fc053e6cto",
                     "type": "Date",
                     "mandatory": true,
                     "label": "To",
@@ -445,10 +463,10 @@
               }
             },
             {
-              "id": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+              "id": "block8a17c7b0-d6ce-454a-bffa-5916c357a337",
               "type": "Question",
               "question": {
-                "id": "question6658f716-7f5f-4488-ab20-2af1dc694294",
+                "id": "question8a17c7b0-d6ce-454a-bffa-5916c357a337",
                 "title": "What was the total capital expenditure on major <em>improvements and construction work</em>, for own use, or for which you are responsible for its maintenance?",
                 "definitions": [
                   {
@@ -489,7 +507,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                    "id": "answer210a0c18-7f03-416e-b2cd-6aa85dc2ed84",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of acquisitions for improvements and construction work",
@@ -506,15 +524,15 @@
               }
             },
             {
-              "id": "blockconfirmation-page-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+              "id": "blockconfirmation-page-for-8a17c7b0-d6ce-454a-bffa-5916c357a337",
               "type": "ConfirmationQuestion",
               "question": {
-                "id": "questionconfirmation-page-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+                "id": "questionconfirmation-page-for-8a17c7b0-d6ce-454a-bffa-5916c357a337",
                 "title": {
-                  "text": "For the period {answerfdaf44e6_373d_4b4e_b5fa_13caf04d9b5efrom} to {answerfdaf44e6_373d_4b4e_b5fa_13caf04d9b5eto}, the total capital expenditure on major improvements and construction work was {answer6b01328d_73f6_4b9b_877b_b7d4a2b68b4f}, is this correct?",
+                  "text": "For the period {answer6d388439_70c0_4cdc_9566_17f7fc053e6cfrom} to {answer6d388439_70c0_4cdc_9566_17f7fc053e6cto}, the total capital expenditure on major improvements and construction work was {answer210a0c18_7f03_416e_b2cd_6aa85dc2ed84}, is this correct?",
                   "placeholders": [
                     {
-                      "placeholder": "answerfdaf44e6_373d_4b4e_b5fa_13caf04d9b5efrom",
+                      "placeholder": "answer6d388439_70c0_4cdc_9566_17f7fc053e6cfrom",
                       "transforms": [
                         {
                           "transform": "first_non_empty_item",
@@ -522,7 +540,7 @@
                             "items": [
                               {
                                 "source": "answers",
-                                "identifier": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5efrom"
+                                "identifier": "answer6d388439-70c0-4cdc-9566-17f7fc053e6cfrom"
                               },
                               {
                                 "source": "metadata",
@@ -543,7 +561,7 @@
                       ]
                     },
                     {
-                      "placeholder": "answerfdaf44e6_373d_4b4e_b5fa_13caf04d9b5eto",
+                      "placeholder": "answer6d388439_70c0_4cdc_9566_17f7fc053e6cto",
                       "transforms": [
                         {
                           "transform": "first_non_empty_item",
@@ -551,7 +569,7 @@
                             "items": [
                               {
                                 "source": "answers",
-                                "identifier": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5eto"
+                                "identifier": "answer6d388439-70c0-4cdc-9566-17f7fc053e6cto"
                               },
                               {
                                 "source": "metadata",
@@ -572,14 +590,14 @@
                       ]
                     },
                     {
-                      "placeholder": "answer6b01328d_73f6_4b9b_877b_b7d4a2b68b4f",
+                      "placeholder": "answer210a0c18_7f03_416e_b2cd_6aa85dc2ed84",
                       "transforms": [
                         {
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
                               "source": "answers",
-                              "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f"
+                              "identifier": "answer210a0c18-7f03-416e-b2cd-6aa85dc2ed84"
                             }
                           }
                         }
@@ -590,7 +608,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answerconfirmation-answer-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+                    "id": "answerconfirmation-answer-for-8a17c7b0-d6ce-454a-bffa-5916c357a337",
                     "mandatory": true,
                     "type": "Radio",
                     "options": [
@@ -608,27 +626,27 @@
               },
               "routing_rules": [
                 {
-                  "block": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+                  "block": "block8a17c7b0-d6ce-454a-bffa-5916c357a337",
                   "when": {
                     "==": [
                       {
                         "source": "answers",
-                        "identifier": "answerconfirmation-answer-for-6658f716-7f5f-4488-ab20-2af1dc694294"
+                        "identifier": "answerconfirmation-answer-for-8a17c7b0-d6ce-454a-bffa-5916c357a337"
                       },
                       "No, I need to change this"
                     ]
                   }
                 },
                 {
-                  "block": "block15d6ee68-39fa-48d3-8699-b29982090ba4"
+                  "block": "block4bceaa21-6836-4734-bb37-39f8825480e9"
                 }
               ]
             },
             {
-              "id": "block15d6ee68-39fa-48d3-8699-b29982090ba4",
+              "id": "block4bceaa21-6836-4734-bb37-39f8825480e9",
               "type": "Question",
               "question": {
-                "id": "question15d6ee68-39fa-48d3-8699-b29982090ba4",
+                "id": "question4bceaa21-6836-4734-bb37-39f8825480e9",
                 "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>transport assets and equipment</em>?",
                 "guidance": {
                   "contents": [
@@ -660,7 +678,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer54389531-89ea-42e0-a118-984b62ead3f3",
+                    "id": "answerf35afbd7-9c9f-483c-abea-cb1a6da3f11a",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of acquisitions for transport assets and equipment",
@@ -674,7 +692,7 @@
                     "currency": "GBP"
                   },
                   {
-                    "id": "answerde0a77ed-3625-4d16-a1ce-9b27bda08da6",
+                    "id": "answereeab71c1-7a36-4afa-ab2d-9169d5599cc5",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of proceeds from disposals for transport assets and equipment",
@@ -691,10 +709,10 @@
               }
             },
             {
-              "id": "blockc6e7e0a9-32ef-498d-8065-112855704e60",
+              "id": "block46357cdf-510c-415e-a611-4e3577fbdcbe",
               "type": "Question",
               "question": {
-                "id": "questionc6e7e0a9-32ef-498d-8065-112855704e60",
+                "id": "question46357cdf-510c-415e-a611-4e3577fbdcbe",
                 "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>computers and peripheral devices</em> (hardware)?",
                 "guidance": {
                   "contents": [
@@ -713,7 +731,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answerfcecb7e1-83b3-4458-aa3f-60a99862b2a1",
+                    "id": "answerba687036-f09b-41a0-ab0e-0c5731fe7542",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of acquisitions for computers and peripheral devices (hardware)",
@@ -727,7 +745,7 @@
                     "currency": "GBP"
                   },
                   {
-                    "id": "answerd08c57da-cd31-4f6c-983f-7a4006ba009d",
+                    "id": "answerf9bd1bc0-bc91-4c15-801e-0d97f72389a0",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of proceeds from disposals for computers and peripheral devices (hardware)",
@@ -744,10 +762,10 @@
               }
             },
             {
-              "id": "block22fd3e40-90cf-48b1-aaa3-b79aed2cae95",
+              "id": "block463ad0e0-d82c-46dc-8285-8b8dc31ef067",
               "type": "Question",
               "question": {
-                "id": "question22fd3e40-90cf-48b1-aaa3-b79aed2cae95",
+                "id": "question463ad0e0-d82c-46dc-8285-8b8dc31ef067",
                 "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>computer software programs purchased or developed externally</em> (bespoke)?",
                 "guidance": {
                   "contents": [
@@ -774,7 +792,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer2dcfc73e-69a1-4945-ab7f-7be92b9db4d2",
+                    "id": "answera32b3aed-21e4-461f-bcf3-3285c0a1ec83",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of acquisitions for computer software programs purchased or developed externally",
@@ -788,7 +806,7 @@
                     "currency": "GBP"
                   },
                   {
-                    "id": "answer88947e6e-512e-4c03-bcf0-eb8f9b686513",
+                    "id": "answerf49e8b0f-223c-4a4d-b804-2505e4e326a0",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of proceeds from disposals for computer software programs purchased or developed externally",
@@ -805,10 +823,10 @@
               }
             },
             {
-              "id": "block6b76f3cf-fa97-412c-aeb5-11ac4f7a107b",
+              "id": "blockbbbc3eda-03df-49a7-b48e-34f0604a35eb",
               "type": "Question",
               "question": {
-                "id": "question6b76f3cf-fa97-412c-aeb5-11ac4f7a107b",
+                "id": "questionbbbc3eda-03df-49a7-b48e-34f0604a35eb",
                 "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>databases purchased or developed externally</em> (bespoke)?",
                 "description": [
                   "<p>These are files of data that are organised to enable effective use of, and access to, the data.</p>"
@@ -829,7 +847,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer2cea5fe3-c870-47a4-a2ad-8a836164445f",
+                    "id": "answer12ca0a67-c8a1-42bc-9bce-246818c1ba0d",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of acquisitions for databases purchased or developed externally",
@@ -843,7 +861,7 @@
                     "currency": "GBP"
                   },
                   {
-                    "id": "answerac9755a2-93b0-4eaa-a056-81c07c189d4e",
+                    "id": "answer1d0eec02-db27-41f6-931f-17cbcba73209",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of proceeds from disposals for databases purchased or developed externally",
@@ -860,10 +878,10 @@
               }
             },
             {
-              "id": "block988459c9-3c35-41d5-85ba-7ae53c60f946",
+              "id": "block0cb2d4da-4a1e-4a7d-a8ff-ba14d9e39fe1",
               "type": "Question",
               "question": {
-                "id": "question988459c9-3c35-41d5-85ba-7ae53c60f946",
+                "id": "question0cb2d4da-4a1e-4a7d-a8ff-ba14d9e39fe1",
                 "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>telecommunication equipment</em>?",
                 "guidance": {
                   "contents": [
@@ -883,7 +901,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answera94be6d5-eb85-4016-aba9-6455bacb3570",
+                    "id": "answer4c80a7ce-122a-4ed4-83dd-bd95f8e08ab5",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of acquisitions for telecommunication equipment",
@@ -897,7 +915,7 @@
                     "currency": "GBP"
                   },
                   {
-                    "id": "answer21be6ec4-5b20-4c14-9207-978b69839a8f",
+                    "id": "answer6ce7dbc0-3868-4e1d-ba38-89d4fa2ee91b",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of proceeds from disposals for telecommunication equipment",
@@ -914,10 +932,10 @@
               }
             },
             {
-              "id": "blockd88331f1-6745-4ac3-a2cc-1a8952448034",
+              "id": "block1d790c27-e702-47ab-ad1c-4b95ee67c970",
               "type": "Question",
               "question": {
-                "id": "questiond88331f1-6745-4ac3-a2cc-1a8952448034",
+                "id": "question1d790c27-e702-47ab-ad1c-4b95ee67c970",
                 "title": "What was the value of acquisitions and proceeds from disposals of capital assets for <em>other machinery or equipment</em> not mentioned?",
                 "guidance": {
                   "contents": [
@@ -939,7 +957,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer00acb77e-a313-4335-b88f-1b2d66a15d00",
+                    "id": "answera8894fbf-72cc-4d65-8e52-5e1d4b795a58",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of acquisitions for other machinery or equipment",
@@ -953,7 +971,7 @@
                     "currency": "GBP"
                   },
                   {
-                    "id": "answer2d0ac21b-9df2-4fab-8b60-c0a0dfc0ce01",
+                    "id": "answer380ac0c7-1afb-4be8-9cb3-c7f65ddc7d3f",
                     "mandatory": true,
                     "type": "Currency",
                     "label": "Value of proceeds from disposals for other machinery or equipment",
@@ -970,44 +988,86 @@
               }
             },
             {
-              "id": "block70c9399f-6a6e-4f56-a0b2-89af38147726",
+              "id": "block6eca1074-1464-40f0-9d28-b02dc064a085",
               "type": "CalculatedSummary",
               "title": "We calculate the total value of acquisitions entered (excluding construction) to be %(total)s. Is this correct?",
               "calculation": {
                 "calculation_type": "sum",
                 "answers_to_calculate": [
-                  "answer54389531-89ea-42e0-a118-984b62ead3f3",
-                  "answerfcecb7e1-83b3-4458-aa3f-60a99862b2a1",
-                  "answer2dcfc73e-69a1-4945-ab7f-7be92b9db4d2",
-                  "answer2cea5fe3-c870-47a4-a2ad-8a836164445f",
-                  "answera94be6d5-eb85-4016-aba9-6455bacb3570",
-                  "answer00acb77e-a313-4335-b88f-1b2d66a15d00"
+                  "answerf35afbd7-9c9f-483c-abea-cb1a6da3f11a",
+                  "answerba687036-f09b-41a0-ab0e-0c5731fe7542",
+                  "answera32b3aed-21e4-461f-bcf3-3285c0a1ec83",
+                  "answer12ca0a67-c8a1-42bc-9bce-246818c1ba0d",
+                  "answer4c80a7ce-122a-4ed4-83dd-bd95f8e08ab5",
+                  "answera8894fbf-72cc-4d65-8e52-5e1d4b795a58"
                 ],
                 "title": "Total value of acquisitions"
               }
             },
             {
-              "id": "blockf4988052-d7bc-46be-9a5e-34dfb92b23f0",
+              "id": "block3357496b-0cdf-4030-8408-acc0cb29297a",
               "type": "CalculatedSummary",
               "title": "We calculate the total value of proceeds from disposals entered to be %(total)s. Is this correct?",
               "calculation": {
                 "calculation_type": "sum",
                 "answers_to_calculate": [
-                  "answerde0a77ed-3625-4d16-a1ce-9b27bda08da6",
-                  "answerd08c57da-cd31-4f6c-983f-7a4006ba009d",
-                  "answer88947e6e-512e-4c03-bcf0-eb8f9b686513",
-                  "answerac9755a2-93b0-4eaa-a056-81c07c189d4e",
-                  "answer21be6ec4-5b20-4c14-9207-978b69839a8f",
-                  "answer2d0ac21b-9df2-4fab-8b60-c0a0dfc0ce01"
+                  "answereeab71c1-7a36-4afa-ab2d-9169d5599cc5",
+                  "answerf9bd1bc0-bc91-4c15-801e-0d97f72389a0",
+                  "answerf49e8b0f-223c-4a4d-b804-2505e4e326a0",
+                  "answer1d0eec02-db27-41f6-931f-17cbcba73209",
+                  "answer6ce7dbc0-3868-4e1d-ba38-89d4fa2ee91b",
+                  "answer380ac0c7-1afb-4be8-9cb3-c7f65ddc7d3f"
                 ],
                 "title": "Total value of proceeds from disposals"
               }
             },
             {
-              "id": "block7261bd0e-7112-428b-861b-ee1caf184538",
+              "id": "block113d095d-ea18-46be-b03e-ffd03d26f4e3",
               "type": "Question",
               "question": {
-                "id": "question7261bd0e-7112-428b-861b-ee1caf184538",
+                "id": "question113d095d-ea18-46be-b03e-ffd03d26f4e3",
+                "title": "What was the total capital expenditure on <em>mineral exploration and evaluation</em>?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "pre-licence costs",
+                        "licence and acquisition costs",
+                        "appraisal costs",
+                        "drilling costs eg test drilling and boring",
+                        "surveys and aerial costs",
+                        "transportation costs"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer93658200-e04c-4680-8201-dd298fc6ca52",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of acquisitions for mineral exploration and evaluation",
+                    "description": "Enter the full value (e.g. 56,234.33) or a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
+                    "q_code": "697",
+                    "minimum": {
+                      "value": -999999999,
+                      "exclusive": true
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block2742e23f-ca3e-4a06-894b-0a44789a220d",
+              "type": "Question",
+              "question": {
+                "id": "question2742e23f-ca3e-4a06-894b-0a44789a220d",
                 "title": {
                   "text": "Did any significant changes occur to the total investment for {ru_name}?",
                   "placeholders": [
@@ -1033,7 +1093,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answerf00f7f54-f637-49ca-a08d-db29f3fc76bb",
+                    "id": "answerf39a6092-589d-49d3-9833-e0a0593c0eab",
                     "mandatory": true,
                     "type": "Radio",
                     "q_code": "146a",
@@ -1052,11 +1112,11 @@
               },
               "routing_rules": [
                 {
-                  "block": "block4df615b0-7dec-4f16-849d-5a73adc499be",
+                  "block": "block88e5a346-f1ee-40ca-9312-79a8e6d9d955",
                   "when": {
                     "in": [
                       {
-                        "identifier": "answerf00f7f54-f637-49ca-a08d-db29f3fc76bb",
+                        "identifier": "answerf39a6092-589d-49d3-9833-e0a0593c0eab",
                         "source": "answers"
                       },
                       ["Yes"]
@@ -1064,20 +1124,20 @@
                   }
                 },
                 {
-                  "block": "block57dc60cf-9854-4dd6-ac84-f1e1b50370db"
+                  "block": "block041d0172-384f-45d6-999b-906271e8955e"
                 }
               ]
             },
             {
-              "id": "block4df615b0-7dec-4f16-849d-5a73adc499be",
+              "id": "block88e5a346-f1ee-40ca-9312-79a8e6d9d955",
               "type": "Question",
               "question": {
-                "id": "question4df615b0-7dec-4f16-849d-5a73adc499be",
+                "id": "question88e5a346-f1ee-40ca-9312-79a8e6d9d955",
                 "title": "Which of the following are reasons for changes to your business&#39;s total investment?",
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer8f528d03-5244-403b-97a7-6bdeeff632d0",
+                    "id": "answer35e4555e-6a3b-4edb-9423-915f93f3f891",
                     "mandatory": true,
                     "type": "Checkbox",
                     "options": [
@@ -1119,7 +1179,8 @@
                       {
                         "label": "Site changes",
                         "value": "Site changes",
-                        "q_code": "146c"
+                        "q_code": "146c",
+                        "description": "For example, opening, closures, refurbishments or upgrades"
                       },
                       {
                         "label": "Start or end of a long term project",
@@ -1138,10 +1199,10 @@
               }
             },
             {
-              "id": "block57dc60cf-9854-4dd6-ac84-f1e1b50370db",
+              "id": "block041d0172-384f-45d6-999b-906271e8955e",
               "type": "Question",
               "question": {
-                "id": "question57dc60cf-9854-4dd6-ac84-f1e1b50370db",
+                "id": "question041d0172-384f-45d6-999b-906271e8955e",
                 "title": "Please provide any further details that will help us understand your business&#39;s total investment and tell an industry story",
                 "description": [
                   "<p>Explain any changes in your figures from your <em>previous return</em> or any <em>negative figures</em> that have been reported. If you provide comments, we are less likely to contact you with data queries.</p><p>You have nearly finished! Make sure you continue to the next page and select &#39;submit answers&#39; at the bottom.</p>"
@@ -1149,7 +1210,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answer925322c0-b547-4a52-903a-6813589045b7",
+                    "id": "answer79d530b3-5c73-4305-bd0b-b0c113aa48b8",
                     "mandatory": true,
                     "type": "TextArea",
                     "label": "Comments",
@@ -1168,7 +1229,7 @@
       }
     }
   ],
-  "theme": "northernireland",
+  "theme": "default",
   "navigation": {
     "visible": false
   },

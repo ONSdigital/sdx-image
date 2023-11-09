@@ -5,8 +5,8 @@
   "data_version": "0.0.1",
   "preview_questions": false,
   "survey_id": "127",
-  "form_type": "0001",
-  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "form_type": "0002",
+  "legal_basis": "Notice is given under article 5 of the Statistics of Trade and Employment (Northern Ireland) Order 1988.",
   "title": "Monthly Survey of Consumer Credit Grantors",
   "questionnaire_flow": {
     "type": "Hub",
@@ -605,6 +605,7 @@
       "title": "All self-financed credit granted to consumers",
       "summary": {
         "show_on_completion": false,
+        "page_title": "Self-financed credit granted to consumers",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -1666,7 +1667,7 @@
       ]
     }
   ],
-  "theme": "business",
+  "theme": "northernireland",
   "navigation": {
     "visible": true
   },

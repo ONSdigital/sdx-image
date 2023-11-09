@@ -1,0 +1,599 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "194",
+  "form_type": "0001",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "title": "Annual Railways Investment Survey",
+  "questionnaire_flow": {
+    "type": "Linear",
+    "options": {
+      "summary": {
+        "collapsible": false
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "section5b375c46-6375-4b6c-8af5-c592dc1a09df",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Section page",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupdfa9048a-4c6b-431f-a901-5d4f8752ddc9",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {trad_as} ({ru_name})",
+                    "placeholders": [
+                      {
+                        "placeholder": "trad_as",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "trad_as"
+                        }
+                      },
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "The information supplied is collected by the Office for National Statistics (ONS), on behalf of the Office of Rail and Road (ORR), under Ministerial Direction.",
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "We will treat your data securely and confidentially.",
+                        "Data should relate to sites in England, Scotland and Wales.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "Please provide your figures rounded to the nearest whole number.",
+                        "You can save a copy of your answers at the end of this questionnaire using the &#x2018;Download as PDF&#x2019; button."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "This survey asks for the <strong>value of acquisitions and proceeds from disposals </strong>for each of the following:"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Track and signalling",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "expenditure on rail track renewals and enhancements",
+                          "new routes",
+                          "new electrification and signalling and any associated land",
+                          "professional fees and charges"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Rolling stock",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "new and second-hand acquisitions of rail rolling stock",
+                          "eligible refurbishment work"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": ["leasing charges"]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Stations",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "expenditure on passenger stations",
+                          "passenger and freight train depots, train maintenance facilities",
+                          "expenditure on retail outlets"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": ["expenditure at station ticket offices"]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Other rail",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "all other expenditure in connection with rail business",
+                          "buildings and associated land",
+                          "non-rail vehicles",
+                          "capital equipment"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "track and signalling",
+                          "expenditure not connected with rail business"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "The information you provide contributes to the rail finance statistical release by the Office for Rail and Road (ORR).",
+                        "ORR aggregates the investment figures for all the companies in Great Britain and publishes them as a yearly estimate in the <a href=\"https://dataportal.orr.gov.uk/statistics/finance/rail-industry-finance/table-7290-private-sector-investment-in-the-rail-industry-excludes-network-rail-investment/\"target=\"_blank\"rel=\"noopener noreferrer\">rail finance statistical release (this link opens in a new tab)</a>."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "group5b375c46-6375-4b6c-8af5-c592dc1a09df",
+          "blocks": [
+            {
+              "id": "blocke23adaf4-56c5-4b21-99e0-57998a0c68e2",
+              "type": "Question",
+              "question": {
+                "id": "questione23adaf4-56c5-4b21-99e0-57998a0c68e2",
+                "title": {
+                  "text": "For the period {ref_p_start_date} to {ref_p_end_date}, what was {ru_name}&#39;s total value of acquisitions and proceeds from disposals for <em>track and signalling</em>?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "expenditure on rail track renewals and enhancements",
+                        "new routes",
+                        "new electrification and signalling and any associated land",
+                        "professional fees and charges"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerd49825a9-3298-438e-9561-78e98472866a",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of construction and acquisition of land",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "2",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer38cae515-e7ba-428e-9ed0-9cf50f297224",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of proceeds from disposals of land and assets",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "3",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  }
+                ]
+              },
+              "page_title": "Total value of acquisitions and disposals for track and signalling"
+            },
+            {
+              "id": "block58e5a705-cbfb-4119-9a2c-0f62472f9d8c",
+              "type": "Question",
+              "question": {
+                "id": "question58e5a705-cbfb-4119-9a2c-0f62472f9d8c",
+                "title": "For the reporting period, what was your business&#39;s total value of acquisitions and proceeds from disposals for <em>rolling stock</em>?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "new and second-hand acquisitions of rail rolling stock",
+                        "eligible refurbishment work"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": ["leasing charges"]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerc984e2b9-e992-46ca-b19b-9460a84f16ea",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of acquisitions of rolling stock",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "4",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answerb04975e4-f6f6-47bf-85ba-148cc26f09f1",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of proceeds from disposals of rolling stock",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "5",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  }
+                ]
+              },
+              "page_title": "Total value of acquisitions and disposals for rolling stock"
+            },
+            {
+              "id": "block616cfa6b-6cc5-456e-9bbd-647337686e27",
+              "type": "Question",
+              "question": {
+                "id": "question616cfa6b-6cc5-456e-9bbd-647337686e27",
+                "title": "For the reporting period, what was your business&#39;s total value of acquisitions and proceeds from disposals for <em>stations</em>?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "expenditure on passenger stations",
+                        "passenger and freight train depots, train maintenance facilities",
+                        "expenditure on retail outlets"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": ["expenditure at station ticket offices"]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer01fb6563-c770-4f7d-b272-d2e876c7fd12",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of retail acquisitions at stations",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "6",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer71aee2ea-262b-4d4f-a2ee-a437e2100e31",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of proceeds from retail disposals at stations",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "7",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answerbd213159-d765-4f9f-ad27-f88d9045035f",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of other acquisitions at stations",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "8",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer01bef06a-2ca7-49d1-9c2d-f77216546c27",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of proceeds from other disposals at stations",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "9",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  }
+                ]
+              },
+              "page_title": "Total value of acquisitions and disposals for stations"
+            },
+            {
+              "id": "block44031246-d838-4d61-8265-2b5e72107cb3",
+              "type": "Question",
+              "question": {
+                "id": "question44031246-d838-4d61-8265-2b5e72107cb3",
+                "title": "For the reporting period, what was your business&#39;s total value of acquisitions and proceeds from disposals for <em>other rail</em>?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "all other expenditure in connection with rail business",
+                        "buildings and associated land",
+                        "non-rail vehicles",
+                        "capital equipment"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "track and signalling",
+                        "rolling stock",
+                        "stations",
+                        "expenditure not connected with rail business"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;other rail&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to the value of any other acquisitions and proceeds from disposals, not already previously mentioned in this survey, that relate to rail business."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer446abd90-84f3-4b97-ae97-a9f5cc0fb211",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of acquisitions from other rail",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "10",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  },
+                  {
+                    "id": "answer7e0d53c7-7344-4960-9d8a-6a06d186c326",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Total value of proceeds from disposals of other rail",
+                    "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000. Enter &#39;0&#39;, rather than leave blank.",
+                    "q_code": "13",
+                    "decimal_places": 0,
+                    "currency": "GBP"
+                  }
+                ]
+              },
+              "page_title": "Total value of acquisitions and disposals for other rail"
+            },
+            {
+              "id": "block11020211-b6d8-4118-b73d-745709a1fa8d",
+              "type": "Question",
+              "question": {
+                "id": "question11020211-b6d8-4118-b73d-745709a1fa8d",
+                "title": "Please provide any further details that will help us understand your figures and to tell an industry story",
+                "description": [
+                  "<p>Providing commentary minimises the likelihood of us contacting you with further data queries.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "any unusual fluctuations in your figures",
+                        "changes in the accounting approaches you have taken"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer2fc8dbaa-21be-419e-8b72-c7b8bbe68b38",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Further comments"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "orr",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}

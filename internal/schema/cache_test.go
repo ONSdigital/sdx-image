@@ -1,15 +1,63 @@
 package schema
 
 import (
+	"sdxImage/internal/interfaces"
 	"sdxImage/internal/test"
 	"testing"
+	"time"
 )
+
+func fakeSchemaCreator(guid string) (interfaces.Schema, error) {
+	return &CollectionInstrument{
+		title:         "",
+		surveyId:      guid,
+		formType:      "",
+		sectionTitles: nil,
+		titleToQidMap: nil,
+		qidToQtMap:    nil,
+		qidToAidMap:   nil,
+		answerMap:     nil,
+	}, nil
+}
+
+func TestCache(t *testing.T) {
+	cache := NewCache(3, fakeSchemaCreator)
+	var s interfaces.Schema
+
+	s, _ = cache.GetSchema("001")
+	time.Sleep(10 * time.Millisecond)
+	test.Equal(t, "001", s.GetSurveyId())
+
+	s, _ = cache.GetSchema("002")
+	time.Sleep(10 * time.Millisecond)
+	test.Equal(t, "002", s.GetSurveyId())
+
+	s, _ = cache.GetSchema("003")
+	time.Sleep(10 * time.Millisecond)
+	test.Equal(t, "003", s.GetSurveyId())
+
+	s, _ = cache.GetSchema("001")
+	time.Sleep(10 * time.Millisecond)
+	test.Equal(t, "001", s.GetSurveyId())
+	//ensure the cache hasn't grown because the schema already exists
+	test.Equal(t, 3, len(cache.instruments))
+	test.Equal(t, 3, len(cache.lastUsed))
+
+	s, _ = cache.GetSchema("004")
+	time.Sleep(10 * time.Millisecond)
+	test.Equal(t, "004", s.GetSurveyId())
+	//ensure the cache hasn't grown
+	test.Equal(t, 3, len(cache.instruments))
+	test.Equal(t, 3, len(cache.lastUsed))
+	//002 should have been removed as the oldest schema
+	test.MapContains(t, cache.instruments, "001", "003", "004")
+}
 
 func TestCacheIntegration(t *testing.T) {
 	test.SetCwdToRoot()
-	schemaCache := NewCache()
+	cache := NewCache(20, CreateInstrument)
 	schemaName := "test_1802"
-	schema, err := schemaCache.GetSchema(schemaName)
+	schema, err := cache.GetSchema(schemaName)
 	if err != nil {
 		t.Errorf("failed to get schema: %q with error: %q", schemaName, err.Error())
 	}
@@ -17,7 +65,7 @@ func TestCacheIntegration(t *testing.T) {
 	titles := schema.ListTitles()
 	test.Equal(t, "Income", titles[2])
 
-	schema, err = schemaCache.GetSchema(schemaName)
+	schema, err = cache.GetSchema(schemaName)
 	if err != nil {
 		t.Errorf("failed to get schema: %q with error: %q", schemaName, err.Error())
 	}

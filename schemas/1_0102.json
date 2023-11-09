@@ -1,0 +1,780 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "023",
+  "form_type": "0102",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "title": "Monthly Business Survey - Retail Sales Index",
+  "questionnaire_flow": {
+    "type": "Linear",
+    "options": {
+      "summary": {
+        "collapsible": false
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "sectione950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group2f2c19a2-baba-4a5a-b0b0-45b5d06ffc91",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {conditional_trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "conditional_trad_as",
+                        "transforms": [
+                          {
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            },
+                            "transform": "conditional_trad_as"
+                          }
+                        ]
+                      },
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "On average it takes 10 minutes to complete this survey once you have collected the information.",
+                        "Data should relate to all sites in England, Scotland and Wales.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially."
+                      ]
+                    },
+                    {
+                      "description": "<strong>If you have closed for all, or some, of the period</strong>: select &#39;yes, you can provide figures&#39; and enter retail turnover, even if this is &#39;0&#39;."
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/monthlybusinesssurveyretailsalesindex\"target=\"_blank\"rel=\"noopener noreferrer\">View the survey information before you start the survey (this link opens in a new tab)</a>"
+                  },
+                  {
+                    "description": "You can select the dates of the period you are reporting for, if the given dates are not appropriate."
+                  },
+                  {
+                    "description": "Explain figures in the comments section to minimise us contacting you and to help us tell an industry story."
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Total retail turnover",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "VAT",
+                          "internet sales",
+                          "retail sales from outlets in Great Britain to customers abroad"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "revenue from mobile phone network commission and top-up",
+                          "sales from catering facilities used by customers",
+                          "lottery sales and commission from lottery sales",
+                          "sales of car accessories and motor vehicles",
+                          "NHS receipts"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Internet sales",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "VAT",
+                          "sales from orders received over the internet, irrespective of the payment or delivery method"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Additional comments",
+                    "contents": [
+                      {
+                        "description": "Please provide any additional comments about your data."
+                      },
+                      {
+                        "description": "<strong>For example:</strong>"
+                      },
+                      {
+                        "list": [
+                          "in-store or online promotions",
+                          "special events, for example sporting events",
+                          "calendar events, for example Christmas, Easter, Bank Holiday",
+                          "weather",
+                          "store closures or openings"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "The information you supply is used to produce monthly estimates of the total retail sales in Great Britain. It is also used to help estimate consumer spending on retail goods and the output of the retail sector, both of which feed into the compilation of the UK National Accounts."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "groupe950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+          "blocks": [
+            {
+              "id": "block1b26d118-7a0b-4ab4-8a5f-f0f770c44329",
+              "type": "Question",
+              "question": {
+                "id": "question1b26d118-7a0b-4ab4-8a5f-f0f770c44329",
+                "title": {
+                  "text": "Are you able to report for the period from {ref_p_start_date} to {ref_p_end_date}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "9999",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                        "source": "answers"
+                      },
+                      ["Yes"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block97bfcacd-1741-41df-9b38-a12a9e6d0e2b"
+                }
+              ]
+            },
+            {
+              "id": "block97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+              "type": "Question",
+              "question": {
+                "id": "question97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+                "title": "What are the dates of the period that you will be reporting for?",
+                "type": "DateRange",
+                "answers": [
+                  {
+                    "id": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5efrom",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "From",
+                    "q_code": "11",
+                    "minimum": {
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ref_p_start_date"
+                      },
+                      "offset_by": {
+                        "days": -19
+                      }
+                    }
+                  },
+                  {
+                    "id": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5eto",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "To",
+                    "q_code": "12",
+                    "maximum": {
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ref_p_end_date"
+                      },
+                      "offset_by": {
+                        "days": 20
+                      }
+                    }
+                  }
+                ],
+                "period_limits": {
+                  "minimum": {
+                    "days": 23
+                  },
+                  "maximum": {
+                    "days": 50
+                  }
+                }
+              }
+            },
+            {
+              "id": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+              "type": "Question",
+              "question": {
+                "id": "question6658f716-7f5f-4488-ab20-2af1dc694294",
+                "title": {
+                  "text": "For the period {from} to {to}, what was the value of {ru_name}&#39;s <em>total retail turnover</em>?",
+                  "placeholders": [
+                    {
+                      "placeholder": "from",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5efrom",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "to",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5eto",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "VAT",
+                        "internet sales",
+                        "retail sales from outlets in Great Britain to customers abroad"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "revenue from mobile phone network commission and top-up",
+                        "sales from catering facilities used by customers",
+                        "lottery sales and commission from lottery sales",
+                        "sales of car accessories and motor vehicles",
+                        "NHS receipts"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                    "mandatory": false,
+                    "type": "Currency",
+                    "label": "Total retail turnover",
+                    "q_code": "20",
+                    "minimum": {
+                      "value": 0,
+                      "exclusive": false
+                    },
+                    "decimal_places": 2,
+                    "default": 0,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blockconfirmation-page-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+              "type": "ConfirmationQuestion",
+              "question": {
+                "id": "questionconfirmation-page-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+                "title": {
+                  "text": "For the period {from} to {to}, the value of the total retail turnover was <em>{total_retail_turnover}</em>, is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "from",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5efrom",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "to",
+                      "transforms": [
+                        {
+                          "transform": "first_non_empty_item",
+                          "arguments": {
+                            "items": [
+                              {
+                                "identifier": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5eto",
+                                "source": "answers"
+                              },
+                              {
+                                "source": "metadata",
+                                "identifier": "ref_p_end_date"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "previous_transform"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "total_retail_turnover",
+                      "transforms": [
+                        {
+                          "transform": "format_currency",
+                          "arguments": {
+                            "number": {
+                              "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                              "source": "answers"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerconfirmation-answer-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, this is correct",
+                        "value": "Yes, this is correct"
+                      },
+                      {
+                        "label": "No, I need to change this",
+                        "value": "No, I need to change this"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+                  "when": {
+                    "==": [
+                      {
+                        "source": "answers",
+                        "identifier": "answerconfirmation-answer-for-6658f716-7f5f-4488-ab20-2af1dc694294"
+                      },
+                      "No, I need to change this"
+                    ]
+                  }
+                },
+                {
+                  "block": "block1a747456-6c9c-4832-8b1b-7737fad4a128",
+                  "when": {
+                    "==": [
+                      {
+                        "source": "answers",
+                        "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f"
+                      },
+                      0
+                    ]
+                  }
+                },
+                {
+                  "block": "blocke1ddd2ff-78ee-4476-8b9d-ea7a2b9d7c9b"
+                }
+              ],
+              "skip_conditions": {
+                "when": {
+                  ">": [
+                    {
+                      "source": "answers",
+                      "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f"
+                    },
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "id": "blocke1ddd2ff-78ee-4476-8b9d-ea7a2b9d7c9b",
+              "type": "Question",
+              "question": {
+                "id": "questione1ddd2ff-78ee-4476-8b9d-ea7a2b9d7c9b",
+                "title": {
+                  "text": "Of the {total_retail_turnover} total retail turnover, what was the value of <em>internet</em> sales?",
+                  "placeholders": [
+                    {
+                      "placeholder": "total_retail_turnover",
+                      "transforms": [
+                        {
+                          "transform": "format_currency",
+                          "arguments": {
+                            "number": {
+                              "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                              "source": "answers"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "VAT",
+                        "sales from orders received over the internet, irrespective of the payment or delivery method"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer45bbf36e-a929-48ea-bdf8-d6db9f6a4e0f",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Value of internet sales",
+                    "q_code": "21",
+                    "minimum": {
+                      "value": 0,
+                      "exclusive": false
+                    },
+                    "maximum": {
+                      "value": {
+                        "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                        "source": "answers"
+                      },
+                      "exclusive": false
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block1a747456-6c9c-4832-8b1b-7737fad4a128",
+              "type": "Question",
+              "question": {
+                "id": "question1a747456-6c9c-4832-8b1b-7737fad4a128",
+                "title": "Please explain any changes in your figures from previous returns, if applicable",
+                "description": [
+                  "<p>If you provide comments we are less likely to contact you with data queries.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer320de482-5611-415c-996a-978eb9d20114",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000,
+                    "guidance": {
+                      "show_guidance": "Show examples of comments on changes to figures from previous returns",
+                      "hide_guidance": "Show examples of comments on changes to figures from previous returns",
+                      "contents": [
+                        {
+                          "description": "Examples of comments:"
+                        },
+                        {
+                          "description": "<strong>&#x2018;In-store promotion&#x2019;</strong>"
+                        },
+                        {
+                          "description": "&#x201C;Offer on wine for the whole month, save 25% when you buy 6 bottles. The promotion was available in-store and online, contributing to an increase in both total retail turnover and internet sales.&#x201D;"
+                        },
+                        {
+                          "description": "<strong>&#x2018;Special events, for example sporting events&#x2019;</strong>"
+                        },
+                        {
+                          "description": "&#x201C;This was the month before the start of the Euro 2020 football tournament, we recorded an increase in sales of audio-visual equipment. For example, televisions and audio equipment. This led to an increase in sales both in-store and online.&#x201D;"
+                        },
+                        {
+                          "description": "<strong>&#x2018;Weather&#x2019;</strong>"
+                        },
+                        {
+                          "description": "&#x201C;The bad weather has decreased our sales of summer clothing. This has led to a reduction in total retail turnover and internet sales this month.&#x201D;"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "default",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "Your response will help inform decision-makers how best to support the UK population and economy at this challenging time."
+        },
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}

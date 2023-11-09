@@ -57,3 +57,11 @@ func (ci *CollectionInstrument) GetAnswers(answerId string) []interfaces.AnswerS
 	copy(result, answers)
 	return result
 }
+
+func CreateInstrument(schemaName string) (interfaces.Schema, error) {
+	schema, err := Read(schemaName)
+	if err != nil {
+		return nil, err
+	}
+	return convert(schema), nil
+}

@@ -1,0 +1,3702 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "preview_questions": false,
+  "survey_id": "283",
+  "form_type": "0002",
+  "title": "Business Insights and Conditions Survey (BICS)",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "124e9fff-d9ea-48e8-b629-ae0c424879f2",
+        "section18dff3ca-e764-4c5b-aafb-455a3774b6f8"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "section18dff3ca-e764-4c5b-aafb-455a3774b6f8",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "group18dff3ca-e764-4c5b-aafb-455a3774b6f8",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      },
+                      {
+                        "placeholder": "trad_as",
+                        "transforms": [
+                          {
+                            "transform": "conditional_trad_as",
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 303 5948"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "Data should relate to all sites in the UK. This includes England, Wales, Scotland and Northern Ireland.",
+                        "We will treat your information securely and confidentially.",
+                        "This survey is refreshed every two weeks. To avoid losing data and to help us provide real-time information please submit by the return by date, or at the latest before the next fortnightly survey goes live.",
+                        "On average it takes 5 minutes to complete this survey once you have collected the information.",
+                        "You can save a copy of your answers at the end of this questionnaire using the &#x2018;Download as PDF&#x2019; button."
+                      ]
+                    },
+                    {
+                      "description": "Please complete this survey even if you are a <strong>sole trader</strong> and it does not seem relevant to your business. All returns are important, as it allows decision-makers to understand how businesses of all sizes are performing in the current climate."
+                    },
+                    {
+                      "description": "<strong>Thank you for participating in this important survey.</strong>"
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/thequestionsonthebusinessimpactofcoronaviruscovid19survey\"target=\"_blank\"rel=\"noopener noreferrer\">View the questions before you start the survey (this link opens in a new tab)</a>"
+                  },
+                  {
+                    "description": "This survey has the following sections:"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Trading status of your business",
+                    "contents": [
+                      {
+                        "description": "This section asks for general information on the business&#39;s trading status."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Exporting",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about your business&#39;s exporting activities and any related challenges."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Importing",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about your business&#39;s importing activities and any related challenges."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "UK Conformity Assessed (UKCA) marking",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about CE (Conformity with European health, safety, and environment) and UKCA markings."
+                      },
+                      {
+                        "description": "These are markings that apply to a wide range of consumer and industrial goods such as toys, personal protective equipment, and construction products. The markings signal that products are fit to be placed on the GB market."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Supply chains",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about:"
+                      },
+                      {
+                        "list": [
+                          "the availability of materials, goods and services within the EU",
+                          "the availability of materials, goods and services within the UK",
+                          "global supply chain disruption"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Sending goods to Northern Ireland",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about sending goods <strong>from </strong>GB <strong>to </strong>Northern Ireland and any related challenges."
+                      },
+                      {
+                        "description": "<strong>Include </strong>goods sent to:"
+                      },
+                      {
+                        "list": [
+                          "other businesses",
+                          "other parts of your business",
+                          "individual customers"
+                        ]
+                      },
+                      {
+                        "description": "GB means &#x2018;Great Britain&#x2019; which includes England, Scotland and Wales, but excludes Northern Ireland."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Workforce trends",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about your workforce such as:"
+                      },
+                      {
+                        "list": [
+                          "working from home",
+                          "site closures",
+                          "redundancies",
+                          "wages",
+                          "worker shortages"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Industrial action",
+                    "contents": [
+                      {
+                        "description": "This section asks for information about how your business has been affected by recent industrial action."
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "description": "The data from this survey is used widely to enable rapid response, and inform policy decisions about issues impacting UK businesses and the economy. This includes topics relating to business resilience, financial performance, trade and your workforce."
+                    },
+                    {
+                      "description": "<a href=\"https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/businessinsightsandimpactontheukeconomy/latest\"target=\"_blank\"rel=\"noopener noreferrer\">View the latest publication produced from this survey (this link opens in a new tab)</a>"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "124e9fff-d9ea-48e8-b629-ae0c424879f2",
+      "title": "Trading status of your business",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Trading status of your business section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group124e9fff-d9ea-48e8-b629-ae0c424879f2",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "trading-status-of-your-business",
+              "page_title": "Trading status of your business",
+              "content": {
+                "title": "Trading status of your business",
+                "contents": [
+                  {
+                    "description": "This section asks for general information on your business&#39;s trading status."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "trading-status",
+              "type": "Question",
+              "question": {
+                "id": "questiontrading-status",
+                "title": {
+                  "text": "Which of the following statements best describes {ru_name}&#39;s trading status?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>You can interpret &#39;trading&#39; as &#39;operating&#39;.</p><p>Only select &#39;paused trading&#39; if all trading or operations have <em>temporarily</em> stopped.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerf4d8d1e0-1474-4eb7-8377-9218d0825f10",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "32",
+                    "options": [
+                      {
+                        "label": "Currently fully trading",
+                        "value": "Currently fully trading"
+                      },
+                      {
+                        "label": "Currently partially trading",
+                        "value": "Currently partially trading",
+                        "description": "For example, trading with reduced hours or staff numbers"
+                      },
+                      {
+                        "label": "Paused trading but intends to restart in the next two weeks",
+                        "value": "Paused trading but intends to restart in the next two weeks"
+                      },
+                      {
+                        "label": "Paused trading and does not intend to restart in the next two weeks",
+                        "value": "Paused trading and does not intend to restart in the next two weeks"
+                      },
+                      {
+                        "label": "Permanently ceased trading",
+                        "value": "Permanently ceased trading"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Trading status"
+            },
+            {
+              "id": "location-of-closed-sites",
+              "type": "Question",
+              "question": {
+                "id": "questionlocation-of-closed-sites",
+                "title": "Where in the UK are your sites <em>temporarily or permanently closed</em>, if any?",
+                "description": [
+                  "<p>You can interpret &#39;sites&#39; as &#39;premises&#39;.</p><p>Select all the regions where the majority of your business&#39;s sites are temporarily or permanently closed.</p>"
+                ],
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer33c5a535-e2a7-4012-9e8b-9b08e9509877",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Northern Ireland",
+                        "value": "Northern Ireland",
+                        "q_code": "1261"
+                      },
+                      {
+                        "label": "Scotland",
+                        "value": "Scotland",
+                        "q_code": "1262"
+                      },
+                      {
+                        "label": "Wales",
+                        "value": "Wales",
+                        "q_code": "1263"
+                      },
+                      {
+                        "label": "East of England",
+                        "value": "East of England",
+                        "q_code": "1264"
+                      },
+                      {
+                        "label": "East Midlands",
+                        "value": "East Midlands",
+                        "q_code": "1265"
+                      },
+                      {
+                        "label": "Greater London",
+                        "value": "Greater London",
+                        "q_code": "1266"
+                      },
+                      {
+                        "label": "North East of England",
+                        "value": "North East of England",
+                        "q_code": "1267"
+                      },
+                      {
+                        "label": "North West of England",
+                        "value": "North West of England",
+                        "q_code": "1268"
+                      },
+                      {
+                        "label": "South East of England",
+                        "value": "South East of England",
+                        "q_code": "1269"
+                      },
+                      {
+                        "label": "South West of England",
+                        "value": "South West of England",
+                        "q_code": "12610"
+                      },
+                      {
+                        "label": "West Midlands",
+                        "value": "West Midlands",
+                        "q_code": "12611"
+                      },
+                      {
+                        "label": "Yorkshire and The Humber",
+                        "value": "Yorkshire and The Humber",
+                        "q_code": "12612"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "12613"
+                      },
+                      {
+                        "label": "Do not have any sites",
+                        "value": "Do not have any sites",
+                        "q_code": "12614"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answerb3478a6d-cb53-42c4-babb-c197c9a7b3b4",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "None of our sites are temporarily or permanently closed",
+                        "value": "None of our sites are temporarily or permanently closed",
+                        "q_code": "1260"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Location of closed sites"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fe108f4f-63bd-4984-b648-a2b700e8ace1",
+      "title": "Exporting",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Exporting section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupfe108f4f-63bd-4984-b648-a2b700e8ace1",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "exporting",
+              "page_title": "Exporting",
+              "content": {
+                "title": "Exporting",
+                "contents": [
+                  {
+                    "description": "This section asks for information about your business&#39;s exporting activities and any related challenges."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "exporting-status",
+              "type": "Question",
+              "question": {
+                "id": "questionexporting-status",
+                "title": {
+                  "text": "Which of the following statements best describes {ru_name}&#39;s exporting status?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer858ef1a6-7faf-4c95-befa-e7808a72181f",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "70",
+                    "options": [
+                      {
+                        "label": "Exported in the last 12 months",
+                        "value": "Exported in the last 12 months"
+                      },
+                      {
+                        "label": "Exported more than 12 months ago",
+                        "value": "Exported more than 12 months ago"
+                      },
+                      {
+                        "label": "Never exported but have goods or services that could be developed for export",
+                        "value": "Never exported but have goods or services that could be developed for export"
+                      },
+                      {
+                        "label": "Never exported and do not have goods or services suitable for export",
+                        "value": "Never exported and do not have goods or services suitable for export"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Exporting status",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer858ef1a6-7faf-4c95-befa-e7808a72181f",
+                        "source": "answers"
+                      },
+                      [
+                        "Never exported but have goods or services that could be developed for export",
+                        "Never exported and do not have goods or services suitable for export",
+                        "Not sure",
+                        "Exported more than 12 months ago"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "export-of-goods-or-services"
+                }
+              ]
+            },
+            {
+              "id": "export-of-goods-or-services",
+              "type": "Question",
+              "question": {
+                "id": "questionexport-of-goods-or-services",
+                "title": "Has your business exported goods or services in the last 12 months?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong> exporting services from your businesses in the UK to an individual or business located outside of the UK"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;services&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to skills and services that are provided by people and are &#39;intangible&#39;."
+                      },
+                      {
+                        "description": "For example, your business may provide a service, such as legal or financial services, to a non-UK business."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerb4cd04e0-1315-4cef-92a4-87dd59fa2375",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "48",
+                    "options": [
+                      {
+                        "label": "Exported goods only",
+                        "value": "Exported goods only"
+                      },
+                      {
+                        "label": "Exported services only",
+                        "value": "Exported services only"
+                      },
+                      {
+                        "label": "Exported both goods and services",
+                        "value": "Exported both goods and services"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Export of goods or services"
+            },
+            {
+              "id": "change-to-export-of-goods-or-services",
+              "type": "Question",
+              "question": {
+                "id": "questionchange-to-export-of-goods-or-services",
+                "title": "Have you changed where you have exported your goods or services to in the <em>last three months</em>?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer22cab395-e413-4271-b31f-cdb8b275f884",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Changed from EU to non-EU",
+                        "value": "Changed from EU to non-EU",
+                        "q_code": "921"
+                      },
+                      {
+                        "label": "Changed from non-EU to EU",
+                        "value": "Changed from non-EU to EU",
+                        "q_code": "922"
+                      },
+                      {
+                        "label": "Changed in a different way",
+                        "value": "Changed in a different way",
+                        "q_code": "923",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer76b54069-b1e5-4f97-a5d1-8c317b3cb6f7",
+                          "mandatory": false
+                        }
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "929"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answerbb9d7700-add2-4524-bbc3-9831c3ec5d15",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "No changes made",
+                        "value": "No changes made",
+                        "q_code": "920"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Change to export of goods or services"
+            },
+            {
+              "id": "destination-of-exported-goods-or-services",
+              "type": "Question",
+              "question": {
+                "id": "questiondestination-of-exported-goods-or-services",
+                "title": "Where has your business exported goods or services to in the last three months?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer3dd768ff-672f-4917-86d9-de59d936f4d9",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "266",
+                    "options": [
+                      {
+                        "label": "EU only",
+                        "value": "EU only"
+                      },
+                      {
+                        "label": "Non-EU only",
+                        "value": "Non-EU only"
+                      },
+                      {
+                        "label": "Both EU and non-EU",
+                        "value": "Both EU and non-EU"
+                      },
+                      {
+                        "label": "Not exported in the last three months",
+                        "value": "Not exported in the last three months"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Destination of exported goods or services"
+            },
+            {
+              "id": "exporting-compared-to-last-year",
+              "type": "Question",
+              "question": {
+                "id": "questionexporting-compared-to-last-year",
+                "title": "How did your business&#39;s exporting in <em>October 2023</em> compare with this calendar month last year?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer7abdfbc3-65e3-46ff-ad85-8584d2a13108",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "129",
+                    "options": [
+                      {
+                        "label": "Exported more",
+                        "value": "Exported more"
+                      },
+                      {
+                        "label": "Exporting stayed the same",
+                        "value": "Exporting stayed the same"
+                      },
+                      {
+                        "label": "Exported less",
+                        "value": "Exported less"
+                      },
+                      {
+                        "label": "Business was unable to export",
+                        "value": "Business was unable to export"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Exporting compared to last year",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer7abdfbc3-65e3-46ff-ad85-8584d2a13108",
+                        "source": "answers"
+                      },
+                      ["Not sure"]
+                    ]
+                  }
+                },
+                {
+                  "block": "increase-in-exporting-challenges"
+                }
+              ]
+            },
+            {
+              "id": "increase-in-exporting-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questionincrease-in-exporting-challenges",
+                "title": "Did your business experience an <em>increase</em> in any of the following exporting challenges in October 2023, compared with the previous calendar month?",
+                "definitions": [
+                  {
+                    "title": "What we mean by an &#39;increase&#39;",
+                    "contents": [
+                      {
+                        "description": "For example, a business experienced an increase in additional paperwork compared to the previous calendar month."
+                      }
+                    ]
+                  }
+                ],
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answerba3b115f-a73b-4c57-bd68-736077252d3d",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Additional paperwork",
+                        "value": "Additional paperwork",
+                        "q_code": "4281",
+                        "description": "For example, conformity assessments, customs declarations, health and rules of origin certifications"
+                      },
+                      {
+                        "label": "Change in exchange rates",
+                        "value": "Change in exchange rates",
+                        "q_code": "4292"
+                      },
+                      {
+                        "label": "Change in transportation costs",
+                        "value": "Change in transportation costs",
+                        "q_code": "4282",
+                        "description": "For example, freight rates"
+                      },
+                      {
+                        "label": "Customs duties or levies",
+                        "value": "Customs duties or levies",
+                        "q_code": "4283",
+                        "description": "Including VAT and other taxes"
+                      },
+                      {
+                        "label": "Destination countries changing their border restrictions",
+                        "value": "Destination countries changing their border restrictions",
+                        "q_code": "4284"
+                      },
+                      {
+                        "label": "Disruption at UK borders",
+                        "value": "Disruption at UK borders",
+                        "q_code": "4285"
+                      },
+                      {
+                        "label": "Finding information on how to export",
+                        "value": "Finding information on how to export",
+                        "q_code": "4286"
+                      },
+                      {
+                        "label": "Lack of hauliers to transport goods or lack of logistics equipment",
+                        "value": "Lack of hauliers to transport goods or lack of logistics equipment",
+                        "q_code": "4287",
+                        "description": "For example, containers, warehouse capacity or wooden pallets"
+                      },
+                      {
+                        "label": "Reduced demand for products and services",
+                        "value": "Reduced demand for products and services",
+                        "q_code": "4288"
+                      },
+                      {
+                        "label": "Time taken for checks at the border",
+                        "value": "Time taken for checks at the border",
+                        "q_code": "4289",
+                        "description": "For example, documentary or physical checks"
+                      },
+                      {
+                        "label": "Work permit or visa restrictions, or lack of mutual recognition of professional qualifications",
+                        "value": "Work permit or visa restrictions, or lack of mutual recognition of professional qualifications",
+                        "q_code": "4290"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "4291",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer0ddc18c7-c30b-45b7-9205-4d1e7b66fe1b",
+                          "mandatory": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answerc64df9b0-0f6c-43ca-b03d-d83f513c9495",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Did not experience an increase in any exporting challenges",
+                        "value": "Did not experience an increase in any exporting challenges",
+                        "q_code": "4280"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Increase in exporting challenges",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "==": [
+                      {
+                        "identifier": "answerba3b115f-a73b-4c57-bd68-736077252d3d",
+                        "source": "answers"
+                      },
+                      null
+                    ]
+                  }
+                },
+                {
+                  "block": "main-cause-of-exporting-challenges"
+                }
+              ]
+            },
+            {
+              "id": "main-cause-of-exporting-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questionmain-cause-of-exporting-challenges",
+                "title": "What was the main cause of these exporting challenges?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer5aed64a1-c7ba-40b5-a9dd-5eff480c7f5d",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "229",
+                    "options": [
+                      {
+                        "label": "Coronavirus (COVID-19) pandemic",
+                        "value": "Coronavirus (COVID-19) pandemic"
+                      },
+                      {
+                        "label": "End of the EU transition period",
+                        "value": "End of the EU transition period"
+                      },
+                      {
+                        "label": "Coronavirus (COVID-19) pandemic and the end of the EU transition period",
+                        "value": "Coronavirus (COVID-19) pandemic and the end of the EU transition period"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer5535b11c-e33b-4569-aa48-46e58cd26bcd",
+                          "mandatory": true,
+                          "q_code": "1229"
+                        }
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Main cause of exporting challenges"
+            },
+            {
+              "id": "disruption-of-exporting-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questiondisruption-of-exporting-challenges",
+                "title": "How much disruption to your business have these challenges caused?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer7615b8b4-9e9b-46b5-880d-ef76e32e89fc",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "230",
+                    "options": [
+                      {
+                        "label": "Major disruption",
+                        "value": "Major disruption"
+                      },
+                      {
+                        "label": "Moderate disruption",
+                        "value": "Moderate disruption"
+                      },
+                      {
+                        "label": "Minor disruption",
+                        "value": "Minor disruption"
+                      },
+                      {
+                        "label": "No disruption",
+                        "value": "No disruption"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Disruption of exporting challenges"
+            },
+            {
+              "id": "support-options-for-exporting-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questionsupport-options-for-exporting-challenges",
+                "title": "Which of the following support options has your business benefitted from, to help with exporting challenges?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answera737fa1b-105b-4a66-b483-06b9eeb94781",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Customs and tariffs",
+                        "value": "Customs and tariffs",
+                        "q_code": "1617"
+                      },
+                      {
+                        "label": "Export licences",
+                        "value": "Export licences",
+                        "q_code": "1618"
+                      },
+                      {
+                        "label": "Financial support",
+                        "value": "Financial support",
+                        "q_code": "1611"
+                      },
+                      {
+                        "label": "Finding new markets",
+                        "value": "Finding new markets",
+                        "q_code": "1613"
+                      },
+                      {
+                        "label": "Finding new overseas contacts or customers",
+                        "value": "Finding new overseas contacts or customers",
+                        "q_code": "1614"
+                      },
+                      {
+                        "label": "Information on exporting",
+                        "value": "Information on exporting",
+                        "q_code": "16110",
+                        "description": "For example, changes to requirements following the end of the EU transition period"
+                      },
+                      {
+                        "label": "Legal support",
+                        "value": "Legal support",
+                        "q_code": "1616"
+                      },
+                      {
+                        "label": "Transport and distribution",
+                        "value": "Transport and distribution",
+                        "q_code": "1615"
+                      },
+                      {
+                        "label": "Understanding markets and demand issues",
+                        "value": "Understanding markets and demand issues",
+                        "q_code": "1612"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "1619",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answerfaead07c-b9af-4110-93e7-046166350c1d",
+                          "mandatory": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answerb5c81e35-4cbd-4822-86b3-89b67043a9e9",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "None of the above",
+                        "value": "None of the above",
+                        "q_code": "1610"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Support options for exporting challenges"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerf4d8d1e0-1474-4eb7-8377-9218d0825f10",
+              "source": "answers"
+            },
+            ["Currently fully trading", "Currently partially trading"]
+          ]
+        }
+      }
+    },
+    {
+      "id": "0da802f0-ca5a-4466-ad23-9047314a77a9",
+      "title": "Importing",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Importing section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group0da802f0-ca5a-4466-ad23-9047314a77a9",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "importing",
+              "page_title": "Importing",
+              "content": {
+                "title": "Importing",
+                "contents": [
+                  {
+                    "description": "This section asks for information about your business&#39;s importing activities and any related challenges."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "importing-status",
+              "type": "Question",
+              "question": {
+                "id": "questionimporting-status",
+                "title": {
+                  "text": "Which of the following statements best describes {ru_name}&#39;s importing status?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer4cdb5939-02bd-4490-bf19-6eca81e882fd",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "71",
+                    "options": [
+                      {
+                        "label": "Imported in the last 12 months",
+                        "value": "Imported in the last 12 months"
+                      },
+                      {
+                        "label": "Imported more than 12 months ago",
+                        "value": "Imported more than 12 months ago"
+                      },
+                      {
+                        "label": "Never imported",
+                        "value": "Never imported"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Importing status",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer4cdb5939-02bd-4490-bf19-6eca81e882fd",
+                        "source": "answers"
+                      },
+                      [
+                        "Imported more than 12 months ago",
+                        "Never imported",
+                        "Not sure"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "import-of-goods-or-services"
+                }
+              ]
+            },
+            {
+              "id": "import-of-goods-or-services",
+              "type": "Question",
+              "question": {
+                "id": "questionimport-of-goods-or-services",
+                "title": "Has your business imported goods or services in the last 12 months?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong> importing services from an individual or business located outside of the UK to your businesses in the UK"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;services&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to skills and services that are provided by people and are &#39;intangible&#39;."
+                      },
+                      {
+                        "description": "For example, your business may receive a service, such as research or construction, from a non-UK business."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer52398e05-9a2f-4795-9064-c83f89c9381e",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "57",
+                    "options": [
+                      {
+                        "label": "Imported goods only",
+                        "value": "Imported goods only"
+                      },
+                      {
+                        "label": "Imported services only",
+                        "value": "Imported services only"
+                      },
+                      {
+                        "label": "Imported both goods and services",
+                        "value": "Imported both goods and services"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Import of goods or services"
+            },
+            {
+              "id": "change-to-import-of-goods-or-services",
+              "type": "Question",
+              "question": {
+                "id": "questionchange-to-import-of-goods-or-services",
+                "title": "Have you changed where you have sourced your imports of goods or services from in the <em>last three months</em>?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answera3e83e04-1692-41ea-bca6-94c19bb98176",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Changed from EU to non-EU suppliers",
+                        "value": "Changed from EU to non-EU suppliers",
+                        "q_code": "941"
+                      },
+                      {
+                        "label": "Changed from non-EU to EU suppliers",
+                        "value": "Changed from non-EU to EU suppliers",
+                        "q_code": "942"
+                      },
+                      {
+                        "label": "Changed in a different way",
+                        "value": "Changed in a different way",
+                        "q_code": "943",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer48dfe676-eeb2-45d5-905d-3d031e95bf52",
+                          "mandatory": false
+                        }
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "949"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer4ad72bbd-ac65-41cd-82ec-31688fffff02",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "No changes made",
+                        "value": "No changes made",
+                        "q_code": "940"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Change to import of goods or services"
+            },
+            {
+              "id": "origin-of-imported-goods-or-services",
+              "type": "Question",
+              "question": {
+                "id": "questionorigin-of-imported-goods-or-services",
+                "title": "Where has your business imported goods or services from in the last three months?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerb43bad1a-0339-4aa5-ab72-e3c340fe22dd",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "267",
+                    "options": [
+                      {
+                        "label": "EU only",
+                        "value": "EU only"
+                      },
+                      {
+                        "label": "Non-EU only",
+                        "value": "Non-EU only"
+                      },
+                      {
+                        "label": "Both EU and non-EU",
+                        "value": "Both EU and non-EU"
+                      },
+                      {
+                        "label": "Not imported in the last three months",
+                        "value": "Not imported in the last three months"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Origin of imported goods or services"
+            },
+            {
+              "id": "importing-compared-to-last-year",
+              "type": "Question",
+              "question": {
+                "id": "questionimporting-compared-to-last-year",
+                "title": "How did your business&#39;s importing in <em>October 2023</em> compare with this calendar month last year?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerb24c3803-8c3a-49c3-8762-27c3530f0190",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "130",
+                    "options": [
+                      {
+                        "label": "Imported more",
+                        "value": "Imported more"
+                      },
+                      {
+                        "label": "Importing stayed the same",
+                        "value": "Importing stayed the same"
+                      },
+                      {
+                        "label": "Imported less",
+                        "value": "Imported less"
+                      },
+                      {
+                        "label": "Business was unable to import",
+                        "value": "Business was unable to import"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Importing compared to last year",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerb24c3803-8c3a-49c3-8762-27c3530f0190",
+                        "source": "answers"
+                      },
+                      ["Not sure"]
+                    ]
+                  }
+                },
+                {
+                  "block": "increase-in-importing-challenges"
+                }
+              ]
+            },
+            {
+              "id": "increase-in-importing-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questionincrease-in-importing-challenges",
+                "title": "Did your business experience an <em>increase</em> in any of the following importing challenges in <em>October 2023</em>, compared with the previous calendar month?",
+                "definitions": [
+                  {
+                    "title": "What we mean by an &#39;increase&#39;",
+                    "contents": [
+                      {
+                        "description": "For example, a business experienced an increase in additional paperwork compared to the previous calendar month."
+                      }
+                    ]
+                  }
+                ],
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer644b45de-96eb-4f3d-a933-751ae732f917",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Additional paperwork",
+                        "value": "Additional paperwork",
+                        "q_code": "4461",
+                        "description": "For example, conformity assessments, customs declarations, health and rules of origin certifications"
+                      },
+                      {
+                        "label": "Change in exchange rates",
+                        "value": "Change in exchange rates",
+                        "q_code": "4471"
+                      },
+                      {
+                        "label": "Change in transportation costs",
+                        "value": "Change in transportation costs",
+                        "q_code": "4462",
+                        "description": "For example, freight rates"
+                      },
+                      {
+                        "label": "Customs duties or levies",
+                        "value": "Customs duties or levies",
+                        "q_code": "4463",
+                        "description": "Including VAT and other taxes"
+                      },
+                      {
+                        "label": "Disruption at UK borders",
+                        "value": "Disruption at UK borders",
+                        "q_code": "4464"
+                      },
+                      {
+                        "label": "Finding information on how to import",
+                        "value": "Finding information on how to import",
+                        "q_code": "4465"
+                      },
+                      {
+                        "label": "Lack of hauliers to transport goods or lack of logistics equipment",
+                        "value": "Lack of hauliers to transport goods or lack of logistics equipment",
+                        "q_code": "4466",
+                        "description": "For example, containers, warehouse capacity or wooden pallets"
+                      },
+                      {
+                        "label": "Suppliers not customs ready",
+                        "value": "Suppliers not customs ready",
+                        "q_code": "4467"
+                      },
+                      {
+                        "label": "Time taken for checks at the border",
+                        "value": "Time taken for checks at the border",
+                        "q_code": "4468",
+                        "description": "For example, documentary or physical checks"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "4469",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer9e30bf3d-a2ff-42d0-acc1-289fd19c336e",
+                          "mandatory": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer40e0b632-e4ed-42e5-93df-858479b3de02",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Did not experience an increase in any importing challenges",
+                        "value": "Did not experience an increase in any importing challenges",
+                        "q_code": "4460"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Increase in importing challenges",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "==": [
+                      {
+                        "identifier": "answer644b45de-96eb-4f3d-a933-751ae732f917",
+                        "source": "answers"
+                      },
+                      null
+                    ]
+                  }
+                },
+                {
+                  "block": "main-cause-of-importing-challenges"
+                }
+              ]
+            },
+            {
+              "id": "main-cause-of-importing-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questionmain-cause-of-importing-challenges",
+                "title": "What was the main cause of these importing challenges?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer19976283-fcbe-48b7-92b8-a70f561d96cf",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "233",
+                    "options": [
+                      {
+                        "label": "Coronavirus (COVID-19) pandemic",
+                        "value": "Coronavirus (COVID-19) pandemic"
+                      },
+                      {
+                        "label": "End of the EU transition period",
+                        "value": "End of the EU transition period"
+                      },
+                      {
+                        "label": "Coronavirus (COVID-19) pandemic and the end of the EU transition period",
+                        "value": "Coronavirus (COVID-19) pandemic and the end of the EU transition period"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer35ad421a-c969-4962-b586-308a9027e70b",
+                          "mandatory": true,
+                          "q_code": "1233"
+                        }
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Main cause of importing challenges"
+            },
+            {
+              "id": "disruption-of-importing-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questiondisruption-of-importing-challenges",
+                "title": "How much disruption to your business have these challenges caused?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer95455c9d-388a-44a5-a869-dd54d0eb0895",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "234",
+                    "options": [
+                      {
+                        "label": "Major disruption",
+                        "value": "Major disruption"
+                      },
+                      {
+                        "label": "Moderate disruption",
+                        "value": "Moderate disruption"
+                      },
+                      {
+                        "label": "Minor disruption",
+                        "value": "Minor disruption"
+                      },
+                      {
+                        "label": "No disruption",
+                        "value": "No disruption"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Disruption of importing challenges"
+            },
+            {
+              "id": "support-options-for-importing-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questionsupport-options-for-importing-challenges",
+                "title": "Which of the following support options would your business benefit from, to help with importing challenges?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer0fb2a0fe-582b-4ce3-ba1b-03ac3df82087",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Customs and tariffs",
+                        "value": "Customs and tariffs",
+                        "q_code": "716"
+                      },
+                      {
+                        "label": "Finding new alternative supply chains",
+                        "value": "Finding new alternative supply chains",
+                        "q_code": "712"
+                      },
+                      {
+                        "label": "Finding new overseas contacts or customers",
+                        "value": "Finding new overseas contacts or customers",
+                        "q_code": "713"
+                      },
+                      {
+                        "label": "Import licences",
+                        "value": "Import licences",
+                        "q_code": "717"
+                      },
+                      {
+                        "label": "Information on importing",
+                        "value": "Information on importing",
+                        "q_code": "7110",
+                        "description": "For example, changes to requirements following the end of the EU transition period"
+                      },
+                      {
+                        "label": "Legal support",
+                        "value": "Legal support",
+                        "q_code": "715"
+                      },
+                      {
+                        "label": "Transport and distribution",
+                        "value": "Transport and distribution",
+                        "q_code": "714"
+                      },
+                      {
+                        "label": "Understanding markets and demand issues",
+                        "value": "Understanding markets and demand issues",
+                        "q_code": "711"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "718",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer63870249-b737-4e96-b136-1cfca6499355",
+                          "mandatory": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer53635442-39ba-4f6c-870b-f686e338681e",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "None of the above",
+                        "value": "None of the above",
+                        "q_code": "719"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Support options for importing challenges"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerf4d8d1e0-1474-4eb7-8377-9218d0825f10",
+              "source": "answers"
+            },
+            [
+              "Currently fully trading",
+              "Currently partially trading",
+              "Paused trading but intends to restart in the next two weeks",
+              "Paused trading and does not intend to restart in the next two weeks"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "5851d13f-2fba-4423-a2c6-6db98593bb88",
+      "title": "UK Conformity Assessed (UKCA) marking",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "UK Conformity Assessed (UKCA) marking summary",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group5851d13f-2fba-4423-a2c6-6db98593bb88",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "uk-conformity-assessed-ukca-marking",
+              "page_title": "UK Conformity Assessed (UKCA) marking",
+              "content": {
+                "title": "UK Conformity Assessed (UKCA) marking",
+                "contents": [
+                  {
+                    "description": "This section asks for information about CE (Conformity with European health, safety, and environment) and UKCA markings."
+                  },
+                  {
+                    "description": "These are markings that apply to a wide range of consumer and industrial goods such as toys, personal protective equipment, and construction products. The markings signal that products are fit to be placed on the GB market."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "products-that-require-ce-or-ukca-marking",
+              "type": "Question",
+              "question": {
+                "id": "questionproducts-that-require-ce-or-ukca-marking",
+                "title": {
+                  "text": "Does {ru_name} manufacture, import or distribute products that require either a CE marking or a UKCA marking?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;CE&#39; and &#39;UKCA&#39; markings",
+                    "contents": [
+                      {
+                        "description": "The UKCA (UK Conformity Assessed) marking is a new UK product marking that is used for goods being placed on the market in Great Britain. It covers most goods that previously required the CE (Conformity with European health, safety, and environment requirements) marking."
+                      }
+                    ]
+                  }
+                ],
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answerdd7d601b-2877-47f1-8e73-ae75e5088b26",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Yes, we manufacture products that need a CE or UKCA marking",
+                        "value": "Yes, we manufacture products that need a CE or UKCA marking",
+                        "q_code": "421"
+                      },
+                      {
+                        "label": "Yes, we import products that need a CE or UKCA marking",
+                        "value": "Yes, we import products that need a CE or UKCA marking",
+                        "q_code": "422"
+                      },
+                      {
+                        "label": "Yes, we distribute products that need a CE or UKCA marking",
+                        "value": "Yes, we distribute products that need a CE or UKCA marking",
+                        "q_code": "423"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "429"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answeref2c82ab-3e93-42e7-80bd-e246caaead06",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "No, we do not manufacture, import or distribute products that need a CE or UKCA marking",
+                        "value": "No, we do not manufacture, import or distribute products that need a CE or UKCA marking",
+                        "q_code": "420"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Products that require CE or UKCA marking",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "==": [
+                      {
+                        "identifier": "answerdd7d601b-2877-47f1-8e73-ae75e5088b26",
+                        "source": "answers"
+                      },
+                      null
+                    ]
+                  }
+                },
+                {
+                  "section": "End",
+                  "when": {
+                    "not": [
+                      {
+                        "any-in": [
+                          [
+                            "Yes, we manufacture products that need a CE or UKCA marking",
+                            "Yes, we distribute products that need a CE or UKCA marking",
+                            "Yes, we import products that need a CE or UKCA marking"
+                          ],
+                          {
+                            "identifier": "answerdd7d601b-2877-47f1-8e73-ae75e5088b26",
+                            "source": "answers"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "block": "how-business-is-using-a-ce-or-ukca-marking"
+                }
+              ]
+            },
+            {
+              "id": "how-business-is-using-a-ce-or-ukca-marking",
+              "type": "Question",
+              "question": {
+                "id": "questionhow-business-is-using-a-ce-or-ukca-marking",
+                "title": "To what extent is your business currently using UKCA marking for its products that require either a CE or a UKCA marking?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer9e48abb6-8c81-4b6f-b9b9-495deaf850cd",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "200068",
+                    "options": [
+                      {
+                        "label": "Not using UKCA marking",
+                        "value": "Not using UKCA marking"
+                      },
+                      {
+                        "label": "Using UKCA marking for a minority of products",
+                        "value": "Using UKCA marking for a minority of products"
+                      },
+                      {
+                        "label": "Using UKCA marking for a majority of products, but not all",
+                        "value": "Using UKCA marking for a majority of products, but not all"
+                      },
+                      {
+                        "label": "Using UKCA marking for all products",
+                        "value": "Using UKCA marking for all products"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "How business is using a CE or UKCA marking"
+            },
+            {
+              "id": "plans-to-use-a-ce-or-ukca-marking",
+              "type": "Question",
+              "question": {
+                "id": "questionplans-to-use-a-ce-or-ukca-marking",
+                "title": "To what extent is your business planning to use UKCA marking in <em>November 2024</em> for its products that require either a CE or a UKCA marking?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerfad8735c-9b05-48e4-80a8-ff13656e541b",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "200069",
+                    "options": [
+                      {
+                        "label": "Do not plan to use UKCA marking in this calendar month next year",
+                        "value": "Do not plan to use UKCA marking in this calendar month next year"
+                      },
+                      {
+                        "label": "Plan to use UKCA marking for a minority of products in this calendar month next year",
+                        "value": "Plan to use UKCA marking for a minority of products in this calendar month next year"
+                      },
+                      {
+                        "label": "Plan to use UKCA marking for a majority of products, but not all, in this calendar month next year",
+                        "value": "Plan to use UKCA marking for a majority of products, but not all, in this calendar month next year"
+                      },
+                      {
+                        "label": "Plan to use UKCA marking for all products in this calendar month next year",
+                        "value": "Plan to use UKCA marking for all products in this calendar month next year"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Plans to use a CE or UKCA marking"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerf4d8d1e0-1474-4eb7-8377-9218d0825f10",
+              "source": "answers"
+            },
+            [
+              "Currently fully trading",
+              "Paused trading but intends to restart in the next two weeks",
+              "Paused trading and does not intend to restart in the next two weeks",
+              "Currently partially trading"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "9c078094-4844-44c0-9dac-c120e0800b41",
+      "title": "Supply chains",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group9c078094-4844-44c0-9dac-c120e0800b41",
+          "blocks": [
+            {
+              "id": "extra-costs-due-to-end-of-eu-transition-period",
+              "type": "Question",
+              "question": {
+                "id": "questionextra-costs-due-to-end-of-eu-transition-period",
+                "title": {
+                  "text": "Has {ru_name} had any <em>extra costs</em> due to the end of the EU transition period?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answerce566ff0-1dd9-4e55-8010-24e869088071",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Additional transportation costs",
+                        "value": "Additional transportation costs",
+                        "q_code": "2386"
+                      },
+                      {
+                        "label": "Costs associated with changing supply chains",
+                        "value": "Costs associated with changing supply chains",
+                        "q_code": "2387"
+                      },
+                      {
+                        "label": "Costs associated with the storage of goods",
+                        "value": "Costs associated with the storage of goods",
+                        "q_code": "2388"
+                      },
+                      {
+                        "label": "Costs due to increased red tape",
+                        "value": "Costs due to increased red tape",
+                        "q_code": "2381",
+                        "description": "For example, customs and rules of origin paperwork"
+                      },
+                      {
+                        "label": "Costs incurred from wasted goods",
+                        "value": "Costs incurred from wasted goods",
+                        "q_code": "2382"
+                      },
+                      {
+                        "label": "Cost of setting up EU subsidiaries",
+                        "value": "Cost of setting up EU subsidiaries",
+                        "q_code": "2383"
+                      },
+                      {
+                        "label": "Extra costs in the prices of goods and services imported",
+                        "value": "Extra costs in the prices of goods and services imported",
+                        "q_code": "2390",
+                        "description": "Pre-tariff or pre-tax"
+                      },
+                      {
+                        "label": "Extra tariffs or taxes",
+                        "value": "Extra tariffs or taxes",
+                        "q_code": "2384"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "2385",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer64e1b791-810c-4f8a-b3e1-95933ada105d",
+                          "mandatory": false
+                        }
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "2389"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer57bda8db-fa43-4596-b37f-1013e8085d06",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "No extra costs",
+                        "value": "No extra costs",
+                        "q_code": "2380"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Extra costs due to end of EU transition period"
+            },
+            {
+              "id": "plans-to-open-branches-or-subsidiaries-in-the-eu",
+              "type": "Question",
+              "question": {
+                "id": "questionplans-to-open-branches-or-subsidiaries-in-the-eu",
+                "title": "Does your business intend to open any new branches or subsidiaries in the EU in the <em>next 12 months</em>?",
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;subsidiaries&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to companies owned or controlled by another company, sometimes referred to as the parent or holding company."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerf4e651fb-d10e-4390-b38b-35d12b9a301a",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "25",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Plans to open branches or subsidiaries in the EU"
+            },
+            {
+              "id": "materials-goods-or-services-from-within-the-uk",
+              "type": "Question",
+              "question": {
+                "id": "questionmaterials-goods-or-services-from-within-the-uk",
+                "title": "Was your business able to get the materials, goods or services it needed from within the UK in October 2023?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer007539bf-32fe-4d75-9182-299ccbbd941a",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "735",
+                    "options": [
+                      {
+                        "label": "Yes, the business was able to get the materials, goods or services it needed",
+                        "value": "Yes, the business was able to get the materials, goods or services it needed"
+                      },
+                      {
+                        "label": "Yes, but the business had to change suppliers or find alternative solutions",
+                        "value": "Yes, but the business had to change suppliers or find alternative solutions"
+                      },
+                      {
+                        "label": "No, the business was not able to get the materials, goods or services needed",
+                        "value": "No, the business was not able to get the materials, goods or services needed"
+                      },
+                      {
+                        "label": "Not applicable",
+                        "value": "Not applicable"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Materials, goods or services from within the UK",
+              "routing_rules": [
+                {
+                  "block": "global-supply-chain-disruption",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer007539bf-32fe-4d75-9182-299ccbbd941a",
+                        "source": "answers"
+                      },
+                      [
+                        "Yes, the business was able to get the materials, goods or services it needed",
+                        "Not applicable"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "disruption-from-supply-chains-challenges"
+                }
+              ]
+            },
+            {
+              "id": "disruption-from-supply-chains-challenges",
+              "type": "Question",
+              "question": {
+                "id": "questiondisruption-from-supply-chains-challenges",
+                "title": "How much disruption to your business have these challenges caused?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer63e0e5a7-96d0-47ec-a71e-9cad21aa4dbf",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "1113",
+                    "options": [
+                      {
+                        "label": "Major disruption",
+                        "value": "Major disruption"
+                      },
+                      {
+                        "label": "Moderate disruption",
+                        "value": "Moderate disruption"
+                      },
+                      {
+                        "label": "Minor disruption",
+                        "value": "Minor disruption"
+                      },
+                      {
+                        "label": "No disruption",
+                        "value": "No disruption"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Disruption from supply chains challenges"
+            },
+            {
+              "id": "global-supply-chain-disruption",
+              "type": "Question",
+              "question": {
+                "id": "questionglobal-supply-chain-disruption",
+                "title": "Did your business experience any global supply chain disruption in October 2023?",
+                "definitions": [
+                  {
+                    "title": "Examples of global supply chain disruption",
+                    "contents": [
+                      {
+                        "list": [
+                          "cross-border frictions",
+                          "disruption to prices",
+                          "lack of HGV drivers",
+                          "raw material shortages"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer467a768a-babc-4153-a560-901a08bb2de4",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "736",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      },
+                      {
+                        "label": "Not applicable",
+                        "value": "Not applicable"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Global supply chain disruption"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerf4d8d1e0-1474-4eb7-8377-9218d0825f10",
+              "source": "answers"
+            },
+            [
+              "Currently fully trading",
+              "Currently partially trading",
+              "Paused trading and does not intend to restart in the next two weeks",
+              "Paused trading but intends to restart in the next two weeks"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "a048fd1d-d434-4845-8464-6c1ec225a315",
+      "title": "Sending goods to Northern Ireland",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Sending goods to Northern Ireland section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupa048fd1d-d434-4845-8464-6c1ec225a315",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "sending-goods-to-northern-ireland",
+              "page_title": "Sending goods to Northern Ireland",
+              "content": {
+                "title": "Sending goods to Northern Ireland",
+                "contents": [
+                  {
+                    "description": "This section asks for information about sending goods <strong>from </strong>GB <strong>to </strong>Northern Ireland and any related challenges."
+                  },
+                  {
+                    "description": "<strong>Include </strong>goods sent to:"
+                  },
+                  {
+                    "list": [
+                      "other businesses",
+                      "other parts of your business",
+                      "individual customers"
+                    ]
+                  },
+                  {
+                    "description": "GB means &#x2018;Great Britain&#x2019; which includes England, Scotland and Wales, but excludes Northern Ireland."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "sending-goods-to-northern-ireland-in-the-last-year",
+              "type": "Question",
+              "question": {
+                "id": "questionsending-goods-to-northern-ireland-in-the-last-year",
+                "title": {
+                  "text": "Has {ru_name} sent goods from GB to Northern Ireland in the last 12 months?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong>"
+                    },
+                    {
+                      "description": "Goods sent from GB to Northern Ireland to:"
+                    },
+                    {
+                      "list": [
+                        "other businesses",
+                        "other parts of your business",
+                        "individual customers"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;GB&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to &#x2018;Great Britain&#x2019; which includes England, Scotland and Wales, but excludes Northern Ireland."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer5305bce4-9691-4dac-ac8c-d4b8a1a54091",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "238",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Sending goods to Northern Ireland in the last year",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer5305bce4-9691-4dac-ac8c-d4b8a1a54091",
+                        "source": "answers"
+                      },
+                      ["No", "Not sure"]
+                    ]
+                  }
+                },
+                {
+                  "block": "volume-of-goods-sent-to-northern-ireland"
+                }
+              ]
+            },
+            {
+              "id": "volume-of-goods-sent-to-northern-ireland",
+              "type": "Question",
+              "question": {
+                "id": "questionvolume-of-goods-sent-to-northern-ireland",
+                "title": "In <em>October 2023</em>, how did the <em>volume of goods</em> your business sent from GB to Northern Ireland compare with the previous calendar month?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer484febf9-0097-464b-b2f3-d2b6db47d24c",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "738",
+                    "options": [
+                      {
+                        "label": "Volume increased",
+                        "value": "Volume increased"
+                      },
+                      {
+                        "label": "Volume stayed the same",
+                        "value": "Volume stayed the same"
+                      },
+                      {
+                        "label": "Volume decreased",
+                        "value": "Volume decreased"
+                      },
+                      {
+                        "label": "Stopped sending goods to Northern Ireland",
+                        "value": "Stopped sending goods to Northern Ireland"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      },
+                      {
+                        "label": "Not applicable",
+                        "value": "Not applicable"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Volume of goods sent to Northern Ireland",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer484febf9-0097-464b-b2f3-d2b6db47d24c",
+                        "source": "answers"
+                      },
+                      ["Volume stayed the same", "Not sure", "Not applicable"]
+                    ]
+                  }
+                },
+                {
+                  "block": "details-about-volume-of-goods-sent-to-northern-ireland"
+                }
+              ]
+            },
+            {
+              "id": "details-about-volume-of-goods-sent-to-northern-ireland",
+              "type": "Question",
+              "question": {
+                "id": "questiondetails-about-volume-of-goods-sent-to-northern-ireland",
+                "title": "Please give more details about why the volume of goods sent from GB to Northern Ireland changed in October 2023",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer96044afa-3218-4397-abb0-0f9deaea2d3b",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "739",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Details about volume of goods sent to Northern Ireland"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerf4d8d1e0-1474-4eb7-8377-9218d0825f10",
+              "source": "answers"
+            },
+            [
+              "Currently fully trading",
+              "Currently partially trading",
+              "Paused trading but intends to restart in the next two weeks",
+              "Paused trading and does not intend to restart in the next two weeks"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "af487dd9-fd31-417d-bf41-f13cd591fc20",
+      "title": "Workforce trends",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Workforce trends section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupaf487dd9-fd31-417d-bf41-f13cd591fc20",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "workforce-trends",
+              "page_title": "Workforce trends",
+              "content": {
+                "title": "Workforce trends",
+                "contents": [
+                  {
+                    "description": "This section asks for information about your workforce such as:"
+                  },
+                  {
+                    "list": [
+                      "working from home",
+                      "site closures",
+                      "redundancies",
+                      "wages",
+                      "worker shortages"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "use-of-homeworking-business-model",
+              "type": "Question",
+              "question": {
+                "id": "questionuse-of-homeworking-business-model",
+                "title": {
+                  "text": "Is {ru_name} using, or intending to use, increased homeworking as a permanent business model going forward?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>If you are a <em>sole trader</em> and do not have a workforce, please base your answers on your own working arrangement.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerd0288e3f-dc3f-4236-8b0e-80b82362b216",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "161",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      },
+                      {
+                        "label": "Not applicable",
+                        "value": "Not applicable"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Use of homeworking business model",
+              "routing_rules": [
+                {
+                  "block": "reasons-for-not-using-homeworking",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerd0288e3f-dc3f-4236-8b0e-80b82362b216",
+                        "source": "answers"
+                      },
+                      ["No"]
+                    ]
+                  }
+                },
+                {
+                  "block": "plans-to-close-sites",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerd0288e3f-dc3f-4236-8b0e-80b82362b216",
+                        "source": "answers"
+                      },
+                      ["Not applicable", "Not sure"]
+                    ]
+                  }
+                },
+                {
+                  "block": "reasons-for-using-homeworking"
+                }
+              ]
+            },
+            {
+              "id": "reasons-for-using-homeworking",
+              "type": "Question",
+              "question": {
+                "id": "questionreasons-for-using-homeworking",
+                "title": "Why is your business using, or intending to use, increased homeworking as a permanent business model going forward?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answerb1b02288-0aba-4e44-acd3-3eaf9b008540",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Ability to better match jobs to skills",
+                        "value": "Ability to better match jobs to skills",
+                        "q_code": "1622"
+                      },
+                      {
+                        "label": "Ability to recruit from a wider geographical pool in the UK",
+                        "value": "Ability to recruit from a wider geographical pool in the UK",
+                        "q_code": "16210"
+                      },
+                      {
+                        "label": "Ability to recruit from a wider geographical pool internationally",
+                        "value": "Ability to recruit from a wider geographical pool internationally",
+                        "q_code": "16211"
+                      },
+                      {
+                        "label": "Improved staff wellbeing",
+                        "value": "Improved staff wellbeing",
+                        "q_code": "1625"
+                      },
+                      {
+                        "label": "Increased productivity",
+                        "value": "Increased productivity",
+                        "q_code": "1623"
+                      },
+                      {
+                        "label": "Reduced carbon emissions",
+                        "value": "Reduced carbon emissions",
+                        "q_code": "1629",
+                        "description": "For example, due to less travelling to and from the workplace"
+                      },
+                      {
+                        "label": "Reduced overheads",
+                        "value": "Reduced overheads",
+                        "q_code": "1624"
+                      },
+                      {
+                        "label": "Reduced sickness absence",
+                        "value": "Reduced sickness absence",
+                        "q_code": "1626"
+                      },
+                      {
+                        "label": "Reduced wage bill",
+                        "value": "Reduced wage bill",
+                        "q_code": "1628"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "1627",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer07e97832-2534-40d3-8d4c-d06c7708a735",
+                          "mandatory": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer8ee3c727-99e5-4cb2-a0d4-50db0df85588",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "1620"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Reasons for using homeworking",
+              "routing_rules": [
+                {
+                  "block": "plans-to-close-sites",
+                  "when": {
+                    "or": [
+                      {
+                        "any-in": [
+                          [
+                            "Ability to better match jobs to skills",
+                            "Ability to recruit from a wider geographical pool internationally",
+                            "Increased productivity",
+                            "Reduced overheads",
+                            "Reduced wage bill",
+                            "Ability to recruit from a wider geographical pool in the UK",
+                            "Improved staff wellbeing",
+                            "Reduced sickness absence",
+                            "Reduced carbon emissions",
+                            "Other"
+                          ],
+                          {
+                            "identifier": "answerb1b02288-0aba-4e44-acd3-3eaf9b008540",
+                            "source": "answers"
+                          }
+                        ]
+                      },
+                      {
+                        "==": [
+                          {
+                            "identifier": "answerb1b02288-0aba-4e44-acd3-3eaf9b008540",
+                            "source": "answers"
+                          },
+                          null
+                        ]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "block": "reasons-for-not-using-homeworking"
+                }
+              ]
+            },
+            {
+              "id": "reasons-for-not-using-homeworking",
+              "type": "Question",
+              "question": {
+                "id": "questionreasons-for-not-using-homeworking",
+                "title": "Why is your business not intending to use increased homeworking as a permanent business model going forward?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer5391fd27-4daf-4cc6-8243-674425389b8d",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Concerns with integrating new starters into the workplace",
+                        "value": "Concerns with integrating new starters into the workplace",
+                        "q_code": "1638"
+                      },
+                      {
+                        "label": "Costs of employee equipment",
+                        "value": "Costs of employee equipment",
+                        "q_code": "16310",
+                        "description": "For example, the technology and equipment required to enable homeworking such as laptops or desks"
+                      },
+                      {
+                        "label": "Difficulties managing staff remotely",
+                        "value": "Difficulties managing staff remotely",
+                        "q_code": "1639"
+                      },
+                      {
+                        "label": "Negative impact on working culture",
+                        "value": "Negative impact on working culture",
+                        "q_code": "1635"
+                      },
+                      {
+                        "label": "Not suitable for our business",
+                        "value": "Not suitable for our business",
+                        "q_code": "1636"
+                      },
+                      {
+                        "label": "Reduced communication",
+                        "value": "Reduced communication",
+                        "q_code": "1634"
+                      },
+                      {
+                        "label": "Reduced productivity",
+                        "value": "Reduced productivity",
+                        "q_code": "1631"
+                      },
+                      {
+                        "label": "Reduced reliability and retention of staff",
+                        "value": "Reduced reliability and retention of staff",
+                        "q_code": "1633"
+                      },
+                      {
+                        "label": "Security concerns",
+                        "value": "Security concerns",
+                        "q_code": "1632"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "1637",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer0b371c71-a3e4-4f86-b7d4-31451ccdf7c3",
+                          "mandatory": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer5d9c5b20-d000-4b45-9cd2-3a90eb66334f",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "1630"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Reasons for not using homeworking"
+            },
+            {
+              "id": "plans-to-close-sites",
+              "type": "Question",
+              "question": {
+                "id": "questionplans-to-close-sites",
+                "title": "Is your business intending to permanently close any business sites in the <em>next three months</em>?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer15952ec9-6710-4a1a-b852-039c0d4f020f",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "131",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Plans to close sites",
+              "routing_rules": [
+                {
+                  "block": "redundancy-expectations",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer15952ec9-6710-4a1a-b852-039c0d4f020f",
+                        "source": "answers"
+                      },
+                      ["No", "Not sure"]
+                    ]
+                  }
+                },
+                {
+                  "block": "where-sites-will-close"
+                }
+              ]
+            },
+            {
+              "id": "where-sites-will-close",
+              "type": "Question",
+              "question": {
+                "id": "questionwhere-sites-will-close",
+                "title": "Where in the UK are the sites that will permanently close in the next three months?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answerb5594152-810a-4dab-929d-22124798f00d",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Northern Ireland",
+                        "value": "Northern Ireland",
+                        "q_code": "1641"
+                      },
+                      {
+                        "label": "Scotland",
+                        "value": "Scotland",
+                        "q_code": "1642"
+                      },
+                      {
+                        "label": "Wales",
+                        "value": "Wales",
+                        "q_code": "1643"
+                      },
+                      {
+                        "label": "East of England",
+                        "value": "East of England",
+                        "q_code": "1644"
+                      },
+                      {
+                        "label": "East Midlands",
+                        "value": "East Midlands",
+                        "q_code": "1645"
+                      },
+                      {
+                        "label": "Greater London",
+                        "value": "Greater London",
+                        "q_code": "1646"
+                      },
+                      {
+                        "label": "North East of England",
+                        "value": "North East of England",
+                        "q_code": "1647"
+                      },
+                      {
+                        "label": "North West of England",
+                        "value": "North West of England",
+                        "q_code": "1648"
+                      },
+                      {
+                        "label": "South East of England",
+                        "value": "South East of England",
+                        "q_code": "1649"
+                      },
+                      {
+                        "label": "South West of England",
+                        "value": "South West of England",
+                        "q_code": "16410"
+                      },
+                      {
+                        "label": "West Midlands",
+                        "value": "West Midlands",
+                        "q_code": "16411"
+                      },
+                      {
+                        "label": "Yorkshire and The Humber",
+                        "value": "Yorkshire and The Humber",
+                        "q_code": "16412"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer55db3fa9-574f-43a0-a071-9567edc276db",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "16413"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Where sites will close"
+            },
+            {
+              "id": "effect-of-site-closures-on-workforce",
+              "type": "Question",
+              "question": {
+                "id": "questioneffect-of-site-closures-on-workforce",
+                "title": "How do you expect closing these sites to affect your workforce?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer9c4406c5-2a07-4d2c-a0cc-e1a27ec5406e",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Decreased hours",
+                        "value": "Decreased hours",
+                        "q_code": "1321"
+                      },
+                      {
+                        "label": "Increased hours",
+                        "value": "Increased hours",
+                        "q_code": "1322"
+                      },
+                      {
+                        "label": "Move to remote working",
+                        "value": "Move to remote working",
+                        "q_code": "1324"
+                      },
+                      {
+                        "label": "Permanent redundancies",
+                        "value": "Permanent redundancies",
+                        "q_code": "1323"
+                      },
+                      {
+                        "label": "Relocation",
+                        "value": "Relocation",
+                        "q_code": "1325"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "1326",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answerec827adb-4b8b-47f7-a88a-8deee97f3d25",
+                          "mandatory": false
+                        }
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "1327"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answerc2f2ef6c-11de-4555-bdac-0800538867d8",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Workforce will not be affected",
+                        "value": "Workforce will not be affected",
+                        "q_code": "1320"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Effect of site closures on workforce"
+            },
+            {
+              "id": "redundancy-expectations",
+              "type": "Question",
+              "question": {
+                "id": "questionredundancy-expectations",
+                "title": "Does your business expect to make any of your workforce redundant over the <em>next three months</em>?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerf98a3981-29aa-40bf-8480-3c99f51d6901",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "225",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Redundancy expectations",
+              "routing_rules": [
+                {
+                  "block": "changes-in-employee-wages",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerf98a3981-29aa-40bf-8480-3c99f51d6901",
+                        "source": "answers"
+                      },
+                      ["No", "Not sure"]
+                    ]
+                  }
+                },
+                {
+                  "block": "expected-timeframe-for-redundancies"
+                }
+              ]
+            },
+            {
+              "id": "expected-timeframe-for-redundancies",
+              "type": "Question",
+              "question": {
+                "id": "questionexpected-timeframe-for-redundancies",
+                "title": "When do you expect these redundancies to happen?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer1871612f-36d9-4bc1-bab0-fd3427dfc2e0",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Within the next 2 weeks",
+                        "value": "Within the next 2 weeks",
+                        "q_code": "19511"
+                      },
+                      {
+                        "label": "Between 2 weeks and 1 month",
+                        "value": "Between 2 weeks and 1 month",
+                        "q_code": "19512"
+                      },
+                      {
+                        "label": "Between 1 and 3 months",
+                        "value": "Between 1 and 3 months",
+                        "q_code": "1952"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer4b1f16d7-141b-4038-9b79-a23bad84a739",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "1950"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Expected timeframe for redundancies"
+            },
+            {
+              "id": "reason-for-redundancies",
+              "type": "Question",
+              "question": {
+                "id": "questionreason-for-redundancies",
+                "title": "<em>Why</em> is your business making these redundancies?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answerc1b47766-6911-4d6d-aee5-04730bf7f357",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Automation",
+                        "value": "Automation",
+                        "q_code": "1931",
+                        "description": "For example, adoption of new machinery, equipment or software that replaces particular job roles, either fully or partially"
+                      },
+                      {
+                        "label": "Business is closing or insolvent",
+                        "value": "Business is closing or insolvent",
+                        "q_code": "1932"
+                      },
+                      {
+                        "label": "Certain job roles are no longer required",
+                        "value": "Certain job roles are no longer required",
+                        "q_code": "1933"
+                      },
+                      {
+                        "label": "Change in management",
+                        "value": "Change in management",
+                        "q_code": "1934",
+                        "description": "For example, the business has a new owner or has undergone a merger"
+                      },
+                      {
+                        "label": "Relocation of the business",
+                        "value": "Relocation of the business",
+                        "q_code": "1936"
+                      },
+                      {
+                        "label": "Site closures",
+                        "value": "Site closures",
+                        "q_code": "1937",
+                        "description": "For example, specific sites are closing"
+                      },
+                      {
+                        "label": "To reduce staff costs",
+                        "value": "To reduce staff costs",
+                        "q_code": "1935"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "1938",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer2d109bbf-518a-4ad6-841c-ee089832045c",
+                          "mandatory": false
+                        }
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "1939"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer84343932-7e73-499c-9732-ab285cee4140",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Prefer not to say",
+                        "value": "Prefer not to say",
+                        "q_code": "1930"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Reason for redundancies"
+            },
+            {
+              "id": "changes-in-employee-wages",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-in-employee-wages",
+                "title": "On average, how did employees&#x2019; hourly wages in October 2023 compare with employees&#x2019; hourly wages in the previous calendar month?",
+                "description": [
+                  "<p>If you are a sole trader and do not have a workforce, please base your answers on your own working arrangement.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer44c2a8dd-c227-4617-a9a9-a32f0e0b9c1c",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "525",
+                    "options": [
+                      {
+                        "label": "Wages increased",
+                        "value": "Wages increased"
+                      },
+                      {
+                        "label": "Wages stayed the same",
+                        "value": "Wages stayed the same"
+                      },
+                      {
+                        "label": "Wages decreased",
+                        "value": "Wages decreased"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Changes in employee wages"
+            },
+            {
+              "id": "experience-of-worker-shortages",
+              "type": "Question",
+              "question": {
+                "id": "questionexperience-of-worker-shortages",
+                "title": "Is your business currently experiencing a shortage of workers?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer5c1ca8f4-5a35-475c-80da-0eab51c99972",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "316",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      },
+                      {
+                        "label": "Not applicable",
+                        "value": "Not applicable"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Experience of worker shortages",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer5c1ca8f4-5a35-475c-80da-0eab51c99972",
+                        "source": "answers"
+                      },
+                      ["No", "Not sure", "Not applicable"]
+                    ]
+                  }
+                },
+                {
+                  "block": "effect-of-worker-shortages"
+                }
+              ]
+            },
+            {
+              "id": "effect-of-worker-shortages",
+              "type": "Question",
+              "question": {
+                "id": "questioneffect-of-worker-shortages",
+                "title": "How has the shortage of workers affected your business?",
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer1619db31-915d-4c35-a038-0d2b80e04d0a",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Employees working increased hours",
+                        "value": "Employees working increased hours",
+                        "q_code": "3161"
+                      },
+                      {
+                        "label": "Business had to pause trading entirely",
+                        "value": "Business had to pause trading entirely",
+                        "q_code": "3162"
+                      },
+                      {
+                        "label": "Had to pause trading of some of the business",
+                        "value": "Had to pause trading of some of the business",
+                        "q_code": "3163"
+                      },
+                      {
+                        "label": "Business had to recruit temporary workers",
+                        "value": "Business had to recruit temporary workers",
+                        "q_code": "3164"
+                      },
+                      {
+                        "label": "Unable to meet demands",
+                        "value": "Unable to meet demands",
+                        "q_code": "3165"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "3166",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answere66f38f9-f4ae-46ee-b2e4-e80cf124c3a2",
+                          "mandatory": false
+                        }
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "3169"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer6a0f1a49-0102-4e9e-9f5f-988f98722dcd",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Business has not been affected",
+                        "value": "Business has not been affected",
+                        "q_code": "3160"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Effect of worker shortages"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerf4d8d1e0-1474-4eb7-8377-9218d0825f10",
+              "source": "answers"
+            },
+            [
+              "Currently fully trading",
+              "Currently partially trading",
+              "Paused trading but intends to restart in the next two weeks",
+              "Paused trading and does not intend to restart in the next two weeks"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "647bae92-4e5f-41ff-8189-fb4a9ff1585d",
+      "title": "Industrial action",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Industrial action section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group647bae92-4e5f-41ff-8189-fb4a9ff1585d",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "industrial-action",
+              "page_title": "Industrial action",
+              "content": {
+                "title": "Industrial action",
+                "contents": [
+                  {
+                    "description": "This section asks for information about how your business has been affected by recent industrial action."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "experience-of-industrial-action",
+              "type": "Question",
+              "question": {
+                "id": "questionexperience-of-industrial-action",
+                "title": {
+                  "text": "Was {ru_name} affected by industrial action in October 2023?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong> direct or indirect impact of industrial action to your business"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;industrial action&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to when workers go on strike or take other action, such as refusing to do overtime."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer10ee5c43-5c9c-47b9-a30c-f58ed59cf120",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "1540",
+                    "options": [
+                      {
+                        "label": "Yes, the business was affected",
+                        "value": "Yes, the business was affected"
+                      },
+                      {
+                        "label": "No, the business was not affected",
+                        "value": "No, the business was not affected"
+                      },
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure"
+                      },
+                      {
+                        "label": "Not applicable",
+                        "value": "Not applicable"
+                      },
+                      {
+                        "label": "Prefer not to say",
+                        "value": "Prefer not to say"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Experience of industrial action",
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer10ee5c43-5c9c-47b9-a30c-f58ed59cf120",
+                        "source": "answers"
+                      },
+                      [
+                        "No, the business was not affected",
+                        "Not sure",
+                        "Not applicable",
+                        "Prefer not to say"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "effect-of-industrial-action"
+                }
+              ]
+            },
+            {
+              "id": "effect-of-industrial-action",
+              "type": "Question",
+              "question": {
+                "id": "questioneffect-of-industrial-action",
+                "title": "How was your business affected by industrial action in October 2023?",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong> direct or indirect impact of industrial action to your business"
+                    }
+                  ]
+                },
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answerdf5cd57a-3b6f-4c9c-87dc-83ef54d639df",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Business was unable to obtain necessary goods",
+                        "value": "Business was unable to obtain necessary goods",
+                        "q_code": "1542"
+                      },
+                      {
+                        "label": "Business was unable to obtain necessary services",
+                        "value": "Business was unable to obtain necessary services",
+                        "q_code": "1543"
+                      },
+                      {
+                        "label": "Business was unable to operate fully",
+                        "value": "Business was unable to operate fully",
+                        "q_code": "1544"
+                      },
+                      {
+                        "label": "Part or all of the workforce were directly involved in industrial action",
+                        "value": "Part or all of the workforce were directly involved in industrial action",
+                        "q_code": "1545"
+                      },
+                      {
+                        "label": "Workforce had to change their working location",
+                        "value": "Workforce had to change their working location",
+                        "q_code": "1546"
+                      },
+                      {
+                        "label": "Workforce were unable to perform their roles",
+                        "value": "Workforce were unable to perform their roles",
+                        "q_code": "1547"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "1548",
+                        "detail_answer": {
+                          "label": "Please describe",
+                          "type": "TextField",
+                          "id": "answer1bb028a6-7a10-414a-8dd1-a6534a144721",
+                          "mandatory": false
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answer3cd8d145-21ff-4d87-aa08-0276c65ce853",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Not sure",
+                        "value": "Not sure",
+                        "q_code": "1549"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Effect of industrial action"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerf4d8d1e0-1474-4eb7-8377-9218d0825f10",
+              "source": "answers"
+            },
+            [
+              "Currently fully trading",
+              "Currently partially trading",
+              "Paused trading but intends to restart in the next two weeks",
+              "Paused trading and does not intend to restart in the next two weeks"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "ddf6e0c6-a61d-48cb-92db-f24e4ee40049",
+      "title": "Comments",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Comments section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupddf6e0c6-a61d-48cb-92db-f24e4ee40049",
+          "blocks": [
+            {
+              "id": "comments",
+              "type": "Question",
+              "question": {
+                "id": "questioncomments",
+                "title": "Please tell us anything else about your business&#39;s current situation relating to topics covered in this survey",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "You have nearly finished! Make sure you continue to the next page and select <strong>submit </strong>at the bottom."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerb56b898a-24e7-4964-a4a8-6e3abf8a3116",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Comments"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "business",
+  "navigation": {
+    "visible": true
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}
