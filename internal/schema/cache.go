@@ -34,7 +34,7 @@ func (cache *Cache) GetSchema(schemaName string) (interfaces.Schema, error) {
 
 	if !cache.contains(guid) {
 
-		//not in cache so invoke the addFunc to create a new instrument
+		//not in cache so invoke createSchema to create a new instrument
 		instrument, err := cache.createSchema(schemaName)
 		if err != nil {
 			return nil, err
@@ -65,7 +65,7 @@ func (cache *Cache) contains(guid string) bool {
 }
 
 // getInstrument returns the schema associated with the guid
-// and records the time
+// and records/overwrites the previous last used time.
 func (cache *Cache) getInstrument(guid string) interfaces.Schema {
 	cache.lastUsed[guid] = time.Now().UnixMilli()
 	return cache.instruments[guid]
