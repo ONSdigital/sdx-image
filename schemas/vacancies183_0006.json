@@ -1,0 +1,345 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "183",
+  "form_type": "0006",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "title": "Quarterly Vacancy Survey",
+  "questionnaire_flow": {
+    "type": "Linear",
+    "options": {
+      "summary": {
+        "collapsible": false
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "section81b78282-e9e3-4154-a32f-dc708fe30299",
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupe7674079-77fd-45f0-b66a-dc8af3c4890f",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {conditional_trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "conditional_trad_as",
+                        "transforms": [
+                          {
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            },
+                            "transform": "conditional_trad_as"
+                          }
+                        ]
+                      },
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "Data should relate to vacancies in England, Scotland and Wales.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": {
+                      "text": "You should provide information on the number of job vacancies for which you were actively seeking recruits from outside of {ru_name}.",
+                      "placeholders": [
+                        {
+                          "placeholder": "ru_name",
+                          "value": {
+                            "source": "metadata",
+                            "identifier": "ru_name"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Number of job vacancies",
+                    "contents": [
+                      {
+                        "description": "<strong>Include vacancies that:</strong>"
+                      },
+                      {
+                        "list": [
+                          "are to be filled by casual staff such as those employed for temporary cover, for example, parental leave or sickness",
+                          "will be filled by staff from an employment agency",
+                          "are for temporary positions",
+                          "have a long recruitment process, for example, graduate recruitment"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude vacancies that:</strong>"
+                      },
+                      {
+                        "list": [
+                          "are only open to internal applicants",
+                          "are for unpaid or voluntary positions",
+                          "will be filled by staff employed by an external company that is not an employment agency, for example, subcontractors, consultants or the self-employed",
+                          "have already had a job offer accepted",
+                          "are for positions outside England, Scotland and Wales"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "The information you provide contributes to the <a href=\"https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/jobsandvacanciesintheuk/latest\"target=\"_blank\"rel=\"noopener noreferrer\">monthly Vacancies and Jobs Statistical Bulletin (this link opens in a new tab)</a>, which is used by the Treasury and the Bank of England as a valuable indicator of labour demand."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "group81b78282-e9e3-4154-a32f-dc708fe30299",
+          "blocks": [
+            {
+              "id": "block963f23e5-8575-44e2-a561-6c3eec9bc1bb",
+              "type": "Question",
+              "question": {
+                "id": "question963f23e5-8575-44e2-a561-6c3eec9bc1bb",
+                "title": {
+                  "text": "On {ref_p_start_date}, what was the number of job vacancies for which you were actively seeking recruits from outside of {ru_name}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include vacancies that:</strong>"
+                    },
+                    {
+                      "list": [
+                        "are to be filled by casual staff such as those employed for temporary cover, for example, parental leave or sickness",
+                        "will be filled by staff from an employment agency",
+                        "are for temporary positions",
+                        "have a long recruitment process, for example, graduate recruitment"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude vacancies that:</strong>"
+                    },
+                    {
+                      "list": [
+                        "are only open to internal applicants",
+                        "are for unpaid or voluntary positions",
+                        "will be filled by staff employed by an external company that is not an employment agency, for example, subcontractors, consultants or the self-employed",
+                        "have already had a job offer accepted",
+                        "are for positions outside England, Scotland and Wales"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer3bfe49b7-995a-427a-b8f1-6cd6f9e1f5da",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Number of vacancies",
+                    "description": "If an exact figure is not available, provide an informed estimate. If you did not have any vacancies, enter &#39;0&#39;.",
+                    "q_code": "10",
+                    "minimum": {
+                      "value": 0,
+                      "exclusive": false
+                    },
+                    "decimal_places": 0
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block6bd5fcc5-269c-4d57-a2bb-52fc303382ab",
+              "type": "Question",
+              "question": {
+                "id": "question6bd5fcc5-269c-4d57-a2bb-52fc303382ab",
+                "title": "Please explain any changes in your figures from the previous return, if applicable",
+                "description": [
+                  "<p>If you provide comments we are less likely to contact you with data queries.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer5ea4456c-b757-4e69-97e1-e0b1e1f5e5f9",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      }
+    }
+  ],
+  "theme": "default",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "Your response will help inform decision-makers how best to support the UK population and economy at this challenging time."
+        },
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}

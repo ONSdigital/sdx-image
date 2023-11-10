@@ -1,0 +1,1287 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "survey_id": "023",
+  "form_type": "0112",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "title": "Monthly Business Survey - Retail Sales Index",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "sectione950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+        "section907ed71e-2910-473c-89f4-225b3791c424",
+        "sectionbef43b93-1ad2-43c3-a10e-facafafd22e3",
+        "section0ab8eb8e-5391-4f14-bd8f-ad1890293958",
+        "section2f2c19a2-baba-4a5a-b0b0-45b5d06ffc91"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "section2f2c19a2-baba-4a5a-b0b0-45b5d06ffc91",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "group2f2c19a2-baba-4a5a-b0b0-45b5d06ffc91",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction-block",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {conditional_trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "conditional_trad_as",
+                        "transforms": [
+                          {
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            },
+                            "transform": "conditional_trad_as"
+                          }
+                        ]
+                      },
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "On average it takes 10 minutes to complete this survey once you&#x2019;ve collected the information.",
+                        "Data should relate to all sites in England, Scotland and Wales.",
+                        "You can provide info estimates if actual figures aren&#x2019;t available.",
+                        "We will treat your data securely and confidentially."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "You can select the dates of the period you are reporting for, if the given dates are not appropriate."
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Total retail turnover",
+                    "contents": [
+                      {
+                        "description": "Include:"
+                      },
+                      {
+                        "list": [
+                          "VAT",
+                          "internet sales",
+                          "retail sales from outlets in Great Britain to customers abroad"
+                        ]
+                      },
+                      {
+                        "description": "Exclude:"
+                      },
+                      {
+                        "list": [
+                          "revenue from mobile phone network commission and top-up",
+                          "sales from catering facilities used by customers",
+                          "lottery sales and commission from lottery sales",
+                          "sales of car accessories and motor vehicles",
+                          "NHS receipts"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Internet sales",
+                    "contents": [
+                      {
+                        "description": "Include: VAT"
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Significant changes to the total retail turnover",
+                    "contents": [
+                      {
+                        "description": "For example:"
+                      },
+                      {
+                        "list": [
+                          "in-store / online promotions",
+                          "special events (e.g. sporting events)",
+                          "calendar events (e.g. Christmas, Easter, Bank Holiday)",
+                          "weather",
+                          "store closures/openings"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Employees",
+                    "contents": [
+                      {
+                        "description": "<strong>Number of employees</strong>"
+                      },
+                      {
+                        "description": "Include:"
+                      },
+                      {
+                        "list": [
+                          "all workers paid directly from this business&#39;s payroll(s)",
+                          "those temporarily absent but still being paid, for example on maternity leave"
+                        ]
+                      },
+                      {
+                        "description": "Exclude:"
+                      },
+                      {
+                        "list": [
+                          "agency workers paid directly from the agency payroll",
+                          "voluntary workers",
+                          "former employees only receiving a pension",
+                          "self-employed workers",
+                          "working owners who are not paid via PAYE"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Working hours",
+                    "contents": [
+                      {
+                        "description": "The number of:"
+                      },
+                      {
+                        "list": [
+                          "male employees working more than 30 hours per week",
+                          "male employees working 30 hours or less per week",
+                          "female employees working more than 30 hours per week",
+                          "female employees working 30 hours or less per week"
+                        ]
+                      },
+                      {
+                        "description": "Include:"
+                      },
+                      {
+                        "list": [
+                          "all workers paid directly from this business&#39;s payroll(s)",
+                          "those temporarily absent but still being paid, for example on maternity leave"
+                        ]
+                      },
+                      {
+                        "description": "Exclude:"
+                      },
+                      {
+                        "list": [
+                          "agency workers paid directly from the agency payroll",
+                          "voluntary workers",
+                          "former employees only receiving a pension",
+                          "self-employed workers",
+                          "working owners who are not paid via PAYE"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "The information you supply is used to produce monthly estimates of the total retail sales in Great Britain. It is also used to help estimate consumer spending on retail goods and the output of the retail sector, both of which feed into the compilation of the UK National Accounts."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sectione950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+      "title": "Reporting period",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupe950c0fb-44a1-4dbc-acda-6e92bb31d8d5",
+          "blocks": [
+            {
+              "id": "block1b26d118-7a0b-4ab4-8a5f-f0f770c44329",
+              "type": "Question",
+              "question": {
+                "id": "question1b26d118-7a0b-4ab4-8a5f-f0f770c44329",
+                "title": {
+                  "text": "Are you able to report for the period from {ref_p_start_date} to {ref_p_end_date}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "9999",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                        "source": "answers"
+                      },
+                      ["No"]
+                    ]
+                  }
+                },
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera45d38f3-cb54-4885-ac11-98144f09477f",
+                        "source": "answers"
+                      },
+                      ["Yes"]
+                    ]
+                  }
+                },
+                {
+                  "section": "End"
+                }
+              ]
+            },
+            {
+              "id": "block97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+              "type": "Question",
+              "question": {
+                "id": "question97bfcacd-1741-41df-9b38-a12a9e6d0e2b",
+                "title": "What are the dates of the period that you will be reporting for?",
+                "type": "DateRange",
+                "answers": [
+                  {
+                    "id": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5efrom",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "From",
+                    "q_code": "11"
+                  },
+                  {
+                    "id": "answerfdaf44e6-373d-4b4e-b5fa-13caf04d9b5eto",
+                    "type": "Date",
+                    "mandatory": true,
+                    "label": "To",
+                    "q_code": "12"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section907ed71e-2910-473c-89f4-225b3791c424",
+      "title": "Retail Turnover",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group907ed71e-2910-473c-89f4-225b3791c424",
+          "blocks": [
+            {
+              "id": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+              "type": "Question",
+              "question": {
+                "id": "question6658f716-7f5f-4488-ab20-2af1dc694294",
+                "title": {
+                  "text": "For the period {ref_p_start_date} to {ref_p_end_date}, what was the value of {ru_name}&#39;s <em>total retail turnover</em>?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong>"
+                    },
+                    {
+                      "list": ["VAT", "internet sales"]
+                    },
+                    {
+                      "description": "<strong>Exclude</strong>"
+                    },
+                    {
+                      "list": [
+                        "revenue from mobile phone network commission and top-up",
+                        "sales from catering facilities used by customers",
+                        "lottery sales and commission from lottery sales",
+                        "sales of car accessories and motor vehicles",
+                        "NHS receipts"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                    "mandatory": false,
+                    "type": "Currency",
+                    "label": "Total retail turnover",
+                    "q_code": "20",
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blockconfirmation-page-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+              "type": "ConfirmationQuestion",
+              "question": {
+                "id": "questionconfirmation-page-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+                "title": {
+                  "text": "For the period {ref_p_start_date} to {ref_p_end_date}, the value of the total retail turnover was <em>&#xA3;0</em>, is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerconfirmation-answer-for-6658f716-7f5f-4488-ab20-2af1dc694294",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes this is correct",
+                        "value": "Yes this is correct"
+                      },
+                      {
+                        "label": "No I need to change this",
+                        "value": "No I need to change this"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block6658f716-7f5f-4488-ab20-2af1dc694294",
+                  "when": {
+                    "==": [
+                      {
+                        "source": "answers",
+                        "identifier": "answerconfirmation-answer-for-6658f716-7f5f-4488-ab20-2af1dc694294"
+                      },
+                      "No I need to change this"
+                    ]
+                  }
+                },
+                {
+                  "section": "End",
+                  "when": {
+                    "==": [
+                      {
+                        "source": "answers",
+                        "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f"
+                      },
+                      0
+                    ]
+                  }
+                },
+                {
+                  "block": "blocke1ddd2ff-78ee-4476-8b9d-ea7a2b9d7c9b"
+                }
+              ],
+              "skip_conditions": {
+                "when": {
+                  ">": [
+                    {
+                      "source": "answers",
+                      "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f"
+                    },
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "id": "blocke1ddd2ff-78ee-4476-8b9d-ea7a2b9d7c9b",
+              "type": "Question",
+              "question": {
+                "id": "questione1ddd2ff-78ee-4476-8b9d-ea7a2b9d7c9b",
+                "title": {
+                  "text": "Of the <em>{total_retail_turnover}</em>, what was the value of <em>internet</em> sales?",
+                  "placeholders": [
+                    {
+                      "placeholder": "total_retail_turnover",
+                      "transforms": [
+                        {
+                          "transform": "format_currency",
+                          "arguments": {
+                            "number": {
+                              "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                              "source": "answers"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong>"
+                    },
+                    {
+                      "list": [
+                        "VAT",
+                        "sales from orders received over the internet, irrespective of the payment or delivery method"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer45bbf36e-a929-48ea-bdf8-d6db9f6a4e0f",
+                    "mandatory": true,
+                    "type": "Currency",
+                    "label": "Internet sales",
+                    "q_code": "21",
+                    "maximum": {
+                      "value": {
+                        "identifier": "answer6b01328d-73f6-4b9b-877b-b7d4a2b68b4f",
+                        "source": "answers"
+                      },
+                      "exclusive": false
+                    },
+                    "decimal_places": 2,
+                    "currency": "GBP"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sectionbef43b93-1ad2-43c3-a10e-facafafd22e3",
+      "title": "Changes in total retail turnover",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupbef43b93-1ad2-43c3-a10e-facafafd22e3",
+          "blocks": [
+            {
+              "id": "block2fde6906-8c4e-408a-bee5-efe957498dfa",
+              "type": "Question",
+              "question": {
+                "id": "question2fde6906-8c4e-408a-bee5-efe957498dfa",
+                "title": {
+                  "text": "Did any significant changes occur to the total retail turnover for {ru_name}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>For example</strong>"
+                    },
+                    {
+                      "list": [
+                        "in-store / online promotions",
+                        "special events (e.g. sporting events)",
+                        "calendar events (e.g. Christmas, Easter, Bank Holiday)",
+                        "weather",
+                        "store closures/openings"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What constitutes a significant change?",
+                    "contents": [
+                      {
+                        "description": "What constitutes a &#x2018;significant change&#x2019; is dependent on your own interpretation in relation to figures from the previous reporting period and the same reporting period last year."
+                      },
+                      {
+                        "description": "This information will help us to validate your data and should reduce the need to query any figures with you."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera8a2d2aa-277f-4a04-8af7-ef41b730222b",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "q_code": "146a",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block8dc73926-bf8d-4856-98ad-ff6aaa697c6f",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera8a2d2aa-277f-4a04-8af7-ef41b730222b",
+                        "source": "answers"
+                      },
+                      ["Yes"]
+                    ]
+                  }
+                },
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera8a2d2aa-277f-4a04-8af7-ef41b730222b",
+                        "source": "answers"
+                      },
+                      ["No"]
+                    ]
+                  }
+                },
+                {
+                  "block": "block8dc73926-bf8d-4856-98ad-ff6aaa697c6f"
+                }
+              ]
+            },
+            {
+              "id": "block8dc73926-bf8d-4856-98ad-ff6aaa697c6f",
+              "type": "Question",
+              "question": {
+                "id": "question8dc73926-bf8d-4856-98ad-ff6aaa697c6f",
+                "title": {
+                  "text": "Please indicate the reasons for any changes in the total retail turnover for {ru_name}",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerf1158d53-b944-49c8-bdc9-69d8441088f4",
+                    "mandatory": true,
+                    "type": "Checkbox",
+                    "label": "Select all that apply",
+                    "options": [
+                      {
+                        "label": "In-store / online promotions",
+                        "value": "In-store / online promotions",
+                        "q_code": "146b"
+                      },
+                      {
+                        "label": "Special events",
+                        "value": "Special events",
+                        "q_code": "146c",
+                        "description": "[For example, sporting events]"
+                      },
+                      {
+                        "label": "Calendar events",
+                        "value": "Calendar events",
+                        "q_code": "146d",
+                        "description": "[For example, Christmas, Easter, Bank Holiday]"
+                      },
+                      {
+                        "label": "Weather",
+                        "value": "Weather",
+                        "q_code": "146e"
+                      },
+                      {
+                        "label": "Store closures",
+                        "value": "Store closures",
+                        "q_code": "146f"
+                      },
+                      {
+                        "label": "Store openings",
+                        "value": "Store openings",
+                        "q_code": "146g"
+                      },
+                      {
+                        "label": "Other",
+                        "value": "Other",
+                        "q_code": "146h"
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block2b3e2d39-1c70-44b1-bc75-cdabbf5f3633",
+              "type": "Question",
+              "question": {
+                "id": "question2b3e2d39-1c70-44b1-bc75-cdabbf5f3633",
+                "title": {
+                  "text": "Please describe the changes in total retail turnover for {ru_name} in more detail",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>We rely on your commentary to &quot;tell the story&quot; behind changes in figures. By commenting here it will reduce the need for us to call you.</p>"
+                ],
+                "definitions": [
+                  {
+                    "title": "How you might answer this question",
+                    "contents": [
+                      {
+                        "description": "Examples of commentary:"
+                      },
+                      {
+                        "description": "<strong>&#x2018;In-store promotion&#x2019;</strong>"
+                      },
+                      {
+                        "description": "&#x201C;Offer on wine for the whole month (save 25% when you buy 6 bottles). The promotion was available in-store and online, contributing to an increase in both total retail turnover and internet sales.&#x201D;"
+                      },
+                      {
+                        "description": "<strong>&#x2018;Special events (for example, sporting events)&#x2019;</strong>"
+                      },
+                      {
+                        "description": "&#x201C;This was the month before the start of Euro 2016 (football), we recorded an increase in sales of audio-visual equipment (for example, televisions and audio equipment). This led to an increase in sales both in-store and online.&#x201D;"
+                      },
+                      {
+                        "description": "<strong>&#x2018;Weather&#x2019;</strong>"
+                      },
+                      {
+                        "description": "&#x201C;The bad weather has decreased our sales of summer clothing. This has led to a reduction in total retail turnover and internet sales this month.&#x201D;"
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerf7c6cb99-cd7b-4e5a-9dec-b9d2a83a4fae",
+                    "mandatory": true,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "section0ab8eb8e-5391-4f14-bd8f-ad1890293958",
+      "title": "Employees",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group0ab8eb8e-5391-4f14-bd8f-ad1890293958",
+          "blocks": [
+            {
+              "id": "block1afaffa9-0ed7-4e1a-8fd4-6ea4d11fb153",
+              "type": "Question",
+              "question": {
+                "id": "question1afaffa9-0ed7-4e1a-8fd4-6ea4d11fb153",
+                "title": {
+                  "text": "On {employment_date} what was the number of employees for {ru_name}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "employment_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "employment_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong>"
+                    },
+                    {
+                      "list": [
+                        "all workers paid directly from this business&#x2019;s payroll(s)",
+                        "those temporarily absent but still being paid, for example on maternity leave"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude</strong>"
+                    },
+                    {
+                      "list": [
+                        "agency workers paid directly from the agency payroll",
+                        "voluntary workers",
+                        "former employees only receiving pension",
+                        "self-employed workers",
+                        "working owners who are not paid via PAYE"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &quot;employee&quot;",
+                    "contents": [
+                      {
+                        "description": "An employee is anyone aged 16 years or over that your organisation directly pays from its payroll(s), in return for carrying out a full-time or part-time job or being on a training scheme."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6185691e-7c4e-4947-818c-90322e02351e",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Total number of employees",
+                    "q_code": "50",
+                    "decimal_places": 0
+                  }
+                ]
+              }
+            },
+            {
+              "id": "blockconfirmation-page-for-1afaffa9-0ed7-4e1a-8fd4-6ea4d11fb153",
+              "type": "ConfirmationQuestion",
+              "question": {
+                "id": "questionconfirmation-page-for-1afaffa9-0ed7-4e1a-8fd4-6ea4d11fb153",
+                "title": {
+                  "text": "On {employment_date}, the number of employees for {ru_name} was <em>0</em>, is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "employment_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "employment_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerconfirmation-answer-for-1afaffa9-0ed7-4e1a-8fd4-6ea4d11fb153",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes this is correct",
+                        "value": "Yes this is correct"
+                      },
+                      {
+                        "label": "No I need to change this",
+                        "value": "No I need to change this"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "block": "block1afaffa9-0ed7-4e1a-8fd4-6ea4d11fb153",
+                  "when": {
+                    "==": [
+                      {
+                        "source": "answers",
+                        "identifier": "answerconfirmation-answer-for-1afaffa9-0ed7-4e1a-8fd4-6ea4d11fb153"
+                      },
+                      "No I need to change this"
+                    ]
+                  }
+                },
+                {
+                  "block": "block6e663a14-da7e-42fc-94b8-7133f76d33c1",
+                  "when": {
+                    "==": [
+                      {
+                        "source": "answers",
+                        "identifier": "answer6185691e-7c4e-4947-818c-90322e02351e"
+                      },
+                      0
+                    ]
+                  }
+                },
+                {
+                  "block": "block23a5db6f-958c-447e-b68b-c38c90830e7d"
+                }
+              ],
+              "skip_conditions": {
+                "when": {
+                  ">": [
+                    {
+                      "source": "answers",
+                      "identifier": "answer6185691e-7c4e-4947-818c-90322e02351e"
+                    },
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "id": "block23a5db6f-958c-447e-b68b-c38c90830e7d",
+              "type": "Question",
+              "question": {
+                "id": "question23a5db6f-958c-447e-b68b-c38c90830e7d",
+                "title": {
+                  "text": "Of the {total_number_of_employees} total employees employed on 10 June 2016, please specify the number of:",
+                  "placeholders": [
+                    {
+                      "placeholder": "total_number_of_employees",
+                      "transforms": [
+                        {
+                          "transform": "format_number",
+                          "arguments": {
+                            "number": {
+                              "identifier": "answer6185691e-7c4e-4947-818c-90322e02351e",
+                              "source": "answers"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong>"
+                    },
+                    {
+                      "list": [
+                        "all workers paid directly from this business&#x2019;s payroll(s)",
+                        "those temporarily absent but still being paid, for example on maternity leave"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude</strong>"
+                    },
+                    {
+                      "list": [
+                        "agency workers paid directly from the agency payroll",
+                        "voluntary workers",
+                        "former employees only receiving pension",
+                        "self-employed workers",
+                        "working owners who are not paid via PAYE"
+                      ]
+                    }
+                  ]
+                },
+                "type": "Calculated",
+                "answers": [
+                  {
+                    "id": "answerbec6dc9b-c847-41c4-a89c-6cd30fdc406b",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Number of male employees working more than 30 hours per week",
+                    "q_code": "51",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer958f3c76-2143-49c4-bbb8-caa5182200d7",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Number of male employees working 30 hours or less per week",
+                    "q_code": "52",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerfb42b0dc-f3b8-4ca0-b779-7eda490e2b24",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Number of female employees working more than 30 hours per week",
+                    "q_code": "53",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer11317763-271c-48bb-b798-5f5701edf5fe",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Number of female employees working 30 hours or less per week",
+                    "q_code": "54",
+                    "decimal_places": 0
+                  }
+                ],
+                "calculations": [
+                  {
+                    "calculation_type": "sum",
+                    "answers_to_calculate": [
+                      "answerbec6dc9b-c847-41c4-a89c-6cd30fdc406b",
+                      "answer958f3c76-2143-49c4-bbb8-caa5182200d7",
+                      "answerfb42b0dc-f3b8-4ca0-b779-7eda490e2b24",
+                      "answer11317763-271c-48bb-b798-5f5701edf5fe"
+                    ],
+                    "conditions": ["equals"],
+                    "value": 0
+                  },
+                  {
+                    "calculation_type": "sum",
+                    "answers_to_calculate": [
+                      "answerbec6dc9b-c847-41c4-a89c-6cd30fdc406b",
+                      "answer958f3c76-2143-49c4-bbb8-caa5182200d7",
+                      "answerfb42b0dc-f3b8-4ca0-b779-7eda490e2b24",
+                      "answer11317763-271c-48bb-b798-5f5701edf5fe"
+                    ],
+                    "conditions": ["equals"],
+                    "value": {
+                      "identifier": "answer6185691e-7c4e-4947-818c-90322e02351e",
+                      "source": "answers"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "id": "block6e663a14-da7e-42fc-94b8-7133f76d33c1",
+              "type": "Question",
+              "question": {
+                "id": "question6e663a14-da7e-42fc-94b8-7133f76d33c1",
+                "title": "Explain any significant changes in the number of employees",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Comment on significant changes in the number of employees from:"
+                    },
+                    {
+                      "list": [
+                        "the previous reporting period",
+                        "the same reporting period last year"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer5974d4b8-9596-4bc1-a236-c179ec3f07cf",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "147",
+                    "max_length": 2000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "default",
+  "navigation": {
+    "visible": true
+  },
+  "metadata": [
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    },
+    {
+      "name": "employment_date",
+      "type": "date"
+    }
+  ],
+  "post_submission": {
+    "confirmation_email": true,
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "Your response will help inform decision-makers how best to support the UK population and economy at this challenging time."
+        },
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}

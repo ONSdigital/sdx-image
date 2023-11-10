@@ -36,10 +36,23 @@
                     "placeholders": [
                       {
                         "placeholder": "trad_as",
-                        "value": {
-                          "source": "metadata",
-                          "identifier": "trad_as"
-                        }
+                        "transforms": [
+                          {
+                            "transform": "first_non_empty_item",
+                            "arguments": {
+                              "items": [
+                                {
+                                  "source": "metadata",
+                                  "identifier": "trad_as"
+                                },
+                                {
+                                  "source": "metadata",
+                                  "identifier": "ru_name"
+                                }
+                              ]
+                            }
+                          }
+                        ]
                       },
                       {
                         "placeholder": "ru_name",
@@ -112,18 +125,31 @@
                   "contents": [
                     {
                       "list": [
-                        "This survey is conducted by the Office for National Statistics on behalf of the Department for Business, Energy and Industrial Strategy (BEIS).",
-                        "BEIS uses the information for monitoring trends in the construction industries.",
+                        "This survey is conducted by the Office for National Statistics on behalf of the Department for Business and Trade (DBT).",
+                        "DBT uses the information for monitoring trends in the construction industries.",
                         "Your business was selected to give us a comprehensive view of the UK economy.",
                         {
                           "text": "Data should relate to {trad_as}.",
                           "placeholders": [
                             {
                               "placeholder": "trad_as",
-                              "value": {
-                                "source": "metadata",
-                                "identifier": "trad_as"
-                              }
+                              "transforms": [
+                                {
+                                  "transform": "first_non_empty_item",
+                                  "arguments": {
+                                    "items": [
+                                      {
+                                        "source": "metadata",
+                                        "identifier": "trad_as"
+                                      },
+                                      {
+                                        "source": "metadata",
+                                        "identifier": "ru_name"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
                             }
                           ]
                         },
@@ -223,7 +249,7 @@
                       "title": "How we use your data"
                     },
                     {
-                      "description": "For the benefit of industry, and the public generally, building materials information is published by BEIS in their <a href=\"https://www.gov.uk/government/organisations/department-for-business-energy-and-industrial-strategy/about/statistics\"target=\"_blank\"rel=\"noopener noreferrer\">Monthly Statistics of Building Materials &amp; Components (this link opens in a new tab)</a>."
+                      "description": "For the benefit of industry, and the public generally, building materials information is published by DBT in their <a href=\"https://www.gov.uk/government/collections/building-materials-and-components-monthly-statistics-2012\"target=\"_blank\"rel=\"noopener noreferrer\">Monthly Statistics of Building Materials &amp; Components (this link opens in a new tab)</a>."
                     }
                   ]
                 }
@@ -238,6 +264,7 @@
       "title": "Brick types",
       "summary": {
         "show_on_completion": false,
+        "page_title": "Brick types section",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -330,7 +357,8 @@
                     ]
                   }
                 ]
-              }
+              },
+              "page_title": "Brick types produced and delivered"
             }
           ]
         }
@@ -341,6 +369,7 @@
       "title": "Details of production and delivery",
       "summary": {
         "show_on_completion": false,
+        "page_title": "Details of production section",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -412,6 +441,7 @@
                   }
                 ]
               },
+              "page_title": "Production and delivery for common bricks",
               "skip_conditions": {
                 "when": {
                   "not": [
@@ -492,6 +522,7 @@
                   }
                 ]
               },
+              "page_title": "Production and delivery for facing bricks",
               "skip_conditions": {
                 "when": {
                   "not": [
@@ -572,6 +603,7 @@
                   }
                 ]
               },
+              "page_title": "Production and delivery for engineering bricks",
               "skip_conditions": {
                 "when": {
                   "not": [
@@ -591,22 +623,22 @@
             {
               "id": "block9d295fff-a053-489f-99c1-83cfd08dc661",
               "type": "CalculatedSummary",
+              "page_title": "Total of bricks in opening stock",
               "title": "We have calculated your business&#39;s total number of bricks in your <em>opening stock</em> to be %(total)s. Is this correct?",
-              "page_title": "We have calculated your business&#39;s total number of bricks in your <em>opening stock</em> to be %(total)s. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
                     {
-                      "source": "answers",
-                      "identifier": "answer980"
+                      "identifier": "answer980",
+                      "source": "answers"
                     },
                     {
-                      "source": "answers",
-                      "identifier": "answer7d42fafe-21f4-4fa4-9f4e-bcd0e6156adf"
+                      "identifier": "answer7d42fafe-21f4-4fa4-9f4e-bcd0e6156adf",
+                      "source": "answers"
                     },
                     {
-                      "source": "answers",
-                      "identifier": "answer9e25ab2b-3bc7-4325-bd6d-8738336a6741"
+                      "identifier": "answer9e25ab2b-3bc7-4325-bd6d-8738336a6741",
+                      "source": "answers"
                     }
                   ]
                 },
@@ -616,22 +648,22 @@
             {
               "id": "blockda1a5300-b03c-42c0-83f4-0a8e6f817a88",
               "type": "CalculatedSummary",
+              "page_title": "Total of bricks drawn from kiln or autoclave",
               "title": "We have calculated your business&#39;s total number of bricks <em>drawn from kiln or autoclave</em> to be %(total)s. Is this correct?",
-              "page_title": "We have calculated your business&#39;s total number of bricks <em>drawn from kiln or autoclave</em> to be %(total)s. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
                     {
-                      "source": "answers",
-                      "identifier": "answer981"
+                      "identifier": "answer981",
+                      "source": "answers"
                     },
                     {
-                      "source": "answers",
-                      "identifier": "answerc2094bc9-aef8-446d-8744-29a30b77d464"
+                      "identifier": "answerc2094bc9-aef8-446d-8744-29a30b77d464",
+                      "source": "answers"
                     },
                     {
-                      "source": "answers",
-                      "identifier": "answer0b90ce18-9c41-4629-9540-b354ddd2bbf2"
+                      "identifier": "answer0b90ce18-9c41-4629-9540-b354ddd2bbf2",
+                      "source": "answers"
                     }
                   ]
                 },
@@ -641,22 +673,22 @@
             {
               "id": "block44d34990-11fe-46c4-a577-36368c288669",
               "type": "CalculatedSummary",
+              "page_title": "Total of bricks delivered to customers",
               "title": "We have calculated your business&#39;s total number of bricks <em>delivered to customers</em> to be %(total)s. Is this correct?",
-              "page_title": "We have calculated your business&#39;s total number of bricks <em>delivered to customers</em> to be %(total)s. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
                     {
-                      "source": "answers",
-                      "identifier": "answer982"
+                      "identifier": "answer982",
+                      "source": "answers"
                     },
                     {
-                      "source": "answers",
-                      "identifier": "answerab9f9884-6ad5-4a29-adfc-3fa212fc871b"
+                      "identifier": "answerab9f9884-6ad5-4a29-adfc-3fa212fc871b",
+                      "source": "answers"
                     },
                     {
-                      "source": "answers",
-                      "identifier": "answerd4c187c6-1db5-49d7-a7b1-d2329620a6bf"
+                      "identifier": "answerd4c187c6-1db5-49d7-a7b1-d2329620a6bf",
+                      "source": "answers"
                     }
                   ]
                 },
@@ -666,22 +698,22 @@
             {
               "id": "blocke0bd1b13-9542-4ab9-81bd-06b74f936c76",
               "type": "CalculatedSummary",
+              "page_title": "Total of bricks in closing stock",
               "title": "We have calculated your business&#39;s total number of bricks in your <em>closing stock</em> to be %(total)s. Is this correct?",
-              "page_title": "We have calculated your business&#39;s total number of bricks in your <em>closing stock</em> to be %(total)s. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
                     {
-                      "source": "answers",
-                      "identifier": "answer983"
+                      "identifier": "answer983",
+                      "source": "answers"
                     },
                     {
-                      "source": "answers",
-                      "identifier": "answerbe7ef6c3-72d1-4d93-b6ac-6afdd0ecc0e1"
+                      "identifier": "answerbe7ef6c3-72d1-4d93-b6ac-6afdd0ecc0e1",
+                      "source": "answers"
                     },
                     {
-                      "source": "answers",
-                      "identifier": "answerb132275d-886a-45a0-843e-774c33f8e116"
+                      "identifier": "answerb132275d-886a-45a0-843e-774c33f8e116",
+                      "source": "answers"
                     }
                   ]
                 },
@@ -717,7 +749,8 @@
                     ]
                   }
                 ]
-              }
+              },
+              "page_title": "Type of brick"
             }
           ]
         }
@@ -739,6 +772,7 @@
       "title": "Comments",
       "summary": {
         "show_on_completion": false,
+        "page_title": "Comments section",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -764,6 +798,7 @@
                   }
                 ]
               },
+              "page_title": "New works since your last return",
               "skip_conditions": {
                 "when": {
                   "==": [
@@ -822,14 +857,15 @@
                     "max_length": 2000
                   }
                 ]
-              }
+              },
+              "page_title": "Further details"
             }
           ]
         }
       ]
     }
   ],
-  "theme": "beis",
+  "theme": "dbt",
   "navigation": {
     "visible": true
   },

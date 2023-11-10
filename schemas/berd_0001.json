@@ -2700,16 +2700,6 @@
                       "answer0756fdb3-5297-4540-a16b-bf5e4731b659"
                     ],
                     "conditions": ["equals"],
-                    "value": 0
-                  },
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer8676abbf-7580-4acb-befa-c568cacff00a",
-                      "answer7910b106-2803-4eee-80a4-9246bdf6ff8c",
-                      "answer0756fdb3-5297-4540-a16b-bf5e4731b659"
-                    ],
-                    "conditions": ["equals"],
                     "value": {
                       "identifier": "block2c2e4965-18f7-45b1-8265-5e5f498e6c00",
                       "source": "calculated_summary"
@@ -4097,16 +4087,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer4c8a1613-ed48-4bdb-ac20-a98fa5dfb5a3",
-                      "answer289eb425-5b5b-466d-b3af-6fced586eac4",
-                      "answerf6bb1d01-1d43-4fbc-affc-029a2d53c727"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
@@ -7869,15 +7849,6 @@
                       "answere7f2e8c7-348b-42f0-803e-8524a887e489"
                     ],
                     "conditions": ["equals"],
-                    "value": 0
-                  },
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer6c5177b8-65bd-4f53-9d5f-7ebb5d4ffaff",
-                      "answere7f2e8c7-348b-42f0-803e-8524a887e489"
-                    ],
-                    "conditions": ["equals"],
                     "value": 100
                   }
                 ]
@@ -8065,16 +8036,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer0dd2a42c-9e36-48f2-b48f-2b414713bd99",
-                      "answer3ffb7491-6364-4b55-bd2d-0ea3c0b16d24",
-                      "answerdc034a38-143e-463f-8912-fad01d20d005"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
@@ -8295,17 +8256,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer10b72c84-4f29-4dc2-9681-9544f0a09ed0",
-                      "answer32a61000-daf2-4d67-bc56-08741da179a3",
-                      "answer0dfea99d-dc9b-4aeb-b489-2aa83edc0078",
-                      "answer1424831c-e32f-41ba-868a-2f503229e8f9"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
@@ -8552,18 +8502,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer37c797f4-e7f3-4f5d-ba00-b150a2ca3ddb",
-                      "answerfb8eb914-3502-4e6e-a9fa-012dd012c118",
-                      "answercac90f57-13d4-4df5-a6a4-267ad3aa7d13",
-                      "answer885a42d8-4638-4a26-a73e-7cc7b6f0bac2",
-                      "answere8f3a1c7-d27d-4914-9654-01cfcb0c503d"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
@@ -8836,19 +8774,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answera3eeb5f8-0d32-4fd9-8410-ac8675a15119",
-                      "answeraf7d7922-4555-48dc-b571-9ab3926f5433",
-                      "answer951fb085-3a54-4bfc-a7ff-2b4faf42c608",
-                      "answer0183ad02-6585-4dd5-b4b5-358f22422817",
-                      "answer73d0c4b3-7655-40cf-8bec-dd65721553cd",
-                      "answer661b648c-48ee-4443-983f-d593cf884001"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
@@ -9147,20 +9072,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answerf3ff3838-6ee5-4e7a-b0b4-534465eb9973",
-                      "answer9a564e16-09e9-48b5-85c7-2011b3c62cdc",
-                      "answerb2182ad1-bae9-44f8-80c5-9eaa75f496f7",
-                      "answer5ac9f356-7458-4713-adb4-ecae797a0cfa",
-                      "answere592cb69-b4b6-429f-9c4e-040316320489",
-                      "answerb3508db5-7fd9-4884-9610-11ea0ebb2c7b",
-                      "answer4bfd753e-fe90-4ca7-a02c-6f7facee971c"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
@@ -9485,21 +9396,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer673466d8-d9c3-4301-9218-7bc1b88b7ae7",
-                      "answer08a1da6b-852f-46ff-ad8c-3b7c85a5f275",
-                      "answer2ab69a6a-cb7f-41df-9213-c43d75c42cf0",
-                      "answerb430b3e2-a3c0-44ae-863a-e7e740c21843",
-                      "answere70f66cd-1e71-4e8a-87cd-8aa4efbd84ee",
-                      "answerf762fa7d-a9ea-4222-b6e6-ef4d1e56a412",
-                      "answer3d35321e-32d0-4716-9a6a-5047d983ab51",
-                      "answer763f33b8-819e-45fa-8a1c-756cc03ca834"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
@@ -9850,22 +9746,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer344b0abd-e8bd-4649-be97-4394979707e6",
-                      "answerabe544d3-2b2c-4ba4-bc65-fa7bb1417105",
-                      "answer9f1178b0-e5c6-4466-8ee1-f941e02f3e52",
-                      "answere6d2157c-5478-48d7-9782-22a984ff17c0",
-                      "answerc55fcfa7-5c5f-4105-b410-a89e12e1f4f5",
-                      "answer9ba98cae-4a44-4c93-8644-ada6051d3219",
-                      "answer6b1f4605-653c-4da2-a517-f3ad10dbd346",
-                      "answerae44d1c7-160d-4a31-bedc-7b5198fd6de9",
-                      "answer9a402357-48ff-4a47-976b-4ca76a94168e"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
@@ -10257,23 +10137,6 @@
                       "answer7c538ab8-b17c-42ad-8670-26a15b72ecaf"
                     ],
                     "conditions": ["equals"],
-                    "value": 0
-                  },
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answer15ac645e-f77c-4778-a32f-993802dd7254",
-                      "answerbe4cf406-214d-4b07-9662-5ca7295b844c",
-                      "answer5753cfc4-81cd-4ad3-9b69-a3355bf496b6",
-                      "answer11cee23b-4da2-4701-ac2f-7cf968f4cf8d",
-                      "answer95e4e89e-425e-400d-ac7a-d015410dd480",
-                      "answerda7c3394-0323-4918-a83e-fc2201e1e442",
-                      "answer24816b11-5b7b-49ed-835d-b925c1b7d88b",
-                      "answer9e2441d5-d75b-46de-9010-21bced4793be",
-                      "answer54d38881-00f7-4506-9e71-acef256d99cd",
-                      "answer7c538ab8-b17c-42ad-8670-26a15b72ecaf"
-                    ],
-                    "conditions": ["equals"],
                     "value": 100
                   }
                 ]
@@ -10494,23 +10357,6 @@
                   }
                 ],
                 "calculations": [
-                  {
-                    "calculation_type": "sum",
-                    "answers_to_calculate": [
-                      "answerf76ab2bf-5fe7-4b0b-8728-b3954a79b396",
-                      "answerfacb2088-df42-4065-bf02-c61554881cdf",
-                      "answer11c4c888-4cd0-4d90-8b29-65154cfef3a2",
-                      "answer32cc41ed-bdc4-43dc-9ffc-b70b9e5e3c69",
-                      "answer19e36e1c-a818-44ab-9cc5-728262b13894",
-                      "answerb0474930-2c3b-42f2-8360-5dc73bf98e95",
-                      "answer251a4e0a-acb9-480e-94b5-2c72a800068d",
-                      "answer8708fd0b-1df2-4865-b8b7-e8c237742a8a",
-                      "answer0c71f58e-5f5d-44f2-aec4-1865857281a7",
-                      "answerff592661-4b65-4e62-80d0-a2c88c5c6a98"
-                    ],
-                    "conditions": ["equals"],
-                    "value": 0
-                  },
                   {
                     "calculation_type": "sum",
                     "answers_to_calculate": [
