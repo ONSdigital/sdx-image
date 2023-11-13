@@ -142,3 +142,63 @@ func TestMbs0201(t *testing.T) {
 func TestMbs0255(t *testing.T) {
 	runFromFile("mbs_0255", t)
 }
+
+func TestAcas0002(t *testing.T) {
+	runFromFile("acas_0002", t)
+}
+
+func TestBlocks0001(t *testing.T) {
+	runFromFile("blocks_0001", t)
+}
+
+func TestBricks0001(t *testing.T) {
+	runFromFile("bricks_0001", t)
+}
+
+func TestConstruction0001(t *testing.T) {
+	runFromFile("construction_0001", t)
+}
+
+func TestDes0001(t *testing.T) {
+	runFromFile("des_0001", t)
+}
+
+func TestMwss0001(t *testing.T) {
+	runFromFile("mwss_0005", t)
+}
+
+func TestQbs0001(t *testing.T) {
+	runFromFile("qbs_0001", t)
+}
+
+func TestQpses160(t *testing.T) {
+	runFromFile("qpses160_0002", t)
+}
+
+func TestQpses165(t *testing.T) {
+	runFromFile("qpses165_0002", t)
+}
+
+func TestQpses169(t *testing.T) {
+	runFromFile("qpses169_0003", t)
+}
+
+func TestUkis_0001(t *testing.T) {
+	runFromFile("ukis_0001", t)
+}
+
+func TestVacancies(t *testing.T) {
+	runFromFile("vacancies_0006", t)
+}
+
+func TestEpe(t *testing.T) {
+	runFromFile("epe_0003", t)
+}
+
+func TestLcre(t *testing.T) {
+	runFromFile("lcre_0009", t)
+}
+
+func TestRsi(t *testing.T) {
+	runFromFile("rsi_0102", t)
+}

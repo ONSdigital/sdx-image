@@ -11,6 +11,7 @@ func Create(survey interfaces.Survey) image.Image {
 		SurveyName:  survey.GetTitle(),
 		FormType:    survey.GetFormType(),
 		RuRef:       survey.GetRespondent(),
+		RuName:      survey.GetRuName(),
 		SubmittedAt: survey.GetSubmittedAt()}
 
 	page := createPage(header)
