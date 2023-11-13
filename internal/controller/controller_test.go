@@ -190,3 +190,15 @@ func TestUkis_0001(t *testing.T) {
 func TestVacancies(t *testing.T) {
 	runFromFile("vacancies_0006", t)
 }
+
+func TestEpe(t *testing.T) {
+	runFromFile("epe_0003", t)
+}
+
+func TestLcre(t *testing.T) {
+	runFromFile("lcre_0009", t)
+}
+
+func TestRsi(t *testing.T) {
+	runFromFile("rsi_0102", t)
+}
