@@ -22,10 +22,18 @@ func createAnswer(
 	questionContainer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
 	questionContainer.SetLayout(drawing.LayoutRow, drawing.JustifyStart, drawing.AlignStart)
 
-	qCodeBox := canvas.AddContainer(drawing.ProportionOfParent(0.07), drawing.FitContent(), questionContainer)
+	//set the width proportion of qcode to question based on qcode size
+	qCodeProportion := 0.07
+	questionProportion := 0.93
+	if len(qCode) > 3 {
+		qCodeProportion = 0.1
+		questionProportion = 0.9
+	}
+
+	qCodeBox := canvas.AddContainer(drawing.ProportionOfParent(qCodeProportion), drawing.FitContent(), questionContainer)
 	canvas.AddBoldText(qCode+".", qCodeSize, qCodeBox)
 
-	questionBox := canvas.AddContainer(drawing.ProportionOfParent(0.93), drawing.FitContent(), questionContainer)
+	questionBox := canvas.AddContainer(drawing.ProportionOfParent(questionProportion), drawing.FitContent(), questionContainer)
 	canvas.AddText(question, questionSize, questionBox)
 
 	answerContainer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
