@@ -9,7 +9,7 @@ const padding = 6.0
 var cyan = drawing.CreateColor(161, 211, 225)
 
 type Header struct {
-	SurveyName, FormType, RuRef, SubmittedAt string
+	SurveyName, FormType, RuRef, RuName, SubmittedAt string
 }
 
 func createHeading(header Header, canvas *drawing.Canvas, parent *drawing.Container) {
@@ -31,7 +31,7 @@ func createHeading(header Header, canvas *drawing.Canvas, parent *drawing.Contai
 	detailsLeft := canvas.AddContainer(drawing.ProportionOfParent(0.5), drawing.FitContent(), detailsBox)
 	detailsRight := canvas.AddContainer(drawing.ProportionOfParent(0.5), drawing.FitContent(), detailsBox)
 
-	for _, key := range []string{"Form Type", "Respondent", "Submitted At"} {
+	for _, key := range []string{"Form Type", "Respondent", "Company Name", "Submitted At"} {
 		c := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), detailsLeft)
 		c.SetBorder(drawing.BLACK, 1)
 		c.SetPaddingAll(padding)
@@ -39,7 +39,7 @@ func createHeading(header Header, canvas *drawing.Canvas, parent *drawing.Contai
 		t.SetTextAlign(drawing.TextLeft)
 	}
 
-	for _, value := range []string{header.FormType, header.RuRef, header.SubmittedAt} {
+	for _, value := range []string{header.FormType, header.RuRef, header.RuName, header.SubmittedAt} {
 		c := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), detailsRight)
 		c.SetBorder(drawing.BLACK, 1)
 		c.SetPaddingAll(padding)

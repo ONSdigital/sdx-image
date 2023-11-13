@@ -21,6 +21,7 @@ type Survey interface {
 	GetSurveyId() string
 	GetFormType() string
 	GetRespondent() string
+	GetRuName() string
 	GetSubmittedAt() string
 	GetSections() []Section
 }

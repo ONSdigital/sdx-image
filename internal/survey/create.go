@@ -15,6 +15,7 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 		SurveyId:    schema.GetSurveyId(),
 		FormType:    schema.GetFormType(),
 		Respondent:  submission.GetRuRef(),
+		RuName:      submission.GetRuName(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
 		Sections:    []interfaces.Section{},
 	}

@@ -12,6 +12,7 @@ type Survey struct {
 	SurveyId    string
 	FormType    string
 	Respondent  string
+	RuName      string
 	SubmittedAt string
 	Sections    []interfaces.Section
 }
@@ -38,6 +39,10 @@ func (survey *Survey) GetFormType() string {
 
 func (survey *Survey) GetRespondent() string {
 	return survey.Respondent
+}
+
+func (survey *Survey) GetRuName() string {
+	return survey.RuName
 }
 
 func (survey *Survey) GetSubmittedAt() string {

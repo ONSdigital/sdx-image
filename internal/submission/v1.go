@@ -38,7 +38,7 @@ func (submission *V1Submission) GetRuRef() string {
 }
 
 func (submission *V1Submission) GetRuName() string {
-	return "the business"
+	return "NA"
 }
 func (submission *V1Submission) GetSubmittedAt() string {
 	return submission.SubmittedAt

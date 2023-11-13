@@ -36,11 +36,15 @@ func (pLookup ParameterLookup) get(str string) string {
 func GetLookup(startDate, endDate, ruName, employmentDate string) ParameterLookup {
 	start := convertDate(startDate)
 	end := convertDate(endDate)
+	companyName := ruName
+	if companyName == "" || companyName == "NA" {
+		companyName = "the business"
+	}
 
 	return ParameterLookup{
 		"ref_p_start_date": start,
 		"ref_p_end_date":   end,
-		"ru_name":          ruName,
+		"ru_name":          companyName,
 		"employment_date":  employmentDate,
 		"total_turnover":   "the total turnover",
 		"from":             "start date",
