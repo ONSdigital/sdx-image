@@ -39,7 +39,11 @@ func createHeading(header Header, canvas *drawing.Canvas, parent *drawing.Contai
 		t.SetTextAlign(drawing.TextLeft)
 	}
 
-	for _, value := range []string{header.FormType, header.RuRef, header.RuName, header.SubmittedAt} {
+	companyName := header.RuName
+	if len(companyName) > 30 {
+		companyName = companyName[:30]
+	}
+	for _, value := range []string{header.FormType, header.RuRef, companyName, header.SubmittedAt} {
 		c := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), detailsRight)
 		c.SetBorder(drawing.BLACK, 1)
 		c.SetPaddingAll(padding)
