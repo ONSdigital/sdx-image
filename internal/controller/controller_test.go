@@ -202,3 +202,11 @@ func TestLcre(t *testing.T) {
 func TestRsi(t *testing.T) {
 	runFromFile("rsi_0102", t)
 }
+
+func TestFuels(t *testing.T) {
+	runFromFile("fuels_0002", t)
+}
+
+func TestRailways(t *testing.T) {
+	runFromFile("railways_0001", t)
+}
