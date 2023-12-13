@@ -24,4 +24,5 @@ type Survey interface {
 	GetRuName() string
 	GetSubmittedAt() string
 	GetSections() []Section
+	GetLocalUnits() []LocalUnit
 }

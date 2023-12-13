@@ -6,6 +6,11 @@ type Response interface {
 	GetInstance() int
 }
 
+type LocalUnit interface {
+	GetName() string
+	GetAddress() string
+}
+
 type Submission interface {
 	GetTxId() string
 	GetSchemaName() string
@@ -17,4 +22,5 @@ type Submission interface {
 	GetDataVersion() string
 	GetEmploymentDate() string
 	GetResponses(code string) []Response
+	GetLocalUnits() []LocalUnit
 }

@@ -18,6 +18,7 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 		RuName:      submission.GetRuName(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
 		Sections:    []interfaces.Section{},
+		LocalUnits:  submission.GetLocalUnits(),
 	}
 
 	var sections []interfaces.Section

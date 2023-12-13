@@ -22,6 +22,7 @@ type V2Submission struct {
 	Version        string          `json:"version"`
 	DataVersion    string          `json:"data_version"`
 	Data           Data            `json:"data"`
+	Supplementary  Supplementary   `json:"supplementary_data"`
 }
 
 func (submission *V2Submission) GetTxId() string {
@@ -64,6 +65,14 @@ func (submission *V2Submission) GetEmploymentDate() string {
 
 func (submission *V2Submission) GetResponses(code string) []interfaces.Response {
 	return submission.Data[code]
+}
+
+func (submission *V2Submission) GetLocalUnits() []interfaces.LocalUnit {
+	luList := make([]interfaces.LocalUnit, len(submission.Supplementary.Items.LocalUnits))
+	for i, lu := range submission.Supplementary.Items.LocalUnits {
+		luList[i] = lu
+	}
+	return luList
 }
 
 func (submission *V2Submission) String() string {

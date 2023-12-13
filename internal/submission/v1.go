@@ -40,6 +40,7 @@ func (submission *V1Submission) GetRuRef() string {
 func (submission *V1Submission) GetRuName() string {
 	return "NA"
 }
+
 func (submission *V1Submission) GetSubmittedAt() string {
 	return submission.SubmittedAt
 }
@@ -62,6 +63,11 @@ func (submission *V1Submission) GetEmploymentDate() string {
 
 func (submission *V1Submission) GetResponses(code string) []interfaces.Response {
 	return submission.Data[code]
+}
+
+func (submission *V1Submission) GetLocalUnits() []interfaces.LocalUnit {
+	//v1 submissions do not have supplementary data
+	return []interfaces.LocalUnit{}
 }
 
 func (submission *V1Submission) String() string {

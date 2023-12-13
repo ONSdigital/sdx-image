@@ -1,0 +1,195 @@
+{
+  "case_id": "52b4b6e6-700c-4051-a622-c595817d345f",
+  "tx_id": "e740c2f6-936e-4784-accb-c3e1f13331f8",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.3",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "da42d2b9-8fad-4b6b-9805-39a6736cbcba",
+  "flushed": false,
+  "submitted_at": "2023-12-07T15:11:58+00:00",
+  "launch_language_code": "en",
+  "survey_metadata": {
+    "survey_id": "068",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "period_id": "201605",
+    "ref_p_start_date": "2016-05-01",
+    "ref_p_end_date": "2016-05-31",
+    "ru_ref": "12346789012A",
+    "user_id": "UNKNOWN",
+    "sds_dataset_id": "c067f6de-6d64-42b1-8b02-431a3486c178"
+  },
+  "schema_name": "qrt_0001",
+  "started_at": "2023-12-07T15:11:40.250847+00:00",
+  "submission_language_code": "en",
+  "data": [
+    {
+      "questioncode": "9991",
+      "response": "9991",
+      "instance": 0
+    },
+    {
+      "questioncode": "9992",
+      "response": "9992",
+      "instance": 0
+    },
+    {
+      "questioncode": "9993",
+      "response": "9993",
+      "instance": 0
+    },
+    {
+      "questioncode": "9994",
+      "response": "9994",
+      "instance": 0
+    },
+    {
+      "questioncode": "9995",
+      "response": "9995",
+      "instance": 0
+    },
+    {
+      "questioncode": "9996",
+      "response": "9996",
+      "instance": 0
+    },
+    {
+      "questioncode": "9997",
+      "response": "9997",
+      "instance": 0
+    },
+    {
+      "questioncode": "9998",
+      "response": "9998",
+      "instance": 0
+    },
+    {
+      "questioncode": "9999",
+      "response": "9999",
+      "instance": 0
+    },
+    {
+      "questioncode": "9991",
+      "response": "9991",
+      "instance": 1
+    },
+    {
+      "questioncode": "9992",
+      "response": "9992",
+      "instance": 1
+    },
+    {
+      "questioncode": "9993",
+      "response": "9993",
+      "instance": 1
+    },
+    {
+      "questioncode": "9994",
+      "response": "9994",
+      "instance": 1
+    },
+    {
+      "questioncode": "9995",
+      "response": "9995",
+      "instance": 1
+    },
+    {
+      "questioncode": "9996",
+      "response": "9996",
+      "instance": 1
+    },
+    {
+      "questioncode": "9997",
+      "response": "9997",
+      "instance": 1
+    },
+    {
+      "questioncode": "9998",
+      "response": "9998",
+      "instance": 1
+    },
+    {
+      "questioncode": "9999",
+      "response": "9999",
+      "instance": 1
+    },
+    {
+      "questioncode": "9991",
+      "response": "9991",
+      "instance": 2
+    },
+    {
+      "questioncode": "9992",
+      "response": "9992",
+      "instance": 2
+    },
+    {
+      "questioncode": "9993",
+      "response": "9993",
+      "instance": 2
+    },
+    {
+      "questioncode": "9994",
+      "response": "9994",
+      "instance": 2
+    },
+    {
+      "questioncode": "9995",
+      "response": "9995",
+      "instance": 2
+    },
+    {
+      "questioncode": "9996",
+      "response": "9996",
+      "instance": 2
+    },
+    {
+      "questioncode": "9997",
+      "response": "9997",
+      "instance": 2
+    },
+    {
+      "questioncode": "9998",
+      "response": "9998",
+      "instance": 2
+    },
+    {
+      "questioncode": "9999",
+      "response": "9999",
+      "instance": 2
+    }
+  ],
+  "supplementary_data": {
+    "identifier": "12346789012A",
+    "schema_version": "v1",
+    "items": {
+      "local-units": [
+        {
+          "identifier": "3340224",
+          "name": "STUBBS BUILDING PRODUCTS LTD",
+          "address": [
+            "WELLINGTON ROAD",
+            "LOCHMABEN",
+            "SWINDON",
+            "BEDS",
+            "GLOS",
+            "DE41 2WA"
+          ]
+        },
+        {
+          "identifier": "20047673",
+          "name": "HOPSCOTCH INDUSTRIES UK LTD",
+          "address": [
+            "SOUTH CERNEY WORKS",
+            "SHAWELL LANE",
+            "BEENHAM",
+            "STAFFS",
+            "BEDFORDSHIRE",
+            "GL4 5YU"
+          ]
+        }
+      ]
+    }
+  }
+}

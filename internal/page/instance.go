@@ -30,3 +30,7 @@ func newInstance(id int, canvas *drawing.Canvas, parent *drawing.Container) *Ins
 func (instance *Instance) addAnswer(qCode, question, answer string) {
 	createAnswer(qCode, question, answer, instance.canvas, instance.container)
 }
+
+func (instance *Instance) addLocalUnit(name, address string) {
+	createUnit(name, address, instance.canvas, instance.container)
+}
