@@ -4,11 +4,14 @@ type Response interface {
 	GetCode() string
 	GetValue() string
 	GetInstance() int
+	GetSdIdentifier() string
 }
 
 type LocalUnit interface {
+	GetIdentifier() string
 	GetName() string
 	GetAddress() string
+	GetResponses() []Response
 }
 
 type Submission interface {

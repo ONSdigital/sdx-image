@@ -70,7 +70,15 @@ func (submission *V2Submission) GetResponses(code string) []interfaces.Response 
 func (submission *V2Submission) GetLocalUnits() []interfaces.LocalUnit {
 	luList := make([]interfaces.LocalUnit, len(submission.Supplementary.Items.LocalUnits))
 	for i, lu := range submission.Supplementary.Items.LocalUnits {
-		luList[i] = lu
+		unit := NewUnit(*lu)
+		for _, responseList := range submission.Data {
+			for _, response := range responseList {
+				if response.GetSdIdentifier() == unit.GetIdentifier() {
+					unit.AddResponses(response)
+				}
+			}
+		}
+		luList[i] = unit
 	}
 	return luList
 }

@@ -31,7 +31,7 @@ func Create(survey interfaces.Survey) image.Image {
 		section := page.addSection("Local Units")
 		instance := section.addInstance(0)
 		for _, lu := range survey.GetLocalUnits() {
-			instance.addLocalUnit(lu.GetName(), lu.GetAddress())
+			instance.addLocalUnit(lu)
 		}
 		section.complete()
 	}

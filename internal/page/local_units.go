@@ -2,13 +2,13 @@ package page
 
 import (
 	"sdxImage/internal/drawing"
+	"sdxImage/internal/interfaces"
 )
 
 const luPadding = 30
 
 func createUnit(
-	name string,
-	address string,
+	lu interfaces.SupplementaryUnit,
 	canvas *drawing.Canvas,
 	parent *drawing.Container) {
 
@@ -21,12 +21,17 @@ func createUnit(
 	canvas.AddText("Name:", questionSize, nameLabel)
 
 	nameAnswer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
-	canvas.AddBoldText(name, answerSize, nameAnswer)
+	canvas.AddBoldText(lu.GetName(), answerSize, nameAnswer)
 	nameAnswer.SetPadding(0, 0, 0, luPadding)
 
 	addressLabel := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
 	canvas.AddText("Address:", questionSize, addressLabel)
 
 	addressAnswer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
-	canvas.AddBoldText(address, answerSize, addressAnswer)
+	canvas.AddBoldText(lu.GetAddress(), answerSize, addressAnswer)
+	addressAnswer.SetPadding(0, 0, 0, luPadding)
+
+	for _, answer := range lu.GetAnswers() {
+		createAnswer(answer.GetCode(), "Changes", answer.GetValue(), canvas, outerContainer)
+	}
 }

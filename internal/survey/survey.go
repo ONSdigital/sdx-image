@@ -15,7 +15,7 @@ type Survey struct {
 	RuName      string
 	SubmittedAt string
 	Sections    []interfaces.Section
-	LocalUnits  []interfaces.LocalUnit
+	LocalUnits  []interfaces.SupplementaryUnit
 }
 
 func (survey *Survey) String() string {
@@ -54,6 +54,6 @@ func (survey *Survey) GetSections() []interfaces.Section {
 	return survey.Sections
 }
 
-func (survey *Survey) GetLocalUnits() []interfaces.LocalUnit {
+func (survey *Survey) GetLocalUnits() []interfaces.SupplementaryUnit {
 	return survey.LocalUnits
 }
