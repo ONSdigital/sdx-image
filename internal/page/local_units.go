@@ -29,7 +29,10 @@ func createUnit(
 
 	addressAnswer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
 	canvas.AddBoldText(lu.GetAddress(), answerSize, addressAnswer)
-	addressAnswer.SetPadding(0, 0, 0, luPadding)
+
+	if len(lu.GetAnswers()) > 0 {
+		addressAnswer.SetPadding(0, 0, 0, luPadding)
+	}
 
 	for _, answer := range lu.GetAnswers() {
 		createAnswer(answer.GetCode(), "Changes", answer.GetValue(), canvas, outerContainer)
