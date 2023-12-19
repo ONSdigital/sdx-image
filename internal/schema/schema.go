@@ -36,10 +36,11 @@ type Question struct {
 }
 
 type Block struct {
-	Id        string    `json:"id"`
-	BlockType string    `json:"type"`
-	Question  *Question `json:"question"`
-	AddBlock  *Block    `json:"add_block"`
+	Id              string    `json:"id"`
+	BlockType       string    `json:"type"`
+	Question        *Question `json:"question"`
+	AddBlock        *Block    `json:"add_block"`
+	RepeatingBlocks []*Block  `json:"repeating_blocks"`
 }
 
 type Group struct {
@@ -88,8 +89,12 @@ func (group *Group) getBlocks() []*Block {
 	for _, block := range group.Blocks {
 		if block.BlockType == "Question" {
 			blocks = append(blocks, block)
-		} else if block.AddBlock != nil {
+		}
+		if block.AddBlock != nil {
 			blocks = append(blocks, block.AddBlock)
+		}
+		if block.RepeatingBlocks != nil {
+			blocks = append(blocks, block.RepeatingBlocks...)
 		}
 	}
 	return blocks
