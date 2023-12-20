@@ -6,9 +6,10 @@ import (
 )
 
 type Response struct {
-	QCode    string `json:"questioncode"`
-	Value    string `json:"response"`
-	Instance int    `json:"instance"`
+	QCode        string `json:"questioncode"`
+	Value        string `json:"response"`
+	Instance     int    `json:"instance"`
+	SdIdentifier string `json:"sd_identifier"`
 }
 
 type Data map[string][]interfaces.Response
@@ -20,9 +21,10 @@ func (data *Data) UnmarshalJSON(bytes []byte) error {
 		*data = make(map[string][]interfaces.Response, len(m))
 		for k, v := range m {
 			(*data)[k] = []interfaces.Response{&Response{
-				QCode:    k,
-				Value:    v,
-				Instance: 0,
+				QCode:        k,
+				Value:        v,
+				Instance:     0,
+				SdIdentifier: "",
 			}}
 		}
 	} else {
@@ -55,4 +57,8 @@ func (response *Response) GetValue() string {
 
 func (response *Response) GetInstance() int {
 	return response.Instance
+}
+
+func (response *Response) GetSdIdentifier() string {
+	return response.SdIdentifier
 }

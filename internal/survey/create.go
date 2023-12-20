@@ -18,6 +18,12 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 		RuName:      submission.GetRuName(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
 		Sections:    []interfaces.Section{},
+		LocalUnits:  make([]interfaces.SupplementaryUnit, len(submission.GetLocalUnits())),
+	}
+
+	for i, lu := range submission.GetLocalUnits() {
+		unit := NewLocalUnit(lu)
+		survey.LocalUnits[i] = unit
 	}
 
 	var sections []interfaces.Section

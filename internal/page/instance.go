@@ -1,6 +1,9 @@
 package page
 
-import "sdxImage/internal/drawing"
+import (
+	"sdxImage/internal/drawing"
+	"sdxImage/internal/interfaces"
+)
 
 const indent = 10
 const topPadding = 20
@@ -29,4 +32,8 @@ func newInstance(id int, canvas *drawing.Canvas, parent *drawing.Container) *Ins
 
 func (instance *Instance) addAnswer(qCode, question, answer string) {
 	createAnswer(qCode, question, answer, instance.canvas, instance.container)
+}
+
+func (instance *Instance) addLocalUnit(lu interfaces.SupplementaryUnit) {
+	createUnit(lu, instance.canvas, instance.container)
 }

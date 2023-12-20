@@ -8,9 +8,13 @@ var htmlLookupMap = map[string]string{
 	"&amp;":    "&",
 	"<em>":     "",
 	"</em>":    "",
+	" , ":      " ",
+	"  ":       " ",
+	" ?":       "?",
 }
 
 // html replaces common "html" codes within a string
+// and tries to fix any unusual gaps.
 func html(text string) string {
 	result := text
 	for k, v := range htmlLookupMap {

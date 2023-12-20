@@ -27,5 +27,14 @@ func Create(survey interfaces.Survey) image.Image {
 		section.complete()
 	}
 
+	if len(survey.GetLocalUnits()) != 0 {
+		section := page.addSection("Local Units")
+		instance := section.addInstance(0)
+		for _, lu := range survey.GetLocalUnits() {
+			instance.addLocalUnit(lu)
+		}
+		section.complete()
+	}
+
 	return page.draw()
 }

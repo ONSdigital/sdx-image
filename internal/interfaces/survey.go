@@ -6,6 +6,12 @@ type Answer interface {
 	GetValue() string
 }
 
+type SupplementaryUnit interface {
+	GetName() string
+	GetAddress() string
+	GetAnswers() []Answer
+}
+
 type Instance interface {
 	GetId() int
 	GetAnswers() []Answer
@@ -24,4 +30,5 @@ type Survey interface {
 	GetRuName() string
 	GetSubmittedAt() string
 	GetSections() []Section
+	GetLocalUnits() []SupplementaryUnit
 }

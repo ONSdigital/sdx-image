@@ -210,3 +210,7 @@ func TestFuels(t *testing.T) {
 func TestRailways(t *testing.T) {
 	runFromFile("railways_0001", t)
 }
+
+func TestTiles(t *testing.T) {
+	runFromFile("qrt_0001", t)
+}
