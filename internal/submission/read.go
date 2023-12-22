@@ -3,6 +3,7 @@ package submission
 
 import (
 	"encoding/json"
+	"fmt"
 	"sdxImage/internal/interfaces"
 	"sdxImage/internal/log"
 )
@@ -13,6 +14,7 @@ func Read(bytes []byte) (interfaces.Submission, error) {
 	submission := &V2Submission{}
 	err := json.Unmarshal(bytes, submission)
 	if err != nil {
+		log.Info(fmt.Sprintf("failed to read file with error: %q", err))
 		return readV1(bytes)
 	}
 	if submission.Version != "v2" {

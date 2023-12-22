@@ -64,3 +64,17 @@ func TestV2AbsSubmission(t *testing.T) {
 	}
 	fmt.Println(result)
 }
+
+func TestV2BerdSubmission(t *testing.T) {
+	test.SetCwdToRoot()
+	filename := "berd_0001"
+	fileBytes, e := readFile(filename)
+	if e != nil {
+		t.Errorf("failed to read file %v with error: %q", filename, e.Error())
+	}
+	result, err := Read(fileBytes)
+	if err != nil {
+		t.Errorf("failed to convert file %v with error: %q", filename, err.Error())
+	}
+	fmt.Println(result)
+}
