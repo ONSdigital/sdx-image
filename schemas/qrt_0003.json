@@ -1,0 +1,921 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.1",
+  "preview_questions": false,
+  "survey_id": "068",
+  "form_type": "0003",
+  "title": "TEST USE ONLY Monthly Survey of Building Materials - Bricks",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "46ac2fd4-9750-4792-a58c-ec655a685668",
+        "sectionquestionnaire-introduction"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "sectionquestionnaire-introduction",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "groupquestionnaire-introduction",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {trad_as} ({ru_name})",
+                    "placeholders": [
+                      {
+                        "placeholder": "trad_as",
+                        "transforms": [
+                          {
+                            "transform": "first_non_empty_item",
+                            "arguments": {
+                              "items": [
+                                {
+                                  "source": "metadata",
+                                  "identifier": "trad_as"
+                                },
+                                {
+                                  "source": "metadata",
+                                  "identifier": "ru_name"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "additional-guidance",
+                  "contents": [
+                    {
+                      "guidance": {
+                        "contents": [
+                          {
+                            "title": "Important Notice"
+                          },
+                          {
+                            "description": "This questionnaire has been designed for online mode. You may notice changes compared with the paper version, such as to the ordering of questions and sections."
+                          },
+                          {
+                            "description": "There is additional guidance throughout the questionnaire. However, if you require support then please contact us on <a href=\"tel:03001234931\" target=\"_blank\" rel=\"noopener noreferrer\">0300 1234 931</a> or via email at <a href=\"mailto:surveys@ons.gov.uk?subject=Change%20of%20details%2012346789012A\" target=\"_blank\" rel=\"noopener noreferrer\">surveys@ons.gov.uk</a>."
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "This survey is conducted by the Office for National Statistics on behalf of the Department for Business and Trade (DBT).",
+                        "DBT uses the information for monitoring trends in the construction industries.",
+                        "Your business was selected to give us a comprehensive view of the UK economy.",
+                        {
+                          "text": "Data should relate to {trad_as}.",
+                          "placeholders": [
+                            {
+                              "placeholder": "trad_as",
+                              "transforms": [
+                                {
+                                  "transform": "first_non_empty_item",
+                                  "arguments": {
+                                    "items": [
+                                      {
+                                        "source": "metadata",
+                                        "identifier": "trad_as"
+                                      },
+                                      {
+                                        "source": "metadata",
+                                        "identifier": "ru_name"
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially.",
+                        "You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.",
+                        "You can save a copy of your answers at the end of this questionnaire using the &#x2018;Download as PDF&#x2019; button."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "This survey collects information on different brick types your business has produced and delivered within the reporting period."
+                  },
+                  {
+                    "description": "The brick types included in this survey are:"
+                  },
+                  {
+                    "list": ["common", "facing", "engineering"]
+                  },
+                  {
+                    "description": "The survey has the following sections:"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Brick types",
+                    "contents": [
+                      {
+                        "description": {
+                          "text": "You will be asked to confirm the type of bricks produced and delivered for the period {ref_p_start_date} to {ref_p_end_date}.",
+                          "placeholders": [
+                            {
+                              "placeholder": "ref_p_start_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_start_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "placeholder": "ref_p_end_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_end_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Details of production and delivery",
+                    "contents": [
+                      {
+                        "description": "You will be asked to provide the following information for each type of brick you have selected:"
+                      },
+                      {
+                        "list": [
+                          "opening stock",
+                          "drawn from kiln or autoclave during month",
+                          "deliveries to customers during month",
+                          "closing stock",
+                          "type of brick produced"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "description": "For the benefit of industry, and the public generally, building materials information is published by DBT in their <a href=\"https://www.gov.uk/government/collections/building-materials-and-components-monthly-statistics-2012\" target=\"_blank\" rel=\"noopener noreferrer\">Monthly Statistics of Building Materials &amp; Components (this link opens in a new tab)</a>."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "46ac2fd4-9750-4792-a58c-ec655a685668",
+      "title": "Brick types",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Brick types section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group46ac2fd4-9750-4792-a58c-ec655a685668",
+          "blocks": [
+            {
+              "id": "brick-types-produced-and-delivered",
+              "type": "Question",
+              "question": {
+                "id": "questionbrick-types-produced-and-delivered",
+                "title": {
+                  "text": "For the period {ref_p_start_date} to {ref_p_end_date}, which of the following bricks has {ru_name} produced and delivered?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "type": "MutuallyExclusive",
+                "mandatory": false,
+                "answers": [
+                  {
+                    "id": "answer57363407-61bd-422f-9789-70dbf0e7ba20",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Common bricks",
+                        "value": "Common bricks",
+                        "q_code": "9998"
+                      },
+                      {
+                        "label": "Facing bricks",
+                        "value": "Facing bricks",
+                        "q_code": "9997"
+                      },
+                      {
+                        "label": "Engineering bricks",
+                        "value": "Engineering bricks",
+                        "q_code": "9996"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answerbde74aef-0c0c-4411-9387-f56009d13ff9",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "None of the above",
+                        "value": "None of the above",
+                        "q_code": "9995"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Brick types produced and delivered"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "157",
+      "title": "Details of production and delivery",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Details of production section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group157",
+          "blocks": [
+            {
+              "id": "production-and-delivery-for-common-bricks",
+              "type": "Question",
+              "question": {
+                "id": "questionproduction-and-delivery-for-common-bricks",
+                "title": "For the reporting period, what are the details of production and delivery for <em>common</em> bricks?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Enter a value to the nearest thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for 56,000.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Exclude pavers"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What do we mean by &#39;opening stock&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to the closing stock at the end of the previous month unless a physical stock check has been made, in which case the actual physical stock figure should be entered, and discrepancies explained in the comments section of this survey."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer980",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Opening stock of common bricks",
+                    "q_code": "01",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer981",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Common bricks drawn from kiln or autoclave during month",
+                    "description": "This refers to saleable bricks produced and ready for use",
+                    "q_code": "02",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer982",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Common bricks delivered to customers during month",
+                    "description": "This refers to bricks that have been dispatched from the premises and should include any actually used on the premises if they were of a saleable quality",
+                    "q_code": "03",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer983",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Closing stock of common bricks",
+                    "q_code": "04",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Production and delivery for common bricks",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Common bricks"],
+                        {
+                          "identifier": "answer57363407-61bd-422f-9789-70dbf0e7ba20",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "production-and-delivery-for-facing-bricks",
+              "type": "Question",
+              "question": {
+                "id": "questionproduction-and-delivery-for-facing-bricks",
+                "title": "For the reporting period, what are the details of production and delivery for <em>facing</em> bricks?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Enter a value to the nearest thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for 56,000.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Exclude pavers"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What do we mean by &#39;opening stock&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to the closing stock at the end of the previous month unless a physical stock check has been made, in which case the actual physical stock figure should be entered, and discrepancies explained in the comments section of this survey."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer7d42fafe-21f4-4fa4-9f4e-bcd0e6156adf",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Opening stock of facing bricks",
+                    "q_code": "11",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerc2094bc9-aef8-446d-8744-29a30b77d464",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Facing bricks drawn from kiln or autoclave during month",
+                    "description": "This refers to saleable bricks produced and ready for use",
+                    "q_code": "12",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerab9f9884-6ad5-4a29-adfc-3fa212fc871b",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Facing bricks delivered to customers during month",
+                    "description": "This refers to bricks that have been dispatched from the premises and should include any actually used on the premises if they were of a saleable quality",
+                    "q_code": "13",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerbe7ef6c3-72d1-4d93-b6ac-6afdd0ecc0e1",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Closing stock of facing bricks",
+                    "q_code": "14",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Production and delivery for facing bricks",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Facing bricks"],
+                        {
+                          "identifier": "answer57363407-61bd-422f-9789-70dbf0e7ba20",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "production-and-delivery-for-engineering-bricks",
+              "type": "Question",
+              "question": {
+                "id": "questionproduction-and-delivery-for-engineering-bricks",
+                "title": "For the reporting period, what are the details of production and delivery for <em>engineering</em> bricks?",
+                "description": [
+                  "<p>Informed estimates are acceptable.</p><p>Enter a value to the nearest thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for 56,000.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Exclude pavers"
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What do we mean by &#39;opening stock&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to the closing stock at the end of the previous month unless a physical stock check has been made, in which case the actual physical stock figure should be entered, and discrepancies explained in the comments section of this survey."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer9e25ab2b-3bc7-4325-bd6d-8738336a6741",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Opening stock of engineering bricks",
+                    "q_code": "21",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer0b90ce18-9c41-4629-9540-b354ddd2bbf2",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Engineering bricks drawn from kiln or autoclave during month",
+                    "description": "This refers to saleable bricks produced and ready for use",
+                    "q_code": "22",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerd4c187c6-1db5-49d7-a7b1-d2329620a6bf",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Engineering bricks delivered to customers during month",
+                    "description": "This refers to bricks that have been dispatched from the premises and should include any actually used on the premises if they were of a saleable quality",
+                    "q_code": "23",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerb132275d-886a-45a0-843e-774c33f8e116",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Closing stock of engineering bricks",
+                    "q_code": "24",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Production and delivery for engineering bricks",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Engineering bricks"],
+                        {
+                          "identifier": "answer57363407-61bd-422f-9789-70dbf0e7ba20",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "total-of-bricks-in-opening-stock",
+              "type": "CalculatedSummary",
+              "page_title": "Total of bricks in opening stock",
+              "title": "We have calculated your business&#39;s total number of bricks in your <em>opening stock</em> to be %(total)s. Is this correct?",
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answer980",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer7d42fafe-21f4-4fa4-9f4e-bcd0e6156adf",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer9e25ab2b-3bc7-4325-bd6d-8738336a6741",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total number of bricks in your opening stock"
+              }
+            },
+            {
+              "id": "total-of-bricks-drawn-from-kiln-or-autoclave",
+              "type": "CalculatedSummary",
+              "page_title": "Total of bricks drawn from kiln or autoclave",
+              "title": "We have calculated your business&#39;s total number of bricks <em>drawn from kiln or autoclave</em> to be %(total)s. Is this correct?",
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answer981",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answerc2094bc9-aef8-446d-8744-29a30b77d464",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer0b90ce18-9c41-4629-9540-b354ddd2bbf2",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total number of bricks drawn from kiln or autoclave"
+              }
+            },
+            {
+              "id": "total-of-bricks-delivered-to-customers",
+              "type": "CalculatedSummary",
+              "page_title": "Total of bricks delivered to customers",
+              "title": "We have calculated your business&#39;s total number of bricks <em>delivered to customers</em> to be %(total)s. Is this correct?",
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answer982",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answerab9f9884-6ad5-4a29-adfc-3fa212fc871b",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answerd4c187c6-1db5-49d7-a7b1-d2329620a6bf",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total number of bricks delivered to customers"
+              }
+            },
+            {
+              "id": "total-of-bricks-in-closing-stock",
+              "type": "CalculatedSummary",
+              "page_title": "Total of bricks in closing stock",
+              "title": "We have calculated your business&#39;s total number of bricks in your <em>closing stock</em> to be %(total)s. Is this correct?",
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answer983",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answerbe7ef6c3-72d1-4d93-b6ac-6afdd0ecc0e1",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answerb132275d-886a-45a0-843e-774c33f8e116",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total number of bricks in your closing stock"
+              }
+            },
+            {
+              "id": "type-of-brick",
+              "type": "Question",
+              "question": {
+                "id": "questiontype-of-brick",
+                "title": "What type of brick does your business produce?",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer733a0a93-209e-4a16-8e6f-04658c84abf3",
+                    "mandatory": false,
+                    "type": "Radio",
+                    "q_code": "9999",
+                    "options": [
+                      {
+                        "label": "Clay",
+                        "value": "Clay"
+                      },
+                      {
+                        "label": "Concrete",
+                        "value": "Concrete"
+                      },
+                      {
+                        "label": "Sandlime",
+                        "value": "Sandlime"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Type of brick"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "any-in": [
+            ["Engineering bricks", "Facing bricks", "Common bricks"],
+            {
+              "identifier": "answer57363407-61bd-422f-9789-70dbf0e7ba20",
+              "source": "answers"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "206",
+      "title": "Comments",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Comments section",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group206",
+          "blocks": [
+            {
+              "id": "new-works-since-your-last-return",
+              "type": "Question",
+              "question": {
+                "id": "questionnew-works-since-your-last-return",
+                "title": "Please provide details of any new works your business has brought into use since your last return",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer1055",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "145",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "New works since your last return",
+              "skip_conditions": {
+                "when": {
+                  "==": [
+                    null,
+                    {
+                      "identifier": "answer57363407-61bd-422f-9789-70dbf0e7ba20",
+                      "source": "answers"
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "further-details",
+              "type": "Question",
+              "question": {
+                "id": "questionfurther-details",
+                "title": "Please provide any further details that will help us understand your figures and tell an industry story",
+                "description": [
+                  "<p>You have nearly finished. Make sure you continue to the next page and select submit answers at the bottom.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "substantial fluctuations compared with your previous return"
+                      ]
+                    },
+                    {
+                      "description": "<strong>For example:</strong>"
+                    },
+                    {
+                      "list": [
+                        "site shutdowns",
+                        "site maintenance",
+                        "site breakdowns",
+                        "raw material shortages",
+                        "stock movements",
+                        "any change in contacts",
+                        "extreme weather"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer1056",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "q_code": "146",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Further details"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "dbt-dsit",
+  "navigation": {
+    "visible": true
+  },
+  "metadata": [
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    }
+  ],
+  "post_submission": {
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}
