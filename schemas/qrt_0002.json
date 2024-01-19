@@ -1,0 +1,1665 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.3",
+  "preview_questions": false,
+  "survey_id": "068",
+  "form_type": "0002",
+  "answer_codes": [
+    {
+      "answer_id": "answer05b1c255-1eb1-4e83-bcb1-101f862b0290",
+      "code": "9999"
+    },
+    {
+      "answer_id": "answerebcca620-109a-46a6-b24b-25a909e50f20",
+      "code": "9998"
+    },
+    {
+      "answer_id": "answer08c4caae-6f34-4fb2-95e3-ab6a900fe3ef",
+      "code": "9997"
+    },
+    {
+      "answer_id": "answer942461c1-d1a9-406b-81c3-3fde7b3d3bb2",
+      "code": "9996"
+    },
+    {
+      "answer_id": "answer9c1b8cf9-47b0-4ca5-bc5c-091bb72645ab",
+      "code": "9995"
+    },
+    {
+      "answer_id": "answer6ec92f01-866c-43af-8bf7-2b8446cf4ae8",
+      "code": "9994"
+    },
+    {
+      "answer_id": "answer1cd2cee7-6a39-4910-a4a6-e0ded1c50476",
+      "code": "9993"
+    },
+    {
+      "answer_id": "answerbfcaa1cc-986d-4820-968e-3d4b3a0fd71c",
+      "code": "9992"
+    },
+    {
+      "answer_id": "answer070fc34d-df85-48bc-b709-6915bc7fa212",
+      "code": "9991"
+    },
+    {
+      "answer_id": "answer6014b9ee-c0c8-4c44-be02-29eea997ae8f",
+      "code": "9990"
+    },
+    {
+      "answer_id": "answer74766a4b-6b6c-4bc8-98c5-338115307f57",
+      "code": "9989"
+    },
+    {
+      "answer_id": "answer34a1b6b4-7624-45fb-be44-b398712f5b76",
+      "code": "9988"
+    },
+    {
+      "answer_id": "answerc0a51304-b31c-4ddf-af97-ea0d4af430fd",
+      "code": "9987"
+    },
+    {
+      "answer_id": "answer584a19d8-b633-40ca-b46a-215239adb583",
+      "code": "9986"
+    },
+    {
+      "answer_id": "answer18dc8ebd-7c1e-4c0c-bbdf-e8880c244a80",
+      "code": "9985"
+    },
+    {
+      "answer_id": "answer0c4d8705-0c53-4778-b8d9-de0b41bc446f",
+      "code": "9984"
+    },
+    {
+      "answer_id": "answer1847ffdb-1216-456d-91e9-007931267748",
+      "code": "9983"
+    },
+    {
+      "answer_id": "answerabb1c25b-970d-4298-b132-93d1adf42f3d",
+      "code": "9982"
+    },
+    {
+      "answer_id": "answerdfbbf643-c2f1-4df5-b659-c7fa7dd9b556",
+      "code": "9981"
+    },
+    {
+      "answer_id": "answer38e39812-1535-454f-a6d5-8c70ddbc7680",
+      "code": "9980"
+    },
+    {
+      "answer_id": "answer09c28594-f521-41e6-a25f-b86f6cb296ef",
+      "code": "9979"
+    },
+    {
+      "answer_id": "answera5aba7c9-5e14-481b-889b-bf5c6abc3767",
+      "code": "9978"
+    },
+    {
+      "answer_id": "answerbf11b2d4-3f36-4466-8e59-4f8bc3cce4c8",
+      "code": "9977"
+    },
+    {
+      "answer_id": "answerebb4269d-e0be-4491-882a-eb591b417a63",
+      "code": "9976"
+    },
+    {
+      "answer_id": "answerf6e6b4ef-7765-4e58-98c9-c825b89ebae8",
+      "code": "9975"
+    },
+    {
+      "answer_id": "answer3d8541bf-c427-4776-aa76-b26b06a7a1ed",
+      "code": "9974"
+    },
+    {
+      "answer_id": "answere9cfe6d9-16d8-41ed-836c-5541e967e2f8",
+      "code": "9973"
+    },
+    {
+      "answer_id": "answerec1c4bba-13ad-4bf5-915c-a9953a747d1b",
+      "code": "9972"
+    },
+    {
+      "answer_id": "answer4665612b-1bdc-493f-9aeb-9f73a5a5b0f8",
+      "code": "9971"
+    },
+    {
+      "answer_id": "answer35f89d2c-bbad-4d4a-b196-01e333a93a67",
+      "code": "9970"
+    }
+  ],
+  "title": "TEST USE ONLY Quarterly Survey of Building Materials - Slate",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "03cfdd40-bd05-4171-a48e-ce0be54fe1b3",
+        "section88d360e2-bdf7-43a1-9739-a61eeed1fa15"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "section88d360e2-bdf7-43a1-9739-a61eeed1fa15",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "group88d360e2-bdf7-43a1-9739-a61eeed1fa15",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      },
+                      {
+                        "placeholder": "trad_as",
+                        "transforms": [
+                          {
+                            "transform": "conditional_trad_as",
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "additional-guidance",
+                  "contents": [
+                    {
+                      "guidance": {
+                        "contents": [
+                          {
+                            "title": "Important Notice"
+                          },
+                          {
+                            "description": "This questionnaire has been designed for online mode. You may notice changes compared with the paper version, such as to the ordering of questions and sections."
+                          },
+                          {
+                            "description": "There is additional guidance throughout the questionnaire. However, if you require support then please contact us on <a href=\"tel:03001234931\" target=\"_blank\" rel=\"noopener noreferrer\">0300 1234 931</a> or via email at <a href=\"mailto:surveys@ons.gov.uk?subject=Change%20of%20details%2012346789012A\" target=\"_blank\" rel=\"noopener noreferrer\">surveys@ons.gov.uk</a>"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "This voluntary survey is conducted by the Office for National Statistics on behalf of the Department for Business and Trade (DBT).",
+                        "Data should relate to all sites in England, Scotland, and Wales unless otherwise stated.",
+                        "This survey is to be completed for the sites named within the local unit and new site information sections of this questionnaire.",
+                        "The figures should exclude all products imported from outside the UK.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially.",
+                        "You can save a copy of your answers at the end of this questionnaire using the &#x2018;Download as PDF&#x2019; button."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": {
+                      "text": "This survey collects information on your business&#39;s production and delivery of different slate types as a building material during the quarter {ref_p_start_date} to {ref_p_end_date}.",
+                      "placeholders": [
+                        {
+                          "placeholder": "ref_p_start_date",
+                          "transforms": [
+                            {
+                              "transform": "format_date",
+                              "arguments": {
+                                "date_to_format": {
+                                  "source": "metadata",
+                                  "identifier": "ref_p_start_date"
+                                },
+                                "date_format": "d MMMM yyyy"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "placeholder": "ref_p_end_date",
+                          "transforms": [
+                            {
+                              "transform": "format_date",
+                              "arguments": {
+                                "date_to_format": {
+                                  "source": "metadata",
+                                  "identifier": "ref_p_end_date"
+                                },
+                                "date_format": "d MMMM yyyy"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/quarterlysurveyofbuildingmaterialsslate\" target=\"_blank\" rel=\"noopener noreferrer\">View more information about this survey (this link opens in a new tab)</a>"
+                  },
+                  {
+                    "description": "The types of slate included in this survey are slate for:"
+                  },
+                  {
+                    "list": [
+                      "roofing",
+                      "cladding and other decorative uses",
+                      "powder and granules",
+                      "crude blocks including external paving and walling stone",
+                      "slate waste, for fill and other uses"
+                    ]
+                  },
+                  {
+                    "description": "The survey has the following sections:"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Types of slate",
+                    "contents": [
+                      {
+                        "description": {
+                          "text": "In this section you will be asked to confirm the types of slate {ru_name} has produced, delivered or held in stock for the period {ref_p_start_date} to {ref_p_end_date}.",
+                          "placeholders": [
+                            {
+                              "placeholder": "ru_name",
+                              "value": {
+                                "source": "metadata",
+                                "identifier": "ru_name"
+                              }
+                            },
+                            {
+                              "placeholder": "ref_p_start_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_start_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "placeholder": "ref_p_end_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_end_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Details of production",
+                    "contents": [
+                      {
+                        "description": "In this section you will be asked to provide the following information for each type of slate you have selected."
+                      },
+                      {
+                        "description": "<strong>This includes:</strong>"
+                      },
+                      {
+                        "list": [
+                          "total production",
+                          "total deliveries",
+                          "closing stock",
+                          "new works your business has brought into use since the date of your last return"
+                        ]
+                      },
+                      {
+                        "description": "<strong>This section is to be completed for the sites named within the local unit and new site information sections of this questionnaire.</strong>"
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Local unit information",
+                    "contents": [
+                      {
+                        "description": "In this section you will be presented with your business&#39;s local units. You will be asked to check the information for any errors and provide details of any changes. If a unit is no longer covered by this return, include the date that it ceased production."
+                      }
+                    ]
+                  },
+                  {
+                    "question": "New site information",
+                    "contents": [
+                      {
+                        "description": "In this section you will be asked to provide details of any new local units that have come into production since your last return."
+                      },
+                      {
+                        "description": "<strong>This includes:</strong>"
+                      },
+                      {
+                        "list": [
+                          "name, address, and postcode of the new unit",
+                          "nature of work carried on at the new unit",
+                          "number of persons employed at the new unit",
+                          "date the new unit came into production"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "DBT uses the information for monitoring trends in the construction industries.",
+                        "For the benefit of industry, and the public generally, building materials information is published by DBT in their &#39;<a href=\"https://www.gov.uk/government/collections/building-materials-and-components-monthly-statistics-2012\" target=\"_blank\" rel=\"noopener noreferrer\">Monthly Statistics of Building Materials &amp; Components (this link opens in a new tab)</a>."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "03cfdd40-bd05-4171-a48e-ce0be54fe1b3",
+      "title": "Types of slate",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group03cfdd40-bd05-4171-a48e-ce0be54fe1b3",
+          "blocks": [
+            {
+              "id": "slate-type",
+              "type": "Question",
+              "question": {
+                "id": "questionslate-type",
+                "title": {
+                  "text": "For the period {ref_p_start_date} to {ref_p_end_date}, which of the following types of slate has {ru_name} produced, delivered, or held in stock?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "type": "MutuallyExclusive",
+                "mandatory": true,
+                "answers": [
+                  {
+                    "id": "answer05b1c255-1eb1-4e83-bcb1-101f862b0290",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "Slate for roofing",
+                        "value": "Slate for roofing",
+                        "description": "Including roofing slates used vertically"
+                      },
+                      {
+                        "label": "Slate for cladding and other decorative uses based on sawn slabs",
+                        "value": "Slate for cladding and other decorative uses based on sawn slabs"
+                      },
+                      {
+                        "label": "Slate for powder and granules",
+                        "value": "Slate for powder and granules"
+                      },
+                      {
+                        "label": "Slate for crude blocks",
+                        "value": "Slate for crude blocks",
+                        "description": "Including external paving and walling stone"
+                      },
+                      {
+                        "label": "Slate waste, for fill and other uses",
+                        "value": "Slate waste, for fill and other uses",
+                        "description": "Include saleable slate waste"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "answerebcca620-109a-46a6-b24b-25a909e50f20",
+                    "mandatory": false,
+                    "type": "Checkbox",
+                    "options": [
+                      {
+                        "label": "None of the above",
+                        "value": "None of the above"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Slate type"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "f7b1c412-d8b5-43ea-86d3-52efcf3ba36c",
+      "title": "Details of production",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupf7b1c412-d8b5-43ea-86d3-52efcf3ba36c",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "details-of-production-introduction",
+              "page_title": "Details of production introduction",
+              "content": {
+                "title": "Details of production",
+                "contents": [
+                  {
+                    "description": "In this section you will be asked to provide the following information for each type of slate you have selected."
+                  },
+                  {
+                    "description": "<strong>This includes:</strong>"
+                  },
+                  {
+                    "list": [
+                      "total production",
+                      "total deliveries",
+                      "closing stock",
+                      "new works your business has brought into use since the date of your last return"
+                    ]
+                  },
+                  {
+                    "description": "<strong>This section is to be completed for the sites named within the local unit and new site information sections of this questionnaire.</strong>"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "details-of-production-of-slate-for-roofing",
+              "type": "Question",
+              "question": {
+                "id": "questiondetails-of-production-of-slate-for-roofing",
+                "title": {
+                  "text": "For the period {ref_p_start_date} to {ref_p_end_date}, what were {ru_name}&#39;s details of production and delivery of slate for roofing?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>Enter a value to the nearest whole number and <em>record in tonnes.</em></p><p>1 ton = 1.016 tonnes.</p><p>Informed estimates are acceptable.</p><p>If the value is known to be none, enter a single zero.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong>"
+                    },
+                    {
+                      "list": ["roofing slates used vertically"]
+                    },
+                    {
+                      "description": "<strong>Exclude</strong>"
+                    },
+                    {
+                      "list": ["all products imported from outside the UK"]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer08c4caae-6f34-4fb2-95e3-ab6a900fe3ef",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Total production of slate for roofing",
+                    "description": "This refers to products completed and ready for despatch",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer942461c1-d1a9-406b-81c3-3fde7b3d3bb2",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Total deliveries of slate for roofing",
+                    "description": "This refers to products which have actually left the premises",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer9c1b8cf9-47b0-4ca5-bc5c-091bb72645ab",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Closing stock of slate for roofing",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Details of production of slate for roofing",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Slate for roofing"],
+                        {
+                          "identifier": "answer05b1c255-1eb1-4e83-bcb1-101f862b0290",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "details-of-production-of-slate-for-cladding-and-other-decorative-uses",
+              "type": "Question",
+              "question": {
+                "id": "questiondetails-of-production-of-slate-for-cladding-and-other-decorative-uses",
+                "title": "For the reporting period, what were your business&#39;s details of production and delivery of slate for <em>cladding and other decorative uses based on sawn slabs</em>?",
+                "description": [
+                  "<p>Enter a value to the nearest whole number and <em>record in tonnes.</em></p><p>1 ton = 1.016 tonnes.</p><p>Informed estimates are acceptable.</p><p>If the value is known to be none, enter a single zero.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Exclude all products imported from outside the UK"
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer6ec92f01-866c-43af-8bf7-2b8446cf4ae8",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Total production of slate for cladding and other decorative uses based on sawn slabs",
+                    "description": "This refers to products completed and ready for despatch",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer1cd2cee7-6a39-4910-a4a6-e0ded1c50476",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Total deliveries of slate for cladding and other decorative uses based on sawn slabs",
+                    "description": "This refers to products which have actually left the premises",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerbfcaa1cc-986d-4820-968e-3d4b3a0fd71c",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Closing stock of slate for cladding and other decorative uses based on sawn slabs",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Details of production of slate for cladding and other decorative uses",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        [
+                          "Slate for cladding and other decorative uses based on sawn slabs"
+                        ],
+                        {
+                          "identifier": "answer05b1c255-1eb1-4e83-bcb1-101f862b0290",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "details-of-production-of-slate-for-powder-and-granules",
+              "type": "Question",
+              "question": {
+                "id": "questiondetails-of-production-of-slate-for-powder-and-granules",
+                "title": "For the reporting period, what were your business&#39;s details of production and delivery of slate for <em>powder and granules</em>?",
+                "description": [
+                  "<p>Enter a value to the nearest whole number and <em>record in tonnes.</em></p><p>1 ton = 1.016 tonnes.</p><p>Informed estimates are acceptable.</p><p>If the value is known to be none, enter a single zero.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Exclude all products imported from outside the UK"
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer070fc34d-df85-48bc-b709-6915bc7fa212",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Total production of slate for powder and granules",
+                    "description": "This refers to products completed and ready for despatch",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer6014b9ee-c0c8-4c44-be02-29eea997ae8f",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Total deliveries of slate for powder and granules",
+                    "description": "This refers to products which have actually left the premises",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer74766a4b-6b6c-4bc8-98c5-338115307f57",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Closing stock of slate for powder and granules",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Details of production of slate for powder and granules",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Slate for powder and granules"],
+                        {
+                          "identifier": "answer05b1c255-1eb1-4e83-bcb1-101f862b0290",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "details-of-production-of-slate-for-crude-blocks",
+              "type": "Question",
+              "question": {
+                "id": "questiondetails-of-production-of-slate-for-crude-blocks",
+                "title": "For the reporting period, what were your business&#39;s details of production and delivery of slate for <em>crude blocks</em>?",
+                "description": [
+                  "<p>Enter a value to the nearest whole number and <em>record in tonnes.</em></p><p>1 ton = 1.016 tonnes.</p><p>Informed estimates are acceptable.</p><p>If the value is known to be none, enter a single zero.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong>"
+                    },
+                    {
+                      "list": ["external paving and walling stone"]
+                    },
+                    {
+                      "description": "<strong>Exclude</strong>"
+                    },
+                    {
+                      "list": ["all products imported from outside the UK"]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer34a1b6b4-7624-45fb-be44-b398712f5b76",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Total production of slate for crude blocks",
+                    "description": "This refers to products completed and ready for despatch",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answerc0a51304-b31c-4ddf-af97-ea0d4af430fd",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Total deliveries of slate for crude blocks",
+                    "description": "This refers to products which have actually left the premises",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer584a19d8-b633-40ca-b46a-215239adb583",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Closing stock of slate for crude blocks",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Details of production of slate for crude blocks",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Slate for crude blocks"],
+                        {
+                          "identifier": "answer05b1c255-1eb1-4e83-bcb1-101f862b0290",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "details-of-production-of-slate-waste",
+              "type": "Question",
+              "question": {
+                "id": "questiondetails-of-production-of-slate-waste",
+                "title": "For the reporting period, how many tonnes of slate waste were delivered by your business?",
+                "description": [
+                  "<p>Enter a value to the nearest whole number and <em>record in tonnes.</em></p><p>1 ton = 1.016 tonnes.</p><p>Informed estimates are acceptable.</p><p>If the value is known to be none, enter a single zero.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong>"
+                    },
+                    {
+                      "list": [
+                        "slate waste for fill and other uses",
+                        "saleable slate waste"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude</strong>"
+                    },
+                    {
+                      "list": ["all products imported from outside the UK"]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer18dc8ebd-7c1e-4c0c-bbdf-e8880c244a80",
+                    "mandatory": false,
+                    "type": "Unit",
+                    "label": "Slate waste delivered",
+                    "description": "This refers to products which have actually left the premises",
+                    "unit": "mass-tonne",
+                    "unit_length": "short",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Details of production of slate waste",
+              "skip_conditions": {
+                "when": {
+                  "not": [
+                    {
+                      "any-in": [
+                        ["Slate waste, for fill and other uses"],
+                        {
+                          "identifier": "answer05b1c255-1eb1-4e83-bcb1-101f862b0290",
+                          "source": "answers"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "new-works",
+              "type": "Question",
+              "question": {
+                "id": "questionnew-works",
+                "title": "Provide details of any new works your business has brought into use since the date of your last return",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer0c4d8705-0c53-4778-b8d9-de0b41bc446f",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "New works brought into use since the date of your last return",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "New works"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "any-in": [
+            [
+              "Slate for roofing",
+              "Slate for cladding and other decorative uses based on sawn slabs",
+              "Slate for powder and granules",
+              "Slate for crude blocks",
+              "Slate waste, for fill and other uses"
+            ],
+            {
+              "identifier": "answer05b1c255-1eb1-4e83-bcb1-101f862b0290",
+              "source": "answers"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bcefcf71-a226-4b06-8778-54cb09657737",
+      "title": "Local unit information",
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Local unit list summary",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupbcefcf71-a226-4b06-8778-54cb09657737",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "local-unit-information-introduction",
+              "page_title": "Local unit information introduction",
+              "content": {
+                "title": "Local unit information",
+                "contents": [
+                  {
+                    "description": "In this section you will be presented with your business&#39;s local units. You will be asked to check the information for any errors and provide details of any changes. If a unit is no longer covered by this return, include the date that it ceased production."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "local-unit-information",
+              "type": "Question",
+              "question": {
+                "id": "questionlocal-unit-information",
+                "title": "The following local units are covered by this return. Provide details of any changes to your business&#39;s local units since the date of your last return",
+                "description": [
+                  "<p>Check this information for any errors.</p><p>Leave blank if the local unit information is correct.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "if the unit is no longer covered by this return, provide the date that it ceased production",
+                        "any changes to the name or address",
+                        "any corrections to errors"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": ["any new sites"]
+                    }
+                  ]
+                },
+                "type": "General",
+                "dynamic_answers": {
+                  "values": {
+                    "source": "list",
+                    "identifier": "local-units"
+                  },
+                  "answers": [
+                    {
+                      "id": "answer1847ffdb-1216-456d-91e9-007931267748",
+                      "mandatory": false,
+                      "type": "TextArea",
+                      "label": {
+                        "text": "{localunits_name}, {localunits_address}",
+                        "placeholders": [
+                          {
+                            "placeholder": "localunits_name",
+                            "value": {
+                              "source": "supplementary_data",
+                              "identifier": "local-units",
+                              "selectors": ["name"]
+                            }
+                          },
+                          {
+                            "placeholder": "localunits_address",
+                            "transforms": [
+                              {
+                                "transform": "concatenate_list",
+                                "arguments": {
+                                  "list_to_concatenate": [
+                                    {
+                                      "source": "supplementary_data",
+                                      "identifier": "local-units",
+                                      "selectors": ["address"]
+                                    }
+                                  ],
+                                  "delimiter": ", "
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "max_length": 2000
+                    }
+                  ]
+                }
+              },
+              "page_title": "Local unit information"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "new-site-information-summary",
+      "title": "New site information",
+      "summary": {
+        "show_on_completion": true,
+        "page_title": "New site information summary",
+        "collapsible": false,
+        "items": [
+          {
+            "type": "List",
+            "for_list": "additional_units",
+            "title": "What is the name, address, and postcode of the new unit?",
+            "item_anchor_answer_id": "answerebb4269d-e0be-4491-882a-eb591b417a63",
+            "item_label": "<p>Name of new unit</p>",
+            "add_link_text": "Add item to this list",
+            "empty_list_text": "There are no items"
+          }
+        ],
+        "show_non_item_answers": true
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupnew-site-information-summary",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "new-site-information-introduction",
+              "page_title": "New site information introduction",
+              "content": {
+                "title": "New site information",
+                "contents": [
+                  {
+                    "description": "In this section you will be asked to provide details of any new local units that have come into production since your last return."
+                  },
+                  {
+                    "description": "<strong>This includes:</strong>"
+                  },
+                  {
+                    "list": [
+                      "name, address, and postcode of the new unit",
+                      "nature of work carried on at the new unit",
+                      "number of persons employed at the new unit",
+                      "date the new unit came into production"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "new-sites",
+              "type": "ListCollectorDrivingQuestion",
+              "for_list": "additional_units",
+              "question": {
+                "id": "question-driving-additional-new-sites",
+                "type": "General",
+                "title": {
+                  "text": "Does {ru_name} have any new sites that are covered by this return for the period {ref_p_start_date} to {ref_p_end_date}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    },
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "ref_p_end_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_end_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "answers": [
+                  {
+                    "id": "answerabb1c25b-970d-4298-b132-93d1adf42f3d",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes",
+                        "action": {
+                          "type": "RedirectToListAddBlock",
+                          "params": {
+                            "block_id": "add-block-name-address-and-postcode-of-new-unit",
+                            "list_name": "additional_units"
+                          }
+                        }
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "source": "answers",
+                        "identifier": "answerabb1c25b-970d-4298-b132-93d1adf42f3d"
+                      },
+                      ["No"]
+                    ]
+                  }
+                },
+                {
+                  "block": "additional-new-sites"
+                }
+              ],
+              "page_title": "New sites"
+            },
+            {
+              "id": "additional-new-sites",
+              "type": "ListCollector",
+              "page_title": "Additional new sites",
+              "for_list": "additional_units",
+              "question": {
+                "id": "list-collector-question-additional-new-sites",
+                "type": "General",
+                "title": "Do you have any other new sites covered by this return?",
+                "answers": [
+                  {
+                    "id": "answera5aba7c9-5e14-481b-889b-bf5c6abc3767",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes",
+                        "action": {
+                          "type": "RedirectToListAddBlock"
+                        }
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "add_block": {
+                "id": "add-block-name-address-and-postcode-of-new-unit",
+                "type": "ListAddQuestion",
+                "page_title": "Name, address, and postcode of new unit",
+                "cancel_text": "Don’t need to add this item",
+                "question": {
+                  "id": "add-block-question-name-address-and-postcode-of-new-unit",
+                  "description": [
+                    "<p>If required, additional units can be added in later questions.</p>"
+                  ],
+                  "type": "General",
+                  "title": "What is the name, address, and postcode of the new unit?",
+                  "answers": [
+                    {
+                      "id": "answerebb4269d-e0be-4491-882a-eb591b417a63",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Name of new unit"
+                    },
+                    {
+                      "id": "answerf6e6b4ef-7765-4e58-98c9-c825b89ebae8",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Address line 1"
+                    },
+                    {
+                      "id": "answer3d8541bf-c427-4776-aa76-b26b06a7a1ed",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 2"
+                    },
+                    {
+                      "id": "answere9cfe6d9-16d8-41ed-836c-5541e967e2f8",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 3"
+                    },
+                    {
+                      "id": "answerec1c4bba-13ad-4bf5-915c-a9953a747d1b",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 4"
+                    },
+                    {
+                      "id": "answer4665612b-1bdc-493f-9aeb-9f73a5a5b0f8",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 5"
+                    },
+                    {
+                      "id": "answer35f89d2c-bbad-4d4a-b196-01e333a93a67",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Postcode"
+                    }
+                  ]
+                }
+              },
+              "repeating_blocks": [
+                {
+                  "id": "new-site-details",
+                  "type": "ListRepeatingQuestion",
+                  "page_title": "New site details",
+                  "question": {
+                    "id": "questionnew-site-details",
+                    "title": {
+                      "text": "Provide the following information for the new unit {name_of_new_unit}, {address_line_1}, {postcode}",
+                      "placeholders": [
+                        {
+                          "placeholder": "name_of_new_unit",
+                          "value": {
+                            "identifier": "answerebb4269d-e0be-4491-882a-eb591b417a63",
+                            "source": "answers"
+                          }
+                        },
+                        {
+                          "placeholder": "address_line_1",
+                          "value": {
+                            "identifier": "answerf6e6b4ef-7765-4e58-98c9-c825b89ebae8",
+                            "source": "answers"
+                          }
+                        },
+                        {
+                          "placeholder": "postcode",
+                          "value": {
+                            "identifier": "answer35f89d2c-bbad-4d4a-b196-01e333a93a67",
+                            "source": "answers"
+                          }
+                        }
+                      ]
+                    },
+                    "type": "General",
+                    "answers": [
+                      {
+                        "id": "answerdfbbf643-c2f1-4df5-b659-c7fa7dd9b556",
+                        "mandatory": false,
+                        "type": "TextField",
+                        "label": "Nature of work carried on at the new unit"
+                      },
+                      {
+                        "id": "answer38e39812-1535-454f-a6d5-8c70ddbc7680",
+                        "mandatory": false,
+                        "type": "Number",
+                        "label": "Number of persons employed at the new unit",
+                        "decimal_places": 0
+                      },
+                      {
+                        "id": "answer09c28594-f521-41e6-a25f-b86f6cb296ef",
+                        "mandatory": false,
+                        "type": "Date",
+                        "label": "Date new unit came into production"
+                      }
+                    ]
+                  }
+                }
+              ],
+              "edit_block": {
+                "id": "edit-block-name-address-and-postcode-of-new-unit",
+                "type": "ListEditQuestion",
+                "page_title": "Name, address, and postcode of new unit",
+                "cancel_text": "Don’t need to edit this item",
+                "question": {
+                  "id": "edit-block-question-name-address-and-postcode-of-new-unit",
+                  "description": [
+                    "<p>If required, additional units can be added in later questions.</p>"
+                  ],
+                  "type": "General",
+                  "title": "What is the name, address, and postcode of the new unit?",
+                  "answers": [
+                    {
+                      "id": "answerebb4269d-e0be-4491-882a-eb591b417a63",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Name of new unit"
+                    },
+                    {
+                      "id": "answerf6e6b4ef-7765-4e58-98c9-c825b89ebae8",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Address line 1"
+                    },
+                    {
+                      "id": "answer3d8541bf-c427-4776-aa76-b26b06a7a1ed",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 2"
+                    },
+                    {
+                      "id": "answere9cfe6d9-16d8-41ed-836c-5541e967e2f8",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 3"
+                    },
+                    {
+                      "id": "answerec1c4bba-13ad-4bf5-915c-a9953a747d1b",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 4"
+                    },
+                    {
+                      "id": "answer4665612b-1bdc-493f-9aeb-9f73a5a5b0f8",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 5"
+                    },
+                    {
+                      "id": "answer35f89d2c-bbad-4d4a-b196-01e333a93a67",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Postcode"
+                    }
+                  ]
+                }
+              },
+              "remove_block": {
+                "id": "remove-block-name-address-and-postcode-of-new-unit",
+                "type": "ListRemoveQuestion",
+                "cancel_text": "Don’t need to remove this item?",
+                "question": {
+                  "id": "remove-block-question-name-address-and-postcode-of-new-unit",
+                  "type": "General",
+                  "title": "Are you sure you want to remove this item?",
+                  "warning": "All of the information about this item will be deleted",
+                  "answers": [
+                    {
+                      "id": "remove-confirmation-name-address-and-postcode-of-new-unit",
+                      "mandatory": true,
+                      "type": "Radio",
+                      "options": [
+                        {
+                          "label": "Yes",
+                          "value": "Yes",
+                          "action": {
+                            "type": "RemoveListItemAndAnswers"
+                          }
+                        },
+                        {
+                          "label": "No",
+                          "value": "No"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "summary": {
+                "title": "Summary",
+                "item_title": {
+                  "text": "{listcollector_summary_placeholder}",
+                  "placeholders": [
+                    {
+                      "placeholder": "listcollector_summary_placeholder",
+                      "transforms": [
+                        {
+                          "arguments": {
+                            "delimiter": " ",
+                            "list_to_concatenate": [
+                              {
+                                "source": "answers",
+                                "identifier": "answerebb4269d-e0be-4491-882a-eb591b417a63"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answerf6e6b4ef-7765-4e58-98c9-c825b89ebae8"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answer3d8541bf-c427-4776-aa76-b26b06a7a1ed"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answere9cfe6d9-16d8-41ed-836c-5541e967e2f8"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answerec1c4bba-13ad-4bf5-915c-a9953a747d1b"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answer4665612b-1bdc-493f-9aeb-9f73a5a5b0f8"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answer35f89d2c-bbad-4d4a-b196-01e333a93a67"
+                              }
+                            ]
+                          },
+                          "transform": "concatenate_list"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "111676b6-dec3-4989-b876-578fce09999d",
+      "title": "Comments",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group111676b6-dec3-4989-b876-578fce09999d",
+          "blocks": [
+            {
+              "id": "comments",
+              "type": "Question",
+              "question": {
+                "id": "questioncomments",
+                "title": "Please provide any further details that will help us understand your figures and to tell an industry story",
+                "description": [
+                  "<p>Make sure you continue to the next page and select &#39;submit&#39; at the bottom.</p><p>You will be unable to add or review answers after you have clicked submit. If you require support, contact us on 0300 1234 931 or via email at surveys@ons.gov.uk.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "comments on figures included in this return, <strong>for example</strong>, to explain any substantial fluctuations in your figures compared with those of the previous return",
+                        "any additional information about your business&#39;s local units",
+                        "site closures",
+                        "site maintenance",
+                        "site breakdown",
+                        "new contract demands",
+                        "any change in contact",
+                        "extreme weather"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerbf11b2d4-3f36-4466-8e59-4f8bc3cce4c8",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Comments"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "dbt",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    }
+  ],
+  "supplementary_data": {
+    "lists": ["local-units"]
+  },
+  "post_submission": {
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}
