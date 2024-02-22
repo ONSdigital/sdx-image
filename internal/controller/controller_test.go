@@ -218,3 +218,7 @@ func TestRailways(t *testing.T) {
 func TestTiles(t *testing.T) {
 	runFromFile("qrt_0001", t)
 }
+
+func TestSand(t *testing.T) {
+	runFromFile("qsl_0002", t)
+}
