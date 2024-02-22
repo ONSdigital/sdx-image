@@ -1,6 +1,8 @@
 package survey
 
-import "strings"
+import (
+	"strings"
+)
 
 type Answer struct {
 	Title    string

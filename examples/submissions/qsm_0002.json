@@ -1,0 +1,99 @@
+{
+  "case_id": "3b9ab7c6-8926-4734-982d-23d61f9f8e82",
+  "tx_id": "e54439a0-b954-4991-83fe-85a721cb14f7",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.3",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "c11a33e5-330d-48a8-8253-4f928322fcfc",
+  "flushed": false,
+  "submitted_at": "2024-02-15T16:51:20+00:00",
+  "launch_language_code": "en",
+  "started_at": "2024-02-15T16:50:09.693592+00:00",
+  "submission_language_code": "en",
+  "schema_name": "qsm_0002",
+  "survey_metadata": {
+    "survey_id": "076",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "period_id": "201605",
+    "ref_p_start_date": "2016-05-01",
+    "ref_p_end_date": "2016-05-31",
+    "user_id": "UNKNOWN",
+    "ru_ref": "12345678901A",
+    "sds_dataset_id": "c067f6de-6d64-42b1-8b02-431a3486c178",
+    "form_type": "0002"
+  },
+  "data": [
+    {
+      "questioncode": "999",
+      "response": "Sand\nGravel, Pebbles, Shingle, Flint\nSand and gravel used for constructional fill",
+      "instance": 0
+    },
+    {
+      "questioncode": "601",
+      "response": "1",
+      "instance": 0
+    },
+    {
+      "questioncode": "602",
+      "response": "1",
+      "instance": 0
+    },
+    {
+      "questioncode": "603",
+      "response": "1",
+      "instance": 0
+    },
+    {
+      "questioncode": "604",
+      "response": "1",
+      "instance": 0
+    },
+    {
+      "questioncode": "605",
+      "response": "1",
+      "instance": 0
+    },
+    {
+      "questioncode": "606",
+      "response": "1",
+      "instance": 0
+    },
+    {
+      "questioncode": "607",
+      "response": "1",
+      "instance": 0
+    },
+    {
+      "questioncode": "995",
+      "response": "Item 1",
+      "instance": 0
+    },
+    {
+      "questioncode": "146",
+      "response": "Lorem ipsum",
+      "instance": 0
+    }
+  ],
+  "supplementary_data": {
+    "identifier": "12345678901",
+    "schema_version": "v1",
+    "items": {
+      "local-units": [
+        {
+          "identifier": "3340224",
+          "address": [
+            "WELLINGTON ROAD",
+            "LOCHMABEN",
+            "SWINDON",
+            "BEDS",
+            "GLOS",
+            "DE41 2WA"
+          ],
+          "name": "STUBBS BUILDING PRODUCTS LTD"
+        }
+      ]
+    }
+  }
+}

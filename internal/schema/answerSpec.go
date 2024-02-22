@@ -11,10 +11,17 @@ type AnswerSpec struct {
 func getAnswerSpecs(answer *Answer) []interfaces.AnswerSpec {
 	if answer.AnswerType == "Checkbox" {
 		result := make([]interfaces.AnswerSpec, len(answer.Options))
+
+		used := false
 		for i, option := range answer.Options {
+			code := option.Qcode
+			if code == "" && !used {
+				code = answer.Qcode
+				used = true
+			}
 			result[i] = &AnswerSpec{
 				AnswerType: answer.AnswerType,
-				QCode:      option.Qcode,
+				QCode:      code,
 				Label:      option.Label,
 			}
 		}

@@ -219,6 +219,14 @@ func TestTiles(t *testing.T) {
 	runFromFile("qrt_0001", t)
 }
 
+func TestSlate(t *testing.T) {
+	runFromFile("qs_0001", t)
+}
+
 func TestSand(t *testing.T) {
 	runFromFile("qsl_0002", t)
+}
+
+func TestMarine(t *testing.T) {
+	runFromFile("qsm_0002", t)
 }
