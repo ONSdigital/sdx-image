@@ -1,6 +1,8 @@
 package survey
 
-import "strings"
+import (
+	"strings"
+)
 
 type Answer struct {
 	Title    string
@@ -36,6 +38,12 @@ func (answer *Answer) GetText() string {
 
 	} else if answer.QType == "Unit" {
 		text += " " + answer.Label + ":"
+	} else if answer.QType == "TextField" {
+		if answer.Multiple {
+			text = answer.Label + "?"
+		} else {
+			text += " " + answer.Label + ":"
+		}
 	}
 	return text
 }
