@@ -122,7 +122,7 @@
                     "description": "This survey is a key resource for understanding the structure, conduct and performance of businesses across the UK."
                   },
                   {
-                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\"target=\"_blank\"rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\" target=\"_blank\" rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
                   },
                   {
                     "description": "This survey has the following sections:"
@@ -136,7 +136,41 @@
                         "description": "This section asks about the period for which your business will be reporting."
                       },
                       {
-                        "description": "Your return should cover the year 2023. If you are not able to provide figures for that period, your return should relate to business year that ends between 6 April 2023 and 5 April 2024."
+                        "description": {
+                          "text": "You will be asked to report for {ref_p_start_date} to {ref_p_end_date}. If you are unable to provide figures for this period, you will have the option to choose your own dates.",
+                          "placeholders": [
+                            {
+                              "placeholder": "ref_p_start_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_start_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "placeholder": "ref_p_end_date",
+                              "transforms": [
+                                {
+                                  "transform": "format_date",
+                                  "arguments": {
+                                    "date_to_format": {
+                                      "source": "metadata",
+                                      "identifier": "ref_p_end_date"
+                                    },
+                                    "date_format": "d MMMM yyyy"
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
                       }
                     ]
                   },
@@ -206,8 +240,9 @@
                       },
                       {
                         "list": [
-                          "land, existing buildings and structures.",
-                          "construction work",
+                          "land for own use",
+                          "existing buildings and structures for own use, or where you are responsible for non-dwelling maintenance",
+                          "construction work for own use, or where you are responsible for non-dwelling maintenance",
                           "computer software programs and databases, developed by own staff for business use",
                           "computer software programs and databases, purchased or developed externally",
                           "machinery and equipment",
@@ -237,7 +272,7 @@
                     ]
                   },
                   {
-                    "question": "Research and development",
+                    "question": "Research and Development",
                     "contents": [
                       {
                         "description": "This section asks for information about your business&#39;s research and development."
@@ -255,10 +290,10 @@
                     },
                     {
                       "list": [
-                        "The statistics produced help to improve the overall quality of National Accounts and the measurement of <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\"target=\"_blank\"rel=\"noopener noreferrer\">Gross Domestic Product (GDP) (this link opens in a new tab.)</a>",
+                        "The statistics produced help to improve the overall quality of National Accounts and the measurement of <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\" target=\"_blank\" rel=\"noopener noreferrer\">Gross Domestic Product (GDP) (this link opens in a new tab.)</a>",
                         "In addition to the National Accounts, the ABS is also used by the Scottish Government and Welsh Government in the compilation of both regional country specific Input and Output tables and Indices of Production.",
                         "It also provides a major contribution to the Blue Book, which is produced annually by our National Accounts Team and used to inform HM Treasury in managing economic policy.",
-                        "<a href=\"https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/nonfinancialbusinesseconomyukandregionalannualbusinesssurvey/latest\"target=\"_blank\"rel=\"noopener noreferrer\">View the latest publication produced from this survey (this link opens in a new tab.)</a>"
+                        "<a href=\"https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/nonfinancialbusinesseconomyukandregionalannualbusinesssurvey/latest\" target=\"_blank\" rel=\"noopener noreferrer\">View the latest publication produced from this survey (this link opens in a new tab.)</a>"
                       ]
                     }
                   ]
@@ -305,7 +340,7 @@
                     ]
                   },
                   {
-                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\"target=\"_blank\"rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\" target=\"_blank\" rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
                   },
                   {
                     "title": "<strong>What activity to include in this survey</strong>"
@@ -777,7 +812,7 @@
                   ]
                 },
                 "description": [
-                  "<p>An informed estimate is acceptable.</p><p>Please give examples of goods sold direct to general public for personal or household use in the comments box at the end of the questionnaire.</p>"
+                  "<p>An informed estimate is acceptable.</p><p>Please give examples of goods sold direct to general public and not businesses for personal or household use in the comments box at the end of the questionnaire.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -918,9 +953,9 @@
               "type": "Question",
               "question": {
                 "id": "questionvalue-of-other-operating-income",
-                "title": "For the reporting period, what was the value of your business&#x2019;s other operating income?",
+                "title": "For the reporting period, what was the value of your business&#x2019;s <em>other</em> operating income?",
                 "description": [
-                  "<p>This figure should not be included in previous turnover questions.</p>"
+                  "<p>This refers to other operating income recorded in your profit and loss and/or income and expenditure accounts. This figure should not be included in previous turnover questions.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1042,24 +1077,24 @@
                     "q_code": "81",
                     "options": [
                       {
-                        "label": "75-100%",
-                        "value": "75-100%"
+                        "label": "75% to 100%",
+                        "value": "75% to 100%"
                       },
                       {
-                        "label": "50-74%",
-                        "value": "50-74%"
+                        "label": "50% to 74%",
+                        "value": "50% to 74%"
                       },
                       {
-                        "label": "25-49%",
-                        "value": "25-49%"
+                        "label": "25% to 49%",
+                        "value": "25% to 49%"
                       },
                       {
-                        "label": "10-24%",
-                        "value": "10-24%"
+                        "label": "10% to 24%",
+                        "value": "10% to 24%"
                       },
                       {
-                        "label": "0-9%",
-                        "value": "0-9%"
+                        "label": "0% to 9%",
+                        "value": "0% to 9%"
                       }
                     ]
                   }
@@ -1106,7 +1141,7 @@
               "question": {
                 "id": "questiontotal-amounts-received-in-subsidies",
                 "title": {
-                  "text": "For the period {from} to {to}, what was {ru_name}&#39;s total amounts received in subsidies from UK government sources and the EU?",
+                  "text": "For the period {from} to {to}, what was the total amounts {ru_name} received in subsidies from UK government sources and the European Union (EU)?",
                   "placeholders": [
                     {
                       "placeholder": "from",
@@ -1191,7 +1226,7 @@
                     },
                     {
                       "list": [
-                        "grants received from any source such as UK government bodies, EU, and charitable organisations, and so on. Grants are defined as one-off payments received with the intention to lessen the burden of capital expenditure such as new building work or machinery, and so on",
+                        "grants received from any source such as UK government bodies, EU, charitable organisations, and so on. Grants are defined as one-off payments received with the intention to lessen the burden of capital expenditure such as new building work or machinery, and so on",
                         "receipts from government for goods and services supplied free or at a subsidised rate, under the National Health Service and similar public services",
                         "grants to cover historical losses or for the cancellation of debt"
                       ]
@@ -1200,7 +1235,7 @@
                 },
                 "definitions": [
                   {
-                    "title": "What we mean by &#39;subsidies&#39;",
+                    "title": "What we mean by &#39;total amounts received in subsidies&#39;",
                     "contents": [
                       {
                         "description": "This refers to amounts receivable from UK government bodies or the EU to reduce the price of products, or goods or services, sold into a market environment."
@@ -1317,11 +1352,12 @@
                       "employment costs",
                       "energy and materials for business use",
                       "goods and services bought for resale",
-                      "services for business use"
+                      "services for business use",
+                      "rates, duties, levies and taxes paid to the government"
                     ]
                   },
                   {
-                    "description": "For energy, materials and services for business use, and goods and services bought for resale, state the net cost of purchases made during the period of this return whether or not they were used or resold during that period. Valuation should be at full delivered cost. In the case of imports the cost should include import and excise duties, less drawback."
+                    "description": "For energy, materials and services for business use, and goods and services bought for resale, state the net cost of purchases made during the period of this return whether or not they were used or resold during that period. Valuation should be at full delivered cost. Deductible VAT should be <strong>excluded</strong> from the cost but non-deductible VAT should be <strong>included</strong>. In the case of imports the cost should include import and excise duties, less drawback."
                   },
                   {
                     "description": "This section requires figures for business activity within <strong>GB</strong>. Exclude Northern Ireland business activity."
@@ -1470,8 +1506,8 @@
                         {
                           "list": [
                             "all overtime payments, bonuses and commissions",
-                            "payments to those temporarily absent but still being paid, for example on parental leave, on holiday, or on sick",
-                            "the cost to the employer of all expenses and benefits in-kind. These <strong>include</strong>: assets transferred to employees such as cars, property, goods or other assets. Payments made on behalf of employees such as mileage allowances and fuel payments, unless the payments are in respect of travelling expenses. Subsidies to staff canteens, sports club membership, nurseries, playschemes, health insurance and so on",
+                            "payments to those temporarily absent, for example on parental leave, on holiday, or on sick",
+                            "the cost to the employer of all expenses and benefits in-kind. These <strong>include</strong>: assets transferred to employees such as cars, property, goods or other assets; payments made on behalf of employees; mileage allowances and fuel payments, unless the payments are in respect of travelling expenses",
                             "employment costs paid to workers employed by the UK company and workers employed who are based overseas. These costs should only reflect the installation services activity carried out outside the UK",
                             "any &#39;signing on&#39; fees paid to employees",
                             "accrued holiday pay"
@@ -1535,9 +1571,9 @@
                     },
                     {
                       "list": [
+                        "lump sum contributions",
                         "payments into pension funds providing retirement or death benefits for employees, including former employees or their dependants",
-                        "payments to Welfare Schemes",
-                        "lump sum contributions"
+                        "payments to Welfare Schemes"
                       ]
                     },
                     {
@@ -1545,10 +1581,10 @@
                     },
                     {
                       "list": [
-                        "employers&#x2019; National Insurance contributions",
+                        "Employers&#x2019; National Insurance contributions",
                         "top up of pension funds or withdrawals from pension funds",
                         "contributions by employers for their own personal pension schemes",
-                        "expenditure on leisure, medical, cr&#xE8;che and other facilities for employees"
+                        "expenditure on facilities for employees such as leisure, medical, cr&#xE8;che and so on"
                       ]
                     }
                   ]
@@ -1717,12 +1753,6 @@
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["non-deductible VAT"]
-                    },
-                    {
                       "description": "<strong>Exclude:</strong>"
                     },
                     {
@@ -1730,8 +1760,7 @@
                         "employment costs",
                         "all interest payments",
                         "amounts charged to capital account",
-                        "capitalised building repairs",
-                        "deductible VAT"
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -1776,8 +1805,7 @@
                     {
                       "list": [
                         "water abstraction application charges",
-                        "water rates, including water used in open system water cooling and air conditioning",
-                        "non-deductible VAT"
+                        "water rates, including water used in open system water cooling and air conditioning"
                       ]
                     },
                     {
@@ -1788,7 +1816,10 @@
                         "waste disposal, sewerage and effluent disposal charges",
                         "bottled water",
                         "water abstraction licence fees. <strong>These should not be included anywhere in the questionnaire</strong>",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -1818,12 +1849,6 @@
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["non-deductible VAT"]
-                    },
-                    {
                       "description": "<strong>Exclude:</strong>"
                     },
                     {
@@ -1831,8 +1856,7 @@
                         "employment costs",
                         "all interest payments",
                         "amounts charged to capital account",
-                        "capitalised building repairs",
-                        "deductible VAT"
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -1858,7 +1882,7 @@
               "type": "Question",
               "question": {
                 "id": "questionexpenditure-on-goods-and-raw-materials",
-                "title": "For the reporting period, what was your business&#39;s expenditure on <em>goods and all raw materials</em> used in the running of your business?",
+                "title": "For the reporting period, what was your business&#39;s expenditure on <em>goods and all raw materials</em>?",
                 "guidance": {
                   "contents": [
                     {
@@ -1874,8 +1898,7 @@
                         "the cost of materials purchased for use in the installation, repair or maintenance of customers&#39; goods of customers&#x2019; goods",
                         "purchase of telephone handsets and modems",
                         "food and drink used in the preparation of meals and drinks",
-                        "building materials you have purchased for your own use",
-                        "non-deductible VAT"
+                        "building materials you have purchased for your own use"
                       ]
                     },
                     {
@@ -1886,7 +1909,10 @@
                         "goods or services purchased for resale without processing",
                         "transport costs on purchases paid to a third party",
                         "amounts charged to capital account",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -1920,11 +1946,10 @@
                     },
                     {
                       "list": [
-                        "any goods bought for resale without further processing such as merchanted goods, goods purchased and resold without modification",
-                        "any other goods bought on a &#x2018;sale or return&#x2019; basis which were subsequently sold but <strong>exclude </strong>the cost of those returned unsold",
-                        "the purchase price paid for the goods for resale including any duties paid by the seller",
                         "the full purchase price of property bought and sold in the same financial period, without development",
-                        "non-deductible VAT"
+                        "any goods bought for resale without further processing such as merchanted goods, goods purchased and resold without modification",
+                        "any goods bought on a &#x2018;sale or return&#x2019; basis which were subsequently sold but <strong>exclude </strong>the cost of those returned unsold",
+                        "the purchase price paid for the goods for resale including any duties paid by the seller"
                       ]
                     },
                     {
@@ -1934,10 +1959,13 @@
                       "list": [
                         "the cost of parts and materials purchased for use in the installation, repair or servicing of customers&#x2019; goods",
                         "food and drink requiring preparation before sale",
-                        "any other goods &#39;sold&#39; which are part of a service",
+                        "any goods &#39;sold&#39; which are part of a service",
                         "the full value of any transfer fees paid out",
                         "excise duties paid by yourselves",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -1971,15 +1999,19 @@
                     },
                     {
                       "list": [
-                        "sales of services bought and then sold on to a customer without actually changing the service sold, such as cleaning services in rented accommodation",
-                        "non-deductible VAT"
+                        "sales of services bought and then sold on to a customer without actually changing the service sold, such as cleaning services in rented accommodation"
                       ]
                     },
                     {
                       "description": "<strong>Exclude:</strong>"
                     },
                     {
-                      "list": ["deductible VAT"]
+                      "list": [
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
+                      ]
                     }
                   ]
                 },
@@ -2077,12 +2109,6 @@
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["non-deductible VAT"]
-                    },
-                    {
                       "description": "<strong>Exclude:</strong>"
                     },
                     {
@@ -2090,8 +2116,7 @@
                         "employment costs",
                         "all interest payments",
                         "amounts charged to capital account",
-                        "capitalised building repairs",
-                        "deductible VAT"
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2137,8 +2162,7 @@
                       "list": [
                         "rental of telephone handsets and modems",
                         "car hire or other vehicle hire without drivers",
-                        "payments for long term rental and operational leasing of goods",
-                        "non-deductible VAT"
+                        "payments for long term rental and operational leasing of goods"
                       ]
                     },
                     {
@@ -2148,7 +2172,10 @@
                       "list": [
                         "hire purchase repayments and finance leasing payments",
                         "amounts payable for road vehicles hired with drivers",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2182,8 +2209,7 @@
                     },
                     {
                       "list": [
-                        "premiums for all forms of commercial insurance including insurance premium tax, for example, fire, motor vehicle, accident, transit within the UK, loss of profit",
-                        "non-deductible VAT"
+                        "premiums for all forms of commercial insurance including insurance premium tax, for example, fire, motor vehicle, accident, transit within the UK, loss of profit"
                       ]
                     },
                     {
@@ -2195,7 +2221,10 @@
                         "premiums for policies providing pensions, superannuation or other retirement, sickness, personal accident, disability or death benefits for employees or their dependants",
                         "employers&#x2019; National Insurance contributions",
                         "value of insurance claims received",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2232,8 +2261,7 @@
                         "the cost of freight transport by road only",
                         "road transport used for furniture removal",
                         "road transport services purchased for own staff use, for example, buses and taxis",
-                        "amounts payable for road vehicles hired with drivers",
-                        "non-deductible VAT"
+                        "amounts payable for road vehicles hired with drivers"
                       ]
                     },
                     {
@@ -2242,7 +2270,10 @@
                     {
                       "list": [
                         "car hire or other vehicle hire without drivers",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2277,8 +2308,7 @@
                     {
                       "list": [
                         "rental charges on telephone services including mobile phone services",
-                        "the cost of telephone calls, facsimiles, internet services and data transmission",
-                        "non deductible VAT"
+                        "the cost of telephone calls, facsimiles, internet services and data transmission"
                       ]
                     },
                     {
@@ -2287,7 +2317,10 @@
                     {
                       "list": [
                         "the cost of all telephone handsets and modem equipment",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2322,8 +2355,7 @@
                     {
                       "list": [
                         "repairs and maintenance of office machinery and computers",
-                        "consultancy charges on computer software and hardware",
-                        "non-deductible VAT"
+                        "consultancy charges on computer software and hardware"
                       ]
                     },
                     {
@@ -2332,7 +2364,10 @@
                     {
                       "list": [
                         "computer hardware and software",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2367,8 +2402,7 @@
                     {
                       "list": [
                         "payments for advertising or marketing campaigns, including payments for television or radio media time, newspaper or billboard space",
-                        "payments for market research and public relations activities carried out by a third party",
-                        "non-deductible VAT"
+                        "payments for market research and public relations activities carried out by a third party"
                       ]
                     },
                     {
@@ -2377,7 +2411,10 @@
                     {
                       "list": [
                         "market research and public relations activities carried out by your own staff",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2407,18 +2444,15 @@
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["non-deductible VAT"]
-                    },
-                    {
                       "description": "<strong>Exclude:</strong>"
                     },
                     {
                       "list": [
                         "labour recruitment administration costs",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2448,12 +2482,6 @@
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["non-deductible VAT"]
-                    },
-                    {
                       "description": "<strong>Exclude:</strong>"
                     },
                     {
@@ -2462,7 +2490,10 @@
                         "council tax",
                         "building materials for own use",
                         "payments to sub-contractors",
-                        "deductible VAT"
+                        "employment costs",
+                        "all interest payments",
+                        "amounts charged to capital account",
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -2706,7 +2737,7 @@
                     },
                     {
                       "list": [
-                        "any business rates or formula rates paid to local authorities or Department of Communities and Local Government (DCLG). Formula rates paid to DCLG applies to <strong>Great Britain only</strong>"
+                        "any business rates or formula rates paid to local authorities or Department for Levelling up, Housing and Communities (DLUHC) &#x2013; Formula rates paid to DLUHC applies to Great Britain only"
                       ]
                     },
                     {
@@ -2718,9 +2749,9 @@
                         "sewerage charges",
                         "VAT",
                         "tax already included in the purchase of goods, materials and services",
-                        "corporation tax",
-                        "income tax",
-                        "capital gains tax"
+                        "Corporation Tax",
+                        "Income Tax",
+                        "Capital Gains Tax"
                       ]
                     }
                   ]
@@ -2769,9 +2800,9 @@
                       "list": [
                         "VAT",
                         "tax already included in the purchase of goods, materials and services",
-                        "corporation tax",
-                        "income tax",
-                        "capital gains tax"
+                        "Corporation Tax",
+                        "Income Tax",
+                        "Capital Gains Tax"
                       ]
                     }
                   ]
@@ -2797,7 +2828,7 @@
               "type": "Question",
               "question": {
                 "id": "questionexpenditure-on-climate-change-levy",
-                "title": "For the reporting period, what was your business&#39;s expenditure on amounts payable directly to government under the <em>Climate Change Levy</em>?",
+                "title": "For the reporting period, what was your business&#39;s expenditure on amounts payable directly to government under the <em>Climate Change Levy</em>, net of any agreed reductions?",
                 "guidance": {
                   "contents": [
                     {
@@ -2808,10 +2839,9 @@
                         "any charge recorded on your gas, electric or other fuel bills",
                         "VAT",
                         "tax already included in the purchase of goods, materials and services",
-                        "corporation tax",
-                        "income tax",
-                        "capital gains tax",
-                        "any agreed reductions"
+                        "Corporation Tax",
+                        "Income Tax",
+                        "Capital Gains Tax"
                       ]
                     }
                   ]
@@ -2849,7 +2879,7 @@
                 "id": "questionexpenditure-on-other-amounts-paid-for-rates-duties-levies-and-taxes",
                 "title": "For the reporting period, what was your business&#39;s expenditure on <em>other</em> amounts paid for rates, duties, levies and taxes?",
                 "description": [
-                  "<p>You should only include the value for the rates, duties, levies and taxes listed below if your business paid these directly to government, statutory bodies or regulators. </p><p>Do <em>not</em> include these taxes if they were paid as part of your purchase of goods, materials and services.</p>"
+                  "<p>You should only include the value for the following rates, duties, levies and taxes if your business paid these directly to government, statutory bodies or regulators. </p><p>Do <em>not</em> include these taxes if they were paid as part of your purchase of goods, materials and services.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -2858,19 +2888,19 @@
                     },
                     {
                       "list": [
-                        "excise duties when paid directly to government by your business. For example, on alcohol, tobacco and hydrocarbon oil duty",
+                        "excise duties when paid directly to government by your business. For example, on alcohol, tobacco and hydrocarbon oil fuel duty",
                         "stamp duties",
                         "export levies, for example, under the EU&#39;s Common Agricultural Policy",
                         "import duties",
                         "regulator fees including any statutory amounts paid to: Environment Agency (EA), Office of Gas and Electricity Markets (OFGEM), Office of Water Service Regulation (OFWAT) in England and Wales and the Scottish Water and Sewerage Customers Council (SWSCC) in Scotland, Office of Communications (OFCOM) and Office of Rail and Road (ORR)",
+                        "Consumer and Credit Act fees",
                         "franchise payments to government, for example, rail franchise premia",
+                        "EU Emissions Trading System",
+                        "CRC Energy Efficiency Scheme, formerly known as Carbon Reduction Commitment",
                         "renewable energy obligations",
                         "sugar levy paid to the European Union",
                         "levies paid to government levy-funded bodies, for example, Financial Services Compensation Scheme, Agriculture and Horticulture Development Board and the Sea Fish Industry Authority, and so on",
-                        "Consumer and Credit Act fees",
-                        "EU Emissions Trading System",
-                        "CRC Energy Efficiency Scheme, formerly known as Carbon Reduction Commitment",
-                        "Vehicle Registration Tax, paid upon registering new or imported vehicle for the first time"
+                        "Vehicle Registration Tax, paid upon registering new or imported vehicles for the first time"
                       ]
                     },
                     {
@@ -2878,22 +2908,22 @@
                     },
                     {
                       "list": [
-                        "tax already included in the purchase of goods, materials and services",
-                        "operators&#x2019; licences",
-                        "net payments to trade associations and similar bodies",
-                        "fees and other licences, for example, passport, television, boating and fishing",
-                        "rent payments on land",
                         "VAT",
                         "Vehicle Exercise Duty or road fund licences",
                         "Council Tax payable via local authorities in respect of your rented property",
+                        "operators&#x2019; licences",
                         "Petroleum Revenue Tax",
+                        "net payments to trade associations and similar bodies",
                         "Inheritance Tax",
                         "Landfill Tax",
                         "Insurance Premium Tax",
                         "Lottery Duty",
                         "Capital Gains Tax",
                         "Corporation Tax",
-                        "Income Tax"
+                        "Income Tax",
+                        "fees and other licences, for example, passport, television, boating and fishing",
+                        "rent payments on land",
+                        "tax already included in the purchase of goods, materials and services"
                       ]
                     }
                   ]
@@ -2971,7 +3001,7 @@
                     "description": "This section asks for information regarding the value of stocks held by your business."
                   },
                   {
-                    "description": "This includes the total value of work in progress at the beginning and end of the period"
+                    "description": "This includes the total value of work in progress at the beginning and end of the period."
                   },
                   {
                     "title": "How to complete this section"
@@ -3005,7 +3035,7 @@
               "question": {
                 "id": "questiontotal-value-of-all-stocks-at-the-beginning-of-the-period",
                 "title": {
-                  "text": "What was {ru_name}&#39;s total value of work in progress on {from}?",
+                  "text": "What was {ru_name}&#39;s total value of Work in Progress on {from}?",
                   "placeholders": [
                     {
                       "placeholder": "ru_name",
@@ -3058,7 +3088,6 @@
                         "all stocks owned and held by you in the UK or currently in transit within the UK",
                         "all stocks owned and held by you overseas or currently in transit abroad",
                         "products that you own title to in intermediate stages of completion",
-                        "duty on stocks held out of bond",
                         "long term business contract balances with progress payments treated in line with UK GAAP or International GAAP",
                         "contracts not yet finalised - commission fees for work carried out",
                         "building work carried out by yourselves, <strong>including</strong> finished properties built by yourselves, with the intention to sell"
@@ -3069,7 +3098,9 @@
                     },
                     {
                       "list": [
-                        "products in intermediate stages of completion that do not belong to you"
+                        "products in intermediate stages of completion that do not belong to you",
+                        "VAT",
+                        "progress payments on long-term contracts"
                       ]
                     }
                   ]
@@ -3081,7 +3112,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": {
-                      "text": "Value of work in progress on {from}",
+                      "text": "Value of Work in Progress on {from}",
                       "placeholders": [
                         {
                           "placeholder": "from",
@@ -3129,7 +3160,7 @@
               "question": {
                 "id": "questiontotal-value-of-all-stocks-at-the-end-of-the-period",
                 "title": {
-                  "text": "What was your business&#39;s total value of work in progress on <em>{to}</em>?",
+                  "text": "What was your business&#39;s total value of Work in Progress on <em>{to}</em>?",
                   "placeholders": [
                     {
                       "placeholder": "to",
@@ -3175,7 +3206,6 @@
                         "all stocks owned and held by you in the UK or currently in transit within the UK",
                         "all stocks owned and held by you overseas or currently in transit abroad",
                         "products that you own title to in intermediate stages of completion",
-                        "duty on stocks held out of bond",
                         "long term business contract balances with progress payments treated in line with UK GAAP or International GAAP",
                         "contracts not yet finalised - commission fees for work carried out",
                         "building work carried out by yourselves, <strong>including</strong> finished properties built by yourselves, with the intention to sell"
@@ -3186,7 +3216,9 @@
                     },
                     {
                       "list": [
-                        "products in intermediate stages of completion that do not belong to you"
+                        "products in intermediate stages of completion that do not belong to you",
+                        "VAT",
+                        "progress payments on long-term contracts"
                       ]
                     }
                   ]
@@ -3198,7 +3230,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": {
-                      "text": "Value of work in progress on {to}",
+                      "text": "Value of Work in Progress on {to}",
                       "placeholders": [
                         {
                           "placeholder": "to",
@@ -3275,8 +3307,9 @@
                   },
                   {
                     "list": [
-                      "land, existing buildings and structures.",
-                      "construction work",
+                      "land for own use",
+                      "existing buildings and structures for own use, or where you are responsible for non-dwelling maintenance",
+                      "construction work for own use, or where you are responsible for non-dwelling maintenance",
                       "computer software programs and databases, developed by own staff for business use",
                       "computer software programs and databases, purchased or developed externally",
                       "machinery and equipment",
@@ -3438,7 +3471,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -3476,16 +3511,7 @@
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["surveyors&#39; fees"]
-                    },
-                    {
-                      "description": "<strong>Exclude:</strong>"
-                    },
-                    {
-                      "list": ["buildings"]
+                      "description": "For example, surveyors&#39; fees"
                     }
                   ]
                 },
@@ -3506,56 +3532,7 @@
                       "exclusive": false
                     },
                     "decimal_places": 0,
-                    "currency": "GBP",
-                    "guidance": {
-                      "show_guidance": "Additional guidance",
-                      "hide_guidance": "Additional guidance",
-                      "contents": [
-                        {
-                          "description": "<strong>Include:</strong>"
-                        },
-                        {
-                          "list": [
-                            "assets within the UK",
-                            "assets that are used repeatedly to facilitate production, or provision of services, for more than one year",
-                            "the purchase costs and disposal proceeds of fixed assets, together with any other amounts treated as capital items for taxation purposes",
-                            "the total capital value of assets that have been bought on hire purchase in the period covered by the survey",
-                            "assets acquired under finance lease where you, the lessee, are responsible for repairs and maintenance",
-                            "assets owned by the business but leased to another business under an operating lease where you, the lessor, are responsible for repairs and maintenance",
-                            "any trade or transfer costs invoiced to you separately",
-                            "non-deductible VAT",
-                            "expenditure on replacing assets destroyed in circumstances, for example fire, which have given rise to a successful insurance claim",
-                            "expenditure on assets acquired for hiring, renting and other leasing purposes, but <strong>not</strong> finance leasing",
-                            "capital expenditure at any site belonging to the business where operations have not yet begun",
-                            "grants and allowances from government sources, statutory bodies or local authorities that have been used to acquire or create assets used in production",
-                            "finance relating to Public Private Partnership or Private Finance Initiative that has been used to acquire assets",
-                            "progress payment or deposits covering long-term contracts acquiring fixed assets",
-                            "all work of a capital nature carried out by your own staff, <strong>including</strong> labour costs and the cost of purchases consumed in work",
-                            "professional charges and installation costs, and so on, associated with capital assets must be reported with the asset value"
-                          ]
-                        },
-                        {
-                          "description": "<strong>Exclude:</strong>"
-                        },
-                        {
-                          "list": [
-                            "assets outside the UK",
-                            "assets acquired in taking over an existing business or sold as part of a going concern",
-                            "assets of a capital nature acquired for resale rather than for use within business, for example, stocks of vehicles held by motor traders",
-                            "assets like TV adverts or copyrights",
-                            "software licences of up to a year",
-                            "assets leased to another business under finance lease where repair and maintenance are carried out by the other business, or lessee",
-                            "assets acquired under an operating lease where responsibility for repair and maintenance is borne by the owner, or lessor, of the asset",
-                            "asset transfers between companies owned by the same enterprise, <strong>except</strong> where the asset value is considered to be a &#39;new&#39; acquisition or disposal within the company accounts",
-                            "interest and instalment payments under finance leasing arrangements",
-                            "deductible VAT",
-                            "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
-                            "the proceeds from an insurance claim against the loss of fixed assets"
-                          ]
-                        }
-                      ]
-                    }
+                    "currency": "GBP"
                   }
                 ]
               },
@@ -3599,16 +3576,7 @@
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["surveyors&#39; fees"]
-                    },
-                    {
-                      "description": "<strong>Exclude:</strong>"
-                    },
-                    {
-                      "list": ["buildings"]
+                      "description": "For example, surveyors&#39; fees"
                     }
                   ]
                 },
@@ -3629,56 +3597,7 @@
                       "exclusive": false
                     },
                     "decimal_places": 0,
-                    "currency": "GBP",
-                    "guidance": {
-                      "show_guidance": "Additional guidance",
-                      "hide_guidance": "Additional guidance",
-                      "contents": [
-                        {
-                          "description": "<strong>Include:</strong>"
-                        },
-                        {
-                          "list": [
-                            "assets within the UK",
-                            "assets that are used repeatedly to facilitate production, or provision of services, for more than one year",
-                            "the purchase costs and disposal proceeds of fixed assets, together with any other amounts treated as capital items for taxation purposes",
-                            "the total capital value of assets that have been bought on hire purchase in the period covered by the survey",
-                            "assets acquired under finance lease where you, the lessee, are responsible for repairs and maintenance",
-                            "assets owned by the business but leased to another business under an operating lease where you, the lessor, are responsible for repairs and maintenance",
-                            "any trade or transfer costs invoiced to you separately",
-                            "non-deductible VAT",
-                            "expenditure on replacing assets destroyed in circumstances, for example fire, which have given rise to a successful insurance claim",
-                            "expenditure on assets acquired for hiring, renting and other leasing purposes, but <strong>not</strong> finance leasing",
-                            "capital expenditure at any site belonging to the business where operations have not yet begun",
-                            "grants and allowances from government sources, statutory bodies or local authorities that have been used to acquire or create assets used in production",
-                            "finance relating to Public Private Partnership or Private Finance Initiative that has been used to acquire assets",
-                            "progress payment or deposits covering long-term contracts acquiring fixed assets",
-                            "all work of a capital nature carried out by your own staff, <strong>including</strong> labour costs and the cost of purchases consumed in work",
-                            "professional charges and installation costs, and so on, associated with capital assets must be reported with the asset value"
-                          ]
-                        },
-                        {
-                          "description": "<strong>Exclude:</strong>"
-                        },
-                        {
-                          "list": [
-                            "assets outside the UK",
-                            "assets acquired in taking over an existing business or sold as part of a going concern",
-                            "assets of a capital nature acquired for resale rather than for use within business, for example, stocks of vehicles held by motor traders",
-                            "assets like TV adverts or copyrights",
-                            "software licences of up to a year",
-                            "assets leased to another business under finance lease where repair and maintenance are carried out by the other business, or lessee",
-                            "assets acquired under an operating lease where responsibility for repair and maintenance is borne by the owner, or lessor, of the asset",
-                            "asset transfers between companies owned by the same enterprise, <strong>except</strong> where the asset value is considered to be a &#39;new&#39; acquisition or disposal within the company accounts",
-                            "interest and instalment payments under finance leasing arrangements",
-                            "deductible VAT",
-                            "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
-                            "the proceeds from an insurance claim against the loss of fixed assets"
-                          ]
-                        }
-                      ]
-                    }
+                    "currency": "GBP"
                   }
                 ]
               },
@@ -3700,7 +3619,7 @@
               "type": "Question",
               "question": {
                 "id": "questionvalue-of-acquisitions-and-proceeds-from-disposal-of-existing-buildings-and-structures",
-                "title": "For the reporting period, what was your business&#39;s value of acquisitions and proceeds from disposal of <em>existing buildings and structures</em>?",
+                "title": "For the reporting period, what was your business&#39;s value of acquisitions and proceeds from disposal of <em>existing buildings and structures for own use</em>, or where you are responsible for non-dwelling maintenance?",
                 "guidance": {
                   "contents": [
                     {
@@ -3708,8 +3627,6 @@
                     },
                     {
                       "list": [
-                        "existing buildings and structures for own use",
-                        "existing buildings and structures where you are responsible for non-dwelling maintenance",
                         "used buildings and structures that have been bought or sold"
                       ]
                     },
@@ -3730,7 +3647,7 @@
                     "id": "answerad818055-ffc3-43da-b0ec-bd85b07aa183",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Value of acquisitions of existing buildings and structures",
+                    "label": "Value of acquisitions of existing buildings and structures for own use, or where you are responsible for non-dwelling maintenance",
                     "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "764",
                     "decimal_places": 0,
@@ -3740,7 +3657,7 @@
                     "id": "answeraa61fcb4-43ff-492e-94a5-1c45f07ee477",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Value of proceeds from disposals of existing buildings and structures",
+                    "label": "Value of proceeds from disposals of existing buildings and structures for own use, or where you are responsible for non-dwelling maintenance",
                     "q_code": "766",
                     "decimal_places": 0,
                     "currency": "GBP",
@@ -3787,7 +3704,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -3803,7 +3722,7 @@
               "type": "Question",
               "question": {
                 "id": "questionvalue-of-acquisitions-of-construction-work",
-                "title": "For the reporting period, what was your business&#39;s value of acquisitions of <em>construction work</em>?",
+                "title": "For the reporting period, what was your business&#39;s value of acquisitions of <em>construction work for own use</em>, or where you are responsible for non-dwelling maintenance?",
                 "guidance": {
                   "contents": [
                     {
@@ -3842,7 +3761,7 @@
                     "id": "answer440d5cb2-a51b-4e70-83cc-3a4e48375620",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Value of acquisitions of construction work",
+                    "label": "Value of acquisitions of construction work for own use, or where you are responsible for non-dwelling maintenance",
                     "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "1641",
                     "decimal_places": 0,
@@ -3890,7 +3809,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -3988,7 +3909,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -4086,7 +4009,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -4185,7 +4110,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -4294,7 +4221,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -4314,16 +4243,13 @@
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["goodwill"]
-                    },
-                    {
                       "description": "<strong>Exclude:</strong>"
                     },
                     {
-                      "list": ["impairment charges", "sports contracts"]
+                      "list": [
+                        "impairment charges on goodwill",
+                        "sports contracts"
+                      ]
                     }
                   ]
                 },
@@ -4333,6 +4259,7 @@
                     "contents": [
                       {
                         "list": [
+                          "goodwill",
                           "patents",
                           "licences",
                           "concessions",
@@ -4409,7 +4336,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -4581,7 +4510,9 @@
                             "interest and instalment payments under finance leasing arrangements",
                             "deductible VAT",
                             "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
+                            "allowances for depreciation",
+                            "amortisation",
+                            "impairment charges",
                             "the proceeds from an insurance claim against the loss of fixed assets"
                           ]
                         }
@@ -4716,7 +4647,7 @@
               "id": "value-of-acquisitions-from-construction-machinery-and-equipment-and-intellectual-property",
               "type": "CalculatedSummary",
               "page_title": "Value of acquisitions from construction, machinery and equipment and intellectual property",
-              "title": "We have calculated your business&#39;s value of acquisitions from construction work, machinery and equipment and intellectual property assets, during the reporting period, to be <em>%(total)s</em>. Is this correct?",
+              "title": "We have calculated your business&#39;s value of acquisitions from construction work, machinery and equipment, and intellectual property assets, during the reporting period, to be <em>%(total)s</em>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -4734,7 +4665,7 @@
                     }
                   ]
                 },
-                "title": "Value of acquisitions from construction work, machinery and equipment and intellectual property assets"
+                "title": "Value of acquisitions from construction work, machinery and equipment, and intellectual property assets"
               }
             },
             {
@@ -4982,9 +4913,9 @@
                       "list": [
                         "transactions with branches or subsidiaries of UK businesses that are located outside the UK",
                         "transactions with a subsidiary or parent of your company located outside the UK",
-                        "repair of construction equipment and computers but <strong>not </strong>maintenance",
-                        "the hiring out of plant, machinery and other goods",
-                        "advertising and commission as an agent, <strong>excluding </strong>the value of imports or exports of goods",
+                        "repair of construction equipment and computers, but <strong>not</strong> maintenance",
+                        "operational leasing: the hiring out of plant, machinery and other goods",
+                        "advertising and commission as an agent, <strong>excluding</strong> the value of imports or exports of goods",
                         "merchanting profits and losses on goods bought and sold abroad without entering the UK",
                         "management fees"
                       ]
@@ -4995,7 +4926,6 @@
                     {
                       "list": [
                         "trade in goods",
-                        "dividend or interest payments",
                         "transactions with branches or subsidiaries of foreign businesses that are located within the UK",
                         "dividend or interest payments",
                         "transactions in financial assets or liabilities",
@@ -5006,20 +4936,6 @@
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "Examples of &#39;services&#39;",
-                    "contents": [
-                      {
-                        "list": [
-                          "repair of construction equipment and computers, but not maintenance or any other repairs",
-                          "the hiring out of plant, machinery and other goods such as operational leasing",
-                          "advertising and commission as an agent, <strong>excluding</strong> the value of imports or exports of good"
-                        ]
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -5054,9 +4970,9 @@
                       "list": [
                         "transactions with branches or subsidiaries of UK businesses that are located outside the UK",
                         "transactions with a subsidiary or parent of your company located outside the UK",
-                        "repair of construction equipment and computers but <strong>not </strong>maintenance",
-                        "the hiring out of plant, machinery and other goods",
-                        "advertising and commission as an agent, <strong>excluding </strong>the value of imports or exports of goods",
+                        "repair of construction equipment and computers, but <strong>not</strong> maintenance",
+                        "operational leasing: the hiring out of plant, machinery and other goods",
+                        "advertising and commission as an agent, <strong>excluding</strong> the value of imports or exports of goods",
                         "merchanting profits and losses on goods bought and sold abroad without entering the UK",
                         "management fees"
                       ]
@@ -5067,7 +4983,6 @@
                     {
                       "list": [
                         "trade in goods",
-                        "dividend or interest payments",
                         "transactions with branches or subsidiaries of foreign businesses that are located within the UK",
                         "dividend or interest payments",
                         "transactions in financial assets or liabilities",
@@ -5078,20 +4993,6 @@
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "Examples of &#39;services&#39;",
-                    "contents": [
-                      {
-                        "list": [
-                          "repair of construction equipment and computers, but not maintenance or any other repairs",
-                          "the hiring out of plant, machinery and other goods such as operational leasing",
-                          "advertising and commission as an agent, <strong>excluding</strong> the value of imports or exports of good"
-                        ]
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -5227,7 +5128,11 @@
                     {
                       "list": [
                         "transactions with branches or subsidiaries of UK businesses that are located outside the UK",
-                        "transactions with a subsidiary or parent of your company located outside the UK"
+                        "transactions with a subsidiary or parent of your company located outside the UK",
+                        "semi-finished or finished manufactured goods",
+                        "food, beverages, and tobacco",
+                        "basic materials",
+                        "oil and other fuel"
                       ]
                     },
                     {
@@ -5246,19 +5151,7 @@
                     "title": "What we mean by &#39;goods&#39;",
                     "contents": [
                       {
-                        "description": "Goods are specific, tangible commodities."
-                      },
-                      {
-                        "description": "Examples of goods:"
-                      },
-                      {
-                        "list": [
-                          "raw materials",
-                          "semi-finished or finished manufactured goods",
-                          "food, beverages, and tobacco",
-                          "basic materials",
-                          "oil and other fuel"
-                        ]
+                        "description": "This refers to specific, tangible commodities. For example, raw materials."
                       }
                     ]
                   }
@@ -5302,7 +5195,11 @@
                     {
                       "list": [
                         "transactions with branches or subsidiaries of UK businesses that are located outside the UK",
-                        "transactions with a subsidiary or parent of your company located outside the UK"
+                        "transactions with a subsidiary or parent of your company located outside the UK",
+                        "semi-finished or finished manufactured goods",
+                        "food, beverages, and tobacco",
+                        "basic materials",
+                        "oil and other fuel"
                       ]
                     },
                     {
@@ -5321,19 +5218,7 @@
                     "title": "What we mean by &#39;goods&#39;",
                     "contents": [
                       {
-                        "description": "Goods are specific, tangible commodities."
-                      },
-                      {
-                        "description": "Examples of goods:"
-                      },
-                      {
-                        "list": [
-                          "raw materials",
-                          "semi-finished or finished manufactured goods",
-                          "food, beverages, and tobacco",
-                          "basic materials",
-                          "oil and other fuel"
-                        ]
+                        "description": "This refers to specific, tangible commodities. For example, raw materials."
                       }
                     ]
                   }
@@ -5366,7 +5251,7 @@
     },
     {
       "id": "research-and-development-section-summary",
-      "title": "Research and development",
+      "title": "Research and Development",
       "summary": {
         "show_on_completion": true,
         "page_title": "Research and development section summary",
@@ -5382,7 +5267,7 @@
               "id": "research-and-development-section",
               "page_title": "Research and development section",
               "content": {
-                "title": "Research and development",
+                "title": "Research and Development",
                 "contents": [
                   {
                     "description": "This section asks for information regarding your business&#39;s research and development."
@@ -5607,14 +5492,6 @@
   },
   "metadata": [
     {
-      "name": "user_id",
-      "type": "string"
-    },
-    {
-      "name": "ru_ref",
-      "type": "string"
-    },
-    {
       "name": "ru_name",
       "type": "string"
     },
@@ -5634,6 +5511,14 @@
     {
       "name": "ref_p_end_date",
       "type": "date"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
     }
   ],
   "post_submission": {
@@ -5642,7 +5527,7 @@
     "guidance": {
       "contents": [
         {
-          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab).</a>"
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab).</a>"
         }
       ]
     }

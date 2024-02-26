@@ -122,7 +122,7 @@
                     "description": "This survey is a key resource for understanding the structure, conduct and performance of businesses across the UK."
                   },
                   {
-                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\"target=\"_blank\"rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\" target=\"_blank\" rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
                   },
                   {
                     "description": "This survey has the following sections:"
@@ -260,10 +260,10 @@
                     {
                       "list": [
                         "The information you supply, helps to measure the UK economy and is used by the government to determine economic policy. The ABS also influences decisions on company and personal taxation, and interest rates.",
-                        "The statistics produced help to improve the overall quality of National Accounts and the measurement of <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\"target=\"_blank\"rel=\"noopener noreferrer\">Gross Domestic Product (GDP) (this link opens in a new tab)</a>",
+                        "The statistics produced help to improve the overall quality of National Accounts and the measurement of <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\" target=\"_blank\" rel=\"noopener noreferrer\">Gross Domestic Product (GDP) (this link opens in a new tab)</a>",
                         "In addition to the National Accounts, the ABS is also used by the Scottish Government and Welsh Government in the compilation of both regional country specific Input and Output tables and Indices of Production.",
                         "It also provides a major contribution to the Blue Book, which is produced annually by our National Accounts Team and used to inform HM Treasury in managing economic policy.",
-                        "<a href=\"https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/nonfinancialbusinesseconomyukandregionalannualbusinesssurvey/latest\"target=\"_blank\"rel=\"noopener noreferrer\">View the latest publication produced from this survey (this link opens in a new tab)</a>"
+                        "<a href=\"https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/nonfinancialbusinesseconomyukandregionalannualbusinesssurvey/latest\" target=\"_blank\" rel=\"noopener noreferrer\">View the latest publication produced from this survey (this link opens in a new tab)</a>"
                       ]
                     }
                   ]
@@ -310,7 +310,7 @@
                     ]
                   },
                   {
-                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\"target=\"_blank\"rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\" target=\"_blank\" rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
                   },
                   {
                     "title": "<strong>What activity to include in this survey</strong>"
@@ -567,7 +567,7 @@
                     "list": [
                       "total turnover",
                       "retail turnover",
-                      "commodity breakdown",
+                      "commodity breakdown, including VAT",
                       "environmental turnover"
                     ]
                   },
@@ -685,7 +685,7 @@
                     "title": "What we mean by &#39;turnover&#39;",
                     "contents": [
                       {
-                        "description": "This refers to the total amount receivable in respect of invoices raised during the period of the return, from the sale of goods and services. Figures should be given gross of indirect taxes, duties and levies, including VAT, invoiced to the customer."
+                        "description": "This refers to the total amount receivable in respect of invoices raised during the period of the return, from the sale of goods and services. Figures should be given gross of indirect taxes, duties and levies, <strong>including</strong> VAT, invoiced to the customer."
                       }
                     ]
                   }
@@ -724,9 +724,9 @@
                             "receipts from government for goods and services supplied free, or at a subsidised rate, under the National Health Services and similar public services",
                             "transport, insurance and packaging charges, less amounts for returnable containers, invoiced by your business even if invoiced separately",
                             "income from subcontracted activities",
-                            "for commission work, for example where you do not hold title to goods sold, the commission or fee is to be included but not the full transaction price. Also to be included here are costs incurred and passed on to the customer",
+                            "for commission work, where you do not hold title to goods sold, the commission or fee is to be included but not the full transaction price. Also to be included here are costs incurred and passed on to the customer",
                             "the value of second-hand goods taken in part exchange, such second-hand goods should also be recorded as purchases",
-                            "service charges for credit provided but not interest charges",
+                            "service charges for credit provided but<strong> not</strong> interest charges",
                             "the value of vouchers, tokens and coupons used by customers as a means of payment, but <strong>not</strong> the sale of such vouchers and so on to customers",
                             "royalty payments received",
                             "income from retail sales over the internet where you hold title to the goods sold",
@@ -831,7 +831,7 @@
               "question": {
                 "id": "questionturnover-from-the-retail-sale-of-goods-to-the-general-public",
                 "title": {
-                  "text": "Of {total_turnover} total turnover, what was your business&#39;s income from the retail sale of goods to the general public?",
+                  "text": "Of {total_turnover} total turnover, what was your business&#39;s value of sales of goods direct to the general public for personal or household use?",
                   "placeholders": [
                     {
                       "placeholder": "total_turnover",
@@ -859,7 +859,6 @@
                     },
                     {
                       "list": [
-                        "sales of goods direct to the general public, and not to businesses, for personal or household use",
                         "installation services",
                         "sale of petroleum products to which you hold title. Petrol filling stations who do not hold title to the petrol sales should only include fees receivable and not the full value of petrol sales"
                       ]
@@ -869,6 +868,7 @@
                     },
                     {
                       "list": [
+                        "sales of goods direct to businesses",
                         "catering activity such as sales of prepared food and drink",
                         "hire of goods",
                         "rental from businesses trading on your premises, for example, a shop within a shop"
@@ -882,7 +882,7 @@
                     "id": "answer4516927d-f378-4235-8aa3-5cf8f4350e56",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Income from the retail sale of goods to the general public",
+                    "label": "Value of sales of goods direct to the general public for personal or household use",
                     "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "345",
                     "maximum": {
@@ -1007,7 +1007,7 @@
                   ]
                 },
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1016,8 +1016,7 @@
                     },
                     {
                       "list": [
-                        "petrol filling stations operating on commission sales",
-                        "petrol filling stations who do not hold title to the petrol sales should only include any fees received and not the full value of the petrol sales"
+                        "petrol filling stations who do not hold title to the petrol sales should only include any fees received and not the full value of the petrol sales. Petrol filling stations operating on commission sales should complete this question"
                       ]
                     }
                   ]
@@ -1038,6 +1037,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1057,7 +1059,7 @@
                 "id": "questionturnover-from-bakery-products-and-cereals",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>bakery products and cereals</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1072,7 +1074,7 @@
                         "pizzas",
                         "bread, waffles, crumpets and croissants",
                         "pastry products such as cakes, tarts, pasties and quiches",
-                        "pies, excluding those containing meat or fish",
+                        "pies, <strong>excluding</strong> those containing meat or fish",
                         "mixes and dough for the preparation of bakery products or pastry-cook products",
                         "other cereal products such as flour, tapioca, sago and couscous",
                         "cereal preparations such as cornflakes, oat flakes and other breakfast cereals"
@@ -1096,6 +1098,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1115,7 +1120,7 @@
                 "id": "questionturnover-from-meat",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>meat</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1146,6 +1151,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1165,7 +1173,7 @@
                 "id": "questionturnover-from-fish",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>fish</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1198,6 +1206,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -1259,6 +1270,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1293,6 +1307,7 @@
                         "other vegetable fats including &#39;diet&#39; margerines",
                         "other edible animal fats such as lard",
                         "corn oil",
+                        "sunflower oil",
                         "groundnut oil",
                         "olive oil",
                         "walnut oil"
@@ -1322,6 +1337,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1341,7 +1359,7 @@
                 "id": "questionturnover-from-fruit",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>fruit</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1372,6 +1390,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1391,7 +1412,7 @@
                 "id": "questionturnover-from-vegetables",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>vegetables</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1421,6 +1442,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -1483,6 +1507,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1502,7 +1529,7 @@
                 "id": "questionturnover-from-sauces-herbs-spices-and-soups",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>sauces, herbs, spices and soups</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1543,6 +1570,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1575,6 +1605,7 @@
                         "tea including plant products for infusion",
                         "fruit juices",
                         "vegetable drinks",
+                        "cocoa, powdered chocolate and malted drinks",
                         "mineral and spring water",
                         "soft drinks such as sodas, lemonades, colas",
                         "fruit concentrate and syrups for the preparation of beverages",
@@ -1608,6 +1639,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1627,7 +1661,7 @@
                 "id": "questionturnover-from-alcoholic-beverages",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>alcoholic beverages</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1661,6 +1695,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -1723,6 +1760,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1755,8 +1795,7 @@
                         "underwear",
                         "hosiery",
                         "nightwear",
-                        "babies&#39; booties",
-                        "handkerchiefs made of fabric",
+                        "babies&#39; booties and handkerchiefs made of fabric",
                         "babies&#39; cloth nappies",
                         "sportwear including swimwear",
                         "workwear"
@@ -1793,6 +1832,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -1867,6 +1909,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -1927,6 +1972,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -1991,6 +2039,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -2063,6 +2114,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2125,6 +2179,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2144,7 +2201,7 @@
                 "id": "questionturnover-from-works-of-art-and-antiques",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>works of art and antiques</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -2171,6 +2228,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -2239,6 +2299,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2256,9 +2319,9 @@
               "type": "Question",
               "question": {
                 "id": "questionturnover-from-household-and-personal-appliances",
-                "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>household and personal appliances</em>?",
+                "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>household and personal appliances</em>, whether electric of not?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -2300,6 +2363,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2319,7 +2385,7 @@
                 "id": "questionturnover-from-glassware-tableware-and-household-utensils",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>glassware, tableware and household utensils</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -2360,6 +2426,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2391,7 +2460,7 @@
                         "motorised tools such as electric drills, saws, sanders, hedgecutters, motor-driven lawnmowers, cultivators and chainsaws",
                         "ladders and steps",
                         "garden tools and equipment such as hand lawnmowers, wheelbarrows, watering cans and hoses",
-                        "miscellaneous accessories such as door fittings for example hinges, handles and locks, fittings for radiators and fireplaces, curtain rails, carpet rods and fencing",
+                        "miscellaneous accessories such as door fittings for example hinges, handles and locks; fittings for radiators and fireplaces; curtain rails, carpet rods and fencing",
                         "small electrical accessories such as power sockets, switches, wiring, flex, batteries, electric and fluorescent lighting, torches and flashlights, bells and alarms"
                       ]
                     },
@@ -2418,6 +2487,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -2448,8 +2520,7 @@
                     {
                       "list": [
                         "household cleaning and maintenance products",
-                        "household paper products and other non-durable household goods",
-                        "paper products such as paper tablecloths, kitchen paper, vacuum cleaning bags",
+                        "household paper products and other non-durable household goods such as paper tablecloths, kitchen paper, vacuum cleaning bags",
                         "aluminum foil",
                         "plastic bin-liners",
                         "matches",
@@ -2491,6 +2562,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -2553,6 +2627,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2572,7 +2649,7 @@
                 "id": "questionturnover-from-national-health-service-receipts",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>National Health Service receipts</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -2602,6 +2679,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -2666,6 +2746,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -2740,6 +2823,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2798,6 +2884,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2815,7 +2904,7 @@
               "type": "Question",
               "question": {
                 "id": "questionturnover-from-travel-goods-and-other-personal-effects",
-                "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>travel goods and other personal effects</em>?",
+                "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>travel goods and other personal effects</em> not elsewhere classified?",
                 "description": [
                   "<p>The following includes and excludes are not an exhaustive list.</p>"
                 ],
@@ -2856,6 +2945,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -2894,7 +2986,7 @@
                     },
                     {
                       "list": [
-                        "telefax and telephone- answering facilities provided by personal computers"
+                        "telefax and telephone-answering facilities provided by personal computers"
                       ]
                     }
                   ]
@@ -2914,6 +3006,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -2946,7 +3041,7 @@
                         "radios",
                         "televisions",
                         "video recorders",
-                        "clock radios, twoway radios and amateur radio receivers and transmitters",
+                        "clock radios, two way radios and amateur radio receivers and transmitters",
                         "cassette players and recorders",
                         "CD players and minidisc players",
                         "personal stereos and stereo systems including their constituent units such as turntables, tuners, amplifiers and speakers",
@@ -2977,6 +3072,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -3039,6 +3137,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -3108,6 +3209,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -3175,6 +3279,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -3194,7 +3301,7 @@
                 "id": "questionturnover-from-equipment-and-accessories-for-sport-camping-and-recreation",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>equipment and accessories for sport, camping and recreation</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -3236,6 +3343,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -3307,6 +3417,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -3346,7 +3459,7 @@
                         "novelties",
                         "stamp collecting requisites such as cancelled postage stamps and stamp albums",
                         "other items for collection such as coins and medals",
-                        "any other articles for hobbies not previously reported"
+                        "any other articles for hobbies not elsewhere classified"
                       ]
                     },
                     {
@@ -3376,6 +3489,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -3444,6 +3560,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -3498,6 +3617,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -3562,6 +3684,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -3581,7 +3706,7 @@
                 "id": "questionturnover-from-newspapers-and-periodicals",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>newspapers and periodicals</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -3608,6 +3733,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -3677,6 +3805,9 @@
                       "hide_guidance": "Additional guidance",
                       "contents": [
                         {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
+                        {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
                         {
@@ -3696,7 +3827,7 @@
                 "id": "questionturnover-from-other-goods-not-elsewhere-classified",
                 "title": "For the reporting period, what was your business&#39;s turnover from the retail sales of <em>other goods not elsewhere classified</em>?",
                 "description": [
-                  "<p>The following includes and excludes are not an exhaustive list.</p>"
+                  "<p>The following includes are not an exhaustive list.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -3731,6 +3862,9 @@
                       "show_guidance": "Additional guidance",
                       "hide_guidance": "Additional guidance",
                       "contents": [
+                        {
+                          "description": "The commodity breakdown should relate to sales through retail shops, petrol filling stations, roundsmen&#39;s depots, stalls, door-to-door, mail order, party plan or automatic vending machines. If you do not have exact records of sales or receipts under particular headings within the commodity breakdown, make the best estimate you can, heading by heading. The list is the minimum needed to satisfy this range of requirements as we are conscious of the burden placed on business and try to keep it to a minimum."
+                        },
                         {
                           "description": "Commission or rental from other businesses trading on your premises, such as a shop within a shop, should be recorded under the relevant commodity that the company is selling."
                         },
@@ -4058,24 +4192,24 @@
                     "q_code": "81",
                     "options": [
                       {
-                        "label": "75-100%",
-                        "value": "75-100%"
+                        "label": "75% to 100%",
+                        "value": "75% to 100%"
                       },
                       {
-                        "label": "50-74%",
-                        "value": "50-74%"
+                        "label": "50% to 74%",
+                        "value": "50% to 74%"
                       },
                       {
-                        "label": "25-49%",
-                        "value": "25-49%"
+                        "label": "25% to 49%",
+                        "value": "25% to 49%"
                       },
                       {
-                        "label": "10-24%",
-                        "value": "10-24%"
+                        "label": "10% to 24%",
+                        "value": "10% to 24%"
                       },
                       {
-                        "label": "0-9%",
-                        "value": "0-9%"
+                        "label": "0% to 9%",
+                        "value": "0% to 9%"
                       }
                     ]
                   }
@@ -4117,7 +4251,6 @@
                     "list": [
                       "employment costs",
                       "energy, goods, materials and services",
-                      "services specifically for business use",
                       "rates, duties, levies and taxes paid to the government"
                     ]
                   },
@@ -4214,12 +4347,12 @@
                       "list": [
                         "accrued holiday pay",
                         "all overtime payments, bonuses and commissions",
-                        "payments to those temporarily absent but still being paid, for example on parental leave, on holiday, or on sick",
+                        "payments to those temporarily absent, for example on parental leave, on holiday, or on sick",
                         "the cost to the employer of all expenses and benefits in-kind. These <strong>include</strong>: assets transferred to employees such as cars, property, goods or other assets. Payments made on behalf of employees such as mileage allowances and fuel payments, unless the payments are in respect of travelling expenses. Subsidies to staff canteens, sports club membership, nurseries, playschemes, health insurance and so on",
                         "employment costs paid to workers employed by the UK company and workers employed who are based overseas. These costs should only reflect the installation services activity carried out outside the UK",
                         "employers&#39; National Insurance contributions",
                         "contributions to pension funds, <strong>including</strong> lump sum contributions. Employers&#39; pension contributions should represent actual net amounts rather than notional values",
-                        "payments into pension funds providing retirement or death benefits for employees, <strong>including</strong> former employees or their dependents",
+                        "payments into pension funds providing retirement or death benefits for employees, <strong>including</strong> former employees or their dependants",
                         "redundancy and severance payments to employees, <strong>including</strong> golden handshakes",
                         "any &#39;signing on&#39; fees paid to employees"
                       ]
@@ -4301,13 +4434,12 @@
                     },
                     {
                       "list": [
-                        "any goods bought for resale without further processing, for example, merchanted goods, goods purchased and resold without modification",
-                        "the cost of raw materials, such as flour used in an instore bakery, components, semi-manufactures, workshop and office materials, such as stationery and consumables, machine spares and packaging materials charged to you",
+                        "any goods bought for resale without further processing, merchanted goods, goods purchased and resold without modification",
+                        "the cost of raw materials, such as flour used in an instore bakery, components, semi-manufactures, workshop and office materials such as stationery and consumables, machine spares and packaging materials charged to you",
                         "any energy products bought for resale without further processing, for example, petroleum products <strong>including</strong> diesel, gas <strong>including</strong> LPG and hydrogen and solid fuels <strong>including</strong> coal, coke and charcoal",
                         "any goods bought on a &#x2018;sale or return&#x2019; basis which were subsequently sold but <strong>exclude</strong> the cost of those returned unsold",
                         "carcasses that have been purchased in order to produce smaller cuts of meat",
-                        "food and drink used in the preparation of meals, sandwiches and drinks, for example, food products used in an instore canteen or restaurant",
-                        "non-deductible VAT"
+                        "food and drink used in the preparation of meals, sandwiches and drinks, for example, food products used in an instore canteen or restaurant"
                       ]
                     },
                     {
@@ -4320,8 +4452,7 @@
                         "employment costs",
                         "all interest payments",
                         "amounts charged to capital account",
-                        "capitalised building repairs",
-                        "deductible VAT"
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -4364,16 +4495,10 @@
                 "id": "questionexpenditure-on-all-other-goods-and-services",
                 "title": "For the reporting period, what was your business&#39;s expenditure on <em>all other goods and services</em>?",
                 "description": [
-                  "<p>State the net full delivered cost of purchases made during the period of this return whether or not they were used or resold during that period.</p>"
+                  "<p>State the net full delivered cost of purchases made during the period of this return whether or not they were used or resold during that period. Valuation should be at full delivered cost. In the case of imports the cost should include import and excise duties, less drawback.</p>"
                 ],
                 "guidance": {
                   "contents": [
-                    {
-                      "description": "<strong>Include:</strong>"
-                    },
-                    {
-                      "list": ["non-deductible VAT", "import and excise duties"]
-                    },
                     {
                       "description": "<strong>Exclude:</strong>"
                     },
@@ -4383,8 +4508,7 @@
                         "employment costs",
                         "all interest payments",
                         "amounts charged to capital account",
-                        "capitalised building repairs",
-                        "deductible VAT"
+                        "capitalised building repairs"
                       ]
                     }
                   ]
@@ -4426,11 +4550,11 @@
                             "all fuel costs, for example, electricity, gas, oil, coal, coke, petrol and diesel, purchased for use in the running of your business",
                             "purchases of water used in the running of your business, <strong>including</strong> water extraction charges",
                             "sewerage charges and other costs of effluent and waste disposal",
-                            "other goods and materials, such as office materials, for example, stationery and consumables, machine spares and packaging materials charged to you",
+                            "other goods and materials, such as office materials for example, stationery and consumables; machine spares and packaging materials charged to you",
                             "the cost of goods and materials purchased for use in the installation, repair or maintenance of customers&#x2019; goods",
                             "payments for hiring, leasing or renting plant, machinery and vehicles, if acquired under operational leases, but not if purchased under hire purchase or finance leasing arrangements",
                             "amounts payable to other organisations for transport",
-                            "road transport services purchased for own staff us, for example, buses and taxis",
+                            "road transport services purchased for own staff use, for example, buses and taxis",
                             "purchases of computer and related services, <strong>including </strong>consultancy charges on computer software and hardware and the cost of repair, maintenance and installation of office and computing machinery",
                             "payments to employment agencies for the services of agency staff",
                             "labour recruitment administration costs",
@@ -4515,7 +4639,7 @@
                 "id": "questionexpenditure-on-rates-duties-levies-and-taxes",
                 "title": "For the reporting period, what was your business&#39;s expenditure on rates, duties, levies and taxes paid to the Government?",
                 "description": [
-                  "<p>You should only include the value for the rates, duties, levies and taxes listed below if your business paid these directly to government, statutory bodies or regulators. Do not include these taxes if they were paid as part of your purchase of goods, materials and services.</p>"
+                  "<p>You should only include the value for the following rates, duties, levies and taxes if your business paid these directly to government, statutory bodies or regulators. Do not include these taxes if they were paid as part of your purchase of goods, materials and services.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -4524,9 +4648,10 @@
                     },
                     {
                       "list": [
+                        "the Climate Change Levy (CCL), introduced in April 2001, is charged on industrial and commercial use of various forms of energy. For example, primary and secondary fuel for lighting, heating, motive power and power for appliances",
                         "national non-domestic business rates",
-                        "Vehicle Excise Duty also known as road, car or vehicle tax",
-                        "Climate Change Levy (CCL), introduced in April 2001, is charged on industrial and commercial use of various forms of energy. For example, primary and secondary fuel for lighting, heating, motive power, and power for appliances"
+                        "vehicle excise duty, also known as road, car or vehicle tax",
+                        "climate change levy"
                       ]
                     },
                     {
@@ -4564,8 +4689,8 @@
                         },
                         {
                           "list": [
-                            "excise duties, for example, on alcohol, tobacco, hydrocarbon oil, duty, when paid directly to government by your business",
-                            "any business rates or formula rates paid to local authorities or Department of Communities and Local Government (DCLG), Formula rates paid to DCLG applies to Great Britain only",
+                            "excise duties, for example, on alcohol, tobacco, hydrocarbon oil fuel duty, when paid directly to government by your business",
+                            "any business rates or formula rates paid to local authorities or Department for Levelling up, Housing and Communities (DLUHC) &#x2013; Formula rates paid to DLUHC applies to Great Britain only",
                             "stamp duties",
                             "export levies, for example, under the EU&#x2019;s Common Agricultural Policy",
                             "regulator fees, including any statutory amounts paid to: Environment Agency (EA), Office of Gas and Electricity Markets (OFGEM), Office of Water Service Regulation (OFWAT) in England and Wales and the Scottish Water and Sewerage Customers Council (SWSCC) in Scotland, Office of Communications (OFCOM) and Office of Rail and Road (ORR)",
@@ -4713,6 +4838,7 @@
                     },
                     {
                       "list": [
+                        "Work in Progress",
                         "all stocks that you own title to, of goods and materials on hand for sale or processing, other than goods supplied to another party with a reservation of title clause if treated as turnover",
                         "all stocks owned and held by you in the UK or currently in transit within the UK",
                         "all stocks owned and held by you overseas or currently in transit abroad",
@@ -4729,6 +4855,8 @@
                     },
                     {
                       "list": [
+                        "VAT",
+                        "progress payments on long-term contracts",
                         "stocks you hold but do not own title to including consignment stock",
                         "duty on stocks held in bond",
                         "products in intermediate stages of completion that do not belong to you"
@@ -4834,6 +4962,7 @@
                     },
                     {
                       "list": [
+                        "Work in Progress",
                         "all stocks that you own title to, of goods and materials on hand for sale or processing, other than goods supplied to another party with a reservation of title clause if treated as turnover",
                         "all stocks owned and held by you in the UK or currently in transit within the UK",
                         "all stocks owned and held by you overseas or currently in transit abroad",
@@ -4850,6 +4979,8 @@
                     },
                     {
                       "list": [
+                        "VAT",
+                        "progress payments on long-term contracts",
                         "stocks you hold but do not own title to including consignment stock",
                         "duty on stocks held in bond",
                         "products in intermediate stages of completion that do not belong to you"
@@ -5017,9 +5148,6 @@
                     }
                   ]
                 },
-                "description": [
-                  "<p>Provide values for acquisitions and proceeds from the disposal of capital assets that are used repeatedly to facilitate production, or provide services, for more than one year.</p>"
-                ],
                 "guidance": {
                   "contents": [
                     {
@@ -5027,24 +5155,22 @@
                     },
                     {
                       "list": [
-                        "land and land improvements or preparation, <strong>for own use</strong>",
-                        "other natural resources and non-produced assets, for example, subsoil assets, crude oil, coal, water abstraction and so on",
-                        "non-produced assets, for example, goodwill, patents, licences, concessions, contracts, trade dress, mastheads, domain names, collective and certification marks",
-                        "existing buildings and structures<strong> for own use</strong> or where you are responsible for non-dwelling maintenance",
-                        "major refurbishment, newly built and construction work <strong>for own use</strong>",
-                        "construction of structures such as oil wells, platforms, mines, pipes, power lines, transport infrastructure, wind farms, turbines, and steel frameworks",
-                        "delivery, installation and decommissioning costs",
-                        "transport assets and equipment, for example, new and used vehicles, special purpose vehicles, trailers, ships, boats, aircraft, and railway rolling stock, motorcycles, bicycles, parts, accessories, and major repairs",
-                        "computers and hardware devices, for example, printers, servers, monitors, keyboards, and terminals",
-                        "computer software programs and databases",
-                        "telecommunication equipment, for example, phones, fax machines, switchboards, transmitters, CCTV equipment, TV cameras, and burglar or fire alarms",
-                        "electrical equipment and electronic appliances",
-                        "furniture and office equipment",
-                        "small tools",
-                        "general and special purpose equipment",
-                        "fabricated products, for example, textile, leather, plastic, and metal products",
-                        "intellectual property assets, for example, recordings, films and performances, manuscripts and publications, plans, instructions, and designs",
-                        "transfer costs, professional charges, contracts and fees, for example, surveyors&#39; fees, stamp duty, taxes and legal costs"
+                        "assets within the UK",
+                        "assets that are used repeatedly to facilitate production, or provision of services, for more than one year",
+                        "the purchase costs and disposal proceeds of fixed assets, together with any other amounts treated as capital items for taxation purposes",
+                        "the total capital value of assets that have been bought on hire purchase in the period covered by the survey",
+                        "assets acquired under finance lease transfers where you, the lessee, are responsible for repairs and maintenance",
+                        "assets owned by the business but leased to another business under an operating lease where you, the lessor, are responsible for repairs and maintenance",
+                        "any trade or transfer costs invoiced to you separately",
+                        "non-deductible VAT",
+                        "expenditure on replacing assets destroyed in circumstances, for example fire, which have given rise to a successful insurance claim",
+                        "expenditure on assets acquired for hiring, renting and other leasing purposes, but <strong>not</strong> finance leasing",
+                        "capital expenditure at any site belonging to the business where operations have not yet begun",
+                        "grants and allowances from government sources, statutory bodies or local authorities that have been used to acquire or create assets used in production",
+                        "finance relating to Public Private Partnership or Private Finance Initiative that has been used to acquire assets",
+                        "progress payment or deposits covering long-term contracts acquiring fixed assets",
+                        "all work of a capital nature carried out by your own staff, <strong>including</strong> labour costs and the cost of purchases consumed in work",
+                        "professional charges, installation costs and so on, associated with capital assets must be reported with the asset value"
                       ]
                     },
                     {
@@ -5052,24 +5178,76 @@
                     },
                     {
                       "list": [
-                        "current repair and maintenance costs",
-                        "structures that are used primarily as residences",
-                        "utilities such as gas, electricity and water",
-                        "Research and Development",
-                        "costs of ongoing management of computer software and databases",
-                        "works of art, for example, paintings and sculptures, even if acquired or disposed of by dealers, galleries or museums",
-                        "revaluations of assets, for example, depreciation, amortisation and impairment charges"
+                        "assets outside the UK",
+                        "assets acquired in taking over an existing business or sold as part of a going concern",
+                        "assets of a capital nature acquired for resale rather than for use within business, for example, stocks of vehicles held by motor traders",
+                        "assets like TV adverts or copyrights",
+                        "software licences of up to a year",
+                        "assets leased to another business under finance lease where repair and maintenance are carried out by the other business, or lessee",
+                        "assets acquired under an operating lease where responsibility for repair and maintenance is borne by the owner, or lessor, of the asset",
+                        "asset transfers between companies owned by the same enterprise, <strong>except</strong> where the asset value is considered to be a &#39;new&#39; acquisition or disposal within the company accounts",
+                        "interest and instalment payments under finance leasing arrangements",
+                        "deductible VAT",
+                        "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
+                        "allowances for depreciation, amortisation and impairment charges",
+                        "the proceeds from an insurance claim against the loss of fixed assets"
                       ]
                     }
                   ]
                 },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;capital assets&#39;",
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "land and land improvements or preparation, <strong>for own use</strong>",
+                          "other natural resources and non-produced assets, for example, subsoil assets, crude oil, coal, water abstraction and so on",
+                          "non-produced assets, for example, goodwill, patents, licences, concessions, contracts, trade dress, mastheads, domain names, collective and certification marks",
+                          "existing buildings and structures<strong> for own use</strong> or where you are responsible for non-dwelling maintenance",
+                          "major refurbishment, newly built and construction work <strong>for own use</strong>",
+                          "construction of structures such as oil wells, platforms, mines, pipes, power lines, transport infrastructure, wind farms, turbines, and steel frameworks",
+                          "delivery, installation and decommissioning costs",
+                          "transport assets and equipment, for example, new and used vehicles, special purpose vehicles, trailers, ships, boats, aircraft, and railway rolling stock, motorcycles, bicycles, parts, accessories, and major repairs",
+                          "computers and hardware devices, for example, printers, servers, monitors, keyboards, and terminals",
+                          "computer software programs and databases",
+                          "telecommunication equipment, for example, phones, fax machines, switchboards, transmitters, CCTV equipment, TV cameras, and burglar or fire alarms",
+                          "electrical equipment and electronic appliances",
+                          "furniture and office equipment",
+                          "small tools",
+                          "general and special purpose equipment",
+                          "fabricated products, for example, textile, leather, plastic, and metal products",
+                          "intellectual property assets, for example, recordings, films and performances, manuscripts and publications, plans, instructions, and designs",
+                          "transfer costs, professional charges, contracts and fees, for example, surveyors&#39; fees, stamp duty, taxes and legal costs"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "current repair and maintenance costs",
+                          "structures that are used primarily as residences or dwellings",
+                          "utilities such as gas, electricity and water",
+                          "Research and Development",
+                          "costs of ongoing management of computer software and databases",
+                          "works of art, for example, paintings and sculptures, even if acquired or disposed of by dealers, galleries or museums",
+                          "revaluations of assets, for example, depreciation, amortisation and impairment charges"
+                        ]
+                      }
+                    ]
+                  }
+                ],
                 "type": "General",
                 "answers": [
                   {
                     "id": "answerc9e1b33d-6d02-4854-8d10-7096e83088d0",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Value of capital assets from acquisitions",
+                    "label": "Total value of capital assets from acquisitions",
                     "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "600",
                     "decimal_places": 0,
@@ -5079,59 +5257,10 @@
                     "id": "answer8aa7f8aa-83c3-4efb-bd52-dcf48155a554",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Value of capital assets from disposals",
+                    "label": "Total value of capital assets from disposals",
                     "q_code": "699",
                     "decimal_places": 0,
-                    "currency": "GBP",
-                    "guidance": {
-                      "show_guidance": "Additional guidance",
-                      "hide_guidance": "Additional guidance",
-                      "contents": [
-                        {
-                          "description": "<strong>Include:</strong>"
-                        },
-                        {
-                          "list": [
-                            "assets within the UK",
-                            "assets that are used repeatedly to facilitate production, or provision of services, for more than one year",
-                            "the purchase costs and disposal proceeds of fixed assets, together with any other amounts treated as capital items for taxation purposes",
-                            "the total capital value of assets that have been bought on hire purchase in the period covered by the survey",
-                            "assets acquired under finance lease transfers where you, the lessee, are responsible for repairs and maintenance",
-                            "assets owned by the business but leased to another business under an operating lease where you, the lessor, are responsible for repairs and maintenance",
-                            "any trade or transfer costs invoiced to you separately",
-                            "non-deductible VAT",
-                            "expenditure on replacing assets destroyed in circumstances, for example fire, which have given rise to a successful insurance claim",
-                            "expenditure on assets acquired for hiring, renting and other leasing purposes, but <strong>not</strong> finance leasing",
-                            "capital expenditure at any site belonging to the business where operations have not yet begun",
-                            "grants and allowances from government sources, statutory bodies or local authorities that have been used to acquire or create assets used in production",
-                            "finance relating to Public Private Partnership or Private Finance Initiative that has been used to acquire assets",
-                            "progress payment or deposits covering long-term contracts acquiring fixed assets",
-                            "all work of a capital nature carried out by your own staff, <strong>including</strong> labour costs and the cost of purchases consumed in work",
-                            "professional charges, installation costs and so on, associated with capital assets must be reported with the asset value"
-                          ]
-                        },
-                        {
-                          "description": "<strong>Exclude:</strong>"
-                        },
-                        {
-                          "list": [
-                            "assets outside the UK",
-                            "assets acquired in taking over an existing business or sold as part of a going concern",
-                            "assets of a capital nature acquired for resale rather than for use within business, for example, stocks of vehicles held by motor traders",
-                            "assets like TV adverts or copyrights",
-                            "software licences of up to a year",
-                            "assets leased to another business under finance lease where repair and maintenance are carried out by the other business, or lessee",
-                            "assets acquired under an operating lease where responsibility for repair and maintenance is borne by the owner, or lessor, of the asset",
-                            "asset transfers between companies owned by the same enterprise, <strong>except</strong> where the asset value is considered to be a &#39;new&#39; acquisition or disposal within the company accounts",
-                            "interest and instalment payments under finance leasing arrangements",
-                            "deductible VAT",
-                            "capital expenditure on assets for use outside the UK, <strong>except</strong> ships and aircraft",
-                            "allowances for depreciation, amortisation and impairment charges",
-                            "the proceeds from an insurance claim against the loss of fixed assets"
-                          ]
-                        }
-                      ]
-                    }
+                    "currency": "GBP"
                   }
                 ]
               },
@@ -5865,15 +5994,7 @@
   },
   "metadata": [
     {
-      "name": "user_id",
-      "type": "string"
-    },
-    {
       "name": "ru_name",
-      "type": "string"
-    },
-    {
-      "name": "ru_ref",
       "type": "string"
     },
     {
@@ -5892,16 +6013,23 @@
     {
       "name": "ref_p_end_date",
       "type": "date"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
     }
   ],
   "post_submission": {
-    "confirmation_email": true,
     "feedback": true,
     "view_response": true,
     "guidance": {
       "contents": [
         {
-          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
         }
       ]
     }
