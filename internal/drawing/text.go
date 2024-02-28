@@ -3,8 +3,10 @@ package drawing
 import (
 	"github.com/fogleman/gg"
 	"golang.org/x/image/font"
+	"strings"
 )
 
+const MaxWordLength = 36 //words longer than this will be split into smaller words
 const LineSpacing = 1.5
 
 type TextAlign int
@@ -50,7 +52,7 @@ func newText(value string, size int, bold bool, context *gg.Context) *Text {
 	}
 	return &Text{
 		Base:      newBase(MatchParent(), FitContent()),
-		value:     value,
+		value:     splitLongWords(value, MaxWordLength),
 		size:      size,
 		bold:      bold,
 		color:     Color{0, 0, 0},
@@ -110,4 +112,21 @@ func (text *Text) Render(area Rectangle, context Context) {
 			h += float64(text.size) * LineSpacing
 		}
 	}
+}
+
+func splitLongWords(value string, max int) string {
+	words := strings.Split(value, " ")
+	for i, word := range words {
+		if len(word) > max {
+			words[i] = splitWord(word, max)
+		}
+	}
+	return strings.Join(words, " ")
+}
+
+func splitWord(word string, max int) string {
+	if len(word) > max {
+		return word[:max] + " " + splitWord(word[max:], max)
+	}
+	return word
 }
