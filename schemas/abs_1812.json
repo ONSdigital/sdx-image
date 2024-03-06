@@ -3,6 +3,7 @@
   "mime_type": "application/json/ons/eq",
   "schema_version": "0.0.1",
   "data_version": "0.0.1",
+  "preview_questions": true,
   "survey_id": "202",
   "form_type": "1812",
   "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
@@ -11,7 +12,7 @@
     "type": "Hub",
     "options": {
       "required_completed_sections": [
-        "section97b4ed51-d13c-48dd-b8ff-d9bd5d570db3",
+        "97b4ed51-d13c-48dd-b8ff-d9bd5d570db3",
         "section83f0803a-f99a-41d1-87ef-d72ace7a4962"
       ]
     }
@@ -26,7 +27,7 @@
           "title": "Introduction",
           "blocks": [
             {
-              "id": "introduction-block",
+              "id": "introduction",
               "type": "Introduction",
               "primary_content": [
                 {
@@ -105,8 +106,11 @@
                         "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
                         "You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.",
                         "We will treat your data securely and confidentially.",
-                        "<a href=\"https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/nonfinancialbusinesseconomyukandregionalannualbusinesssurvey/latest\"target=\"_blank\"rel=\"noopener noreferrer\">View the latest publication produced from this survey (this link opens in a new tab)</a>"
+                        "<a href=\"https://www.ons.gov.uk/businessindustryandtrade/business/businessservices/bulletins/nonfinancialbusinesseconomyukandregionalannualbusinesssurvey/latest\" target=\"_blank\" rel=\"noopener noreferrer\">View the latest publication produced from this survey (this link opens in a new tab)</a>"
                       ]
+                    },
+                    {
+                      "description": "You can preview the questions and some of the guidance before starting the survey. There is more detailed guidance available when you start the survey."
                     }
                   ]
                 }
@@ -116,7 +120,7 @@
                 "title": "Information you need",
                 "contents": [
                   {
-                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\"target=\"_blank\"rel=\"noopener noreferrer\">View the questions before you start the survey (this link opens in a new tab)</a>"
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\" target=\"_blank\" rel=\"noopener noreferrer\">View the survey information (this link opens in a new tab)</a>"
                   },
                   {
                     "description": "This questionnaire is divided into sections, which ask for information about:"
@@ -130,7 +134,7 @@
                         "description": "This section asks about the period for which your business will be reporting."
                       },
                       {
-                        "description": "Your return period should cover the year 2022. If no figures are available for that period, your return should relate to a business year that ends between 6 April 2022 and 5 April 2023."
+                        "description": "Your return period should cover the year 2023. If no figures are available for that period, your return should relate to a business year that ends between 6 April 2023 and 5 April 2024."
                       }
                     ]
                   },
@@ -203,7 +207,7 @@
                     },
                     {
                       "list": [
-                        "The statistics produced help to improve the overall quality of National Accounts and the measurement of <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\"target=\"_blank\"rel=\"noopener noreferrer\">Gross Domestic Product (this link opens in a new tab)</a>",
+                        "The statistics produced help to improve the overall quality of National Accounts and the measurement of <a href=\"https://www.ons.gov.uk/economy/grossdomesticproductgdp\" target=\"_blank\" rel=\"noopener noreferrer\">Gross Domestic Product (this link opens in a new tab)</a>",
                         "In addition to the National Accounts, the ABS is also used by the Scottish Government and Welsh Government in the compilation of both regional country specific Input and Output tables and Indices of Production.",
                         "It also provides a major contribution to the Blue Book, which is produced annually by our National Accounts Team and used to inform HM Treasury in managing economic policy."
                       ]
@@ -217,7 +221,7 @@
       ]
     },
     {
-      "id": "section97b4ed51-d13c-48dd-b8ff-d9bd5d570db3",
+      "id": "97b4ed51-d13c-48dd-b8ff-d9bd5d570db3",
       "title": "How to complete and reporting period",
       "summary": {
         "show_on_completion": false,
@@ -230,7 +234,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group97b4ed51-d13c-48dd-b8ff-d9bd5d570db3-introduction",
+              "id": "how-to-complete-and-reporting-period-section",
+              "page_title": "How to complete and reporting period section",
               "content": {
                 "title": "How to complete and reporting period",
                 "contents": [
@@ -251,7 +256,7 @@
                     ]
                   },
                   {
-                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\"target=\"_blank\"rel=\"noopener noreferrer\">View the questions before you start the survey (this link opens in a new tab)</a>"
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/annualbusinesssurvey\" target=\"_blank\" rel=\"noopener noreferrer\">View the questions before you start the survey (this link opens in a new tab)</a>"
                   },
                   {
                     "title": "<strong>What activity to include in this survey</strong>"
@@ -306,10 +311,10 @@
               }
             },
             {
-              "id": "block316a6bf8-ae59-4142-b5da-136afe6b2075",
+              "id": "calendar-year-reporting-period",
               "type": "Question",
               "question": {
-                "id": "question316a6bf8-ae59-4142-b5da-136afe6b2075",
+                "id": "questioncalendar-year-reporting-period",
                 "title": {
                   "text": "Are you able to report for the calendar year {ref_p_start_date} to {ref_p_end_date}?",
                   "placeholders": [
@@ -346,7 +351,7 @@
                   ]
                 },
                 "description": [
-                  "<p>Your return period should cover the year 2022.</p>"
+                  "<p>Your return period should cover the year 2023.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -384,6 +389,7 @@
                   }
                 ]
               },
+              "page_title": "Calendar year reporting period",
               "routing_rules": [
                 {
                   "section": "End",
@@ -398,18 +404,18 @@
                   }
                 },
                 {
-                  "block": "blockc6930918-85d0-48d4-a897-29288be9afdf"
+                  "block": "alternative-reporting-period"
                 }
               ]
             },
             {
-              "id": "blockc6930918-85d0-48d4-a897-29288be9afdf",
+              "id": "alternative-reporting-period",
               "type": "Question",
               "question": {
-                "id": "questionc6930918-85d0-48d4-a897-29288be9afdf",
+                "id": "questionalternative-reporting-period",
                 "title": "What dates will you be reporting for?",
                 "description": [
-                  "<p>If figures are not available for the calendar year 2022, your return should relate to a 12 month business year that ends between 6 April 2022 and 5 April 2023.</p>"
+                  "<p>If figures are not available for the calendar year 2023, your return should relate to a 12 month business year that ends between 6 April 2023 and 5 April 2024.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -420,16 +426,16 @@
                       "description": "Please provide figures for the period in which you were trading."
                     },
                     {
-                      "description": "<strong>Has your business commenced trading during 2022?</strong>"
+                      "description": "<strong>Has your business commenced trading during 2023?</strong>"
                     },
                     {
-                      "description": "Your return should cover the period from the commencement of your business until 31 December 2022 or, alternatively, any date up to 5 April 2023."
+                      "description": "Your return should cover the period from the commencement of your business until 31 December 2023 or, alternatively, any date up to 5 April 2024."
                     },
                     {
-                      "description": "<strong>Has your business ceased trading during 2022?</strong>"
+                      "description": "<strong>Has your business ceased trading during 2023?</strong>"
                     },
                     {
-                      "description": "Your return should cover the period 1 January 2022 to the date you ceased to trade or, alternatively, from the beginning of your last business year up to the cessation date."
+                      "description": "Your return should cover the period 1 January 2023 to the date you ceased to trade or, alternatively, from the beginning of your last business year up to the cessation date."
                     }
                   ]
                 },
@@ -442,7 +448,7 @@
                     "label": "From",
                     "q_code": "11",
                     "minimum": {
-                      "value": "2021-04-06",
+                      "value": "2022-04-06",
                       "offset_by": {
                         "days": 0
                       }
@@ -455,7 +461,7 @@
                     "label": "To",
                     "q_code": "12",
                     "maximum": {
-                      "value": "2023-06-30",
+                      "value": "2024-06-30",
                       "offset_by": {
                         "days": 0
                       }
@@ -470,14 +476,15 @@
                     "months": 16
                   }
                 }
-              }
+              },
+              "page_title": "Alternative reporting period"
             }
           ]
         }
       ]
     },
     {
-      "id": "section4fd9043a-8674-4de0-99b2-e16aca7f4969",
+      "id": "4fd9043a-8674-4de0-99b2-e16aca7f4969",
       "title": "Income",
       "summary": {
         "show_on_completion": false,
@@ -490,7 +497,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group4fd9043a-8674-4de0-99b2-e16aca7f4969-introduction",
+              "id": "income-section",
+              "page_title": "Income section",
               "content": {
                 "title": "Income",
                 "contents": [
@@ -504,10 +512,10 @@
               }
             },
             {
-              "id": "blocked512407-addf-4c3c-8b99-3c982137c56b",
+              "id": "total-turnover",
               "type": "Question",
               "question": {
-                "id": "questioned512407-addf-4c3c-8b99-3c982137c56b",
+                "id": "questiontotal-turnover",
                 "title": {
                   "text": "For the period {from} to {to}, what was {ru_name}&#39;s total turnover?",
                   "placeholders": [
@@ -676,13 +684,14 @@
                     }
                   }
                 ]
-              }
+              },
+              "page_title": "Total turnover"
             },
             {
-              "id": "blockconfirmation-page-for-ed512407-addf-4c3c-8b99-3c982137c56b",
+              "id": "total-turnover-confirmation",
               "type": "ConfirmationQuestion",
               "question": {
-                "id": "questionconfirmation-page-for-ed512407-addf-4c3c-8b99-3c982137c56b",
+                "id": "questiontotal-turnover-confirmation",
                 "title": {
                   "text": "You have reported your business&#39;s total turnover for the period {from} to {to} to be <em>{total_turnover}</em>. Is this correct?",
                   "placeholders": [
@@ -763,7 +772,7 @@
                 "type": "General",
                 "answers": [
                   {
-                    "id": "answerconfirmation-answer-for-ed512407-addf-4c3c-8b99-3c982137c56b",
+                    "id": "answerconfirmation-answer-for-total-turnover",
                     "mandatory": true,
                     "type": "Radio",
                     "options": [
@@ -779,29 +788,30 @@
                   }
                 ]
               },
+              "page_title": "Total turnover confirmation",
               "routing_rules": [
                 {
-                  "block": "blocked512407-addf-4c3c-8b99-3c982137c56b",
+                  "block": "total-turnover",
                   "when": {
                     "==": [
                       {
-                        "source": "answers",
-                        "identifier": "answerconfirmation-answer-for-ed512407-addf-4c3c-8b99-3c982137c56b"
+                        "identifier": "answerconfirmation-answer-for-total-turnover",
+                        "source": "answers"
                       },
                       "No, I need to change this"
                     ]
                   }
                 },
                 {
-                  "block": "block930cc267-6f41-49a6-9bc6-456428bcb22d"
+                  "block": "production-of-goods-or-services-that-protect-the-environment"
                 }
               ]
             },
             {
-              "id": "block930cc267-6f41-49a6-9bc6-456428bcb22d",
+              "id": "production-of-goods-or-services-that-protect-the-environment",
               "type": "Question",
               "question": {
-                "id": "question930cc267-6f41-49a6-9bc6-456428bcb22d",
+                "id": "questionproduction-of-goods-or-services-that-protect-the-environment",
                 "title": "Does your business produce goods or services that protect the environment?",
                 "guidance": {
                   "contents": [
@@ -852,6 +862,7 @@
                   }
                 ]
               },
+              "page_title": "Production of goods or services that protect the environment",
               "routing_rules": [
                 {
                   "section": "End",
@@ -866,15 +877,15 @@
                   }
                 },
                 {
-                  "block": "block6584e446-72e9-4877-b53c-42b277ad5761"
+                  "block": "percentage-of-turnover-related-to-production-of-environmental-goods-or-services"
                 }
               ]
             },
             {
-              "id": "block6584e446-72e9-4877-b53c-42b277ad5761",
+              "id": "percentage-of-turnover-related-to-production-of-environmental-goods-or-services",
               "type": "Question",
               "question": {
-                "id": "question6584e446-72e9-4877-b53c-42b277ad5761",
+                "id": "questionpercentage-of-turnover-related-to-production-of-environmental-goods-or-services",
                 "title": {
                   "text": "Of {total_turnover}, approximately what percentage related to the production of environmental goods or services?",
                   "placeholders": [
@@ -926,14 +937,15 @@
                     ]
                   }
                 ]
-              }
+              },
+              "page_title": "Percentage of turnover related to production of environmental goods or services"
             }
           ]
         }
       ]
     },
     {
-      "id": "section35ab5301-02ec-4b0a-a350-5a4bb7729f05",
+      "id": "35ab5301-02ec-4b0a-a350-5a4bb7729f05",
       "title": "Expenditure",
       "summary": {
         "show_on_completion": false,
@@ -946,7 +958,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group35ab5301-02ec-4b0a-a350-5a4bb7729f05-introduction",
+              "id": "expenditure-section",
+              "page_title": "Expenditure section",
               "content": {
                 "title": "Expenditure",
                 "contents": [
@@ -970,10 +983,10 @@
               }
             },
             {
-              "id": "block72d0cd22-62cd-4b36-b291-ea73f0d66aaf",
+              "id": "expenditure-on-employment-costs",
               "type": "Question",
               "question": {
-                "id": "question72d0cd22-62cd-4b36-b291-ea73f0d66aaf",
+                "id": "questionexpenditure-on-employment-costs",
                 "title": {
                   "text": "For the period {from} to {to}, what was {ru_name}&#39;s expenditure on employment costs?",
                   "placeholders": [
@@ -1122,13 +1135,14 @@
                     "currency": "GBP"
                   }
                 ]
-              }
+              },
+              "page_title": "Expenditure on employment costs"
             },
             {
-              "id": "block7258060d-60a9-4500-955b-7fa0b1fdb624",
+              "id": "expenditure-on-energy-materials-goods-and-services",
               "type": "Question",
               "question": {
-                "id": "question7258060d-60a9-4500-955b-7fa0b1fdb624",
+                "id": "questionexpenditure-on-energy-materials-goods-and-services",
                 "title": "For the reporting period, what was your business&#39;s expenditure on energy, materials, goods and services?",
                 "description": [
                   "<p>Report GB figures.</p><p>State the net cost of purchases made during the period of this return whether or not they were used or resold during that period. </p>"
@@ -1248,16 +1262,17 @@
                     }
                   }
                 ]
-              }
+              },
+              "page_title": "Expenditure on energy, materials, goods and services"
             },
             {
-              "id": "blockf69e8bbf-d605-4d61-8f84-a059792429c0",
+              "id": "expenditure-on-rates-duties-levies-and-taxes-paid-to-the-government",
               "type": "Question",
               "question": {
-                "id": "questionf69e8bbf-d605-4d61-8f84-a059792429c0",
+                "id": "questionexpenditure-on-rates-duties-levies-and-taxes-paid-to-the-government",
                 "title": "For the reporting period, what was your business&#39;s expenditure on rates, duties, levies and taxes paid to the government?",
                 "description": [
-                  "<p>Report GB figures.</p><p>You should only include the value for the rates, duties, levies and taxes listed below if your business paid these directly to government, statutory bodies or regulators. Do not include these taxes if they were paid as part of your purchase of goods, materials and services.</p>"
+                  "<p>Report GB figures.</p><p>You should only include the rates, duties, levies, and taxes listed below if your business paid these directly to government, statutory bodies or regulators. Do not include these taxes if they were paid as part of your purchase of goods, materials and services.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1307,7 +1322,7 @@
                         {
                           "list": [
                             "excise duties when paid directly to government by your business. For example, on alcohol, tobacco and hydrocarbon oil duty",
-                            "any business rates or formula rates paid to local authorities or Department of Communities and Local Government (DCLG). Formula rates paid to DCLG applies to <strong>Great Britain only</strong>",
+                            "any business rates or formula rates paid to local authorities or Department for Levelling up, Housing and Communities (DLUHC) &#x2013; Formula rates paid to DLUHC applies to <strong>Great Britain only</strong>",
                             "stamp duties. <strong>Brokers only - exclude</strong> stamp duties paid on the purchase of shares on behalf of clients",
                             "export levies, for example, under the EU&#39;s Common Agricultural Policy",
                             "regulator fees including any statutory amounts paid to: Environment Agency (EA), Office of Gas and Electricity Markets (OFGEM), Office of Water Service Regulation (OFWAT) in England and Wales and the Scottish Water and Sewerage Customers Council (SWSCC) in Scotland, Office of Communications (OFCOM) and Office of Rail and Road (ORR)",
@@ -1344,14 +1359,15 @@
                     }
                   }
                 ]
-              }
+              },
+              "page_title": "Expenditure on rates, duties, levies, and taxes paid to the government"
             }
           ]
         }
       ]
     },
     {
-      "id": "section801557f6-985a-4983-a7e3-884649c8abde",
+      "id": "801557f6-985a-4983-a7e3-884649c8abde",
       "title": "Capital Assets",
       "summary": {
         "show_on_completion": false,
@@ -1364,7 +1380,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group801557f6-985a-4983-a7e3-884649c8abde-introduction",
+              "id": "capital-assets-section",
+              "page_title": "Capital assets section",
               "content": {
                 "title": "Capital Assets",
                 "contents": [
@@ -1381,10 +1398,10 @@
               }
             },
             {
-              "id": "blocka56ce0b1-a693-4635-8519-cd139973847f",
+              "id": "total-value-of-capital-assets-acquired-and-disposed-of",
               "type": "Question",
               "question": {
-                "id": "questiona56ce0b1-a693-4635-8519-cd139973847f",
+                "id": "questiontotal-value-of-capital-assets-acquired-and-disposed-of",
                 "title": {
                   "text": "For the period {from} to {to}, what was {ru_name}&#39;s total value of capital assets acquired and disposed of?",
                   "placeholders": [
@@ -1570,14 +1587,15 @@
                     "currency": "GBP"
                   }
                 ]
-              }
+              },
+              "page_title": "Total value of capital assets acquired and disposed of"
             }
           ]
         }
       ]
     },
     {
-      "id": "sectionfa7b18fa-6826-479f-8381-5898cd6c5e2b",
+      "id": "fa7b18fa-6826-479f-8381-5898cd6c5e2b",
       "title": "International trade in services",
       "summary": {
         "show_on_completion": false,
@@ -1590,7 +1608,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupfa7b18fa-6826-479f-8381-5898cd6c5e2b-introduction",
+              "id": "international-trade-in-services-section",
+              "page_title": "International trade in services section",
               "content": {
                 "title": "International trade in services",
                 "contents": [
@@ -1604,10 +1623,10 @@
               }
             },
             {
-              "id": "blockf13edb64-7550-42a4-b3b5-83310b439ea4",
+              "id": "income-from-services-provided-to-individuals-enterprises-or-other-organisations-based-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "questionf13edb64-7550-42a4-b3b5-83310b439ea4",
+                "id": "questionincome-from-services-provided-to-individuals-enterprises-or-other-organisations-based-outside-the-uk",
                 "title": {
                   "text": "For the period {from} to {to}, what was {ru_name}&#39;s income from services provided to individuals, enterprises or other organisations based outside the UK?",
                   "placeholders": [
@@ -1737,13 +1756,14 @@
                     "currency": "GBP"
                   }
                 ]
-              }
+              },
+              "page_title": "Income from services provided to individuals, enterprises, or other organisations based outside the UK"
             },
             {
-              "id": "block44adc46c-3729-4afb-a193-7dca443837c0",
+              "id": "expenditure-on-services-provided-by-individuals-enterprises-or-other-organisations-based-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question44adc46c-3729-4afb-a193-7dca443837c0",
+                "id": "questionexpenditure-on-services-provided-by-individuals-enterprises-or-other-organisations-based-outside-the-uk",
                 "title": "For the reporting period, what was your business&#39;s <em>expenditure</em> on services provided by individuals, enterprises or other organisations based outside the UK?",
                 "description": [
                   "<p>The UK is defined as England, Scotland, Wales and Northern Ireland. It does <em>not</em> include the Channel Islands or the Isle of Man.</p><p>A subsidiary or parent of your company situated in another country is regarded as an international resident and hence transactions in services with these entities should be regarded as international trade in services.</p>"
@@ -1804,14 +1824,15 @@
                     "currency": "GBP"
                   }
                 ]
-              }
+              },
+              "page_title": "Expenditure on services provided by individuals, enterprises, or other organisations based outside the UK"
             }
           ]
         }
       ]
     },
     {
-      "id": "sectionc200bc5f-d397-4650-9c12-2ece73cbb6f6",
+      "id": "c200bc5f-d397-4650-9c12-2ece73cbb6f6",
       "title": "International trade in goods",
       "summary": {
         "show_on_completion": false,
@@ -1824,7 +1845,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupc200bc5f-d397-4650-9c12-2ece73cbb6f6-introduction",
+              "id": "international-trade-in-goods-section",
+              "page_title": "International trade in goods section",
               "content": {
                 "title": "International trade in goods",
                 "contents": [
@@ -1838,10 +1860,10 @@
               }
             },
             {
-              "id": "blockde5795a2-7f8d-4a98-8742-9ebe47b1c9e8",
+              "id": "export-of-goods-to-individuals-enterprises-or-other-organisations-based-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "questionde5795a2-7f8d-4a98-8742-9ebe47b1c9e8",
+                "id": "questionexport-of-goods-to-individuals-enterprises-or-other-organisations-based-outside-the-uk",
                 "title": {
                   "text": "For the period {from} to {to}, did {ru_name} export goods to individuals, enterprises, or other organisations based outside the UK?",
                   "placeholders": [
@@ -1975,13 +1997,14 @@
                     ]
                   }
                 ]
-              }
+              },
+              "page_title": "Export of goods to individuals, enterprises, or other organisations based outside the UK"
             },
             {
-              "id": "block64d619b7-fe3e-4d20-a599-63c1e7650c65",
+              "id": "import-of-goods-from-individuals-enterprises-or-other-organisations-based-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question64d619b7-fe3e-4d20-a599-63c1e7650c65",
+                "id": "questionimport-of-goods-from-individuals-enterprises-or-other-organisations-based-outside-the-uk",
                 "title": "For the reporting period, did your business <em>import goods from</em> individuals, enterprises or other organisations based outside the UK?",
                 "description": [
                   "<p>The UK is defined as England, Scotland, Wales and Northern Ireland. It does <em>not</em> include the Channel Islands or the Isle of Man.</p><p>A subsidiary or parent of your company situated in another country is regarded as an international resident and hence transactions in services with these entities should be regarded as international trade in services.</p>"
@@ -2046,14 +2069,15 @@
                     ]
                   }
                 ]
-              }
+              },
+              "page_title": "Import of goods from individuals, enterprises, or other organisations based outside the UK"
             }
           ]
         }
       ]
     },
     {
-      "id": "sectiond482eacd-556b-4796-b7ae-9f372f975e7b",
+      "id": "d482eacd-556b-4796-b7ae-9f372f975e7b",
       "title": "Research and Development",
       "summary": {
         "show_on_completion": false,
@@ -2066,7 +2090,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupd482eacd-556b-4796-b7ae-9f372f975e7b-introduction",
+              "id": "research-and-development-section",
+              "page_title": "Research and development section",
               "content": {
                 "title": "Research and Development",
                 "contents": [
@@ -2105,10 +2130,10 @@
               }
             },
             {
-              "id": "blockff5d472b-7b31-4fc3-a4e1-7ac53d628946",
+              "id": "in-house-research-and-development",
               "type": "Question",
               "question": {
-                "id": "questionff5d472b-7b31-4fc3-a4e1-7ac53d628946",
+                "id": "questionin-house-research-and-development",
                 "title": {
                   "text": "Did {ru_name} carry out any in-house Research and Development for the period {from} to {to}, or intend to do so in the next reporting period?",
                   "placeholders": [
@@ -2233,14 +2258,15 @@
                     ]
                   }
                 ]
-              }
+              },
+              "page_title": "In-house research and development"
             }
           ]
         }
       ]
     },
     {
-      "id": "sectioneb0d0565-e6a6-4ae8-85bc-7c08fcb6a00a",
+      "id": "eb0d0565-e6a6-4ae8-85bc-7c08fcb6a00a",
       "title": "Comments",
       "summary": {
         "show_on_completion": false,
@@ -2252,10 +2278,10 @@
           "id": "groupeb0d0565-e6a6-4ae8-85bc-7c08fcb6a00a",
           "blocks": [
             {
-              "id": "block5db838e0-9ef2-403f-ad44-495e7aa86f09",
+              "id": "comments",
               "type": "Question",
               "question": {
-                "id": "question5db838e0-9ef2-403f-ad44-495e7aa86f09",
+                "id": "questioncomments",
                 "title": "Please provide any further details that will help us understand your figures and tell an industry story",
                 "description": [
                   "<p>Explain any changes in your figures from your previous return, if applicable. If you provide comments, we are less likely to contact you with data queries.</p><p><em>Make sure you continue to the next page and select &#39;submit answers&#39; at the bottom.</em></p>"
@@ -2299,7 +2325,8 @@
                     "max_length": 2000
                   }
                 ]
-              }
+              },
+              "page_title": "Comments"
             }
           ]
         }
@@ -2312,15 +2339,7 @@
   },
   "metadata": [
     {
-      "name": "user_id",
-      "type": "string"
-    },
-    {
       "name": "ru_name",
-      "type": "string"
-    },
-    {
-      "name": "ru_ref",
       "type": "string"
     },
     {
@@ -2339,6 +2358,14 @@
     {
       "name": "ref_p_end_date",
       "type": "date"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
     }
   ],
   "post_submission": {
@@ -2347,7 +2374,7 @@
     "guidance": {
       "contents": [
         {
-          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
         }
       ]
     }
