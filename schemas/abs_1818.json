@@ -2027,7 +2027,7 @@
                     "id": "answerf926827d-7e21-4173-b779-533855f72a2a",
                     "mandatory": true,
                     "type": "Currency",
-                    "label": "Total income from services provided by individuals, enterprises or other organisations based outside the UK",
+                    "label": "Total expenditure on services provided by individuals, enterprises or other organisations based outside the UK",
                     "description": "Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.",
                     "q_code": "164",
                     "decimal_places": 0,
@@ -2573,11 +2573,11 @@
       "type": "date"
     },
     {
-      "name": "ru_ref",
+      "name": "user_id",
       "type": "string"
     },
     {
-      "name": "user_id",
+      "name": "ru_ref",
       "type": "string"
     }
   ],
