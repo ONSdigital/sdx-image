@@ -1,8 +1,10 @@
+
 {
   "language": "en",
   "mime_type": "application/json/ons/eq",
   "schema_version": "0.0.1",
   "data_version": "0.0.1",
+  "preview_questions": false,
   "survey_id": "002",
   "form_type": "0006",
   "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
@@ -11,7 +13,7 @@
     "type": "Hub",
     "options": {
       "required_completed_sections": [
-        "sectionb5d4065d-0a90-4541-af0a-099f693c0773",
+        "b5d4065d-0a90-4541-af0a-099f693c0773",
         "section969b7e4a-db38-4b5e-be3a-dcfdd13a4674"
       ]
     }
@@ -27,7 +29,7 @@
           "title": "Introduction",
           "blocks": [
             {
-              "id": "introduction-block",
+              "id": "introduction",
               "type": "Introduction",
               "primary_content": [
                 {
@@ -130,7 +132,7 @@
                         "description": "This section asks about the period for which your business will be reporting."
                       },
                       {
-                        "description": "Your return period should cover the calendar year 2022. If no figures are available for that 12 month period, your return should relate to a business year that ends between 6 April 2022 and 5 April 2023."
+                        "description": "Your return period should cover the calendar year 2023. If no figures are available for that 12 month period, your return should relate to a business year that ends between 6 April 2023 and 5 April 2024."
                       }
                     ]
                   },
@@ -204,7 +206,7 @@
       ]
     },
     {
-      "id": "sectionb5d4065d-0a90-4541-af0a-099f693c0773",
+      "id": "b5d4065d-0a90-4541-af0a-099f693c0773",
       "title": "Reporting period",
       "summary": {
         "show_on_completion": false,
@@ -218,12 +220,13 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupb5d4065d-0a90-4541-af0a-099f693c0773-introduction",
+              "id": "reporting-period",
+              "page_title": "Reporting period",
               "content": {
                 "title": "R&amp;D Explained",
                 "contents": [
                   {
-                    "description": "This page contains some basic guidelines to help define and measure R&amp;D for the completion of this survey. In some cases, you may need to apply judgement when compiling figures. Informed estimates are acceptable. Further information can be found in the <a href=\"https://www.oecd.org/innovation/frascati-manual-2015-9789264239012-en.htm\"target=\"_blank\"rel=\"noopener noreferrer\">Frascati Manual (this link opens in a new tab)</a>, which is the international source of methodology for collecting and using R&amp;D statistics."
+                    "description": "This page contains some basic guidelines to help define and measure R&amp;D for the completion of this survey. In some cases, you may need to apply judgement when compiling figures. Informed estimates are acceptable. Further information can be found in the <a href=\"https://www.oecd.org/innovation/frascati-manual-2015-9789264239012-en.htm\" target=\"_blank\" rel=\"noopener noreferrer\">Frascati Manual (this link opens in a new tab)</a>, which is the international source of methodology for collecting and using R&amp;D statistics."
                   },
                   {
                     "title": "<strong>What is R&amp;D?</strong>"
@@ -360,10 +363,10 @@
               }
             },
             {
-              "id": "blockf7928906-41aa-4f67-84ce-bcb857642eb3",
+              "id": "calendar-year-reporting-period",
               "type": "Question",
               "question": {
-                "id": "questionf7928906-41aa-4f67-84ce-bcb857642eb3",
+                "id": "questioncalendar-year-reporting-period",
                 "title": {
                   "text": "Are you able to report for the calendar year, {ref_p_start_date} to {ref_p_end_date}?",
                   "placeholders": [
@@ -400,7 +403,7 @@
                   ]
                 },
                 "description": [
-                  "<p>Your return should relate to the calendar year 2022.</p>"
+                  "<p>Your return should relate to the calendar year 2023.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -441,7 +444,7 @@
               "page_title": "Calendar year reporting period",
               "routing_rules": [
                 {
-                  "block": "block72eb36f7-0730-4ec9-ac53-f9bcdc2027fa",
+                  "block": "in-house-rd-for-reporting-period",
                   "when": {
                     "in": [
                       {
@@ -453,18 +456,18 @@
                   }
                 },
                 {
-                  "block": "blockf232ce73-10c0-4a00-9619-a36dba5177e4"
+                  "block": "alternative-reporting-period"
                 }
               ]
             },
             {
-              "id": "blockf232ce73-10c0-4a00-9619-a36dba5177e4",
+              "id": "alternative-reporting-period",
               "type": "Question",
               "question": {
-                "id": "questionf232ce73-10c0-4a00-9619-a36dba5177e4",
+                "id": "questionalternative-reporting-period",
                 "title": "What dates will you be reporting for?",
                 "description": [
-                  "<p>If figures are not available for the calendar year 2022, your return should relate to a business year that ends between 6 April 2022 and 5 April 2023.</p>"
+                  "<p>If figures are not available for the calendar year 2023, your return should relate to a business year that ends between 6 April 2023 and 5 April 2024.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -475,16 +478,16 @@
                       "description": "Please provide figures for the period in which you were trading."
                     },
                     {
-                      "description": "<strong>Only commenced trading during 2022?</strong>"
+                      "description": "<strong>Only commenced trading during 2023?</strong>"
                     },
                     {
-                      "description": "Your return should cover the period from the commencement of your business until 31 December 2022 or, alternatively, any date up to 5 April 2023."
+                      "description": "Your return should cover the period from the commencement of your business until 31 December 2023 or, alternatively, any date up to 5 April 2024."
                     },
                     {
-                      "description": "<strong>Ceased trading during 2022?</strong>"
+                      "description": "<strong>Ceased trading during 2023?</strong>"
                     },
                     {
-                      "description": "Your return should cover the period 1 January 2022 to the date you ceased to trade or, alternatively, from the beginning of your last business year up to the cessation date."
+                      "description": "Your return should cover the period 1 January 2023 to the date you ceased to trade or, alternatively, from the beginning of your last business year up to the cessation date."
                     }
                   ]
                 },
@@ -497,7 +500,7 @@
                     "label": "From",
                     "q_code": "103",
                     "minimum": {
-                      "value": "2021-01-01",
+                      "value": "2022-01-01",
                       "offset_by": {
                         "days": 0
                       }
@@ -510,7 +513,7 @@
                     "label": "To",
                     "q_code": "104",
                     "maximum": {
-                      "value": "2023-06-30",
+                      "value": "2024-06-30",
                       "offset_by": {
                         "days": 0
                       }
@@ -529,11 +532,14 @@
               "page_title": "Alternative reporting period"
             },
             {
-              "id": "block72eb36f7-0730-4ec9-ac53-f9bcdc2027fa",
+              "id": "in-house-rd-for-reporting-period",
               "type": "Question",
               "question": {
-                "id": "question72eb36f7-0730-4ec9-ac53-f9bcdc2027fa",
+                "id": "questionin-house-rd-for-reporting-period",
                 "title": "For the reporting period, did your business undertake any in-house R&amp;D?",
+                "description": [
+                  "<p>In-house R&amp;D refers to the total cost of capital and non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts.</p>"
+                ],
                 "guidance": {
                   "contents": [
                     {
@@ -547,16 +553,6 @@
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "What we mean by &#39;in-house R&amp;D&#39;",
-                    "contents": [
-                      {
-                        "description": "This refers to the total cost of capital and non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts."
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -577,7 +573,7 @@
                   }
                 ]
               },
-              "page_title": "In-house R&D for reporting period",
+              "page_title": "In-house R&amp;D for reporting period",
               "routing_rules": [
                 {
                   "section": "End",
@@ -592,15 +588,15 @@
                   }
                 },
                 {
-                  "block": "block4a16ec49-887a-43d0-b2ed-003c8f93b1b1"
+                  "block": "future-in-house-rd"
                 }
               ]
             },
             {
-              "id": "block4a16ec49-887a-43d0-b2ed-003c8f93b1b1",
+              "id": "future-in-house-rd",
               "type": "Question",
               "question": {
-                "id": "question4a16ec49-887a-43d0-b2ed-003c8f93b1b1",
+                "id": "questionfuture-in-house-rd",
                 "title": "Will your business be carrying out any in-house R&amp;D in the future?",
                 "type": "General",
                 "answers": [
@@ -622,18 +618,17 @@
                   }
                 ]
               },
-              "page_title": "Future in-house R&D"
+              "page_title": "Future in-house R&amp;D"
             }
           ]
         }
       ]
     },
     {
-      "id": "section18c798d3-6307-4c2c-bb37-2e8fed26ab48",
-      "title": "In-house R&D",
+      "id": "18c798d3-6307-4c2c-bb37-2e8fed26ab48",
+      "title": "In-house R&amp;D",
       "summary": {
         "show_on_completion": false,
-        "page_title": "In-house R&D",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -643,7 +638,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group18c798d3-6307-4c2c-bb37-2e8fed26ab48-introduction",
+              "id": "in-house-rd",
+              "page_title": "In-house R&amp;D",
               "content": {
                 "title": "In-house R&amp;D",
                 "contents": [
@@ -666,10 +662,10 @@
               }
             },
             {
-              "id": "blocke0059df3-5be9-45a1-b703-b114b7dee508",
+              "id": "in-house-expenditure-on-rd",
               "type": "Question",
               "question": {
-                "id": "questione0059df3-5be9-45a1-b703-b114b7dee508",
+                "id": "questionin-house-expenditure-on-rd",
                 "title": {
                   "text": "For the period {from} to {to}, what was {ru_name}&#39;s total in-house expenditure on R&amp;D?",
                   "placeholders": [
@@ -797,13 +793,13 @@
                   }
                 ]
               },
-              "page_title": "In-house expenditure on R&D"
+              "page_title": "In-house expenditure on R&amp;D"
             },
             {
-              "id": "block6588e77c-e3b9-47ec-a8ae-8a4e58aefc8d",
+              "id": "total-in-house-expenditure-on-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total in-house expenditure on R&D",
-              "title": "We have calculated your business&#39;s total in-house expenditure on R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total in-house expenditure on R&amp;D",
+              "title": "We have calculated your business&#39;s total in-house expenditure on R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -821,10 +817,10 @@
               }
             },
             {
-              "id": "block78f80cee-8481-4eef-a2f7-f09081ebea66",
+              "id": "tax-credits-for-expenditure-on-in-house-rd",
               "type": "Question",
               "question": {
-                "id": "question78f80cee-8481-4eef-a2f7-f09081ebea66",
+                "id": "questiontax-credits-for-expenditure-on-in-house-rd",
                 "title": {
                   "text": "In relation to the {total_inhouse_expenditure_on_rampd} total expenditure on in-house R&amp;D, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -835,7 +831,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "block6588e77c-e3b9-47ec-a8ae-8a4e58aefc8d",
+                              "identifier": "total-in-house-expenditure-on-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -864,7 +860,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure on in-house R&D"
+              "page_title": "Tax credits for expenditure on in-house R&amp;D"
             }
           ]
         }
@@ -882,11 +878,11 @@
       }
     },
     {
-      "id": "section8aef0f64-3184-498b-bc42-ad4e7814baa9",
-      "title": "Purchase of R&D conducted outside the business",
+      "id": "8aef0f64-3184-498b-bc42-ad4e7814baa9",
+      "title": "Purchase of R&amp;D conducted outside the business",
       "summary": {
         "show_on_completion": false,
-        "page_title": "Purchase of R&D conducted outside the business",
+        "page_title": "Purchase of R&amp;D conducted outside the business",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -896,7 +892,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group8aef0f64-3184-498b-bc42-ad4e7814baa9-introduction",
+              "id": "purchase-of-rd-conducted-outside-the-business",
+              "page_title": "Purchase of R&amp;D conducted outside the business",
               "content": {
                 "title": "Purchase of R&amp;D conducted outside the business",
                 "contents": [
@@ -919,12 +916,12 @@
               }
             },
             {
-              "id": "block7fbe7af4-569c-4590-b9ee-e1f8d3b3722f",
+              "id": "purchased-rd",
               "type": "Question",
               "question": {
-                "id": "question7fbe7af4-569c-4590-b9ee-e1f8d3b3722f",
+                "id": "questionpurchased-rd",
                 "title": {
-                  "text": "For the period {from} to {to}, did {ru_name} purchase any R&amp;D conducted <em>outside</em> the business?",
+                  "text": "For the period {from} to {to}, did {ru_name} purchase any R&amp;D conducted <strong>outside</strong> the business?",
                   "placeholders": [
                     {
                       "placeholder": "from",
@@ -1013,7 +1010,7 @@
                   }
                 ]
               },
-              "page_title": "Purchased R&D",
+              "page_title": "Purchased R&amp;D",
               "routing_rules": [
                 {
                   "section": "End",
@@ -1028,15 +1025,15 @@
                   }
                 },
                 {
-                  "block": "block7c4dcb95-a451-4fdb-b075-6ea96bfd03e2"
+                  "block": "expenditure-on-purchased-rd"
                 }
               ]
             },
             {
-              "id": "block7c4dcb95-a451-4fdb-b075-6ea96bfd03e2",
+              "id": "expenditure-on-purchased-rd",
               "type": "Question",
               "question": {
-                "id": "question7c4dcb95-a451-4fdb-b075-6ea96bfd03e2",
+                "id": "questionexpenditure-on-purchased-rd",
                 "title": "For the reporting period, how much R&amp;D conducted outside the business did you purchase?",
                 "type": "Calculated",
                 "answers": [
@@ -1082,13 +1079,13 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on purchased R&D"
+              "page_title": "Expenditure on purchased R&amp;D"
             },
             {
-              "id": "block3cdd83f6-27bd-4250-93ba-37f4792c6f66",
+              "id": "total-expenditure-on-purchased-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total expenditure on purchased R&D",
-              "title": "We calculated your business&#39;s total expenditure on purchased R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total expenditure on purchased R&amp;D",
+              "title": "We calculated your business&#39;s total expenditure on purchased R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -1106,10 +1103,10 @@
               }
             },
             {
-              "id": "block53220ce9-6fec-4723-aa68-fc98f2624be8",
+              "id": "tax-credits-for-expenditure-on-purchased-rd",
               "type": "Question",
               "question": {
-                "id": "question53220ce9-6fec-4723-aa68-fc98f2624be8",
+                "id": "questiontax-credits-for-expenditure-on-purchased-rd",
                 "title": {
                   "text": "In relation to the {total_expenditure_on_purchased_rampd} total expenditure on purchased R&amp;D, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -1120,7 +1117,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "block3cdd83f6-27bd-4250-93ba-37f4792c6f66",
+                              "identifier": "total-expenditure-on-purchased-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -1149,7 +1146,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure on purchased R&D"
+              "page_title": "Tax credits for expenditure on purchased R&amp;D"
             }
           ]
         }
@@ -1167,11 +1164,10 @@
       }
     },
     {
-      "id": "sectionc77947de-286a-4ec1-a525-48b13f328c42",
-      "title": "Number of employees working on R&D",
+      "id": "c77947de-286a-4ec1-a525-48b13f328c42",
+      "title": "Number of employees working on R&amp;D",
       "summary": {
         "show_on_completion": false,
-        "page_title": "Number of employees working on R&D",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -1181,7 +1177,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupc77947de-286a-4ec1-a525-48b13f328c42-introduction",
+              "id": "number-of-employees-working-on-rd",
+              "page_title": "Number of employees working on R&amp;D",
               "content": {
                 "title": "Number of employees working on R&amp;D",
                 "contents": [
@@ -1192,17 +1189,17 @@
                     "title": "What we mean by &#39;employees&#39;"
                   },
                   {
-                    "description": "An employee is anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full-time or part-time job or being on a training scheme. Each employee should have a contract of employment."
+                    "description": "An employee is anyone aged 16 years or over who is working directly for the business.&#x202F;They may be paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#x202F;If your business uses a central payroll to pay employees who work within the wider group, only include employees working directly for the business."
                   }
                 ]
               }
             },
             {
-              "id": "block5d37b937-0118-4b77-b416-1e956b17048f",
+              "id": "employees-working-on-rd",
               "type": "Question",
               "question": {
-                "id": "question5d37b937-0118-4b77-b416-1e956b17048f",
-                "title": "On 1 December 2022, how many employees worked on R&amp;D?",
+                "id": "questionemployees-working-on-rd",
+                "title": "On 1 December 2023, how many employees worked on R&amp;D?",
                 "guidance": {
                   "contents": [
                     {
@@ -1210,8 +1207,10 @@
                     },
                     {
                       "list": [
-                        "all workers paid directly from this business&#39;s payroll(s)",
-                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                        "full-time (over 30 hours a week) and part-time (30 hours or less) employees aged 16 years and over. This includes individuals working from home and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "those on apprenticeships or training schemes",
+                        "directors and working owners paid via PAYE",
+                        "employees without guaranteed hours, for example those on zero hour contracts, who worked on this date"
                       ]
                     },
                     {
@@ -1219,11 +1218,11 @@
                     },
                     {
                       "list": [
-                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "workers paid by an employment agency, for example consultants and contingent labour",
                         "voluntary workers",
-                        "self-employed workers",
                         "former employees only receiving a pension",
-                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                        "self-employed workers",
+                        "directors and working owners who are not paid via PAYE"
                       ]
                     }
                   ]
@@ -1233,7 +1232,7 @@
                     "title": "What we mean by &#39;employees&#39;",
                     "contents": [
                       {
-                        "description": "An employee is anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full time or part-time job or being on a training scheme. Each employee should have a contract of employment."
+                        "description": "An employee is anyone aged 16 years or over who is working directly for the business.&#x202F;They may be paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#x202F;If your business uses a central payroll to pay employees who work within the wider group, only include employees working directly for the business."
                       }
                     ]
                   }
@@ -1250,15 +1249,15 @@
                   }
                 ]
               },
-              "page_title": "Number of employees working on R&D"
+              "page_title": "Employees working on R&amp;D"
             },
             {
-              "id": "blockcc1de8b6-6311-479c-8306-91323f8600f0",
+              "id": "number-of-full-time-equivalent-employees-working-on-rd",
               "type": "Question",
               "question": {
-                "id": "questioncc1de8b6-6311-479c-8306-91323f8600f0",
+                "id": "questionnumber-of-full-time-equivalent-employees-working-on-rd",
                 "title": {
-                  "text": "For the period {from} to {to}, how many <em>full-time equivalent</em> employees worked on R&amp;D?",
+                  "text": "For the period {from} to {to}, how many <strong>full-time equivalent</strong> employees worked on R&amp;D?",
                   "placeholders": [
                     {
                       "placeholder": "from",
@@ -1320,6 +1319,9 @@
                     }
                   ]
                 },
+                "description": [
+                  "<p>One <strong>full-time equivalent</strong> (FTE) may be thought as one person-year.</p><p>For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE.</p><p>Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5.</p>"
+                ],
                 "guidance": {
                   "contents": [
                     {
@@ -1327,8 +1329,10 @@
                     },
                     {
                       "list": [
-                        "all workers paid directly from this business&#39;s payroll(s)",
-                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                        "full-time (over 30 hours a week) and part-time (30 hours or less) employees aged 16 years and over. This includes individuals working from home and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "those on apprenticeships or training schemes",
+                        "directors and working owners paid via PAYE",
+                        "employees without guaranteed hours, for example those on zero hour contracts, who worked on this date"
                       ]
                     },
                     {
@@ -1336,31 +1340,15 @@
                     },
                     {
                       "list": [
-                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "workers paid by an employment agency, for example consultants and contingent labour",
                         "voluntary workers",
-                        "self-employed workers",
                         "former employees only receiving a pension",
-                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                        "self-employed workers",
+                        "directors and working owners who are not paid via PAYE"
                       ]
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "What we mean by &#39;full-time equivalent&#39;",
-                    "contents": [
-                      {
-                        "description": "One <strong>full-time equivalent</strong> (FTE) may be thought as one person-year."
-                      },
-                      {
-                        "description": "For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE."
-                      },
-                      {
-                        "description": "Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5."
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -1381,7 +1369,7 @@
                   }
                 ]
               },
-              "page_title": "Number of full-time equivalent employees working on R&D"
+              "page_title": "Number of full-time equivalent employees working on R&amp;D"
             }
           ]
         }
@@ -1399,7 +1387,7 @@
       }
     },
     {
-      "id": "sectionc67b6976-5063-4417-a69f-c849bb642a1a",
+      "id": "c67b6976-5063-4417-a69f-c849bb642a1a",
       "title": "Comments",
       "summary": {
         "show_on_completion": false,
@@ -1412,10 +1400,10 @@
           "id": "groupc67b6976-5063-4417-a69f-c849bb642a1a",
           "blocks": [
             {
-              "id": "block738e2eaa-a2c1-4ce8-8227-f59cf81f95b1",
+              "id": "significant-changes",
               "type": "Question",
               "question": {
-                "id": "question738e2eaa-a2c1-4ce8-8227-f59cf81f95b1",
+                "id": "questionsignificant-changes",
                 "title": {
                   "text": "Did any significant changes occur to R&amp;D for {ru_name} since the last reporting period?",
                   "placeholders": [
@@ -1476,15 +1464,15 @@
                   }
                 },
                 {
-                  "block": "block1e952c85-2f74-48c3-8223-aa6336e6f28a"
+                  "block": "further-details-and-commentary"
                 }
               ]
             },
             {
-              "id": "block1e952c85-2f74-48c3-8223-aa6336e6f28a",
+              "id": "further-details-and-commentary",
               "type": "Question",
               "question": {
-                "id": "question1e952c85-2f74-48c3-8223-aa6336e6f28a",
+                "id": "questionfurther-details-and-commentary",
                 "title": "Please provide any further details that will help us understand your business&#39;s total R&amp;D investment and tell an industry story",
                 "description": [
                   "<p>If you provide comments, we are less likely to contact you with data queries.</p><p>You have nearly finished! Make sure you continue to the next page and select &#39;submit answers&#39; at the bottom.</p>"
@@ -1538,15 +1526,7 @@
   },
   "metadata": [
     {
-      "name": "user_id",
-      "type": "string"
-    },
-    {
       "name": "ru_name",
-      "type": "string"
-    },
-    {
-      "name": "ru_ref",
       "type": "string"
     },
     {
@@ -1565,16 +1545,23 @@
     {
       "name": "ref_p_end_date",
       "type": "date"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
     }
   ],
   "post_submission": {
-    "confirmation_email": true,
     "feedback": true,
     "view_response": true,
     "guidance": {
       "contents": [
         {
-          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data</a>"
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data</a>"
         }
       ]
     }

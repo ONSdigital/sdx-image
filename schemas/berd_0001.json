@@ -1,8 +1,10 @@
+
 {
   "language": "en",
   "mime_type": "application/json/ons/eq",
   "schema_version": "0.0.1",
   "data_version": "0.0.3",
+  "preview_questions": false,
   "survey_id": "002",
   "form_type": "0001",
   "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
@@ -26,6 +28,14 @@
     {
       "answer_id": "answer17cc14c8-62d6-47f9-b84d-a238460d1d24",
       "code": "605"
+    },
+    {
+      "answer_id": "answer4ed03374-810d-48a8-9311-7d0f30f9014c",
+      "code": "99991"
+    },
+    {
+      "answer_id": "answeraea52786-bdbc-4ec6-8045-4a3a3daed0f0",
+      "code": "99992"
     },
     {
       "answer_id": "answerefef3546-ea2f-4c88-b068-819d171f4872",
@@ -270,6 +280,14 @@
     {
       "answer_id": "answer65ba5dc2-a75c-4254-8992-a9334894cd48",
       "code": "d237"
+    },
+    {
+      "answer_id": "answer10d07be0-6540-4b09-93b4-55b735bad466",
+      "code": "99993"
+    },
+    {
+      "answer_id": "answerc11e580f-cb77-4e28-8581-6e222a2149e0",
+      "code": "99994"
     },
     {
       "answer_id": "answer27e45a6b-76d8-4053-8d52-1311cb326ef5",
@@ -726,22 +744,6 @@
     {
       "answer_id": "answere51ca1c4-55f4-4d31-8a30-7e3a4a8274e7",
       "code": "301"
-    },
-    {
-      "answer_id": "answer-driving-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
-      "code": "99991"
-    },
-    {
-      "answer_id": "add-another-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
-      "code": "99992"
-    },
-    {
-      "answer_id": "answer-driving-520046b4-ec3c-4d91-85c5-3c4565811379",
-      "code": "99993"
-    },
-    {
-      "answer_id": "add-another-520046b4-ec3c-4d91-85c5-3c4565811379",
-      "code": "99994"
     }
   ],
   "title": "Business Enterprise Research and Development",
@@ -749,7 +751,7 @@
     "type": "Hub",
     "options": {
       "required_completed_sections": [
-        "section353e646e-931d-4df1-bc06-3b2036c96531",
+        "353e646e-931d-4df1-bc06-3b2036c96531",
         "sectiond68fc0ff-47c5-46ea-9f3d-60698d087812"
       ]
     }
@@ -765,7 +767,7 @@
           "title": "Introduction",
           "blocks": [
             {
-              "id": "introduction-block",
+              "id": "introduction",
               "type": "Introduction",
               "primary_content": [
                 {
@@ -861,7 +863,7 @@
                         "description": "This section asks about the period for which your business will be reporting."
                       },
                       {
-                        "description": "Your return period should cover the calendar year 2022. If no figures are available for that 12 month period, your return should relate to a business year that ends between 6 April 2022 and 5 April 2023."
+                        "description": "Your return period should cover the calendar year 2023. If no figures are available for that 12 month period, your return should relate to a business year that ends between 6 April 2023 and 5 April 2024."
                       }
                     ]
                   },
@@ -963,11 +965,10 @@
       ]
     },
     {
-      "id": "section353e646e-931d-4df1-bc06-3b2036c96531",
+      "id": "353e646e-931d-4df1-bc06-3b2036c96531",
       "title": "Reporting Period",
       "summary": {
         "show_on_completion": false,
-        "page_title": "Reporting period",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -977,12 +978,13 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group353e646e-931d-4df1-bc06-3b2036c96531-introduction",
+              "id": "reporting-period",
+              "page_title": "Reporting period",
               "content": {
                 "title": "R&amp;D Explained",
                 "contents": [
                   {
-                    "description": "This page contains some basic guidelines to help define and measure R&amp;D for the completion of this survey. In some cases, you may need to apply judgement when compiling figures. Informed estimates are acceptable. Further information can be found in the <a href=\"https://www.oecd.org/innovation/frascati-manual-2015-9789264239012-en.htm\"target=\"_blank\"rel=\"noopener noreferrer\">Frascati Manual (this link opens in a new tab)</a>, which is the international source of methodology for collecting and using R&amp;D statistics."
+                    "description": "This page contains some basic guidelines to help define and measure R&amp;D for the completion of this survey. In some cases, you may need to apply judgement when compiling figures. Informed estimates are acceptable. Further information can be found in the <a href=\"https://www.oecd.org/innovation/frascati-manual-2015-9789264239012-en.htm\" target=\"_blank\" rel=\"noopener noreferrer\">Frascati Manual (this link opens in a new tab)</a>, which is the international source of methodology for collecting and using R&amp;D statistics."
                   },
                   {
                     "title": "<strong>What is R&amp;D?</strong>"
@@ -1119,10 +1121,10 @@
               }
             },
             {
-              "id": "blockb3050c43-7572-486e-be45-1fd2c5e67ce0",
+              "id": "calendar-year-reporting-period",
               "type": "Question",
               "question": {
-                "id": "questionb3050c43-7572-486e-be45-1fd2c5e67ce0",
+                "id": "questioncalendar-year-reporting-period",
                 "title": {
                   "text": "Are you able to report for the calendar year, {ref_p_start_date} to {ref_p_end_date}?",
                   "placeholders": [
@@ -1159,7 +1161,7 @@
                   ]
                 },
                 "description": [
-                  "<p>Your return should relate to the calendar year 2022.</p>"
+                  "<p>Your return should relate to the calendar year 2023.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1199,7 +1201,7 @@
               "page_title": "Calendar year reporting period",
               "routing_rules": [
                 {
-                  "block": "block65696c05-aaff-47dd-ab58-97ae6abda539",
+                  "block": "in-house-rd-activity-for-reporting-period",
                   "when": {
                     "in": [
                       {
@@ -1211,18 +1213,18 @@
                   }
                 },
                 {
-                  "block": "block5ff131ed-d6d1-4d3c-9733-069968ef8870"
+                  "block": "alternative-reporting-period"
                 }
               ]
             },
             {
-              "id": "block5ff131ed-d6d1-4d3c-9733-069968ef8870",
+              "id": "alternative-reporting-period",
               "type": "Question",
               "question": {
-                "id": "question5ff131ed-d6d1-4d3c-9733-069968ef8870",
+                "id": "questionalternative-reporting-period",
                 "title": "What dates will you be reporting for?",
                 "description": [
-                  "<p>If figures are not available for the calendar year 2022, your return should relate to a business year that ends between 6 April 2022 and 5 April 2023.</p>"
+                  "<p>If figures are not available for the calendar year 2023, your return should relate to a business year that ends between 6 April 2023 and 5 April 2024.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -1233,16 +1235,16 @@
                       "description": "Please provide figures for the period in which you were trading."
                     },
                     {
-                      "description": "<strong>Only commenced trading during 2022?</strong>"
+                      "description": "<strong>Only commenced trading during 2023?</strong>"
                     },
                     {
-                      "description": "Your return should cover the period from the commencement of your business until 31 December 2022 or, alternatively, any date up to 5 April 2023."
+                      "description": "Your return should cover the period from the commencement of your business until 31 December 2023 or, alternatively, any date up to 5 April 2024."
                     },
                     {
-                      "description": "<strong>Ceased trading during 2022?</strong>"
+                      "description": "<strong>Ceased trading during 2023?</strong>"
                     },
                     {
-                      "description": "Your return should cover the period 1 January 2022 to the date you ceased to trade or, alternatively, from the beginning of your last business year up to the cessation date."
+                      "description": "Your return should cover the period 1 January 2023 to the date you ceased to trade or, alternatively, from the beginning of your last business year up to the cessation date."
                     }
                   ]
                 },
@@ -1254,7 +1256,7 @@
                     "mandatory": true,
                     "label": "From",
                     "minimum": {
-                      "value": "2021-01-01",
+                      "value": "2022-01-01",
                       "offset_by": {
                         "days": 0
                       }
@@ -1266,7 +1268,7 @@
                     "mandatory": true,
                     "label": "To",
                     "maximum": {
-                      "value": "2023-06-30",
+                      "value": "2024-06-30",
                       "offset_by": {
                         "days": 0
                       }
@@ -1285,20 +1287,13 @@
               "page_title": "Alternative reporting period"
             },
             {
-              "id": "block65696c05-aaff-47dd-ab58-97ae6abda539",
+              "id": "in-house-rd-activity-for-reporting-period",
               "type": "Question",
               "question": {
-                "id": "question65696c05-aaff-47dd-ab58-97ae6abda539",
+                "id": "questionin-house-rd-activity-for-reporting-period",
                 "title": "For the reporting period, did your business undertake any in-house R&amp;D?",
-                "definitions": [
-                  {
-                    "title": "What we mean by &#39;in-house R&amp;D&#39;",
-                    "contents": [
-                      {
-                        "description": "This refers to all R&amp;D that your business has undertaken either for yourself or for a customer. This is the total cost of R&amp;D conducted by your business, regardless of the source of funds or their treatment within your business&#39;s accounts."
-                      }
-                    ]
-                  }
+                "description": [
+                  "<p>In-house R&amp;D refers to all R&amp;D that your business has undertaken either for yourself or for a customer. This is the total cost of R&amp;D conducted by your business, regardless of the source of funds or their treatment within your business&#39;s accounts.</p>"
                 ],
                 "type": "General",
                 "answers": [
@@ -1319,7 +1314,7 @@
                   }
                 ]
               },
-              "page_title": "In-house R&D activity for reporting period",
+              "page_title": "In-house R&amp;D activity for reporting period",
               "routing_rules": [
                 {
                   "section": "End",
@@ -1334,15 +1329,15 @@
                   }
                 },
                 {
-                  "block": "blockf9d40d55-a85e-4a59-91b5-e070336aafcf"
+                  "block": "future-in-house-rd"
                 }
               ]
             },
             {
-              "id": "blockf9d40d55-a85e-4a59-91b5-e070336aafcf",
+              "id": "future-in-house-rd",
               "type": "Question",
               "question": {
-                "id": "questionf9d40d55-a85e-4a59-91b5-e070336aafcf",
+                "id": "questionfuture-in-house-rd",
                 "title": "Will your business be carrying out any in-house R&amp;D in the future?",
                 "type": "General",
                 "answers": [
@@ -1363,28 +1358,30 @@
                   }
                 ]
               },
-              "page_title": "Future in-house R&D"
+              "page_title": "Future in-house R&amp;D"
             }
           ]
         }
       ]
     },
     {
-      "id": "sectionb1b2efbb-6235-4b45-99c6-d79d0f461d0f",
-      "title": "In-house R&D",
+      "id": "b1b2efbb-6235-4b45-99c6-d79d0f461d0f",
+      "title": "In-house R&amp;D",
       "summary": {
         "show_on_completion": false,
-        "page_title": "In-house R&D",
         "collapsible": false,
         "items": [
           {
             "type": "List",
             "for_list": "product_codes",
             "title": "For the reporting period, for which of the following product codes has your business carried out in-house R&amp;D?",
+            "item_anchor_answer_id": "answer93d6964d-8271-40f4-af16-9f59f277b53e",
+            "item_label": "Product codes",
             "add_link_text": "Add item to this list",
             "empty_list_text": "There are no items"
           }
-        ]
+        ],
+        "show_non_item_answers": true
       },
       "show_on_hub": true,
       "groups": [
@@ -1393,7 +1390,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupb1b2efbb-6235-4b45-99c6-d79d0f461d0f-introduction",
+              "id": "in-house-rd",
+              "page_title": "In-house R&amp;D",
               "content": {
                 "title": "In-house R&amp;D",
                 "contents": [
@@ -1418,12 +1416,11 @@
               }
             },
             {
-              "id": "block-driving09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+              "id": "in-house-rd-activity-confirmation",
               "type": "ListCollectorDrivingQuestion",
-              "page_title": "In-house R&D activity confirmation",
               "for_list": "product_codes",
               "question": {
-                "id": "question-driving-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                "id": "question-driving-other-product-codes-for-in-house-rd",
                 "type": "General",
                 "title": {
                   "text": "You stated that for the period {from} to {to}, {ru_name} carried out in-house R&amp;D. Is this correct?",
@@ -1497,7 +1494,7 @@
                 },
                 "answers": [
                   {
-                    "id": "answer-driving-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                    "id": "answer4ed03374-810d-48a8-9311-7d0f30f9014c",
                     "mandatory": true,
                     "type": "Radio",
                     "options": [
@@ -1507,7 +1504,7 @@
                         "action": {
                           "type": "RedirectToListAddBlock",
                           "params": {
-                            "block_id": "add-block-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                            "block_id": "add-block-product-codes-list-for-in-house-rd",
                             "list_name": "product_codes"
                           }
                         }
@@ -1527,29 +1524,30 @@
                     "in": [
                       {
                         "source": "answers",
-                        "identifier": "answer-driving-09491ca7-11c4-4fd3-9e66-e1a69d8c3932"
+                        "identifier": "answer4ed03374-810d-48a8-9311-7d0f30f9014c"
                       },
                       ["No"]
                     ]
                   }
                 },
                 {
-                  "block": "block09491ca7-11c4-4fd3-9e66-e1a69d8c3932"
+                  "block": "other-product-codes-for-in-house-rd"
                 }
-              ]
+              ],
+              "page_title": "In-house R&D activity confirmation"
             },
             {
-              "id": "block09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+              "id": "other-product-codes-for-in-house-rd",
               "type": "ListCollector",
               "page_title": "Other product codes for in-house R&D",
               "for_list": "product_codes",
               "question": {
-                "id": "list-collector-question-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                "id": "list-collector-question-other-product-codes-for-in-house-rd",
                 "type": "General",
                 "title": "Did your business carry out in-house R&amp;D for any other product codes?",
                 "answers": [
                   {
-                    "id": "add-another-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                    "id": "answeraea52786-bdbc-4ec6-8045-4a3a3daed0f0",
                     "mandatory": true,
                     "type": "Radio",
                     "options": [
@@ -1569,12 +1567,12 @@
                 ]
               },
               "add_block": {
-                "id": "add-block-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                "id": "add-block-product-codes-list-for-in-house-rd",
                 "type": "ListAddQuestion",
-                "page_title": "Product codes list for in-house R&D",
+                "page_title": "Product codes list for in-house R&amp;D",
                 "cancel_text": "Don’t need to add this item",
                 "question": {
-                  "id": "add-block-question-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                  "id": "add-block-question-product-codes-list-for-in-house-rd",
                   "type": "General",
                   "title": "For the reporting period, for which of the following product codes has your business carried out in-house R&amp;D?",
                   "answers": [
@@ -1819,12 +1817,12 @@
                 }
               },
               "edit_block": {
-                "id": "edit-block-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                "id": "edit-block-product-codes-list-for-in-house-rd",
                 "type": "ListEditQuestion",
-                "page_title": "Product codes list for in-house R&D",
+                "page_title": "Product codes list for in-house R&amp;D",
                 "cancel_text": "Don’t need to edit this item",
                 "question": {
-                  "id": "edit-block-question-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                  "id": "edit-block-question-product-codes-list-for-in-house-rd",
                   "type": "General",
                   "title": "For the reporting period, for which of the following product codes has your business carried out in-house R&amp;D?",
                   "answers": [
@@ -2069,17 +2067,17 @@
                 }
               },
               "remove_block": {
-                "id": "remove-block-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                "id": "remove-block-product-codes-list-for-in-house-rd",
                 "type": "ListRemoveQuestion",
                 "cancel_text": "Don’t need to remove this item?",
                 "question": {
-                  "id": "remove-block-question-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                  "id": "remove-block-question-product-codes-list-for-in-house-rd",
                   "type": "General",
                   "title": "Are you sure you want to remove this item?",
                   "warning": "All of the information about this item will be deleted",
                   "answers": [
                     {
-                      "id": "remove-confirmation-09491ca7-11c4-4fd3-9e66-e1a69d8c3932",
+                      "id": "remove-confirmation-product-codes-list-for-in-house-rd",
                       "mandatory": true,
                       "type": "Radio",
                       "options": [
@@ -2109,7 +2107,7 @@
                       "transforms": [
                         {
                           "arguments": {
-                            "delimiter": "&nbsp;",
+                            "delimiter": " ",
                             "list_to_concatenate": [
                               {
                                 "source": "answers",
@@ -2141,8 +2139,8 @@
       }
     },
     {
-      "id": "sectionea2aafb0-0fb5-4752-9933-2b4d79443a39",
-      "title": "In-house R&D",
+      "id": "ea2aafb0-0fb5-4752-9933-2b4d79443a39",
+      "title": "In-house R&amp;D",
       "repeat": {
         "for_list": "product_codes",
         "title": {
@@ -2153,7 +2151,7 @@
               "transforms": [
                 {
                   "arguments": {
-                    "delimiter": "&nbsp;",
+                    "delimiter": " ",
                     "list_to_concatenate": [
                       {
                         "source": "answers",
@@ -2170,7 +2168,6 @@
       },
       "summary": {
         "show_on_completion": false,
-        "page_title": "In-house R&D",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -2180,7 +2177,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupea2aafb0-0fb5-4752-9933-2b4d79443a39-introduction",
+              "id": "in-house-rd-section",
+              "page_title": "In-house R&amp;D section",
               "content": {
                 "title": "In-house R&amp;D",
                 "contents": [
@@ -2205,12 +2203,12 @@
               }
             },
             {
-              "id": "block3132f518-c35c-41dd-867b-d64bc6f82fbf",
+              "id": "type-of-in-house-rd",
               "type": "Question",
               "question": {
-                "id": "question3132f518-c35c-41dd-867b-d64bc6f82fbf",
+                "id": "questiontype-of-in-house-rd",
                 "title": {
-                  "text": "Which of the following types of R&amp;D were carried out by your business in relation to code <em>{product_codes}</em>?",
+                  "text": "Which of the following types of R&amp;D were carried out by your business in relation to code <strong>{product_codes}</strong>?",
                   "placeholders": [
                     {
                       "placeholder": "product_codes",
@@ -2253,15 +2251,15 @@
                   }
                 ]
               },
-              "page_title": "Type of in-house R&D"
+              "page_title": "Type of in-house R&amp;D"
             },
             {
-              "id": "block41bdf450-1599-4525-9a42-4c99744cc1c8",
+              "id": "non-capital-expenditure-on-salaries-and-wages-for-civil-rd",
               "type": "Question",
               "question": {
-                "id": "question41bdf450-1599-4525-9a42-4c99744cc1c8",
+                "id": "questionnon-capital-expenditure-on-salaries-and-wages-for-civil-rd",
                 "title": {
-                  "text": "For the period {from} to {to}, what was your business&#39;s gross non-capital expenditure on salaries and wages for <em>civil</em> R&amp;D?",
+                  "text": "For the period {from} to {to}, what was your business&#39;s gross non-capital expenditure on salaries and wages for <strong>civil</strong> R&amp;D?",
                   "placeholders": [
                     {
                       "placeholder": "from",
@@ -2325,7 +2323,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p><p>Provide the total cost of non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -2354,16 +2352,6 @@
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "What we mean by &#39;non-capital expenditure&#39;",
-                    "contents": [
-                      {
-                        "description": "This refers to the total cost of non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts."
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -2377,7 +2365,7 @@
                   }
                 ]
               },
-              "page_title": "Non-capital expenditure on salaries and wages for civil R&D",
+              "page_title": "Non-capital expenditure on salaries and wages for civil R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -2391,14 +2379,14 @@
               }
             },
             {
-              "id": "block04e17239-db44-477c-b5b6-b922f51b0a37",
+              "id": "non-capital-expenditure-on-all-materials-supplies-equipment-and-services-for-civil-rd",
               "type": "Question",
               "question": {
-                "id": "question04e17239-db44-477c-b5b6-b922f51b0a37",
+                "id": "questionnon-capital-expenditure-on-all-materials-supplies-equipment-and-services-for-civil-rd",
                 "title": "For the reporting period, what was your business&#39;s non-capital expenditure on all civil R&amp;D materials, supplies, equipment and services?",
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -2442,7 +2430,7 @@
                   }
                 ]
               },
-              "page_title": "Non-capital expenditure on all materials, supplies, equipment and services for civil R&D",
+              "page_title": "Non-capital expenditure on all materials, supplies, equipment and services for civil R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -2456,10 +2444,10 @@
               }
             },
             {
-              "id": "block8c71ac5a-e84c-44db-aabd-460142b1a3bd",
+              "id": "purchase-of-materials-and-services-for-civil-rd",
               "type": "Question",
               "question": {
-                "id": "question8c71ac5a-e84c-44db-aabd-460142b1a3bd",
+                "id": "questionpurchase-of-materials-and-services-for-civil-rd",
                 "title": {
                   "text": "Of the {noncapital_expenditure_on_all_materials_supplies_equipment_and_services_for_civil_research_and_development} non-capital expenditure on all civil R&amp;D materials, supplies, equipment and services, how much did your business spend on the following?",
                   "placeholders": [
@@ -2481,7 +2469,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p><p>Values should sum to your business&#39;s total non-capital expenditure on all civil R&amp;D materials, supplies, equipment and services.</p><p>Informed estimates are acceptable.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p><p>Values should sum to your business&#39;s total non-capital expenditure on all civil R&amp;D materials, supplies, equipment and services.</p><p>Informed estimates are acceptable.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -2558,7 +2546,7 @@
                   }
                 ]
               },
-              "page_title": "Purchase of materials and services for civil R&D",
+              "page_title": "Purchase of materials and services for civil R&amp;D",
               "skip_conditions": {
                 "when": {
                   "or": [
@@ -2574,8 +2562,8 @@
                     {
                       "==": [
                         {
-                          "source": "answers",
-                          "identifier": "answer5b690209-d004-4432-acd6-813edfc2da75"
+                          "identifier": "answer5b690209-d004-4432-acd6-813edfc2da75",
+                          "source": "answers"
                         },
                         0
                       ]
@@ -2585,10 +2573,10 @@
               }
             },
             {
-              "id": "block2c2e4965-18f7-45b1-8265-5e5f498e6c00",
+              "id": "total-in-house-non-capital-expenditure-for-civil-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total in-house non-capital expenditure for civil R&D",
-              "title": "We have calculated your business&#39;s total in-house non-capital expenditure for civil R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total in-house non-capital expenditure for civil R&amp;D",
+              "title": "We have calculated your business&#39;s total in-house non-capital expenditure for civil R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -2617,10 +2605,10 @@
               }
             },
             {
-              "id": "blockce827fe9-329e-4b1f-903c-b104dc39dd40",
+              "id": "non-capital-expenditure-for-civil-rd-related-to-basic-research-applied-research-and-experimental-development",
               "type": "Question",
               "question": {
-                "id": "questionce827fe9-329e-4b1f-903c-b104dc39dd40",
+                "id": "questionnon-capital-expenditure-for-civil-rd-related-to-basic-research-applied-research-and-experimental-development",
                 "title": {
                   "text": "Of the {total_inhouse_noncapital_expenditure_for_civil_rampd} total in-house non-capital expenditure for civil R&amp;D, how much related to the following?",
                   "placeholders": [
@@ -2631,7 +2619,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "block2c2e4965-18f7-45b1-8265-5e5f498e6c00",
+                              "identifier": "total-in-house-non-capital-expenditure-for-civil-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -2642,7 +2630,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -2701,13 +2689,13 @@
                     ],
                     "conditions": ["equals"],
                     "value": {
-                      "identifier": "block2c2e4965-18f7-45b1-8265-5e5f498e6c00",
+                      "identifier": "total-in-house-non-capital-expenditure-for-civil-rd",
                       "source": "calculated_summary"
                     }
                   }
                 ]
               },
-              "page_title": "Non-capital expenditure for civil R&D related to basic research, applied research and experimental development",
+              "page_title": "Non-capital expenditure for civil R&amp;D related to basic research, applied research and experimental development",
               "skip_conditions": {
                 "when": {
                   "or": [
@@ -2725,8 +2713,8 @@
                         {
                           "==": [
                             {
-                              "source": "answers",
-                              "identifier": "answer09bc8860-ff73-4a54-ab62-bc230260582c"
+                              "identifier": "answer09bc8860-ff73-4a54-ab62-bc230260582c",
+                              "source": "answers"
                             },
                             0
                           ]
@@ -2734,8 +2722,8 @@
                         {
                           "==": [
                             {
-                              "source": "answers",
-                              "identifier": "answer5b690209-d004-4432-acd6-813edfc2da75"
+                              "identifier": "answer5b690209-d004-4432-acd6-813edfc2da75",
+                              "source": "answers"
                             },
                             0
                           ]
@@ -2747,14 +2735,14 @@
               }
             },
             {
-              "id": "blocke28dbc14-e198-4bc1-9aef-8307c738b991",
+              "id": "capital-expenditure-on-land-acquired-for-civil-rd",
               "type": "Question",
               "question": {
-                "id": "questione28dbc14-e198-4bc1-9aef-8307c738b991",
-                "title": "For the reporting period, what was your business&#39;s gross <em>capital</em> expenditure on land acquired for civil R&amp;D?",
+                "id": "questioncapital-expenditure-on-land-acquired-for-civil-rd",
+                "title": "For the reporting period, what was your business&#39;s gross <strong>capital</strong> expenditure on land acquired for civil R&amp;D?",
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -2792,7 +2780,7 @@
                   }
                 ]
               },
-              "page_title": "Capital expenditure on land acquired for civil R&D",
+              "page_title": "Capital expenditure on land acquired for civil R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -2806,14 +2794,14 @@
               }
             },
             {
-              "id": "block0ef0e30e-498d-4e22-9844-6a5a49260325",
+              "id": "capital-expenditure-on-buildings-acquired-or-constructed-for-civil-rd",
               "type": "Question",
               "question": {
-                "id": "question0ef0e30e-498d-4e22-9844-6a5a49260325",
-                "title": "For the reporting period, what was your business&#39;s gross capital expenditure on <em>buildings acquired or constructed</em> for civil R&amp;D?",
+                "id": "questioncapital-expenditure-on-buildings-acquired-or-constructed-for-civil-rd",
+                "title": "For the reporting period, what was your business&#39;s gross capital expenditure on <strong>buildings acquired or constructed</strong> for civil R&amp;D?",
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -2853,7 +2841,7 @@
                   }
                 ]
               },
-              "page_title": "Capital expenditure on buildings acquired or constructed for civil R&D",
+              "page_title": "Capital expenditure on buildings acquired or constructed for civil R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -2867,14 +2855,14 @@
               }
             },
             {
-              "id": "block76acc056-6867-4484-b0cd-e1f9d2fe4ce9",
+              "id": "capital-expenditure-on-equipment-and-machinery-for-civil-rd",
               "type": "Question",
               "question": {
-                "id": "question76acc056-6867-4484-b0cd-e1f9d2fe4ce9",
-                "title": "For the reporting period, what was your business&#39;s gross capital expenditure on <em>equipment and machinery</em> for civil R&amp;D?",
+                "id": "questioncapital-expenditure-on-equipment-and-machinery-for-civil-rd",
+                "title": "For the reporting period, what was your business&#39;s gross capital expenditure on <strong>equipment and machinery</strong> for civil R&amp;D?",
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -2917,7 +2905,7 @@
                   }
                 ]
               },
-              "page_title": "Capital expenditure on equipment and machinery for civil R&D",
+              "page_title": "Capital expenditure on equipment and machinery for civil R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -2931,10 +2919,10 @@
               }
             },
             {
-              "id": "block0781b972-8988-4386-acf5-6ba821fda1c4",
+              "id": "expenditure-on-computer-software-for-civil-rd",
               "type": "Question",
               "question": {
-                "id": "question0781b972-8988-4386-acf5-6ba821fda1c4",
+                "id": "questionexpenditure-on-computer-software-for-civil-rd",
                 "title": {
                   "text": "Of the {capital_expenditure_on_equipment_and_machinery_for_civil_research_and_development} gross capital expenditure on equipment and machinery for civil R&amp;D, how much was spent on computer software for R&amp;D?",
                   "placeholders": [
@@ -2956,7 +2944,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -2988,7 +2976,7 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on computer software for civil R&D",
+              "page_title": "Expenditure on computer software for civil R&amp;D",
               "skip_conditions": {
                 "when": {
                   "or": [
@@ -3004,8 +2992,8 @@
                     {
                       "==": [
                         {
-                          "source": "answers",
-                          "identifier": "answer260fe2c6-d1b5-4032-853f-38bc7e5c53de"
+                          "identifier": "answer260fe2c6-d1b5-4032-853f-38bc7e5c53de",
+                          "source": "answers"
                         },
                         0
                       ]
@@ -3015,10 +3003,10 @@
               }
             },
             {
-              "id": "block93aa4da1-b071-4a84-9445-49b2c8bb398d",
+              "id": "total-in-house-capital-expenditure-for-civil-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total in-house capital expenditure for civil R&D",
-              "title": "We have calculated your business&#39;s total in-house capital expenditure for civil R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total in-house capital expenditure for civil R&amp;D",
+              "title": "We have calculated your business&#39;s total in-house capital expenditure for civil R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -3051,10 +3039,10 @@
               }
             },
             {
-              "id": "blockb55b8b7b-4ebf-4ad4-9855-a37a33950f8f",
+              "id": "total-capital-and-non-capital-expenditure-on-in-house-civil-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total capital and non-capital expenditure on in-house civil R&D",
-              "title": "We have calculated your business&#39;s total in-house capital <em>and</em> non-capital expenditure for civil R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total capital and non-capital expenditure on in-house civil R&amp;D",
+              "title": "We have calculated your business&#39;s total in-house capital <strong>and</strong> non-capital expenditure for civil R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -3095,10 +3083,10 @@
               }
             },
             {
-              "id": "block6c8f0b63-a381-470f-a1b0-68bd6ae730a5",
+              "id": "tax-credits-for-expenditure-for-in-house-civil-rd",
               "type": "Question",
               "question": {
-                "id": "question6c8f0b63-a381-470f-a1b0-68bd6ae730a5",
+                "id": "questiontax-credits-for-expenditure-for-in-house-civil-rd",
                 "title": {
                   "text": "In relation to your business&#39;s {total_capital_and_noncapital_expenditure_on_inhouse_civil_rampd} total expenditure for in-house civil R&amp;D, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -3109,7 +3097,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "blockb55b8b7b-4ebf-4ad4-9855-a37a33950f8f",
+                              "identifier": "total-capital-and-non-capital-expenditure-on-in-house-civil-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -3120,7 +3108,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -3151,7 +3139,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure for in-house civil R&D",
+              "page_title": "Tax credits for expenditure for in-house civil R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -3165,10 +3153,10 @@
               }
             },
             {
-              "id": "block47aa3909-1bfe-43fd-a0c2-06af7fd3d161",
+              "id": "in-house-civil-rd-funded-by-uk-sources",
               "type": "Question",
               "question": {
-                "id": "question47aa3909-1bfe-43fd-a0c2-06af7fd3d161",
+                "id": "questionin-house-civil-rd-funded-by-uk-sources",
                 "title": {
                   "text": "Of the {total_capital_and_noncapital_expenditure_on_inhouse_civil_rampd} total expenditure for in-house civil R&amp;D, how much was funded by the following UK sources?",
                   "placeholders": [
@@ -3179,7 +3167,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "blockb55b8b7b-4ebf-4ad4-9855-a37a33950f8f",
+                              "identifier": "total-capital-and-non-capital-expenditure-on-in-house-civil-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -3190,7 +3178,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -3225,7 +3213,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "The UK Government",
-                    "description": "Include funding from, or originating within, UK government departments, their agencies and non-departmental public bodies, for example, NHS, MoD, BEIS, the Scottish or Welsh Governments. Exclude European funding departments, such as, the Welsh European Funding Office (WEFO)",
+                    "description": "Include funding from, or originating within, UK government departments, their agencies and non-departmental public bodies, for example, NHS, MoD, DSIT, the Scottish or Welsh Governments and UK Research and Innovation (UKRI). Exclude European funding departments, such as, the Welsh European Funding Office (WEFO)",
                     "decimal_places": 0,
                     "currency": "GBP"
                   },
@@ -3268,13 +3256,13 @@
                     ],
                     "conditions": ["less than", "equals"],
                     "value": {
-                      "identifier": "blockb55b8b7b-4ebf-4ad4-9855-a37a33950f8f",
+                      "identifier": "total-capital-and-non-capital-expenditure-on-in-house-civil-rd",
                       "source": "calculated_summary"
                     }
                   }
                 ]
               },
-              "page_title": "In-house civil R&D funded by UK sources",
+              "page_title": "In-house civil R&amp;D funded by UK sources",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -3288,12 +3276,12 @@
               }
             },
             {
-              "id": "block6cf4f800-2a96-44c9-833d-151641e88c77",
+              "id": "in-house-civil-rd-funded-by-sources-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question6cf4f800-2a96-44c9-833d-151641e88c77",
+                "id": "questionin-house-civil-rd-funded-by-sources-outside-the-uk",
                 "title": {
-                  "text": "Of the {total_capital_and_noncapital_expenditure_on_inhouse_civil_rampd} total expenditure for in-house civil R&amp;D, how much was funded by the following sources <em>outside the UK</em>?",
+                  "text": "Of the {total_capital_and_noncapital_expenditure_on_inhouse_civil_rampd} total expenditure for in-house civil R&amp;D, how much was funded by the following sources <strong>outside the UK</strong>?",
                   "placeholders": [
                     {
                       "placeholder": "total_capital_and_noncapital_expenditure_on_inhouse_civil_rampd",
@@ -3302,7 +3290,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "blockb55b8b7b-4ebf-4ad4-9855-a37a33950f8f",
+                              "identifier": "total-capital-and-non-capital-expenditure-on-in-house-civil-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -3313,7 +3301,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -3407,13 +3395,13 @@
                     ],
                     "conditions": ["less than", "equals"],
                     "value": {
-                      "identifier": "blockb55b8b7b-4ebf-4ad4-9855-a37a33950f8f",
+                      "identifier": "total-capital-and-non-capital-expenditure-on-in-house-civil-rd",
                       "source": "calculated_summary"
                     }
                   }
                 ]
               },
-              "page_title": "In-house civil R&D funded by sources outside the UK",
+              "page_title": "In-house civil R&amp;D funded by sources outside the UK",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -3427,10 +3415,10 @@
               }
             },
             {
-              "id": "block7ba1f28f-f282-4d29-b9e3-48c92370431f",
+              "id": "total-civil-rd-funding-for-in-house-expenditure",
               "type": "CalculatedSummary",
-              "page_title": "Total civil R&D funding for in-house expenditure",
-              "title": "We have calculated your total civil R&amp;D funding for in-house expenditure to be <em>%(total)s</em>. Is this correct?",
+              "page_title": "Total civil R&amp;D funding for in-house expenditure",
+              "title": "We have calculated your total civil R&amp;D funding for in-house expenditure to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -3499,10 +3487,10 @@
               }
             },
             {
-              "id": "block7d504c90-3b23-49ce-82cc-730a88062e74",
+              "id": "civil-rd-assets",
               "type": "Question",
               "question": {
-                "id": "question7d504c90-3b23-49ce-82cc-730a88062e74",
+                "id": "questioncivil-rd-assets",
                 "title": {
                   "text": "For the reporting period, of the {total_capital_and_noncapital_expenditure_on_inhouse_civil_rampd} total expenditure for in-house civil R&amp;D, how much of your business&#39;s R&amp;D assets are, or will be, owned by the following?",
                   "placeholders": [
@@ -3513,7 +3501,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "blockb55b8b7b-4ebf-4ad4-9855-a37a33950f8f",
+                              "identifier": "total-capital-and-non-capital-expenditure-on-in-house-civil-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -3524,7 +3512,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p><p>For this question, the value of the R&amp;D assets your business produces should be allocated to owners, or future and final owners. </p><p>Values should sum to your business&#39;s total in-house expenditure for civil R&amp;D.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable. It may be necessary to consider individual R&amp;D projects and then aggregate results.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p><p>For this question, the value of the R&amp;D assets your business produces should be allocated to owners, or future and final owners. </p><p>Values should sum to your business&#39;s total in-house expenditure for civil R&amp;D.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable. It may be necessary to consider individual R&amp;D projects and then aggregate results.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -3559,7 +3547,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "The UK Government",
-                    "description": "Include UK government departments, their agencies and non-departmental public bodies, for example, NHS, MoD, Department of Health and Social Care, Department for Business, Energy and Industrial Strategy, the Scottish or Welsh Governments",
+                    "description": "Include UK government departments, their agencies and non-departmental public bodies, for example, NHS, MoD, DSIT, the Scottish or Welsh Governments and UK Research and Innovation (UKRI). Exclude European funding departments, such as, the Welsh European Funding Office (WEFO)",
                     "decimal_places": 0,
                     "currency": "GBP"
                   },
@@ -3631,13 +3619,13 @@
                     ],
                     "conditions": ["equals"],
                     "value": {
-                      "identifier": "blockb55b8b7b-4ebf-4ad4-9855-a37a33950f8f",
+                      "identifier": "total-capital-and-non-capital-expenditure-on-in-house-civil-rd",
                       "source": "calculated_summary"
                     }
                   }
                 ]
               },
-              "page_title": "Civil R&D assets",
+              "page_title": "Civil R&amp;D assets",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -3651,12 +3639,12 @@
               }
             },
             {
-              "id": "blockd5c95ed1-fd46-4778-8d06-0581336299bd",
+              "id": "non-capital-expenditure-on-salaries-and-wages-for-defence-rd",
               "type": "Question",
               "question": {
-                "id": "questiond5c95ed1-fd46-4778-8d06-0581336299bd",
+                "id": "questionnon-capital-expenditure-on-salaries-and-wages-for-defence-rd",
                 "title": {
-                  "text": "For the period {from} to {to}, what was your business&#39;s gross non-capital expenditure on salaries and wages for <em>defence</em> R&amp;D?",
+                  "text": "For the period {from} to {to}, what was your business&#39;s gross non-capital expenditure on salaries and wages for <strong>defence</strong> R&amp;D?",
                   "placeholders": [
                     {
                       "placeholder": "from",
@@ -3720,7 +3708,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p><p>Provide the total cost of non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -3749,16 +3737,6 @@
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "What we mean by &#39;non-capital expenditure&#39;",
-                    "contents": [
-                      {
-                        "description": "This refers to the total cost of non-capital expenditure carried out by your business in the UK, regardless of the source of funds or their treatment within your business&#39;s accounts."
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -3772,7 +3750,7 @@
                   }
                 ]
               },
-              "page_title": "Non-capital expenditure on salaries and wages for defence R&D",
+              "page_title": "Non-capital expenditure on salaries and wages for defence R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -3786,14 +3764,14 @@
               }
             },
             {
-              "id": "blocka34d26d8-6faa-4306-8dee-dff73abfedea",
+              "id": "non-capital-expenditure-on-all-materials-supplies-equipment-and-services-for-defence-rd",
               "type": "Question",
               "question": {
-                "id": "questiona34d26d8-6faa-4306-8dee-dff73abfedea",
+                "id": "questionnon-capital-expenditure-on-all-materials-supplies-equipment-and-services-for-defence-rd",
                 "title": "For the reporting period, what was your business&#39;s non-capital expenditure on all defence R&amp;D materials, supplies, equipment and services?",
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -3837,7 +3815,7 @@
                   }
                 ]
               },
-              "page_title": "Non-capital expenditure on all materials, supplies, equipment and services for defence R&D",
+              "page_title": "Non-capital expenditure on all materials, supplies, equipment and services for defence R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -3851,10 +3829,10 @@
               }
             },
             {
-              "id": "blockdfc328b8-6eff-476b-a71f-328d0e19de5c",
+              "id": "purchase-of-materials-and-services-for-defence-rd",
               "type": "Question",
               "question": {
-                "id": "questiondfc328b8-6eff-476b-a71f-328d0e19de5c",
+                "id": "questionpurchase-of-materials-and-services-for-defence-rd",
                 "title": {
                   "text": "Of the {noncapital_expenditure_on_all_materials_supplies_equipment_and_services_for_defence_research_and_development} non-capital expenditure on all defence R&amp;D materials, supplies, equipment and services, how much did your business spend on the following?",
                   "placeholders": [
@@ -3876,7 +3854,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p><p>Values should sum to your business&#39;s total non-capital expenditure on all defence R&amp;D materials, supplies, equipment and services.</p><p>Informed estimates are acceptable.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p><p>Values should sum to your business&#39;s total non-capital expenditure on all defence R&amp;D materials, supplies, equipment and services.</p><p>Informed estimates are acceptable.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -3953,7 +3931,7 @@
                   }
                 ]
               },
-              "page_title": "Purchase of materials and services for defence R&D",
+              "page_title": "Purchase of materials and services for defence R&amp;D",
               "skip_conditions": {
                 "when": {
                   "or": [
@@ -3969,8 +3947,8 @@
                     {
                       "==": [
                         {
-                          "source": "answers",
-                          "identifier": "answerda8ed6fc-b27a-44ea-b5da-3bf80a61afda"
+                          "identifier": "answerda8ed6fc-b27a-44ea-b5da-3bf80a61afda",
+                          "source": "answers"
                         },
                         0
                       ]
@@ -3980,10 +3958,10 @@
               }
             },
             {
-              "id": "block30036890-4728-46cf-80c8-8f910b13a673",
+              "id": "total-in-house-non-capital-expenditure-for-defence-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total in-house non-capital expenditure for defence R&D",
-              "title": "We have calculated your business&#39;s total in-house non-capital expenditure for defence R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total in-house non-capital expenditure for defence R&amp;D",
+              "title": "We have calculated your business&#39;s total in-house non-capital expenditure for defence R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -4012,10 +3990,10 @@
               }
             },
             {
-              "id": "block2a332fc5-f352-4db5-84a5-de15bd7a6e3b",
+              "id": "non-capital-expenditure-for-defence-rd-related-to-basic-research-applied-research-and-experimental-development",
               "type": "Question",
               "question": {
-                "id": "question2a332fc5-f352-4db5-84a5-de15bd7a6e3b",
+                "id": "questionnon-capital-expenditure-for-defence-rd-related-to-basic-research-applied-research-and-experimental-development",
                 "title": {
                   "text": "Of the {total_inhouse_noncapital_expenditure_for_defence_rampd} total in-house non-capital expenditure for defence R&amp;D, how much related to the following?",
                   "placeholders": [
@@ -4026,7 +4004,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "block30036890-4728-46cf-80c8-8f910b13a673",
+                              "identifier": "total-in-house-non-capital-expenditure-for-defence-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -4037,7 +4015,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4096,13 +4074,13 @@
                     ],
                     "conditions": ["equals"],
                     "value": {
-                      "identifier": "block30036890-4728-46cf-80c8-8f910b13a673",
+                      "identifier": "total-in-house-non-capital-expenditure-for-defence-rd",
                       "source": "calculated_summary"
                     }
                   }
                 ]
               },
-              "page_title": "Non-capital expenditure for defence R&D related to basic research, applied research and experimental development",
+              "page_title": "Non-capital expenditure for defence R&amp;D related to basic research, applied research and experimental development",
               "skip_conditions": {
                 "when": {
                   "or": [
@@ -4120,8 +4098,8 @@
                         {
                           "==": [
                             {
-                              "source": "answers",
-                              "identifier": "answer9fa7c84b-a140-4a9a-8e22-ae91e0ac6463"
+                              "identifier": "answer9fa7c84b-a140-4a9a-8e22-ae91e0ac6463",
+                              "source": "answers"
                             },
                             0
                           ]
@@ -4129,8 +4107,8 @@
                         {
                           "==": [
                             {
-                              "source": "answers",
-                              "identifier": "answerda8ed6fc-b27a-44ea-b5da-3bf80a61afda"
+                              "identifier": "answerda8ed6fc-b27a-44ea-b5da-3bf80a61afda",
+                              "source": "answers"
                             },
                             0
                           ]
@@ -4142,14 +4120,14 @@
               }
             },
             {
-              "id": "blockb015d0e5-6ee4-4688-828c-07dcf861efaa",
+              "id": "capital-expenditure-on-land-acquired-for-defence-rd",
               "type": "Question",
               "question": {
-                "id": "questionb015d0e5-6ee4-4688-828c-07dcf861efaa",
-                "title": "For the reporting period, what was your business&#39;s gross <em>capital</em> expenditure on land acquired for defence R&amp;D?",
+                "id": "questioncapital-expenditure-on-land-acquired-for-defence-rd",
+                "title": "For the reporting period, what was your business&#39;s gross <strong>capital</strong> expenditure on land acquired for defence R&amp;D?",
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4187,7 +4165,7 @@
                   }
                 ]
               },
-              "page_title": "Capital expenditure on land acquired for defence R&D",
+              "page_title": "Capital expenditure on land acquired for defence R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -4201,14 +4179,14 @@
               }
             },
             {
-              "id": "block6cb33fe5-342e-45ac-aae4-0758c7523d0f",
+              "id": "capital-expenditure-on-buildings-acquired-or-constructed-for-defence-rd",
               "type": "Question",
               "question": {
-                "id": "question6cb33fe5-342e-45ac-aae4-0758c7523d0f",
-                "title": "For the reporting period, what was your business&#39;s gross capital expenditure on <em>buildings acquired or constructed</em> for defence R&amp;D?",
+                "id": "questioncapital-expenditure-on-buildings-acquired-or-constructed-for-defence-rd",
+                "title": "For the reporting period, what was your business&#39;s gross capital expenditure on <strong>buildings acquired or constructed</strong> for defence R&amp;D?",
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4248,7 +4226,7 @@
                   }
                 ]
               },
-              "page_title": "Capital expenditure on buildings acquired or constructed for defence R&D",
+              "page_title": "Capital expenditure on buildings acquired or constructed for defence R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -4262,14 +4240,14 @@
               }
             },
             {
-              "id": "block0ce4ea5a-5fba-4d29-b976-8532b57c83dc",
+              "id": "capital-expenditure-on-equipment-and-machinery-for-defence-rd",
               "type": "Question",
               "question": {
-                "id": "question0ce4ea5a-5fba-4d29-b976-8532b57c83dc",
-                "title": "For the reporting period, what was your business&#39;s gross capital expenditure on <em>equipment and machinery</em> for defence R&amp;D?",
+                "id": "questioncapital-expenditure-on-equipment-and-machinery-for-defence-rd",
+                "title": "For the reporting period, what was your business&#39;s gross capital expenditure on <strong>equipment and machinery</strong> for defence R&amp;D?",
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4312,7 +4290,7 @@
                   }
                 ]
               },
-              "page_title": "Capital expenditure on equipment and machinery for defence R&D",
+              "page_title": "Capital expenditure on equipment and machinery for defence R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -4326,10 +4304,10 @@
               }
             },
             {
-              "id": "block646fd877-d09a-4f94-b649-75cdcc3163dd",
+              "id": "expenditure-on-computer-software-for-defence-rd",
               "type": "Question",
               "question": {
-                "id": "question646fd877-d09a-4f94-b649-75cdcc3163dd",
+                "id": "questionexpenditure-on-computer-software-for-defence-rd",
                 "title": {
                   "text": "Of the {capital_expenditure_on_equipment_and_machinery_for_defence_research_and_development} gross capital expenditure on equipment and machinery for defence R&amp;D, how much was spent on computer software for R&amp;D?",
                   "placeholders": [
@@ -4351,7 +4329,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4383,7 +4361,7 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on computer software for defence R&D",
+              "page_title": "Expenditure on computer software for defence R&amp;D",
               "skip_conditions": {
                 "when": {
                   "or": [
@@ -4399,8 +4377,8 @@
                     {
                       "==": [
                         {
-                          "source": "answers",
-                          "identifier": "answer0d1467c5-0b6c-46f0-8e5d-a5213850d77e"
+                          "identifier": "answer0d1467c5-0b6c-46f0-8e5d-a5213850d77e",
+                          "source": "answers"
                         },
                         0
                       ]
@@ -4410,10 +4388,10 @@
               }
             },
             {
-              "id": "blockea57eb58-750b-45eb-9b0c-1aa207ed4840",
+              "id": "total-in-house-capital-expenditure-for-defence-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total in-house capital expenditure for defence R&D",
-              "title": "We have calculated your business&#39;s total in-house capital expenditure for defence R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total in-house capital expenditure for defence R&amp;D",
+              "title": "We have calculated your business&#39;s total in-house capital expenditure for defence R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -4446,10 +4424,10 @@
               }
             },
             {
-              "id": "blockcb1b6090-8374-4ffe-bfcb-743919570f9d",
+              "id": "total-capital-and-non-capital-expenditure-for-in-house-defence-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total capital and non-capital expenditure for in-house defence R&D",
-              "title": "We have calculated the total in-house capital <em>and</em> non-capital expenditure for defence R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total capital and non-capital expenditure for in-house defence R&amp;D",
+              "title": "We have calculated the total in-house capital <strong>and</strong> non-capital expenditure for defence R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -4490,10 +4468,10 @@
               }
             },
             {
-              "id": "blocka5cf4c11-5e52-4099-aef1-0763ee7700e2",
+              "id": "tax-credits-for-expenditure-for-in-house-defence-rd",
               "type": "Question",
               "question": {
-                "id": "questiona5cf4c11-5e52-4099-aef1-0763ee7700e2",
+                "id": "questiontax-credits-for-expenditure-for-in-house-defence-rd",
                 "title": {
                   "text": "In relation to your business&#39;s {total_capital_and_noncapital_expenditure_for_inhouse_defence_rampd} total expenditure for in-house defence R&amp;D, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -4504,7 +4482,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "blockcb1b6090-8374-4ffe-bfcb-743919570f9d",
+                              "identifier": "total-capital-and-non-capital-expenditure-for-in-house-defence-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -4515,7 +4493,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4546,7 +4524,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure for in-house defence R&D",
+              "page_title": "Tax credits for expenditure for in-house defence R&amp;D",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -4560,10 +4538,10 @@
               }
             },
             {
-              "id": "block22ce9d0c-3cbd-4442-8cfe-329c52525605",
+              "id": "in-house-defence-rd-funded-by-uk-sources",
               "type": "Question",
               "question": {
-                "id": "question22ce9d0c-3cbd-4442-8cfe-329c52525605",
+                "id": "questionin-house-defence-rd-funded-by-uk-sources",
                 "title": {
                   "text": "Of the {total_capital_and_noncapital_expenditure_for_inhouse_defence_rampd} total expenditure for in-house defence R&amp;D, how much was funded by the following UK sources?",
                   "placeholders": [
@@ -4574,7 +4552,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "blockcb1b6090-8374-4ffe-bfcb-743919570f9d",
+                              "identifier": "total-capital-and-non-capital-expenditure-for-in-house-defence-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -4585,7 +4563,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4620,7 +4598,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "The UK Government",
-                    "description": "Include funding from, or originating within, UK government departments, their agencies and non-departmental public bodies, for example, NHS, MoD, BEIS, the Scottish or Welsh Governments. Exclude European funding departments, such as, the Welsh European Funding Office (WEFO)",
+                    "description": "Include funding from, or originating within, UK government departments, their agencies and non-departmental public bodies, for example, NHS, MoD, DSIT, the Scottish or Welsh Governments and UK Research and Innovation (UKRI). Exclude European funding departments, such as, the Welsh European Funding Office (WEFO)",
                     "decimal_places": 0,
                     "currency": "GBP"
                   },
@@ -4663,13 +4641,13 @@
                     ],
                     "conditions": ["less than", "equals"],
                     "value": {
-                      "identifier": "blockcb1b6090-8374-4ffe-bfcb-743919570f9d",
+                      "identifier": "total-capital-and-non-capital-expenditure-for-in-house-defence-rd",
                       "source": "calculated_summary"
                     }
                   }
                 ]
               },
-              "page_title": "In-house defence R&D funded by UK sources",
+              "page_title": "In-house defence R&amp;D funded by UK sources",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -4683,12 +4661,12 @@
               }
             },
             {
-              "id": "blocke9bb9549-6fe9-497e-ae08-6342d1272c24",
+              "id": "in-house-defence-rd-funded-by-sources-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "questione9bb9549-6fe9-497e-ae08-6342d1272c24",
+                "id": "questionin-house-defence-rd-funded-by-sources-outside-the-uk",
                 "title": {
-                  "text": "Of the {total_capital_and_noncapital_expenditure_for_inhouse_defence_rampd} total expenditure for in-house defence R&amp;D, how much was funded by the following sources <em>outside the UK</em>?",
+                  "text": "Of the {total_capital_and_noncapital_expenditure_for_inhouse_defence_rampd} total expenditure for in-house defence R&amp;D, how much was funded by the following sources <strong>outside the UK</strong>?",
                   "placeholders": [
                     {
                       "placeholder": "total_capital_and_noncapital_expenditure_for_inhouse_defence_rampd",
@@ -4697,7 +4675,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "blockcb1b6090-8374-4ffe-bfcb-743919570f9d",
+                              "identifier": "total-capital-and-non-capital-expenditure-for-in-house-defence-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -4708,7 +4686,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4802,13 +4780,13 @@
                     ],
                     "conditions": ["less than", "equals"],
                     "value": {
-                      "identifier": "blockcb1b6090-8374-4ffe-bfcb-743919570f9d",
+                      "identifier": "total-capital-and-non-capital-expenditure-for-in-house-defence-rd",
                       "source": "calculated_summary"
                     }
                   }
                 ]
               },
-              "page_title": "In-house defence R&D funded by sources outside the UK",
+              "page_title": "In-house defence R&amp;D funded by sources outside the UK",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -4822,10 +4800,10 @@
               }
             },
             {
-              "id": "block9a88ff53-5120-4fe5-9728-908692e7ac51",
+              "id": "total-defence-rd-funding-for-in-house-expenditure",
               "type": "CalculatedSummary",
-              "page_title": "Total defence R&D funding for in-house expenditure",
-              "title": "We have calculated your total defence R&amp;D funding for in-house expenditure to be <em>%(total)s</em>. Is this correct?",
+              "page_title": "Total defence R&amp;D funding for in-house expenditure",
+              "title": "We have calculated your total defence R&amp;D funding for in-house expenditure to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -4894,10 +4872,10 @@
               }
             },
             {
-              "id": "block5965cd0c-22b1-411e-9e72-27e23f9b3633",
+              "id": "defence-rd-assets",
               "type": "Question",
               "question": {
-                "id": "question5965cd0c-22b1-411e-9e72-27e23f9b3633",
+                "id": "questiondefence-rd-assets",
                 "title": {
                   "text": "For the reporting period, of the {total_capital_and_noncapital_expenditure_for_inhouse_defence_rampd} total expenditure for in-house defence R&amp;D, how much of your business&#39;s R&amp;D assets are, or will be, owned by the following?",
                   "placeholders": [
@@ -4908,7 +4886,7 @@
                           "transform": "format_currency",
                           "arguments": {
                             "number": {
-                              "identifier": "blockcb1b6090-8374-4ffe-bfcb-743919570f9d",
+                              "identifier": "total-capital-and-non-capital-expenditure-for-in-house-defence-rd",
                               "source": "calculated_summary"
                             }
                           }
@@ -4919,7 +4897,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p><p>For this question, the value of the R&amp;D assets your business produces should be allocated to owners, or future and final owners. </p><p>Values should sum to your business&#39;s total in-house expenditure for defence R&amp;D.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable. It may be necessary to consider individual R&amp;D projects and then aggregate results.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p><p>For this question, the value of the R&amp;D assets your business produces should be allocated to owners, or future and final owners. </p><p>Values should sum to your business&#39;s total in-house expenditure for defence R&amp;D.</p><p>Enter a value to the nearest &#xA3;thousand (e.g. 56,000). Do not enter &#x2018;56&#x2019; for &#xA3;56,000.</p><p>Informed estimates are acceptable. It may be necessary to consider individual R&amp;D projects and then aggregate results.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -4954,7 +4932,7 @@
                     "mandatory": true,
                     "type": "Currency",
                     "label": "The UK Government",
-                    "description": "Include UK government departments, their agencies and non departmental public bodies, for example, NHS, MoD, Department of Health and Social Care, Department for Business, Energy and Industrial Strategy, the Scottish or Welsh Governments",
+                    "description": "Include UK government departments, their agencies and non-departmental public bodies, for example, NHS, MoD, DSIT, the Scottish or Welsh Governments and UK Research and Innovation (UKRI). Exclude European funding departments, such as, the Welsh European Funding Office (WEFO)",
                     "decimal_places": 0,
                     "currency": "GBP"
                   },
@@ -5026,13 +5004,13 @@
                     ],
                     "conditions": ["equals"],
                     "value": {
-                      "identifier": "blockcb1b6090-8374-4ffe-bfcb-743919570f9d",
+                      "identifier": "total-capital-and-non-capital-expenditure-for-in-house-defence-rd",
                       "source": "calculated_summary"
                     }
                   }
                 ]
               },
-              "page_title": "Defence R&D assets",
+              "page_title": "Defence R&amp;D assets",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -5061,11 +5039,10 @@
       }
     },
     {
-      "id": "sectionf136bcf8-6712-44fd-bdc7-37b37430fe10",
-      "title": "Purchase of R&D conducted outside the business",
+      "id": "f136bcf8-6712-44fd-bdc7-37b37430fe10",
+      "title": "Purchase of R&amp;D conducted outside the business",
       "summary": {
         "show_on_completion": false,
-        "page_title": "Purchase of R&D conducted outside the business",
         "collapsible": false,
         "items": [
           {
@@ -5083,10 +5060,13 @@
                 }
               ]
             },
+            "item_anchor_answer_id": "answere51ca1c4-55f4-4d31-8a30-7e3a4a8274e7",
+            "item_label": "Product codes",
             "add_link_text": "Add item to this list",
             "empty_list_text": "There are no items"
           }
-        ]
+        ],
+        "show_non_item_answers": true
       },
       "show_on_hub": true,
       "groups": [
@@ -5095,7 +5075,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupf136bcf8-6712-44fd-bdc7-37b37430fe10-introduction",
+              "id": "purchase-of-rd-conducted-outside-the-business",
+              "page_title": "Purchase of R&amp;D conducted outside the business",
               "content": {
                 "title": "Purchase of R&amp;D conducted outside the business",
                 "contents": [
@@ -5112,12 +5093,11 @@
               }
             },
             {
-              "id": "block-driving520046b4-ec3c-4d91-85c5-3c4565811379",
+              "id": "purchased-rd",
               "type": "ListCollectorDrivingQuestion",
-              "page_title": "Purchased R&D",
               "for_list": "product_codes_2",
               "question": {
-                "id": "question-driving-520046b4-ec3c-4d91-85c5-3c4565811379",
+                "id": "question-driving-other-product-codes-for-purchased-rd",
                 "type": "General",
                 "title": {
                   "text": "For the period {from} to {to}, did {ru_name} purchase any R&amp;D conducted outside the business?",
@@ -5203,7 +5183,7 @@
                 },
                 "answers": [
                   {
-                    "id": "answer-driving-520046b4-ec3c-4d91-85c5-3c4565811379",
+                    "id": "answer10d07be0-6540-4b09-93b4-55b735bad466",
                     "mandatory": true,
                     "type": "Radio",
                     "options": [
@@ -5213,7 +5193,7 @@
                         "action": {
                           "type": "RedirectToListAddBlock",
                           "params": {
-                            "block_id": "add-block-520046b4-ec3c-4d91-85c5-3c4565811379",
+                            "block_id": "add-block-product-codes-list-for-purchased-rd",
                             "list_name": "product_codes_2"
                           }
                         }
@@ -5233,29 +5213,30 @@
                     "in": [
                       {
                         "source": "answers",
-                        "identifier": "answer-driving-520046b4-ec3c-4d91-85c5-3c4565811379"
+                        "identifier": "answer10d07be0-6540-4b09-93b4-55b735bad466"
                       },
                       ["No"]
                     ]
                   }
                 },
                 {
-                  "block": "block520046b4-ec3c-4d91-85c5-3c4565811379"
+                  "block": "other-product-codes-for-purchased-rd"
                 }
-              ]
+              ],
+              "page_title": "Purchased R&D"
             },
             {
-              "id": "block520046b4-ec3c-4d91-85c5-3c4565811379",
+              "id": "other-product-codes-for-purchased-rd",
               "type": "ListCollector",
               "page_title": "Other product codes for purchased R&D",
               "for_list": "product_codes_2",
               "question": {
-                "id": "list-collector-question-520046b4-ec3c-4d91-85c5-3c4565811379",
+                "id": "list-collector-question-other-product-codes-for-purchased-rd",
                 "type": "General",
                 "title": "Did your business purchase R&amp;D for any other product codes?",
                 "answers": [
                   {
-                    "id": "add-another-520046b4-ec3c-4d91-85c5-3c4565811379",
+                    "id": "answerc11e580f-cb77-4e28-8581-6e222a2149e0",
                     "mandatory": true,
                     "type": "Radio",
                     "options": [
@@ -5275,12 +5256,12 @@
                 ]
               },
               "add_block": {
-                "id": "add-block-520046b4-ec3c-4d91-85c5-3c4565811379",
+                "id": "add-block-product-codes-list-for-purchased-rd",
                 "type": "ListAddQuestion",
-                "page_title": "Product codes list for purchased R&D",
+                "page_title": "Product codes list for purchased R&amp;D",
                 "cancel_text": "Don’t need to add this item",
                 "question": {
-                  "id": "add-block-question-520046b4-ec3c-4d91-85c5-3c4565811379",
+                  "id": "add-block-question-product-codes-list-for-purchased-rd",
                   "type": "General",
                   "title": {
                     "text": "For the reporting period, for which of the following product codes has {ru_name} purchased R&amp;D conducted outside the business?",
@@ -5536,12 +5517,12 @@
                 }
               },
               "edit_block": {
-                "id": "edit-block-520046b4-ec3c-4d91-85c5-3c4565811379",
+                "id": "edit-block-product-codes-list-for-purchased-rd",
                 "type": "ListEditQuestion",
-                "page_title": "Product codes list for purchased R&D",
+                "page_title": "Product codes list for purchased R&amp;D",
                 "cancel_text": "Don’t need to edit this item",
                 "question": {
-                  "id": "edit-block-question-520046b4-ec3c-4d91-85c5-3c4565811379",
+                  "id": "edit-block-question-product-codes-list-for-purchased-rd",
                   "type": "General",
                   "title": {
                     "text": "For the reporting period, for which of the following product codes has {ru_name} purchased R&amp;D conducted outside the business?",
@@ -5797,17 +5778,17 @@
                 }
               },
               "remove_block": {
-                "id": "remove-block-520046b4-ec3c-4d91-85c5-3c4565811379",
+                "id": "remove-block-product-codes-list-for-purchased-rd",
                 "type": "ListRemoveQuestion",
                 "cancel_text": "Don’t need to remove this item?",
                 "question": {
-                  "id": "remove-block-question-520046b4-ec3c-4d91-85c5-3c4565811379",
+                  "id": "remove-block-question-product-codes-list-for-purchased-rd",
                   "type": "General",
                   "title": "Are you sure you want to remove this item?",
                   "warning": "All of the information about this item will be deleted",
                   "answers": [
                     {
-                      "id": "remove-confirmation-520046b4-ec3c-4d91-85c5-3c4565811379",
+                      "id": "remove-confirmation-product-codes-list-for-purchased-rd",
                       "mandatory": true,
                       "type": "Radio",
                       "options": [
@@ -5837,7 +5818,7 @@
                       "transforms": [
                         {
                           "arguments": {
-                            "delimiter": "&nbsp;",
+                            "delimiter": " ",
                             "list_to_concatenate": [
                               {
                                 "source": "answers",
@@ -5869,8 +5850,8 @@
       }
     },
     {
-      "id": "sectione4f472e4-9aaa-409e-9717-f7c6d1f3f8fc",
-      "title": "Purchase of R&D conducted outside the business",
+      "id": "e4f472e4-9aaa-409e-9717-f7c6d1f3f8fc",
+      "title": "Purchase of R&amp;D conducted outside the business",
       "repeat": {
         "for_list": "product_codes_2",
         "title": {
@@ -5881,7 +5862,7 @@
               "transforms": [
                 {
                   "arguments": {
-                    "delimiter": "&nbsp;",
+                    "delimiter": " ",
                     "list_to_concatenate": [
                       {
                         "source": "answers",
@@ -5898,7 +5879,6 @@
       },
       "summary": {
         "show_on_completion": false,
-        "page_title": "Purchase of R&D conducted outside the business",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -5908,7 +5888,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupe4f472e4-9aaa-409e-9717-f7c6d1f3f8fc-introduction",
+              "id": "purchase-of-rd-conducted-outside-the-business-section",
+              "page_title": "Purchase of R&amp;D conducted outside the business section",
               "content": {
                 "title": "Purchase of R&amp;D conducted outside the business",
                 "contents": [
@@ -5925,12 +5906,12 @@
               }
             },
             {
-              "id": "block90878b01-c84b-4606-ac41-d4fc483dbf4d",
+              "id": "type-of-purchased-rd",
               "type": "Question",
               "question": {
-                "id": "question90878b01-c84b-4606-ac41-d4fc483dbf4d",
+                "id": "questiontype-of-purchased-rd",
                 "title": {
-                  "text": "Which of the following types of R&amp;D were purchased by your business in relation to code <em>{product_codes}</em>?",
+                  "text": "Which of the following types of R&amp;D were purchased by your business in relation to code <strong>{product_codes}</strong>?",
                   "placeholders": [
                     {
                       "placeholder": "product_codes",
@@ -5973,17 +5954,17 @@
                   }
                 ]
               },
-              "page_title": "Type of purchased R&D"
+              "page_title": "Type of purchased R&amp;D"
             },
             {
-              "id": "block1dc92078-3e8a-4ee8-8ccb-ad257168b1d0",
+              "id": "expenditure-on-civil-rd-work-commissioned-within-the-uk",
               "type": "Question",
               "question": {
-                "id": "question1dc92078-3e8a-4ee8-8ccb-ad257168b1d0",
-                "title": "For the reporting period, how much did your business spend on <em>civil</em> R&amp;D work commissioned <em>within</em> the UK?",
+                "id": "questionexpenditure-on-civil-rd-work-commissioned-within-the-uk",
+                "title": "For the reporting period, how much did your business spend on <strong>civil</strong> R&amp;D work commissioned <strong>within</strong> the UK?",
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6027,22 +6008,22 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on civil R&D work commissioned within the UK",
+              "page_title": "Expenditure on civil R&amp;D work commissioned within the UK",
               "routing_rules": [
                 {
-                  "block": "blockd9298bdd-8879-44ca-b10a-b878d90c4e2f",
+                  "block": "expenditure-on-uk-commissioned-civil-rd-work-carried-out-outside-the-uk",
                   "when": {
                     "==": [
                       {
-                        "source": "answers",
-                        "identifier": "answer414c9d3e-5ee5-47e7-b233-ea64a45c8586"
+                        "identifier": "answer414c9d3e-5ee5-47e7-b233-ea64a45c8586",
+                        "source": "answers"
                       },
                       0
                     ]
                   }
                 },
                 {
-                  "block": "block371380e8-5bb2-473b-9c71-b6a2f60aab70"
+                  "block": "tax-credits-for-expenditure-on-civil-rd-work-commissioned-within-the-uk"
                 }
               ],
               "skip_conditions": {
@@ -6058,10 +6039,10 @@
               }
             },
             {
-              "id": "block371380e8-5bb2-473b-9c71-b6a2f60aab70",
+              "id": "tax-credits-for-expenditure-on-civil-rd-work-commissioned-within-the-uk",
               "type": "Question",
               "question": {
-                "id": "question371380e8-5bb2-473b-9c71-b6a2f60aab70",
+                "id": "questiontax-credits-for-expenditure-on-civil-rd-work-commissioned-within-the-uk",
                 "title": {
                   "text": "In relation to your business&#39;s {expenditure_on_civil_research_and_development_work_commissioned_within_the_uk} expenditure on civil R&amp;D work commissioned within the UK, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -6083,7 +6064,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code {product_codes}.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6114,7 +6095,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure on civil R&D work commissioned within the UK",
+              "page_title": "Tax credits for expenditure on civil R&amp;D work commissioned within the UK",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -6128,14 +6109,14 @@
               }
             },
             {
-              "id": "blockd9298bdd-8879-44ca-b10a-b878d90c4e2f",
+              "id": "expenditure-on-uk-commissioned-civil-rd-work-carried-out-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "questiond9298bdd-8879-44ca-b10a-b878d90c4e2f",
-                "title": "For the reporting period, how much did your business spend on civil R&amp;D work carried out <em>outside</em> the UK, which was originally funded by the UK Government?",
+                "id": "questionexpenditure-on-uk-commissioned-civil-rd-work-carried-out-outside-the-uk",
+                "title": "For the reporting period, how much did your business spend on civil R&amp;D work carried out <strong>outside</strong> the UK, which was originally funded by the UK Government?",
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6179,22 +6160,22 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on UK commissioned civil R&D work carried out outside the UK",
+              "page_title": "Expenditure on UK commissioned civil R&amp;D work carried out outside the UK",
               "routing_rules": [
                 {
-                  "block": "block2240e5d2-807d-4e8c-86ee-ba131ccbae7a",
+                  "block": "expenditure-on-all-other-civil-rd-work-carried-out-outside-the-uk",
                   "when": {
                     "==": [
                       {
-                        "source": "answers",
-                        "identifier": "answer3f8b371d-ac9c-4d72-a3b4-088151f50f17"
+                        "identifier": "answer3f8b371d-ac9c-4d72-a3b4-088151f50f17",
+                        "source": "answers"
                       },
                       0
                     ]
                   }
                 },
                 {
-                  "block": "block5ebb595d-3a79-4497-9e1d-cbd7e752a490"
+                  "block": "tax-credits-for-expenditure-on-uk-commissioned-civil-rd-work-carried-out-outside-the-uk"
                 }
               ],
               "skip_conditions": {
@@ -6210,10 +6191,10 @@
               }
             },
             {
-              "id": "block5ebb595d-3a79-4497-9e1d-cbd7e752a490",
+              "id": "tax-credits-for-expenditure-on-uk-commissioned-civil-rd-work-carried-out-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question5ebb595d-3a79-4497-9e1d-cbd7e752a490",
+                "id": "questiontax-credits-for-expenditure-on-uk-commissioned-civil-rd-work-carried-out-outside-the-uk",
                 "title": {
                   "text": "In relation to your business&#39;s {expenditure_on_uk_commissioned_civil_research_and_development_work_carried_out_outside_the_uk} expenditure on civil R&amp;D work originally funded by the UK Government, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -6235,7 +6216,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6266,7 +6247,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure on UK commissioned civil R&D work carried out outside the UK",
+              "page_title": "Tax credits for expenditure on UK commissioned civil R&amp;D work carried out outside the UK",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -6280,14 +6261,14 @@
               }
             },
             {
-              "id": "block2240e5d2-807d-4e8c-86ee-ba131ccbae7a",
+              "id": "expenditure-on-all-other-civil-rd-work-carried-out-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question2240e5d2-807d-4e8c-86ee-ba131ccbae7a",
-                "title": "For the reporting period, how much did your business spend on all <em>other civil R&amp;D work</em> carried out outside the UK?",
+                "id": "questionexpenditure-on-all-other-civil-rd-work-carried-out-outside-the-uk",
+                "title": "For the reporting period, how much did your business spend on all <strong>other civil R&amp;D work</strong> carried out outside the UK?",
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6334,22 +6315,22 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on all other civil R&D work carried out outside the UK",
+              "page_title": "Expenditure on all other civil R&amp;D work carried out outside the UK",
               "routing_rules": [
                 {
-                  "block": "block90b7a3ce-2f1f-4082-b037-9d0eddcf3d55",
+                  "block": "total-civil-rd-work-purchased",
                   "when": {
                     "==": [
                       {
-                        "source": "answers",
-                        "identifier": "answer80b358b4-6973-4d1c-9a79-138bdd731326"
+                        "identifier": "answer80b358b4-6973-4d1c-9a79-138bdd731326",
+                        "source": "answers"
                       },
                       0
                     ]
                   }
                 },
                 {
-                  "block": "blockd52c272d-b2d6-44e5-86e4-ebf5c03d058f"
+                  "block": "tax-credits-for-expenditure-on-all-other-civil-rd-work-carried-out-outside-the-uk"
                 }
               ],
               "skip_conditions": {
@@ -6365,10 +6346,10 @@
               }
             },
             {
-              "id": "blockd52c272d-b2d6-44e5-86e4-ebf5c03d058f",
+              "id": "tax-credits-for-expenditure-on-all-other-civil-rd-work-carried-out-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "questiond52c272d-b2d6-44e5-86e4-ebf5c03d058f",
+                "id": "questiontax-credits-for-expenditure-on-all-other-civil-rd-work-carried-out-outside-the-uk",
                 "title": {
                   "text": "In relation to your business&#39;s {expenditure_on_all_other_civil_research_and_development_work_carried_out_outside_the_uk} expenditure on all other civil R&amp;D work carried out outside the UK, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -6390,7 +6371,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting civil R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting civil R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6421,7 +6402,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure on all other civil R&D work carried out outside the UK",
+              "page_title": "Tax credits for expenditure on all other civil R&amp;D work carried out outside the UK",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -6435,10 +6416,10 @@
               }
             },
             {
-              "id": "block90b7a3ce-2f1f-4082-b037-9d0eddcf3d55",
+              "id": "total-civil-rd-work-purchased",
               "type": "CalculatedSummary",
-              "page_title": "Total civil R&D work purchased",
-              "title": "We have calculated your business&#39;s total civil R&amp;D work purchased to be %(total)s. Is this correct?",
+              "page_title": "Total civil R&amp;D work purchased",
+              "title": "We have calculated your business&#39;s total civil R&amp;D work purchased to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -6471,14 +6452,14 @@
               }
             },
             {
-              "id": "block3724b332-0bb7-4511-8dde-c01b5f449d04",
+              "id": "expenditure-on-defence-rd-work-commissioned-within-the-uk",
               "type": "Question",
               "question": {
-                "id": "question3724b332-0bb7-4511-8dde-c01b5f449d04",
-                "title": "For the reporting period, how much did your business spend on <em>defence</em> R&amp;D work commissioned <em>within</em> the UK?",
+                "id": "questionexpenditure-on-defence-rd-work-commissioned-within-the-uk",
+                "title": "For the reporting period, how much did your business spend on <strong>defence</strong> R&amp;D work commissioned <strong>within</strong> the UK?",
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6522,22 +6503,22 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on defence R&D work commissioned within the UK",
+              "page_title": "Expenditure on defence R&amp;D work commissioned within the UK",
               "routing_rules": [
                 {
-                  "block": "block2030ff5c-0d17-4668-bba4-4f6bd983988e",
+                  "block": "expenditure-on-uk-commissioned-defence-rd-work-carried-out-outside-the-uk",
                   "when": {
                     "==": [
                       {
-                        "source": "answers",
-                        "identifier": "answer0ce80862-dd7c-4ca4-9d73-05a10c76e738"
+                        "identifier": "answer0ce80862-dd7c-4ca4-9d73-05a10c76e738",
+                        "source": "answers"
                       },
                       0
                     ]
                   }
                 },
                 {
-                  "block": "blockdb3b0311-be2d-47e8-aa60-1523d10dbba0"
+                  "block": "tax-credits-for-expenditure-on-defence-rd-work-commissioned-within-the-uk"
                 }
               ],
               "skip_conditions": {
@@ -6553,10 +6534,10 @@
               }
             },
             {
-              "id": "blockdb3b0311-be2d-47e8-aa60-1523d10dbba0",
+              "id": "tax-credits-for-expenditure-on-defence-rd-work-commissioned-within-the-uk",
               "type": "Question",
               "question": {
-                "id": "questiondb3b0311-be2d-47e8-aa60-1523d10dbba0",
+                "id": "questiontax-credits-for-expenditure-on-defence-rd-work-commissioned-within-the-uk",
                 "title": {
                   "text": "In relation to your business&#39;s {expenditure_on_defence_research_and_development_work_commissioned_within_the_uk} expenditure on defence R&amp;D work commissioned within the UK, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -6578,7 +6559,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6609,7 +6590,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure on defence R&D work commissioned within the UK",
+              "page_title": "Tax credits for expenditure on defence R&amp;D work commissioned within the UK",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -6623,14 +6604,14 @@
               }
             },
             {
-              "id": "block2030ff5c-0d17-4668-bba4-4f6bd983988e",
+              "id": "expenditure-on-uk-commissioned-defence-rd-work-carried-out-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question2030ff5c-0d17-4668-bba4-4f6bd983988e",
-                "title": "For the reporting period, how much did your business spend on defence R&amp;D work carried out <em>outside</em> the UK, which was originally funded by the UK Government?",
+                "id": "questionexpenditure-on-uk-commissioned-defence-rd-work-carried-out-outside-the-uk",
+                "title": "For the reporting period, how much did your business spend on defence R&amp;D work carried out <strong>outside</strong> the UK, which was originally funded by the UK Government?",
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6674,22 +6655,22 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on UK commissioned defence R&D work carried out outside the UK",
+              "page_title": "Expenditure on UK commissioned defence R&amp;D work carried out outside the UK",
               "routing_rules": [
                 {
-                  "block": "block017465ce-669f-443e-bdae-851004adbfc6",
+                  "block": "expenditure-on-all-other-defence-rd-work-carried-out-outside-the-uk",
                   "when": {
                     "==": [
                       {
-                        "source": "answers",
-                        "identifier": "answer5e764e6d-dd48-4144-9208-758963c47cc3"
+                        "identifier": "answer5e764e6d-dd48-4144-9208-758963c47cc3",
+                        "source": "answers"
                       },
                       0
                     ]
                   }
                 },
                 {
-                  "block": "block63ea3988-ef22-4208-81d4-7865d6b5b5b3"
+                  "block": "tax-credits-for-expenditure-on-uk-commissioned-defence-rd-work-carried-out-outside-the-uk"
                 }
               ],
               "skip_conditions": {
@@ -6705,10 +6686,10 @@
               }
             },
             {
-              "id": "block63ea3988-ef22-4208-81d4-7865d6b5b5b3",
+              "id": "tax-credits-for-expenditure-on-uk-commissioned-defence-rd-work-carried-out-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question63ea3988-ef22-4208-81d4-7865d6b5b5b3",
+                "id": "questiontax-credits-for-expenditure-on-uk-commissioned-defence-rd-work-carried-out-outside-the-uk",
                 "title": {
                   "text": "In relation to your business&#39;s {expenditure_on_uk_commissioned_defence_research_and_development_work_carried_out_outside_the_uk} expenditure on defence R&amp;D work originally funded by the UK Government, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -6730,7 +6711,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6761,7 +6742,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure on UK commissioned defence R&D work carried out outside the UK",
+              "page_title": "Tax credits for expenditure on UK commissioned defence R&amp;D work carried out outside the UK",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -6775,14 +6756,14 @@
               }
             },
             {
-              "id": "block017465ce-669f-443e-bdae-851004adbfc6",
+              "id": "expenditure-on-all-other-defence-rd-work-carried-out-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question017465ce-669f-443e-bdae-851004adbfc6",
-                "title": "For the reporting period, how much did your business spend on all <em>other defence R&amp;D work</em> carried out outside the UK?",
+                "id": "questionexpenditure-on-all-other-defence-rd-work-carried-out-outside-the-uk",
+                "title": "For the reporting period, how much did your business spend on all <strong>other defence R&amp;D work</strong> carried out outside the UK?",
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6829,22 +6810,22 @@
                   }
                 ]
               },
-              "page_title": "Expenditure on all other defence R&D work carried out outside the UK",
+              "page_title": "Expenditure on all other defence R&amp;D work carried out outside the UK",
               "routing_rules": [
                 {
-                  "block": "block6189d2ec-3639-48ed-a358-f578a5250036",
+                  "block": "total-defence-rd-work-purchased",
                   "when": {
                     "==": [
                       {
-                        "source": "answers",
-                        "identifier": "answer8fcc3d65-1a72-4e50-a2f3-548251d24212"
+                        "identifier": "answer8fcc3d65-1a72-4e50-a2f3-548251d24212",
+                        "source": "answers"
                       },
                       0
                     ]
                   }
                 },
                 {
-                  "block": "block1add847b-3a73-4da5-812c-7e8d437fac35"
+                  "block": "tax-credits-for-expenditure-on-all-other-defence-rd-work-carried-out-outside-the-uk"
                 }
               ],
               "skip_conditions": {
@@ -6860,10 +6841,10 @@
               }
             },
             {
-              "id": "block1add847b-3a73-4da5-812c-7e8d437fac35",
+              "id": "tax-credits-for-expenditure-on-all-other-defence-rd-work-carried-out-outside-the-uk",
               "type": "Question",
               "question": {
-                "id": "question1add847b-3a73-4da5-812c-7e8d437fac35",
+                "id": "questiontax-credits-for-expenditure-on-all-other-defence-rd-work-carried-out-outside-the-uk",
                 "title": {
                   "text": "In relation to your business&#39;s {expenditure_on_all_other_defence_research_and_development_work_carried_out_outside_the_uk} expenditure on all other defence R&amp;D work carried out outside the UK, has your business submitted, or does it intend to submit, a claim for R&amp;D tax credits?",
                   "placeholders": [
@@ -6885,7 +6866,7 @@
                 },
                 "description": [
                   {
-                    "text": "<p>You are reporting defence R&amp;D for code <em>{product_codes}</em>.</p>",
+                    "text": "<p>You are reporting defence R&amp;D for code <strong>{product_codes}</strong>.</p>",
                     "placeholders": [
                       {
                         "placeholder": "product_codes",
@@ -6916,7 +6897,7 @@
                   }
                 ]
               },
-              "page_title": "Tax credits for expenditure on all other defence R&D work carried out outside the UK",
+              "page_title": "Tax credits for expenditure on all other defence R&amp;D work carried out outside the UK",
               "skip_conditions": {
                 "when": {
                   "in": [
@@ -6930,10 +6911,10 @@
               }
             },
             {
-              "id": "block6189d2ec-3639-48ed-a358-f578a5250036",
+              "id": "total-defence-rd-work-purchased",
               "type": "CalculatedSummary",
-              "page_title": "Total defence R&D work purchased",
-              "title": "We have calculated your business&#39;s total defence R&amp;D work purchased to be %(total)s. Is this correct?",
+              "page_title": "Total defence R&amp;D work purchased",
+              "title": "We have calculated your business&#39;s total defence R&amp;D work purchased to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -6981,11 +6962,10 @@
       }
     },
     {
-      "id": "section4341d945-8186-4174-b0a1-3961809f6b11",
-      "title": "Number of employees working on R&D",
+      "id": "4341d945-8186-4174-b0a1-3961809f6b11",
+      "title": "Number of employees working on R&amp;D",
       "summary": {
         "show_on_completion": false,
-        "page_title": "Number of employees working on R&D",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -6995,7 +6975,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "group4341d945-8186-4174-b0a1-3961809f6b11-introduction",
+              "id": "number-of-employees-working-on-rd",
+              "page_title": "Number of employees working on R&amp;D",
               "content": {
                 "title": "Number of employees working on R&amp;D",
                 "contents": [
@@ -7006,29 +6987,31 @@
                     "title": "What we mean by &#39;employees&#39;"
                   },
                   {
-                    "description": "An employee is anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full-time or part-time job or being on a training scheme. Each employee should have a contract of employment."
+                    "description": "An employee is anyone aged 16 years or over who is working directly for the business.&#x202F;They may be paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#x202F;If your business uses a central payroll to pay employees who work within the wider group, only include employees working directly for the business."
                   }
                 ]
               }
             },
             {
-              "id": "block939d5db2-97a9-4ef8-8716-13e543f96b57",
+              "id": "number-of-employee-researchers-working-on-rd",
               "type": "Question",
               "question": {
-                "id": "question939d5db2-97a9-4ef8-8716-13e543f96b57",
-                "title": "On 1 December 2022, how many employees working on R&amp;D were researchers?",
+                "id": "questionnumber-of-employee-researchers-working-on-rd",
+                "title": "On 1 December 2023, how many employees working on R&amp;D were researchers?",
                 "description": [
                   "<p>&#39;Researchers&#39; refers to employees who are engaged in conception or creation of new knowledge, products, methods and systems. For example, PhD students, graduates and scientists.</p>"
                 ],
                 "guidance": {
                   "contents": [
                     {
-                      "description": "<strong>Include: </strong>"
+                      "description": "<strong>Include:</strong>"
                     },
                     {
                       "list": [
-                        "all workers paid directly from this business&#39;s payroll(s)",
-                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                        "full-time (over 30 hours a week) and part-time (30 hours or less) employees aged 16 years and over. This includes individuals working from home and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "those on apprenticeships or training schemes",
+                        "directors and working owners paid via PAYE",
+                        "employees without guaranteed hours, for example those on zero hour contracts, who worked on this date"
                       ]
                     },
                     {
@@ -7036,11 +7019,11 @@
                     },
                     {
                       "list": [
-                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "workers paid by an employment agency, for example consultants and contingent labour",
                         "voluntary workers",
-                        "self-employed workers",
                         "former employees only receiving a pension",
-                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                        "self-employed workers",
+                        "directors and working owners who are not paid via PAYE"
                       ]
                     }
                   ]
@@ -7050,7 +7033,7 @@
                     "title": "What we mean by &#39;employees&#39;",
                     "contents": [
                       {
-                        "description": "This refers to anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full-time or part-time job or being on a training scheme. Each employee should have a contract of employment."
+                        "description": "An employee is anyone aged 16 years or over who is working directly for the business.&#x202F;They may be paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#x202F;If your business uses a central payroll to pay employees who work within the wider group, only include employees working directly for the business."
                       }
                     ]
                   }
@@ -7073,14 +7056,14 @@
                   }
                 ]
               },
-              "page_title": "Number of employee researchers working on R&D"
+              "page_title": "Number of employee researchers working on R&amp;D"
             },
             {
-              "id": "block413f4d8c-5cd6-41ee-8103-d46668855957",
+              "id": "number-of-employee-technicians-working-on-rd",
               "type": "Question",
               "question": {
-                "id": "question413f4d8c-5cd6-41ee-8103-d46668855957",
-                "title": "On 1 December 2022, how many employees working on R&amp;D were <em>technicians</em>?",
+                "id": "questionnumber-of-employee-technicians-working-on-rd",
+                "title": "On 1 December 2023, how many employees working on R&amp;D were <strong>technicians</strong>?",
                 "description": [
                   "<p>&#39;Technicians&#39; refers to employees who perform scientific and technical tasks normally under the supervision of researchers.</p>"
                 ],
@@ -7091,8 +7074,10 @@
                     },
                     {
                       "list": [
-                        "all workers paid directly from this business&#39;s payroll(s)",
-                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                        "full-time (over 30 hours a week) and part-time (30 hours or less) employees aged 16 years and over. This includes individuals working from home and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "those on apprenticeships or training schemes",
+                        "directors and working owners paid via PAYE",
+                        "employees without guaranteed hours, for example those on zero hour contracts, who worked on this date"
                       ]
                     },
                     {
@@ -7100,11 +7085,11 @@
                     },
                     {
                       "list": [
-                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "workers paid by an employment agency, for example consultants and contingent labour",
                         "voluntary workers",
-                        "self-employed workers",
                         "former employees only receiving a pension",
-                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                        "self-employed workers",
+                        "directors and working owners who are not paid via PAYE"
                       ]
                     }
                   ]
@@ -7114,7 +7099,7 @@
                     "title": "What we mean by &#39;employees&#39;",
                     "contents": [
                       {
-                        "description": "This refers to anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full-time or part-time job or being on a training scheme. Each employee should have a contract of employment."
+                        "description": "An employee is anyone aged 16 years or over who is working directly for the business.&#x202F;They may be paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#x202F;If your business uses a central payroll to pay employees who work within the wider group, only include employees working directly for the business."
                       }
                     ]
                   }
@@ -7137,14 +7122,14 @@
                   }
                 ]
               },
-              "page_title": "Number of employee technicians working on R&D"
+              "page_title": "Number of employee technicians working on R&amp;D"
             },
             {
-              "id": "block78d00aa1-86a7-4360-b70e-a70687800a5d",
+              "id": "number-of-employees-in-other-roles-working-on-rd",
               "type": "Question",
               "question": {
-                "id": "question78d00aa1-86a7-4360-b70e-a70687800a5d",
-                "title": "On 1 December 2022, how many employees working on R&amp;D were in <em>other roles</em>?",
+                "id": "questionnumber-of-employees-in-other-roles-working-on-rd",
+                "title": "On 1 December 2023, how many employees working on R&amp;D were in <strong>other roles</strong>?",
                 "description": [
                   "<p>&#39;Other roles&#39; refers to support staff including skilled and unskilled craftsmen, secretarial and clerical staff participating in R&amp;D projects.</p>"
                 ],
@@ -7155,8 +7140,10 @@
                     },
                     {
                       "list": [
-                        "all workers paid directly from this business&#39;s payroll(s)",
-                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                        "full-time (over 30 hours a week) and part-time (30 hours or less) employees aged 16 years and over. This includes individuals working from home and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "those on apprenticeships or training schemes",
+                        "directors and working owners paid via PAYE",
+                        "employees without guaranteed hours, for example those on zero hour contracts, who worked on this date"
                       ]
                     },
                     {
@@ -7164,11 +7151,11 @@
                     },
                     {
                       "list": [
-                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "workers paid by an employment agency, for example consultants and contingent labour",
                         "voluntary workers",
-                        "self-employed workers",
                         "former employees only receiving a pension",
-                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                        "self-employed workers",
+                        "directors and working owners who are not paid via PAYE"
                       ]
                     }
                   ]
@@ -7178,7 +7165,7 @@
                     "title": "What we mean by &#39;employees&#39;",
                     "contents": [
                       {
-                        "description": "This refers to anyone aged 16 or over that your organisation directly pays from its payroll, in return for carrying out a full-time or part-time job or being on a training scheme. Each employee should have a contract of employment."
+                        "description": "An employee is anyone aged 16 years or over who is working directly for the business.&#x202F;They may be paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#x202F;If your business uses a central payroll to pay employees who work within the wider group, only include employees working directly for the business."
                       }
                     ]
                   }
@@ -7201,13 +7188,13 @@
                   }
                 ]
               },
-              "page_title": "Number of employees in other roles working on R&D"
+              "page_title": "Number of employees in other roles working on R&amp;D"
             },
             {
-              "id": "block8a0616a2-3408-446d-b220-bc3f5e577d3f",
+              "id": "total-headcount-for-male-employees-working-on-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total headcount for male employees working on R&D",
-              "title": "We have calculated your business&#39;s total headcount for male employees working on R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total headcount for male employees working on R&amp;D",
+              "title": "We have calculated your business&#39;s total headcount for male employees working on R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -7229,10 +7216,10 @@
               }
             },
             {
-              "id": "block0eea8278-466e-4c87-8d7d-9ef5791cc7b5",
+              "id": "total-headcount-for-female-employees-working-on-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total headcount for female employees working on R&D",
-              "title": "We have calculated your business&#39;s total headcount for female employees working on R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total headcount for female employees working on R&amp;D",
+              "title": "We have calculated your business&#39;s total headcount for female employees working on R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -7254,10 +7241,10 @@
               }
             },
             {
-              "id": "block98020d21-75b3-4708-8515-d18ec20ad5bf",
+              "id": "number-of-full-time-equivalent-researchers-working-on-rd",
               "type": "Question",
               "question": {
-                "id": "question98020d21-75b3-4708-8515-d18ec20ad5bf",
+                "id": "questionnumber-of-full-time-equivalent-researchers-working-on-rd",
                 "title": {
                   "text": "For the period {from} to {to}, how many full-time equivalent employees working on R&amp;D were researchers?",
                   "placeholders": [
@@ -7322,7 +7309,7 @@
                   ]
                 },
                 "description": [
-                  "<p>&#39;Researchers&#39; refers to employees who are engaged in conception or creation of new knowledge, products, methods and systems. For example, PhD students, graduates and scientists.</p>"
+                  "<p>&#39;Researchers&#39; refers to employees who are engaged in conception or creation of new knowledge, products, methods and systems. For example, PhD students, graduates and scientists.</p><p>One <strong>full-time equivalent</strong> (FTE) may be thought of as one person-year.</p><p>For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE.</p><p>Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -7331,8 +7318,10 @@
                     },
                     {
                       "list": [
-                        "all workers paid directly from this business&#39;s payroll(s)",
-                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                        "full-time (over 30 hours a week) and part-time (30 hours or less) employees aged 16 years and over. This includes individuals working from home and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "those on apprenticeships or training schemes",
+                        "directors and working owners paid via PAYE",
+                        "employees without guaranteed hours, for example those on zero hour contracts, who worked on this date"
                       ]
                     },
                     {
@@ -7340,31 +7329,15 @@
                     },
                     {
                       "list": [
-                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "workers paid by an employment agency, for example consultants and contingent labour",
                         "voluntary workers",
-                        "self-employed workers",
                         "former employees only receiving a pension",
-                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                        "self-employed workers",
+                        "directors and working owners who are not paid via PAYE"
                       ]
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "What we mean by &#39;full-time equivalent&#39;",
-                    "contents": [
-                      {
-                        "description": "One <strong>full-time equivalent</strong> (FTE) may be thought of as one person-year."
-                      },
-                      {
-                        "description": "For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE."
-                      },
-                      {
-                        "description": "Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5."
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -7383,16 +7356,16 @@
                   }
                 ]
               },
-              "page_title": "Number of full-time equivalent researchers working on R&D"
+              "page_title": "Number of full-time equivalent researchers working on R&amp;D"
             },
             {
-              "id": "block2c5b65db-2a01-4128-b374-4cc745190edb",
+              "id": "number-of-full-time-equivalent-technicians-working-on-rd",
               "type": "Question",
               "question": {
-                "id": "question2c5b65db-2a01-4128-b374-4cc745190edb",
-                "title": "For the reporting period, how many full-time equivalent employees working on R&amp;D were <em>technicians</em>?",
+                "id": "questionnumber-of-full-time-equivalent-technicians-working-on-rd",
+                "title": "For the reporting period, how many full-time equivalent employees working on R&amp;D were <strong>technicians</strong>?",
                 "description": [
-                  "<p>&#39;Technicians&#39; refers to employees who perform scientific and technical tasks normally under the supervision of researchers.</p>"
+                  "<p>&#39;Technicians&#39; refers to employees who perform scientific and technical tasks normally under the supervision of researchers.</p><p>One <strong>full-time equivalent</strong> (FTE) may be thought of as one person-year.</p><p>For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE.</p><p>Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -7401,8 +7374,10 @@
                     },
                     {
                       "list": [
-                        "all workers paid directly from this business&#39;s payroll(s)",
-                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                        "full-time (over 30 hours a week) and part-time (30 hours or less) employees aged 16 years and over. This includes individuals working from home and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "those on apprenticeships or training schemes",
+                        "directors and working owners paid via PAYE",
+                        "employees without guaranteed hours, for example those on zero hour contracts, who worked on this date"
                       ]
                     },
                     {
@@ -7410,31 +7385,15 @@
                     },
                     {
                       "list": [
-                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "workers paid by an employment agency, for example consultants and contingent labour",
                         "voluntary workers",
-                        "self-employed workers",
                         "former employees only receiving a pension",
-                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                        "self-employed workers",
+                        "directors and working owners who are not paid via PAYE"
                       ]
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "What we mean by &#39;full-time equivalent&#39;",
-                    "contents": [
-                      {
-                        "description": "One <strong>full-time equivalent</strong> (FTE) may be thought of as one person-year."
-                      },
-                      {
-                        "description": "For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE."
-                      },
-                      {
-                        "description": "Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5."
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -7453,16 +7412,16 @@
                   }
                 ]
               },
-              "page_title": "Number of full-time equivalent technicians working on R&D"
+              "page_title": "Number of full-time equivalent technicians working on R&amp;D"
             },
             {
-              "id": "block663e7062-9165-4144-9ad4-b416d6bcad1d",
+              "id": "number-of-full-time-equivalent-employees-in-other-roles-working-on-rd",
               "type": "Question",
               "question": {
-                "id": "question663e7062-9165-4144-9ad4-b416d6bcad1d",
-                "title": "For the reporting period, how many full-time equivalent employees working on R&amp;D were in <em>other roles</em>?",
+                "id": "questionnumber-of-full-time-equivalent-employees-in-other-roles-working-on-rd",
+                "title": "For the reporting period, how many full-time equivalent employees working on R&amp;D were in <strong>other roles</strong>?",
                 "description": [
-                  "<p>&#39;Other roles&#39; refers to support staff including skilled and unskilled craftsmen, secretarial and clerical staff participating in R&amp;D projects.</p>"
+                  "<p>&#39;Other roles&#39; refers to support staff including skilled and unskilled craftsmen, secretarial and clerical staff participating in R&amp;D projects.</p><p>One <strong>full-time equivalent</strong> (FTE) may be thought of as one person-year.</p><p>For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE.</p><p>Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5.</p>"
                 ],
                 "guidance": {
                   "contents": [
@@ -7471,8 +7430,10 @@
                     },
                     {
                       "list": [
-                        "all workers paid directly from this business&#39;s payroll(s)",
-                        "those temporarily absent but still being paid, for example, on maternity or paternity leave"
+                        "full-time (over 30 hours a week) and part-time (30 hours or less) employees aged 16 years and over. This includes individuals working from home and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "those on apprenticeships or training schemes",
+                        "directors and working owners paid via PAYE",
+                        "employees without guaranteed hours, for example those on zero hour contracts, who worked on this date"
                       ]
                     },
                     {
@@ -7480,31 +7441,15 @@
                     },
                     {
                       "list": [
-                        "agency workers and contractors paid directly from the agency payroll or contractor company",
+                        "workers paid by an employment agency, for example consultants and contingent labour",
                         "voluntary workers",
-                        "self-employed workers",
                         "former employees only receiving a pension",
-                        "working owners who are not paid directly from this business&#39;s payroll(s)"
+                        "self-employed workers",
+                        "directors and working owners who are not paid via PAYE"
                       ]
                     }
                   ]
                 },
-                "definitions": [
-                  {
-                    "title": "What we mean by &#39;full-time equivalent&#39;",
-                    "contents": [
-                      {
-                        "description": "One <strong>full time-equivalent</strong> (FTE) may be thought of as one person-year."
-                      },
-                      {
-                        "description": "For example, a person who normally spends 30% of their time on R&amp;D and the rest on other activities should be considered as 0.3 FTE."
-                      },
-                      {
-                        "description": "Similarly, if a full-time R&amp;D worker is employed at an R&amp;D unit for only six months, this results in the FTE of 0.5."
-                      }
-                    ]
-                  }
-                ],
                 "type": "General",
                 "answers": [
                   {
@@ -7523,13 +7468,13 @@
                   }
                 ]
               },
-              "page_title": "Number of full-time equivalent employees in other roles working on R&D"
+              "page_title": "Number of full-time equivalent employees in other roles working on R&amp;D"
             },
             {
-              "id": "block36680ed7-99ec-4b31-867f-288b46b16cf7",
+              "id": "total-full-time-equivalent-employees-working-on-civil-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total full-time equivalent employees working on civil R&D",
-              "title": "We have calculated your business&#39;s total number of full-time equivalent employees working on civil R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total full-time equivalent employees working on civil R&amp;D",
+              "title": "We have calculated your business&#39;s total number of full-time equivalent employees working on civil R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -7551,10 +7496,10 @@
               }
             },
             {
-              "id": "block0a40b66e-a2ff-409c-9cfe-993d99fc13fe",
+              "id": "total-full-time-equivalent-employees-working-on-defence-rd",
               "type": "CalculatedSummary",
-              "page_title": "Total full-time equivalent employees working on defence R&D",
-              "title": "We have calculated your business&#39;s total number of full-time equivalent employees working on defence R&amp;D to be %(total)s. Is this correct?",
+              "page_title": "Total full-time equivalent employees working on defence R&amp;D",
+              "title": "We have calculated your business&#39;s total number of full-time equivalent employees working on defence R&amp;D to be <strong>%(total)s</strong>. Is this correct?",
               "calculation": {
                 "operation": {
                   "+": [
@@ -7591,11 +7536,10 @@
       }
     },
     {
-      "id": "sectionb5a3830d-e2bd-4d28-9da4-cc0ebc45d366",
+      "id": "b5a3830d-e2bd-4d28-9da4-cc0ebc45d366",
       "title": "Workplace information",
       "summary": {
         "show_on_completion": false,
-        "page_title": "Workplace information",
         "collapsible": false
       },
       "show_on_hub": true,
@@ -7605,7 +7549,8 @@
           "blocks": [
             {
               "type": "Interstitial",
-              "id": "groupb5a3830d-e2bd-4d28-9da4-cc0ebc45d366-introduction",
+              "id": "workplace-information",
+              "page_title": "Workplace information",
               "content": {
                 "title": "Workplace information",
                 "contents": [
@@ -7625,10 +7570,10 @@
               }
             },
             {
-              "id": "block17174088-1071-4c78-a598-4c7502a97c75",
+              "id": "postcode-of-workplace",
               "type": "Question",
               "question": {
-                "id": "question17174088-1071-4c78-a598-4c7502a97c75",
+                "id": "questionpostcode-of-workplace",
                 "title": "What is the postcode of the workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -7639,17 +7584,18 @@
                     "id": "answer13341a0e-4e77-49e6-9003-61b3a70562e4",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
               "page_title": "Postcode of workplace"
             },
             {
-              "id": "block7a638921-4fbd-4921-b260-51e3937137e3",
+              "id": "additional-workplaces",
               "type": "Question",
               "question": {
-                "id": "question7a638921-4fbd-4921-b260-51e3937137e3",
+                "id": "questionadditional-workplaces",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -7699,15 +7645,15 @@
                   }
                 },
                 {
-                  "block": "block978ad356-2809-4323-9486-8f7355ef4ee5"
+                  "block": "postcode-of-workplace-2"
                 }
               ]
             },
             {
-              "id": "block978ad356-2809-4323-9486-8f7355ef4ee5",
+              "id": "postcode-of-workplace-2",
               "type": "Question",
               "question": {
-                "id": "question978ad356-2809-4323-9486-8f7355ef4ee5",
+                "id": "questionpostcode-of-workplace-2",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -7718,17 +7664,18 @@
                     "id": "answer09fe1067-5e0e-4b41-bec1-76d94789e959",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of 2nd workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of 2nd workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 2"
             },
             {
-              "id": "blockffbbce3f-2bb3-42e7-b479-4fbfe03b929f",
+              "id": "additional-workplaces-2",
               "type": "Question",
               "question": {
-                "id": "questionffbbce3f-2bb3-42e7-b479-4fbfe03b929f",
+                "id": "questionadditional-workplaces-2",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -7770,10 +7717,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 2",
               "routing_rules": [
                 {
-                  "block": "blocka31f7f56-e3ef-45b2-a589-445720a6e501",
+                  "block": "postcode-of-workplace-3",
                   "when": {
                     "in": [
                       {
@@ -7785,15 +7732,15 @@
                   }
                 },
                 {
-                  "block": "blockb30e43f9-ed32-49f1-b3e5-04981d469178"
+                  "block": "percentage-of-rd-at-each-workplace-2"
                 }
               ]
             },
             {
-              "id": "blockb30e43f9-ed32-49f1-b3e5-04981d469178",
+              "id": "percentage-of-rd-at-each-workplace-2",
               "type": "Question",
               "question": {
-                "id": "questionb30e43f9-ed32-49f1-b3e5-04981d469178",
+                "id": "questionpercentage-of-rd-at-each-workplace-2",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -7853,7 +7800,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 2",
               "routing_rules": [
                 {
                   "section": "End",
@@ -7868,15 +7815,15 @@
                   }
                 },
                 {
-                  "block": "blocka31f7f56-e3ef-45b2-a589-445720a6e501"
+                  "block": "postcode-of-workplace-3"
                 }
               ]
             },
             {
-              "id": "blocka31f7f56-e3ef-45b2-a589-445720a6e501",
+              "id": "postcode-of-workplace-3",
               "type": "Question",
               "question": {
-                "id": "questiona31f7f56-e3ef-45b2-a589-445720a6e501",
+                "id": "questionpostcode-of-workplace-3",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -7887,17 +7834,18 @@
                     "id": "answercfd8147f-b16f-4e64-be32-4c8411bd634e",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of 3rd workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of 3rd workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 3"
             },
             {
-              "id": "block1031d109-c23c-45f0-bddc-d3580a3dfd8b",
+              "id": "additional-workplaces-3",
               "type": "Question",
               "question": {
-                "id": "question1031d109-c23c-45f0-bddc-d3580a3dfd8b",
+                "id": "questionadditional-workplaces-3",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -7946,10 +7894,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 3",
               "routing_rules": [
                 {
-                  "block": "blockf09f9f69-3f58-45ce-affb-dac6d31f4b11",
+                  "block": "postcode-of-workplace-4",
                   "when": {
                     "in": [
                       {
@@ -7961,15 +7909,15 @@
                   }
                 },
                 {
-                  "block": "block2dadb288-e758-41bf-a3f0-28726ef090b5"
+                  "block": "percentage-of-rd-at-each-workplace-3"
                 }
               ]
             },
             {
-              "id": "block2dadb288-e758-41bf-a3f0-28726ef090b5",
+              "id": "percentage-of-rd-at-each-workplace-3",
               "type": "Question",
               "question": {
-                "id": "question2dadb288-e758-41bf-a3f0-28726ef090b5",
+                "id": "questionpercentage-of-rd-at-each-workplace-3",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -8048,7 +7996,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 3",
               "routing_rules": [
                 {
                   "section": "End",
@@ -8063,15 +8011,15 @@
                   }
                 },
                 {
-                  "block": "blockf09f9f69-3f58-45ce-affb-dac6d31f4b11"
+                  "block": "postcode-of-workplace-4"
                 }
               ]
             },
             {
-              "id": "blockf09f9f69-3f58-45ce-affb-dac6d31f4b11",
+              "id": "postcode-of-workplace-4",
               "type": "Question",
               "question": {
-                "id": "questionf09f9f69-3f58-45ce-affb-dac6d31f4b11",
+                "id": "questionpostcode-of-workplace-4",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -8082,17 +8030,18 @@
                     "id": "answerdf80b7a1-3c90-4dd1-ac7e-60af9796b0cd",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of 4th workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of 4th workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 4"
             },
             {
-              "id": "block298d8f16-227f-4ab7-80ee-0d5ba957b776",
+              "id": "additional-workplaces-4",
               "type": "Question",
               "question": {
-                "id": "question298d8f16-227f-4ab7-80ee-0d5ba957b776",
+                "id": "questionadditional-workplaces-4",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -8148,10 +8097,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 4",
               "routing_rules": [
                 {
-                  "block": "block4c1051b5-3b46-45df-a319-205735360d67",
+                  "block": "postcode-of-workplace-5",
                   "when": {
                     "in": [
                       {
@@ -8163,15 +8112,15 @@
                   }
                 },
                 {
-                  "block": "blockf5a5f0a3-9b42-46d1-9777-03163c81f0db"
+                  "block": "percentage-of-rd-at-each-workplace-4"
                 }
               ]
             },
             {
-              "id": "blockf5a5f0a3-9b42-46d1-9777-03163c81f0db",
+              "id": "percentage-of-rd-at-each-workplace-4",
               "type": "Question",
               "question": {
-                "id": "questionf5a5f0a3-9b42-46d1-9777-03163c81f0db",
+                "id": "questionpercentage-of-rd-at-each-workplace-4",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -8269,7 +8218,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 4",
               "routing_rules": [
                 {
                   "section": "End",
@@ -8284,15 +8233,15 @@
                   }
                 },
                 {
-                  "block": "block4c1051b5-3b46-45df-a319-205735360d67"
+                  "block": "postcode-of-workplace-5"
                 }
               ]
             },
             {
-              "id": "block4c1051b5-3b46-45df-a319-205735360d67",
+              "id": "postcode-of-workplace-5",
               "type": "Question",
               "question": {
-                "id": "question4c1051b5-3b46-45df-a319-205735360d67",
+                "id": "questionpostcode-of-workplace-5",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -8303,17 +8252,18 @@
                     "id": "answer31e71820-a553-47d1-a599-010ba88336c0",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of 5th workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of 5th workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 5"
             },
             {
-              "id": "block117463da-f452-4754-b67f-8c6d85ce1305",
+              "id": "additional-workplaces-5",
               "type": "Question",
               "question": {
-                "id": "question117463da-f452-4754-b67f-8c6d85ce1305",
+                "id": "questionadditional-workplaces-5",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -8376,10 +8326,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 5",
               "routing_rules": [
                 {
-                  "block": "block47e0fddb-abca-4b3a-aee6-61e6351fce95",
+                  "block": "postcode-of-workplace-6",
                   "when": {
                     "in": [
                       {
@@ -8391,15 +8341,15 @@
                   }
                 },
                 {
-                  "block": "block6a84f50f-c15a-4110-b112-66a9f4769d6d"
+                  "block": "percentage-of-rd-at-each-workplace-5"
                 }
               ]
             },
             {
-              "id": "block6a84f50f-c15a-4110-b112-66a9f4769d6d",
+              "id": "percentage-of-rd-at-each-workplace-5",
               "type": "Question",
               "question": {
-                "id": "question6a84f50f-c15a-4110-b112-66a9f4769d6d",
+                "id": "questionpercentage-of-rd-at-each-workplace-5",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -8516,7 +8466,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 5",
               "routing_rules": [
                 {
                   "section": "End",
@@ -8531,15 +8481,15 @@
                   }
                 },
                 {
-                  "block": "block47e0fddb-abca-4b3a-aee6-61e6351fce95"
+                  "block": "postcode-of-workplace-6"
                 }
               ]
             },
             {
-              "id": "block47e0fddb-abca-4b3a-aee6-61e6351fce95",
+              "id": "postcode-of-workplace-6",
               "type": "Question",
               "question": {
-                "id": "question47e0fddb-abca-4b3a-aee6-61e6351fce95",
+                "id": "questionpostcode-of-workplace-6",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -8550,17 +8500,18 @@
                     "id": "answer68ef8bbb-8f8b-4166-aa22-8ce9b61ec7c1",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of 6th workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of 6th workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 6"
             },
             {
-              "id": "block571c24f6-c277-4b77-a956-bc1d663b7deb",
+              "id": "additional-workplaces-6",
               "type": "Question",
               "question": {
-                "id": "question571c24f6-c277-4b77-a956-bc1d663b7deb",
+                "id": "questionadditional-workplaces-6",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -8630,10 +8581,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 6",
               "routing_rules": [
                 {
-                  "block": "blockc9137573-8027-4eee-8323-43a08f26a08a",
+                  "block": "postcode-of-workplace-7",
                   "when": {
                     "in": [
                       {
@@ -8645,15 +8596,15 @@
                   }
                 },
                 {
-                  "block": "blockeada3b3a-db3c-4985-8e70-276f011888c9"
+                  "block": "percentage-of-rd-at-each-workplace-6"
                 }
               ]
             },
             {
-              "id": "blockeada3b3a-db3c-4985-8e70-276f011888c9",
+              "id": "percentage-of-rd-at-each-workplace-6",
               "type": "Question",
               "question": {
-                "id": "questioneada3b3a-db3c-4985-8e70-276f011888c9",
+                "id": "questionpercentage-of-rd-at-each-workplace-6",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -8789,7 +8740,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 6",
               "routing_rules": [
                 {
                   "section": "End",
@@ -8804,15 +8755,15 @@
                   }
                 },
                 {
-                  "block": "blockc9137573-8027-4eee-8323-43a08f26a08a"
+                  "block": "postcode-of-workplace-7"
                 }
               ]
             },
             {
-              "id": "blockc9137573-8027-4eee-8323-43a08f26a08a",
+              "id": "postcode-of-workplace-7",
               "type": "Question",
               "question": {
-                "id": "questionc9137573-8027-4eee-8323-43a08f26a08a",
+                "id": "questionpostcode-of-workplace-7",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -8823,17 +8774,18 @@
                     "id": "answer109a3b96-a5cc-4ebc-8703-874831f80dfb",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of 7th workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of 7th workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 7"
             },
             {
-              "id": "blockfba78c7c-5877-4f8a-8dad-3bafdd5f63f9",
+              "id": "additional-workplaces-7",
               "type": "Question",
               "question": {
-                "id": "questionfba78c7c-5877-4f8a-8dad-3bafdd5f63f9",
+                "id": "questionadditional-workplaces-7",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -8910,10 +8862,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 7",
               "routing_rules": [
                 {
-                  "block": "blockde3a963f-418c-4782-8f76-a3cfb89fae98",
+                  "block": "postcode-of-workplace-8",
                   "when": {
                     "in": [
                       {
@@ -8925,15 +8877,15 @@
                   }
                 },
                 {
-                  "block": "block5821b0df-e86f-43ee-9970-b41b8ebcf44c"
+                  "block": "percentage-of-rd-at-each-workplace-7"
                 }
               ]
             },
             {
-              "id": "block5821b0df-e86f-43ee-9970-b41b8ebcf44c",
+              "id": "percentage-of-rd-at-each-workplace-7",
               "type": "Question",
               "question": {
-                "id": "question5821b0df-e86f-43ee-9970-b41b8ebcf44c",
+                "id": "questionpercentage-of-rd-at-each-workplace-7",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -9088,7 +9040,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 7",
               "routing_rules": [
                 {
                   "section": "End",
@@ -9103,15 +9055,15 @@
                   }
                 },
                 {
-                  "block": "blockde3a963f-418c-4782-8f76-a3cfb89fae98"
+                  "block": "postcode-of-workplace-8"
                 }
               ]
             },
             {
-              "id": "blockde3a963f-418c-4782-8f76-a3cfb89fae98",
+              "id": "postcode-of-workplace-8",
               "type": "Question",
               "question": {
-                "id": "questionde3a963f-418c-4782-8f76-a3cfb89fae98",
+                "id": "questionpostcode-of-workplace-8",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -9122,17 +9074,18 @@
                     "id": "answer65c589d8-86aa-4bfa-8eab-fc47e79357ad",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of 8th workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of 8th workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 8"
             },
             {
-              "id": "block86e905ee-3259-4ba7-b397-f494f68071da",
+              "id": "additional-workplaces-8",
               "type": "Question",
               "question": {
-                "id": "question86e905ee-3259-4ba7-b397-f494f68071da",
+                "id": "questionadditional-workplaces-8",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -9216,10 +9169,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 8",
               "routing_rules": [
                 {
-                  "block": "block78b5cae2-2356-48c9-8a46-01250e8ec979",
+                  "block": "postcode-of-workplace-9",
                   "when": {
                     "in": [
                       {
@@ -9231,15 +9184,15 @@
                   }
                 },
                 {
-                  "block": "block05abc1a5-fb42-48bf-b4b6-a038d8326eeb"
+                  "block": "percentage-of-rd-at-each-workplace-8"
                 }
               ]
             },
             {
-              "id": "block05abc1a5-fb42-48bf-b4b6-a038d8326eeb",
+              "id": "percentage-of-rd-at-each-workplace-8",
               "type": "Question",
               "question": {
-                "id": "question05abc1a5-fb42-48bf-b4b6-a038d8326eeb",
+                "id": "questionpercentage-of-rd-at-each-workplace-8",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -9413,7 +9366,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 8",
               "routing_rules": [
                 {
                   "section": "End",
@@ -9428,15 +9381,15 @@
                   }
                 },
                 {
-                  "block": "block78b5cae2-2356-48c9-8a46-01250e8ec979"
+                  "block": "postcode-of-workplace-9"
                 }
               ]
             },
             {
-              "id": "block78b5cae2-2356-48c9-8a46-01250e8ec979",
+              "id": "postcode-of-workplace-9",
               "type": "Question",
               "question": {
-                "id": "question78b5cae2-2356-48c9-8a46-01250e8ec979",
+                "id": "questionpostcode-of-workplace-9",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -9447,17 +9400,18 @@
                     "id": "answer989d2721-7bb5-4cf2-b174-8bbc6f77a36d",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of 9th workplace where in-house R&amp;D is performed"
+                    "label": "Postcode of 9th workplace where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 9"
             },
             {
-              "id": "blocke8746eba-0ba5-457b-bfa0-ef7f0da7130f",
+              "id": "additional-workplaces-9",
               "type": "Question",
               "question": {
-                "id": "questione8746eba-0ba5-457b-bfa0-ef7f0da7130f",
+                "id": "questionadditional-workplaces-9",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -9548,10 +9502,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 9",
               "routing_rules": [
                 {
-                  "block": "blockfd31a1f2-3f10-4ca6-ac56-61227d1a0699",
+                  "block": "postcode-of-workplace-10",
                   "when": {
                     "in": [
                       {
@@ -9563,15 +9517,15 @@
                   }
                 },
                 {
-                  "block": "block60c03609-d288-4d62-8683-bc048ba39a67"
+                  "block": "percentage-of-rd-at-each-workplace-9"
                 }
               ]
             },
             {
-              "id": "block60c03609-d288-4d62-8683-bc048ba39a67",
+              "id": "percentage-of-rd-at-each-workplace-9",
               "type": "Question",
               "question": {
-                "id": "question60c03609-d288-4d62-8683-bc048ba39a67",
+                "id": "questionpercentage-of-rd-at-each-workplace-9",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -9764,7 +9718,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 9",
               "routing_rules": [
                 {
                   "section": "End",
@@ -9779,15 +9733,15 @@
                   }
                 },
                 {
-                  "block": "blockfd31a1f2-3f10-4ca6-ac56-61227d1a0699"
+                  "block": "postcode-of-workplace-10"
                 }
               ]
             },
             {
-              "id": "blockfd31a1f2-3f10-4ca6-ac56-61227d1a0699",
+              "id": "postcode-of-workplace-10",
               "type": "Question",
               "question": {
-                "id": "questionfd31a1f2-3f10-4ca6-ac56-61227d1a0699",
+                "id": "questionpostcode-of-workplace-10",
                 "title": "What is the postcode of the additional workplace where in-house R&amp;D is performed?",
                 "description": [
                   "<p>If required, additional workplaces can be added in the next question.</p>"
@@ -9798,17 +9752,18 @@
                     "id": "answer6ea7c3ce-8a73-475d-8403-83d544533029",
                     "mandatory": true,
                     "type": "TextField",
-                    "label": "Postcode of workplace 10th where in-house R&amp;D is performed"
+                    "label": "Postcode of workplace 10th where in-house R&amp;D is performed",
+                    "max_length": 8
                   }
                 ]
               },
-              "page_title": "Postcode of workplace"
+              "page_title": "Postcode of workplace 10"
             },
             {
-              "id": "block4783f604-707f-42aa-a039-e7a3bbe577f6",
+              "id": "additional-workplaces-10",
               "type": "Question",
               "question": {
-                "id": "question4783f604-707f-42aa-a039-e7a3bbe577f6",
+                "id": "questionadditional-workplaces-10",
                 "title": "Does your business have any other workplaces where in-house R&amp;D is performed?",
                 "description": [
                   {
@@ -9906,10 +9861,10 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces",
+              "page_title": "Additional workplaces 10",
               "routing_rules": [
                 {
-                  "block": "block73ea120f-c13b-48ce-b596-7c5b910da3d2",
+                  "block": "percentage-of-rd-at-each-workplace-11",
                   "when": {
                     "in": [
                       {
@@ -9921,15 +9876,15 @@
                   }
                 },
                 {
-                  "block": "block5f3a9b90-534a-465e-b817-8edb6ee22b35"
+                  "block": "percentage-of-rd-at-each-workplace-10"
                 }
               ]
             },
             {
-              "id": "block5f3a9b90-534a-465e-b817-8edb6ee22b35",
+              "id": "percentage-of-rd-at-each-workplace-10",
               "type": "Question",
               "question": {
-                "id": "question5f3a9b90-534a-465e-b817-8edb6ee22b35",
+                "id": "questionpercentage-of-rd-at-each-workplace-10",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -10141,7 +10096,7 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace",
+              "page_title": "Percentage of R&amp;D at each workplace 10",
               "routing_rules": [
                 {
                   "section": "End",
@@ -10156,15 +10111,15 @@
                   }
                 },
                 {
-                  "block": "block73ea120f-c13b-48ce-b596-7c5b910da3d2"
+                  "block": "percentage-of-rd-at-each-workplace-11"
                 }
               ]
             },
             {
-              "id": "block73ea120f-c13b-48ce-b596-7c5b910da3d2",
+              "id": "percentage-of-rd-at-each-workplace-11",
               "type": "Question",
               "question": {
-                "id": "question73ea120f-c13b-48ce-b596-7c5b910da3d2",
+                "id": "questionpercentage-of-rd-at-each-workplace-11",
                 "title": "What percentage of your business&#39;s total R&amp;D is carried out at each of the following workplaces?",
                 "description": [
                   {
@@ -10376,13 +10331,13 @@
                   }
                 ]
               },
-              "page_title": "Percentage of R&D at each workplace"
+              "page_title": "Percentage of R&amp;D at each workplace 11"
             },
             {
-              "id": "block4bb44689-bad1-4809-a206-717fcd7b1a5c",
+              "id": "additional-workplaces-and-percentage-of-rd",
               "type": "Question",
               "question": {
-                "id": "question4bb44689-bad1-4809-a206-717fcd7b1a5c",
+                "id": "questionadditional-workplaces-and-percentage-of-rd",
                 "title": "Please report any additional workplaces where in-house R&amp;D is performed and the percentage of R&amp;D carried out at each workplace",
                 "description": [
                   {
@@ -10619,7 +10574,7 @@
                   }
                 ]
               },
-              "page_title": "Additional workplaces and percentage of R&D"
+              "page_title": "Additional workplaces and percentage of R&amp;D"
             }
           ]
         }
@@ -10637,7 +10592,7 @@
       }
     },
     {
-      "id": "section461dc91e-172f-46e0-b214-859249e30481",
+      "id": "461dc91e-172f-46e0-b214-859249e30481",
       "title": "Comments",
       "summary": {
         "show_on_completion": false,
@@ -10650,10 +10605,10 @@
           "id": "group461dc91e-172f-46e0-b214-859249e30481",
           "blocks": [
             {
-              "id": "blockcbacf3af-e7a2-445f-8867-4411a2540a97",
+              "id": "significant-changes",
               "type": "Question",
               "question": {
-                "id": "questioncbacf3af-e7a2-445f-8867-4411a2540a97",
+                "id": "questionsignificant-changes",
                 "title": {
                   "text": "Did any significant changes occur to R&amp;D for {ru_name} since the last reporting period?",
                   "placeholders": [
@@ -10713,15 +10668,15 @@
                   }
                 },
                 {
-                  "block": "blockeab561a1-03bd-47a9-9e8a-933cc34eedf8"
+                  "block": "further-details-and-commentary"
                 }
               ]
             },
             {
-              "id": "blockeab561a1-03bd-47a9-9e8a-933cc34eedf8",
+              "id": "further-details-and-commentary",
               "type": "Question",
               "question": {
-                "id": "questioneab561a1-03bd-47a9-9e8a-933cc34eedf8",
+                "id": "questionfurther-details-and-commentary",
                 "title": "Please provide any further details that will help us understand your business&#39;s total R&amp;D investment and tell an industry story",
                 "description": [
                   "<p>If you provide comments, we are less likely to contact you with data queries.</p><p>You have nearly finished! Make sure you continue to the next page and select &#39;submit answers&#39; at the bottom.</p>"
@@ -10804,13 +10759,12 @@
     }
   ],
   "post_submission": {
-    "confirmation_email": true,
     "feedback": true,
     "view_response": true,
     "guidance": {
       "contents": [
         {
-          "description": "<a href=\"https://www.ons.gov.uk/surveys\"target=\"_blank\"rel=\"noopener noreferrer\">Learn more about how we use this data</a>"
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data</a>"
         }
       ]
     }
