@@ -17,3 +17,19 @@ func TestHtmlAmpersand(t *testing.T) {
 		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
 	}
 }
+
+func TestHtmlStrong(t *testing.T) {
+	text := "<strong>Hello World"
+	result := html(text)
+	if result != "Hello World" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
+
+func TestHtmlStrongEndtag(t *testing.T) {
+	text := "Hello World</strong>"
+	result := html(text)
+	if result != "Hello World" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
