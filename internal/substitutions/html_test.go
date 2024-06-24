@@ -9,3 +9,34 @@ func TestHtml(t *testing.T) {
 		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
 	}
 }
+
+func TestHtmlAmpersand(t *testing.T) {
+	text := "In-house R&amp;D"
+	result := html(text)
+	if result != "In-house R&D" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
+
+func TestHtmlStrong(t *testing.T) {
+	text := "<strong>Hello World"
+	result := html(text)
+	if result != "Hello World" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
+
+func TestHtmlStrongEndtag(t *testing.T) {
+	text := "Hello World</strong>"
+	result := html(text)
+	if result != "Hello World" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
+func TestHtmlStrongSentence(t *testing.T) {
+	text := "A really <strong>strong</strong> test"
+	result := html(text)
+	if result != "A really strong test" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
