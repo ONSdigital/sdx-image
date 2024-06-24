@@ -33,3 +33,10 @@ func TestHtmlStrongEndtag(t *testing.T) {
 		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
 	}
 }
+func TestHtmlStrongSentence(t *testing.T) {
+	text := "A really <strong>strong</strong> test"
+	result := html(text)
+	if result != "A really strong test" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}
