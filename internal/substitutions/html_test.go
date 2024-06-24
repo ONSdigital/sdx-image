@@ -9,3 +9,11 @@ func TestHtml(t *testing.T) {
 		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
 	}
 }
+
+func TestHtmlAmpersand(t *testing.T) {
+	text := "In-house R&amp;D"
+	result := html(text)
+	if result != "In-house R&D" {
+		t.Errorf("failed to replce: (%q) instead got (%q)", text, result)
+	}
+}

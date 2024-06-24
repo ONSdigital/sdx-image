@@ -30,7 +30,7 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 	for _, sectionTitle := range schema.ListTitles() {
 		hasAnswerValue := false
 		section := &Section{
-			Title:     sectionTitle,
+			Title:     substitutions.Replace(sectionTitle, lookup),
 			Instances: []interfaces.Instance{},
 		}
 		instanceMap := map[string]*Instance{}
