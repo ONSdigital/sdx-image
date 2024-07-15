@@ -230,3 +230,7 @@ func TestSand(t *testing.T) {
 func TestMarine(t *testing.T) {
 	runFromFile("qsm_0002", t)
 }
+
+func TestBres(t *testing.T) {
+	runFromFile("bres_0019", t)
+}

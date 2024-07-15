@@ -35,6 +35,6 @@ func createUnit(
 	}
 
 	for _, answer := range lu.GetAnswers() {
-		createAnswer(answer.GetCode(), "Changes", answer.GetValue(), canvas, outerContainer)
+		createAnswer(answer.GetCode(), answer.GetText(), answer.GetValue(), canvas, outerContainer)
 	}
 }

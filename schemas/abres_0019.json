@@ -1,0 +1,3162 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.3",
+  "preview_questions": false,
+  "survey_id": "221",
+  "form_type": "0019",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "answer_codes": [
+    {
+      "answer_id": "answerccd2c97c-28cb-460c-8f76-3d9f04aa98d6",
+      "code": "9955"
+    },
+    {
+      "answer_id": "answerca3136ef-d9ef-4bb8-8496-840dc1ac46c6",
+      "code": "9954"
+    },
+    {
+      "answer_id": "answera74a8052-0257-4dc4-83a0-598ce7bedb81",
+      "code": "9953"
+    },
+    {
+      "answer_id": "answerfaf14e92-e81b-4759-801f-8c6a1623020f",
+      "code": "9982"
+    },
+    {
+      "answer_id": "answercdade785-1566-414c-be8c-c228bfa24e2d",
+      "code": "9981"
+    },
+    {
+      "answer_id": "answer953b4c7b-720e-4568-8209-1012dfec7f8a",
+      "code": "9980"
+    },
+    {
+      "answer_id": "answerb8d1afb8-f1f6-452e-8510-992961402eab",
+      "code": "9979"
+    },
+    {
+      "answer_id": "answere89ea879-7c9c-4ac7-84f1-936ee75a4d21",
+      "code": "9978"
+    },
+    {
+      "answer_id": "answerbe073353-2972-4f21-8773-3a43decb6e34",
+      "code": "9977"
+    },
+    {
+      "answer_id": "answerfab4de19-0360-49c0-b3e0-38d00c0ab785",
+      "code": "9999"
+    },
+    {
+      "answer_id": "answer0322a3ba-1c99-45b4-a455-9869bbdd223b",
+      "code": "9998"
+    },
+    {
+      "answer_id": "answerf8197dc4-d625-4d94-a847-a17538c49179",
+      "code": "9972"
+    },
+    {
+      "answer_id": "answer6df5abbc-5b82-4905-be7c-12ce76db8c4c",
+      "code": "9971"
+    },
+    {
+      "answer_id": "answer4957b777-af80-411f-b853-650ba200a196",
+      "code": "9997"
+    },
+    {
+      "answer_id": "answer72bddf10-c99e-41e9-8341-e65d3f77d78c",
+      "code": "9970"
+    },
+    {
+      "answer_id": "answer946166c1-88cc-4b8b-bfce-3b31594dba4b",
+      "code": "9969"
+    },
+    {
+      "answer_id": "answer96e49f43-2d77-449d-86bd-af741229462f",
+      "code": "033"
+    },
+    {
+      "answer_id": "answer92752bc4-18a5-4ede-8718-2b7fd03211f2",
+      "code": "051"
+    },
+    {
+      "answer_id": "answer3780c447-6dfb-4013-a81a-0e765b438b77",
+      "code": "9940"
+    },
+    {
+      "answer_id": "answercb1e8018-22a9-4b14-873e-2804deb2bba3",
+      "code": "090"
+    },
+    {
+      "answer_id": "answerd59b79ca-f2a5-491a-ae31-a0cb7178b3c9",
+      "code": "150"
+    },
+    {
+      "answer_id": "answera5b65357-2a80-4ef8-8ba1-1e86fcb0ce12",
+      "code": "081"
+    },
+    {
+      "answer_id": "answer0f267198-246c-4304-b8d6-80908ff72e8e",
+      "code": "a081"
+    },
+    {
+      "answer_id": "answer93d3bc36-7064-48b2-912c-4d7025bca3ed",
+      "code": "9951"
+    },
+    {
+      "answer_id": "answer05e62ffa-c978-42a7-a812-d20397446a94",
+      "code": "9950"
+    },
+    {
+      "answer_id": "answerb97e5146-412c-48fc-9e8b-7abfdd41a890",
+      "code": "9949"
+    },
+    {
+      "answer_id": "answer543f7222-c26f-44de-8692-5cebdf62ed7c",
+      "code": "9962"
+    },
+    {
+      "answer_id": "answera5b0c8f1-5a52-47ba-8205-0fe96e607a9c",
+      "code": "9961"
+    },
+    {
+      "answer_id": "answerc236fc05-5eec-49d7-8145-db43d285becf",
+      "code": "9960"
+    },
+    {
+      "answer_id": "answer45b080a8-65c7-472d-9f28-94750411bf38",
+      "code": "9959"
+    },
+    {
+      "answer_id": "answer9986207a-0686-4a65-9aa7-edf4b0dc690e",
+      "code": "9958"
+    },
+    {
+      "answer_id": "answerfc608409-3823-4716-a12f-d7566422f386",
+      "code": "9957"
+    },
+    {
+      "answer_id": "answer51690d7b-f008-4582-9687-9fed37078d00",
+      "code": "9956"
+    },
+    {
+      "answer_id": "answerdd79d8e6-e906-4f20-be7d-6c3fd0545f71",
+      "code": "9952"
+    },
+    {
+      "answer_id": "answer2af35091-bfbb-4315-8e51-48ca7b7620bd",
+      "code": "b155"
+    },
+    {
+      "answer_id": "answer3ffd548c-834e-4ef3-ae55-07d6d89cfab6",
+      "code": "b156"
+    },
+    {
+      "answer_id": "answer33bde7b9-516c-4239-bd31-aba73bbc1173",
+      "code": "9948"
+    },
+    {
+      "answer_id": "answer48883aaa-01c6-4823-a19b-b735ed571fd8",
+      "code": "110"
+    },
+    {
+      "answer_id": "answerc43da4cd-1a19-46b4-9f2d-22a67395bac9",
+      "code": "b081"
+    },
+    {
+      "answer_id": "answerb6748be3-e49c-43c1-8b9a-36a97262d7bb",
+      "code": "9947"
+    },
+    {
+      "answer_id": "answerfee7b49a-d573-4ddb-8361-4b2b9ce14bcf",
+      "code": "9963"
+    },
+    {
+      "answer_id": "answerda21dd84-2516-4e0f-8fcd-1ec7677d20d2",
+      "code": "240"
+    },
+    {
+      "answer_id": "answer521f495a-cf83-44f1-862a-01edf30e275d",
+      "code": "c110"
+    },
+    {
+      "answer_id": "answera6953286-acee-4c5b-9d43-4baf9aea24b9",
+      "code": "c155"
+    },
+    {
+      "answer_id": "answer448e709d-3913-4a67-9a54-825578816c9d",
+      "code": "c156"
+    },
+    {
+      "answer_id": "answer59486b3a-59cf-4f90-918e-bc17369a004c",
+      "code": "200"
+    },
+    {
+      "answer_id": "answer93fc4c69-445e-4223-a156-070edaa57298",
+      "code": "210"
+    },
+    {
+      "answer_id": "answer9a6bddcf-9cdc-40ff-848f-cb12f7bcef54",
+      "code": "9946"
+    },
+    {
+      "answer_id": "answer810a3500-e2bf-4446-8880-f3dddbb76f19",
+      "code": "9945"
+    },
+    {
+      "answer_id": "answerc50ba3f9-1649-446f-9b6c-da29efb0c38c",
+      "code": "9944"
+    },
+    {
+      "answer_id": "answer881c9e79-6774-4941-9845-24c660b68a3a",
+      "code": "9943"
+    },
+    {
+      "answer_id": "answer0275d1ad-1b43-4055-b697-6160560045c2",
+      "code": "9942"
+    },
+    {
+      "answer_id": "answeredd1b481-e964-4399-ae19-bde30a499df7",
+      "code": "9941"
+    }
+  ],
+  "title": "Business Register and Employment Survey 2024",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "1a19e17b-74d4-4fdb-aa1e-9e1c61e1f4ef",
+        "sectione7d55617-49bf-4ccd-9e95-d0d1054133a0"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "sectione7d55617-49bf-4ccd-9e95-d0d1054133a0",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "groupe7d55617-49bf-4ccd-9e95-d0d1054133a0",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      },
+                      {
+                        "placeholder": "trad_as",
+                        "transforms": [
+                          {
+                            "transform": "conditional_trad_as",
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "You have been selected to complete the Business Register and Employment Survey (BRES).",
+                        "Data should relate to all sites in England, Scotland and Wales unless otherwise stated.",
+                        "We will treat your data securely and confidentially.",
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "You still need to complete this survey even if it does not seem relevant. All returns are important as it helps us produce better statistics.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "You can save or print a copy of your answers for your records at the end of this survey."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/businessregisterandemploymentsurvey\" target=\"_blank\" rel=\"noopener noreferrer\">View more information about this survey (this link opens in a new tab)</a>"
+                  },
+                  {
+                    "description": {
+                      "text": "Complete all questions as of {ref_p_start_date}.",
+                      "placeholders": [
+                        {
+                          "placeholder": "ref_p_start_date",
+                          "transforms": [
+                            {
+                              "transform": "format_date",
+                              "arguments": {
+                                "date_to_format": {
+                                  "source": "metadata",
+                                  "identifier": "ref_p_start_date"
+                                },
+                                "date_format": "d MMMM yyyy"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "This survey has the following sections:"
+                  }
+                ],
+                "questions": [
+                  {
+                    "question": "Business structure",
+                    "contents": [
+                      {
+                        "description": "In this section you will be asked to check and provide information on the structure of your business."
+                      },
+                      {
+                        "description": "<strong>This includes:</strong>"
+                      },
+                      {
+                        "list": [
+                          "the name and address of your business",
+                          "the operational status of your business",
+                          "VAT details",
+                          "employer&#39;s PAYE references",
+                          "additional references not already captured",
+                          "number of directors or working owners not paid via PAYE",
+                          "whether the business operates as a main contractor",
+                          "number of sites in Great Britain",
+                          "number of employees"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Existing sites",
+                    "contents": [
+                      {
+                        "description": "In this section you will be presented with your business&#39;s existing sites. You will be asked to check the information for any errors and provide details of any changes."
+                      },
+                      {
+                        "description": "<strong>This includes:</strong>"
+                      },
+                      {
+                        "list": [
+                          "the name, address and postcode of the site",
+                          "the operational status of the site",
+                          "number of full-time and part-time employees of the site",
+                          "the business activity of the site"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "question": "Additional sites",
+                    "contents": [
+                      {
+                        "description": "In this section you will be asked to provide details of any additional sites."
+                      },
+                      {
+                        "description": "<strong>This includes:</strong>"
+                      },
+                      {
+                        "list": [
+                          "business name and trading style",
+                          "address and postcode of the additional site",
+                          "when the additional site started trading",
+                          "the main business activity of the site",
+                          "number of full-time and part-time employees"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "The information you supply is the only information used by the Office for National Statistics (ONS) to update its Inter Departmental Business Register (IDBR) at workplace level with location, employment and Standard Industrial Classification details.",
+                        "ONS uses the IDBR to design statistical surveys required to produce UK National Accounts.",
+                        "Your information contributes to <a href=\"https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes\" target=\"_blank\" rel=\"noopener noreferrer\">local and national employment statistics (this link opens in a new tab)</a>, which are used in policy making, strategic planning and monitoring of employment trends by government departments and local authorities.",
+                        "The information also feeds into a number of key measures of the UK economy.",
+                        "<a href=\"https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/businessregisterandemploymentsurveybresprovisionalresults/provisionalresults2022revisedresults2021\" target=\"_blank\" rel=\"noopener noreferrer\">View the latest publication produced from this survey (this link opens in a new tab)</a>"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a19e17b-74d4-4fdb-aa1e-9e1c61e1f4ef",
+      "title": "Business structure",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group1a19e17b-74d4-4fdb-aa1e-9e1c61e1f4ef",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "business-structure",
+              "page_title": "Business structure",
+              "content": {
+                "title": "Business structure",
+                "contents": [
+                  {
+                    "description": "In this section you will be asked to check and provide information on the structure of your business.<br><br><strong>This includes:</strong>"
+                  },
+                  {
+                    "list": [
+                      "the name and address of your business",
+                      "the operational status of your business",
+                      "VAT details",
+                      "employer&#39;s PAYE references",
+                      "additional references not already captured",
+                      "numbers of directors or working owners not paid via PAYE",
+                      "whether the business operates as a main contractor",
+                      "number of sites in Great Britain",
+                      "number of employees"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "correct-name-for-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questioncorrect-name-for-your-business",
+                "title": {
+                  "text": "We currently hold your business name as {ru_name} {trad_as}. Is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    },
+                    {
+                      "placeholder": "trad_as",
+                      "transforms": [
+                        {
+                          "transform": "conditional_trad_as",
+                          "arguments": {
+                            "trad_as": {
+                              "source": "metadata",
+                              "identifier": "trad_as"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>If you have a trading style or a name the business trades under registered with us, this will appear in brackets after your business name.</p><p>The business name specified may not be your business&#x2019;s legal name if you have previously agreed a reporting structure with ONS.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerccd2c97c-28cb-460c-8f76-3d9f04aa98d6",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, the business name is correct",
+                        "value": "Yes, the business name is correct"
+                      },
+                      {
+                        "label": "No, the business name is not correct",
+                        "value": "No, the business name is not correct"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Correct name for your business",
+              "routing_rules": [
+                {
+                  "block": "correct-address-for-your-business",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerccd2c97c-28cb-460c-8f76-3d9f04aa98d6",
+                        "source": "answers"
+                      },
+                      [
+                        "Yes, the business name is correct"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "changes-to-business-name"
+                }
+              ]
+            },
+            {
+              "id": "changes-to-business-name",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-to-business-name",
+                "title": "What is the correct name of your business?",
+                "description": [
+                  {
+                    "text": "<p>Business name we currently hold: </p><p>{ru_name}</p><p>If you have a trading style or a name the business trades under, include this in brackets after your business name.</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerca3136ef-d9ef-4bb8-8496-840dc1ac46c6",
+                    "mandatory": true,
+                    "type": "TextField",
+                    "label": "Correct business name"
+                  }
+                ]
+              },
+              "page_title": "Changes to business name"
+            },
+            {
+              "id": "correct-address-for-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questioncorrect-address-for-your-business",
+                "title": {
+                  "text": "We currently hold this business&#39;s address as {address}. Is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "address",
+                      "transforms": [
+                        {
+                          "transform": "concatenate_list",
+                          "arguments": {
+                            "list_to_concatenate": [
+                              {
+                                "source": "supplementary_data",
+                                "identifier": "address"
+                              }
+                            ],
+                            "delimiter": ", "
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera74a8052-0257-4dc4-83a0-598ce7bedb81",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, the business address is correct",
+                        "value": "Yes, the business address is correct"
+                      },
+                      {
+                        "label": "No, the business address is not correct",
+                        "value": "No, the business address is not correct"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Correct address for your business",
+              "routing_rules": [
+                {
+                  "block": "operational-status-of-your-business",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera74a8052-0257-4dc4-83a0-598ce7bedb81",
+                        "source": "answers"
+                      },
+                      [
+                        "Yes, the business address is correct"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "changes-to-address-for-your-business"
+                }
+              ]
+            },
+            {
+              "id": "changes-to-address-for-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-to-address-for-your-business",
+                "title": "What is the correct address for your business?",
+                "description": [
+                  {
+                    "text": "<p>Address we currently hold:</p><p>{address}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "address",
+                        "transforms": [
+                          {
+                            "transform": "concatenate_list",
+                            "arguments": {
+                              "list_to_concatenate": [
+                                {
+                                  "source": "supplementary_data",
+                                  "identifier": "address"
+                                }
+                              ],
+                              "delimiter": ", "
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Include the property number, where applicable."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerfaf14e92-e81b-4759-801f-8c6a1623020f",
+                    "mandatory": true,
+                    "type": "TextField",
+                    "label": "Address line 1"
+                  },
+                  {
+                    "id": "answercdade785-1566-414c-be8c-c228bfa24e2d",
+                    "mandatory": false,
+                    "type": "TextField",
+                    "label": "Address line 2"
+                  },
+                  {
+                    "id": "answer953b4c7b-720e-4568-8209-1012dfec7f8a",
+                    "mandatory": false,
+                    "type": "TextField",
+                    "label": "Address line 3"
+                  },
+                  {
+                    "id": "answerb8d1afb8-f1f6-452e-8510-992961402eab",
+                    "mandatory": false,
+                    "type": "TextField",
+                    "label": "Address line 4"
+                  },
+                  {
+                    "id": "answere89ea879-7c9c-4ac7-84f1-936ee75a4d21",
+                    "mandatory": false,
+                    "type": "TextField",
+                    "label": "Address line 5"
+                  },
+                  {
+                    "id": "answerbe073353-2972-4f21-8773-3a43decb6e34",
+                    "mandatory": true,
+                    "type": "TextField",
+                    "label": "Postcode",
+                    "max_length": 8
+                  }
+                ]
+              },
+              "page_title": "Changes to address for your business"
+            },
+            {
+              "id": "operational-status-of-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questionoperational-status-of-your-business",
+                "title": {
+                  "text": "On {ref_p_start_date}, which category best described the operational status of your business?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>If your business is <strong>seasonal</strong>, treat as if it is active.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerfab4de19-0360-49c0-b3e0-38d00c0ab785",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "The business was active with all or part of the activity taking place within Great Britain (GB)",
+                        "value": "The business was active with all or part of the activity taking place within Great Britain (GB)",
+                        "description": "Great Britain consists of England, Scotland and Wales"
+                      },
+                      {
+                        "label": "The business was active with all of the activity taking place outside GB",
+                        "value": "The business was active with all of the activity taking place outside GB"
+                      },
+                      {
+                        "label": "The business was part of another GB business due to a takeover or merger",
+                        "value": "The business was part of another GB business due to a takeover or merger"
+                      },
+                      {
+                        "label": "The business had not started operating yet",
+                        "value": "The business had not started operating yet"
+                      },
+                      {
+                        "label": "The business had ceased operating but is expecting to restart within two years",
+                        "value": "The business had ceased operating but is expecting to restart within two years"
+                      },
+                      {
+                        "label": "The business had ceased operating and is not expecting to restart within two years",
+                        "value": "The business had ceased operating and is not expecting to restart within two years"
+                      },
+                      {
+                        "label": "The business had never started operating and is not expecting to start",
+                        "value": "The business had never started operating and is not expecting to start"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Operational status of your business",
+              "routing_rules": [
+                {
+                  "block": "correct-vat-registration-number-and-subsidiary-reference-number-of-your-business",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerfab4de19-0360-49c0-b3e0-38d00c0ab785",
+                        "source": "answers"
+                      },
+                      [
+                        "The business was active with all or part of the activity taking place within Great Britain (GB)"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "comments-on-operational-status"
+                }
+              ]
+            },
+            {
+              "id": "correct-vat-registration-number-and-subsidiary-reference-number-of-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questioncorrect-vat-registration-number-and-subsidiary-reference-number-of-your-business",
+                "title": {
+                  "text": "On {ref_p_start_date}, was the following VAT registration number and subsidiary reference number correct for your business?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  {
+                    "text": "<p>If the business was part of a VAT group, any number given will include a three digit subsidiary reference number as part of the overall VAT number.</p><p>One or both of these may appear blank.</p><p>VAT registration number: {vat_registrationnumber}</p><p>Subsidiary reference number: {vat_subsidiaryidentifier}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "vat_registrationnumber",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "vat",
+                          "selectors": [
+                            "registration_number"
+                          ]
+                        }
+                      },
+                      {
+                        "placeholder": "vat_subsidiaryidentifier",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "vat",
+                          "selectors": [
+                            "subsidiary_identifier"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer0322a3ba-1c99-45b4-a455-9869bbdd223b",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, these numbers are correct",
+                        "value": "Yes, these numbers are correct"
+                      },
+                      {
+                        "label": "No, these numbers are not correct",
+                        "value": "No, these numbers are not correct"
+                      },
+                      {
+                        "label": "The business was exempt from VAT",
+                        "value": "The business was exempt from VAT"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Correct VAT registration number and subsidiary reference number of your business",
+              "routing_rules": [
+                {
+                  "block": "changes-to-vat-registration-number-and-subsidiary-reference-number-for-your-business",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer0322a3ba-1c99-45b4-a455-9869bbdd223b",
+                        "source": "answers"
+                      },
+                      [
+                        "No, these numbers are not correct"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "correct-tax-office-number-and-employers-paye-reference-number-for-your-business"
+                }
+              ]
+            },
+            {
+              "id": "changes-to-vat-registration-number-and-subsidiary-reference-number-for-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-to-vat-registration-number-and-subsidiary-reference-number-for-your-business",
+                "title": {
+                  "text": "On {ref_p_start_date}, what was the correct VAT registration number and subsidiary reference number for your business?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerf8197dc4-d625-4d94-a847-a17538c49179",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "VAT registration number",
+                    "description": "This is 9 numbers, sometimes with &#39;GB&#39; at the start and can be found on your VAT registration certificate. Only enter the 9 numbers",
+                    "maximum": {
+                      "value": 999999999,
+                      "exclusive": false
+                    },
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer6df5abbc-5b82-4905-be7c-12ce76db8c4c",
+                    "mandatory": false,
+                    "type": "Number",
+                    "label": "Subsidiary reference number",
+                    "description": "If your business is part of a VAT group, this is the additional 3 numbers after the VAT registration number. Leave blank if your business is not part of a VAT group",
+                    "maximum": {
+                      "value": 999,
+                      "exclusive": false
+                    },
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Changes to VAT registration number and subsidiary reference number for your business"
+            },
+            {
+              "id": "correct-tax-office-number-and-employers-paye-reference-number-for-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questioncorrect-tax-office-number-and-employers-paye-reference-number-for-your-business",
+                "title": {
+                  "text": "On {ref_p_start_date}, was the following tax office number and employer&#39;s PAYE reference number correct for your business?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  {
+                    "text": "<p>This consists of a tax office number followed by an employer&#39;s PAYE reference number, which can be found on your paying-in book and form P35.</p><p>One or both of these may appear blank.</p><p>Tax office number: {employerpaye_taxofficenumber}</p><p>Employer&#39;s PAYE reference number: {employerpaye_reference}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "employerpaye_taxofficenumber",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "employer_paye",
+                          "selectors": [
+                            "tax_office_number"
+                          ]
+                        }
+                      },
+                      {
+                        "placeholder": "employerpaye_reference",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "employer_paye",
+                          "selectors": [
+                            "reference"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer4957b777-af80-411f-b853-650ba200a196",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, these numbers are correct",
+                        "value": "Yes, these numbers are correct"
+                      },
+                      {
+                        "label": "No, these numbers are not correct",
+                        "value": "No, these numbers are not correct"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Correct tax office number and employer&#39;s PAYE reference number for your business",
+              "routing_rules": [
+                {
+                  "block": "changes-to-tax-office-number-and-paye-reference-number-for-your-business",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer4957b777-af80-411f-b853-650ba200a196",
+                        "source": "answers"
+                      },
+                      [
+                        "No, these numbers are not correct"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "additional-vat-or-employer-paye-reference-numbers-for-your-business"
+                }
+              ]
+            },
+            {
+              "id": "changes-to-tax-office-number-and-paye-reference-number-for-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-to-tax-office-number-and-paye-reference-number-for-your-business",
+                "title": {
+                  "text": "On {ref_p_start_date}, what was the correct tax office number and employer&#39;s PAYE reference number for your business?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>This consists of a tax office number followed by an employer&#39;s PAYE reference number, which can be found on your paying-in book and form P35.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer72bddf10-c99e-41e9-8341-e65d3f77d78c",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Tax office number",
+                    "maximum": {
+                      "value": 999,
+                      "exclusive": false
+                    },
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer946166c1-88cc-4b8b-bfce-3b31594dba4b",
+                    "mandatory": true,
+                    "type": "TextField",
+                    "label": "Employer&#39;s PAYE reference number",
+                    "max_length": 10
+                  }
+                ]
+              },
+              "page_title": "Changes to tax office number and PAYE reference number for your business"
+            },
+            {
+              "id": "additional-vat-or-employer-paye-reference-numbers-for-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questionadditional-vat-or-employer-paye-reference-numbers-for-your-business",
+                "title": "Provide any additional VAT or employer PAYE reference numbers that your business currently has",
+                "description": [
+                  "<p>If not applicable, leave blank.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer96e49f43-2d77-449d-86bd-af741229462f",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Additional VAT or employer PAYE reference numbers",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Additional VAT or employer PAYE reference numbers for your business"
+            },
+            {
+              "id": "number-of-directors-or-working-owners-not-paid-via-paye-but-received-drawings-or-a-share-of-profits-at-your-business",
+              "type": "Question",
+              "question": {
+                "id": "questionnumber-of-directors-or-working-owners-not-paid-via-paye-but-received-drawings-or-a-share-of-profits-at-your-business",
+                "title": {
+                  "text": "On {ref_p_start_date}, how many directors or working owners were there at your business, who were not paid via PAYE but received drawings or a share of profits?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "sole traders",
+                        "sole proprietors",
+                        "partners",
+                        "directors"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer92752bc4-18a5-4ede-8718-2b7fd03211f2",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Number of directors or working owners not paid via PAYE but received drawings or a share of profits",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Number of directors or working owners not paid via PAYE but received drawings or a share of profits at your business"
+            },
+            {
+              "id": "business-operating-as-a-main-contractor",
+              "type": "Question",
+              "question": {
+                "id": "questionbusiness-operating-as-a-main-contractor",
+                "title": {
+                  "text": "On {ref_p_start_date}, did your business operate as a main contractor?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;main contractor&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to a business that has a job or contract with a client or project owner, has the responsibility for its completion and did not receive it as sub-contracted work from another construction business. Businesses constructing speculative buildings should also consider themselves as a main contractor."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer3780c447-6dfb-4013-a81a-0e765b438b77",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, the business operated as a main contractor",
+                        "value": "Yes, the business operated as a main contractor"
+                      },
+                      {
+                        "label": "No, the business did not operate as a main contractor",
+                        "value": "No, the business did not operate as a main contractor"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Business operating as a main contractor"
+            },
+            {
+              "id": "total-number-of-sites-in-great-britain-your-business-operated-from",
+              "type": "Question",
+              "question": {
+                "id": "questiontotal-number-of-sites-in-great-britain-your-business-operated-from",
+                "title": {
+                  "text": "On {ref_p_start_date}, how many sites in Great Britain did your business operate from?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>Provide figures for business activity within Great Britain only. Exclude Northern Ireland.</p><p>Great Britain consists of England, Scotland and Wales.</p>"
+                ],
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;sites&#39;",
+                    "contents": [
+                      {
+                        "description": "This refers to sites where one or more persons carried out economic activity for a minimum of 20 hours per week <strong>and</strong> the planned activity for your business was for more than one year.<br><br>Examples of sites include:"
+                      },
+                      {
+                        "list": [
+                          "workshops",
+                          "factories",
+                          "warehouses",
+                          "offices",
+                          "mines",
+                          "depots",
+                          "construction sites"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answercb1e8018-22a9-4b14-873e-2804deb2bba3",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Total number of sites",
+                    "minimum": {
+                      "value": 1,
+                      "exclusive": false
+                    },
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Total number of sites in Great Britain your business operated from"
+            },
+            {
+              "id": "businesss-total-number-of-employees",
+              "type": "Question",
+              "question": {
+                "id": "questionbusinesss-total-number-of-employees",
+                "title": {
+                  "text": "On {ref_p_start_date}, what was your business&#39;s total number of employees?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>This figure should be <strong>total head count</strong> working on the specified date rather than job roles to avoid double counting employees.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "full time, over 30 hours a week, and part-time, 30 hours or less, employees aged 16 years and over. This includes individuals <strong>working from home</strong> and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "employees at sites where the planned activity was for less than one year",
+                        "employees at sites staffed for less than 20 hours per week",
+                        "North Sea oil workers and any other employees working on the UK Continental Shelf (UKCS). The UKCS is the region of waters surrounding the United Kingdom in which the country claims mineral rights"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "subcontractors",
+                        "directors and working owners <strong>not</strong> paid via PAYE",
+                        "agency workers paid directly from the agency payroll",
+                        "voluntary employees",
+                        "former employees only receiving a pension"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;employees&#39;",
+                    "contents": [
+                      {
+                        "description": "An employee is anyone aged 16 years or over who was working directly for the business.&#xA0;They may have been paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#xA0;If your business uses a central payroll to pay employees who work within the wider group, only include employees who worked directly for the business."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerd59b79ca-f2a5-491a-ae31-a0cb7178b3c9",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Total number of employees",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Business&#39;s total number of employees"
+            },
+            {
+              "id": "comments-on-operational-status",
+              "type": "Question",
+              "question": {
+                "id": "questioncomments-on-operational-status",
+                "title": "Provide any additional comments regarding changes to your business&#x2019;s operational status",
+                "description": [
+                  "<p>If your business has been <strong>taken over or merged</strong> with another UK business, provide us with the contact details of the business that should now complete this survey.</p><p>It is important that you supply supporting information regarding any business status or structure changes.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera5b65357-2a80-4ef8-8ba1-1e86fcb0ce12",
+                    "mandatory": true,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Comments on operational status",
+              "skip_conditions": {
+                "when": {
+                  "in": [
+                    {
+                      "identifier": "answerfab4de19-0360-49c0-b3e0-38d00c0ab785",
+                      "source": "answers"
+                    },
+                    [
+                      "The business was active with all or part of the activity taking place within Great Britain (GB)"
+                    ]
+                  ]
+                }
+              }
+            },
+            {
+              "id": "additional-comments-on-operational-status",
+              "type": "Question",
+              "question": {
+                "id": "questionadditional-comments-on-operational-status",
+                "title": "Provide any additional comments regarding changes to your business&#x2019;s operational status, not included in the previous questions",
+                "description": [
+                  "<p>If your business has been <strong>taken over or merged</strong> with another UK business, provide us with the contact details of the business that should now complete this survey.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer0f267198-246c-4304-b8d6-80908ff72e8e",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Additional comments on operational status",
+              "skip_conditions": {
+                "when": {
+                  "in": [
+                    {
+                      "identifier": "answerfab4de19-0360-49c0-b3e0-38d00c0ab785",
+                      "source": "answers"
+                    },
+                    [
+                      "The business was active with all of the activity taking place outside GB",
+                      "The business had not started operating yet",
+                      "The business had ceased operating but is expecting to restart within two years",
+                      "The business had ceased operating and is not expecting to restart within two years",
+                      "The business had never started operating and is not expecting to start",
+                      "The business was part of another GB business due to a takeover or merger"
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fc598545-3f00-46bd-8fb0-743494d7ac3f",
+      "title": "[local-units - name], [local-units - address]",
+      "repeat": {
+        "for_list": "local-units",
+        "title": {
+          "text": "{localunits_name}, {localunits_address}",
+          "placeholders": [
+            {
+              "placeholder": "localunits_name",
+              "value": {
+                "source": "supplementary_data",
+                "identifier": "local-units",
+                "selectors": [
+                  "name"
+                ]
+              }
+            },
+            {
+              "placeholder": "localunits_address",
+              "transforms": [
+                {
+                  "transform": "concatenate_list",
+                  "arguments": {
+                    "list_to_concatenate": [
+                      {
+                        "source": "supplementary_data",
+                        "identifier": "local-units",
+                        "selectors": [
+                          "address"
+                        ]
+                      }
+                    ],
+                    "delimiter": ", "
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupfc598545-3f00-46bd-8fb0-743494d7ac3f",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "existing-sites",
+              "page_title": "Existing sites",
+              "content": {
+                "title": "Existing sites",
+                "contents": [
+                  {
+                    "description": "In this section you will be presented with your business&#39;s existing sites. You will be asked to check the information for any errors and provide details of any changes."
+                  },
+                  {
+                    "description": "If you do not have any existing sites, you will be asked to repeat some of the information you have provided in previous questions.<br><br><strong>This includes:</strong>"
+                  },
+                  {
+                    "list": [
+                      "the name, address and postcode of the site",
+                      "the operational status of the site",
+                      "number of full-time and part-time employees of the site",
+                      "the business activity of the site"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "correct-name-for-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questioncorrect-name-for-this-site",
+                "title": {
+                  "text": "We currently hold this site&#39;s name as {localunits_name} ({localunits_tradingname}). Is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "localunits_name",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "local-units",
+                        "selectors": [
+                          "name"
+                        ]
+                      }
+                    },
+                    {
+                      "placeholder": "localunits_tradingname",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "local-units",
+                        "selectors": [
+                          "trading_name"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>If you have a trading style or a name the site trades under registered with us, this will appear in brackets after your site name. Otherwise it may appear blank.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer93d3bc36-7064-48b2-912c-4d7025bca3ed",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, the name of this site is correct",
+                        "value": "Yes, the name of this site is correct"
+                      },
+                      {
+                        "label": "No, the name of this site is not correct",
+                        "value": "No, the name of this site is not correct"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Correct name for this site",
+              "routing_rules": [
+                {
+                  "block": "correct-address-for-this-site",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer93d3bc36-7064-48b2-912c-4d7025bca3ed",
+                        "source": "answers"
+                      },
+                      [
+                        "Yes, the name of this site is correct"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "changes-to-name-for-this-site"
+                }
+              ]
+            },
+            {
+              "id": "changes-to-name-for-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-to-name-for-this-site",
+                "title": "What is the correct name of this site?",
+                "description": [
+                  {
+                    "text": "<p>Site name we currently hold:</p><p>{localunits_name}</p><p>If you have a trading style or a name the site trades under, include this in brackets after your site name.</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "localunits_name",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "local-units",
+                          "selectors": [
+                            "name"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer05e62ffa-c978-42a7-a812-d20397446a94",
+                    "mandatory": true,
+                    "type": "TextField",
+                    "label": "Correct site name"
+                  }
+                ]
+              },
+              "page_title": "Changes to name for this site"
+            },
+            {
+              "id": "correct-address-for-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questioncorrect-address-for-this-site",
+                "title": {
+                  "text": "We currently hold the address for this site as {localunits_address}. Is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "localunits_address",
+                      "transforms": [
+                        {
+                          "transform": "concatenate_list",
+                          "arguments": {
+                            "list_to_concatenate": [
+                              {
+                                "source": "supplementary_data",
+                                "identifier": "local-units",
+                                "selectors": [
+                                  "address"
+                                ]
+                              }
+                            ],
+                            "delimiter": ", "
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerb97e5146-412c-48fc-9e8b-7abfdd41a890",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, the address of this site is correct",
+                        "value": "Yes, the address of this site is correct"
+                      },
+                      {
+                        "label": "No, the address of this site is not correct",
+                        "value": "No, the address of this site is not correct"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Correct address for this site",
+              "routing_rules": [
+                {
+                  "block": "activity-levels-for-this-site",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerb97e5146-412c-48fc-9e8b-7abfdd41a890",
+                        "source": "answers"
+                      },
+                      [
+                        "Yes, the address of this site is correct"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "changes-to-address-for-this-site"
+                }
+              ]
+            },
+            {
+              "id": "changes-to-address-for-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-to-address-for-this-site",
+                "title": "What is the correct address for this site?",
+                "description": [
+                  {
+                    "text": "<p>Site address we currently hold:</p><p>{localunits_address}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "localunits_address",
+                        "transforms": [
+                          {
+                            "transform": "concatenate_list",
+                            "arguments": {
+                              "list_to_concatenate": [
+                                {
+                                  "source": "supplementary_data",
+                                  "identifier": "local-units",
+                                  "selectors": [
+                                    "address"
+                                  ]
+                                }
+                              ],
+                              "delimiter": ", "
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Include the property number, where applicable."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer543f7222-c26f-44de-8692-5cebdf62ed7c",
+                    "mandatory": true,
+                    "type": "TextField",
+                    "label": "Address line 1"
+                  },
+                  {
+                    "id": "answera5b0c8f1-5a52-47ba-8205-0fe96e607a9c",
+                    "mandatory": false,
+                    "type": "TextField",
+                    "label": "Address line 2"
+                  },
+                  {
+                    "id": "answerc236fc05-5eec-49d7-8145-db43d285becf",
+                    "mandatory": false,
+                    "type": "TextField",
+                    "label": "Address line 3"
+                  },
+                  {
+                    "id": "answer45b080a8-65c7-472d-9f28-94750411bf38",
+                    "mandatory": false,
+                    "type": "TextField",
+                    "label": "Address line 4"
+                  },
+                  {
+                    "id": "answer9986207a-0686-4a65-9aa7-edf4b0dc690e",
+                    "mandatory": false,
+                    "type": "TextField",
+                    "label": "Address line 5"
+                  },
+                  {
+                    "id": "answerfc608409-3823-4716-a12f-d7566422f386",
+                    "mandatory": true,
+                    "type": "TextField",
+                    "label": "Postcode",
+                    "max_length": 8
+                  }
+                ]
+              },
+              "page_title": "Changes to address for this site"
+            },
+            {
+              "id": "activity-levels-for-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questionactivity-levels-for-this-site",
+                "title": {
+                  "text": "On {ref_p_start_date}, was this site staffed for a minimum of 20 hours per week or had planned activity for more than a year?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "If you answer <strong>no</strong> to this question, include any employees associated with this site in the figures you have reported for your main or head site.<br><br>You will be able to amend your figures in the business structure section once you have answered this question."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer51690d7b-f008-4582-9687-9fed37078d00",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes"
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Activity levels for this site",
+              "routing_rules": [
+                {
+                  "block": "operational-status-for-this-site",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer51690d7b-f008-4582-9687-9fed37078d00",
+                        "source": "answers"
+                      },
+                      [
+                        "Yes"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "section": "End"
+                }
+              ]
+            },
+            {
+              "id": "operational-status-for-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questionoperational-status-for-this-site",
+                "title": {
+                  "text": "On {ref_p_start_date}, which category best described the operational status of this office, store or construction site?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerdd79d8e6-e906-4f20-be7d-6c3fd0545f71",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "The site was active and operated by this business",
+                        "value": "The site was active and operated by this business"
+                      },
+                      {
+                        "label": "The site had ceased operating but is expecting to restart within two years",
+                        "value": "The site had ceased operating but is expecting to restart within two years"
+                      },
+                      {
+                        "label": "The site had ceased operating and is not expecting to restart within two years",
+                        "value": "The site had ceased operating and is not expecting to restart within two years"
+                      },
+                      {
+                        "label": "The site had been transferred to another business",
+                        "value": "The site had been transferred to another business"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Operational status for this site",
+              "routing_rules": [
+                {
+                  "block": "number-of-employees-working-at-this-site",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerdd79d8e6-e906-4f20-be7d-6c3fd0545f71",
+                        "source": "answers"
+                      },
+                      [
+                        "The site was active and operated by this business"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "section": "End"
+                }
+              ]
+            },
+            {
+              "id": "number-of-employees-working-at-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questionnumber-of-employees-working-at-this-site",
+                "title": {
+                  "text": "On {ref_p_start_date}, what was the number of full-time and part-time employees that your business paid from its payroll, for this site?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "full-time, over 30 hours a week, and part-time, 30 hours or less, employees aged 16 years and over. This includes individuals <strong>working from home</strong> and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "North Sea oil workers and any other employees working on the UK Continental Shelf (UKCS). The UKCS is the region of waters surrounding the United Kingdom in which the country claims mineral rights",
+                        "home or field workers whose work was organised from this site"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "subcontractors",
+                        "directors and working owners <strong>not</strong> paid via PAYE",
+                        "agency workers paid directly from the agency payroll",
+                        "voluntary employees",
+                        "former employees only receiving a pension"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;employees&#39;",
+                    "contents": [
+                      {
+                        "description": "An employee is anyone aged 16 years or over who was working directly for the business.&#xA0;They may have been paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#xA0;If your business uses a central payroll to pay employees who work within the wider group, only include employees who worked directly for the business."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer2af35091-bfbb-4315-8e51-48ca7b7620bd",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Number of full-time employees",
+                    "description": "This refers to employees working more than 30 hours per week",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer3ffd548c-834e-4ef3-ae55-07d6d89cfab6",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Number of part-time employees",
+                    "description": "This refers to employees working 30 hours or fewer per week",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Number of employees working at this site"
+            },
+            {
+              "id": "calculated-total-number-of-employees-for-this-site",
+              "type": "CalculatedSummary",
+              "page_title": "Calculated total number of employees for this site",
+              "title": {
+                "text": "On {ref_p_start_date}, we have calculated the total number of employees that your business paid from its payroll, for this site, to be %(total)s. Is this correct?",
+                "placeholders": [
+                  {
+                    "placeholder": "ref_p_start_date",
+                    "transforms": [
+                      {
+                        "transform": "format_date",
+                        "arguments": {
+                          "date_to_format": {
+                            "source": "metadata",
+                            "identifier": "ref_p_start_date"
+                          },
+                          "date_format": "d MMMM yyyy"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answer2af35091-bfbb-4315-8e51-48ca7b7620bd",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer3ffd548c-834e-4ef3-ae55-07d6d89cfab6",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total number of employees paid from your business&#39;s payroll"
+              }
+            },
+            {
+              "id": "correct-business-activity-for-this-office-store-or-construction-site",
+              "type": "Question",
+              "question": {
+                "id": "questioncorrect-business-activity-for-this-office-store-or-construction-site",
+                "title": {
+                  "text": "On {ref_p_start_date}, the business activity we held for this office, store or construction site was {localunits_businessdescription}. Is this correct?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "placeholder": "localunits_businessdescription",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "local-units",
+                        "selectors": [
+                          "business_description"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer33bde7b9-516c-4239-bd31-aba73bbc1173",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes. the business activity is correct",
+                        "value": "Yes. the business activity is correct"
+                      },
+                      {
+                        "label": "No, the business activity is not correct",
+                        "value": "No, the business activity is not correct"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Correct business activity for this office, store or construction site",
+              "routing_rules": [
+                {
+                  "block": "comments-on-this-site",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answer33bde7b9-516c-4239-bd31-aba73bbc1173",
+                        "source": "answers"
+                      },
+                      [
+                        "Yes. the business activity is correct"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "correct-business-activity-details-for-this-site"
+                }
+              ]
+            },
+            {
+              "id": "correct-business-activity-details-for-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questioncorrect-business-activity-details-for-this-site",
+                "title": {
+                  "text": "On {ref_p_start_date}, what was the correct business activity undertaken at this office, store or construction site?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "Examples of business activity",
+                    "contents": [
+                      {
+                        "list": [
+                          "construction of residential and non-residential buildings",
+                          "plumbing, heating and air-conditioning installation"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer48883aaa-01c6-4823-a19b-b735ed571fd8",
+                    "mandatory": true,
+                    "type": "TextArea",
+                    "label": "Correct business activity description",
+                    "max_length": 100
+                  }
+                ]
+              },
+              "page_title": "Correct business activity details for this site"
+            },
+            {
+              "id": "comments-on-this-site",
+              "type": "Question",
+              "question": {
+                "id": "questioncomments-on-this-site",
+                "title": "Provide any additional comments that you would like to make about this site",
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerc43da4cd-1a19-46b4-9f2d-22a67395bac9",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Comments on this site"
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerfab4de19-0360-49c0-b3e0-38d00c0ab785",
+              "source": "answers"
+            },
+            [
+              "The business was active with all or part of the activity taking place within Great Britain (GB)"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "b7a6ddd9-063f-4baf-8a33-1c232899bdd3",
+      "title": "Additional sites",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false,
+        "items": [
+          {
+            "type": "List",
+            "for_list": "additional_sites_name",
+            "title": {
+              "text": "On {ref_p_start_date}, what was the business name, trading style and address for this office, store or construction site?",
+              "placeholders": [
+                {
+                  "placeholder": "ref_p_start_date",
+                  "transforms": [
+                    {
+                      "transform": "format_date",
+                      "arguments": {
+                        "date_to_format": {
+                          "source": "metadata",
+                          "identifier": "ref_p_start_date"
+                        },
+                        "date_format": "d MMMM yyyy"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            "item_anchor_answer_id": "answer59486b3a-59cf-4f90-918e-bc17369a004c",
+            "item_label": "<p>Business name</p>",
+            "add_link_text": "Add item to this list",
+            "empty_list_text": "There are no items"
+          }
+        ],
+        "show_non_item_answers": true
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupb7a6ddd9-063f-4baf-8a33-1c232899bdd3",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "additional-sites",
+              "page_title": "Additional sites",
+              "content": {
+                "title": "Additional sites",
+                "contents": [
+                  {
+                    "description": "In this section you will be asked for information about any additional offices, stores and construction sites your business has in Great Britain. Great Britain consists of England, Scotland and Wales."
+                  },
+                  {
+                    "description": "Exclude any sites that we have already specified in this survey."
+                  },
+                  {
+                    "description": "<strong>This includes:</strong>"
+                  },
+                  {
+                    "list": [
+                      "business name and trading style",
+                      "address and postcode of the additional site"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "additional-sites-for-your-business",
+              "type": "ListCollectorDrivingQuestion",
+              "for_list": "additional_sites_name",
+              "question": {
+                "id": "question-driving-further-additional-sites-for-your-business",
+                "type": "General",
+                "title": {
+                  "text": "On {ref_p_start_date}, did your business have any additional sites that were staffed for a minimum of 20 hours per week or had planned activity for more than a year?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "If you answer <strong>no</strong> to this question, include any employees associated with this site in the figures you have reported for your main or head site.<br><br>You will be able to amend your figures in the business structure section once you have answered this question."
+                    }
+                  ]
+                },
+                "answers": [
+                  {
+                    "id": "answerb6748be3-e49c-43c1-8b9a-36a97262d7bb",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes",
+                        "action": {
+                          "type": "RedirectToListAddBlock",
+                          "params": {
+                            "block_id": "add-block-business-name-trading-style-and-address-for-this-additional-site",
+                            "list_name": "additional_sites_name"
+                          }
+                        }
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "routing_rules": [
+                {
+                  "section": "End",
+                  "when": {
+                    "in": [
+                      {
+                        "source": "answers",
+                        "identifier": "answerb6748be3-e49c-43c1-8b9a-36a97262d7bb"
+                      },
+                      [
+                        "No"
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "block": "further-additional-sites-for-your-business"
+                }
+              ],
+              "page_title": "Additional sites for your business"
+            },
+            {
+              "id": "further-additional-sites-for-your-business",
+              "type": "ListCollector",
+              "page_title": "Further additional sites for your business",
+              "for_list": "additional_sites_name",
+              "question": {
+                "id": "list-collector-question-further-additional-sites-for-your-business",
+                "type": "General",
+                "title": {
+                  "text": "On {ref_p_start_date}, did you have any other sites that were staffed for a minimum of 20 hours per week or had planned activity for more than a year?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "answers": [
+                  {
+                    "id": "answerfee7b49a-d573-4ddb-8361-4b2b9ce14bcf",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes",
+                        "value": "Yes",
+                        "action": {
+                          "type": "RedirectToListAddBlock"
+                        }
+                      },
+                      {
+                        "label": "No",
+                        "value": "No"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "add_block": {
+                "id": "add-block-business-name-trading-style-and-address-for-this-additional-site",
+                "type": "ListAddQuestion",
+                "page_title": "Business name, trading style and address for this additional site",
+                "cancel_text": "Don’t need to add this item",
+                "question": {
+                  "id": "add-block-question-business-name-trading-style-and-address-for-this-additional-site",
+                  "guidance": {
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "trading style, only if it is different to the business name",
+                          "the property number, where applicable"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "sites that have previously been provided",
+                          "sites staffed for fewer than 20 hours per week",
+                          "sites where planned activity was for less than a year"
+                        ]
+                      },
+                      {
+                        "description": "Any <strong>excluded sites</strong> should be included in figures reported for your main or head site."
+                      }
+                    ]
+                  },
+                  "type": "General",
+                  "title": {
+                    "text": "On {ref_p_start_date}, what was the business name, trading style and address for this office, store or construction site?",
+                    "placeholders": [
+                      {
+                        "placeholder": "ref_p_start_date",
+                        "transforms": [
+                          {
+                            "transform": "format_date",
+                            "arguments": {
+                              "date_to_format": {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              },
+                              "date_format": "d MMMM yyyy"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "answers": [
+                    {
+                      "id": "answer59486b3a-59cf-4f90-918e-bc17369a004c",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Business name"
+                    },
+                    {
+                      "id": "answer93fc4c69-445e-4223-a156-070edaa57298",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Trading style or the name the site trades under"
+                    },
+                    {
+                      "id": "answer9a6bddcf-9cdc-40ff-848f-cb12f7bcef54",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Address line 1"
+                    },
+                    {
+                      "id": "answer810a3500-e2bf-4446-8880-f3dddbb76f19",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 2"
+                    },
+                    {
+                      "id": "answerc50ba3f9-1649-446f-9b6c-da29efb0c38c",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 3"
+                    },
+                    {
+                      "id": "answer881c9e79-6774-4941-9845-24c660b68a3a",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 4"
+                    },
+                    {
+                      "id": "answer0275d1ad-1b43-4055-b697-6160560045c2",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 5"
+                    },
+                    {
+                      "id": "answeredd1b481-e964-4399-ae19-bde30a499df7",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Postcode",
+                      "max_length": 8
+                    }
+                  ]
+                }
+              },
+              "edit_block": {
+                "id": "edit-block-business-name-trading-style-and-address-for-this-additional-site",
+                "type": "ListEditQuestion",
+                "page_title": "Business name, trading style and address for this additional site",
+                "cancel_text": "Don’t need to edit this item",
+                "question": {
+                  "id": "edit-block-question-business-name-trading-style-and-address-for-this-additional-site",
+                  "guidance": {
+                    "contents": [
+                      {
+                        "description": "<strong>Include:</strong>"
+                      },
+                      {
+                        "list": [
+                          "trading style, only if it is different to the business name",
+                          "the property number, where applicable"
+                        ]
+                      },
+                      {
+                        "description": "<strong>Exclude:</strong>"
+                      },
+                      {
+                        "list": [
+                          "sites that have previously been provided",
+                          "sites staffed for fewer than 20 hours per week",
+                          "sites where planned activity was for less than a year"
+                        ]
+                      },
+                      {
+                        "description": "Any <strong>excluded sites</strong> should be included in figures reported for your main or head site."
+                      }
+                    ]
+                  },
+                  "type": "General",
+                  "title": {
+                    "text": "On {ref_p_start_date}, what was the business name, trading style and address for this office, store or construction site?",
+                    "placeholders": [
+                      {
+                        "placeholder": "ref_p_start_date",
+                        "transforms": [
+                          {
+                            "transform": "format_date",
+                            "arguments": {
+                              "date_to_format": {
+                                "source": "metadata",
+                                "identifier": "ref_p_start_date"
+                              },
+                              "date_format": "d MMMM yyyy"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "answers": [
+                    {
+                      "id": "answer59486b3a-59cf-4f90-918e-bc17369a004c",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Business name"
+                    },
+                    {
+                      "id": "answer93fc4c69-445e-4223-a156-070edaa57298",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Trading style or the name the site trades under"
+                    },
+                    {
+                      "id": "answer9a6bddcf-9cdc-40ff-848f-cb12f7bcef54",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Address line 1"
+                    },
+                    {
+                      "id": "answer810a3500-e2bf-4446-8880-f3dddbb76f19",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 2"
+                    },
+                    {
+                      "id": "answerc50ba3f9-1649-446f-9b6c-da29efb0c38c",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 3"
+                    },
+                    {
+                      "id": "answer881c9e79-6774-4941-9845-24c660b68a3a",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 4"
+                    },
+                    {
+                      "id": "answer0275d1ad-1b43-4055-b697-6160560045c2",
+                      "mandatory": false,
+                      "type": "TextField",
+                      "label": "Address line 5"
+                    },
+                    {
+                      "id": "answeredd1b481-e964-4399-ae19-bde30a499df7",
+                      "mandatory": true,
+                      "type": "TextField",
+                      "label": "Postcode",
+                      "max_length": 8
+                    }
+                  ]
+                }
+              },
+              "remove_block": {
+                "id": "remove-block-business-name-trading-style-and-address-for-this-additional-site",
+                "type": "ListRemoveQuestion",
+                "cancel_text": "Don’t need to remove this item?",
+                "question": {
+                  "id": "remove-block-question-business-name-trading-style-and-address-for-this-additional-site",
+                  "type": "General",
+                  "title": "Are you sure you want to remove this item?",
+                  "warning": "All of the information about this item will be deleted",
+                  "answers": [
+                    {
+                      "id": "remove-confirmation-business-name-trading-style-and-address-for-this-additional-site",
+                      "mandatory": true,
+                      "type": "Radio",
+                      "options": [
+                        {
+                          "label": "Yes",
+                          "value": "Yes",
+                          "action": {
+                            "type": "RemoveListItemAndAnswers"
+                          }
+                        },
+                        {
+                          "label": "No",
+                          "value": "No"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "summary": {
+                "title": "Summary",
+                "item_title": {
+                  "text": "{listcollector_summary_placeholder}",
+                  "placeholders": [
+                    {
+                      "placeholder": "listcollector_summary_placeholder",
+                      "transforms": [
+                        {
+                          "arguments": {
+                            "delimiter": " ",
+                            "list_to_concatenate": [
+                              {
+                                "source": "answers",
+                                "identifier": "answer59486b3a-59cf-4f90-918e-bc17369a004c"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answer93fc4c69-445e-4223-a156-070edaa57298"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answer9a6bddcf-9cdc-40ff-848f-cb12f7bcef54"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answer810a3500-e2bf-4446-8880-f3dddbb76f19"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answerc50ba3f9-1649-446f-9b6c-da29efb0c38c"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answer881c9e79-6774-4941-9845-24c660b68a3a"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answer0275d1ad-1b43-4055-b697-6160560045c2"
+                              },
+                              {
+                                "source": "answers",
+                                "identifier": "answeredd1b481-e964-4399-ae19-bde30a499df7"
+                              }
+                            ]
+                          },
+                          "transform": "concatenate_list"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerfab4de19-0360-49c0-b3e0-38d00c0ab785",
+              "source": "answers"
+            },
+            [
+              "The business was active with all or part of the activity taking place within Great Britain (GB)"
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "a3c6f3b1-9886-41e8-8488-5cf2c5199a19",
+      "title": "Additional site details",
+      "repeat": {
+        "for_list": "additional_sites_name",
+        "title": {
+          "text": "{repeat_title_placeholder}",
+          "placeholders": [
+            {
+              "placeholder": "repeat_title_placeholder",
+              "transforms": [
+                {
+                  "arguments": {
+                    "delimiter": " ",
+                    "list_to_concatenate": [
+                      {
+                        "source": "answers",
+                        "identifier": "answer59486b3a-59cf-4f90-918e-bc17369a004c"
+                      },
+                      {
+                        "source": "answers",
+                        "identifier": "answer93fc4c69-445e-4223-a156-070edaa57298"
+                      },
+                      {
+                        "source": "answers",
+                        "identifier": "answer9a6bddcf-9cdc-40ff-848f-cb12f7bcef54"
+                      },
+                      {
+                        "source": "answers",
+                        "identifier": "answer810a3500-e2bf-4446-8880-f3dddbb76f19"
+                      },
+                      {
+                        "source": "answers",
+                        "identifier": "answerc50ba3f9-1649-446f-9b6c-da29efb0c38c"
+                      },
+                      {
+                        "source": "answers",
+                        "identifier": "answer881c9e79-6774-4941-9845-24c660b68a3a"
+                      },
+                      {
+                        "source": "answers",
+                        "identifier": "answer0275d1ad-1b43-4055-b697-6160560045c2"
+                      },
+                      {
+                        "source": "answers",
+                        "identifier": "answeredd1b481-e964-4399-ae19-bde30a499df7"
+                      }
+                    ]
+                  },
+                  "transform": "concatenate_list"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "summary": {
+        "show_on_completion": false,
+        "page_title": "Details of Additional Sites in Great Britain",
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupa3c6f3b1-9886-41e8-8488-5cf2c5199a19",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "additional-site-details",
+              "page_title": "Additional site details",
+              "content": {
+                "title": "Additional site details",
+                "contents": [
+                  {
+                    "description": {
+                      "text": "In this section you will be asked to provide further details for <strong>{business_name}, {address_line_1}, {postcode}</strong>.",
+                      "placeholders": [
+                        {
+                          "placeholder": "business_name",
+                          "value": {
+                            "identifier": "answer59486b3a-59cf-4f90-918e-bc17369a004c",
+                            "source": "answers"
+                          }
+                        },
+                        {
+                          "placeholder": "address_line_1",
+                          "value": {
+                            "identifier": "answer9a6bddcf-9cdc-40ff-848f-cb12f7bcef54",
+                            "source": "answers"
+                          }
+                        },
+                        {
+                          "placeholder": "postcode",
+                          "value": {
+                            "identifier": "answeredd1b481-e964-4399-ae19-bde30a499df7",
+                            "source": "answers"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>This includes:</strong>"
+                  },
+                  {
+                    "list": [
+                      "when the additional site started trading",
+                      "the main business activity of the site",
+                      "number of full-time and part-time employees"
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "id": "date-this-site-started-trading",
+              "type": "Question",
+              "question": {
+                "id": "questiondate-this-site-started-trading",
+                "title": {
+                  "text": "When did this office, store or construction site at {address_line_1}, {postcode}, start trading as part of your business?",
+                  "placeholders": [
+                    {
+                      "placeholder": "address_line_1",
+                      "value": {
+                        "identifier": "answer9a6bddcf-9cdc-40ff-848f-cb12f7bcef54",
+                        "source": "answers"
+                      }
+                    },
+                    {
+                      "placeholder": "postcode",
+                      "value": {
+                        "identifier": "answeredd1b481-e964-4399-ae19-bde30a499df7",
+                        "source": "answers"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  "<p>For example, July 2019 would be entered as 07 2019.</p>"
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerda21dd84-2516-4e0f-8fcd-1ec7677d20d2",
+                    "mandatory": true,
+                    "type": "MonthYearDate",
+                    "label": "Date this site started trading"
+                  }
+                ]
+              },
+              "page_title": "Date this site started trading"
+            },
+            {
+              "id": "main-business-activity-of-additional-site",
+              "type": "Question",
+              "question": {
+                "id": "questionmain-business-activity-of-additional-site",
+                "title": {
+                  "text": "On {ref_p_start_date}, what was the main business activity of this office, store or construction site?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "Examples of main business activity",
+                    "contents": [
+                      {
+                        "list": [
+                          "construction of residential and non-residential buildings",
+                          "plumbing, heating and air-conditioning installation"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer521f495a-cf83-44f1-862a-01edf30e275d",
+                    "mandatory": true,
+                    "type": "TextArea",
+                    "label": "Main business activity",
+                    "max_length": 100
+                  }
+                ]
+              },
+              "page_title": "Main business activity of additional site"
+            },
+            {
+              "id": "number-of-employees-working-at-this-additional-site",
+              "type": "Question",
+              "question": {
+                "id": "questionnumber-of-employees-working-at-this-additional-site",
+                "title": {
+                  "text": "On {ref_p_start_date}, what was the number of full-time and part-time employees that your business paid from its payroll, for this site?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ref_p_start_date",
+                      "transforms": [
+                        {
+                          "transform": "format_date",
+                          "arguments": {
+                            "date_to_format": {
+                              "source": "metadata",
+                              "identifier": "ref_p_start_date"
+                            },
+                            "date_format": "d MMMM yyyy"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include:</strong>"
+                    },
+                    {
+                      "list": [
+                        "full-time, over 30 hours a week, and part-time, 30 hours or less, employees aged 16 years and over. This includes individuals <strong>working from home</strong> and those temporarily absent but still employed, for example those on parental leave or sick leave",
+                        "North Sea oil workers and any other employees working on the UK Continental Shelf (UKCS). The UKCS is the region of waters surrounding the United Kingdom in which the country claims mineral rights",
+                        "home or field workers whose work was organised from this site"
+                      ]
+                    },
+                    {
+                      "description": "<strong>Exclude:</strong>"
+                    },
+                    {
+                      "list": [
+                        "subcontractors",
+                        "directors and working owners <strong>not</strong> paid via PAYE",
+                        "agency workers paid directly from the agency payroll",
+                        "voluntary employees",
+                        "former employees only receiving a pension"
+                      ]
+                    }
+                  ]
+                },
+                "definitions": [
+                  {
+                    "title": "What we mean by &#39;employees&#39;",
+                    "contents": [
+                      {
+                        "description": "An employee is anyone aged 16 years or over who was working directly for the business.&#xA0;They may have been paid direct from the business, from elsewhere within the wider group, or by an external payroll provider on behalf of the company.&#xA0;If your business uses a central payroll to pay employees who work within the wider group, only include employees who worked directly for the business."
+                      }
+                    ]
+                  }
+                ],
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera6953286-acee-4c5b-9d43-4baf9aea24b9",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Number of full-time employees",
+                    "description": "This refers to employees working more than 30 hours per week",
+                    "decimal_places": 0
+                  },
+                  {
+                    "id": "answer448e709d-3913-4a67-9a54-825578816c9d",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": "Number of part-time employees",
+                    "description": "This refers to employees working 30 hours or fewer per week",
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Number of employees working at this additional site"
+            },
+            {
+              "id": "calculated-number-of-employees-for-this-additional-site",
+              "type": "CalculatedSummary",
+              "page_title": "Calculated number of employees for this additional site",
+              "title": {
+                "text": "On {ref_p_start_date}, we have calculated the total number of employees that your business paid from its payroll, for this site, to be %(total)s. Is this correct?",
+                "placeholders": [
+                  {
+                    "placeholder": "ref_p_start_date",
+                    "transforms": [
+                      {
+                        "transform": "format_date",
+                        "arguments": {
+                          "date_to_format": {
+                            "source": "metadata",
+                            "identifier": "ref_p_start_date"
+                          },
+                          "date_format": "d MMMM yyyy"
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "calculation": {
+                "operation": {
+                  "+": [
+                    {
+                      "identifier": "answera6953286-acee-4c5b-9d43-4baf9aea24b9",
+                      "source": "answers"
+                    },
+                    {
+                      "identifier": "answer448e709d-3913-4a67-9a54-825578816c9d",
+                      "source": "answers"
+                    }
+                  ]
+                },
+                "title": "Total number of employees paid from your business&#39;s payroll"
+              }
+            }
+          ]
+        }
+      ],
+      "enabled": {
+        "when": {
+          "in": [
+            {
+              "identifier": "answerfab4de19-0360-49c0-b3e0-38d00c0ab785",
+              "source": "answers"
+            },
+            [
+              "The business was active with all or part of the activity taking place within Great Britain (GB)"
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "theme": "business",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    },
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    }
+  ],
+  "supplementary_data": {
+    "lists": [
+      "local-units"
+    ]
+  },
+  "post_submission": {
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data (this link opens in a new tab)</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}

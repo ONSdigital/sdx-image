@@ -1,0 +1,292 @@
+{
+  "case_id": "0d0f919c-882f-4082-9f0c-bb242ed715e6",
+  "tx_id": "8073f221-6cbb-4268-b84c-89363484b5a4",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.3",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "8763c04b-6e8c-4f42-b19f-605a41709c43",
+  "flushed": false,
+  "submitted_at": "2024-07-08T08:24:03+00:00",
+  "launch_language_code": "en",
+  "started_at": "2024-07-08T08:04:13.911890+00:00",
+  "submission_language_code": "en",
+  "schema_name": "abres_0019",
+  "survey_metadata": {
+    "survey_id": "221",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "period_id": "201605",
+    "ref_p_start_date": "2016-05-01",
+    "ref_p_end_date": "2016-05-31",
+    "ru_ref": "12345678901A",
+    "user_id": "UNKNOWN",
+    "sds_dataset_id": "60c948a0-8144-63e9-155c-ed13736ca6ac",
+    "form_type": "0019"
+  },
+  "data": [
+    {
+      "questioncode": "9955",
+      "response": "Yes, the business name is correct",
+      "instance": 0
+    },
+    {
+      "questioncode": "9953",
+      "response": "Yes, the business address is correct",
+      "instance": 0
+    },
+    {
+      "questioncode": "9999",
+      "response": "The business was active with all or part of the activity taking place within Great Britain (GB)",
+      "instance": 0
+    },
+    {
+      "questioncode": "9998",
+      "response": "Yes, these numbers are correct",
+      "instance": 0
+    },
+    {
+      "questioncode": "9997",
+      "response": "Yes, these numbers are correct",
+      "instance": 0
+    },
+    {
+      "questioncode": "033",
+      "response": "comment addition VAT question\r\n",
+      "instance": 0
+    },
+    {
+      "questioncode": "051",
+      "response": "10",
+      "instance": 0
+    },
+    {
+      "questioncode": "9940",
+      "response": "Yes, the business operated as a main contractor",
+      "instance": 0
+    },
+    {
+      "questioncode": "090",
+      "response": "2",
+      "instance": 0
+    },
+    {
+      "questioncode": "150",
+      "response": "20",
+      "instance": 0
+    },
+    {
+      "questioncode": "a081",
+      "response": "comments operational status question",
+      "instance": 0
+    },
+    {
+      "questioncode": "9947",
+      "response": "Yes",
+      "instance": 0
+    },
+    {
+      "questioncode": "9963",
+      "response": "No",
+      "instance": 0
+    },
+    {
+      "questioncode": "9951",
+      "response": "Yes, the name of this site is correct",
+      "instance": 1,
+      "sd_identifier": "3340224"
+    },
+    {
+      "questioncode": "9949",
+      "response": "Yes, the address of this site is correct",
+      "instance": 1,
+      "sd_identifier": "3340224"
+    },
+    {
+      "questioncode": "9956",
+      "response": "Yes",
+      "instance": 1,
+      "sd_identifier": "3340224"
+    },
+    {
+      "questioncode": "9952",
+      "response": "The site was active and operated by this business",
+      "instance": 1,
+      "sd_identifier": "3340224"
+    },
+    {
+      "questioncode": "b155",
+      "response": "10",
+      "instance": 1,
+      "sd_identifier": "3340224"
+    },
+    {
+      "questioncode": "b156",
+      "response": "2",
+      "instance": 1,
+      "sd_identifier": "3340224"
+    },
+    {
+      "questioncode": "9948",
+      "response": "Yes. the business activity is correct",
+      "instance": 1,
+      "sd_identifier": "3340224"
+    },
+    {
+      "questioncode": "b081",
+      "response": "additional comments about a site",
+      "instance": 1,
+      "sd_identifier": "3340224"
+    },
+    {
+      "questioncode": "240",
+      "response": "2022-06",
+      "instance": 1
+    },
+    {
+      "questioncode": "c110",
+      "response": "comment main business activitiy",
+      "instance": 1
+    },
+    {
+      "questioncode": "c155",
+      "response": "20",
+      "instance": 1
+    },
+    {
+      "questioncode": "c156",
+      "response": "2",
+      "instance": 1
+    },
+    {
+      "questioncode": "200",
+      "response": "Little small business",
+      "instance": 1
+    },
+    {
+      "questioncode": "210",
+      "response": "Little trading style",
+      "instance": 1
+    },
+    {
+      "questioncode": "9946",
+      "response": "12",
+      "instance": 1
+    },
+    {
+      "questioncode": "9945",
+      "response": "Happy road",
+      "instance": 1
+    },
+    {
+      "questioncode": "9944",
+      "response": "Small town",
+      "instance": 1
+    },
+    {
+      "questioncode": "9941",
+      "response": "PT1 9YT",
+      "instance": 1
+    },
+    {
+      "questioncode": "9951",
+      "response": "Yes, the name of this site is correct",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "9949",
+      "response": "Yes, the address of this site is correct",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "9956",
+      "response": "Yes",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "9952",
+      "response": "The site was active and operated by this business",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "b155",
+      "response": "5",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "b156",
+      "response": "1",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "9948",
+      "response": "Yes. the business activity is correct",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "b081",
+      "response": "additional comments about this site",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    }
+  ],
+  "supplementary_data": {
+    "identifier": "12345678901",
+    "schema_version": "v1",
+    "address": [
+      "SOUTH CERNEY WORKS",
+      "SHAWELL LANE",
+      "BEENHAM",
+      "STAFFS",
+      "BEDFORDSHIRE",
+      "GL4 5YU"
+    ],
+    "employer_paye": {
+      "tax_office_number": "123",
+      "reference": "AB456"
+    },
+    "vat": {
+      "registration_number": "123456789",
+      "subsidiary_identifier": "123"
+    },
+    "items": {
+      "local-units": [
+        {
+          "identifier": "3340224",
+          "address": [
+            "WELLINGTON ROAD",
+            "LOCHMABEN",
+            "SWINDON",
+            "BEDS",
+            "GLOS",
+            "DE41 2WA"
+          ],
+          "trading_name": "STUBBS PRODUCTS",
+          "business_description": "PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES",
+          "name": "STUBBS BUILDING PRODUCTS LTD"
+        },
+        {
+          "identifier": "5567890",
+          "address": [
+            "ELECTRONIC AVENUE",
+            "TECHNO PARK",
+            "CIRCUIT CITY",
+            "ELECTROLAND",
+            "GADGETVILLE",
+            "EL34 5EC"
+          ],
+          "trading_name": "SMITH TECH",
+          "business_description": "ELECTRONICS MANUFACTURING",
+          "name": "SMITH ELECTRONICS"
+        }
+      ]
+    }
+  }
+}

@@ -37,7 +37,7 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 		questions := schema.ListQuestionIds(sectionTitle)
 
 		for _, questionId := range questions {
-			title := schema.GetQuestionTitle(questionId)
+			title := substitutions.Replace(schema.GetQuestionTitle(questionId), lookup)
 			answerIds := schema.ListAnswerIds(questionId)
 
 			for _, answerId := range answerIds {
@@ -45,8 +45,12 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 
 				for _, spec := range answerSpecs {
 					answerQcode := spec.GetCode()
-					answerLabel := spec.GetLabel()
+					answerLabel := substitutions.Replace(spec.GetLabel(), lookup)
 					answerType := spec.GetType()
+
+					for _, unit := range survey.LocalUnits {
+						unit.(*LocalUnit).updateAnswer(answerQcode, title, answerType, answerLabel)
+					}
 
 					responseList := submission.GetResponses(answerQcode)
 					for _, resp := range responseList {
@@ -66,10 +70,10 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 						if value != "" {
 
 							answer := &Answer{
-								Title:    substitutions.Replace(title, lookup),
+								Title:    title,
 								QType:    answerType,
 								QCode:    getQCode(answerQcode, submission.GetDataVersion(), schema.GetSurveyId()),
-								Label:    substitutions.Replace(answerLabel, lookup),
+								Label:    answerLabel,
 								Value:    value,
 								Multiple: len(answerIds) > 1 || len(answerSpecs) > 1,
 							}

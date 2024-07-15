@@ -36,6 +36,20 @@ func (lu *LocalUnit) GetAnswers() []interfaces.Answer {
 	return lu.answers
 }
 
-func (lu *LocalUnit) AddAnswer() []interfaces.Answer {
-	return lu.answers
+func (lu *LocalUnit) updateAnswer(code, title, qType, label string) bool {
+	updated := false
+	for i, answer := range lu.answers {
+		if answer.GetCode() == code {
+			updated = true
+			lu.answers[i] = &Answer{
+				Title:    title,
+				QType:    qType,
+				QCode:    answer.GetCode(),
+				Label:    label,
+				Value:    answer.GetValue(),
+				Multiple: false,
+			}
+		}
+	}
+	return updated
 }
