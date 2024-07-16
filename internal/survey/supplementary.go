@@ -24,6 +24,10 @@ func NewLocalUnit(unit interfaces.LocalUnit) *LocalUnit {
 	return &LocalUnit{unit: unit, answers: answers}
 }
 
+func (lu *LocalUnit) GetIdentifier() string {
+	return lu.unit.GetIdentifier()
+}
+
 func (lu *LocalUnit) GetName() string {
 	return lu.unit.GetName()
 }

@@ -7,6 +7,7 @@ type Answer interface {
 }
 
 type SupplementaryUnit interface {
+	GetIdentifier() string
 	GetName() string
 	GetAddress() string
 	GetAnswers() []Answer

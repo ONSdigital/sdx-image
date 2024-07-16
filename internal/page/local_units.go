@@ -17,6 +17,13 @@ func createUnit(
 	outerContainer.SetBorder(drawing.BLACK, 2)
 	outerContainer.SetPaddingAll(luPadding)
 
+	refLabel := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
+	canvas.AddText("Reference:", questionSize, refLabel)
+
+	ref := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
+	canvas.AddBoldText(lu.GetIdentifier(), answerSize, ref)
+	ref.SetPadding(0, 0, 0, luPadding)
+
 	nameLabel := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
 	canvas.AddText("Name:", questionSize, nameLabel)
 
@@ -35,6 +42,11 @@ func createUnit(
 	}
 
 	for _, answer := range lu.GetAnswers() {
+		text := answer.GetText()
+		if text == "" {
+			//default value if nothing provided
+			text = "Changes"
+		}
 		createAnswer(answer.GetCode(), answer.GetText(), answer.GetValue(), canvas, outerContainer)
 	}
 }

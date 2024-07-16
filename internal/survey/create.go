@@ -48,12 +48,21 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 					answerLabel := substitutions.Replace(spec.GetLabel(), lookup)
 					answerType := spec.GetType()
 
+					usedInLocalUnit := false
 					for _, unit := range survey.LocalUnits {
-						unit.(*LocalUnit).updateAnswer(answerQcode, title, answerType, answerLabel)
+						//add question context to local unit
+						usedInLocalUnit = unit.(*LocalUnit).updateAnswer(answerQcode, title, answerType, answerLabel)
 					}
 
 					responseList := submission.GetResponses(answerQcode)
 					for _, resp := range responseList {
+
+						if resp.GetInstance() > 0 {
+							if usedInLocalUnit {
+								//this response is used in a local unit, so skip it
+								continue
+							}
+						}
 
 						instanceKey := strconv.Itoa(resp.GetInstance())
 						instance, found := instanceMap[instanceKey]
