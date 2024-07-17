@@ -21,7 +21,7 @@
     "ref_p_end_date": "2016-05-31",
     "ru_ref": "12345678901A",
     "user_id": "UNKNOWN",
-    "sds_dataset_id": "60c948a0-8144-63e9-155c-ed13736ca6ac",
+    "sds_dataset_id": "60c948a0-8144-63e9-c155-ed13736ca6ac",
     "form_type": "0019"
   },
   "data": [
@@ -52,12 +52,12 @@
     },
     {
       "questioncode": "033",
-      "response": "comment addition VAT question\r\n",
+      "response": "Additional VAT reference numbers comment",
       "instance": 0
     },
     {
       "questioncode": "051",
-      "response": "10",
+      "response": "5",
       "instance": 0
     },
     {
@@ -67,17 +67,17 @@
     },
     {
       "questioncode": "090",
-      "response": "2",
+      "response": "4",
       "instance": 0
     },
     {
       "questioncode": "150",
-      "response": "20",
+      "response": "42",
       "instance": 0
     },
     {
       "questioncode": "a081",
-      "response": "comments operational status question",
+      "response": "Comments about operational status",
       "instance": 0
     },
     {
@@ -122,7 +122,7 @@
     },
     {
       "questioncode": "b156",
-      "response": "2",
+      "response": "3",
       "instance": 1,
       "sd_identifier": "3340224"
     },
@@ -134,63 +134,64 @@
     },
     {
       "questioncode": "b081",
-      "response": "additional comments about a site",
+      "response": "Any additional comments",
       "instance": 1,
       "sd_identifier": "3340224"
     },
     {
       "questioncode": "240",
-      "response": "2022-06",
+      "response": "2024-05",
       "instance": 1
     },
     {
       "questioncode": "c110",
-      "response": "comment main business activitiy",
+      "response": "Bus 1 main activity",
       "instance": 1
     },
     {
       "questioncode": "c155",
-      "response": "20",
+      "response": "15",
       "instance": 1
     },
     {
       "questioncode": "c156",
-      "response": "2",
+      "response": "1",
       "instance": 1
     },
     {
       "questioncode": "200",
-      "response": "Little small business",
+      "response": "New Business 1",
       "instance": 1
     },
     {
       "questioncode": "210",
-      "response": "Little trading style",
+      "response": "New Business 1",
       "instance": 1
     },
     {
       "questioncode": "9946",
-      "response": "12",
+      "response": "Address 1",
       "instance": 1
     },
     {
       "questioncode": "9945",
-      "response": "Happy road",
-      "instance": 1
-    },
-    {
-      "questioncode": "9944",
-      "response": "Small town",
+      "response": "Address 2",
       "instance": 1
     },
     {
       "questioncode": "9941",
-      "response": "PT1 9YT",
+      "response": "NP12 7RT",
       "instance": 1
     },
     {
       "questioncode": "9951",
-      "response": "Yes, the name of this site is correct",
+      "response": "No, the name of this site is not correct",
+      "instance": 2,
+      "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "9950",
+      "response": "SMITHY ELECTRONICS CO",
       "instance": 2,
       "sd_identifier": "5567890"
     },
@@ -214,13 +215,13 @@
     },
     {
       "questioncode": "b155",
-      "response": "5",
+      "response": "20",
       "instance": 2,
       "sd_identifier": "5567890"
     },
     {
       "questioncode": "b156",
-      "response": "1",
+      "response": "5",
       "instance": 2,
       "sd_identifier": "5567890"
     },
@@ -232,14 +233,100 @@
     },
     {
       "questioncode": "b081",
-      "response": "additional comments about this site",
+      "response": "Comment for Smithy",
       "instance": 2,
       "sd_identifier": "5567890"
+    },
+    {
+      "questioncode": "240",
+      "response": "2024-06",
+      "instance": 2
+    },
+    {
+      "questioncode": "c110",
+      "response": "Bus 2 main activity",
+      "instance": 2
+    },
+    {
+      "questioncode": "c155",
+      "response": "7",
+      "instance": 2
+    },
+    {
+      "questioncode": "c156",
+      "response": "0",
+      "instance": 2
+    },
+    {
+      "questioncode": "200",
+      "response": "New Business 2",
+      "instance": 2
+    },
+    {
+      "questioncode": "210",
+      "response": "New Business 2",
+      "instance": 2
+    },
+    {
+      "questioncode": "9946",
+      "response": "Ad 1",
+      "instance": 2
+    },
+    {
+      "questioncode": "9945",
+      "response": "Ad 2",
+      "instance": 2
+    },
+    {
+      "questioncode": "9944",
+      "response": "Ad 3",
+      "instance": 2
+    },
+    {
+      "questioncode": "9941",
+      "response": "NP12 3QW",
+      "instance": 2
     }
   ],
   "supplementary_data": {
     "identifier": "12345678901",
     "schema_version": "v1",
+    "items": {
+      "local-units": [
+        {
+          "identifier": "3340224",
+          "trading_name": "STUBBS PRODUCTS",
+          "name": "STUBBS BUILDING PRODUCTS LTD",
+          "address": [
+            "WELLINGTON ROAD",
+            "LOCHMABEN",
+            "SWINDON",
+            "BEDS",
+            "GLOS",
+            "DE41 2WA"
+          ],
+          "business_description": "PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES"
+        },
+        {
+          "identifier": "5567890",
+          "trading_name": "SMITH TECH",
+          "name": "SMITH ELECTRONICS",
+          "address": [
+            "ELECTRONIC AVENUE",
+            "TECHNO PARK",
+            "CIRCUIT CITY",
+            "ELECTROLAND",
+            "GADGETVILLE",
+            "EL34 5EC"
+          ],
+          "business_description": "ELECTRONICS MANUFACTURING"
+        }
+      ]
+    },
+    "vat": {
+      "registration_number": "123456789",
+      "subsidiary_identifier": "123"
+    },
     "address": [
       "SOUTH CERNEY WORKS",
       "SHAWELL LANE",
@@ -251,42 +338,6 @@
     "employer_paye": {
       "tax_office_number": "123",
       "reference": "AB456"
-    },
-    "vat": {
-      "registration_number": "123456789",
-      "subsidiary_identifier": "123"
-    },
-    "items": {
-      "local-units": [
-        {
-          "identifier": "3340224",
-          "address": [
-            "WELLINGTON ROAD",
-            "LOCHMABEN",
-            "SWINDON",
-            "BEDS",
-            "GLOS",
-            "DE41 2WA"
-          ],
-          "trading_name": "STUBBS PRODUCTS",
-          "business_description": "PROVIDER OF CONSTRUCTION MATERIALS AND SUPPLIES",
-          "name": "STUBBS BUILDING PRODUCTS LTD"
-        },
-        {
-          "identifier": "5567890",
-          "address": [
-            "ELECTRONIC AVENUE",
-            "TECHNO PARK",
-            "CIRCUIT CITY",
-            "ELECTROLAND",
-            "GADGETVILLE",
-            "EL34 5EC"
-          ],
-          "trading_name": "SMITH TECH",
-          "business_description": "ELECTRONICS MANUFACTURING",
-          "name": "SMITH ELECTRONICS"
-        }
-      ]
     }
   }
 }
