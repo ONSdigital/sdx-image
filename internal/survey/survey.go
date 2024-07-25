@@ -7,6 +7,16 @@ import (
 	"sdxImage/internal/interfaces"
 )
 
+type Instance struct {
+	Id      int
+	Answers []Answer
+}
+
+type Section struct {
+	Title     string
+	Instances []Instance
+}
+
 type Survey struct {
 	Title       string
 	SurveyId    string

@@ -1,9 +1,5 @@
 package schema
 
-import (
-	"sdxImage/internal/interfaces"
-)
-
 type CollectionInstrument struct {
 	title         string
 	surveyId      string
@@ -12,7 +8,7 @@ type CollectionInstrument struct {
 	titleToQidMap map[string][]string
 	qidToQtMap    map[string]string
 	qidToAidMap   map[string][]string
-	answerMap     map[string][]interfaces.AnswerSpec
+	answerMap     map[string][]*AnswerSpec
 }
 
 func (ci *CollectionInstrument) GetTitle() string {
@@ -51,14 +47,14 @@ func (ci *CollectionInstrument) ListAnswerIds(questionId string) []string {
 	return result
 }
 
-func (ci *CollectionInstrument) GetAnswers(answerId string) []interfaces.AnswerSpec {
+func (ci *CollectionInstrument) GetAnswers(answerId string) []*AnswerSpec {
 	answers := ci.answerMap[answerId]
-	result := make([]interfaces.AnswerSpec, len(answers))
+	result := make([]*AnswerSpec, len(answers))
 	copy(result, answers)
 	return result
 }
 
-func CreateInstrument(schemaName string) (interfaces.Schema, error) {
+func CreateInstrument(schemaName string) (*CollectionInstrument, error) {
 	schema, err := Read(schemaName)
 	if err != nil {
 		return nil, err

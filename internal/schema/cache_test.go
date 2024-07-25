@@ -1,13 +1,12 @@
 package schema
 
 import (
-	"sdxImage/internal/interfaces"
 	"sdxImage/internal/test"
 	"testing"
 	"time"
 )
 
-func fakeSchemaCreator(guid string) (interfaces.Schema, error) {
+func fakeSchemaCreator(guid string) (*CollectionInstrument, error) {
 	return &CollectionInstrument{
 		title:         "",
 		surveyId:      guid,
@@ -22,7 +21,7 @@ func fakeSchemaCreator(guid string) (interfaces.Schema, error) {
 
 func TestCache(t *testing.T) {
 	cache := NewCache(3, fakeSchemaCreator)
-	var s interfaces.Schema
+	var s *CollectionInstrument
 
 	s, _ = cache.GetSchema("001")
 	time.Sleep(10 * time.Millisecond)

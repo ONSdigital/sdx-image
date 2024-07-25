@@ -1,7 +1,6 @@
 package schema
 
 import (
-	"sdxImage/internal/interfaces"
 	"sdxImage/internal/log"
 	"sync"
 	"time"
@@ -9,12 +8,12 @@ import (
 
 var mu sync.Mutex
 
-type CreatorFunc func(string) (interfaces.Schema, error)
+type CreatorFunc func(string) (*CollectionInstrument, error)
 
 type Cache struct {
 	size         int
 	createSchema CreatorFunc
-	instruments  map[string]interfaces.Schema
+	instruments  map[string]*CollectionInstrument
 	lastUsed     map[string]int64
 }
 
@@ -22,11 +21,11 @@ func NewCache(size int, createSchema CreatorFunc) *Cache {
 	return &Cache{
 		size:         size,
 		createSchema: createSchema,
-		instruments:  make(map[string]interfaces.Schema, size),
+		instruments:  make(map[string]*CollectionInstrument, size),
 		lastUsed:     make(map[string]int64, size)}
 }
 
-func (cache *Cache) GetSchema(schemaName string) (interfaces.Schema, error) {
+func (cache *Cache) GetSchema(schemaName string) (*CollectionInstrument, error) {
 	mu.Lock()
 	defer mu.Unlock()
 
@@ -66,7 +65,7 @@ func (cache *Cache) contains(guid string) bool {
 
 // getInstrument returns the schema associated with the guid
 // and records/overwrites the previous last used time.
-func (cache *Cache) getInstrument(guid string) interfaces.Schema {
+func (cache *Cache) getInstrument(guid string) *CollectionInstrument {
 	cache.lastUsed[guid] = time.Now().UnixMilli()
 	return cache.instruments[guid]
 }

@@ -1,7 +1,6 @@
 package schema
 
 import (
-	"sdxImage/internal/interfaces"
 	"sdxImage/internal/test"
 	"testing"
 )
@@ -26,7 +25,7 @@ func getTestInstrument() *CollectionInstrument {
 			"qId2": {"aId2"},
 			"qId3": {"aId3", "aId4"},
 		},
-		answerMap: map[string][]interfaces.AnswerSpec{
+		answerMap: map[string][]*AnswerSpec{
 			"aId1": {&AnswerSpec{"Number", "001", "Employee Count"}},
 			"aId2": {&AnswerSpec{"Checkbox", "002", "Products"}},
 			"aId3": {&AnswerSpec{"Radio", "003", "Gender"}},

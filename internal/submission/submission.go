@@ -3,7 +3,6 @@ package submission
 import (
 	"encoding/json"
 	"fmt"
-	"sdxImage/internal/interfaces"
 )
 
 type SurveyMetaData struct {
@@ -14,7 +13,7 @@ type SurveyMetaData struct {
 	EmploymentDate string `json:"employment_date"`
 }
 
-type V2Submission struct {
+type Submission struct {
 	TxId           string          `json:"tx_id"`
 	SchemaName     string          `json:"schema_name"`
 	SurveyMetadata *SurveyMetaData `json:"survey_metadata"`
@@ -25,65 +24,49 @@ type V2Submission struct {
 	Supplementary  Supplementary   `json:"supplementary_data"`
 }
 
-func (submission *V2Submission) GetTxId() string {
+func (submission *Submission) GetTxId() string {
 	return submission.TxId
 }
 
-func (submission *V2Submission) GetSchemaName() string {
+func (submission *Submission) GetSchemaName() string {
 	return submission.SchemaName
 }
 
-func (submission *V2Submission) GetRuRef() string {
+func (submission *Submission) GetRuRef() string {
 	return submission.SurveyMetadata.RuRef
 }
 
-func (submission *V2Submission) GetRuName() string {
+func (submission *Submission) GetRuName() string {
 	return submission.SurveyMetadata.RuName
 }
-func (submission *V2Submission) GetSubmittedAt() string {
+func (submission *Submission) GetSubmittedAt() string {
 	return submission.SubmittedAt
 }
 
-func (submission *V2Submission) GetStartDate() string {
+func (submission *Submission) GetStartDate() string {
 	return submission.SurveyMetadata.StartDate
 }
 
-func (submission *V2Submission) GetEndDate() string {
+func (submission *Submission) GetEndDate() string {
 	return submission.SurveyMetadata.EndDate
 }
 
-func (submission *V2Submission) GetDataVersion() string {
+func (submission *Submission) GetDataVersion() string {
 	return submission.DataVersion
 }
 
-func (submission *V2Submission) GetEmploymentDate() string {
+func (submission *Submission) GetEmploymentDate() string {
 	if submission.SurveyMetadata.EmploymentDate == "" {
 		return "the date of employment"
 	}
 	return submission.SurveyMetadata.EmploymentDate
 }
 
-func (submission *V2Submission) GetResponses(code string) []interfaces.Response {
+func (submission *Submission) GetResponses(code string) []Response {
 	return submission.Data[code]
 }
 
-func (submission *V2Submission) GetLocalUnits() []interfaces.LocalUnit {
-	luList := make([]interfaces.LocalUnit, len(submission.Supplementary.Items.LocalUnits))
-	for i, lu := range submission.Supplementary.Items.LocalUnits {
-		unit := NewUnit(*lu)
-		for _, responseList := range submission.Data {
-			for _, response := range responseList {
-				if response.GetSdIdentifier() == unit.GetIdentifier() {
-					unit.AddResponses(response)
-				}
-			}
-		}
-		luList[i] = unit
-	}
-	return luList
-}
-
-func (submission *V2Submission) String() string {
+func (submission *Submission) String() string {
 	b, err := json.MarshalIndent(submission, "", "  ")
 	if err != nil {
 		fmt.Println("error:", err)

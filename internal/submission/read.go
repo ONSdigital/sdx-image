@@ -4,33 +4,19 @@ package submission
 import (
 	"encoding/json"
 	"fmt"
-	"sdxImage/internal/interfaces"
 	"sdxImage/internal/log"
 )
 
 // Read transforms a submission's raw bytes into an
 // instance that implements interfaces.Submission
-func Read(bytes []byte) (interfaces.Submission, error) {
-	submission := &V2Submission{}
+func Read(bytes []byte) (*Submission, error) {
+	submission := &Submission{}
 	err := json.Unmarshal(bytes, submission)
 	if err != nil {
 		log.Info(fmt.Sprintf("failed to read file with error: %q", err))
-		return readV1(bytes)
-	}
-	if submission.Version != "v2" {
-		return readV1(bytes)
+		return nil, err
 	}
 	return submission, nil
-}
-
-func readV1(bytes []byte) (interfaces.Submission, error) {
-	v1 := &V1Submission{}
-	err := json.Unmarshal(bytes, v1)
-	if err != nil {
-		log.Error("Failed to convert submission bytes to map", err)
-		return nil, &Exception{Msg: err.Error()}
-	}
-	return v1, nil
 }
 
 type Exception struct {

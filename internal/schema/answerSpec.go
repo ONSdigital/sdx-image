@@ -1,16 +1,14 @@
 package schema
 
-import "sdxImage/internal/interfaces"
-
 type AnswerSpec struct {
 	AnswerType string
 	QCode      string
 	Label      string
 }
 
-func getAnswerSpecs(answer *Answer) []interfaces.AnswerSpec {
+func getAnswerSpecs(answer *Answer) []*AnswerSpec {
 	if answer.AnswerType == "Checkbox" {
-		result := make([]interfaces.AnswerSpec, len(answer.Options))
+		result := make([]*AnswerSpec, len(answer.Options))
 
 		used := false
 		for i, option := range answer.Options {
@@ -27,7 +25,7 @@ func getAnswerSpecs(answer *Answer) []interfaces.AnswerSpec {
 		}
 		return result
 	}
-	return []interfaces.AnswerSpec{&AnswerSpec{
+	return []*AnswerSpec{{
 		AnswerType: answer.AnswerType,
 		QCode:      answer.Qcode,
 		Label:      string(answer.Label),

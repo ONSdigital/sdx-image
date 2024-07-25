@@ -6,11 +6,11 @@ import (
 
 type LocalUnit struct {
 	unit    interfaces.LocalUnit
-	answers []interfaces.Answer
+	answers []*Answer
 }
 
 func NewLocalUnit(unit interfaces.LocalUnit) *LocalUnit {
-	answers := make([]interfaces.Answer, len(unit.GetResponses()))
+	answers := make([]*Answer, len(unit.GetResponses()))
 	for i, response := range unit.GetResponses() {
 		answers[i] = &Answer{
 			Title:    "",
@@ -36,7 +36,7 @@ func (lu *LocalUnit) GetAddress() string {
 	return lu.unit.GetAddress()
 }
 
-func (lu *LocalUnit) GetAnswers() []interfaces.Answer {
+func (lu *LocalUnit) GetAnswers() []*Answer {
 	return lu.answers
 }
 

@@ -23,35 +23,8 @@ func readFile(filename string) ([]byte, error) {
 	return bytes, nil
 }
 
-func TestV1AbsSubmission(t *testing.T) {
-	test.SetCwdToRoot()
-	filename := "v1/abs_1808"
-	fileBytes, e := readFile(filename)
-	if e != nil {
-		t.Errorf("failed to read file %v with error: %q", filename, e.Error())
-	}
-	result, err := Read(fileBytes)
-	if err != nil {
-		t.Errorf("failed to convert file %v with error: %q", filename, err.Error())
-	}
-	fmt.Println(result)
-}
-
-func TestV1BerdSubmission(t *testing.T) {
-	test.SetCwdToRoot()
-	filename := "v1/berd_0001"
-	fileBytes, e := readFile(filename)
-	if e != nil {
-		t.Errorf("failed to read file %v with error: %q", filename, e.Error())
-	}
-	result, err := Read(fileBytes)
-	if err != nil {
-		t.Errorf("failed to convert file %v with error: %q", filename, err.Error())
-	}
-	fmt.Println(result)
-}
-
-func TestV2AbsSubmission(t *testing.T) {
+func TestAbsSubmission(t *testing.T) {
+	//Data version  0.0.1
 	test.SetCwdToRoot()
 	filename := "abs_1802"
 	fileBytes, e := readFile(filename)
@@ -65,9 +38,25 @@ func TestV2AbsSubmission(t *testing.T) {
 	fmt.Println(result)
 }
 
-func TestV2BerdSubmission(t *testing.T) {
+func TestBerdSubmission(t *testing.T) {
+	//Data version  0.0.3
 	test.SetCwdToRoot()
 	filename := "berd_0001"
+	fileBytes, e := readFile(filename)
+	if e != nil {
+		t.Errorf("failed to read file %v with error: %q", filename, e.Error())
+	}
+	result, err := Read(fileBytes)
+	if err != nil {
+		t.Errorf("failed to convert file %v with error: %q", filename, err.Error())
+	}
+	fmt.Println(result)
+}
+
+func TestBresSubmission(t *testing.T) {
+	//Supplementary Data and Data version  0.0.3
+	test.SetCwdToRoot()
+	filename := "bres_0019"
 	fileBytes, e := readFile(filename)
 	if e != nil {
 		t.Errorf("failed to read file %v with error: %q", filename, e.Error())

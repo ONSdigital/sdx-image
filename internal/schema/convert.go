@@ -1,7 +1,6 @@
 package schema
 
 import (
-	"sdxImage/internal/interfaces"
 	"slices"
 )
 
@@ -57,8 +56,8 @@ func getQidToAidMap(titleToQidMap map[string][]string, schema *Schema) map[strin
 	return result
 }
 
-func getAnswerMap(qidToAidMap map[string][]string, schema *Schema) map[string][]interfaces.AnswerSpec {
-	result := make(map[string][]interfaces.AnswerSpec)
+func getAnswerMap(qidToAidMap map[string][]string, schema *Schema) map[string][]*AnswerSpec {
+	result := make(map[string][]*AnswerSpec)
 	for _, aidList := range qidToAidMap {
 		for _, aid := range aidList {
 			result[aid] = getAnswers(aid, schema)
@@ -123,7 +122,7 @@ func listAnswers(questionId string, schema *Schema) []string {
 
 const LoopingDataVersion = "0.0.3"
 
-func getAnswers(answerId string, schema *Schema) []interfaces.AnswerSpec {
+func getAnswers(answerId string, schema *Schema) []*AnswerSpec {
 	for _, section := range schema.Sections {
 		for _, group := range section.Groups {
 			for _, block := range group.getBlocks() {
