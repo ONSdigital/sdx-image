@@ -1,14 +1,19 @@
 package survey
 
 import (
-	"sdxImage/internal/interfaces"
+	"sdxImage/internal/schema"
+	s "sdxImage/internal/submission"
 	"sdxImage/internal/substitutions"
 	"strconv"
 )
 
-func Create(schema interfaces.Schema, submission interfaces.Submission) interfaces.Survey {
+func Create(schema *schema.CollectionInstrument, submission *s.Submission) *Survey {
 
-	lookup := substitutions.GetLookup(submission.GetStartDate(), submission.GetEndDate(), submission.GetRuName(), submission.GetEmploymentDate())
+	lookup := substitutions.GetLookup(
+		submission.GetStartDate(),
+		submission.GetEndDate(),
+		submission.GetRuName(),
+		submission.GetEmploymentDate())
 
 	survey := &Survey{
 		Title:       schema.GetTitle(),
@@ -17,21 +22,21 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 		Respondent:  submission.GetRuRef(),
 		RuName:      submission.GetRuName(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
-		Sections:    []interfaces.Section{},
-		LocalUnits:  make([]interfaces.SupplementaryUnit, len(submission.GetLocalUnits())),
+		Sections:    []*Section{},
+		LocalUnits:  make([]*LocalUnit, len(submission.GetSupplementaryUnits())),
 	}
 
-	for i, lu := range submission.GetLocalUnits() {
-		unit := NewLocalUnit(lu)
+	for i, lu := range submission.GetSupplementaryUnits() {
+		unit := NewLocalUnit(lu, submission)
 		survey.LocalUnits[i] = unit
 	}
 
-	var sections []interfaces.Section
+	var sections []*Section
 	for _, sectionTitle := range schema.ListTitles() {
 		hasAnswerValue := false
 		section := &Section{
 			Title:     substitutions.Replace(sectionTitle, lookup),
-			Instances: []interfaces.Instance{},
+			Instances: []*Instance{},
 		}
 		instanceMap := map[string]*Instance{}
 		questions := schema.ListQuestionIds(sectionTitle)
@@ -51,7 +56,7 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 					usedInLocalUnit := false
 					for _, unit := range survey.LocalUnits {
 						//add question context to local unit
-						usedInLocalUnit = unit.(*LocalUnit).updateAnswer(answerQcode, title, answerType, answerLabel)
+						usedInLocalUnit = unit.updateAnswer(answerQcode, title, answerType, answerLabel)
 					}
 
 					responseList := submission.GetResponses(answerQcode)
@@ -69,7 +74,7 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 						if !found {
 							instance = &Instance{
 								Id:      resp.GetInstance(),
-								Answers: []interfaces.Answer{},
+								Answers: []*Answer{},
 							}
 							instanceMap[instanceKey] = instance
 							section.Instances = append(section.Instances, instance)

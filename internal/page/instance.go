@@ -2,7 +2,7 @@ package page
 
 import (
 	"sdxImage/internal/drawing"
-	"sdxImage/internal/interfaces"
+	"sdxImage/internal/survey"
 )
 
 const indent = 10
@@ -34,6 +34,6 @@ func (instance *Instance) addAnswer(qCode, question, answer string) {
 	createAnswer(qCode, question, answer, instance.canvas, instance.container)
 }
 
-func (instance *Instance) addLocalUnit(lu interfaces.SupplementaryUnit) {
+func (instance *Instance) addLocalUnit(lu *survey.LocalUnit) {
 	createUnit(lu, instance.canvas, instance.container)
 }

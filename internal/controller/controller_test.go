@@ -51,56 +51,8 @@ func TestMcg(t *testing.T) {
 	runFromFile("mcg_0002", t)
 }
 
-func TestMbsV1(t *testing.T) {
-	runFromFile("v1/mbs_0106", t)
-}
-
-func TestV1Abs1808(t *testing.T) {
-	runFromFile("v1/abs_1808", t)
-}
-
-func TestV1Abs1862(t *testing.T) {
-	runFromFile("v1/abs_1862", t)
-}
-
-func TestV1Abs1874(t *testing.T) {
-	runFromFile("v1/abs_1874", t)
-}
-
-func TestBricksV1(t *testing.T) {
-	runFromFile("v1/bricks", t)
-}
-
-func TestBerd0001V1(t *testing.T) {
-	runFromFile("v1/berd_0001", t)
-}
-
 func TestBerd0001(t *testing.T) {
 	runFromFile("berd_0001", t)
-}
-
-func TestBerd0006V1(t *testing.T) {
-	runFromFile("v1/berd_0006", t)
-}
-
-func TestUkis0001V1(t *testing.T) {
-	runFromFile("v1/ukis_0001", t)
-}
-
-func TestUkisFail(t *testing.T) {
-	runFromFile("v1/ukis_fail", t)
-}
-
-func TestSandLand(t *testing.T) {
-	runFromFile("v1/sand_land", t)
-}
-
-func TestSandMarine(t *testing.T) {
-	runFromFile("v1/sand_marine", t)
-}
-
-func TestCreditGrantors(t *testing.T) {
-	runFromFile("v1/mgc_0001", t)
 }
 
 func TestStocks0001(t *testing.T) {

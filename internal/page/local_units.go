@@ -2,13 +2,13 @@ package page
 
 import (
 	"sdxImage/internal/drawing"
-	"sdxImage/internal/interfaces"
+	"sdxImage/internal/survey"
 )
 
 const luPadding = 30
 
 func createUnit(
-	lu interfaces.SupplementaryUnit,
+	lu *survey.LocalUnit,
 	canvas *drawing.Canvas,
 	parent *drawing.Container) {
 

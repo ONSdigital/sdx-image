@@ -66,6 +66,10 @@ func (submission *Submission) GetResponses(code string) []Response {
 	return submission.Data[code]
 }
 
+func (submission *Submission) GetSupplementaryUnits() []SupplementaryUnit {
+	return submission.Supplementary.Items.LocalUnits
+}
+
 func (submission *Submission) String() string {
 	b, err := json.MarshalIndent(submission, "", "  ")
 	if err != nil {

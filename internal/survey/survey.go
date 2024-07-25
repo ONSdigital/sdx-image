@@ -4,17 +4,16 @@ package survey
 import (
 	"encoding/json"
 	"fmt"
-	"sdxImage/internal/interfaces"
 )
 
 type Instance struct {
 	Id      int
-	Answers []Answer
+	Answers []*Answer
 }
 
 type Section struct {
 	Title     string
-	Instances []Instance
+	Instances []*Instance
 }
 
 type Survey struct {
@@ -24,8 +23,8 @@ type Survey struct {
 	Respondent  string
 	RuName      string
 	SubmittedAt string
-	Sections    []interfaces.Section
-	LocalUnits  []interfaces.SupplementaryUnit
+	Sections    []*Section
+	LocalUnits  []*LocalUnit
 }
 
 func (survey *Survey) String() string {
@@ -34,36 +33,4 @@ func (survey *Survey) String() string {
 		fmt.Println("error:", err)
 	}
 	return string(b)
-}
-
-func (survey *Survey) GetTitle() string {
-	return survey.Title
-}
-
-func (survey *Survey) GetSurveyId() string {
-	return survey.SurveyId
-}
-
-func (survey *Survey) GetFormType() string {
-	return survey.FormType
-}
-
-func (survey *Survey) GetRespondent() string {
-	return survey.Respondent
-}
-
-func (survey *Survey) GetRuName() string {
-	return survey.RuName
-}
-
-func (survey *Survey) GetSubmittedAt() string {
-	return survey.SubmittedAt
-}
-
-func (survey *Survey) GetSections() []interfaces.Section {
-	return survey.Sections
-}
-
-func (survey *Survey) GetLocalUnits() []interfaces.SupplementaryUnit {
-	return survey.LocalUnits
 }
