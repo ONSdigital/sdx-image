@@ -8,7 +8,7 @@ import (
 const luPadding = 30
 
 func createUnit(
-	lu *survey.LocalUnit,
+	lu *survey.Unit,
 	canvas *drawing.Canvas,
 	parent *drawing.Container) {
 

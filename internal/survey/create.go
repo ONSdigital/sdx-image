@@ -23,12 +23,15 @@ func Create(schema *schema.CollectionInstrument, submission *s.Submission) *Surv
 		RuName:      submission.GetRuName(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
 		Sections:    []*Section{},
-		LocalUnits:  make([]*LocalUnit, len(submission.GetSupplementaryUnits())),
+		Units:       []Unit{},
 	}
 
-	for i, lu := range submission.GetSupplementaryUnits() {
-		unit := NewLocalUnit(lu, submission)
-		survey.LocalUnits[i] = unit
+	for _, lu := range GetExistingUnits(submission) {
+		survey.Units = append(survey.Units, lu)
+	}
+
+	for _, lu := range GetNewUnits("additional_sites_name", submission) {
+		survey.Units = append(survey.Units, lu)
 	}
 
 	var sections []*Section
@@ -54,17 +57,17 @@ func Create(schema *schema.CollectionInstrument, submission *s.Submission) *Surv
 					answerType := spec.GetType()
 
 					usedInLocalUnit := false
-					for _, unit := range survey.LocalUnits {
-						//add question context to local unit
-						usedInLocalUnit = unit.updateAnswer(answerQcode, title, answerType, answerLabel)
+					for _, unit := range survey.Units {
+						//add question context to local localUnit
+						usedInLocalUnit = unit.UpdateContext(answerQcode, title, answerType, answerLabel)
 					}
 
-					responseList := submission.GetResponses(answerQcode)
+					responseMap := submission.GetResponses(answerQcode)
 					for _, resp := range responseList {
 
 						if resp.GetInstance() > 0 {
 							if usedInLocalUnit {
-								//this response is used in a local unit, so skip it
+								//this response is used in a local localUnit, so skip it
 								continue
 							}
 						}

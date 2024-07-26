@@ -24,7 +24,7 @@ type Survey struct {
 	RuName      string
 	SubmittedAt string
 	Sections    []*Section
-	LocalUnits  []*LocalUnit
+	Units       []Unit
 }
 
 func (survey *Survey) String() string {

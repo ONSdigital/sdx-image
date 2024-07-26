@@ -27,10 +27,10 @@ func Create(survey *s.Survey) image.Image {
 		section.complete()
 	}
 
-	if len(survey.LocalUnits) != 0 {
+	if len(survey.Units) != 0 {
 		section := page.addSection("Local Units")
 		instance := section.addInstance(0)
-		for _, lu := range survey.LocalUnits {
+		for _, lu := range survey.Units {
 			instance.addLocalUnit(lu)
 		}
 		section.complete()

@@ -34,6 +34,6 @@ func (instance *Instance) addAnswer(qCode, question, answer string) {
 	createAnswer(qCode, question, answer, instance.canvas, instance.container)
 }
 
-func (instance *Instance) addLocalUnit(lu *survey.LocalUnit) {
+func (instance *Instance) addLocalUnit(lu *survey.Unit) {
 	createUnit(lu, instance.canvas, instance.container)
 }

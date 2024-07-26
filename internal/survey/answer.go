@@ -13,6 +13,17 @@ type Answer struct {
 	Multiple bool
 }
 
+func NewAnswer(qCode, value string) *Answer {
+	return &Answer{QCode: qCode, Value: value}
+}
+
+func (answer *Answer) SetContext(title, qtype, label string, multiple bool) {
+	answer.Title = title
+	answer.QType = qtype
+	answer.Label = label
+	answer.Multiple = multiple
+}
+
 func (answer *Answer) GetCode() string {
 	return answer.QCode
 }
