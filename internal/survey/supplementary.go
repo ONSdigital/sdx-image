@@ -5,11 +5,11 @@ import (
 )
 
 type LocalUnit struct {
-	unit    s.SupplementaryUnit
+	unit    s.LocalUnit
 	answers []*Answer
 }
 
-func NewLocalUnit(unit s.SupplementaryUnit, submission *s.Submission) *LocalUnit {
+func NewLocalUnit(unit s.LocalUnit, submission *s.Submission) *LocalUnit {
 	responses := unit.GetAssociatedResponses(submission)
 	answers := make([]*Answer, len(responses))
 	for i, response := range responses {

@@ -2,42 +2,76 @@ package submission
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-type Response struct {
-	Code         string `json:"questioncode"`
-	Value        string `json:"response"`
-	Instance     int    `json:"instance"`
-	SdIdentifier string `json:"sd_identifier"`
+type Answer struct {
+	Id         string      `json:"answer_id"`
+	Value      interface{} `json:"value"`
+	ListItemId string      `json:"list_item_id"`
 }
 
-type Data map[string][]Response
+type Answers []Answer
+
+type SdMapping struct {
+	Id         string `json:"identifier"`
+	ListItemId string `json:"list_item_id"`
+}
+
+type List struct {
+	Items      []string    `json:"items"`
+	Name       string      `json:"name"`
+	SdMappings []SdMapping `json:"supplementary_data_mappings"`
+}
+
+type Lists []List
+
+type AnswerCode struct {
+	Id   string `json:"answer_id"`
+	Code string `json:"code"`
+}
+
+type AnswerCodes []AnswerCode
+
+type ListData struct {
+	Answers       Answers       `json:"answers"`
+	Lists         Lists         `json:"lists"`
+	AnswerCodes   AnswerCodes   `json:"answer_codes"`
+	Supplementary Supplementary `json:"supplementary_data"`
+}
+
+type MapData map[string]string
+
+type DataType string
+
+const (
+	ListDataType DataType = "list"
+	MapDataType  DataType = "map"
+)
+
+type Data struct {
+	DataType
+	ListData
+	MapData
+}
 
 func (data *Data) UnmarshalJSON(bytes []byte) error {
 	m := map[string]string{}
 	err := json.Unmarshal(bytes, &m)
 	if err == nil {
-		*data = make(map[string][]Response, len(m))
-		for k, v := range m {
-			(*data)[k] = []Response{{
-				Code:         k,
-				Value:        v,
-				Instance:     0,
-				SdIdentifier: "",
-			}}
+		*data = Data{
+			DataType: MapDataType,
+			ListData: ListData{},
+			MapData:  m,
 		}
 	} else {
-		var respList []Response
-		err = json.Unmarshal(bytes, &respList)
+		var listData ListData
+		err = json.Unmarshal(bytes, &listData)
 		if err == nil {
-			*data = make(map[string][]Response)
-			for _, v := range respList {
-				if instList, found := (*data)[v.Code]; found {
-					instList = append(instList, v)
-					(*data)[v.Code] = instList
-				} else {
-					(*data)[v.Code] = []Response{v}
-				}
+			*data = Data{
+				DataType: ListDataType,
+				ListData: listData,
+				MapData:  MapData{},
 			}
 		} else {
 			return err
@@ -46,18 +80,69 @@ func (data *Data) UnmarshalJSON(bytes []byte) error {
 	return nil
 }
 
-func (response *Response) GetCode() string {
-	return response.Code
+func (a *Answer) getValue() string {
+	switch v := a.Value.(type) {
+	case string:
+		return v
+	case int:
+		return fmt.Sprintf("%d", v)
+	default:
+		return ""
+	}
 }
 
-func (response *Response) GetValue() string {
-	return response.Value
+func (listData *ListData) getCode(answerId string) string {
+	for _, answerCode := range listData.AnswerCodes {
+		if answerCode.Id == answerId {
+			return answerCode.Code
+		}
+	}
+	return ""
 }
 
-func (response *Response) GetInstance() int {
-	return response.Instance
+func (listData *ListData) getListItemNames() []string {
+	var names []string
+	for _, list := range listData.Lists {
+		names = append(names, list.Name)
+	}
+	return names
 }
 
-func (response *Response) GetSdIdentifier() string {
-	return response.SdIdentifier
+func (listData *ListData) getListItemIds(name string) []string {
+	for _, list := range listData.Lists {
+		if list.Name == name {
+			return list.Items
+		}
+	}
+	return nil
+}
+
+func (listData *ListData) getResponses(listItemId string) map[string]string {
+	responses := make(map[string]string)
+	for _, answer := range listData.Answers {
+		if answer.ListItemId == listItemId {
+			code := listData.getCode(answer.Id)
+			responses[code] = answer.getValue()
+		}
+	}
+	return responses
+}
+
+func (listData *ListData) getLocalUnit(listItemId string) *LocalUnit {
+	var sdMapping string
+	for _, list := range listData.Lists {
+		for _, mapping := range list.SdMappings {
+			if mapping.ListItemId == listItemId {
+				sdMapping = mapping.Id
+			}
+		}
+	}
+
+	for _, localUnit := range listData.Supplementary.Items.LocalUnits {
+		if localUnit.Identifier == sdMapping {
+			return localUnit
+		}
+	}
+
+	return nil
 }
