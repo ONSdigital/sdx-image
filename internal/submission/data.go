@@ -108,6 +108,17 @@ func (listData *ListData) getListItemNames() []string {
 	return names
 }
 
+func (listData *ListData) getListItemName(listItemId string) string {
+	for _, list := range listData.Lists {
+		for _, listItem := range list.Items {
+			if listItem == listItemId {
+				return list.Name
+			}
+		}
+	}
+	return ""
+}
+
 func (listData *ListData) getListItemIds(name string) []string {
 	for _, list := range listData.Lists {
 		if list.Name == name {

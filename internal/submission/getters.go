@@ -38,6 +38,13 @@ func (submission *Submission) GetDataType() DataType {
 	return submission.Data.DataType
 }
 
+func (submission *Submission) GetListItemName(listItemId string) string {
+	if submission.GetDataType() == ListDataType {
+		return submission.Data.getListItemName(listItemId)
+	}
+	return ""
+}
+
 func (submission *Submission) GetListItemNames() []string {
 	if submission.GetDataType() == ListDataType {
 		return submission.Data.getListItemNames()
@@ -63,6 +70,19 @@ func (submission *Submission) GetResponseForListId(listItemId string) map[string
 type ResponseMap map[string]map[string]string
 
 func (submission *Submission) GetResponses() ResponseMap {
+	if submission.GetDataType() == MapDataType {
+		return ResponseMap{NonListItem: submission.Data.MapData}
+	}
+	listItemIds := submission.Data.getAllListItemIds()
+	responses := ResponseMap{}
+	for _, listItemId := range listItemIds {
+		responses[listItemId] = submission.Data.ListData.getResponses(listItemId)
+	}
+	responses[NonListItem] = submission.Data.ListData.getResponses("")
+	return responses
+}
+
+func (submission *Submission) GetNonUnitResponses() ResponseMap {
 	if submission.GetDataType() == MapDataType {
 		return ResponseMap{NonListItem: submission.Data.MapData}
 	}

@@ -37,6 +37,12 @@ func Create(schema *schema.CollectionInstrument, submission *s.Submission) *Surv
 	}
 
 	responseMap := submission.GetResponses()
+	for listItemId := range responseMap {
+		name := submission.GetListItemName(listItemId)
+		if name == AdditionalSites || name == ListName {
+			delete(responseMap, listItemId)
+		}
+	}
 
 	var sections []*Section
 
@@ -75,14 +81,9 @@ func Create(schema *schema.CollectionInstrument, submission *s.Submission) *Surv
 						answerLabel := substitutions.Replace(spec.GetLabel(), lookup)
 						answerType := spec.GetType()
 
-						usedInLocalUnit := false
 						for _, unit := range survey.Units {
 							//add question context to local localUnit
-							usedInLocalUnit = unit.UpdateContext(answerQcode, title, answerType, answerLabel)
-						}
-
-						if usedInLocalUnit {
-							continue
+							unit.UpdateContext(answerQcode, title, answerType, answerLabel)
 						}
 
 						value := data[answerQcode]
