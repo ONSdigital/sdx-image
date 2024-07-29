@@ -4,7 +4,7 @@ import (
 	s "sdxImage/internal/submission"
 )
 
-const ListName = "local_units"
+const ListName = "local-units"
 
 type Unit interface {
 	GetIdentifier() string
@@ -33,7 +33,7 @@ func GetExistingUnits(submission *s.Submission) []*ExistingUnit {
 		localUnit := submission.GetLocalUnit(listItemId)
 		if localUnit != nil {
 			var answers []*Answer
-			for code, value := range submission.GetResponses(listItemId) {
+			for code, value := range submission.GetResponseForListId(listItemId) {
 				answers = append(answers, NewAnswer(code, value))
 			}
 			units = append(units, NewExistingUnit(localUnit, answers))
@@ -47,7 +47,7 @@ func GetNewUnits(listName string, submission *s.Submission) []*NewUnit {
 	var units []*NewUnit
 	for _, listItemId := range submission.GetListItemIds(listName) {
 		var answers []*Answer
-		for code, value := range submission.GetResponses(listItemId) {
+		for code, value := range submission.GetResponseForListId(listItemId) {
 			answers = append(answers, NewAnswer(code, value))
 		}
 		units = append(units, &NewUnit{answers: answers})

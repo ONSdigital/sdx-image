@@ -186,3 +186,11 @@ func TestMarine(t *testing.T) {
 func TestBres(t *testing.T) {
 	runFromFile("bres_0019", t)
 }
+
+func TestFullBres(t *testing.T) {
+	runFromFile("221.0019", t)
+}
+
+func TestMbs0167new(t *testing.T) {
+	runFromFile("mbs_0167", t)
+}

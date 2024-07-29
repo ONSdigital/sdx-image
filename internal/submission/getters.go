@@ -1,5 +1,7 @@
 package submission
 
+const NonListItem = "non_list_item"
+
 func (submission *Submission) GetTxId() string {
 	return submission.TxId
 }
@@ -50,11 +52,27 @@ func (submission *Submission) GetListItemIds(name string) []string {
 	return nil
 }
 
-func (submission *Submission) GetResponses(listItemId string) map[string]string {
+func (submission *Submission) GetResponseForListId(listItemId string) map[string]string {
 	if submission.GetDataType() == MapDataType {
 		return submission.Data.MapData
 	}
+
 	return submission.Data.ListData.getResponses(listItemId)
+}
+
+type ResponseMap map[string]map[string]string
+
+func (submission *Submission) GetResponses() ResponseMap {
+	if submission.GetDataType() == MapDataType {
+		return ResponseMap{NonListItem: submission.Data.MapData}
+	}
+	listItemIds := submission.Data.getAllListItemIds()
+	responses := ResponseMap{}
+	for _, listItemId := range listItemIds {
+		responses[listItemId] = submission.Data.ListData.getResponses(listItemId)
+	}
+	responses[NonListItem] = submission.Data.ListData.getResponses("")
+	return responses
 }
 
 func (submission *Submission) GetLocalUnit(listItemId string) *LocalUnit {

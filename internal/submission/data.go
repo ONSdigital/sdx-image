@@ -117,6 +117,14 @@ func (listData *ListData) getListItemIds(name string) []string {
 	return nil
 }
 
+func (listData *ListData) getAllListItemIds() []string {
+	var listItems []string
+	for _, list := range listData.Lists {
+		listItems = append(listItems, list.Items...)
+	}
+	return listItems
+}
+
 func (listData *ListData) getResponses(listItemId string) map[string]string {
 	responses := make(map[string]string)
 	for _, answer := range listData.Answers {

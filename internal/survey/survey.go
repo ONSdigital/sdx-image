@@ -13,7 +13,7 @@ type Instance struct {
 
 type Section struct {
 	Title     string
-	Instances []*Instance
+	Instances map[string]*Instance
 }
 
 type Survey struct {
