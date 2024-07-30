@@ -84,6 +84,11 @@ func (a *Answer) getValue() string {
 	switch v := a.Value.(type) {
 	case string:
 		return v
+	case float64:
+		if v == float64(int(v)) {
+			return fmt.Sprintf("%d", int(v))
+		}
+		return fmt.Sprintf("%f", v)
 	case int:
 		return fmt.Sprintf("%d", v)
 	default:
