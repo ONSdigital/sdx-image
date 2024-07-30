@@ -56,7 +56,7 @@ func TestBerdSubmission(t *testing.T) {
 func TestBresSubmission(t *testing.T) {
 	//Supplementary Data and Data version  0.0.3
 	test.SetCwdToRoot()
-	filename := "221.0019"
+	filename := "bres_0019"
 	fileBytes, e := readFile(filename)
 	if e != nil {
 		t.Errorf("failed to read file %v with error: %q", filename, e.Error())

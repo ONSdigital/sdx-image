@@ -3,15 +3,38 @@ package survey
 import "strconv"
 
 func getQCode(code, surveyId string) string {
+	switch surveyId {
+	case "002":
+		return removeLetters(code)
+	case "068":
+		return removeLetters(code)
+	case "071":
+		return removeLetters(code)
+	case "066":
+		return removeLetters(code)
+	case "076":
+		return removeLetters(code)
+	case "221":
+		return removeLetters(code)
+	case "024":
+		return getFuelsCode(code)
+	case "194":
+		return getRailwaysCode(code)
+	default:
+		return code
+	}
+}
+
+// removeLetters removes letters from the beginning
+// of the code leaving the rightmost digits.
+// E.G. "a4b123" -> "123"
+func removeLetters(code string) string {
+	if len(code) == 1 {
+		return code
+	}
 	_, err := strconv.Atoi(code)
 	if err != nil {
-		return getQCode(code[1:], surveyId)
-	}
-
-	if surveyId == "024" {
-		return getFuelsCode(code)
-	} else if surveyId == "194" {
-		return getRailwaysCode(code)
+		return removeLetters(code[1:])
 	}
 
 	return code
