@@ -9,7 +9,7 @@ import (
 
 const AdditionalSites = "additional_sites_name"
 
-func Create(schema *schema.CollectionInstrument, submission *s.Submission) *Survey {
+func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 
 	lookup := substitutions.GetLookup(
 		submission.GetStartDate(),
@@ -46,13 +46,13 @@ func Create(schema *schema.CollectionInstrument, submission *s.Submission) *Surv
 
 	var sections []*Section
 
-	for _, sectionTitle := range schema.ListTitles() {
+	for _, sect := range schema.GetSections() {
 		hasAnswerValue := false
 		section := &Section{
-			Title:     substitutions.Replace(sectionTitle, lookup),
+			Title:     substitutions.Replace(sect.GetTitle(), lookup),
 			Instances: map[string]*Instance{},
 		}
-		questions := schema.ListQuestionIds(sectionTitle)
+		questions := sect.GetQuestions()
 
 		instanceCount := 0
 		instanceId := 0
@@ -69,43 +69,38 @@ func Create(schema *schema.CollectionInstrument, submission *s.Submission) *Surv
 				Answers: []*Answer{},
 			}
 
-			for _, questionId := range questions {
-				title := substitutions.Replace(schema.GetQuestionTitle(questionId), lookup)
-				answerIds := schema.ListAnswerIds(questionId)
+			for _, q := range questions {
+				title := substitutions.Replace(q.GetTitle(), lookup)
 
-				for _, answerId := range answerIds {
-					answerSpecs := schema.GetAnswers(answerId)
+				for _, spec := range schema.GetAnswerSpecs(q) {
+					answerQcode := spec.GetCode()
+					answerLabel := substitutions.Replace(spec.GetLabel(), lookup)
+					answerType := spec.GetType()
 
-					for _, spec := range answerSpecs {
-						answerQcode := spec.GetCode()
-						answerLabel := substitutions.Replace(spec.GetLabel(), lookup)
-						answerType := spec.GetType()
+					for _, unit := range survey.Units {
+						//add question context to local localUnit
+						unit.UpdateContext(answerQcode, title, answerType, answerLabel)
+					}
 
-						for _, unit := range survey.Units {
-							//add question context to local localUnit
-							unit.UpdateContext(answerQcode, title, answerType, answerLabel)
+					value := data[answerQcode]
+					if value != "" {
+
+						answer := &Answer{
+							Title:    title,
+							QType:    answerType,
+							QCode:    getQCode(answerQcode, schema.GetSurveyId()),
+							Label:    answerLabel,
+							Value:    value,
+							Multiple: spec.PartOfGroup(),
 						}
 
-						value := data[answerQcode]
-						if value != "" {
-
-							answer := &Answer{
-								Title:    title,
-								QType:    answerType,
-								QCode:    getQCode(answerQcode, schema.GetSurveyId()),
-								Label:    answerLabel,
-								Value:    value,
-								Multiple: len(answerIds) > 1 || len(answerSpecs) > 1,
-							}
-
-							instance.Answers = append(instance.Answers, answer)
-							id := strconv.Itoa(instanceId)
-							_, exists := section.Instances[id]
-							if !exists {
-								section.Instances[id] = instance
-							}
-							hasAnswerValue = true
+						instance.Answers = append(instance.Answers, answer)
+						id := strconv.Itoa(instanceId)
+						_, exists := section.Instances[id]
+						if !exists {
+							section.Instances[id] = instance
 						}
+						hasAnswerValue = true
 					}
 				}
 			}

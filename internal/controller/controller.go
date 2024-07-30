@@ -14,7 +14,7 @@ import (
 
 var mu sync.Mutex
 
-var schemaCache = sch.NewCache(20, sch.CreateInstrument)
+var schemaCache = sch.NewCache(20, sch.Read)
 
 // Run orchestrates the steps required to create an image of the given submission.
 //

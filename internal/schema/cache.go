@@ -8,12 +8,12 @@ import (
 
 var mu sync.Mutex
 
-type CreatorFunc func(string) (*CollectionInstrument, error)
+type CreatorFunc func(string) (*Schema, error)
 
 type Cache struct {
 	size         int
 	createSchema CreatorFunc
-	instruments  map[string]*CollectionInstrument
+	instruments  map[string]*Schema
 	lastUsed     map[string]int64
 }
 
@@ -21,11 +21,11 @@ func NewCache(size int, createSchema CreatorFunc) *Cache {
 	return &Cache{
 		size:         size,
 		createSchema: createSchema,
-		instruments:  make(map[string]*CollectionInstrument, size),
+		instruments:  make(map[string]*Schema, size),
 		lastUsed:     make(map[string]int64, size)}
 }
 
-func (cache *Cache) GetSchema(schemaName string) (*CollectionInstrument, error) {
+func (cache *Cache) GetSchema(schemaName string) (*Schema, error) {
 	mu.Lock()
 	defer mu.Unlock()
 
@@ -65,7 +65,7 @@ func (cache *Cache) contains(guid string) bool {
 
 // getInstrument returns the schema associated with the guid
 // and records/overwrites the previous last used time.
-func (cache *Cache) getInstrument(guid string) *CollectionInstrument {
+func (cache *Cache) getInstrument(guid string) *Schema {
 	cache.lastUsed[guid] = time.Now().UnixMilli()
 	return cache.instruments[guid]
 }
