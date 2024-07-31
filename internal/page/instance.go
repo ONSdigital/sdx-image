@@ -19,7 +19,7 @@ func newInstance(id int, canvas *drawing.Canvas, parent *drawing.Container) *Ins
 	container := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), parent).SetLayout(
 		drawing.LayoutColumn, drawing.JustifyStart, drawing.AlignStart)
 
-	if id > 0 {
+	if id != 0 {
 		container.SetPadding(indent, topPadding, indent, 0).SetBorder(red, 2.0)
 		canvas.AddDiv(drawing.MatchParent(), drawing.PX(spaceBelow), parent)
 	}

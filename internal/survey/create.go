@@ -7,6 +7,8 @@ import (
 )
 
 const AdditionalSites = "additional_sites_name"
+const BerdSurveyId = "002"
+const BerdSectionTitle = "Workplace information"
 
 func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 
@@ -108,6 +110,13 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 					value := data[answerQcode]
 					if value != "" {
 
+						//BERD hack for postcodes
+						if schema.GetSurveyId() == BerdSurveyId {
+							if section.Title == BerdSectionTitle {
+								instance, instanceCount = berdSpecificInstance(instances, instanceCount, answerQcode)
+							}
+						}
+
 						answer := &Answer{
 							Title:    title,
 							QType:    answerType,
@@ -118,9 +127,9 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 						}
 
 						instance.Answers = append(instance.Answers, answer)
-						_, exists := section.Instances[listItemId]
+						_, exists := section.Instances[instance.Id]
 						if !exists {
-							section.Instances[listItemId] = instance
+							section.Instances[instance.Id] = instance
 						}
 						hasAnswerValue = true
 					}
@@ -135,4 +144,40 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 	}
 	survey.Sections = sections
 	return survey
+}
+
+func berdSpecificInstance(instances map[string]*Instance, instanceCount int, answerQcode string) (*Instance, int) {
+	var instance *Instance
+	instanceCount++
+	var id string
+	if len(answerQcode) > 3 {
+		if len(answerQcode) > 4 {
+			id = answerQcode[len(answerQcode)-4:]
+
+		} else {
+			id = answerQcode
+		}
+		id = id[0:1]
+		instanceVal := instanceCount
+		if id == "e" {
+			instanceVal = -1
+		}
+		ins, exists := instances[id]
+		if exists {
+			instance = ins
+		} else {
+			instance = &Instance{
+				Id:      id,
+				Value:   instanceVal,
+				Answers: []*Answer{},
+			}
+		}
+	} else {
+		instance = &Instance{
+			Id:      answerQcode,
+			Value:   0,
+			Answers: []*Answer{},
+		}
+	}
+	return instance, instanceCount
 }
