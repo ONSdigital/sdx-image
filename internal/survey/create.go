@@ -4,7 +4,6 @@ import (
 	"sdxImage/internal/schema"
 	s "sdxImage/internal/submission"
 	"sdxImage/internal/substitutions"
-	"strconv"
 )
 
 const AdditionalSites = "additional_sites_name"
@@ -46,27 +45,51 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 
 	var sections []*Section
 
-	for _, sect := range schema.GetSections() {
+	for _, schemaSection := range schema.GetSections() {
 		hasAnswerValue := false
-		section := &Section{
-			Title:     substitutions.Replace(sect.GetTitle(), lookup),
-			Instances: map[string]*Instance{},
+		preExistingSection := false
+
+		var section *Section
+		//check if the section already exists
+		for _, sect := range sections {
+			title := substitutions.Replace(schemaSection.GetTitle(), lookup)
+			if sect.Title == title {
+				hasAnswerValue = true
+				preExistingSection = true
+				section = sect
+				break
+			}
 		}
-		questions := sect.GetQuestions()
+
+		//if the section does not exist, create a new one
+		if !preExistingSection {
+			section = &Section{
+				Title:     substitutions.Replace(schemaSection.GetTitle(), lookup),
+				Instances: map[string]*Instance{},
+			}
+		}
+		questions := schemaSection.GetQuestions()
+
+		instances := section.Instances
 
 		instanceCount := 0
-		instanceId := 0
+		instanceVal := 0
 		for listItemId, data := range responseMap {
-			if listItemId == s.NonListItem {
-				instanceId = 0
-			} else {
-				instanceId = instanceCount
-				instanceCount++
-			}
+			// check if the instance already exists
+			instance, found := instances[listItemId]
+			if !found {
+				if listItemId == s.NonListItem {
+					instanceVal = 0
+				} else {
+					instanceCount++
+					instanceVal = instanceCount
+				}
 
-			instance := &Instance{
-				Id:      instanceId,
-				Answers: []*Answer{},
+				instance = &Instance{
+					Id:      listItemId,
+					Value:   instanceVal,
+					Answers: []*Answer{},
+				}
 			}
 
 			for _, q := range questions {
@@ -95,10 +118,9 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 						}
 
 						instance.Answers = append(instance.Answers, answer)
-						id := strconv.Itoa(instanceId)
-						_, exists := section.Instances[id]
+						_, exists := section.Instances[listItemId]
 						if !exists {
-							section.Instances[id] = instance
+							section.Instances[listItemId] = instance
 						}
 						hasAnswerValue = true
 					}
@@ -106,7 +128,9 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 			}
 		}
 		if hasAnswerValue {
-			sections = append(sections, section)
+			if !preExistingSection {
+				sections = append(sections, section)
+			}
 		}
 	}
 	survey.Sections = sections

@@ -19,7 +19,7 @@ func Create(survey *s.Survey) image.Image {
 	for _, sect := range survey.Sections {
 		section := page.addSection(sect.Title)
 		for _, i := range sect.Instances {
-			instance := section.addInstance(i.Id)
+			instance := section.addInstance(i.Value)
 			for _, a := range i.Answers {
 				instance.addAnswer(a.GetCode(), a.GetText(), a.GetValue())
 			}

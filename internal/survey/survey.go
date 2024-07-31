@@ -7,7 +7,8 @@ import (
 )
 
 type Instance struct {
-	Id      int
+	Id      string
+	Value   int
 	Answers []*Answer
 }
 
