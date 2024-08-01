@@ -11,7 +11,7 @@ type Unit interface {
 	GetName() string
 	GetAddress() string
 	GetAnswers() []*Answer
-	UpdateContext(code, title, qType, label string) bool
+	UpdateContext(code, displayCode, title, qType, label string) bool
 }
 
 type ExistingUnit struct {
@@ -34,7 +34,7 @@ func GetExistingUnits(submission *s.Submission) []*ExistingUnit {
 		if localUnit != nil {
 			var answers []*Answer
 			for code, value := range submission.GetResponseForListId(listItemId) {
-				answers = append(answers, NewAnswer(getQCode(code, submission.GetSurveyId()), value))
+				answers = append(answers, NewAnswer(code, value))
 			}
 			units = append(units, NewExistingUnit(localUnit, answers))
 		}
@@ -48,7 +48,7 @@ func GetNewUnits(listName string, submission *s.Submission) []*NewUnit {
 	for _, listItemId := range submission.GetListItemIds(listName) {
 		var answers []*Answer
 		for code, value := range submission.GetResponseForListId(listItemId) {
-			answers = append(answers, NewAnswer(getQCode(code, submission.GetSurveyId()), value))
+			answers = append(answers, NewAnswer(code, value))
 		}
 		units = append(units, &NewUnit{answers: answers})
 	}
@@ -72,12 +72,12 @@ func (unit *ExistingUnit) GetAnswers() []*Answer {
 	return unit.answers
 }
 
-func (unit *ExistingUnit) UpdateContext(code, title, qType, label string) bool {
+func (unit *ExistingUnit) UpdateContext(code, displayCode, title, qType, label string) bool {
 	updated := false
 	for _, answer := range unit.answers {
 		if answer.GetCode() == code {
 			updated = true
-			answer.SetContext(title, qType, label, false)
+			answer.SetContext(title, displayCode, qType, label, false)
 		}
 	}
 	return updated
@@ -99,12 +99,12 @@ func (unit *NewUnit) GetAnswers() []*Answer {
 	return unit.answers
 }
 
-func (unit *NewUnit) UpdateContext(code, title, qType, label string) bool {
+func (unit *NewUnit) UpdateContext(code, displayCode, title, qType, label string) bool {
 	updated := false
 	for _, answer := range unit.answers {
 		if answer.GetCode() == code {
 			updated = true
-			answer.SetContext(title, qType, label, false)
+			answer.SetContext(title, displayCode, qType, label, false)
 		}
 	}
 	return updated

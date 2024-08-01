@@ -17,8 +17,9 @@ func NewAnswer(qCode, value string) *Answer {
 	return &Answer{QCode: qCode, Value: value}
 }
 
-func (answer *Answer) SetContext(title, qtype, label string, multiple bool) {
+func (answer *Answer) SetContext(title, displayCode, qtype, label string, multiple bool) {
 	answer.Title = title
+	answer.QCode = displayCode
 	answer.QType = qtype
 	answer.Label = label
 	answer.Multiple = multiple

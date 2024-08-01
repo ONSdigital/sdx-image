@@ -21,9 +21,9 @@ var schemaCache = sch.NewCache(20, sch.Read)
 // This is done by creating an instance of 'survey.Survey' and passing
 // it to the 'page' package which generates the actual image.
 //
-// Instances of 'interfaces.Survey' represent the combination of
-// the survey schema (interfaces.Schema), which  defines the questions,
-// and the respondents' submission (interfaces.Submission),
+// Instances of 'survey.Survey' represent the combination of
+// the survey schema (schema.Schema), which  defines the questions,
+// and the respondents' submission (submission.Submission),
 // which contains their answers.
 //
 // Schemas are retrieved through the 'schemaCache' which only reads in

@@ -104,7 +104,9 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 
 					for _, unit := range survey.Units {
 						//add question context to local localUnit
-						unit.UpdateContext(answerQcode, title, answerType, answerLabel)
+						// display code is how the qcode should be displayed e.g. c56 -> 56
+						displayCode := getQCode(answerQcode, schema.GetSurveyId())
+						unit.UpdateContext(answerQcode, displayCode, title, answerType, answerLabel)
 					}
 
 					value := data[answerQcode]

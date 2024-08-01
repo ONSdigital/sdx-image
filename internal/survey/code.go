@@ -3,6 +3,9 @@ package survey
 import "strconv"
 
 func getQCode(code, surveyId string) string {
+	if code == "" {
+		return ""
+	}
 	switch surveyId {
 	case "002":
 		return removeLetters(code)
