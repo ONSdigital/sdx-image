@@ -15,7 +15,7 @@ func getQCode(code, surveyId string) string {
 	case "076":
 		return removeLetters(code)
 	case "221":
-		return removeLetters(code)
+		return getBresCode(code)
 	case "024":
 		return getFuelsCode(code)
 	case "194":
@@ -38,6 +38,14 @@ func removeLetters(code string) string {
 	}
 
 	return code
+}
+
+// getBresCode temporary fix for bad qcode for bres.
+func getBresCode(code string) string {
+	if code == "156c" {
+		return "156"
+	}
+	return removeLetters(code)
 }
 
 func getFuelsCode(code string) string {

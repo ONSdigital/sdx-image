@@ -151,15 +151,21 @@ func berdSpecificInstance(instances map[string]*Instance, instanceCount int, ans
 	instanceCount++
 	var id string
 	if len(answerQcode) > 3 {
+		// all qcodes within this section without a letter are 3 characters long
 		if len(answerQcode) > 4 {
+			// some qcodes have a number and then a letter at the start.
+			// If this is the case remove the number
 			id = answerQcode[len(answerQcode)-4:]
 
 		} else {
 			id = answerQcode
 		}
+		//reduce the id to just the first letter. This will allow us to group them.
 		id = id[0:1]
 		instanceVal := instanceCount
 		if id == "e" {
+			// e identifies the qcode with the address for the current workplace
+			// and so should be first in the section
 			instanceVal = -1
 		}
 		ins, exists := instances[id]

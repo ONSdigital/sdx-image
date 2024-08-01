@@ -105,14 +105,6 @@ func (listData *ListData) getCode(answerId string) string {
 	return ""
 }
 
-func (listData *ListData) getListItemNames() []string {
-	var names []string
-	for _, list := range listData.Lists {
-		names = append(names, list.Name)
-	}
-	return names
-}
-
 func (listData *ListData) getListItemName(listItemId string) string {
 	for _, list := range listData.Lists {
 		for _, listItem := range list.Items {

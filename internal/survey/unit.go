@@ -34,7 +34,7 @@ func GetExistingUnits(submission *s.Submission) []*ExistingUnit {
 		if localUnit != nil {
 			var answers []*Answer
 			for code, value := range submission.GetResponseForListId(listItemId) {
-				answers = append(answers, NewAnswer(code, value))
+				answers = append(answers, NewAnswer(getQCode(code, submission.GetSurveyId()), value))
 			}
 			units = append(units, NewExistingUnit(localUnit, answers))
 		}
@@ -48,7 +48,7 @@ func GetNewUnits(listName string, submission *s.Submission) []*NewUnit {
 	for _, listItemId := range submission.GetListItemIds(listName) {
 		var answers []*Answer
 		for code, value := range submission.GetResponseForListId(listItemId) {
-			answers = append(answers, NewAnswer(code, value))
+			answers = append(answers, NewAnswer(getQCode(code, submission.GetSurveyId()), value))
 		}
 		units = append(units, &NewUnit{answers: answers})
 	}

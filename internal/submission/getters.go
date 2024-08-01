@@ -34,6 +34,10 @@ func (submission *Submission) GetEmploymentDate() string {
 	return submission.SurveyMetadata.EmploymentDate
 }
 
+func (submission *Submission) GetSurveyId() string {
+	return submission.SurveyMetadata.SurveyID
+}
+
 func (submission *Submission) GetDataType() DataType {
 	return submission.Data.DataType
 }
@@ -43,13 +47,6 @@ func (submission *Submission) GetListItemName(listItemId string) string {
 		return submission.Data.getListItemName(listItemId)
 	}
 	return ""
-}
-
-func (submission *Submission) GetListItemNames() []string {
-	if submission.GetDataType() == ListDataType {
-		return submission.Data.getListItemNames()
-	}
-	return nil
 }
 
 func (submission *Submission) GetListItemIds(name string) []string {

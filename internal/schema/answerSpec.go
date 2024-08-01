@@ -24,7 +24,7 @@ func getAnswerSpecs(answer *Answer, schema *Schema, multiple bool) []*AnswerSpec
 				AnswerType: answer.AnswerType,
 				QCode:      code,
 				Label:      option.Label,
-				multiple:   multiple,
+				multiple:   true,
 			}
 		}
 		return result

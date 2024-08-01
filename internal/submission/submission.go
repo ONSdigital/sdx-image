@@ -6,6 +6,7 @@ import (
 )
 
 type SurveyMetaData struct {
+	SurveyID       string `json:"survey_id"`
 	RuRef          string `json:"ru_ref"`
 	RuName         string `json:"ru_name"`
 	StartDate      string `json:"ref_p_start_date"`
