@@ -100,10 +100,57 @@ func (group *Group) getBlocks() []*Block {
 	return blocks
 }
 
+func (section *Section) GetTitle() string {
+	return string(section.Title)
+}
+
+func (section *Section) GetQuestions() []*Question {
+	var questions []*Question
+	for _, group := range section.Groups {
+		for _, block := range group.getBlocks() {
+			questions = append(questions, block.Question)
+		}
+	}
+	return questions
+}
+
+func (question *Question) GetTitle() string {
+	return string(question.Title)
+}
+
 func (schema *Schema) String() string {
 	b, err := json.MarshalIndent(schema, "", "  ")
 	if err != nil {
 		fmt.Println("error:", err)
 	}
 	return string(b)
+}
+
+func (schema *Schema) GetTitle() string {
+	return schema.Title
+}
+
+func (schema *Schema) GetSurveyId() string {
+	return schema.SurveyId
+}
+
+func (schema *Schema) GetFormType() string {
+	return schema.FormType
+}
+
+func (schema *Schema) GetSections() []*Section {
+	return schema.Sections
+}
+
+func (schema *Schema) GetAnswerSpecs(question *Question) []*AnswerSpec {
+	var answers []*AnswerSpec
+	multiple := false
+	if len(question.Answers) > 1 {
+		multiple = true
+	}
+	for _, answer := range question.Answers {
+		answers = append(answers, getAnswerSpecs(answer, schema, multiple)...)
+	}
+
+	return answers
 }

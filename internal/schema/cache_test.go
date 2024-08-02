@@ -1,28 +1,25 @@
 package schema
 
 import (
-	"sdxImage/internal/interfaces"
 	"sdxImage/internal/test"
 	"testing"
 	"time"
 )
 
-func fakeSchemaCreator(guid string) (interfaces.Schema, error) {
-	return &CollectionInstrument{
-		title:         "",
-		surveyId:      guid,
-		formType:      "",
-		sectionTitles: nil,
-		titleToQidMap: nil,
-		qidToQtMap:    nil,
-		qidToAidMap:   nil,
-		answerMap:     nil,
+func fakeSchemaCreator(guid string) (*Schema, error) {
+	return &Schema{
+		Title:       "",
+		SurveyId:    guid,
+		FormType:    "",
+		DataVersion: "",
+		Sections:    nil,
+		AnswerCodes: nil,
 	}, nil
 }
 
 func TestCache(t *testing.T) {
 	cache := NewCache(3, fakeSchemaCreator)
-	var s interfaces.Schema
+	var s *Schema
 
 	s, _ = cache.GetSchema("001")
 	time.Sleep(10 * time.Millisecond)
@@ -51,34 +48,4 @@ func TestCache(t *testing.T) {
 	test.Equal(t, 3, len(cache.lastUsed))
 	//002 should have been removed as the oldest schema
 	test.MapContains(t, cache.instruments, "001", "003", "004")
-}
-
-func TestCacheIntegration(t *testing.T) {
-	test.SetCwdToRoot()
-	cache := NewCache(20, CreateInstrument)
-	schemaName := "test_1802"
-	schema, err := cache.GetSchema(schemaName)
-	if err != nil {
-		t.Errorf("failed to get schema: %q with error: %q", schemaName, err.Error())
-	}
-
-	titles := schema.ListTitles()
-	test.Equal(t, "Income", titles[2])
-
-	schema, err = cache.GetSchema(schemaName)
-	if err != nil {
-		t.Errorf("failed to get schema: %q with error: %q", schemaName, err.Error())
-	}
-
-	qIds := schema.ListQuestionIds("Income")
-	test.Equal(t, "question5e9943ec-5896-48dd-8427-12c14d80baca", qIds[0])
-
-	aIds := schema.ListAnswerIds(qIds[0])
-	test.Equal(t, "answer06b7045b-f9cb-4a36-8463-5ed4a74f5a67", aIds[0])
-
-	answers := schema.GetAnswers(aIds[0])
-	expected := answers[0]
-	test.Equal(t, "Currency", expected.GetType())
-	test.Equal(t, "399", expected.GetCode())
-	test.Equal(t, "Total turnover", expected.GetLabel())
 }

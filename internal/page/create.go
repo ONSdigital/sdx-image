@@ -2,35 +2,36 @@ package page
 
 import (
 	"image"
-	"sdxImage/internal/interfaces"
+	s "sdxImage/internal/survey"
 )
 
-func Create(survey interfaces.Survey) image.Image {
+func Create(survey *s.Survey) image.Image {
 
 	header := Header{
-		SurveyName:  survey.GetTitle(),
-		FormType:    survey.GetFormType(),
-		RuRef:       survey.GetRespondent(),
-		RuName:      survey.GetRuName(),
-		SubmittedAt: survey.GetSubmittedAt()}
+		SurveyName:  survey.Title,
+		FormType:    survey.FormType,
+		RuRef:       survey.Respondent,
+		RuName:      survey.RuName,
+		SubmittedAt: survey.SubmittedAt}
 
 	page := createPage(header)
 
-	for _, s := range survey.GetSections() {
-		section := page.addSection(s.GetTitle())
-		for _, i := range s.GetInstances() {
-			instance := section.addInstance(i.GetId())
-			for _, a := range i.GetAnswers() {
+	for _, sect := range survey.Sections {
+		section := page.addSection(sect.Title)
+		instances := sect.GetInstances()
+		for _, i := range instances {
+			instance := section.addInstance(i.Value)
+			for _, a := range i.Answers {
 				instance.addAnswer(a.GetCode(), a.GetText(), a.GetValue())
 			}
 		}
 		section.complete()
 	}
 
-	if len(survey.GetLocalUnits()) != 0 {
+	if len(survey.Units) != 0 {
 		section := page.addSection("Local Units")
 		instance := section.addInstance(0)
-		for _, lu := range survey.GetLocalUnits() {
+		for _, lu := range survey.Units {
 			instance.addLocalUnit(lu)
 		}
 		section.complete()

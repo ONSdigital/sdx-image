@@ -1,14 +1,22 @@
 package survey
 
 import (
-	"sdxImage/internal/interfaces"
+	"sdxImage/internal/schema"
+	s "sdxImage/internal/submission"
 	"sdxImage/internal/substitutions"
-	"strconv"
 )
 
-func Create(schema interfaces.Schema, submission interfaces.Submission) interfaces.Survey {
+const AdditionalSites = "additional_sites_name"
+const BerdSurveyId = "002"
+const BerdSectionTitle = "Workplace information"
 
-	lookup := substitutions.GetLookup(submission.GetStartDate(), submission.GetEndDate(), submission.GetRuName(), submission.GetEmploymentDate())
+func Create(schema *schema.Schema, submission *s.Submission) *Survey {
+
+	lookup := substitutions.GetLookup(
+		submission.GetStartDate(),
+		submission.GetEndDate(),
+		submission.GetRuName(),
+		submission.GetEmploymentDate())
 
 	survey := &Survey{
 		Title:       schema.GetTitle(),
@@ -17,167 +25,167 @@ func Create(schema interfaces.Schema, submission interfaces.Submission) interfac
 		Respondent:  submission.GetRuRef(),
 		RuName:      submission.GetRuName(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
-		Sections:    []interfaces.Section{},
-		LocalUnits:  make([]interfaces.SupplementaryUnit, len(submission.GetLocalUnits())),
+		Sections:    []*Section{},
+		Units:       []Unit{},
 	}
 
-	for i, lu := range submission.GetLocalUnits() {
-		unit := NewLocalUnit(lu)
-		survey.LocalUnits[i] = unit
+	for _, lu := range GetExistingUnits(submission) {
+		survey.Units = append(survey.Units, lu)
 	}
 
-	var sections []interfaces.Section
-	for _, sectionTitle := range schema.ListTitles() {
-		hasAnswerValue := false
-		section := &Section{
-			Title:     substitutions.Replace(sectionTitle, lookup),
-			Instances: []interfaces.Instance{},
+	for _, lu := range GetNewUnits(AdditionalSites, submission) {
+		survey.Units = append(survey.Units, lu)
+	}
+
+	responseMap := submission.GetResponses()
+	for listItemId := range responseMap {
+		name := submission.GetListItemName(listItemId)
+		if name == AdditionalSites || name == ListName {
+			delete(responseMap, listItemId)
 		}
-		instanceMap := map[string]*Instance{}
-		questions := schema.ListQuestionIds(sectionTitle)
+	}
 
-		for _, questionId := range questions {
-			title := schema.GetQuestionTitle(questionId)
-			answerIds := schema.ListAnswerIds(questionId)
+	var sections []*Section
 
-			for _, answerId := range answerIds {
-				answerSpecs := schema.GetAnswers(answerId)
+	for _, schemaSection := range schema.GetSections() {
+		hasAnswerValue := false
+		preExistingSection := false
 
-				for _, spec := range answerSpecs {
+		var section *Section
+		//check if the section already exists
+		for _, sect := range sections {
+			title := substitutions.Replace(schemaSection.GetTitle(), lookup)
+			if sect.Title == title {
+				hasAnswerValue = true
+				preExistingSection = true
+				section = sect
+				break
+			}
+		}
+
+		//if the section does not exist, create a new one
+		if !preExistingSection {
+			section = &Section{
+				Title:     substitutions.Replace(schemaSection.GetTitle(), lookup),
+				Instances: map[string]*Instance{},
+			}
+		}
+		questions := schemaSection.GetQuestions()
+
+		instances := section.Instances
+
+		instanceCount := 0
+		instanceVal := 0
+		for listItemId, data := range responseMap {
+			// check if the instance already exists
+			instance, found := instances[listItemId]
+			if !found {
+				if listItemId == s.NonListItem {
+					instanceVal = 0
+				} else {
+					instanceCount++
+					instanceVal = instanceCount
+				}
+
+				instance = &Instance{
+					Id:      listItemId,
+					Value:   instanceVal,
+					Answers: []*Answer{},
+				}
+			}
+
+			for _, q := range questions {
+				title := substitutions.Replace(q.GetTitle(), lookup)
+
+				for _, spec := range schema.GetAnswerSpecs(q) {
 					answerQcode := spec.GetCode()
-					answerLabel := spec.GetLabel()
+					answerLabel := substitutions.Replace(spec.GetLabel(), lookup)
 					answerType := spec.GetType()
 
-					responseList := submission.GetResponses(answerQcode)
-					for _, resp := range responseList {
+					for _, unit := range survey.Units {
+						//add question context to local localUnit
+						// display code is how the qcode should be displayed e.g. c56 -> 56
+						displayCode := getQCode(answerQcode, schema.GetSurveyId())
+						unit.UpdateContext(answerQcode, displayCode, title, answerType, answerLabel)
+					}
 
-						instanceKey := strconv.Itoa(resp.GetInstance())
-						instance, found := instanceMap[instanceKey]
-						if !found {
-							instance = &Instance{
-								Id:      resp.GetInstance(),
-								Answers: []interfaces.Answer{},
+					value := data[answerQcode]
+					if value != "" {
+
+						//BERD hack for postcodes
+						if schema.GetSurveyId() == BerdSurveyId {
+							if section.Title == BerdSectionTitle {
+								instance, instanceCount = berdSpecificInstance(instances, instanceCount, answerQcode)
 							}
-							instanceMap[instanceKey] = instance
-							section.Instances = append(section.Instances, instance)
 						}
 
-						value := resp.GetValue()
-						if value != "" {
-
-							answer := &Answer{
-								Title:    substitutions.Replace(title, lookup),
-								QType:    answerType,
-								QCode:    getQCode(answerQcode, submission.GetDataVersion(), schema.GetSurveyId()),
-								Label:    substitutions.Replace(answerLabel, lookup),
-								Value:    value,
-								Multiple: len(answerIds) > 1 || len(answerSpecs) > 1,
-							}
-
-							instance.Answers = append(instance.Answers, answer)
-							hasAnswerValue = true
+						answer := &Answer{
+							Title:    title,
+							QType:    answerType,
+							QCode:    getQCode(answerQcode, schema.GetSurveyId()),
+							Label:    answerLabel,
+							Value:    value,
+							Multiple: spec.PartOfGroup(),
 						}
+
+						instance.Answers = append(instance.Answers, answer)
+						_, exists := section.Instances[instance.Id]
+						if !exists {
+							section.Instances[instance.Id] = instance
+						}
+						hasAnswerValue = true
 					}
 				}
 			}
 		}
 		if hasAnswerValue {
-			sections = append(sections, section)
+			if !preExistingSection {
+				sections = append(sections, section)
+			}
 		}
 	}
 	survey.Sections = sections
 	return survey
 }
 
-const LoopingDataVersion = "0.0.3"
+func berdSpecificInstance(instances map[string]*Instance, instanceCount int, answerQcode string) (*Instance, int) {
+	var instance *Instance
+	instanceCount++
+	var id string
+	if len(answerQcode) > 3 {
+		// all qcodes within this section without a letter are 3 characters long
+		if len(answerQcode) > 4 {
+			// some qcodes have a number and then a letter at the start.
+			// If this is the case remove the number
+			id = answerQcode[len(answerQcode)-4:]
 
-func getQCode(code, dataVersion, surveyId string) string {
-	if dataVersion == LoopingDataVersion {
-		_, err := strconv.Atoi(code)
-		if err != nil {
-			return getQCode(code[1:], LoopingDataVersion, surveyId)
+		} else {
+			id = answerQcode
+		}
+		//reduce the id to just the first letter. This will allow us to group them.
+		id = id[0:1]
+		instanceVal := instanceCount
+		if id == "e" {
+			// e identifies the qcode with the address for the current workplace
+			// and so should be first in the section
+			instanceVal = -1
+		}
+		ins, exists := instances[id]
+		if exists {
+			instance = ins
+		} else {
+			instance = &Instance{
+				Id:      id,
+				Value:   instanceVal,
+				Answers: []*Answer{},
+			}
+		}
+	} else {
+		instance = &Instance{
+			Id:      answerQcode,
+			Value:   0,
+			Answers: []*Answer{},
 		}
 	}
-
-	if surveyId == "024" {
-		return getFuelsCode(code)
-	} else if surveyId == "194" {
-		return getRailwaysCode(code)
-	}
-
-	return code
-}
-
-func getFuelsCode(code string) string {
-	mapping := map[string]string{
-		"10":  "0a",
-		"11":  "0b",
-		"12":  "0c",
-		"13":  "0d",
-		"14":  "0e",
-		"110": "1",
-		"120": "2a",
-		"121": "2b",
-		"122": "2c",
-		"130": "3",
-		"140": "4a",
-		"141": "4b",
-		"142": "4c",
-		"150": "5",
-		"160": "6",
-		"180": "8",
-		"190": "9",
-		"200": "11",
-		"210": "12",
-		"211": "12a",
-		"220": "13",
-		"230": "15",
-		"240": "16",
-		"250": "18",
-		"260": "19",
-		"270": "20",
-		"271": "20a",
-		"280": "21",
-		"290": "23",
-		"300": "24",
-		"310": "26",
-		"320": "27",
-		"330": "28",
-		"340": "29",
-		"350": "31",
-		"360": "32",
-		"370": "34",
-		"146": "146",
-		"12a": "17",
-		"20a": "25",
-		"28":  "33",
-	}
-
-	c, found := mapping[code]
-	if found {
-		return c
-	}
-	return code
-}
-
-func getRailwaysCode(code string) string {
-	mapping := map[string]string{
-		"2":   "1.1",
-		"3":   "1.2",
-		"4":   "2.1",
-		"5":   "2.2",
-		"6":   "3.1",
-		"7":   "3.2",
-		"8":   "3.3",
-		"9":   "3.4",
-		"10":  "4.1",
-		"13":  "4.2",
-		"146": "146",
-	}
-
-	c, found := mapping[code]
-	if found {
-		return c
-	}
-	return code
+	return instance, instanceCount
 }

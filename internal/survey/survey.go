@@ -4,8 +4,19 @@ package survey
 import (
 	"encoding/json"
 	"fmt"
-	"sdxImage/internal/interfaces"
+	"sort"
 )
+
+type Instance struct {
+	Id      string
+	Value   int
+	Answers []*Answer
+}
+
+type Section struct {
+	Title     string
+	Instances map[string]*Instance
+}
 
 type Survey struct {
 	Title       string
@@ -14,8 +25,8 @@ type Survey struct {
 	Respondent  string
 	RuName      string
 	SubmittedAt string
-	Sections    []interfaces.Section
-	LocalUnits  []interfaces.SupplementaryUnit
+	Sections    []*Section
+	Units       []Unit
 }
 
 func (survey *Survey) String() string {
@@ -26,34 +37,17 @@ func (survey *Survey) String() string {
 	return string(b)
 }
 
-func (survey *Survey) GetTitle() string {
-	return survey.Title
-}
+type InstanceList []*Instance
 
-func (survey *Survey) GetSurveyId() string {
-	return survey.SurveyId
-}
+func (a InstanceList) Len() int           { return len(a) }
+func (a InstanceList) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a InstanceList) Less(i, j int) bool { return a[i].Value < a[j].Value }
 
-func (survey *Survey) GetFormType() string {
-	return survey.FormType
-}
-
-func (survey *Survey) GetRespondent() string {
-	return survey.Respondent
-}
-
-func (survey *Survey) GetRuName() string {
-	return survey.RuName
-}
-
-func (survey *Survey) GetSubmittedAt() string {
-	return survey.SubmittedAt
-}
-
-func (survey *Survey) GetSections() []interfaces.Section {
-	return survey.Sections
-}
-
-func (survey *Survey) GetLocalUnits() []interfaces.SupplementaryUnit {
-	return survey.LocalUnits
+func (section *Section) GetInstances() []*Instance {
+	var instances []*Instance
+	for _, instance := range section.Instances {
+		instances = append(instances, instance)
+	}
+	sort.Sort(InstanceList(instances))
+	return instances
 }

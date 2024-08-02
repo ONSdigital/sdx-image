@@ -1,16 +1,17 @@
 package schema
 
-import "sdxImage/internal/interfaces"
+const LoopingDataVersion = "0.0.3"
 
 type AnswerSpec struct {
 	AnswerType string
 	QCode      string
 	Label      string
+	multiple   bool
 }
 
-func getAnswerSpecs(answer *Answer) []interfaces.AnswerSpec {
+func getAnswerSpecs(answer *Answer, schema *Schema, multiple bool) []*AnswerSpec {
 	if answer.AnswerType == "Checkbox" {
-		result := make([]interfaces.AnswerSpec, len(answer.Options))
+		result := make([]*AnswerSpec, len(answer.Options))
 
 		used := false
 		for i, option := range answer.Options {
@@ -23,14 +24,22 @@ func getAnswerSpecs(answer *Answer) []interfaces.AnswerSpec {
 				AnswerType: answer.AnswerType,
 				QCode:      code,
 				Label:      option.Label,
+				multiple:   true,
 			}
 		}
 		return result
 	}
-	return []interfaces.AnswerSpec{&AnswerSpec{
+
+	qCode := answer.Qcode
+	if schema.DataVersion == LoopingDataVersion {
+		qCode = lookupQCode(answer.Id, schema)
+	}
+
+	return []*AnswerSpec{{
 		AnswerType: answer.AnswerType,
-		QCode:      answer.Qcode,
+		QCode:      qCode,
 		Label:      string(answer.Label),
+		multiple:   multiple,
 	}}
 }
 
@@ -44,4 +53,17 @@ func (a *AnswerSpec) GetCode() string {
 
 func (a *AnswerSpec) GetLabel() string {
 	return a.Label
+}
+
+func (a *AnswerSpec) PartOfGroup() bool {
+	return a.multiple
+}
+
+func lookupQCode(answerId string, schema *Schema) string {
+	for _, answerCode := range schema.AnswerCodes {
+		if answerCode.AnswerId == answerId {
+			return answerCode.Code
+		}
+	}
+	return ""
 }
