@@ -11,6 +11,10 @@ import (
 // instance that implements interfaces.Submission
 func Read(bytes []byte) (*Submission, error) {
 	submission := &Submission{}
+
+	//Debugging unmarshalling error
+	fmt.Println(bytes)
+
 	err := json.Unmarshal(bytes, submission)
 	if err != nil {
 		log.Info(fmt.Sprintf("failed to read file with error: %q", err))
