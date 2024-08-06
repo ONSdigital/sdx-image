@@ -20,6 +20,8 @@ type Submission struct {
 	SubmittedAt    string          `json:"submitted_at"`
 	SurveyMetadata *SurveyMetaData `json:"survey_metadata"`
 	Data           Data            `json:"data"`
+	// TODO testing, remove
+	Supplementary *Supplementary    `json:"supplementary_data"`
 }
 
 func (submission *Submission) String() string {
