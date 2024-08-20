@@ -1,6 +1,8 @@
 package survey
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func getQCode(code, surveyId string) string {
 	if code == "" {
@@ -48,7 +50,8 @@ func getBresCode(code string) string {
 	if code == "156c" {
 		return "156"
 	}
-	return removeLetters(code)
+	c := removeLetters(code)
+	return c
 }
 
 func getFuelsCode(code string) string {
