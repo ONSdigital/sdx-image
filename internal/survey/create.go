@@ -103,7 +103,7 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 					answerType := spec.GetType()
 
 					for _, unit := range survey.Units {
-						//add question context to local localUnit
+						// add question context to local localUnit
 						// display code is how the qcode should be displayed e.g. c56 -> 56
 						displayCode := getQCode(answerQcode, schema.GetSurveyId())
 						unit.UpdateContext(answerQcode, displayCode, title, answerType, answerLabel)
@@ -162,7 +162,7 @@ func berdSpecificInstance(instances map[string]*Instance, instanceCount int, ans
 		} else {
 			id = answerQcode
 		}
-		//reduce the id to just the first letter. This will allow us to group them.
+		// reduce the id to just the first letter. This will allow us to group them.
 		id = id[0:1]
 		instanceVal := instanceCount
 		if id == "e" {
