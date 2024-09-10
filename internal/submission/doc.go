@@ -49,4 +49,20 @@
 // The submission will also contain metadata about the survey and the respondent.
 //
 // The submission package handles reading of the submission json into a Submission struct
+// with useful getters to access the required information. The package contains the following files:
+//
+//   - submission.go
+//     The types that make up the top level submission object.
+//
+//   - data.go
+//     Handles unmarshalling and retrieving the data sections of the submission.
+//
+//   - read.go
+//     Handles the actual reading of the submission json in bytes.
+//
+//   - supplementary.go
+//     Defines types to handle the supplementary data and associated mappings.
+//
+//   - getters.go
+//     Defines the getters for the submission type.
 package submission
