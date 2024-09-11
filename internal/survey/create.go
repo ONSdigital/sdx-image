@@ -10,6 +10,9 @@ const AdditionalSites = "additional_sites_name"
 const BerdSurveyId = "002"
 const BerdSectionTitle = "Workplace information"
 
+// Create combines a schema and submission to return a Survey
+// This is done by comparing the Submission responses to the Schema questions
+// and matching on qcode.
 func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 
 	lookup := substitutions.GetLookup(
