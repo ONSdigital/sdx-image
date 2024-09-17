@@ -64,6 +64,7 @@ func (submission *Submission) GetResponseForListId(listItemId string) map[string
 	return submission.Data.ListData.getResponses(listItemId)
 }
 
+// ResponseMap A mapping of list item id to a map of qcode to answer value
 type ResponseMap map[string]map[string]string
 
 func (submission *Submission) GetResponses() ResponseMap {
