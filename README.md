@@ -38,3 +38,5 @@ Or, run the tests:
 ```bash
 go test -json ./...
 ```
+
+Running the tests will also regenerate all of the example images in the examples dir.
