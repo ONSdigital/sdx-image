@@ -1,4 +1,3 @@
-// Package substitutions manages the interpolation of parameterised strings in a survey.
 package substitutions
 
 import (

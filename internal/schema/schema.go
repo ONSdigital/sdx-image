@@ -1,4 +1,3 @@
-// Package schema manages the reading of schemas into usable objects.
 package schema
 
 import (

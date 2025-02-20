@@ -1,3 +1,4 @@
+// Package api defines the http endpoints for the image service.
 package api
 
 import (

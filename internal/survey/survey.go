@@ -1,4 +1,3 @@
-// Package survey defines the data types used to capture survey information
 package survey
 
 import (
