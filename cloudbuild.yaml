@@ -6,3 +6,5 @@ steps:
     go mod download
     go build -o /sdx-image
     go test ./...
+options:
+  defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
