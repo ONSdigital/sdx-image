@@ -8,8 +8,15 @@ type LocalUnit struct {
 	Address    []string `json:"address"`
 }
 
+type Item struct {
+	Identifier     string `json:"identifier"`
+	ItemNumber     string `json:"item_number"`
+	SupplierNumber string `json:"supplier_number"`
+}
+
 type Items struct {
 	LocalUnits []*LocalUnit `json:"local-units"`
+	ItemList   []*Item      `json:"item"`
 }
 
 type Supplementary struct {
