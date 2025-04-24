@@ -162,3 +162,22 @@ func (listData *ListData) getLocalUnit(listItemId string) *LocalUnit {
 
 	return nil
 }
+
+func (listData *ListData) getPpiItem(listItemId string) *PpiItem {
+	var sdMapping string
+	for _, list := range listData.Lists {
+		for _, mapping := range list.SdMappings {
+			if mapping.ListItemId == listItemId {
+				sdMapping = mapping.Id
+			}
+		}
+	}
+
+	for _, ppiItem := range listData.Supplementary.Items.PpiItemList {
+		if ppiItem.Identifier == sdMapping {
+			return ppiItem
+		}
+	}
+
+	return nil
+}

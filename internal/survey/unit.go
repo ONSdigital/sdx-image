@@ -5,11 +5,12 @@ import (
 )
 
 const ListName = "local-units"
+const PpiItems = "item"
 
 type Unit interface {
 	GetIdentifier() string
-	GetName() string
-	GetAddress() string
+	GetPrimaryDesc() string
+	GetSecondaryDesc() string
 	GetAnswers() []*Answer
 	UpdateContext(code, displayCode, title, qType, label string) bool
 }
@@ -20,6 +21,11 @@ type ExistingUnit struct {
 }
 
 type NewUnit struct {
+	answers []*Answer
+}
+
+type ExistingPpiItem struct {
+	ppiItem *s.PpiItem
 	answers []*Answer
 }
 
@@ -43,6 +49,26 @@ func GetExistingUnits(submission *s.Submission) []*ExistingUnit {
 	return units
 }
 
+func NewExistingPpiItem(ppiItem *s.PpiItem, answer []*Answer) *ExistingPpiItem {
+	return &ExistingPpiItem{ppiItem: ppiItem, answers: answer}
+}
+
+func GetExistingPpiItems(submission *s.Submission) []*ExistingPpiItem {
+	var ppiItems []*ExistingPpiItem
+	for _, listItemId := range submission.GetListItemIds(PpiItems) {
+		ppiItem := submission.GetPpiItem(listItemId)
+		if ppiItem != nil {
+			var answers []*Answer
+			for code, value := range submission.GetResponseForListId(listItemId) {
+				answers = append(answers, NewAnswer(code, value))
+			}
+			ppiItems = append(ppiItems, NewExistingPpiItem(ppiItem, answers))
+		}
+	}
+
+	return ppiItems
+}
+
 func GetNewUnits(listName string, submission *s.Submission) []*NewUnit {
 	var units []*NewUnit
 	for _, listItemId := range submission.GetListItemIds(listName) {
@@ -60,11 +86,11 @@ func (unit *ExistingUnit) GetIdentifier() string {
 	return unit.localUnit.Identifier
 }
 
-func (unit *ExistingUnit) GetName() string {
+func (unit *ExistingUnit) GetPrimaryDesc() string {
 	return unit.localUnit.Name
 }
 
-func (unit *ExistingUnit) GetAddress() string {
+func (unit *ExistingUnit) GetSecondaryDesc() string {
 	return unit.localUnit.GetAddress()
 }
 
@@ -83,15 +109,42 @@ func (unit *ExistingUnit) UpdateContext(code, displayCode, title, qType, label s
 	return updated
 }
 
+func (unit *ExistingPpiItem) GetIdentifier() string {
+	return unit.ppiItem.Identifier
+}
+
+func (unit *ExistingPpiItem) GetPrimaryDesc() string {
+	return unit.ppiItem.ItemNumber
+}
+
+func (unit *ExistingPpiItem) GetSecondaryDesc() string {
+	return unit.ppiItem.ItemSpecification
+}
+
+func (unit *ExistingPpiItem) GetAnswers() []*Answer {
+	return unit.answers
+}
+
+func (unit *ExistingPpiItem) UpdateContext(code, displayCode, title, qType, label string) bool {
+	updated := false
+	for _, answer := range unit.answers {
+		if answer.GetCode() == code {
+			updated = true
+			answer.SetContext(title, displayCode, qType, label, false)
+		}
+	}
+	return updated
+}
+
 func (unit *NewUnit) GetIdentifier() string {
 	return "New Local Unit"
 }
 
-func (unit *NewUnit) GetName() string {
+func (unit *NewUnit) GetPrimaryDesc() string {
 	return ""
 }
 
-func (unit *NewUnit) GetAddress() string {
+func (unit *NewUnit) GetSecondaryDesc() string {
 	return ""
 }
 

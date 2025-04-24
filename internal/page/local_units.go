@@ -24,21 +24,21 @@ func createUnit(
 	canvas.AddBoldText(lu.GetIdentifier(), answerSize, ref)
 	ref.SetPadding(0, 0, 0, luPadding)
 
-	if lu.GetName() != "" {
+	if lu.GetPrimaryDesc() != "" {
 		nameLabel := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
 		canvas.AddText("Name:", questionSize, nameLabel)
 
 		nameAnswer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
-		canvas.AddBoldText(lu.GetName(), answerSize, nameAnswer)
+		canvas.AddBoldText(lu.GetPrimaryDesc(), answerSize, nameAnswer)
 		nameAnswer.SetPadding(0, 0, 0, luPadding)
 	}
 
-	if lu.GetAddress() != "" {
+	if lu.GetSecondaryDesc() != "" {
 		addressLabel := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
 		canvas.AddText("Address:", questionSize, addressLabel)
 
 		addressAnswer := canvas.AddContainer(drawing.MatchParent(), drawing.FitContent(), outerContainer)
-		canvas.AddBoldText(lu.GetAddress(), answerSize, addressAnswer)
+		canvas.AddBoldText(lu.GetSecondaryDesc(), answerSize, addressAnswer)
 
 		if len(lu.GetAnswers()) > 0 {
 			addressAnswer.SetPadding(0, 0, 0, luPadding)

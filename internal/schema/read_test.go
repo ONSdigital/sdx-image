@@ -32,5 +32,5 @@ func TestReadTiles(t *testing.T) {
 }
 
 func TestReadPrices(t *testing.T) {
-	testRead("prices_0001", t)
+	testRead("ppi_0001", t)
 }

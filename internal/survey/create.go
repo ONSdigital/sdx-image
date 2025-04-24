@@ -32,18 +32,25 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 		Units:       []Unit{},
 	}
 
-	for _, lu := range GetExistingUnits(submission) {
-		survey.Units = append(survey.Units, lu)
-	}
+	if submission.HasLocalUnits() {
+		for _, lu := range GetExistingUnits(submission) {
+			survey.Units = append(survey.Units, lu)
+		}
 
-	for _, lu := range GetNewUnits(AdditionalSites, submission) {
-		survey.Units = append(survey.Units, lu)
+		for _, lu := range GetNewUnits(AdditionalSites, submission) {
+			survey.Units = append(survey.Units, lu)
+		}
+	} else if submission.HasPpiItems() {
+		// do ppi stuff
+		for _, ppiItem := range GetExistingPpiItems(submission) {
+			survey.Units = append(survey.Units, ppiItem)
+		}
 	}
 
 	responseMap := submission.GetResponses()
 	for listItemId := range responseMap {
 		name := submission.GetListItemName(listItemId)
-		if name == AdditionalSites || name == ListName {
+		if name == AdditionalSites || name == ListName || name == PpiItems {
 			delete(responseMap, listItemId)
 		}
 	}

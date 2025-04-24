@@ -9,7 +9,7 @@ type LocalUnit struct {
 }
 
 // Section title wants item_number and item_specification_1
-type Item struct {
+type PpiItem struct {
 	Identifier        string `json:"identifier"`
 	ItemNumber        string `json:"item_number"`
 	SupplierNumber    string `json:"supplier_number"`
@@ -17,8 +17,8 @@ type Item struct {
 }
 
 type Items struct {
-	LocalUnits []*LocalUnit `json:"local-units"`
-	ItemList   []*Item      `json:"item"`
+	LocalUnits  []*LocalUnit `json:"local-units"`
+	PpiItemList []*PpiItem   `json:"item"`
 }
 
 type Supplementary struct {
