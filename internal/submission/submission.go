@@ -9,7 +9,7 @@ type SurveyMetaData struct {
 	SurveyID       string `json:"survey_id"`
 	RuRef          string `json:"ru_ref"`
 	RuName         string `json:"ru_name"`
-	StartDate      string `json:"rs_p_start_date"`
+	StartDate      string `json:"ref_p_start_date"`
 	EndDate        string `json:"ref_p_end_date"`
 	EmploymentDate string `json:"employment_date"`
 }
