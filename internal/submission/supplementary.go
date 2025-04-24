@@ -8,10 +8,12 @@ type LocalUnit struct {
 	Address    []string `json:"address"`
 }
 
+// Section title wants item_number and item_specification_1
 type Item struct {
-	Identifier     string `json:"identifier"`
-	ItemNumber     string `json:"item_number"`
-	SupplierNumber string `json:"supplier_number"`
+	Identifier        string `json:"identifier"`
+	ItemNumber        string `json:"item_number"`
+	SupplierNumber    string `json:"supplier_number"`
+	ItemSpecification string `json:"item_specification_1"`
 }
 
 type Items struct {
