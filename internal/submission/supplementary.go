@@ -8,7 +8,6 @@ type LocalUnit struct {
 	Address    []string `json:"address"`
 }
 
-// Section title wants item_number and item_specification_1
 type PpiItem struct {
 	Identifier        string `json:"identifier"`
 	ItemNumber        string `json:"item_number"`

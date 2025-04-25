@@ -7,10 +7,15 @@ import (
 const ListName = "local-units"
 const PpiItems = "item"
 
+type Description struct {
+	Key   string
+	Value string
+}
+
 type Unit interface {
 	GetIdentifier() string
-	GetPrimaryDesc() string
-	GetSecondaryDesc() string
+	GetPrimaryDesc() Description
+	GetSecondaryDesc() Description
 	GetAnswers() []*Answer
 	UpdateContext(code, displayCode, title, qType, label string) bool
 }
@@ -86,12 +91,18 @@ func (unit *ExistingUnit) GetIdentifier() string {
 	return unit.localUnit.Identifier
 }
 
-func (unit *ExistingUnit) GetPrimaryDesc() string {
-	return unit.localUnit.Name
+func (unit *ExistingUnit) GetPrimaryDesc() Description {
+	return Description{
+		Key:   "Name",
+		Value: unit.localUnit.Name,
+	}
 }
 
-func (unit *ExistingUnit) GetSecondaryDesc() string {
-	return unit.localUnit.GetAddress()
+func (unit *ExistingUnit) GetSecondaryDesc() Description {
+	return Description{
+		Key:   "Address",
+		Value: unit.localUnit.GetAddress(),
+	}
 }
 
 func (unit *ExistingUnit) GetAnswers() []*Answer {
@@ -113,12 +124,18 @@ func (unit *ExistingPpiItem) GetIdentifier() string {
 	return unit.ppiItem.Identifier
 }
 
-func (unit *ExistingPpiItem) GetPrimaryDesc() string {
-	return unit.ppiItem.ItemNumber
+func (unit *ExistingPpiItem) GetPrimaryDesc() Description {
+	return Description{
+		Key:   "Item Number",
+		Value: unit.ppiItem.ItemNumber,
+	}
 }
 
-func (unit *ExistingPpiItem) GetSecondaryDesc() string {
-	return unit.ppiItem.ItemSpecification
+func (unit *ExistingPpiItem) GetSecondaryDesc() Description {
+	return Description{
+		Key:   "Item Specification",
+		Value: unit.ppiItem.ItemSpecification,
+	}
 }
 
 func (unit *ExistingPpiItem) GetAnswers() []*Answer {
@@ -140,12 +157,12 @@ func (unit *NewUnit) GetIdentifier() string {
 	return "New Local Unit"
 }
 
-func (unit *NewUnit) GetPrimaryDesc() string {
-	return ""
+func (unit *NewUnit) GetPrimaryDesc() Description {
+	return Description{}
 }
 
-func (unit *NewUnit) GetSecondaryDesc() string {
-	return ""
+func (unit *NewUnit) GetSecondaryDesc() Description {
+	return Description{}
 }
 
 func (unit *NewUnit) GetAnswers() []*Answer {
