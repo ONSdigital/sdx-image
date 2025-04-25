@@ -29,7 +29,12 @@ func Create(survey *s.Survey) image.Image {
 	}
 
 	if len(survey.Units) != 0 {
-		section := page.addSection("Local Units")
+		var section *Section
+		if survey.UnitType == s.LocalUnit {
+			section = page.addSection("Local Units")
+		} else if survey.UnitType == s.PpiItem {
+			section = page.addSection("Items")
+		}
 		instance := section.addInstance(0)
 		for _, lu := range survey.Units {
 			instance.addLocalUnit(lu)

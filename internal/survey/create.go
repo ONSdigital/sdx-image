@@ -30,9 +30,11 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
 		Sections:    []*Section{},
 		Units:       []Unit{},
+		UnitType:    None,
 	}
 
 	if submission.HasLocalUnits() {
+		survey.UnitType = LocalUnit
 		for _, lu := range GetExistingUnits(submission) {
 			survey.Units = append(survey.Units, lu)
 		}
@@ -42,6 +44,7 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 		}
 	} else if submission.HasPpiItems() {
 		// do ppi stuff
+		survey.UnitType = PpiItem
 		for _, ppiItem := range GetExistingPpiItems(submission) {
 			survey.Units = append(survey.Units, ppiItem)
 		}
