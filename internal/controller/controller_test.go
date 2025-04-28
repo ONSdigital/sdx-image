@@ -187,6 +187,10 @@ func TestBres(t *testing.T) {
 	runFromFile("bres_0019", t)
 }
 
-func TestPpi(t *testing.T) {
+func TestPpi0001(t *testing.T) {
 	runFromFile("ppi_0001", t)
+}
+
+func TestPpi0002(t *testing.T) {
+	runFromFile("ppi_0002", t)
 }
