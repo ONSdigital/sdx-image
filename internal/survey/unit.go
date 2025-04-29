@@ -17,6 +17,7 @@ type Unit interface {
 	GetPrimaryDesc() Description
 	GetSecondaryDesc() Description
 	GetAnswers() []*Answer
+	GetAnswer(code string) *Answer
 	UpdateContext(code, displayCode, title, qType, label string) bool
 }
 
@@ -109,6 +110,15 @@ func (unit *ExistingUnit) GetAnswers() []*Answer {
 	return unit.answers
 }
 
+func (unit *ExistingUnit) GetAnswer(code string) *Answer {
+	for _, answer := range unit.answers {
+		if answer.GetCode() == code {
+			return answer
+		}
+	}
+	return nil
+}
+
 func (unit *ExistingUnit) UpdateContext(code, displayCode, title, qType, label string) bool {
 	updated := false
 	for _, answer := range unit.answers {
@@ -142,6 +152,15 @@ func (unit *ExistingPpiItem) GetAnswers() []*Answer {
 	return unit.answers
 }
 
+func (unit *ExistingPpiItem) GetAnswer(code string) *Answer {
+	for _, answer := range unit.answers {
+		if answer.GetCode() == code {
+			return answer
+		}
+	}
+	return nil
+}
+
 func (unit *ExistingPpiItem) UpdateContext(code, displayCode, title, qType, label string) bool {
 	updated := false
 	for _, answer := range unit.answers {
@@ -167,6 +186,15 @@ func (unit *NewUnit) GetSecondaryDesc() Description {
 
 func (unit *NewUnit) GetAnswers() []*Answer {
 	return unit.answers
+}
+
+func (unit *NewUnit) GetAnswer(code string) *Answer {
+	for _, answer := range unit.answers {
+		if answer.GetCode() == code {
+			return answer
+		}
+	}
+	return nil
 }
 
 func (unit *NewUnit) UpdateContext(code, displayCode, title, qType, label string) bool {

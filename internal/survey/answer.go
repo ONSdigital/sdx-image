@@ -33,6 +33,10 @@ func (answer *Answer) GetValue() string {
 	return answer.Value
 }
 
+func (answer *Answer) SetValue(value string) {
+	answer.Value = value
+}
+
 func (answer *Answer) GetText() string {
 	text := answer.Title
 	if answer.QType == "Date" {

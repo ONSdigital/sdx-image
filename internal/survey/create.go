@@ -120,9 +120,15 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 						// display code is how the qcode should be displayed e.g. c56 -> 56
 						displayCode := getQCode(answerQcode, schema.GetSurveyId())
 						unit.UpdateContext(answerQcode, displayCode, title, answerType, answerLabel)
+						answer := unit.GetAnswer(answerQcode)
+						if answer != nil {
+							value := spec.GetValue(answer.Value)
+							answer.Value = value
+						}
 					}
 
-					value := data[answerQcode]
+					respondentValue := data[answerQcode]
+					value := spec.GetValue(respondentValue)
 					if value != "" {
 
 						//BERD hack for postcodes
