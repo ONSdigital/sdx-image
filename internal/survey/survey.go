@@ -17,6 +17,14 @@ type Section struct {
 	Instances map[string]*Instance
 }
 
+type UnitType int
+
+const (
+	None UnitType = iota
+	LocalUnit
+	PpiItem
+)
+
 type Survey struct {
 	Title       string
 	SurveyId    string
@@ -26,6 +34,7 @@ type Survey struct {
 	SubmittedAt string
 	Sections    []*Section
 	Units       []Unit
+	UnitType    UnitType
 }
 
 func (survey *Survey) String() string {

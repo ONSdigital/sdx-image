@@ -100,9 +100,23 @@ func (submission *Submission) GetLocalUnit(listItemId string) *LocalUnit {
 	return nil
 }
 
-func (submission *Submission) GetLocalUnits() []*LocalUnit {
+func (submission *Submission) GetPpiItem(listItemId string) *PpiItem {
 	if submission.GetDataType() == ListDataType {
-		return submission.Data.ListData.Supplementary.Items.LocalUnits
+		return submission.Data.ListData.getPpiItem(listItemId)
 	}
 	return nil
+}
+
+func (submission *Submission) HasLocalUnits() bool {
+	if submission.Data.ListData.Supplementary.Items.LocalUnits == nil {
+		return false
+	}
+	return true
+}
+
+func (submission *Submission) HasPpiItems() bool {
+	if submission.Data.ListData.Supplementary.Items.PpiItemList == nil {
+		return false
+	}
+	return true
 }

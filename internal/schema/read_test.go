@@ -30,3 +30,7 @@ func TestReadBerd(t *testing.T) {
 func TestReadTiles(t *testing.T) {
 	testRead("qrt_0001", t)
 }
+
+func TestReadPrices(t *testing.T) {
+	testRead("ppi_0001", t)
+}

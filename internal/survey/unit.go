@@ -5,12 +5,19 @@ import (
 )
 
 const ListName = "local-units"
+const PpiItems = "item"
+
+type Description struct {
+	Key   string
+	Value string
+}
 
 type Unit interface {
 	GetIdentifier() string
-	GetName() string
-	GetAddress() string
+	GetPrimaryDesc() Description
+	GetSecondaryDesc() Description
 	GetAnswers() []*Answer
+	GetAnswer(code string) *Answer
 	UpdateContext(code, displayCode, title, qType, label string) bool
 }
 
@@ -20,6 +27,11 @@ type ExistingUnit struct {
 }
 
 type NewUnit struct {
+	answers []*Answer
+}
+
+type ExistingPpiItem struct {
+	ppiItem *s.PpiItem
 	answers []*Answer
 }
 
@@ -43,6 +55,26 @@ func GetExistingUnits(submission *s.Submission) []*ExistingUnit {
 	return units
 }
 
+func NewExistingPpiItem(ppiItem *s.PpiItem, answer []*Answer) *ExistingPpiItem {
+	return &ExistingPpiItem{ppiItem: ppiItem, answers: answer}
+}
+
+func GetExistingPpiItems(submission *s.Submission) []*ExistingPpiItem {
+	var ppiItems []*ExistingPpiItem
+	for _, listItemId := range submission.GetListItemIds(PpiItems) {
+		ppiItem := submission.GetPpiItem(listItemId)
+		if ppiItem != nil {
+			var answers []*Answer
+			for code, value := range submission.GetResponseForListId(listItemId) {
+				answers = append(answers, NewAnswer(code, value))
+			}
+			ppiItems = append(ppiItems, NewExistingPpiItem(ppiItem, answers))
+		}
+	}
+
+	return ppiItems
+}
+
 func GetNewUnits(listName string, submission *s.Submission) []*NewUnit {
 	var units []*NewUnit
 	for _, listItemId := range submission.GetListItemIds(listName) {
@@ -60,19 +92,76 @@ func (unit *ExistingUnit) GetIdentifier() string {
 	return unit.localUnit.Identifier
 }
 
-func (unit *ExistingUnit) GetName() string {
-	return unit.localUnit.Name
+func (unit *ExistingUnit) GetPrimaryDesc() Description {
+	return Description{
+		Key:   "Name",
+		Value: unit.localUnit.Name,
+	}
 }
 
-func (unit *ExistingUnit) GetAddress() string {
-	return unit.localUnit.GetAddress()
+func (unit *ExistingUnit) GetSecondaryDesc() Description {
+	return Description{
+		Key:   "Address",
+		Value: unit.localUnit.GetAddress(),
+	}
 }
 
 func (unit *ExistingUnit) GetAnswers() []*Answer {
 	return unit.answers
 }
 
+func (unit *ExistingUnit) GetAnswer(code string) *Answer {
+	for _, answer := range unit.answers {
+		if answer.GetCode() == code {
+			return answer
+		}
+	}
+	return nil
+}
+
 func (unit *ExistingUnit) UpdateContext(code, displayCode, title, qType, label string) bool {
+	updated := false
+	for _, answer := range unit.answers {
+		if answer.GetCode() == code {
+			updated = true
+			answer.SetContext(title, displayCode, qType, label, false)
+		}
+	}
+	return updated
+}
+
+func (unit *ExistingPpiItem) GetIdentifier() string {
+	return unit.ppiItem.Identifier
+}
+
+func (unit *ExistingPpiItem) GetPrimaryDesc() Description {
+	return Description{
+		Key:   "Item Number",
+		Value: unit.ppiItem.ItemNumber,
+	}
+}
+
+func (unit *ExistingPpiItem) GetSecondaryDesc() Description {
+	return Description{
+		Key:   "Item Specification",
+		Value: unit.ppiItem.ItemSpecification,
+	}
+}
+
+func (unit *ExistingPpiItem) GetAnswers() []*Answer {
+	return unit.answers
+}
+
+func (unit *ExistingPpiItem) GetAnswer(code string) *Answer {
+	for _, answer := range unit.answers {
+		if answer.GetCode() == code {
+			return answer
+		}
+	}
+	return nil
+}
+
+func (unit *ExistingPpiItem) UpdateContext(code, displayCode, title, qType, label string) bool {
 	updated := false
 	for _, answer := range unit.answers {
 		if answer.GetCode() == code {
@@ -87,16 +176,25 @@ func (unit *NewUnit) GetIdentifier() string {
 	return "New Local Unit"
 }
 
-func (unit *NewUnit) GetName() string {
-	return ""
+func (unit *NewUnit) GetPrimaryDesc() Description {
+	return Description{}
 }
 
-func (unit *NewUnit) GetAddress() string {
-	return ""
+func (unit *NewUnit) GetSecondaryDesc() Description {
+	return Description{}
 }
 
 func (unit *NewUnit) GetAnswers() []*Answer {
 	return unit.answers
+}
+
+func (unit *NewUnit) GetAnswer(code string) *Answer {
+	for _, answer := range unit.answers {
+		if answer.GetCode() == code {
+			return answer
+		}
+	}
+	return nil
 }
 
 func (unit *NewUnit) UpdateContext(code, displayCode, title, qType, label string) bool {
