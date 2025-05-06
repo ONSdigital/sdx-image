@@ -3,6 +3,7 @@ package submission
 import (
 	"encoding/json"
 	"fmt"
+	"strconv"
 )
 
 type Answer struct {
@@ -88,7 +89,7 @@ func (a *Answer) getValue() string {
 		if v == float64(int(v)) {
 			return fmt.Sprintf("%d", int(v))
 		}
-		return fmt.Sprintf("%f", v)
+		return strconv.FormatFloat(v, 'f', -1, 64)
 	case int:
 		return fmt.Sprintf("%d", v)
 	default:
