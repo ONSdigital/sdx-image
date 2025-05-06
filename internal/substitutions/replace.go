@@ -32,6 +32,10 @@ func (pLookup ParameterLookup) get(str string) string {
 	return result
 }
 
+func (pLookup ParameterLookup) Add(key, val string) {
+	pLookup[key] = val
+}
+
 func GetLookup(startDate, endDate, ruName, employmentDate string) ParameterLookup {
 	start := convertDate(startDate)
 	end := convertDate(endDate)
