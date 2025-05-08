@@ -8,11 +8,14 @@ var htmlLookupMap = map[string]string{
 	"&amp;":     "&",
 	"<em>":      "",
 	"</em>":     "",
-	" , ":       " ",
-	"  ":        " ",
-	" ?":        "?",
 	"<strong>":  "",
 	"</strong>": "",
+}
+
+var spaceLookupMap = map[string]string{
+	" , ": " ",
+	"  ":  " ",
+	" ?":  "?",
 }
 
 // html replaces common "html" codes within a string
@@ -20,6 +23,9 @@ var htmlLookupMap = map[string]string{
 func html(text string) string {
 	result := text
 	for k, v := range htmlLookupMap {
+		result = strings.Replace(result, k, v, -1)
+	}
+	for k, v := range spaceLookupMap {
 		result = strings.Replace(result, k, v, -1)
 	}
 	return result
