@@ -1,6 +1,8 @@
 package survey
 
 import (
+	"encoding/json"
+	"fmt"
 	"sort"
 )
 
@@ -36,20 +38,11 @@ type Survey struct {
 }
 
 func (survey *Survey) String() string {
-	result := ""
-	for _, section := range survey.Sections {
-		for _, instance := range section.Instances {
-			for _, answer := range instance.Answers {
-				result += answer.GetCode() + ", "
-			}
-		}
+	b, err := json.MarshalIndent(survey, "", "  ")
+	if err != nil {
+		fmt.Println("error:", err)
 	}
-	for _, unit := range survey.Units {
-		for _, answer := range unit.GetAnswers() {
-			result += answer.GetCode() + ", "
-		}
-	}
-	return result
+	return string(b)
 }
 
 type InstanceList []*Instance

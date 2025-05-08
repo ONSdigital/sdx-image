@@ -2,7 +2,6 @@
 package controller
 
 import (
-	"fmt"
 	"image"
 	"runtime"
 	"sdxImage/internal/log"
@@ -54,9 +53,6 @@ func Run(submissionBytes []byte) (image.Image, error) {
 
 	//create the survey
 	survey := sur.Create(schema, submission)
-	fmt.Println("------------------")
-	fmt.Println("Survey:", survey.String())
-	fmt.Println("------------------")
 
 	//generate the image
 	result := page.Create(survey)
