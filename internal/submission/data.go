@@ -134,15 +134,17 @@ func (listData *ListData) getAllListItemIds() []string {
 	return listItems
 }
 
-func (listData *ListData) getResponses(listItemId string) map[string]string {
+func (listData *ListData) getResponses(listItemId string) (map[string]string, []string) {
 	responses := make(map[string]string)
+	var order []string
 	for _, answer := range listData.Answers {
 		if answer.ListItemId == listItemId {
 			code := listData.getCode(answer.Id)
 			responses[code] = answer.getValue()
+			order = append(order, code)
 		}
 	}
-	return responses
+	return responses, order
 }
 
 func (listData *ListData) getLocalUnit(listItemId string) *LocalUnit {
