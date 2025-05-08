@@ -21,7 +21,8 @@ type Items struct {
 }
 
 type Supplementary struct {
-	Items Items `json:"items"`
+	Items        Items  `json:"items"`
+	CurrentMonth string `json:"current_month"` //required for ppi
 }
 
 func (su *LocalUnit) GetAddress() string {

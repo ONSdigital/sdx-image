@@ -45,7 +45,9 @@ func GetExistingUnits(submission *s.Submission) []*ExistingUnit {
 		localUnit := submission.GetLocalUnit(listItemId)
 		if localUnit != nil {
 			var answers []*Answer
-			for code, value := range submission.GetResponseForListId(listItemId) {
+			responses, order := submission.GetResponseForListId(listItemId)
+			for _, code := range order {
+				value := responses[code]
 				answers = append(answers, NewAnswer(code, value))
 			}
 			units = append(units, NewExistingUnit(localUnit, answers))
@@ -65,7 +67,9 @@ func GetExistingPpiItems(submission *s.Submission) []*ExistingPpiItem {
 		ppiItem := submission.GetPpiItem(listItemId)
 		if ppiItem != nil {
 			var answers []*Answer
-			for code, value := range submission.GetResponseForListId(listItemId) {
+			responses, order := submission.GetResponseForListId(listItemId)
+			for _, code := range order {
+				value := responses[code]
 				answers = append(answers, NewAnswer(code, value))
 			}
 			ppiItems = append(ppiItems, NewExistingPpiItem(ppiItem, answers))
@@ -79,7 +83,9 @@ func GetNewUnits(listName string, submission *s.Submission) []*NewUnit {
 	var units []*NewUnit
 	for _, listItemId := range submission.GetListItemIds(listName) {
 		var answers []*Answer
-		for code, value := range submission.GetResponseForListId(listItemId) {
+		responses, order := submission.GetResponseForListId(listItemId)
+		for _, code := range order {
+			value := responses[code]
 			answers = append(answers, NewAnswer(code, value))
 		}
 		units = append(units, &NewUnit{answers: answers})

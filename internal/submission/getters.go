@@ -56,9 +56,9 @@ func (submission *Submission) GetListItemIds(name string) []string {
 	return nil
 }
 
-func (submission *Submission) GetResponseForListId(listItemId string) map[string]string {
+func (submission *Submission) GetResponseForListId(listItemId string) (map[string]string, []string) {
 	if submission.GetDataType() == MapDataType {
-		return submission.Data.MapData
+		return submission.Data.MapData, nil
 	}
 
 	return submission.Data.ListData.getResponses(listItemId)
@@ -74,9 +74,9 @@ func (submission *Submission) GetResponses() ResponseMap {
 	listItemIds := submission.Data.getAllListItemIds()
 	responses := ResponseMap{}
 	for _, listItemId := range listItemIds {
-		responses[listItemId] = submission.Data.ListData.getResponses(listItemId)
+		responses[listItemId], _ = submission.Data.ListData.getResponses(listItemId)
 	}
-	responses[NonListItem] = submission.Data.ListData.getResponses("")
+	responses[NonListItem], _ = submission.Data.ListData.getResponses("")
 	return responses
 }
 
@@ -87,9 +87,9 @@ func (submission *Submission) GetNonUnitResponses() ResponseMap {
 	listItemIds := submission.Data.getAllListItemIds()
 	responses := ResponseMap{}
 	for _, listItemId := range listItemIds {
-		responses[listItemId] = submission.Data.ListData.getResponses(listItemId)
+		responses[listItemId], _ = submission.Data.ListData.getResponses(listItemId)
 	}
-	responses[NonListItem] = submission.Data.ListData.getResponses("")
+	responses[NonListItem], _ = submission.Data.ListData.getResponses("")
 	return responses
 }
 

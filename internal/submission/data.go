@@ -3,6 +3,7 @@ package submission
 import (
 	"encoding/json"
 	"fmt"
+	"strconv"
 )
 
 type Answer struct {
@@ -88,7 +89,7 @@ func (a *Answer) getValue() string {
 		if v == float64(int(v)) {
 			return fmt.Sprintf("%d", int(v))
 		}
-		return fmt.Sprintf("%f", v)
+		return strconv.FormatFloat(v, 'f', -1, 64)
 	case int:
 		return fmt.Sprintf("%d", v)
 	default:
@@ -133,15 +134,17 @@ func (listData *ListData) getAllListItemIds() []string {
 	return listItems
 }
 
-func (listData *ListData) getResponses(listItemId string) map[string]string {
+func (listData *ListData) getResponses(listItemId string) (map[string]string, []string) {
 	responses := make(map[string]string)
+	var order []string
 	for _, answer := range listData.Answers {
 		if answer.ListItemId == listItemId {
 			code := listData.getCode(answer.Id)
 			responses[code] = answer.getValue()
+			order = append(order, code)
 		}
 	}
-	return responses
+	return responses, order
 }
 
 func (listData *ListData) getLocalUnit(listItemId string) *LocalUnit {

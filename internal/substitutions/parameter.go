@@ -6,6 +6,7 @@ import (
 
 type Lookup interface {
 	get(str string) string
+	Add(key, val string)
 }
 
 const pStart = "{"

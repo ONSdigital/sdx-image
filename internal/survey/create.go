@@ -44,6 +44,7 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 		}
 	} else if submission.HasPpiItems() {
 		// do ppi stuff
+		lookup.Add("currentmonth", submission.Data.ListData.Supplementary.CurrentMonth)
 		survey.UnitType = PpiItem
 		for _, ppiItem := range GetExistingPpiItems(submission) {
 			survey.Units = append(survey.Units, ppiItem)
