@@ -1,7 +1,6 @@
 package substitutions
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -9,9 +8,7 @@ import (
 // Some substitutions are hard coded to avoid overly complex knowledge of the specific survey.
 func Replace(text string, lookup ParameterLookup) string {
 	result := replaceParameters(text, lookup)
-	fmt.Println("result 1:", result)
 	result = html(result)
-	fmt.Println("result 2:", result)
 	return result
 }
 
