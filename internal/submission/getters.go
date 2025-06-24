@@ -100,9 +100,9 @@ func (submission *Submission) GetLocalUnit(listItemId string) *LocalUnit {
 	return nil
 }
 
-func (submission *Submission) GetPpiItem(listItemId string) *PpiItem {
+func (submission *Submission) GetPpiItem(listItemId string) *PricesItem {
 	if submission.GetDataType() == ListDataType {
-		return submission.Data.ListData.getPpiItem(listItemId)
+		return submission.Data.ListData.getPricesItem(listItemId)
 	}
 	return nil
 }
@@ -114,7 +114,7 @@ func (submission *Submission) HasLocalUnits() bool {
 	return true
 }
 
-func (submission *Submission) HasPpiItems() bool {
+func (submission *Submission) HasPricesItems() bool {
 	if submission.Data.ListData.Supplementary.Items.PpiItemList == nil && submission.Data.ListData.Supplementary.Items.SppiItemList == nil {
 		return false
 	}

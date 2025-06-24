@@ -166,7 +166,7 @@ func (listData *ListData) getLocalUnit(listItemId string) *LocalUnit {
 	return nil
 }
 
-func (listData *ListData) getPpiItem(listItemId string) *PpiItem {
+func (listData *ListData) getPricesItem(listItemId string) *PricesItem {
 	var sdMapping string
 	for _, list := range listData.Lists {
 		for _, mapping := range list.SdMappings {

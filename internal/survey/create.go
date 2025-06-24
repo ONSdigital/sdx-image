@@ -42,14 +42,14 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 		for _, lu := range GetNewUnits(AdditionalSites, submission) {
 			survey.Units = append(survey.Units, lu)
 		}
-	} else if submission.HasPpiItems() {
+	} else if submission.HasPricesItems() {
 		// do ppi stuff
 		lookup.Add("currentmonth", submission.Data.ListData.Supplementary.CurrentMonth)
 		survey.UnitType = PpiItem
-		for _, ppiItem := range GetExistingPpiItems(submission, PpiItems) {
+		for _, ppiItem := range GetExistingPricesItems(submission, PpiItems) {
 			survey.Units = append(survey.Units, ppiItem)
 		}
-		for _, ppiItem := range GetExistingPpiItems(submission, SppiItems) {
+		for _, ppiItem := range GetExistingPricesItems(submission, SppiItems) {
 			survey.Units = append(survey.Units, ppiItem)
 		}
 	}

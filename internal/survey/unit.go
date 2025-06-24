@@ -32,7 +32,7 @@ type NewUnit struct {
 }
 
 type ExistingPpiItem struct {
-	ppiItem *s.PpiItem
+	ppiItem *s.PricesItem
 	answers []*Answer
 }
 
@@ -58,11 +58,11 @@ func GetExistingUnits(submission *s.Submission) []*ExistingUnit {
 	return units
 }
 
-func NewExistingPpiItem(ppiItem *s.PpiItem, answer []*Answer) *ExistingPpiItem {
+func NewExistingPpiItem(ppiItem *s.PricesItem, answer []*Answer) *ExistingPpiItem {
 	return &ExistingPpiItem{ppiItem: ppiItem, answers: answer}
 }
 
-func GetExistingPpiItems(submission *s.Submission, listName string) []*ExistingPpiItem {
+func GetExistingPricesItems(submission *s.Submission, listName string) []*ExistingPpiItem {
 	var ppiItems []*ExistingPpiItem
 	for _, listItemId := range submission.GetListItemIds(listName) {
 		ppiItem := submission.GetPpiItem(listItemId)
