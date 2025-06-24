@@ -46,7 +46,10 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 		// do ppi stuff
 		lookup.Add("currentmonth", submission.Data.ListData.Supplementary.CurrentMonth)
 		survey.UnitType = PpiItem
-		for _, ppiItem := range GetExistingPpiItems(submission) {
+		for _, ppiItem := range GetExistingPpiItems(submission, PpiItems) {
+			survey.Units = append(survey.Units, ppiItem)
+		}
+		for _, ppiItem := range GetExistingPpiItems(submission, SppiItems) {
 			survey.Units = append(survey.Units, ppiItem)
 		}
 	}
@@ -54,7 +57,7 @@ func Create(schema *schema.Schema, submission *s.Submission) *Survey {
 	responseMap := submission.GetResponses()
 	for listItemId := range responseMap {
 		name := submission.GetListItemName(listItemId)
-		if name == AdditionalSites || name == ListName || name == PpiItems {
+		if name == AdditionalSites || name == ListName || name == PpiItems || name == SppiItems {
 			delete(responseMap, listItemId)
 		}
 	}

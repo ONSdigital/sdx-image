@@ -16,8 +16,9 @@ type PpiItem struct {
 }
 
 type Items struct {
-	LocalUnits  []*LocalUnit `json:"local-units"`
-	PpiItemList []*PpiItem   `json:"item"`
+	LocalUnits   []*LocalUnit `json:"local-units"`
+	PpiItemList  []*PpiItem   `json:"item"`
+	SppiItemList []*PpiItem   `json:"service"`
 }
 
 type Supplementary struct {

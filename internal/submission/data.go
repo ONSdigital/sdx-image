@@ -182,5 +182,11 @@ func (listData *ListData) getPpiItem(listItemId string) *PpiItem {
 		}
 	}
 
+	for _, ppiItem := range listData.Supplementary.Items.SppiItemList {
+		if ppiItem.Identifier == sdMapping {
+			return ppiItem
+		}
+	}
+
 	return nil
 }

@@ -115,7 +115,7 @@ func (submission *Submission) HasLocalUnits() bool {
 }
 
 func (submission *Submission) HasPpiItems() bool {
-	if submission.Data.ListData.Supplementary.Items.PpiItemList == nil {
+	if submission.Data.ListData.Supplementary.Items.PpiItemList == nil && submission.Data.ListData.Supplementary.Items.SppiItemList == nil {
 		return false
 	}
 	return true
