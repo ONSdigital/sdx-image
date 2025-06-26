@@ -1,0 +1,151 @@
+{
+  "case_id": "cde6a1e1-4c3f-11f0-a6fa-e74638eb6feb",
+  "tx_id": "cde6a1e4-4c3f-11f0-a6fa-e74638eb6feb",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.3",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "cde6a1e2-4c3f-11f0-a6fa-e74638eb6feb",
+  "flushed": false,
+  "submitted_at": "2025-06-18T12:30:24+00:00",
+  "launch_language_code": "en",
+  "survey_metadata": {
+    "survey_id": "061",
+    "ru_ref": "49900029080",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "period_id": "201605",
+    "user_id": "A12345678901",
+    "ref_p_start_date": "2016-05-01",
+    "ref_p_end_date": "2016-06-12",
+    "form_type": "H",
+    "sds_dataset_id": "cbb6b69e-caec-42c3-97d4-98f588db26e1"
+  },
+  "schema_name": "sppi_0011",
+  "data": {
+    "answers": [
+      {
+        "answer_id": "answera6755e2f-9a3c-4031-83aa-2c4f00813c5f",
+        "value": "0",
+        "list_item_id": "fQpIgC"
+      },
+      {
+        "answer_id": "answerba95f3c0-9784-496c-99fe-b8f9faa5a772",
+        "value": 1000,
+        "list_item_id": "fQpIgC"
+      },
+      {
+        "answer_id": "answerec475dd4-cccc-43c3-a8d8-71d26eafe438",
+        "value": "Comment for the first product",
+        "list_item_id": "fQpIgC"
+      },
+      {
+        "answer_id": "answera6755e2f-9a3c-4031-83aa-2c4f00813c5f",
+        "value": "1",
+        "list_item_id": "BPcJyT"
+      },
+      {
+        "answer_id": "answer58d041fa-9e70-4f1b-b3a4-80871bceb82f",
+        "value": "Change for second service",
+        "list_item_id": "BPcJyT"
+      },
+      {
+        "answer_id": "answerec475dd4-cccc-43c3-a8d8-71d26eafe438",
+        "value": "Comment for second product",
+        "list_item_id": "BPcJyT"
+      },
+      {
+        "answer_id": "answer095ebfb4-a16b-45da-8f61-b0a85ae48262",
+        "value": "Overall comment"
+      }
+    ],
+    "lists": [
+      {
+        "items": [
+          "fQpIgC",
+          "BPcJyT"
+        ],
+        "name": "service",
+        "supplementary_data_mappings": [
+          {
+            "identifier": "7732015057",
+            "list_item_id": "fQpIgC"
+          },
+          {
+            "identifier": "7732016043",
+            "list_item_id": "BPcJyT"
+          }
+        ]
+      }
+    ],
+    "supplementary_data": {
+      "identifier": "49900029080",
+      "items": {
+        "service": [
+          {
+            "identifier": "7732015057",
+            "service_description_1": "SERVICE: DIGGER HIRE",
+            "service_description_4": "",
+            "service_description_2": "DESCRIPTION: HIRE OF 3 TON MINI DIGGER",
+            "currency": "Pounds Sterling",
+            "unit_of_sale": "PER WEEK",
+            "currency_wording": "price",
+            "item_number": "7732015057",
+            "service_description_5": "",
+            "terms_of_sale_1": "CUSTOMER REF: NORTH",
+            "terms_of_sale_3": "",
+            "terms_of_sale_2": "PAYMENT: 60 DAYS",
+            "service_description_3": "",
+            "currency_wording_capital": "Price",
+            "terms_of_sale_4": ""
+          },
+          {
+            "identifier": "7732016043",
+            "service_description_1": "SERVICE: TANDEM ROLLER HIRE",
+            "service_description_4": "",
+            "service_description_2": "DESCRIPTION: HIRE OF 1200MM TANDEM ROLLER",
+            "currency": "Pounds Sterling",
+            "unit_of_sale": "PER WEEK",
+            "currency_wording": "price",
+            "item_number": "7732016043",
+            "service_description_5": "",
+            "terms_of_sale_1": "CUSTOMER REF: F.P.M",
+            "terms_of_sale_3": "",
+            "terms_of_sale_2": "PAYMENT: 60 DAYS",
+            "service_description_3": "",
+            "currency_wording_capital": "Price",
+            "terms_of_sale_4": ""
+          }
+        ]
+      },
+      "supplier_number": "49900029080",
+      "survey_id": "061",
+      "source_quarter": "Quarter 2/2025 (April)",
+      "schema_version": "v1"
+    },
+    "answer_codes": [
+      {
+        "answer_id": "answera6755e2f-9a3c-4031-83aa-2c4f00813c5f",
+        "code": "9999"
+      },
+      {
+        "answer_id": "answer58d041fa-9e70-4f1b-b3a4-80871bceb82f",
+        "code": "9998"
+      },
+      {
+        "answer_id": "answerba95f3c0-9784-496c-99fe-b8f9faa5a772",
+        "code": "9997"
+      },
+      {
+        "answer_id": "answerec475dd4-cccc-43c3-a8d8-71d26eafe438",
+        "code": "9996"
+      },
+      {
+        "answer_id": "answer095ebfb4-a16b-45da-8f61-b0a85ae48262",
+        "code": "9995"
+      }
+    ]
+  },
+  "started_at": "2025-06-18T12:29:03.746136+00:00",
+  "submission_language_code": "en"
+}

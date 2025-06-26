@@ -8,7 +8,7 @@ type LocalUnit struct {
 	Address    []string `json:"address"`
 }
 
-type PpiItem struct {
+type PricesItem struct {
 	Identifier        string `json:"identifier"`
 	ItemNumber        string `json:"item_number"`
 	SupplierNumber    string `json:"supplier_number"`
@@ -16,8 +16,9 @@ type PpiItem struct {
 }
 
 type Items struct {
-	LocalUnits  []*LocalUnit `json:"local-units"`
-	PpiItemList []*PpiItem   `json:"item"`
+	LocalUnits   []*LocalUnit  `json:"local-units"`
+	PpiItemList  []*PricesItem `json:"item"`
+	SppiItemList []*PricesItem `json:"service"`
 }
 
 type Supplementary struct {

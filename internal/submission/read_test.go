@@ -97,3 +97,18 @@ func TestPPISubmission(t *testing.T) {
 	}
 	fmt.Println(result)
 }
+
+func TestSPPISubmission(t *testing.T) {
+	//Supplementary Data and Data version  0.0.3
+	test.SetCwdToRoot()
+	filename := "sppi_0011"
+	fileBytes, e := readFile(filename)
+	if e != nil {
+		t.Errorf("failed to read file %v with error: %q", filename, e.Error())
+	}
+	result, err := Read(fileBytes)
+	if err != nil {
+		t.Errorf("failed to convert file %v with error: %q", filename, err.Error())
+	}
+	fmt.Println(result)
+}
