@@ -16,6 +16,16 @@ func TestStringValue(t *testing.T) {
 	test.Equal(t, "24.1", answer.getValue())
 }
 
+func TestEmptyStringValue(t *testing.T) {
+	jsonStr := "{\"answer_id\":\"1\",\"value\":\"\",\"list_item_id\":\"1\"}"
+	answer := &Answer{}
+	err := json.Unmarshal([]byte(jsonStr), answer)
+	if err != nil {
+		t.Errorf("failed to parse json: %v", err)
+	}
+	test.Equal(t, "", answer.getValue())
+}
+
 func TestFloatValue(t *testing.T) {
 	jsonStr := "{\"answer_id\":\"1\",\"value\":24.1,\"list_item_id\":\"1\"}"
 	answer := &Answer{}
