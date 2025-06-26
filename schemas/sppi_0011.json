@@ -1,0 +1,1182 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.3",
+  "preview_questions": false,
+  "survey_id": "061",
+  "form_type": "0011",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "answer_codes": [
+    {
+      "answer_id": "answera6755e2f-9a3c-4031-83aa-2c4f00813c5f",
+      "code": "9999"
+    },
+    {
+      "answer_id": "answer58d041fa-9e70-4f1b-b3a4-80871bceb82f",
+      "code": "9998"
+    },
+    {
+      "answer_id": "answerba95f3c0-9784-496c-99fe-b8f9faa5a772",
+      "code": "9997"
+    },
+    {
+      "answer_id": "answerec475dd4-cccc-43c3-a8d8-71d26eafe438",
+      "code": "9996"
+    },
+    {
+      "answer_id": "answer095ebfb4-a16b-45da-8f61-b0a85ae48262",
+      "code": "9995"
+    }
+  ],
+  "title": "Quarterly Survey for Services Producer Price Indices",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "section598a11ad-3b9f-4e1b-98bf-f7aaf1222304"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "section598a11ad-3b9f-4e1b-98bf-f7aaf1222304",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "group598a11ad-3b9f-4e1b-98bf-f7aaf1222304",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      },
+                      {
+                        "placeholder": "trad_as",
+                        "transforms": [
+                          {
+                            "transform": "conditional_trad_as",
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "Data should relate to all sites in England, Scotland, Wales and Northern Ireland, but exclude the Channel Islands and the Isle of Man, unless otherwise stated.",
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially.",
+                        "You can save or print a copy of your answers for your records at the end of this survey."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "The purpose of this questionnaire is to collect information about the total price charged for services provided to all UK based customers."
+                  },
+                  {
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/quarterlyinquiryforservicesproducerpriceindicessppi\" target=\"_blank\" rel=\"noopener noreferrer\">View more information about the survey (this link opens in a new tab)</a>"
+                  },
+                  {
+                    "description": "In this survey, you will be presented with services provided by your business. You will be asked to check the information for any errors and provide details of any changes."
+                  },
+                  {
+                    "description": "You will also be asked for the following information:"
+                  },
+                  {
+                    "list": [
+                      {
+                        "text": "the price your business charged for only providing the service listed to the customer specified for {sourcequarter}",
+                        "placeholders": [
+                          {
+                            "placeholder": "sourcequarter",
+                            "value": {
+                              "source": "supplementary_data",
+                              "identifier": "source_quarter"
+                            }
+                          }
+                        ]
+                      },
+                      "any further details that will help us to understand your figures"
+                    ]
+                  },
+                  {
+                    "description": "All services listed should be <strong>provided</strong> by your business to a customer located in the <strong>United Kingdom.</strong>"
+                  }
+                ],
+                "questions": []
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "ONS uses the data to measure the inflationary pressures experienced by service sector providers over time; the data are not used to monitor individual businesses.",
+                        "The information is used in the production of the Services Producer Price Indices (SPPI). These data are an important contribution to the production of the National Accounts.",
+                        "The Services Producer Price Indices (SPPI) monitors prices received by UK businesses from customers located within the UK. The information supplied will help produce a measure of services inflation, which is used by the Treasury, the Bank of England and also by businesses in their assessments of the UK economy.",
+                        "Results are published quarterly in the <a href=\"https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/producerpriceinflation/previousReleases\" target=\"_blank\" rel=\"noopener noreferrer\">Producer Price Inflation, UK statistical bulletins (this link opens in a new tab).</a>",
+                        "The information you provide contributes to Gross Domestic Product (GDP)."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "754869a7-eae1-4255-9f6c-05e81e55b179",
+      "title": "[service - item_number] [service - service_description_1]",
+      "repeat": {
+        "for_list": "service",
+        "title": {
+          "text": "{service_itemnumber} {service_servicedescription1}",
+          "placeholders": [
+            {
+              "placeholder": "service_itemnumber",
+              "value": {
+                "source": "supplementary_data",
+                "identifier": "service",
+                "selectors": ["item_number"]
+              }
+            },
+            {
+              "placeholder": "service_servicedescription1",
+              "value": {
+                "source": "supplementary_data",
+                "identifier": "service",
+                "selectors": ["service_description_1"]
+              }
+            }
+          ]
+        }
+      },
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group754869a7-eae1-4255-9f6c-05e81e55b179",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "service-information-and-quotes-introduction",
+              "page_title": "Service information and quotes introduction",
+              "content": {
+                "title": "Service information and quotes",
+                "contents": [
+                  {
+                    "description": "In this section you will be asked about the following service provided by your business:"
+                  },
+                  {
+                    "description": {
+                      "text": "<strong>ITEM REFERENCE NUMBER:</strong> {service_itemnumber}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_itemnumber",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["item_number"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>SPECIFICATION:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{service_servicedescription1}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_servicedescription1",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["service_description_1"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{service_servicedescription2}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_servicedescription2",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["service_description_2"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{service_servicedescription3}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_servicedescription3",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["service_description_3"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{service_servicedescription4}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_servicedescription4",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["service_description_4"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{service_servicedescription5}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_servicedescription5",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["service_description_5"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>UNITS OF SALE:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{service_unitofsale}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_unitofsale",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["unit_of_sale"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>TERMS OF SALE:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{service_termsofsale1}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_termsofsale1",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["terms_of_sale_1"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{service_termsofsale2}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_termsofsale2",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["terms_of_sale_2"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{service_termsofsale3}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_termsofsale3",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["terms_of_sale_3"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{service_termsofsale4}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_termsofsale4",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["terms_of_sale_4"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>FIGURE QUOTED AS:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{service_currency}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_currency",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["currency"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "You will be asked to check the information for any errors and provide details of any changes."
+                  },
+                  {
+                    "description": "You will also be asked for the following information:"
+                  },
+                  {
+                    "list": [
+                      {
+                        "text": "the {service_currencywording} your business charged for only providing the service listed to the customer specified for {sourcequarter}",
+                        "placeholders": [
+                          {
+                            "placeholder": "service_currencywording",
+                            "value": {
+                              "source": "supplementary_data",
+                              "identifier": "service",
+                              "selectors": ["currency_wording"]
+                            }
+                          },
+                          {
+                            "placeholder": "sourcequarter",
+                            "value": {
+                              "source": "supplementary_data",
+                              "identifier": "source_quarter"
+                            }
+                          }
+                        ]
+                      },
+                      "any further details that will help us to understand your figures"
+                    ]
+                  },
+                  {
+                    "description": "All services listed should be <strong>provided</strong> by your business to a customer located in the <strong>United Kingdom.</strong>"
+                  },
+                  {
+                    "description": "Data should be reviewed annually when providing data for a long-term contract to ensure it is still representative of your business’s activity."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "service-confirmation",
+              "type": "Question",
+              "question": {
+                "id": "questionservice-confirmation",
+                "title": {
+                  "text": "Are the details for the following service provided by {ru_name} correct for {sourcequarter}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    },
+                    {
+                      "placeholder": "sourcequarter",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "source_quarter"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  {
+                    "text": "<p>Service details currently held:</p><p><strong>ITEM REFERENCE NUMBER:</strong> {service_itemnumber}</p><p><strong>SPECIFICATION:</strong></p><p>{service_servicedescription1}</p><p>{service_servicedescription2}</p><p>{service_servicedescription3}</p><p>{service_servicedescription4}</p><p>{service_servicedescription5}</p><p><strong>UNITS OF SALE:</strong></p><p>{service_unitofsale}</p><p><strong>TERMS OF SALE:</strong></p><p>{service_termsofsale1}</p><p>{service_termsofsale2}</p><p>{service_termsofsale3}</p><p>{service_termsofsale4}</p><p><strong>FIGURE QUOTED AS:</strong></p><p>{service_currency}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "service_itemnumber",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["item_number"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription5",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_5"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_unitofsale",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["unit_of_sale"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_currency",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["currency"]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Select ’No, the details are not correct, I need to change them’ if:</strong>"
+                    },
+                    {
+                      "list": [
+                        "the nature of the service has changed in any material sense",
+                        "there has been a change to the currency used in your quoted figure, for example from sterling to euros",
+                        "the service has been discontinued by your business",
+                        "the service is no longer representative of your business activity"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera6755e2f-9a3c-4031-83aa-2c4f00813c5f",
+                    "mandatory": true,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, the details are correct",
+                        "value": "0"
+                      },
+                      {
+                        "label": "No, the details are not correct, I need to change them",
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Service confirmation",
+              "routing_rules": [
+                {
+                  "block": "changes-to-service-details",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera6755e2f-9a3c-4031-83aa-2c4f00813c5f",
+                        "source": "answers"
+                      },
+                      ["1"]
+                    ]
+                  }
+                },
+                {
+                  "block": "service-charge",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answera6755e2f-9a3c-4031-83aa-2c4f00813c5f",
+                        "source": "answers"
+                      },
+                      ["0"]
+                    ]
+                  }
+                },
+                {
+                  "section": "End"
+                }
+              ]
+            },
+            {
+              "id": "changes-to-service-details",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-to-service-details",
+                "title": {
+                  "text": "Provide details of any changes to the following service for {sourcequarter}",
+                  "placeholders": [
+                    {
+                      "placeholder": "sourcequarter",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "source_quarter"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  {
+                    "text": "<p>Service details currently held:</p><p><strong>ITEM REFERENCE NUMBER:</strong> {service_itemnumber}</p><p><strong>SPECIFICATION:</strong></p><p>{service_servicedescription1}</p><p>{service_servicedescription2}</p><p>{service_servicedescription3}</p><p>{service_servicedescription4}</p><p>{service_servicedescription5}</p><p><strong>UNITS OF SALE:</strong></p><p>{service_unitofsale}</p><p><strong>TERMS OF SALE:</strong></p><p>{service_termsofsale1}</p><p>{service_termsofsale2}</p><p>{service_termsofsale3}</p><p>{service_termsofsale4}</p><p><strong>FIGURE QUOTED AS:</strong></p><p>{service_currency}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "service_itemnumber",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["item_number"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription5",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_5"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_unitofsale",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["unit_of_sale"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_currency",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["currency"]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include details such as:</strong>"
+                    },
+                    {
+                      "list": [
+                        "all of the key elements which have a direct bearing on the figure. The description should be specific enough for you to provide the relevant figure in the future.",
+                        "contract or customer reference numbers",
+                        "any change to the currency used in your quoted figure, for example from sterling to euros",
+                        "if the service has been discontinued, provide details of any replacement services",
+                        "the figure your business charged for providing the new or changed service, as close as possible to the start of the specified quarter"
+                      ]
+                    },
+                    {
+                      "description": "The product, unit and terms of sale should be described in enough detail so that your business can provide consistent figures each quarter."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer58d041fa-9e70-4f1b-b3a4-80871bceb82f",
+                    "mandatory": true,
+                    "type": "TextArea",
+                    "label": "Changes to service details",
+                    "max_length": 2000,
+                    "guidance": {
+                      "show_guidance": "What do we mean by ’the figure your business charged for this new or changed service’",
+                      "hide_guidance": "What do we mean by ’the figure your business charged for this new or changed service’",
+                      "contents": [
+                        {
+                          "description": "<strong>The figure quoted should:</strong>"
+                        },
+                        {
+                          "list": [
+                            "only relate to the service or services provided to the customer specified",
+                            "be <strong>after</strong> discounts and <strong>excluding</strong> VAT",
+                            "be the most recent quote for <strong>new business</strong> in the specified quarter. Transactions completed during that period may not reflect current pricing policy"
+                          ]
+                        },
+                        {
+                          "description": "If your business has not sold this product in the specified quarter, enter the previous price."
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "page_title": "Changes to service details"
+            },
+            {
+              "id": "service-charge",
+              "type": "Question",
+              "question": {
+                "id": "questionservice-charge",
+                "title": {
+                  "text": "What was the {service_currencywording} your business charged for providing the following service, as close as possible to the start of {sourcequarter}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "service_currencywording",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "service",
+                        "selectors": ["currency_wording"]
+                      }
+                    },
+                    {
+                      "placeholder": "sourcequarter",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "source_quarter"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  {
+                    "text": "<p>Service details currently held:</p><p><strong>ITEM REFERENCE NUMBER:</strong> {service_itemnumber}</p><p><strong>SPECIFICATION:</strong></p><p>{service_servicedescription1}</p><p>{service_servicedescription2}</p><p>{service_servicedescription3}</p><p>{service_servicedescription4}</p><p>{service_servicedescription5}</p><p><strong>UNITS OF SALE:</strong></p><p>{service_unitofsale}</p><p><strong>TERMS OF SALE:</strong></p><p>{service_termsofsale1}</p><p>{service_termsofsale2}</p><p>{service_termsofsale3}</p><p>{service_termsofsale4}</p><p><strong>FIGURE QUOTED AS:</strong></p><p>{service_currency}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "service_itemnumber",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["item_number"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_servicedescription5",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["service_description_5"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_unitofsale",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["unit_of_sale"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_termsofsale4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["terms_of_sale_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "service_currency",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "service",
+                          "selectors": ["currency"]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>The figure quoted should:</strong>"
+                    },
+                    {
+                      "list": [
+                        "only relate to the service or services provided to the customer specified",
+                        "be <strong>after</strong> discounts and <strong>excluding</strong> VAT",
+                        "be the most recent quote for <strong>new business</strong> in the specified quarter. Transactions completed during that period may not reflect current pricing policy"
+                      ]
+                    },
+                    {
+                      "description": "If your business has not sold this service in the specified quarter, enter the previous figure charged."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerba95f3c0-9784-496c-99fe-b8f9faa5a772",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": {
+                      "text": "{service_currencywordingcapital} charged by your business, as close as possible to the start of {sourcequarter}",
+                      "placeholders": [
+                        {
+                          "placeholder": "service_currencywordingcapital",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "service",
+                            "selectors": ["currency_wording_capital"]
+                          }
+                        },
+                        {
+                          "placeholder": "sourcequarter",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "source_quarter"
+                          }
+                        }
+                      ]
+                    },
+                    "description": "Do not enter any special characters, for example, for pounds sterling enter 1.23 not ’&#xA3;1.23’",
+                    "minimum": {
+                      "value": 0,
+                      "exclusive": true
+                    },
+                    "decimal_places": 0
+                  }
+                ]
+              },
+              "page_title": "Service charge",
+              "skip_conditions": {
+                "when": {
+                  "in": [
+                    {
+                      "identifier": "answera6755e2f-9a3c-4031-83aa-2c4f00813c5f",
+                      "source": "answers"
+                    },
+                    ["1"]
+                  ]
+                }
+              }
+            },
+            {
+              "id": "service-comments",
+              "type": "Question",
+              "question": {
+                "id": "questionservice-comments",
+                "title": "Please provide any further details that will help us to understand your figures for this service",
+                "description": [
+                  "<p>If you provide comments, we are less likely to contact you with data queries. This question is optional.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Include reasons for any increases or decreases from the figure provided in your business’s previous return. For example,"
+                    },
+                    {
+                      "list": [
+                        "increases in labour costs",
+                        "discounting due to increased competition in the market"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerec475dd4-cccc-43c3-a8d8-71d26eafe438",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Service comments"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d952a3d9-3be6-4930-80c7-1286ddd34630",
+      "title": "Comments",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "groupd952a3d9-3be6-4930-80c7-1286ddd34630",
+          "blocks": [
+            {
+              "id": "comments",
+              "type": "Question",
+              "question": {
+                "id": "questioncomments",
+                "title": "Please provide any further details that will help us to understand your business and tell an industry story",
+                "description": [
+                  "<p>If you provide comments, we are less likely to contact you with data queries. This question is optional.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include details of changes to the:</strong>"
+                    },
+                    {
+                      "list": [
+                        "structure or ownership of your business",
+                        "activities your business conducts",
+                        "contact details for your business"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer095ebfb4-a16b-45da-8f61-b0a85ae48262",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Comments"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "business",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "supplementary_data": {
+    "lists": ["service"]
+  },
+  "post_submission": {
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "Your response will help inform decision-makers how best to support the UK population and economy at this challenging time."
+        },
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}

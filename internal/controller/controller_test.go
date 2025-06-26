@@ -194,3 +194,7 @@ func TestPpi0001(t *testing.T) {
 func TestPpi0002(t *testing.T) {
 	runFromFile("ppi_0002", t)
 }
+
+func TestSppi0011(t *testing.T) {
+	runFromFile("sppi_0011", t)
+}
