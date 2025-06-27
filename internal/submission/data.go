@@ -2,14 +2,12 @@ package submission
 
 import (
 	"encoding/json"
-	"fmt"
-	"strconv"
 )
 
 type Answer struct {
-	Id         string      `json:"answer_id"`
-	Value      interface{} `json:"value"`
-	ListItemId string      `json:"list_item_id"`
+	Id         string          `json:"answer_id"`
+	Value      json.RawMessage `json:"value"`
+	ListItemId string          `json:"list_item_id"`
 }
 
 type Answers []Answer
@@ -82,18 +80,13 @@ func (data *Data) UnmarshalJSON(bytes []byte) error {
 }
 
 func (a *Answer) getValue() string {
-	switch v := a.Value.(type) {
-	case string:
-		return v
-	case float64:
-		if v == float64(int(v)) {
-			return fmt.Sprintf("%d", int(v))
-		}
-		return strconv.FormatFloat(v, 'f', -1, 64)
-	case int:
-		return fmt.Sprintf("%d", v)
-	default:
-		return ""
+	// If raw value is a JSON string, remove quotes
+	if len(a.Value) > 0 && a.Value[0] == '"' && a.Value[len(a.Value)-1] == '"' {
+		return string(a.Value[1 : len(a.Value)-1])
+	} else if len(a.Value) > 0 && a.Value[0] == '[' && a.Value[len(a.Value)-1] == ']' {
+		return string(a.Value[1 : len(a.Value)-1])
+	} else {
+		return string(a.Value)
 	}
 }
 
