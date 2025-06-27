@@ -83,6 +83,8 @@ func (a *Answer) getValue() string {
 	// If raw value is a JSON string, remove quotes
 	if len(a.Value) > 0 && a.Value[0] == '"' && a.Value[len(a.Value)-1] == '"' {
 		return string(a.Value[1 : len(a.Value)-1])
+	} else if len(a.Value) > 0 && a.Value[0] == '[' && a.Value[len(a.Value)-1] == ']' {
+		return string(a.Value[1 : len(a.Value)-1])
 	} else {
 		return string(a.Value)
 	}

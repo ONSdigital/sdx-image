@@ -45,3 +45,13 @@ func TestFloatValueWithTrailingZeros(t *testing.T) {
 	}
 	test.Equal(t, "24.50", answer.getValue())
 }
+
+func TestArrayValue(t *testing.T) {
+	jsonStr := "{\"answer_id\":\"1\",\"value\":[\"a\",\"b\",\"c\"],\"list_item_id\":\"1\"}"
+	answer := &Answer{}
+	err := json.Unmarshal([]byte(jsonStr), answer)
+	if err != nil {
+		t.Errorf("failed to parse json!")
+	}
+	test.Equal(t, "\"a\",\"b\",\"c\"", answer.getValue())
+}
