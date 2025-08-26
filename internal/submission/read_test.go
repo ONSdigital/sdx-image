@@ -112,3 +112,31 @@ func TestSPPISubmission(t *testing.T) {
 	}
 	fmt.Println(result)
 }
+
+func TestEPISubmission(t *testing.T) {
+	test.SetCwdToRoot()
+	filename := "epi_0001"
+	fileBytes, e := readFile(filename)
+	if e != nil {
+		t.Errorf("failed to read file %v with error: %q", filename, e.Error())
+	}
+	result, err := Read(fileBytes)
+	if err != nil {
+		t.Errorf("failed to convert file %v with error: %q", filename, err.Error())
+	}
+	fmt.Println(result)
+}
+
+func TestIPISubmission(t *testing.T) {
+	test.SetCwdToRoot()
+	filename := "ipi_0001"
+	fileBytes, e := readFile(filename)
+	if e != nil {
+		t.Errorf("failed to read file %v with error: %q", filename, e.Error())
+	}
+	result, err := Read(fileBytes)
+	if err != nil {
+		t.Errorf("failed to convert file %v with error: %q", filename, err.Error())
+	}
+	fmt.Println(result)
+}
