@@ -1,1 +1,145 @@
-// TODO add data here
+{
+  "case_id": "c42a1d5a-490a-41fb-878b-05f9e7891395",
+  "tx_id": "ad16ce4b-7c31-443b-9dd9-a52ff5c4cb68",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.3",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "a1839891-3b69-4d58-9996-59a0c4d69f20",
+  "flushed": false,
+  "submitted_at": "2025-08-27T10:06:34+00:00",
+  "launch_language_code": "en",
+  "survey_metadata": {
+    "survey_id": "133",
+    "ru_ref": "12345678901A",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "period_id": "201605",
+    "user_id": "UNKNOWN",
+    "ref_p_start_date": "2016-05-01",
+    "ref_p_end_date": "2016-05-31",
+    "sds_dataset_id": "6f9c40e4-e237-4c94-3ac9-8b802464f2bf",
+    "form_type": "0001"
+  },
+  "schema_name": "epi_0001",
+  "data": {
+    "answers": [
+      {
+        "answer_id": "answerd6338239-3cea-4003-8a30-a8123c9c95c5",
+        "value": "0",
+        "list_item_id": "cJQaLj"
+      },
+      {
+        "answer_id": "answerb43fa46f-dc0a-459a-9382-449972a4e2a3",
+        "value": 69,
+        "list_item_id": "cJQaLj"
+      },
+      {
+        "answer_id": "answera1f097cb-0627-43cf-9e1a-82b07c0ef26e",
+        "value": "Yes",
+        "list_item_id": "cJQaLj"
+      },
+      {
+        "answer_id": "answerd6338239-3cea-4003-8a30-a8123c9c95c5",
+        "value": "0",
+        "list_item_id": "IGtkIf"
+      },
+      {
+        "answer_id": "answerb43fa46f-dc0a-459a-9382-449972a4e2a3",
+        "value": 42,
+        "list_item_id": "IGtkIf"
+      },
+      {
+        "answer_id": "answera1f097cb-0627-43cf-9e1a-82b07c0ef26e",
+        "value": "Comment two bruv",
+        "list_item_id": "IGtkIf"
+      },
+      {
+        "answer_id": "answere94c184f-bb7a-4657-86ba-ee0d74cbcc48",
+        "value": "Last comment lad"
+      }
+    ],
+    "lists": [
+      {
+        "items": [
+          "cJQaLj",
+          "IGtkIf"
+        ],
+        "name": "item",
+        "supplementary_data_mappings": [
+          {
+            "identifier": "2211200018",
+            "list_item_id": "cJQaLj"
+          },
+          {
+            "identifier": "9876543210",
+            "list_item_id": "IGtkIf"
+          }
+        ]
+      }
+    ],
+    "supplementary_data": {
+      "identifier": "12345678901",
+      "items": {
+        "item": [
+          {
+            "identifier": "2211200018",
+            "item_specification_3": "EQUIPMENT AND HEAT PUMPS, EXCEPT",
+            "terms_of_sale_1": "SUPPLIER REF: 123073",
+            "currency": "POUNDS STERLING",
+            "terms_of_sale_2": "PAYMENT: 60 DAYS NET",
+            "terms_of_sale_3": "CARRIAGE: FCA",
+            "country_of_origin": "FRANCE",
+            "terms_of_sale_4": "CARRIAGE: FCA",
+            "item_specification_1": "PRODUCT: HEAT EXCHANGER AIR-AIR",
+            "item_specification_4": "EQUIPMENT AND HEAT PUMPS, EXCEPT",
+            "item_specification_2": "DESCRIPTION: REFRIGERATION AND FREEZING",
+            "item_specification_5": "EQUIPMENT AND HEAT PUMPS, EXCEPT",
+            "unit_of_sale": "EACH",
+            "item_number": "2211200018"
+          },
+          {
+            "identifier": "9876543210",
+            "item_specification_3": "EQUIPMENT AND WATER PUMPS, EXCEPT",
+            "terms_of_sale_1": "SUPPLIER REF: 456789",
+            "currency": "EURO",
+            "terms_of_sale_2": "PAYMENT: 90 DAYS NET",
+            "terms_of_sale_3": "CARRIAGE: ABC",
+            "country_of_origin": "SPAIN",
+            "terms_of_sale_4": "CARRIAGE: DEF",
+            "item_specification_1": "PRODUCT: HEAT EXCHANGER WATER-WATER",
+            "item_specification_4": "EQUIPMENT AND WATER PUMPS, EXCEPT",
+            "item_specification_2": "DESCRIPTION: WATER COOLING",
+            "item_specification_5": "EQUIPMENT AND WATER PUMPS, EXCEPT",
+            "unit_of_sale": "EACH",
+            "item_number": "9876543210"
+          }
+        ]
+      },
+      "survey_id": "133",
+      "schema_version": "v1",
+      "current_month": "April 2025",
+      "supplier_number": "49422807969"
+    },
+    "answer_codes": [
+      {
+        "answer_id": "answerd6338239-3cea-4003-8a30-a8123c9c95c5",
+        "code": "9999"
+      },
+      {
+        "answer_id": "answerb43fa46f-dc0a-459a-9382-449972a4e2a3",
+        "code": "9997"
+      },
+      {
+        "answer_id": "answera1f097cb-0627-43cf-9e1a-82b07c0ef26e",
+        "code": "9996"
+      },
+      {
+        "answer_id": "answere94c184f-bb7a-4657-86ba-ee0d74cbcc48",
+        "code": "9995"
+      }
+    ]
+  },
+  "started_at": "2025-08-27T10:05:34.695928+00:00",
+  "submission_language_code": "en"
+}
