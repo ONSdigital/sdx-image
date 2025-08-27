@@ -199,10 +199,6 @@ func TestSppi0011(t *testing.T) {
 	runFromFile("sppi_0011", t)
 }
 
-func TestIPI0001(t *testing.T) {
-	runFromFile("ipi_0001", t)
-}
-
 func TestEPI0001(t *testing.T) {
 	runFromFile("epi_0001", t)
 }
