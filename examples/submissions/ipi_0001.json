@@ -1,147 +1,145 @@
 {
-  "submission": {
-    "case_id": "7fdfd90e-82d2-48ba-8146-5b40ab2d1c95",
-    "tx_id": "0f1a1cab-2413-418f-b3e0-9ab7e23dfa7d",
-    "type": "uk.gov.ons.edc.eq:surveyresponse",
-    "version": "v2",
-    "data_version": "0.0.3",
-    "origin": "uk.gov.ons.edc.eq",
-    "collection_exercise_sid": "3e7b115a-6982-4390-986f-58105086ace0",
-    "flushed": false,
-    "submitted_at": "2025-08-27T14:08:25+00:00",
-    "launch_language_code": "en",
-    "survey_metadata": {
-      "survey_id": "156",
-      "ru_ref": "12345678901A",
-      "ru_name": "ESSENTIAL ENTERPRISE LTD.",
-      "trad_as": "ESSENTIAL ENTERPRISE LTD.",
-      "period_id": "201605",
-      "user_id": "UNKNOWN",
-      "ref_p_start_date": "2016-05-01",
-      "ref_p_end_date": "2016-05-31",
-      "sds_dataset_id": "f4ec9e20-08eb-20f3-7de3-4cf8e56feefc",
-      "form_type": "0001"
-    },
-    "schema_name": "ipi_0001",
-    "data": {
-      "answers": [
-        {
-          "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
-          "value": "0",
-          "list_item_id": "LCpCwL"
-        },
-        {
-          "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
-          "value": 52,
-          "list_item_id": "LCpCwL"
-        },
-        {
-          "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
-          "value": "comment 1",
-          "list_item_id": "LCpCwL"
-        },
-        {
-          "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
-          "value": "0",
-          "list_item_id": "SXwbOa"
-        },
-        {
-          "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
-          "value": 55,
-          "list_item_id": "SXwbOa"
-        },
-        {
-          "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
-          "value": "comment 2",
-          "list_item_id": "SXwbOa"
-        },
-        {
-          "answer_id": "answere237201d-a281-4228-a538-85e93ada4263",
-          "value": "comment 3"
-        }
-      ],
-      "lists": [
-        {
-          "items": [
-            "LCpCwL",
-            "SXwbOa"
-          ],
-          "name": "item",
-          "supplementary_data_mappings": [
-            {
-              "identifier": "3494280796",
-              "list_item_id": "LCpCwL"
-            },
-            {
-              "identifier": "1234567890",
-              "list_item_id": "SXwbOa"
-            }
-          ]
-        }
-      ],
-      "supplementary_data": {
-        "identifier": "12345678901",
-        "items": {
-          "item": [
-            {
-              "identifier": "3494280796",
-              "item_specification_3": "EQUIPMENT AND HEAT PUMPS: EXCEPT",
-              "terms_of_sale_1": "SUPPLIER REF: 123073",
-              "currency": "POUNDS STERLING",
-              "terms_of_sale_2": "PAYMENT: 60 DAYS NET",
-              "terms_of_sale_3": "CARRIAGE: FCA",
-              "country_of_origin": "FRANCE",
-              "terms_of_sale_4": "CARRIAGE: FCA",
-              "item_specification_1": "PRODUCT: HEAT EXCHANGER AIR-AIR",
-              "item_specification_4": "HOUSEHOLD TYPE EQUIPMENT",
-              "item_specification_2": "DESCRIPTION: REFRIGERATION AND FREEZING",
-              "item_specification_5": "SERIAL NO: 8585C000-001",
-              "unit_of_sale": "EACH",
-              "item_number": "2211200018"
-            },
-            {
-              "identifier": "1234567890",
-              "item_specification_3": "EQUIPMENT AND HEAT PUMPS: COMMERCIAL USE",
-              "terms_of_sale_1": "SUPPLIER REF: 456789",
-              "currency": "EURO",
-              "terms_of_sale_2": "PAYMENT: 30 DAYS NET",
-              "terms_of_sale_3": "CARRIAGE: DAP",
-              "country_of_origin": "GERMANY",
-              "terms_of_sale_4": "CARRIAGE: DAP",
-              "item_specification_1": "PRODUCT: HEAT EXCHANGER COOL-COOL",
-              "item_specification_4": "OUTDOOR TYPE EQUIPMENT",
-              "item_specification_2": "DESCRIPTION: THERMAL TRANSFER DEVICE",
-              "item_specification_5": "SERIAL NO: 9595D100-002",
-              "unit_of_sale": "EACH",
-              "item_number": "0987654321"
-            }
-          ]
-        },
-        "survey_id": "156",
-        "schema_version": "v1",
-        "current_month": "April 2025",
-        "supplier_number": "34942807969"
+  "case_id": "7fdfd90e-82d2-48ba-8146-5b40ab2d1c95",
+  "tx_id": "0f1a1cab-2413-418f-b3e0-9ab7e23dfa7d",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.3",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "3e7b115a-6982-4390-986f-58105086ace0",
+  "flushed": false,
+  "submitted_at": "2025-08-27T14:08:25+00:00",
+  "launch_language_code": "en",
+  "survey_metadata": {
+    "survey_id": "156",
+    "ru_ref": "12345678901A",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "period_id": "201605",
+    "user_id": "UNKNOWN",
+    "ref_p_start_date": "2016-05-01",
+    "ref_p_end_date": "2016-05-31",
+    "sds_dataset_id": "f4ec9e20-08eb-20f3-7de3-4cf8e56feefc",
+    "form_type": "0001"
+  },
+  "schema_name": "ipi_0001",
+  "data": {
+    "answers": [
+      {
+        "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
+        "value": "0",
+        "list_item_id": "LCpCwL"
       },
-      "answer_codes": [
-        {
-          "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
-          "code": "9999"
-        },
-        {
-          "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
-          "code": "9997"
-        },
-        {
-          "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
-          "code": "9996"
-        },
-        {
-          "answer_id": "answere237201d-a281-4228-a538-85e93ada4263",
-          "code": "9995"
-        }
-      ]
+      {
+        "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
+        "value": 52,
+        "list_item_id": "LCpCwL"
+      },
+      {
+        "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
+        "value": "comment 1",
+        "list_item_id": "LCpCwL"
+      },
+      {
+        "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
+        "value": "0",
+        "list_item_id": "SXwbOa"
+      },
+      {
+        "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
+        "value": 55,
+        "list_item_id": "SXwbOa"
+      },
+      {
+        "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
+        "value": "comment 2",
+        "list_item_id": "SXwbOa"
+      },
+      {
+        "answer_id": "answere237201d-a281-4228-a538-85e93ada4263",
+        "value": "comment 3"
+      }
+    ],
+    "lists": [
+      {
+        "items": [
+          "LCpCwL",
+          "SXwbOa"
+        ],
+        "name": "item",
+        "supplementary_data_mappings": [
+          {
+            "identifier": "3494280796",
+            "list_item_id": "LCpCwL"
+          },
+          {
+            "identifier": "1234567890",
+            "list_item_id": "SXwbOa"
+          }
+        ]
+      }
+    ],
+    "supplementary_data": {
+      "identifier": "12345678901",
+      "items": {
+        "item": [
+          {
+            "identifier": "3494280796",
+            "item_specification_3": "EQUIPMENT AND HEAT PUMPS: EXCEPT",
+            "terms_of_sale_1": "SUPPLIER REF: 123073",
+            "currency": "POUNDS STERLING",
+            "terms_of_sale_2": "PAYMENT: 60 DAYS NET",
+            "terms_of_sale_3": "CARRIAGE: FCA",
+            "country_of_origin": "FRANCE",
+            "terms_of_sale_4": "CARRIAGE: FCA",
+            "item_specification_1": "PRODUCT: HEAT EXCHANGER AIR-AIR",
+            "item_specification_4": "HOUSEHOLD TYPE EQUIPMENT",
+            "item_specification_2": "DESCRIPTION: REFRIGERATION AND FREEZING",
+            "item_specification_5": "SERIAL NO: 8585C000-001",
+            "unit_of_sale": "EACH",
+            "item_number": "2211200018"
+          },
+          {
+            "identifier": "1234567890",
+            "item_specification_3": "EQUIPMENT AND HEAT PUMPS: COMMERCIAL USE",
+            "terms_of_sale_1": "SUPPLIER REF: 456789",
+            "currency": "EURO",
+            "terms_of_sale_2": "PAYMENT: 30 DAYS NET",
+            "terms_of_sale_3": "CARRIAGE: DAP",
+            "country_of_origin": "GERMANY",
+            "terms_of_sale_4": "CARRIAGE: DAP",
+            "item_specification_1": "PRODUCT: HEAT EXCHANGER COOL-COOL",
+            "item_specification_4": "OUTDOOR TYPE EQUIPMENT",
+            "item_specification_2": "DESCRIPTION: THERMAL TRANSFER DEVICE",
+            "item_specification_5": "SERIAL NO: 9595D100-002",
+            "unit_of_sale": "EACH",
+            "item_number": "0987654321"
+          }
+        ]
+      },
+      "survey_id": "156",
+      "schema_version": "v1",
+      "current_month": "April 2025",
+      "supplier_number": "34942807969"
     },
-    "started_at": "2025-08-27T14:07:22.133244+00:00",
-    "submission_language_code": "en"
-  }
+    "answer_codes": [
+      {
+        "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
+        "code": "9999"
+      },
+      {
+        "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
+        "code": "9997"
+      },
+      {
+        "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
+        "code": "9996"
+      },
+      {
+        "answer_id": "answere237201d-a281-4228-a538-85e93ada4263",
+        "code": "9995"
+      }
+    ]
+  },
+  "started_at": "2025-08-27T14:07:22.133244+00:00",
+  "submission_language_code": "en"
 }
