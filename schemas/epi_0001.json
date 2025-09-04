@@ -1,0 +1,1188 @@
+{
+  "language": "en",
+  "mime_type": "application/json/ons/eq",
+  "schema_version": "0.0.1",
+  "data_version": "0.0.3",
+  "preview_questions": false,
+  "survey_id": "133",
+  "form_type": "0001",
+  "legal_basis": "Notice is given under section 1 of the Statistics of Trade Act 1947.",
+  "answer_codes": [
+    {
+      "answer_id": "answerd6338239-3cea-4003-8a30-a8123c9c95c5",
+      "code": "9999"
+    },
+    {
+      "answer_id": "answer575c4a60-f021-4a3f-9da9-ccedfd312c2c",
+      "code": "9998"
+    },
+    {
+      "answer_id": "answerb43fa46f-dc0a-459a-9382-449972a4e2a3",
+      "code": "9997"
+    },
+    {
+      "answer_id": "answera1f097cb-0627-43cf-9e1a-82b07c0ef26e",
+      "code": "9996"
+    },
+    {
+      "answer_id": "answere94c184f-bb7a-4657-86ba-ee0d74cbcc48",
+      "code": "9995"
+    }
+  ],
+  "title": "Monthly Survey for Index Numbers of Export Prices - Price Quotation Return",
+  "questionnaire_flow": {
+    "type": "Hub",
+    "options": {
+      "required_completed_sections": [
+        "section598a11ad-3b9f-4e1b-98bf-f7aaf1222304"
+      ]
+    }
+  },
+  "sections": [
+    {
+      "id": "section598a11ad-3b9f-4e1b-98bf-f7aaf1222304",
+      "title": "Introduction",
+      "show_on_hub": false,
+      "groups": [
+        {
+          "id": "group598a11ad-3b9f-4e1b-98bf-f7aaf1222304",
+          "title": "Introduction",
+          "blocks": [
+            {
+              "id": "introduction",
+              "type": "Introduction",
+              "primary_content": [
+                {
+                  "id": "primary",
+                  "title": {
+                    "text": "You are completing this for {ru_name} {trad_as}",
+                    "placeholders": [
+                      {
+                        "placeholder": "ru_name",
+                        "value": {
+                          "source": "metadata",
+                          "identifier": "ru_name"
+                        }
+                      },
+                      {
+                        "placeholder": "trad_as",
+                        "transforms": [
+                          {
+                            "transform": "conditional_trad_as",
+                            "arguments": {
+                              "trad_as": {
+                                "source": "metadata",
+                                "identifier": "trad_as"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "contents": [
+                    {
+                      "description": {
+                        "text": "If the company details or structure have changed contact us on {telephone_number_link} or email {email_link}",
+                        "placeholders": [
+                          {
+                            "placeholder": "telephone_number_link",
+                            "transforms": [
+                              {
+                                "transform": "telephone_number_link",
+                                "arguments": {
+                                  "telephone_number": "0300 1234 931"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "placeholder": "email_link",
+                            "transforms": [
+                              {
+                                "transform": "email_link",
+                                "arguments": {
+                                  "email_address": "surveys@ons.gov.uk",
+                                  "email_subject": "Change of details",
+                                  "email_subject_append": {
+                                    "identifier": "ru_ref",
+                                    "source": "metadata"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "description",
+                  "contents": [
+                    {
+                      "list": [
+                        "Data should relate to all sites in England, Scotland, Wales and Northern Ireland unless otherwise stated.",
+                        "You cannot appeal your selection. Your business was selected to give us a comprehensive view of the UK economy.",
+                        "You can provide informed estimates if actual figures are not available.",
+                        "We will treat your data securely and confidentially.",
+                        "You can save or print a copy of your answers for your records at the end of this survey."
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "preview_content": {
+                "id": "preview",
+                "title": "Information you need",
+                "contents": [
+                  {
+                    "description": "This survey collects information on the price of products manufactured and exported from the United Kingdom by your business."
+                  },
+                  {
+                    "description": "<a href=\"https://www.ons.gov.uk/surveys/informationforbusinesses/businesssurveys/monthlyinquiryforindexnumbersofexportpricespricequotationreturn\" target=\"_blank\" rel=\"noopener noreferrer\">View more information about the survey (this link opens in a new tab)</a>"
+                  },
+                  {
+                    "description": "In this survey you will be presented with products manufactured by your business in the United Kingdom and destined for the export market. You will be asked to check the information for any errors and provide details of any changes."
+                  },
+                  {
+                    "description": "You will also be asked to provide the following information:"
+                  },
+                  {
+                    "list": [
+                      {
+                        "text": "price of the product on, or as close as possible to, the 1st of {currentmonth}",
+                        "placeholders": [
+                          {
+                            "placeholder": "currentmonth",
+                            "value": {
+                              "source": "supplementary_data",
+                              "identifier": "current_month"
+                            }
+                          }
+                        ]
+                      },
+                      "any further details that will help us to understand your figures"
+                    ]
+                  }
+                ],
+                "questions": []
+              },
+              "secondary_content": [
+                {
+                  "id": "secondary-content",
+                  "contents": [
+                    {
+                      "title": "How we use your data"
+                    },
+                    {
+                      "list": [
+                        "The information you provide contributes to Gross Domestic Product (GDP).",
+                        "The information you supply is used to compile the Producer Price Indices, which are a series of economic indicators that measure the price movement of goods bought and sold by UK manufacturers. They help monitor and measure inflation and are used in compiling the National Accounts."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3e20d1e0-548f-4df9-9fd9-2dd22f5c891d",
+      "title": "[item - item_number] [item - item_specification_1]",
+      "repeat": {
+        "for_list": "item",
+        "title": {
+          "text": "{item_itemnumber} {item_itemspecification1}",
+          "placeholders": [
+            {
+              "placeholder": "item_itemnumber",
+              "value": {
+                "source": "supplementary_data",
+                "identifier": "item",
+                "selectors": ["item_number"]
+              }
+            },
+            {
+              "placeholder": "item_itemspecification1",
+              "value": {
+                "source": "supplementary_data",
+                "identifier": "item",
+                "selectors": ["item_specification_1"]
+              }
+            }
+          ]
+        }
+      },
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group3e20d1e0-548f-4df9-9fd9-2dd22f5c891d",
+          "blocks": [
+            {
+              "type": "Interstitial",
+              "id": "product-details-and-price-quotes",
+              "page_title": "Product details and price quotes",
+              "content": {
+                "title": "Product details and price quotes",
+                "contents": [
+                  {
+                    "description": "In this section you will be asked about the following product manufactured by your business in the United Kingdom and destined for the export market."
+                  },
+                  {
+                    "description": {
+                      "text": "<strong>ITEM NUMBER:</strong> {item_itemnumber}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_itemnumber",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["item_number"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>SPECIFICATION:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{item_itemspecification1}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_itemspecification1",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["item_specification_1"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{item_itemspecification2}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_itemspecification2",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["item_specification_2"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{item_itemspecification3}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_itemspecification3",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["item_specification_3"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{item_itemspecification4}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_itemspecification4",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["item_specification_4"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{item_itemspecification5}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_itemspecification5",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["item_specification_5"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>UNITS OF SALE:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{item_unitofsale}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_unitofsale",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["unit_of_sale"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>TERMS OF SALE:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{item_termsofsale1}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_termsofsale1",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["terms_of_sale_1"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{item_termsofsale2}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_termsofsale2",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["terms_of_sale_2"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{item_termsofsale3}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_termsofsale3",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["terms_of_sale_3"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "text": "{item_termsofsale4}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_termsofsale4",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["terms_of_sale_4"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>CURRENCY:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{item_currency}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_currency",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["currency"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "<strong>EXPORT DESTINATION:</strong>"
+                  },
+                  {
+                    "description": {
+                      "text": "{item_countryoforigin}",
+                      "placeholders": [
+                        {
+                          "placeholder": "item_countryoforigin",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "item",
+                            "selectors": ["country_of_origin"]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": "You will be asked to check the information for any errors and provide details of any changes."
+                  },
+                  {
+                    "description": "You will also be asked to provide the following information:"
+                  },
+                  {
+                    "list": [
+                      {
+                        "text": "price of the product on, or as close as possible to, the 1st of {currentmonth}",
+                        "placeholders": [
+                          {
+                            "placeholder": "currentmonth",
+                            "value": {
+                              "source": "supplementary_data",
+                              "identifier": "current_month"
+                            }
+                          }
+                        ]
+                      },
+                      "any further details that will help us to understand your figures"
+                    ]
+                  },
+                  {
+                    "description": "All products listed should be <strong>manufactured</strong> in the United Kingdom and <strong>destined</strong> for the <strong>export market</strong>."
+                  }
+                ]
+              }
+            },
+            {
+              "id": "confirmation-of-product-details",
+              "type": "Question",
+              "question": {
+                "id": "questionconfirmation-of-product-details",
+                "title": {
+                  "text": "Are the details for the following product produced by {ru_name} correct for {currentmonth}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "ru_name",
+                      "value": {
+                        "source": "metadata",
+                        "identifier": "ru_name"
+                      }
+                    },
+                    {
+                      "placeholder": "currentmonth",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "current_month"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  {
+                    "text": "<p>Product details currently held:</p><p><strong>ITEM NUMBER: </strong>{item_itemnumber}</p><p><strong>SPECIFICATION:</strong></p><p>{item_itemspecification1}</p><p>{item_itemspecification2}</p><p>{item_itemspecification3}</p><p>{item_itemspecification4}</p><p>{item_itemspecification5}</p><p><strong>UNITS OF SALE:</strong></p><p>{item_unitofsale}</p><p><strong>TERMS OF SALE:</strong></p><p>{item_termsofsale1}</p><p>{item_termsofsale2}</p><p>{item_termsofsale3}</p><p>{item_termsofsale4}</p><p><strong>CURRENCY:</strong></p><p>{item_currency}</p><p><strong>EXPORT DESTINATION:</strong></p><p>{item_countryoforigin}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "item_itemnumber",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_number"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification5",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_5"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_unitofsale",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["unit_of_sale"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_currency",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["currency"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_countryoforigin",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["country_of_origin"]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Select ’No, the details are not correct, I need to change them’ if:</strong>"
+                    },
+                    {
+                      "list": [
+                        "the product has been discontinued by your business",
+                        "the product is no longer representative of the business activity",
+                        "any of the information relating to this product has changed, <strong>including </strong>any modifications to the product or alterations to the unit or terms of sale",
+                        "the product has been replaced"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerd6338239-3cea-4003-8a30-a8123c9c95c5",
+                    "mandatory": false,
+                    "type": "Radio",
+                    "options": [
+                      {
+                        "label": "Yes, the details are correct",
+                        "value": "0"
+                      },
+                      {
+                        "label": "No, the details are not correct, I need to change them",
+                        "value": "1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "page_title": "Confirmation of product details",
+              "routing_rules": [
+                {
+                  "block": "current-product-price",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerd6338239-3cea-4003-8a30-a8123c9c95c5",
+                        "source": "answers"
+                      },
+                      ["0"]
+                    ]
+                  }
+                },
+                {
+                  "block": "changes-to-product-details",
+                  "when": {
+                    "in": [
+                      {
+                        "identifier": "answerd6338239-3cea-4003-8a30-a8123c9c95c5",
+                        "source": "answers"
+                      },
+                      ["1"]
+                    ]
+                  }
+                },
+                {
+                  "block": "changes-to-product-details"
+                }
+              ]
+            },
+            {
+              "id": "changes-to-product-details",
+              "type": "Question",
+              "question": {
+                "id": "questionchanges-to-product-details",
+                "title": {
+                  "text": "Provide details of any changes to the following product for {currentmonth}",
+                  "placeholders": [
+                    {
+                      "placeholder": "currentmonth",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "current_month"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  {
+                    "text": "<p>Product details currently held:</p><p><strong>ITEM NUMBER:</strong> {item_itemnumber}</p><p><strong>SPECIFICATION:</strong></p><p>{item_itemspecification1}</p><p>{item_itemspecification2}</p><p>{item_itemspecification3}</p><p>{item_itemspecification4}</p><p>{item_itemspecification5}</p><p><strong>UNITS OF SALE:</strong></p><p>{item_unitofsale}</p><p><strong>TERMS OF SALE:</strong></p><p>{item_termsofsale1}</p><p>{item_termsofsale2}</p><p>{item_termsofsale3}</p><p>{item_termsofsale4}</p><p><strong>CURRENCY:</strong></p><p>{item_currency}</p><p><strong>EXPORT DESTINATION:</strong></p><p>{item_countryoforigin}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "item_itemnumber",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_number"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification5",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_5"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_unitofsale",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["unit_of_sale"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_currency",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["currency"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_countryoforigin",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["country_of_origin"]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include</strong> <strong>details such as</strong>:"
+                    },
+                    {
+                      "list": [
+                        "if the product has been discontinued, provide details of a replacement product",
+                        "the price your business charged for this new or changed product on, or as close as possible to, the 1st of the specified month",
+                        "any modifications to the product",
+                        "if the unit or terms of sale have been altered"
+                      ]
+                    },
+                    {
+                      "description": "The product, unit and terms of sale should be described in enough detail so that your business can provide consistent figures each month."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answer575c4a60-f021-4a3f-9da9-ccedfd312c2c",
+                    "mandatory": true,
+                    "type": "TextArea",
+                    "label": "Changes to product details",
+                    "max_length": 2000,
+                    "guidance": {
+                      "show_guidance": "What do we mean by ’the price your business charged for this new or changed product’",
+                      "hide_guidance": "What do we mean by ’the price your business charged for this new or changed product’",
+                      "contents": [
+                        {
+                          "description": "<strong>The price quoted should:</strong>"
+                        },
+                        {
+                          "list": [
+                            "be a <strong>normal export transaction price,</strong> for example, after discounts and excluding VAT and agent’s commission",
+                            "be to a specific customer or an agent",
+                            "reflects orders placed in that month",
+                            "compare <strong>like with like</strong> each month",
+                            "be <strong>representative</strong> of current exports."
+                          ]
+                        },
+                        {
+                          "description": "If your business has not sold this product in the specified month, enter the previous price."
+                        },
+                        {
+                          "description": "Enter the price without any currency symbol. For example, for Pounds Sterling, enter ’1.23’ for ’&#xA3;1.23’. If applicable for the product, provide figures up to 4 decimal places."
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              "page_title": "Changes to product details"
+            },
+            {
+              "id": "current-product-price",
+              "type": "Question",
+              "question": {
+                "id": "questioncurrent-product-price",
+                "title": {
+                  "text": "What was the price your business charged for the following product on, or as close as possible to, the 1st of {currentmonth}?",
+                  "placeholders": [
+                    {
+                      "placeholder": "currentmonth",
+                      "value": {
+                        "source": "supplementary_data",
+                        "identifier": "current_month"
+                      }
+                    }
+                  ]
+                },
+                "description": [
+                  {
+                    "text": "<p>Product details currently held:</p><p><strong>ITEM NUMBER:</strong> {item_itemnumber}</p><p><strong>SPECIFICATION:</strong></p><p>{item_itemspecification1}</p><p>{item_itemspecification2}</p><p>{item_itemspecification3}</p><p>{item_itemspecification4}</p><p>{item_itemspecification5}</p><p><strong>UNITS OF SALE:</strong></p><p>{item_unitofsale}</p><p><strong>TERMS OF SALE:</strong></p><p>{item_termsofsale1}</p><p>{item_termsofsale2}</p><p>{item_termsofsale3}</p><p>{item_termsofsale4}</p><p><strong>CURRENCY:</strong></p><p>{item_currency}</p><p><strong>EXPORT DESTINATION:</strong></p><p>{item_countryoforigin}</p>",
+                    "placeholders": [
+                      {
+                        "placeholder": "item_itemnumber",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_number"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_itemspecification5",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["item_specification_5"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_unitofsale",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["unit_of_sale"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale1",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_1"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale2",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_2"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale3",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_3"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_termsofsale4",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["terms_of_sale_4"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_currency",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["currency"]
+                        }
+                      },
+                      {
+                        "placeholder": "item_countryoforigin",
+                        "value": {
+                          "source": "supplementary_data",
+                          "identifier": "item",
+                          "selectors": ["country_of_origin"]
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "The price quoted should:"
+                    },
+                    {
+                      "list": [
+                        "be a <strong>normal export transaction price</strong>, for example, after discounts and <strong>excluding</strong> VAT and agent’s commission",
+                        "be to a specific customer or an agent",
+                        "reflect orders placed in that month",
+                        "compare<strong> like with like each month</strong>",
+                        "be <strong>representative </strong>of current exports"
+                      ]
+                    },
+                    {
+                      "description": "If your business has not sold this product in the specified month, enter the previous price."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answerb43fa46f-dc0a-459a-9382-449972a4e2a3",
+                    "mandatory": true,
+                    "type": "Number",
+                    "label": {
+                      "text": "Price of the product on, or as close as possible to, the 1st of {currentmonth}",
+                      "placeholders": [
+                        {
+                          "placeholder": "currentmonth",
+                          "value": {
+                            "source": "supplementary_data",
+                            "identifier": "current_month"
+                          }
+                        }
+                      ]
+                    },
+                    "description": "Enter the price without any currency symbol. For example, for Euro, enter ’1.23’ for ’&#x20AC;1.23’. If applicable for the product, provide figures up to 4 decimal places.",
+                    "minimum": {
+                      "value": 0,
+                      "exclusive": false
+                    },
+                    "decimal_places": 4
+                  }
+                ]
+              },
+              "page_title": "Current product price",
+              "skip_conditions": {
+                "when": {
+                  "in": [
+                    {
+                      "identifier": "answerd6338239-3cea-4003-8a30-a8123c9c95c5",
+                      "source": "answers"
+                    },
+                    ["1"]
+                  ]
+                }
+              }
+            },
+            {
+              "id": "product-comments",
+              "type": "Question",
+              "question": {
+                "id": "questionproduct-comments",
+                "title": "Please provide any further details that will help us to understand your figures",
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "Include reasons for any increases or decreases from the price provided in your business’s previous return."
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answera1f097cb-0627-43cf-9e1a-82b07c0ef26e",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Product [comments"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4e5ae422-cd0c-4b6c-aac9-8b8cc765b6d2",
+      "title": "Comments",
+      "summary": {
+        "show_on_completion": false,
+        "collapsible": false
+      },
+      "show_on_hub": true,
+      "groups": [
+        {
+          "id": "group4e5ae422-cd0c-4b6c-aac9-8b8cc765b6d2",
+          "blocks": [
+            {
+              "id": "comments",
+              "type": "Question",
+              "question": {
+                "id": "questioncomments",
+                "title": "Please provide any further details that will help us to understand your business and tell an industry story",
+                "description": [
+                  "<p>This question is optional. Leave blank if not applicable.</p>"
+                ],
+                "guidance": {
+                  "contents": [
+                    {
+                      "description": "<strong>Include details of changes to the:</strong>"
+                    },
+                    {
+                      "list": [
+                        "structure or ownership of your business",
+                        "activities your business conducts",
+                        "contact details for your business"
+                      ]
+                    }
+                  ]
+                },
+                "type": "General",
+                "answers": [
+                  {
+                    "id": "answere94c184f-bb7a-4657-86ba-ee0d74cbcc48",
+                    "mandatory": false,
+                    "type": "TextArea",
+                    "label": "Comments",
+                    "max_length": 2000
+                  }
+                ]
+              },
+              "page_title": "Comments"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "business",
+  "navigation": {
+    "visible": false
+  },
+  "metadata": [
+    {
+      "name": "ru_ref",
+      "type": "string"
+    },
+    {
+      "name": "ru_name",
+      "type": "string"
+    },
+    {
+      "name": "trad_as",
+      "type": "string",
+      "optional": true
+    },
+    {
+      "name": "period_id",
+      "type": "string"
+    },
+    {
+      "name": "user_id",
+      "type": "string"
+    },
+    {
+      "name": "ref_p_start_date",
+      "type": "date"
+    },
+    {
+      "name": "ref_p_end_date",
+      "type": "date"
+    }
+  ],
+  "supplementary_data": {
+    "lists": ["item"]
+  },
+  "post_submission": {
+    "feedback": true,
+    "view_response": true,
+    "guidance": {
+      "contents": [
+        {
+          "description": "Your response will help inform decision-makers how best to support the UK population and economy at this challenging time."
+        },
+        {
+          "description": "<a href=\"https://www.ons.gov.uk/surveys\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more about how we use this data</a>"
+        }
+      ]
+    }
+  },
+  "submission": {
+    "button": "Submit",
+    "title": "Check your answers and submit",
+    "warning": "You must submit this survey to complete it",
+    "guidance": "You will have the opportunity to view, save or print a copy of your answers after submitting this survey."
+  }
+}

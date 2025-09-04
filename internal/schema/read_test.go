@@ -34,3 +34,11 @@ func TestReadTiles(t *testing.T) {
 func TestReadPrices(t *testing.T) {
 	testRead("ppi_0001", t)
 }
+
+func TestReadIPI(t *testing.T) {
+	testRead("ipi_0001", t)
+}
+
+func TestReadEPI(t *testing.T) {
+	testRead("epi_0001", t)
+}
