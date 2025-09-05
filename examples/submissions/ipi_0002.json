@@ -1,0 +1,145 @@
+{
+  "case_id": "41a692c3-07dc-4c72-9154-bd13a8d3c90f",
+  "tx_id": "b08c5aad-8683-4e38-9a2a-fc844246573c",
+  "type": "uk.gov.ons.edc.eq:surveyresponse",
+  "version": "v2",
+  "data_version": "0.0.3",
+  "origin": "uk.gov.ons.edc.eq",
+  "collection_exercise_sid": "2489c75b-437b-48e3-8d00-85e35d4512ea",
+  "flushed": false,
+  "submitted_at": "2025-09-05T10:16:05+00:00",
+  "launch_language_code": "en",
+  "survey_metadata": {
+    "survey_id": "156",
+    "ru_ref": "12345678901A",
+    "ru_name": "ESSENTIAL ENTERPRISE LTD.",
+    "trad_as": "ESSENTIAL ENTERPRISE LTD.",
+    "period_id": "201605",
+    "user_id": "UNKNOWN",
+    "ref_p_start_date": "2016-05-01",
+    "ref_p_end_date": "2016-05-31",
+    "sds_dataset_id": "f4ec9e20-08eb-20f3-7de3-4cf8e56feefc",
+    "form_type": "0002"
+  },
+  "schema_name": "ipi_0002",
+  "data": {
+    "answers": [
+      {
+        "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
+        "value": "0",
+        "list_item_id": "ffgcyD"
+      },
+      {
+        "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
+        "value": 33,
+        "list_item_id": "ffgcyD"
+      },
+      {
+        "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
+        "value": "Comment 1",
+        "list_item_id": "ffgcyD"
+      },
+      {
+        "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
+        "value": "0",
+        "list_item_id": "XsqOPS"
+      },
+      {
+        "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
+        "value": 99,
+        "list_item_id": "XsqOPS"
+      },
+      {
+        "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
+        "value": "Comment 2",
+        "list_item_id": "XsqOPS"
+      },
+      {
+        "answer_id": "answere237201d-a281-4228-a538-85e93ada4263",
+        "value": "Last COMMENT"
+      }
+    ],
+    "lists": [
+      {
+        "items": [
+          "ffgcyD",
+          "XsqOPS"
+        ],
+        "name": "item",
+        "supplementary_data_mappings": [
+          {
+            "identifier": "3494280796",
+            "list_item_id": "ffgcyD"
+          },
+          {
+            "identifier": "1234567890",
+            "list_item_id": "XsqOPS"
+          }
+        ]
+      }
+    ],
+    "supplementary_data": {
+      "identifier": "12345678901",
+      "items": {
+        "item": [
+          {
+            "identifier": "3494280796",
+            "item_number": "2211200018",
+            "item_specification_4": "HOUSEHOLD TYPE EQUIPMENT",
+            "terms_of_sale_3": "CARRIAGE: FCA",
+            "item_specification_5": "SERIAL NO: 8585C000-001",
+            "terms_of_sale_4": "CARRIAGE: FCA",
+            "terms_of_sale_2": "PAYMENT: 60 DAYS NET",
+            "country_of_origin": "FRANCE",
+            "unit_of_sale": "EACH",
+            "currency": "POUNDS STERLING",
+            "item_specification_2": "DESCRIPTION: REFRIGERATION AND FREEZING",
+            "item_specification_1": "PRODUCT: HEAT EXCHANGER AIR-AIR",
+            "terms_of_sale_1": "SUPPLIER REF: 123073",
+            "item_specification_3": "EQUIPMENT AND HEAT PUMPS: EXCEPT"
+          },
+          {
+            "identifier": "1234567890",
+            "item_number": "0987654321",
+            "item_specification_4": "OUTDOOR TYPE EQUIPMENT",
+            "terms_of_sale_3": "CARRIAGE: DAP",
+            "item_specification_5": "SERIAL NO: 9595D100-002",
+            "terms_of_sale_4": "CARRIAGE: DAP",
+            "terms_of_sale_2": "PAYMENT: 30 DAYS NET",
+            "country_of_origin": "GERMANY",
+            "unit_of_sale": "EACH",
+            "currency": "EURO",
+            "item_specification_2": "DESCRIPTION: THERMAL TRANSFER DEVICE",
+            "item_specification_1": "PRODUCT: HEAT EXCHANGER COOL-COOL",
+            "terms_of_sale_1": "SUPPLIER REF: 456789",
+            "item_specification_3": "EQUIPMENT AND HEAT PUMPS: COMMERCIAL USE"
+          }
+        ]
+      },
+      "schema_version": "v1",
+      "supplier_number": "34942807969",
+      "survey_id": "156",
+      "current_month": "April 2025"
+    },
+    "answer_codes": [
+      {
+        "answer_id": "answerc7fcba68-57cc-4b8c-9842-ea049341290f",
+        "code": "9999"
+      },
+      {
+        "answer_id": "answer56fdc60f-cd07-49bf-9d28-961202ef0835",
+        "code": "9997"
+      },
+      {
+        "answer_id": "answera51328d4-9b19-468a-bebe-6030ce6238c4",
+        "code": "9996"
+      },
+      {
+        "answer_id": "answere237201d-a281-4228-a538-85e93ada4263",
+        "code": "9995"
+      }
+    ]
+  },
+  "started_at": "2025-09-05T10:15:18.264706+00:00",
+  "submission_language_code": "en"
+}

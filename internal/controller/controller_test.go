@@ -203,6 +203,14 @@ func TestIPI0001(t *testing.T) {
 	runFromFile("ipi_0001", t)
 }
 
+func TestIPI0002(t *testing.T) {
+	runFromFile("ipi_0002", t)
+}
+
 func TestEPI0001(t *testing.T) {
 	runFromFile("epi_0001", t)
+}
+
+func TestEPI0002(t *testing.T) {
+	runFromFile("epi_0002", t)
 }
