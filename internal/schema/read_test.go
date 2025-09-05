@@ -37,8 +37,10 @@ func TestReadPrices(t *testing.T) {
 
 func TestReadIPI(t *testing.T) {
 	testRead("ipi_0001", t)
+	testRead("ipi_0002", t)
 }
 
 func TestReadEPI(t *testing.T) {
 	testRead("epi_0001", t)
+	testRead("epi_0002", t)
 }
