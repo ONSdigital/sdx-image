@@ -4,13 +4,14 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"os"
 
 	secretmanager "cloud.google.com/go/secretmanager/apiv1"
 	"cloud.google.com/go/secretmanager/apiv1/secretmanagerpb"
 )
 
 func getSecret(secretId string) (string, error) {
-	projectId := "your-project-id" // TODO read from ENV
+	projectId := os.Getenv("PROJECT_ID")
 
 	// Access the latest version (alias "latest").
 	secretName := fmt.Sprintf("projects/%s/secrets/%s/versions/latest", projectId, secretId)
