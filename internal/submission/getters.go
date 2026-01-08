@@ -10,6 +10,10 @@ func (submission *Submission) GetSchemaName() string {
 	return submission.SchemaName
 }
 
+func (submission *Submission) GetCirGuid() string {
+	return submission.CirGuid
+}
+
 func (submission *Submission) GetRuRef() string {
 	return submission.SurveyMetadata.RuRef
 }

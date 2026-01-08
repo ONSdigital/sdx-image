@@ -14,7 +14,7 @@ import (
 
 var mu sync.Mutex
 
-var schemaCache = sch.NewCache(20, sch.Read)
+var schemaCache = sch.NewCache(20, sch.Read, sch.FetchCirSchema)
 
 // Run orchestrates the steps required to create an image of the given submission.
 //
@@ -45,7 +45,7 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	log.Info("Processing submission", submission.GetTxId())
 
 	//get the schema
-	schema, err := schemaCache.GetSchema(submission.GetSchemaName())
+	schema, err := schemaCache.GetSchema(submission.GetSchemaName(), submission.GetCirGuid())
 	if err != nil {
 		log.Error("Unable to read schema", err, submission.GetTxId())
 		return nil, err

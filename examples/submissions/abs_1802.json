@@ -1,12 +1,12 @@
 {
   "case_id": "12d1f90d-d185-4636-b4d6-f978128f5a2d",
+  "cir_instrument_id": "adb00ff8-0998-4ade-8747-fd5439bfe444",
   "tx_id": "12345678-7598-4731-a4e8-7786eb2615a8",
   "type": "uk.gov.ons.edc.eq:surveyresponse",
   "version": "v2",
   "data_version": "0.0.1",
   "origin": "uk.gov.ons.edc.eq",
   "collection_exercise_sid": "827f4d7a-8827-4591-abf9-140bccec45d6",
-  "schema_name": "abs_1802",
   "flushed": false,
   "submitted_at": "2023-02-03T16:38:46+00:00",
   "launch_language_code": "en",
