@@ -11,7 +11,7 @@ import (
 	"google.golang.org/api/idtoken"
 )
 
-const CirCollectionInstrumentResourcePath = "/v2/retrieve_collection_instrument"
+const CirResourcePath = "/v2/retrieve_collection_instrument"
 
 type Client struct {
 	url      string
@@ -38,7 +38,7 @@ func (c *Client) setAuthorisedClient() error {
 
 // fetchCirSchema from the IAP protected resource using the provided guid
 func (c *Client) fetchCirSchema(guid string) (*Schema, error) {
-	resp, err := c.client.Get(c.url + CirCollectionInstrumentResourcePath + "?guid=" + guid)
+	resp, err := c.client.Get(c.url + CirResourcePath + "?guid=" + guid)
 	if err != nil {
 		return nil, err
 	}
