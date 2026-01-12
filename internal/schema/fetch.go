@@ -6,7 +6,8 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"os"
+	"sdxImage/internal/log"
+	"sdxImage/internal/secret"
 
 	"google.golang.org/api/idtoken"
 )
@@ -54,8 +55,19 @@ func (c *Client) fetchCirSchema(guid string) (*Schema, error) {
 
 // Fetch a schema from the IAP protected resource using the provided guid
 func Fetch(guid string) (*Schema, error) {
-	url := os.Getenv("CIR_URL")
-	audience := os.Getenv("CIR_AUDIENCE")
+
+	log.Info("Fetching schema for guid: %s from CIR", guid)
+
+	url, err := secret.Get("cir-url")
+	if err != nil {
+		err = fmt.Errorf("failed to get cir url from secret manager: %w", err)
+	}
+
+	audience, err := secret.Get("sdx-testdata-audience")
+	if err != nil {
+		err = fmt.Errorf("failed to get sdx-testdata-audience from secret manager: %w", err)
+	}
+
 	client := NewClient(url, audience)
 	schema, err := client.fetchCirSchema(guid)
 	if err != nil {

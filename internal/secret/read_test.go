@@ -8,7 +8,7 @@ import (
 func TestGetSecret(t *testing.T) {
 
 	// Not a unit test
-	secret, err := getSecret("iap-secret")
+	secret, err := Get("iap-secret")
 	if err != nil {
 		return
 	}

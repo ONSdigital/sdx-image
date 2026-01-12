@@ -10,7 +10,7 @@ import (
 	"cloud.google.com/go/secretmanager/apiv1/secretmanagerpb"
 )
 
-func getSecret(secretId string) (string, error) {
+func Get(secretId string) (string, error) {
 	projectId := os.Getenv("PROJECT_ID")
 
 	// Access the latest version (alias "latest").
