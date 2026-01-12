@@ -11,7 +11,7 @@ import (
 )
 
 func Get(secretId string) (string, error) {
-	projectId := os.Getenv("PROJECT_ID")
+	projectId := os.Getenv("GOOGLE_CLOUD_PROJECT")
 
 	// Access the latest version (alias "latest").
 	secretName := fmt.Sprintf("projects/%s/secrets/%s/versions/latest", projectId, secretId)
