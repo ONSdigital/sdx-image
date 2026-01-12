@@ -3,7 +3,6 @@ package secret
 import (
 	"context"
 	"fmt"
-	"os"
 	"sdxImage/internal/log"
 
 	secretmanager "cloud.google.com/go/secretmanager/apiv1"
@@ -11,7 +10,7 @@ import (
 )
 
 func Get(secretId string) (string, error) {
-	projectId := os.Getenv("GOOGLE_CLOUD_PROJECT")
+	projectId := "ons-sdx-angus" // TODO REMOVE ME
 
 	// Access the latest version (alias "latest").
 	secretName := fmt.Sprintf("projects/%s/secrets/%s/versions/latest", projectId, secretId)
