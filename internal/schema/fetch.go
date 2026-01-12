@@ -56,7 +56,7 @@ func (c *Client) fetchCirSchema(guid string) (*Schema, error) {
 // Fetch a schema from the IAP protected resource using the provided guid
 func Fetch(guid string) (*Schema, error) {
 
-	log.Info("Fetching schema for guid: %s from CIR", guid)
+	log.Info("Fetching schema for guid: " + guid + " from CIR")
 
 	url, err := secret.Get("cir-url")
 	if err != nil {
