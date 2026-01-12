@@ -3,8 +3,8 @@ package secret
 import (
 	"context"
 	"fmt"
-	"log"
 	"os"
+	"sdxImage/internal/log"
 
 	secretmanager "cloud.google.com/go/secretmanager/apiv1"
 	"cloud.google.com/go/secretmanager/apiv1/secretmanagerpb"
@@ -16,10 +16,13 @@ func Get(secretId string) (string, error) {
 	// Access the latest version (alias "latest").
 	secretName := fmt.Sprintf("projects/%s/secrets/%s/versions/latest", projectId, secretId)
 
+	// Log the secret name being accessed
+	log.Info("Accessing secret: " + secretName)
+
 	ctx := context.Background()
 	client, err := secretmanager.NewClient(ctx)
 	if err != nil {
-		log.Fatalf("secretmanager.NewClient: %v", err)
+		log.Error("secretmanager.NewClient", err)
 	}
 	defer client.Close()
 
@@ -28,7 +31,7 @@ func Get(secretId string) (string, error) {
 	}
 	result, err := client.AccessSecretVersion(ctx, req)
 	if err != nil {
-		log.Fatalf("AccessSecretVersion: %v", err)
+		log.Error("AccessSecretVersion", err)
 	}
 
 	// Secret payload is bytes. Convert to string if it's UTF-8 text.
