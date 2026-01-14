@@ -13,22 +13,30 @@ import (
 
 const CirResourcePath = "/v2/retrieve_collection_instrument"
 
-// SecretGetter defines what schema needs from a secret provider
+// SecretGetter defines the interface for retrieving secrets (allows easy mocking)
 type SecretGetter interface {
 	Get(key string) (string, error)
 }
 
-type CIRClient struct {
+// CirClient handles communication with the CIR service
+type CirClient struct {
 	url      string
 	audience string
 	client   *http.Client
 }
 
-func NewClient(url, audience string) *CIRClient {
-	return &CIRClient{url: url, audience: audience, client: &http.Client{}}
+// NewClient creates a new CirClient instance
+func NewClient(url, audience string) *CirClient {
+	c := &CirClient{url: url, audience: audience, client: &http.Client{}}
+	err := c.setAuthorisedClient()
+	if err != nil {
+		return nil
+	}
+	return c
 }
 
-func (c *CIRClient) setAuthorisedClient() error {
+// setAuthorisedClient generates a bearer token on the CIR client
+func (c *CirClient) setAuthorisedClient() error {
 	ctx := context.Background()
 	client, err := idtoken.NewClient(ctx, c.audience)
 	if err != nil {
@@ -38,7 +46,8 @@ func (c *CIRClient) setAuthorisedClient() error {
 	return nil
 }
 
-func (c *CIRClient) fetchCirSchema(guid string) (*Schema, error) {
+// fetchCirSchema retrieves the schema from CIR by guid and returns it
+func (c *CirClient) fetchCirSchema(guid string) (*Schema, error) {
 	resp, err := c.client.Get(c.url + CirResourcePath + "?guid=" + guid)
 	if err != nil {
 		return nil, err
@@ -57,31 +66,17 @@ func (c *CIRClient) fetchCirSchema(guid string) (*Schema, error) {
 	return &schema, nil
 }
 
-// Service uses dependency injection for secrets and client creation
+// Service to interact with CIR, needs secrets and a client factory
 type Service struct {
-	Secrets       SecretGetter
-	ClientFactory func(url, audience string) *CIRClient
+	url       string
+	audience  string
+	CirClient *CirClient
 }
 
+// Fetch is the main method to get schema from CIR by guid, requires a Service to be set up
 func (s *Service) Fetch(guid string) (*Schema, error) {
 	log.Info("Fetching schema for guid: " + guid + " from CIR")
-
-	url, err := s.Secrets.Get("cir-url")
-	if err != nil {
-		return nil, fmt.Errorf("failed to get cir url from secret manager: %w", err)
-	}
-
-	audience, err := s.Secrets.Get("sdx-testdata-audience")
-	if err != nil {
-		return nil, fmt.Errorf("failed to get sdx-testdata-audience from secret manager: %w", err)
-	}
-
-	client := s.ClientFactory(url, audience)
-	if err := client.setAuthorisedClient(); err != nil {
-		return nil, fmt.Errorf("failed to set authorised client: %w", err)
-	}
-
-	schema, err := client.fetchCirSchema(guid)
+	schema, err := s.CirClient.fetchCirSchema(guid)
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch cir schema: %w", err)
 	}

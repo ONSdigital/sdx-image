@@ -1,6 +1,7 @@
 package schema
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"net/http"
@@ -9,6 +10,8 @@ import (
 	"os"
 	"sdxImage/internal/test"
 	"testing"
+
+	"google.golang.org/api/idtoken"
 )
 
 // Helper to load test schema JSON
@@ -32,6 +35,10 @@ func loadCI() ([]byte, error) {
 // FakeSecretGetter implements SecretGetter for testing
 type FakeSecretGetter struct {
 	URL string
+}
+
+func FakeClient(url, audience string) *CirClient {
+	return &CirClient{url: url, audience: audience, client: &http.Client{}}
 }
 
 // Get returns fake secrets based on key
@@ -61,6 +68,7 @@ func TestFetch(t *testing.T) {
 		test.Equal(t, expectedGuid, guid)
 		test.Equal(t, expectedEndpoint, r.URL.Path)
 
+		// Load the example schema JSON from file
 		ci, err := loadCI()
 		if err != nil {
 			t.Errorf("failed to load test CI: %v", err)
@@ -74,10 +82,9 @@ func TestFetch(t *testing.T) {
 
 	// Create service with fake secrets and client factory
 	svc := &Service{
-		Secrets: &FakeSecretGetter{URL: svr.URL},
-		ClientFactory: func(url, audience string) *CIRClient {
-			return NewClient(url, audience)
-		},
+		url:       svr.URL,
+		audience:  "fake-audience",
+		CirClient: FakeClient(svr.URL, svr.URL),
 	}
 
 	// Act
@@ -86,5 +93,20 @@ func TestFetch(t *testing.T) {
 		t.Errorf("expected err to be nil got %v", err)
 	}
 
+	// Assert matches 1_0005.json title
 	test.Equal(t, schema.Title, "Monthly Wages and Salaries Survey")
+}
+
+func TestReal(t *testing.T) {
+
+	fakeAudience := "abc-fake.apps.googleusercontent.com"
+
+	ctx := context.Background()
+	client, err := idtoken.NewClient(ctx, fakeAudience)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// Make get request
+
 }
