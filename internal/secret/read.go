@@ -3,39 +3,43 @@ package secret
 import (
 	"context"
 	"fmt"
+	"os"
 	"sdxImage/internal/log"
 
 	secretmanager "cloud.google.com/go/secretmanager/apiv1"
 	"cloud.google.com/go/secretmanager/apiv1/secretmanagerpb"
 )
 
-func Get(secretId string) (string, error) {
-	projectId := "ons-sdx-angus" // TODO REMOVE ME
+type Manager struct {
+	ProjectID string
+}
 
-	// Access the latest version (alias "latest").
-	secretName := fmt.Sprintf("projects/%s/secrets/%s/versions/latest", projectId, secretId)
+func NewSecretManager() *Manager {
+	return &Manager{
+		ProjectID: os.Getenv("PROJECT_ID"),
+	}
+}
 
-	// Log the secret name being accessed
+func (sm *Manager) Get(key string) (string, error) {
+	if sm.ProjectID == "" {
+		return "", fmt.Errorf("PROJECT_ID environment variable is not set")
+	}
+
+	secretName := fmt.Sprintf("projects/%s/secrets/%s/versions/latest", sm.ProjectID, key)
 	log.Info("Accessing secret: " + secretName)
 
 	ctx := context.Background()
 	client, err := secretmanager.NewClient(ctx)
 	if err != nil {
-		log.Error("secretmanager.NewClient", err)
+		return "", fmt.Errorf("failed to create secretmanager client: %w", err)
 	}
 	defer client.Close()
 
-	req := &secretmanagerpb.AccessSecretVersionRequest{
-		Name: secretName,
-	}
+	req := &secretmanagerpb.AccessSecretVersionRequest{Name: secretName}
 	result, err := client.AccessSecretVersion(ctx, req)
 	if err != nil {
-		log.Error("AccessSecretVersion", err)
+		return "", fmt.Errorf("failed to access secret version: %w", err)
 	}
 
-	// Secret payload is bytes. Convert to string if it's UTF-8 text.
-	secret := string(result.Payload.Data)
-	fmt.Println("Secret value:", secret)
-
-	return secret, nil
+	return string(result.Payload.Data), nil
 }

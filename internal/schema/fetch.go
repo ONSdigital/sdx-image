@@ -7,28 +7,29 @@ import (
 	"io"
 	"net/http"
 	"sdxImage/internal/log"
-	"sdxImage/internal/secret"
 
 	"google.golang.org/api/idtoken"
 )
 
 const CirResourcePath = "/v2/retrieve_collection_instrument"
 
-type Client struct {
+// SecretGetter defines what schema needs from a secret provider
+type SecretGetter interface {
+	Get(key string) (string, error)
+}
+
+type CIRClient struct {
 	url      string
-	audience string // The Audience (Client ID) of the IAP protected resource
+	audience string
 	client   *http.Client
 }
 
-// NewClient Create a new client to fetch from IAP protected resource
-func NewClient(url string, audience string) Client {
-	return Client{url, audience, &http.Client{}}
+func NewClient(url, audience string) *CIRClient {
+	return &CIRClient{url: url, audience: audience, client: &http.Client{}}
 }
 
-// setAuthorisedClient Add the needed headers for IAP authentication
-func (c *Client) setAuthorisedClient() error {
+func (c *CIRClient) setAuthorisedClient() error {
 	ctx := context.Background()
-
 	client, err := idtoken.NewClient(ctx, c.audience)
 	if err != nil {
 		return fmt.Errorf("idtoken.NewClient: %w", err)
@@ -37,42 +38,52 @@ func (c *Client) setAuthorisedClient() error {
 	return nil
 }
 
-// fetchCirSchema from the IAP protected resource using the provided guid
-func (c *Client) fetchCirSchema(guid string) (*Schema, error) {
+func (c *CIRClient) fetchCirSchema(guid string) (*Schema, error) {
 	resp, err := c.client.Get(c.url + CirResourcePath + "?guid=" + guid)
 	if err != nil {
 		return nil, err
 	}
-	body, err := io.ReadAll(resp.Body)
 	defer resp.Body.Close()
-	var schema Schema
-	err = json.Unmarshal(body, &schema)
+
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
+		return nil, err
+	}
+
+	var schema Schema
+	if err := json.Unmarshal(body, &schema); err != nil {
 		return nil, err
 	}
 	return &schema, nil
 }
 
-// Fetch a schema from the IAP protected resource using the provided guid
-func Fetch(guid string) (*Schema, error) {
+// Service uses dependency injection for secrets and client creation
+type Service struct {
+	Secrets       SecretGetter
+	ClientFactory func(url, audience string) *CIRClient
+}
 
+func (s *Service) Fetch(guid string) (*Schema, error) {
 	log.Info("Fetching schema for guid: " + guid + " from CIR")
 
-	url, err := secret.Get("cir-url")
+	url, err := s.Secrets.Get("cir-url")
 	if err != nil {
-		err = fmt.Errorf("failed to get cir url from secret manager: %w", err)
+		return nil, fmt.Errorf("failed to get cir url from secret manager: %w", err)
 	}
 
-	audience, err := secret.Get("sdx-testdata-audience")
+	audience, err := s.Secrets.Get("sdx-testdata-audience")
 	if err != nil {
-		err = fmt.Errorf("failed to get sdx-testdata-audience from secret manager: %w", err)
+		return nil, fmt.Errorf("failed to get sdx-testdata-audience from secret manager: %w", err)
 	}
 
-	client := NewClient(url, audience)
+	client := s.ClientFactory(url, audience)
+	if err := client.setAuthorisedClient(); err != nil {
+		return nil, fmt.Errorf("failed to set authorised client: %w", err)
+	}
+
 	schema, err := client.fetchCirSchema(guid)
 	if err != nil {
-		err = fmt.Errorf("failed to fetch cir schema: %w", err)
-		return nil, err
+		return nil, fmt.Errorf("failed to fetch cir schema: %w", err)
 	}
 	return schema, nil
 }
