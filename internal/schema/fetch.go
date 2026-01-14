@@ -77,5 +77,6 @@ func (c *CirClient) Fetch(guid string) (*Schema, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch cir schema: %w", err)
 	}
+	log.Info("Successfully fetched schema for guid: " + guid)
 	return schema, nil
 }
