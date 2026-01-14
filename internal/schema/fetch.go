@@ -13,6 +13,8 @@ import (
 )
 
 const CirResourcePath = "/v2/retrieve_collection_instrument"
+const CirUrlSecret = "cir-url"
+const CirAudienceSecret = "sdx-testdata-audience"
 
 // CirClient handles communication with the CIR service
 type CirClient struct {
@@ -25,14 +27,14 @@ func NewClient() *CirClient {
 
 	// Retrieve CIR URL and audience from environment or secret manager
 	secretMgr := secret.NewManager()
-	url, err := secretMgr.Get("cir-url")
+	url, err := secretMgr.Get(CirUrlSecret)
 
 	if err != nil {
 		fmt.Println("Error retrieving CIR URL from secrets:", err)
 		return nil
 	}
 
-	audience, err := secretMgr.Get("sdx-cir-audience")
+	audience, err := secretMgr.Get(CirAudienceSecret)
 	if err != nil {
 		fmt.Println("Error retrieving CIR audience from secrets:", err)
 		return nil
