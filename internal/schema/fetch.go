@@ -7,43 +7,45 @@ import (
 	"io"
 	"net/http"
 	"sdxImage/internal/log"
+	"sdxImage/internal/secret"
 
 	"google.golang.org/api/idtoken"
 )
 
 const CirResourcePath = "/v2/retrieve_collection_instrument"
 
-// SecretGetter defines the interface for retrieving secrets (allows easy mocking)
-type SecretGetter interface {
-	Get(key string) (string, error)
-}
-
 // CirClient handles communication with the CIR service
 type CirClient struct {
-	url      string
-	audience string
-	client   *http.Client
+	url    string
+	client *http.Client
 }
 
-// NewClient creates a new CirClient instance
-func NewClient(url, audience string) *CirClient {
-	c := &CirClient{url: url, audience: audience, client: &http.Client{}}
-	err := c.setAuthorisedClient()
+// NewClient creates a new CirClient instance with authorised HTTP client
+func NewClient() *CirClient {
+
+	// Retrieve CIR URL and audience from environment or secret manager
+	secretMgr := secret.NewManager()
+	url, err := secretMgr.Get("cir-url")
+
 	if err != nil {
+		fmt.Println("Error retrieving CIR URL from secrets:", err)
 		return nil
 	}
-	return c
-}
 
-// setAuthorisedClient generates a bearer token on the CIR client
-func (c *CirClient) setAuthorisedClient() error {
-	ctx := context.Background()
-	client, err := idtoken.NewClient(ctx, c.audience)
+	audience, err := secretMgr.Get("sdx-cir-audience")
 	if err != nil {
-		return fmt.Errorf("idtoken.NewClient: %w", err)
+		fmt.Println("Error retrieving CIR audience from secrets:", err)
+		return nil
 	}
-	c.client = client
-	return nil
+
+	// Set up authorised client
+	ctx := context.Background()
+	client, err := idtoken.NewClient(ctx, audience)
+	if err != nil {
+		fmt.Println("Error creating authorised client:", err)
+		return nil
+	}
+	return &CirClient{url: url, client: client}
 }
 
 // fetchCirSchema retrieves the schema from CIR by guid and returns it
@@ -66,17 +68,10 @@ func (c *CirClient) fetchCirSchema(guid string) (*Schema, error) {
 	return &schema, nil
 }
 
-// Service to interact with CIR, needs secrets and a client factory
-type Service struct {
-	url       string
-	audience  string
-	CirClient *CirClient
-}
-
 // Fetch is the main method to get schema from CIR by guid, requires a Service to be set up
-func (s *Service) Fetch(guid string) (*Schema, error) {
+func (c *CirClient) Fetch(guid string) (*Schema, error) {
 	log.Info("Fetching schema for guid: " + guid + " from CIR")
-	schema, err := s.CirClient.fetchCirSchema(guid)
+	schema, err := c.fetchCirSchema(guid)
 	if err != nil {
 		return nil, fmt.Errorf("failed to fetch cir schema: %w", err)
 	}

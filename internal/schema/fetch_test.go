@@ -1,7 +1,6 @@
 package schema
 
 import (
-	"context"
 	"fmt"
 	"io"
 	"net/http"
@@ -10,8 +9,6 @@ import (
 	"os"
 	"sdxImage/internal/test"
 	"testing"
-
-	"google.golang.org/api/idtoken"
 )
 
 // Helper to load test schema JSON
@@ -37,8 +34,8 @@ type FakeSecretGetter struct {
 	URL string
 }
 
-func FakeClient(url, audience string) *CirClient {
-	return &CirClient{url: url, audience: audience, client: &http.Client{}}
+func FakeClient(url string) *CirClient {
+	return &CirClient{url: url, client: &http.Client{}}
 }
 
 // Get returns fake secrets based on key
@@ -81,39 +78,15 @@ func TestFetch(t *testing.T) {
 	defer svr.Close()
 
 	// Create service with fake secrets and client factory
-	svc := &Service{
-		url:       svr.URL,
-		audience:  "fake-audience",
-		CirClient: FakeClient(svr.URL, svr.URL),
-	}
+	c := FakeClient(svr.URL)
+	schema, err := c.Fetch(expectedGuid)
 
-	// Act
-	schema, err := svc.Fetch(expectedGuid)
+	// Assert no error
 	if err != nil {
 		t.Errorf("expected err to be nil got %v", err)
 	}
 
 	// Assert matches 1_0005.json title
 	test.Equal(t, schema.Title, "Monthly Wages and Salaries Survey")
-}
-
-func TestReal(t *testing.T) {
-
-	fakeAudience := "abc-fake.apps.googleusercontent.com"
-
-	ctx := context.Background()
-	ts, err := idtoken.NewTokenSource(ctx, fakeAudience)
-	if err != nil {
-		t.Fatalf("Failed to create token source: %v", err)
-	}
-
-	// Get the token
-	token, err := ts.Token()
-	if err != nil {
-		t.Fatalf("Failed to get token: %v", err)
-	}
-
-	// Print the ID token
-	fmt.Println("ID Token:", token.AccessToken)
 
 }

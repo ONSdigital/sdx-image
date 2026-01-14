@@ -15,8 +15,8 @@ type Manager struct {
 	ProjectID string
 }
 
-// NewSecretManager creates a new Secret Manager instance using environment variables
-func NewSecretManager() *Manager {
+// NewManager creates a new Secret Manager instance using environment variables
+func NewManager() *Manager {
 	return &Manager{
 		ProjectID: os.Getenv("PROJECT_ID"),
 	}
