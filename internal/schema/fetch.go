@@ -64,18 +64,18 @@ func (c *CirClient) fetchCirSchema(guid string) (*Schema, error) {
 		return nil, err
 	}
 
-	// Do not continue if not 200
-	if resp.StatusCode != http.StatusOK {
-		log.Warn("Non-200 response from CIR: " + fmt.Sprint(resp.StatusCode))
-		log.Warn("Response Body: " + fmt.Sprint(resp.Body))
-		return nil, fmt.Errorf("non-200 response from CIR: %d", resp.StatusCode)
-	}
-
+	// Read response body
 	defer resp.Body.Close()
-
 	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
+	}
+
+	// Do not continue if not 200
+	if resp.StatusCode != http.StatusOK {
+		log.Warn("Non-200 response from CIR: " + fmt.Sprint(resp.StatusCode))
+		log.Info(string(body))
+		return nil, fmt.Errorf("non-200 response from CIR: %d", resp.StatusCode)
 	}
 
 	var schema Schema
