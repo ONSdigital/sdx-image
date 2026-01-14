@@ -102,11 +102,18 @@ func TestReal(t *testing.T) {
 	fakeAudience := "abc-fake.apps.googleusercontent.com"
 
 	ctx := context.Background()
-	client, err := idtoken.NewClient(ctx, fakeAudience)
+	ts, err := idtoken.NewTokenSource(ctx, fakeAudience)
 	if err != nil {
-		fmt.Println(err)
+		t.Fatalf("Failed to create token source: %v", err)
 	}
 
-	// Make get request
+	// Get the token
+	token, err := ts.Token()
+	if err != nil {
+		t.Fatalf("Failed to get token: %v", err)
+	}
+
+	// Print the ID token
+	fmt.Println("ID Token:", token.AccessToken)
 
 }
