@@ -56,13 +56,20 @@ func NewClient() *CirClient {
 func (c *CirClient) fetchCirSchema(guid string) (*Schema, error) {
 
 	log.Info("DEBUG -> URL_STRING: " + c.url + CirResourcePath + "?guid=" + guid)
-	log.Info("fetch stage 1")
+	log.Info("Client: " + fmt.Sprint(c.client))
 
+	// Make GET request to CIR
 	resp, err := c.client.Get(c.url + CirResourcePath + "?guid=" + guid)
 	if err != nil {
 		return nil, err
 	}
-	log.Info("fetch stage 2")
+
+	// Do not continue if not 200
+	if resp.StatusCode != http.StatusOK {
+		log.Warn("Non-200 response from CIR: " + fmt.Sprint(resp.StatusCode))
+		log.Warn("Response Body: " + fmt.Sprint(resp.Body))
+		return nil, fmt.Errorf("non-200 response from CIR: %d", resp.StatusCode)
+	}
 
 	defer resp.Body.Close()
 
@@ -71,17 +78,11 @@ func (c *CirClient) fetchCirSchema(guid string) (*Schema, error) {
 		return nil, err
 	}
 
-	log.Info("fetch stage 3")
-	log.Info("Status Code: " + fmt.Sprint(resp.StatusCode))
-	log.Info(string(body))
-
 	var schema Schema
 	if err := json.Unmarshal(body, &schema); err != nil {
 		log.Error("Error unmarshalling CIR response", err)
 		return nil, err
 	}
-
-	log.Info("fetch stage 4")
 
 	return &schema, nil
 }
