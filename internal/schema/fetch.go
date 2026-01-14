@@ -72,9 +72,12 @@ func (c *CirClient) fetchCirSchema(guid string) (*Schema, error) {
 	}
 
 	log.Info("fetch stage 3")
+	log.Info("Status Code: " + fmt.Sprint(resp.StatusCode))
+	log.Info(string(body))
 
 	var schema Schema
 	if err := json.Unmarshal(body, &schema); err != nil {
+		log.Error("Error unmarshalling CIR response", err)
 		return nil, err
 	}
 
