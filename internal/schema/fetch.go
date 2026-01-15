@@ -33,14 +33,12 @@ func NewClient() *CirClient {
 		fmt.Println("Error retrieving CIR URL from secrets:", err)
 		return nil
 	}
-	log.Info("DEBUG URL: " + url)
 
 	audience, err := secretMgr.Get(CirAudienceSecret)
 	if err != nil {
 		fmt.Println("Error retrieving CIR audience from secrets:", err)
 		return nil
 	}
-	log.Info("DEBUG audience: " + audience)
 
 	// Set up authorised client
 	ctx := context.Background()
@@ -54,9 +52,6 @@ func NewClient() *CirClient {
 
 // fetchCirSchema retrieves the schema from CIR by guid and returns it
 func (c *CirClient) fetchCirSchema(guid string) (*Schema, error) {
-
-	log.Info("DEBUG -> URL_STRING: " + c.url + CirResourcePath + "?guid=" + guid)
-	log.Info("Client: " + fmt.Sprint(c.client))
 
 	// Make GET request to CIR
 	resp, err := c.client.Get(c.url + CirResourcePath + "?guid=" + guid)
