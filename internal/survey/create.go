@@ -217,7 +217,7 @@ func CreateWithoutSchema(submission *s.Submission) *Survey {
 	survey := &Survey{
 		Title:       submission.GetSurveyId(),
 		SurveyId:    submission.GetSurveyId(),
-		FormType:    "unknown",
+		FormType:    "formtype unknown",
 		Respondent:  submission.GetRuRef(),
 		RuName:      submission.GetRuName(),
 		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
