@@ -3,6 +3,7 @@ package schema
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"net/http"
@@ -15,6 +16,8 @@ import (
 const CirResourcePath = "/v2/retrieve_collection_instrument"
 const CirUrlSecret = "cir-url"
 const CirAudienceSecret = "sdx-testdata-audience"
+
+var ErrGuidNotFound = errors.New("guid not found")
 
 // CirClient handles communication with the CIR service
 type CirClient struct {
@@ -70,6 +73,9 @@ func (c *CirClient) fetchCirSchema(guid string) (*Schema, error) {
 	if resp.StatusCode != http.StatusOK {
 		log.Warn("Non-200 response from CIR: " + fmt.Sprint(resp.StatusCode))
 		log.Info(string(body))
+		if resp.StatusCode == 404 {
+			return nil, ErrGuidNotFound
+		}
 		return nil, fmt.Errorf("non-200 response from CIR: %d", resp.StatusCode)
 	}
 
