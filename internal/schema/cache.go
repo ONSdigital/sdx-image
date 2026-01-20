@@ -13,28 +13,38 @@ type CreatorFunc func(string) (*Schema, error)
 type Cache struct {
 	size         int
 	createSchema CreatorFunc
+	fetchSchema  CreatorFunc
 	instruments  map[string]*Schema
 	lastUsed     map[string]int64
 }
 
-func NewCache(size int, createSchema CreatorFunc) *Cache {
+func NewCache(size int, createSchema CreatorFunc, fetchSchema CreatorFunc) *Cache {
 	return &Cache{
 		size:         size,
 		createSchema: createSchema,
+		fetchSchema:  fetchSchema,
 		instruments:  make(map[string]*Schema, size),
 		lastUsed:     make(map[string]int64, size)}
 }
 
-func (cache *Cache) GetSchema(schemaName string) (*Schema, error) {
+func (cache *Cache) GetSchema(schemaName string, cirGuid string) (*Schema, error) {
 	mu.Lock()
 	defer mu.Unlock()
 
-	guid := schemaName
+	var key string
+	var schemaGetter CreatorFunc
+	if cirGuid != "" {
+		key = cirGuid
+		schemaGetter = cache.fetchSchema
+	} else {
+		key = schemaName
+		schemaGetter = cache.createSchema
+	}
 
-	if !cache.contains(guid) {
+	if !cache.contains(key) {
 
 		//not in cache so invoke createSchema to create a new instrument
-		instrument, err := cache.createSchema(schemaName)
+		instrument, err := schemaGetter(key)
 		if err != nil {
 			return nil, err
 		}
@@ -46,11 +56,11 @@ func (cache *Cache) GetSchema(schemaName string) (*Schema, error) {
 		}
 
 		//add to cache
-		cache.instruments[guid] = instrument
-		cache.lastUsed[guid] = 0
+		cache.instruments[key] = instrument
+		cache.lastUsed[key] = 0
 	}
 
-	return cache.getInstrument(guid), nil
+	return cache.getInstrument(key), nil
 }
 
 func (cache *Cache) contains(guid string) bool {

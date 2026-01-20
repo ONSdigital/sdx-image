@@ -2,6 +2,7 @@
 package controller
 
 import (
+	"errors"
 	"image"
 	"runtime"
 	"sdxImage/internal/log"
@@ -14,7 +15,7 @@ import (
 
 var mu sync.Mutex
 
-var schemaCache = sch.NewCache(20, sch.Read)
+var schemaCache = sch.NewCache(20, sch.Read, sch.NewClient().Fetch)
 
 // Run orchestrates the steps required to create an image of the given submission.
 //
@@ -44,15 +45,22 @@ func Run(submissionBytes []byte) (image.Image, error) {
 	}
 	log.Info("Processing submission", submission.GetTxId())
 
+	var survey *sur.Survey
 	//get the schema
-	schema, err := schemaCache.GetSchema(submission.GetSchemaName())
+	schema, err := schemaCache.GetSchema(submission.GetSchemaName(), submission.GetCirGuid())
 	if err != nil {
 		log.Error("Unable to read schema", err, submission.GetTxId())
-		return nil, err
-	}
 
-	//create the survey
-	survey := sur.Create(schema, submission)
+		if errors.Is(err, sch.ErrGuidNotFound) {
+			//create the survey without schema
+			survey = sur.CreateWithoutSchema(submission)
+		} else {
+			return nil, err
+		}
+	} else {
+		//create the survey
+		survey = sur.Create(schema, submission)
+	}
 
 	//generate the image
 	result := page.Create(survey)

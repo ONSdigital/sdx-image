@@ -17,6 +17,7 @@ type SurveyMetaData struct {
 type Submission struct {
 	TxId           string          `json:"tx_id"`
 	SchemaName     string          `json:"schema_name"`
+	CirGuid        string          `json:"cir_instrument_id"`
 	SubmittedAt    string          `json:"submitted_at"`
 	SurveyMetadata *SurveyMetaData `json:"survey_metadata"`
 	Data           Data            `json:"data"`

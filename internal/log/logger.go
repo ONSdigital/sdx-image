@@ -20,6 +20,14 @@ func Info(msg string, txId ...string) {
 	event.Send()
 }
 
+func Warn(msg string, txId ...string) {
+	event := log.Log().Str(MESSAGE, msg).Str(SEVERITY, "WARN")
+	if txId != nil && len(txId) != 0 {
+		event.Str("tx_id", txId[0])
+	}
+	event.Send()
+}
+
 func Error(msg string, err error, txId ...string) {
 	event := log.Log().Str(MESSAGE, msg).Str(SEVERITY, "ERROR").Str("error", err.Error())
 	if txId != nil && len(txId) != 0 {

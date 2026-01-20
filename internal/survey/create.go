@@ -212,3 +212,42 @@ func berdSpecificInstance(instances map[string]*Instance, instanceCount int, ans
 	}
 	return instance, instanceCount
 }
+
+func CreateWithoutSchema(submission *s.Submission) *Survey {
+	survey := &Survey{
+		Title:       "Survey: " + submission.GetSurveyId(),
+		SurveyId:    submission.GetSurveyId(),
+		FormType:    "formtype unknown",
+		Respondent:  submission.GetRuRef(),
+		RuName:      submission.GetRuName(),
+		SubmittedAt: substitutions.DateFormat(submission.GetSubmittedAt()),
+		Sections:    []*Section{},
+		Units:       []Unit{},
+		UnitType:    None,
+	}
+
+	instance := &Instance{
+		Id:      "0",
+		Value:   0,
+		Answers: []*Answer{},
+	}
+	for _, data := range submission.GetResponses() {
+		for qcode, value := range data {
+			answer := &Answer{
+				Title:    "Question not known",
+				QType:    "",
+				QCode:    getQCode(qcode, submission.GetSurveyId()),
+				Label:    "",
+				Value:    value,
+				Multiple: false,
+			}
+			instance.Answers = append(instance.Answers, answer)
+		}
+	}
+	section := &Section{
+		Title:     "Responses",
+		Instances: map[string]*Instance{"0": instance},
+	}
+	survey.Sections = append(survey.Sections, section)
+	return survey
+}
