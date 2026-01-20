@@ -215,7 +215,7 @@ func berdSpecificInstance(instances map[string]*Instance, instanceCount int, ans
 
 func CreateWithoutSchema(submission *s.Submission) *Survey {
 	survey := &Survey{
-		Title:       submission.GetSurveyId(),
+		Title:       "Survey: " + submission.GetSurveyId(),
 		SurveyId:    submission.GetSurveyId(),
 		FormType:    "formtype unknown",
 		Respondent:  submission.GetRuRef(),
