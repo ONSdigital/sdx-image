@@ -13,7 +13,7 @@ import (
 	"google.golang.org/api/idtoken"
 )
 
-const CirResourcePath = "/v2/retrieve_collection_instrument"
+const CirResourcePath = "/collection-instruments/schema"
 const CirUrlSecret = "cir-url"
 const CirAudienceSecret = "sdx-testdata-audience"
 
