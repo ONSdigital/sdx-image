@@ -52,7 +52,7 @@ func (f *FakeSecretGetter) Get(key string) (string, error) {
 
 func TestFetch(t *testing.T) {
 	expectedGuid := "428ae4d1-8e7f-4a9d-8bef-05a266bf81e7"
-	expectedEndpoint := "/v2/retrieve_collection_instrument"
+	expectedEndpoint := "/collection-instruments/schema"
 
 	// Start a test HTTP server to simulate CIR
 	svr := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
